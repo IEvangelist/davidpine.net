@@ -1,0 +1,1486 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <link rel="icon" href="/img/main/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        
+            
+                <title>Building a Magic Mirror</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.15" />
+        
+
+
+        
+            <meta name="author" content="David Pine">
+        
+        
+            <meta name="description" content="Windows 10 IoT Core, UWP, C#, Raspberry Pi 3">
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="Building a Magic Mirror"/>
+<meta name="twitter:description" content="Windows 10 IoT Core, UWP, C#, Raspberry Pi 3"/>
+<meta name="twitter:site" content="@davidpine7"/>
+
+
+        <meta property="og:title" content="Building a Magic Mirror" />
+<meta property="og:description" content="Windows 10 IoT Core, UWP, C#, Raspberry Pi 3" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidpine.net/blog/building-a-magic-mirror/" />
+
+
+<meta property="og:updated_time" content="2016-12-23T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Building a Magic Mirror">
+<meta itemprop="description" content="Windows 10 IoT Core, UWP, C#, Raspberry Pi 3">
+
+
+<meta itemprop="dateModified" content="2016-12-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1259">
+
+
+
+<meta itemprop="keywords" content=".NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <link rel="stylesheet" href="/css/main.min.css" />
+                
+            
+        
+
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78203613-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">IEvangelist</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog/">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                        
+                            <i class="fa fa-list-ol">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                        
+                            <i class="fa fa-smile-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/speaking/">
+                        
+                            <i class="fa fa-bullhorn">&nbsp;</i>Speaking
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/conclusions/">
+                        
+                            <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://davidpine.net">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://davidpine.net">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                
+                                    <i class="fa fa-list-ol">&nbsp;</i>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                
+                                    <i class="fa fa-smile-o">&nbsp;</i>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/speaking/">
+                            <h3>
+                                
+                                    <i class="fa fa-bullhorn">&nbsp;</i>
+                                
+                                Speaking
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/conclusions/">
+                            <h3>
+                                
+                                    <i class="fa fa-lightbulb-o">&nbsp;</i>
+                                
+                                Conclusions
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/exploring-csharp-seven/"><p>Exploring C# 7</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/overriding-default-di/"><p>Overriding ASP.NET Core Framework-Provided Services</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f&text=Building%20a%20Magic%20Mirror&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f&title=Building%20a%20Magic%20Mirror" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f&title=Building%20a%20Magic%20Mirror" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f&title=Building%20a%20Magic%20Mirror" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://davidpine.net/blog/building-a-magic-mirror/">Building a Magic Mirror</a></h1>
+            
+        
+        
+            <p>Windows 10 IoT Core, UWP, C#, Raspberry Pi 3</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-12-23'>
+            December 23, 2016</time>
+        <span class="author">David Pine</span>
+        
+            <p>6 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f&text=Building%20a%20Magic%20Mirror&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f&title=Building%20a%20Magic%20Mirror" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f&title=Building%20a%20Magic%20Mirror" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f&title=Building%20a%20Magic%20Mirror" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2fbuilding-a-magic-mirror%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://davidpine.net/blog/building-a-magic-mirror/" class="image featured">
+            <img src="/img/2016/12/mirror.jpg" alt="" />
+        </a>
+    
+
+
+    <div id="content">
+        
+
+<h1 id="inspiration:55632f6cd2da9389f0018360d3bd5ef5">Inspiration</h1>
+
+<p>I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators&hellip;some might say,
+&ldquo;I&rsquo;m standing on the shoulders of giants&rdquo;. They would probably we right, and I&rsquo;m okay with that. Earlier this year, I stumbled upon a tweet about someone how created a
+magic mirror&hellip;this is the root of my inspiration.</p>
+
+<p><blockquote class="twitter-tweet" data-lang="en">
+    <p lang="en" dir="ltr">
+        Yup, it is official &ndash; I want a mirror like this one!
+        <a href="https://t.co/MVcM1nca7A">https://t.co/MVcM1nca7A</a>
+    </p>
+    &mdash; David Pine (@davidpine7)
+    <a href="https://twitter.com/davidpine7/status/695318303326265345">
+        February 4, 2016
+    </a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Before continuing on, allow me to explain what a magic mirror is. A magic mirror is simply a two-way mirror with a monitor positioned behind it that projects through the
+mirror. The monitor displays the application. The application is running on a small computer, in most cases a <strong>Raspberry Pi</strong>.</p>
+
+<p><a href="https://www.raspberrypi.org/" target="_blank">
+    <img src="/img/2016/12/pi-logo.png" alt="Raspberry Pi" />
+</a></p>
+
+<p>I noticed that a lot of the magic mirror&rsquo;s had greeting messages such as &ldquo;you look handsome&rdquo; or &ldquo;good morning sexy&rdquo; and other curiously intuitive sayings.
+I thought &ldquo;wow&rdquo; this really is a smart mirror, much to my surprise these were all just static messages (or only dynamic when accounting for the time of day). I was thinking
+to myself, &ldquo;I wonder if I could improve upon this&rdquo;, and that was my motivation!</p>
+
+<h2 id="open-source:55632f6cd2da9389f0018360d3bd5ef5">Open Source</h2>
+
+<p>If you want to skip out from reading this post, you can checkout my project up on <strong>GitHub</strong> &nbsp;
+<a href="https://www.github.com/IEvangelist/Mirror" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; IEvangelist.Mirror</a>.</p>
+
+<h1 id="hardware:55632f6cd2da9389f0018360d3bd5ef5">Hardware</h1>
+
+<p>I was excited when <strong>Microsoft</strong> started selling the <strong>Raspberry Pi 3, Model B</strong> - I ordered one immediately.</p>
+
+<p><img src="/img/2016/12/pi3.gif" alt="Raspberry Pi 3" /></p>
+
+<h2 id="specs:55632f6cd2da9389f0018360d3bd5ef5">Specs</h2>
+
+<p><img src="/img/2016/12/pi-layout.png" alt="Specs" /></p>
+
+<h3 id="miscellaneous:55632f6cd2da9389f0018360d3bd5ef5">Miscellaneous</h3>
+
+<p>Below is a semi-comprehensive listing of all the materials and their corresponding cost that I used for building my magic mirror.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Rough Cost</th>
+<th align="left">Hardware</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">$60</td>
+<td align="left"><a href="https://www.microsoftstore.com/store/msusa/en_US/pdp/Raspberry-Pi-3-Bundle/productID.5068162700" target="_blank">Raspberry Pi 3 Bundle <i class="fa fa-external-link" aria-hidden="true"></i><a/></td>
+</tr>
+
+<tr>
+<td align="left">$130</td>
+<td align="left"><a href="https://www.amazon.com/gp/product/B00IZBIMLK/ref=oh_aui_search_detailpage?ie=UTF8&psc=1" target="_blank">BenQ 27&rdquo; HDMI LED Monitor <i class="fa fa-external-link" aria-hidden="true"></i><a/></td>
+</tr>
+
+<tr>
+<td align="left">$90</td>
+<td align="left"><a href="http://www.tapplastics.com/product/plastics/cut_to_size_plastic/two_way_mirrored_acrylic/558" target="_blank">Custom-sized Two-way Mirrored Acrylic <i class="fa fa-external-link" aria-hidden="true"></i><a/></td>
+</tr>
+
+<tr>
+<td align="left">$40</td>
+<td align="left"><a href="https://www.amazon.com/Microsoft-LifeCam-Cinema-720p-Webcam/dp/B009CPC6QA" target="_blank">Microsoft LifeCam <i class="fa fa-external-link" aria-hidden="true"></i><a/></td>
+</tr>
+
+<tr>
+<td align="left">$25</td>
+<td align="left"><a href="https://www.amazon.com/gp/product/B00DEJXRAE/ref=oh_aui_search_detailpage?ie=UTF8&psc=1" target="_blank">Dell USB Wired Soundbar <i class="fa fa-external-link" aria-hidden="true"></i><a/></td>
+</tr>
+
+<tr>
+<td align="left">$6</td>
+<td align="left"><a href="https://www.amazon.com/gp/product/B000234UFG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1" target="_blank">Power Cord Splitter <i class="fa fa-external-link" aria-hidden="true"></i><a/></td>
+</tr>
+
+<tr>
+<td align="left">$25</td>
+<td align="left">Full HDMI Cable, USB Extension Cables</td>
+</tr>
+
+<tr>
+<td align="left">$50</td>
+<td align="left">Carpentry Materials</td>
+</tr>
+
+<tr>
+<td align="left">$50</td>
+<td align="left">Glenlivet 12 Year Old Scotch Whisky (not technically hardware)</td>
+</tr>
+
+<tr>
+<td align="left"><strong>~$480</strong></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<p>Considering the total investment is still under $500 bucks, that&rsquo;s not too bad!</p>
+
+<h1 id="os-platform:55632f6cd2da9389f0018360d3bd5ef5">OS &ndash; Platform</h1>
+
+<p>One of my favorite parts about developing the magic mirror was the fact that I could do so from the comfort of <strong>Visual Studio</strong> using the worlds most powerful programming
+language today, <strong>C#</strong>.</p>
+
+<p><a href="https://www.visualstudio.com/" target="_blank">
+    <img src="/img/2016/12/vs.png" alt="Visual Studio" style="max-width: 175px;" />
+</a>
+&nbsp; &nbsp;
+<a href="https://msdn.microsoft.com/en-us/library/kx37x362.aspx" target="_blank">
+    <img src="/img/2016/12/csharp.png" alt="C#" style="max-width: 175px;" />
+</a></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name &ndash; Link</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong>OS</strong></td>
+<td align="left"><a href="https://developer.microsoft.com/en-us/windows/iot/explore/iotcore" target="_blank"><code>Windows 10 IoT Core, &quot;Build 10.0.14393&quot;</code> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+</tr>
+
+<tr>
+<td align="left"><strong>Platform</strong></td>
+<td align="left"><a href="https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide" target="_blank"><code>Universal Windows Platform (UWP), &quot;UAP 1.0&quot;</code> <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="software:55632f6cd2da9389f0018360d3bd5ef5">Software</h1>
+
+<p>When people throw around the acronym <strong>IoT</strong> it can mean a lot of different things. For this specific application, it is essential. Using the built-in <em>WIFI</em> on the <strong>Pi 3</strong> we
+can leverage the power of the internet to gather and share information.</p>
+
+<blockquote>
+<p><p/> Software is simply the movement and manipulation of data. But without context, said data is meaningless.</p>
+</blockquote>
+
+<p>The magic mirror application strives to provide data that is all of the following:</p>
+
+<ul>
+<li>Relevant</li>
+<li>Practical</li>
+<li>Convenient</li>
+<li>Timely</li>
+</ul>
+
+<p>Below is the user-interface layout. Let&rsquo;s have a look at the various components that our application is built on.</p>
+
+<p><img src="/img/2016/12/layout.png" alt="Layout" /></p>
+
+<h2 id="components:55632f6cd2da9389f0018360d3bd5ef5">Components</h2>
+
+<p>From the layout above, it is clear to visualize the key components of the application. Most of these components implement the
+<code>IContextSynthesizer</code> interface. These implementations are indicators that each component is capable of handling voice commands, and providing a message that is consumable
+by the <strong>UWP</strong> speech-synthesizer.  More on this later&hellip;</p>
+
+<h3 id="weather-forecast:55632f6cd2da9389f0018360d3bd5ef5">Weather &ndash; Forecast</h3>
+
+<p>The current weather and forecast are retrieved every fifteen minutes from the free <a href="http://openweathermap.org/api" target="_blank">Open Weather API</a>.
+The developer API key and zip code are configurable. Additionally the unit-of-measure is configurable, where you can specify <code>imperial</code> or <code>metric</code> as valid settings.</p>
+
+<h3 id="clock:55632f6cd2da9389f0018360d3bd5ef5">Clock</h3>
+
+<p>The clock is extremely simple. It is literally just the current date and time. It updates every second, formatting to the hour, minute and second &ndash; additionally displaying the
+name of the day followed by the month and day number.</p>
+
+<p><strong>Example:</strong>
+<pre>
+<code class="language-yaml"><span style="font-size: large">8:29</span> <sup>34</sup>
+Wednesday, December 21<sup>st</sup>
+</code>
+</pre>
+Note: I opted to omit whether or not we&rsquo;re in ante or post meridiem as it is assumed the user would know if it&rsquo;s morning or in the afternoon.</p>
+
+<h3 id="event-calendar-schedule:55632f6cd2da9389f0018360d3bd5ef5">Event Calendar / Schedule</h3>
+
+<p>My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to
+<a href="https://github.com/IEvangelist/Mirror#fork-destination-box" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i> fork my repo</a> &ndash; you would need to setup
+your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid <code>iCal</code> <a href="http://icalendar.org/" target="_blank">(*.ics) formatting</a>.
+The events are truncated to fit on the page and ordered by the date of the event.</p>
+
+<h3 id="music-player:55632f6cd2da9389f0018360d3bd5ef5">Music Player</h3>
+
+<p>Imagine you have the magic mirror mounted in your bathroom, or bedroom&hellip;it would be nice to say, &ldquo;play a song&rdquo;, or &ldquo;play Deftones&rdquo; for example and music starts playing. That is
+the idea behind the music player component. The current implementation of the music player is limited. I spent a few long nights trying to figure out how to use the built-in <strong>Bluetooth</strong>
+on the <strong>Pi 3</strong>, while <strong>UWP</strong> does have some support it is limited. I was able to pair but not stream songs from my <strong>iPod</strong> for example, which was really frustrating. For the meantime
+I simply placed several songs in the <code>Assets</code> directory as content and I can play these resources. Ideally, I will use a web-based service like Spotify or Pandora.</p>
+
+<h3 id="voice-commands:55632f6cd2da9389f0018360d3bd5ef5">Voice Commands</h3>
+
+<p>The <strong>Universal Windows Platform</strong> provides two very useful classes, the
+<a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechrecognition.speechrecognizer.aspx" target="_blank"><code>SpeechRecognizer</code></a> and the
+<a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechsynthesis.speechsynthesizer.aspx" target="_blank"><code>SpeechSynthesizer</code></a>. Leveraging this
+I have built out the ability to talk to my magic mirror, I can ask it things like &ldquo;what&rsquo;s the weather&rdquo;, &ldquo;what&rsquo;s my schedule for Wednesday&rdquo;, or even tell it commands like &ldquo;turn
+this up&rdquo;.</p>
+
+<h2 id="microsoft-cognitive-services:55632f6cd2da9389f0018360d3bd5ef5">Microsoft Cognitive Services</h2>
+
+<p>Formally known was &ldquo;Project Oxford&rdquo;, Microsoft Cognitive Services offers a ton of programming power and you can start using it today for <strong>free</strong>. Simply
+<a href="https://www.microsoft.com/cognitive-services/en-us/subscriptions" target="_blank">subscribe</a> and use your subscription key as the argument to the client <code>.ctor</code>.
+The magic mirror makes use of the Emotion API, and corresponding <code>EmotionServiceClient</code> from the
+<a href="https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/" target="_blank"><code>Microsoft.ProjectOxford.Emotion</code></a> package.</p>
+
+<p>Consider the following:</p>
+
+<pre><code class="language-csharp">async Task&lt;IEnumerable&lt;RawEmotion&gt;&gt; CaptureEmotionAsync()
+{
+    RawEmotion[] result;
+
+    try
+    {
+        var photoFile = await _photoService.CreateAsync();
+        var imageProperties = ImageEncodingProperties.CreateBmp();
+        await _mediaManager.CapturePhotoToStorageFileAsync(imageProperties, photoFile);
+        result = await _emotionClient.RecognizeAsync(await photoFile.OpenStreamForReadAsync());
+    }
+    finally
+    {
+        await _photoService.CleanupAsync();
+    }
+
+    return result.IsNullOrEmpty()
+        ? await TaskCache&lt;IEnumerable&lt;RawEmotion&gt;&gt;.Value(() =&gt; Enumerable.Empty&lt;RawEmotion&gt;())
+        : result;
+}
+</code></pre>
+
+<ul>
+<li>First our <code>_photoService</code> asynchronously creates a photo file</li>
+<li>From the <code>ImageEncodingProperties</code> class, we create a bitmap encoding property set</li>
+<li>Our <code>_mediaManager</code> captures a photo, storing it in the photo file with the specified encoding</li>
+<li>Finally we invoke the <code>_emotionClient</code> passing it the stream from the persisted photo</li>
+</ul>
+
+<p>The <code>result</code> object contains a <code>Scores</code> class that looks like the following (from my mugshot):</p>
+
+<p><img src="/img/2016/12/set.png" alt="Set" /></p>
+
+<p>The service returned a result. The result claims an <strong>81.5%</strong> level of confidence that I&rsquo;m happy based on the given image, what do you think? What you don&rsquo;t see is that I&rsquo;m actually taking a selfie
+with 
+
+    
+        
+    
+
+    <a href="https://twitter.com/codefoster" target='_blank'>Jeremy Foster</a>
+
+ &ndash; so, yeah &ndash; I was pretty happy!</p>
+
+<h1 id="construction:55632f6cd2da9389f0018360d3bd5ef5">Construction</h1>
+
+<p>I would be lying if I tried taking credit for any of the construction. I&rsquo;m slightly embarrassed to admit that I opted out of building it, as I lack the carpentry skills needed
+to do a decent job. Instead I asked a friend who just so happens to be awesome at carpentry. After persuading him with a bottle of single malt scotch whiskey, I had my magic
+mirror constructed and the results were amazing!</p>
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    <div class="box alt">
+        <div class="row uniform">
+        
+        
+        
+            
+                <div class="4u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/2016/12/con-1.jpg'
+                            alt="Step 1" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="4u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/2016/12/con-2.jpg'
+                            alt="Step 2" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="4u$">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/2016/12/con-3.jpg'
+                            alt="Step 3" />
+                    </span></div>
+                
+                
+            
+            
+        
+        </div>
+    </div>
+
+
+
+<p>
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    <div class="box alt">
+        <div class="row uniform">
+        
+        
+        
+            
+                <div class="4u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/2016/12/con-4.jpg'
+                            alt="Step 4" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="4u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/2016/12/con-5.jpg'
+                            alt="Step 5" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="4u$">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/2016/12/con-6.jpg'
+                            alt="Step 6" />
+                    </span></div>
+                
+                
+            
+            
+        
+        </div>
+    </div>
+
+</p>
+
+<p>I was really excited to deploy my mirror software and give it a go.</p>
+
+<p><img src="/img/2016/12/magic mirror.jpg" alt="Mirror" /></p>
+
+<h1 id="check-it-out:55632f6cd2da9389f0018360d3bd5ef5">Check it out</h1>
+
+<p><style>
+    .iframe_container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
+        padding-top: 25px;
+        height: 0;
+    }
+    .iframe_container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/KOTYW8EioBk" frameborder="0" allowfullscreen></iframe>
+</div>
+<br/>
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/PWr1zRBO90o" frameborder="0" allowfullscreen></iframe>
+</div></p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-list-ol">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/magic-mirror'>Magic Mirror</a></li>
+    
+        <li><a href='/categories/uwp'>UWP</a></li>
+    
+        <li><a href='/categories/c'>C#</a></li>
+    
+        <li><a href='/categories/.net-core'>.NET Core</a></li>
+    
+        <li><a href='/categories/iot'>IoT</a></li>
+    
+        <li><a href='/categories/raspberry-pi'>Raspberry Pi</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://davidpine.net/blog/asp-net-core-optimization/"
+                class="button big previous">ASP.NET Core Response Optimization</a></li>
+    
+
+    
+        <li><a href="http://davidpine.net/blog/principal-architecture-changes/"
+                class="button big next">What happened to my Thread.CurrentPrincipal</a></li>
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/building-a-magic-mirror\/';
+    var disqus_title = 'Building a Magic Mirror';
+    var disqus_url = 'http:\/\/davidpine.net\/blog\/building-a-magic-mirror\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/logo-corrected.jpg" class="intro-circle" width="" alt="David Pine" />
+                
+            
+            
+                <header>
+                    <h2>David Pine</h2>
+                    <p>Technical Evangelist, with a goal of changing the world - one line of code at a time <i class='fa fa-code' aria-hidden='true'></i></p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/exploring-csharp-seven/">Exploring C# 7</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-03-26'>
+                                    March 26, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/overriding-default-di/">Overriding ASP.NET Core Framework-Provided Services</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-02-14'>
+                                    February 14, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net-core/">.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/c/">C#</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/typescript/">TypeScript</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/compression/">Compression</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/angular2/">Angular2</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net/">.NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+

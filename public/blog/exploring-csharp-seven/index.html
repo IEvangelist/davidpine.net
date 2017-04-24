@@ -1,0 +1,1482 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <link rel="icon" href="/img/main/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        
+            
+                <title>Exploring C# 7</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.15" />
+        
+
+
+        
+            <meta name="author" content="David Pine">
+        
+        
+            <meta name="description" content="Expressiveness Redefined &amp; #notasugly">
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="Exploring C# 7"/>
+<meta name="twitter:description" content="Expressiveness Redefined &amp; #notasugly"/>
+<meta name="twitter:site" content="@davidpine7"/>
+
+
+        <meta property="og:title" content="Exploring C# 7" />
+<meta property="og:description" content="Expressiveness Redefined &amp; #notasugly" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidpine.net/blog/exploring-csharp-seven/" />
+
+
+<meta property="og:updated_time" content="2017-03-26T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Exploring C# 7">
+<meta itemprop="description" content="Expressiveness Redefined &amp; #notasugly">
+
+
+<meta itemprop="dateModified" content="2017-03-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2413">
+
+
+
+<meta itemprop="keywords" content=".NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <link rel="stylesheet" href="/css/main.min.css" />
+                
+            
+        
+
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78203613-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">IEvangelist</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog/">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                        
+                            <i class="fa fa-list-ol">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                        
+                            <i class="fa fa-smile-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/speaking/">
+                        
+                            <i class="fa fa-bullhorn">&nbsp;</i>Speaking
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/conclusions/">
+                        
+                            <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://davidpine.net">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://davidpine.net">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                
+                                    <i class="fa fa-list-ol">&nbsp;</i>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                
+                                    <i class="fa fa-smile-o">&nbsp;</i>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/speaking/">
+                            <h3>
+                                
+                                    <i class="fa fa-bullhorn">&nbsp;</i>
+                                
+                                Speaking
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/conclusions/">
+                            <h3>
+                                
+                                    <i class="fa fa-lightbulb-o">&nbsp;</i>
+                                
+                                Conclusions
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/exploring-csharp-seven/"><p>Exploring C# 7</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/overriding-default-di/"><p>Overriding ASP.NET Core Framework-Provided Services</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f&text=Exploring%20C%23%207&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f&title=Exploring%20C%23%207" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f&title=Exploring%20C%23%207" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f&title=Exploring%20C%23%207" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://davidpine.net/blog/exploring-csharp-seven/">Exploring C# 7</a></h1>
+            
+        
+        
+            <p>Expressiveness Redefined &amp; #notasugly</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-03-26'>
+            March 26, 2017</time>
+        <span class="author">David Pine</span>
+        
+            <p>12 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f&text=Exploring%20C%23%207&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f&title=Exploring%20C%23%207" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f&title=Exploring%20C%23%207" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f&title=Exploring%20C%23%207" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2fexploring-csharp-seven%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://davidpine.net/blog/exploring-csharp-seven/" class="image featured">
+            <img src="/img/2017/03/exploration.png" alt="" />
+        </a>
+    
+
+
+    <div id="content">
+        
+
+<h1 id="intro:0efe24a7225e878a472913ac049c49a3">Intro</h1>
+
+<p>Since we have all been actively celebrating the 20<sup>th</sup> anniversary of <strong>Visual Studio</strong>, it felt appropriate to post about <strong>C# 7</strong>!
+In this post we will explore the features that make <strong>C# 7</strong> so promising. I&rsquo;ve put together a demonstration <strong>C# 7</strong> project, that is available
+<a href="https://github.com/IEvangelist/IEvangelist.CSharp" target="_blank">here</a>.</p>
+
+<p>This post contains examples and details on five of the nine new <strong>C# 7</strong> features.</p>
+
+<ul>
+<li>Pattern matching</li>
+<li><code>out</code> variables</li>
+<li>Tuples</li>
+<li>Local functions</li>
+<li><code>throw</code> expressions</li>
+</ul>
+
+<p>These are the remaining features, that I <strong>do not</strong> cover in this post.</p>
+
+<ul>
+<li><code>ref</code> locals and returns</li>
+<li>More expression-bodied members</li>
+<li>Generalized <code>async</code> return types</li>
+<li>Numeric literal syntax improvements</li>
+</ul>
+
+<h2 id="pattern-matching:0efe24a7225e878a472913ac049c49a3">Pattern Matching</h2>
+
+<p>With <strong>C# 7</strong> we welcomed the concept of &ldquo;patterns&rdquo;. This concept allows for the extraction of information when a variable is tested for a certain &ldquo;shape&rdquo; and matches a
+specified pattern. We&rsquo;re able to leverage the &ldquo;shape&rdquo; from which we matched on as a declared variable in scope, consuming it as we deem necessary. This is referred to as
+&ldquo;dynamic&rdquo; (or &ldquo;method&rdquo;) dispatch.</p>
+
+<blockquote>
+<p><p> In computer science, dynamic dispatch is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time.
+It is commonly employed in, and considered a prime characteristic of, object-oriented programming (OOP) languages and systems.
+<cite><a href="https://en.wikipedia.org/wiki/Dynamic_dispatch" target="_blank">Wiki - Dynamic Dispatch</a></cite></p>
+</blockquote>
+
+<p>Dynamic dispatch is nothing new to <strong>C#</strong>, and has been around forever. <strong>C# 7</strong> exposes this functionality via constant and type patterns.</p>
+
+<h3 id="constant-patterns:0efe24a7225e878a472913ac049c49a3">Constant Patterns</h3>
+
+<p>Constant pattern <code>null</code>, similar to <code>(obj == null)</code>.</p>
+
+<blockquote>
+<p><p> The &ldquo;is expression&rdquo; has been expanded</p>
+</blockquote>
+
+<pre><code class="language-csharp">public void IsExpression(object obj)
+{
+    if (obj is null) // Constant pattern &quot;obj is null&quot;
+    {
+        return;
+    }
+}
+</code></pre>
+
+<h3 id="type-patterns:0efe24a7225e878a472913ac049c49a3">Type Patterns</h3>
+
+<p>Look closely at this syntax. This is where we start mixing metaphors. Prior to <strong>C# 7</strong> we could use the &ldquo;is&rdquo; expression to do simple type assertions
+<code>obj is [type]</code>. Additionally, we all know how to declare a variable <code>int i</code>. This new syntax merges these concepts together and is more compound and
+expressive.</p>
+
+<pre><code class="language-csharp">public void IsExpression(object obj)
+{
+    // (obj is int i)
+    // &quot;obj is int&quot;     // type assertion &quot;typically evaluates type compatibility at run time&quot;
+    //        &quot;int i&quot;   // declaration
+
+    if (obj is int i) // Type pattern &quot;obj is int i&quot;
+    {
+        // We can then use the &quot;i&quot; (integer) variable 
+    }
+
+    // Note, the variable &quot;i&quot; is also available in this scope.
+    // This is in fact by design, more on that out the &quot;out variable&quot; section 
+}
+</code></pre>
+
+<blockquote>
+<p><p> The &ldquo;switch statement&rdquo; has been generalized</p>
+</blockquote>
+
+<p>The <code>when</code> keyword has also been extended, now it not only applies to the <code>catch</code> statement but also the <code>case</code> labels within a <code>switch</code> statement.
+Consider the following classes:</p>
+
+<pre><code class="language-csharp">class Shape
+{
+    protected internal double Height { get; }
+
+    protected internal double Length { get; }
+
+    protected Shape(double height, double length)
+    {
+        Height = height;
+        Length = length;
+    }
+}
+
+class Circle : Shape
+{
+    internal double Radius =&gt; Height / 2;
+
+    internal double Diameter =&gt; Radius * 2;
+
+    internal double Circumference =&gt; 2 * Math.PI * Radius;
+
+    internal Circle(double height, double length) 
+        : base(height, length) { }
+}
+
+class Rectangle : Shape
+{
+    internal bool IsSquare =&gt; Height == Length;
+
+    internal Rectangle(double height, double length) 
+        : base(height, length) { }
+}
+</code></pre>
+
+<p>Now imagine that we have a collection of these <code>Shape</code> objects, and we want to print out their various details - we could use &ldquo;pattern matching&rdquo; as such:</p>
+
+<pre><code class="language-csharp">static void OutputShapes(IEnumerable&lt;Shape&gt; shapes)
+{
+    foreach (var shape in shapes)
+    {
+        // Previously, this was not permitted. Case labels had to be concrete
+        // such as enums, numerics, bools, strings, etc.
+        switch (shape)
+        {
+            case Circle c:
+                WriteLine($&quot;circle with circumference {c.Circumference}&quot;);
+                break;
+            case Rectangle s when (s.IsSquare):
+                WriteLine($&quot;{s.Length} x {s.Height} square&quot;);
+                break;
+            case Rectangle r:
+                WriteLine($&quot;{r.Length} x {r.Height} rectangle&quot;);
+                break;
+            default:
+                WriteLine(&quot;This is not a shape that we're familiar with...&quot;);
+                break;
+            case null:
+                throw new ArgumentNullException(nameof(shape));
+        }
+    }
+}
+</code></pre>
+
+<p>As you can see, we are able to more easily reason about the specific <code>shape</code> in context. For example, with each iteration of our collection we <code>switch</code>
+on the <code>shape</code>. If the <code>shape</code> is an instance of the <code>Circle</code> subclass, we&rsquo;ll execute the <code>case</code> label &ldquo;Circle&rdquo; and we get the instance declared as
+its type in the variable <code>c</code>. Likewise, if the <code>shape</code> is a <code>Rectangle</code> and that rectangle <code>s</code> just so happens to also be a square <code>when (s.IsSquare)</code>
+evaluates to <code>true</code> - we will then execute the square <code>case</code> label. If the <code>shape</code> is an instance of a <code>Rectangle</code> but not a square, we execute the
+&ldquo;Rectangle&rdquo; <code>case</code> label. Notice we still have <code>default</code> fall-thru. Finally, we can also have a &ldquo;null&rdquo; <code>case</code> label.</p>
+
+<h2 id="out-variables:0efe24a7225e878a472913ac049c49a3"><code>out</code> variables</h2>
+
+<p><code>.NET</code> developers are more than familiar with the <code>Try*</code> pattern, but as a refresher this is what it looks like. Imagine we are trying to parse
+a <code>System.String</code> input value as a <code>System.Int32</code>. Imagine that the consumer doesn&rsquo;t really care if it is parsed, they&rsquo;re fine with a <code>default(int)</code>
+if it fails.</p>
+
+<pre><code class="language-csharp">public int ToInt32(string input)
+{
+    int result;
+    if (int.TryParse(input, out result))
+    {
+        return result;
+    }
+
+    return default(int);
+}
+</code></pre>
+
+<p>Let&rsquo;s quickly recap this. First, we declare a variable namely <code>result</code>. We then invoke the <code>int.TryParse</code> which returns a <code>bool</code> whether or not the
+parse was successful. If <code>true</code> then the declare <code>result</code> variable is not equal to the parsed <code>int</code> value. If the <code>input</code> was <code>&quot;12&quot;</code>, then <code>result</code> would be <code>12</code>. If the <code>input</code>
+was <code>&quot;Pickles&quot;</code>, then the return from the invocation to the <code>ToInt32</code> would be <code>0</code> as <code>int.TryParse</code> would return <code>false</code>.</p>
+
+<p>Now with <strong>C# 7</strong> we can declare our <code>out</code> variable inline as follows:</p>
+
+<pre><code class="language-csharp">public int ToInt32(string input)
+{
+    // Note: the declaration is inline with the out keyword
+    if (int.TryParse(input, out int result))
+    {
+        return result;
+    }
+
+    return default(int);
+}
+</code></pre>
+
+<p>The scope of the <code>result</code> variable is identical to the previous example, as it actually &ldquo;leaks&rdquo; out to the <code>if</code> statement. We can re-write this even
+more expressively:</p>
+
+<pre><code class="language-csharp">public int ToInt32(string input) =&gt; int.TryParse(input, out var result) ? result : result;
+</code></pre>
+
+<p>A few things you might notice. First, this is now a single line as we can express this with the lambda operator. We leverage the ternary operator as
+well. Additionally, we can use the <code>var</code> keyword for our declaration. And since the <code>result</code> variable is in scope we can use it as both return cases.
+If unable to be parsed, it is in fact a <code>default(int)</code> anyways.</p>
+
+<h2 id="tuples:0efe24a7225e878a472913ac049c49a3">Tuples</h2>
+
+<p>Most developers are familiar with <code>System.Tuple&lt;T[,T1...]&gt;</code>. This <code>class</code> has served us well all the while it has been around.
+One of the advantages is that it exposes <code>readonly</code> fields - from the values that it is instantiated with. This
+was also great for equality comparisons and even using the tuple as a dictionary key.</p>
+
+<p>In <strong>C# 7</strong> we have a new syntax for expressing tuples. Enter the <code>ValueTuple</code>, and as the name implies - this is a <code>struct</code> instead of a <code>class</code>. There
+are obvious performance gains from using a light-weight value-type over the allocation of a <code>class</code>.</p>
+
+<pre><code class="language-csharp">void LegacyTuple()
+{
+    var letters = new Tuple&lt;char, char&gt;('a', 'b');
+    
+    // Values were accessible via these Item* fields.
+    var a = letters.Item1;
+    var b = letters.Item2;
+}
+</code></pre>
+
+<p>This wasn&rsquo;t overly exciting from an API perspective, as the field names do not really imply anything about their intention.</p>
+
+<pre><code class="language-csharp">void ValueTuple()
+{
+    var letters = ('a', 'b');
+    var a = letters.Item1;
+    var b = letters.Item2;
+
+    // Note: ToTuple extension method
+    var systemTuple = letters.ToTuple();
+    var c = systemTuple.Item1;
+    var d = systemTuple.Item2;
+}
+</code></pre>
+
+<p>You might notice that the syntactic sugar is pouring over this new feature. This is referred to as a &ldquo;tuple literal&rdquo;. We dropped the entire <code>new</code> keyword
+usage, as well as specifying the types. They are all inferred and in fact known, IntelliSense proves this immediately. But we still have the issue of
+these tuples not being very API friendly. Let&rsquo;s explore how we can give them custom names.</p>
+
+<pre><code class="language-csharp">void MoreValueTuples()
+{
+    var lessonDetails = 
+        (Subject: &quot;C# Language Semantics&quot;, Category: Categories.Programming, Level: 300);
+
+    // Note: IntelliSense now hides Item1, Item2 and Item3
+    // Instead we are provided with the following:
+
+    var subject = lessonDetails.Subject;    // string
+    var category = lessonDetails.Category;  // Categories [enum]
+    var level = lessonDetails.Level;        // int
+}
+</code></pre>
+
+<h3 id="deconstruction:0efe24a7225e878a472913ac049c49a3">Deconstruction</h3>
+
+<p>Now that we see how we can instantiate a <code>ValueTuple</code>, let&rsquo;s take a look at how we can declare one for usage.</p>
+
+<pre><code class="language-csharp">void DeconstructionExamples()
+{
+    var lessonDetails = 
+        (Subject: &quot;C# Language Semantics&quot;, Category: Categories.Programming, Level: 300);
+    
+    // We can deconstruct in three various ways
+    // First, the fully qualified type
+    (string subject, Categories category, int level) = lessonDetails;
+    
+    // Next using the var keyword per named declaration
+    (var subject, var category, var level) = lessonDetails;
+
+    // Finally, omitting any type declaration and using var wholeheartedly
+    var (subject, category, level) = lessonDetails;
+}
+</code></pre>
+
+<p>There are often questions about how deconstruction is implemented, and whether or not it is ordinal based. For the <code>ValueTuple</code> it is in fact
+ordinal based. However, note that deconstruction is not actually limited to tuples. With <strong>C# 7</strong> any <code>object</code> that defines a <code>public void Deconstruct</code>
+method can be deconstructed. Consider the following:</p>
+
+<pre><code class="language-csharp">class Person
+{
+    private readonly (string First, string Middle, string Last) _name;
+
+    private readonly DateTime DateOfBirth _dateOfBirth;
+
+    public Person((string f, string m, string l) name, DateTime dob)
+    {
+        _name = name;
+        _dateOfBirth = dob;
+    }
+
+    public void Deconstruct(out double age, 
+                            out string firstName,
+                            out string middleName, 
+                            out string lastName)
+    {
+        age = (DateTime.Now - _dateOfBirth).TotalYears;
+        firstName = _name.First;
+        middleName = _name.Middle;
+        lastName = _name.Last;
+    }
+}
+</code></pre>
+
+<p>Now that the <code>Person</code> is defined with this <code>Deconstruct</code> method, we can deconstruct it following the same ordinal based semantics.</p>
+
+<pre><code class="language-csharp">void DeconstructNonTuple()
+{
+    var person = new Person((&quot;David&quot;, &quot;Michael&quot;, &quot;Pine&quot;), new DateTime(1984, 7, 7));
+
+    (int age, string first, string middle, string last) = person;
+
+    // Note: to partially deconstruct you can ignore a specific ordinal by using the _
+    // This does not actually naming the ordinal variable, but truly ignoring it.
+
+    var (_, _, _, _) = person;          // Ignore all, not very useful
+    var (_, firstName, _, _) = person;  // Cherry-pick first name
+}
+</code></pre>
+
+<h4 id="comparing-anonymous-object-vs-valuetuple:0efe24a7225e878a472913ac049c49a3">Comparing Anonymous <code>object</code> vs. <code>ValueTuple</code></h4>
+
+<p>At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
+a <code>ValueTuple</code> is a <code>struct</code> - value type. Also, you can only return an anonymous object from a method as an <code>object</code> which isn&rsquo;t very API friendly.
+Within a fluent <code>LINQ</code> chained method anonymous objects are great and will still be normal for projection.</p>
+
+<h2 id="local-functions:0efe24a7225e878a472913ac049c49a3">Local Functions</h2>
+
+<p>At first glance, local functions seem a bit odd. I&rsquo;ve heard people say, &ldquo;this method is starting to look like a class&rdquo;. At first,
+I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick
+comparison of the two, note the benefits of local functions as they compare to lambdas.</p>
+
+<style>
+    .red { color: red; }
+    .green { color: green; }
+</style>
+
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">Lambda(s)</th>
+<th align="left">Local Function(s)</th>
+<th align="left">Details</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="right">Generics</td>
+<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
+<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
+<td align="left">Local functions allow for the use of generics</td>
+</tr>
+
+<tr>
+<td align="right">Iterators</td>
+<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
+<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
+<td align="left">The <code>yield</code> keyword is valid within local functions</td>
+</tr>
+
+<tr>
+<td align="right">Recursion</td>
+<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
+<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
+<td align="left">Local functions support recursion</td>
+</tr>
+
+<tr>
+<td align="right">Allocatey</td>
+<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
+<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
+<td align="left">Delegates require an <code>object</code> allocation</td>
+</tr>
+
+<tr>
+<td align="right">Potential Variable Lifting</td>
+<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
+<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
+<td align="left">Implicitly captured closure is non-existent</td>
+</tr>
+</tbody>
+</table>
+
+<p>It is vital to understand that local functions are <strong>not</strong> a replacement for <code>Action&lt;T[,T1...]&gt;</code> or <code>Func&lt;T[,T1...]&gt;</code>. These delegate declarations are still
+needed as parameters to enable lambda expression arguments. If you see the <strong>#notasugly</strong> hashtag, this was coined by Mads Torgersen.</p>
+
+<h3 id="more-efficient:0efe24a7225e878a472913ac049c49a3">More efficient</h3>
+
+<p>When using local functions, there is no <code>object</code> created - unlike delegates that require an object for it to be used. Likewise, local functions
+help to alleviate another issue with lambdas in that they do not need to implicitly capture a variable longer than it is potentially needed.
+In <strong>C#</strong> lambdas capture values by reference, meaning that garbage collection may not be able to correctly clean up code that is &ldquo;allocatey&rdquo;.</p>
+
+<h4 id="declaration:0efe24a7225e878a472913ac049c49a3">Declaration</h4>
+
+<p>With local functions, the declaration of the local function can actually occur after the <code>return</code> statement - as long as it is within the method body
+in which it is consumed. If you&rsquo;re familiar with some of the implementations of the <code>LINQ</code> extension methods on <code>IEnumerable&lt;T&gt;</code>, you would know a lot
+of the methods are defined with argument validation followed by the instantiation of &ldquo;Iterator&rdquo; classes, where these classes do the actual work.</p>
+
+<p>Because of deferred execution, iterators do not actually execute validation logic until they are iterated - for example invoking <code>.ToList()</code>, <code>.ToArray()</code>,
+or simply using them in a <code>foreach</code> statement. Ideally, we would like our iterators to &ldquo;fail-fast&rdquo; in the event of being given invalid arguments. Let&rsquo;s
+imagine that the <code>.Select</code> extension method was implemented as follows:</p>
+
+<pre><code class="language-csharp">public static IEnumerable&lt;TResult&gt; Select&lt;T, TResult&gt;(this IEnumerable&lt;T&gt; source, 
+                                                           Func&lt;T, TResult&gt; selector)
+{
+    if (source == null) throw new ArgumentNullException(nameof(source));
+    if (selector == null) throw new ArgumentNullException(nameof(selector));
+
+    foreach (var item in source)
+    {
+        yield return selector(item);
+    }
+}
+</code></pre>
+
+<p>Since this method is written as an iterator, the validation is skipped until it&rsquo;s iterated. With <strong>C# 7</strong> we can use local function to get both
+&ldquo;fail-fast&rdquo; validation and the iterator together.</p>
+
+<pre><code class="language-csharp">public static IEnumerable&lt;TResult&gt; Select&lt;T, TResult&gt;(this IEnumerable&lt;T&gt; source, 
+                                                           Func&lt;T, TResult&gt; selector)
+{
+    if (source == null) throw new ArgumentNullException(nameof(source));
+    if (selector == null) throw new ArgumentNullException(nameof(selector));
+
+    return iterator();
+
+    IEnumerable&lt;TResult&gt; iterator()
+    {
+        foreach (var item in source)
+        {
+            yield return selector(item);
+        }
+    }
+}
+</code></pre>
+
+<h1 id="throw-expressions:0efe24a7225e878a472913ac049c49a3"><code>throw</code> expressions</h1>
+
+<p>Leveraging some pre-existing <strong>C#</strong> functionality - <code>null</code> coalescing, we can now <code>throw</code> when a value is evaluated as <code>null</code>. A common validation
+mechanism is to <code>throw</code> if an argument is <code>null</code>. Consider the following:</p>
+
+<pre><code class="language-csharp">class LegacyService : IService
+{
+    private readonly IContextProvider _provider;
+
+    public LegacyService(IContextProvider provider)
+    {
+        if (provider == null)
+        {
+            throw new ArgumentNullException(nameof(provider));
+        }
+
+        _provider = provider;
+    }
+}
+</code></pre>
+
+<p>With <strong>C# 7</strong> we can simplify this with the <code>throw</code> expression.</p>
+
+<pre><code class="language-csharp">class ModernService : IService
+{
+    private readonly IContextProvider _provider;
+
+    public ModernService(IContextProvider provider)
+    {
+        _provider = provider ?? throw new ArgumentNullException(nameof(provider));
+    }
+}
+</code></pre>
+
+<p>If the given <code>provider</code> argument is <code>null</code> we&rsquo;ll coalesce over to the <code>throw</code> expression.</p>
+
+<h1 id="from-c-6-to-c-7-then-and-now:0efe24a7225e878a472913ac049c49a3">From C# 6 to C# 7, then and now!</h1>
+
+<p>I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
+made sense to share it here - Enjoy!!</p>
+
+<p><style>
+    .iframe_container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
+        padding-top: 25px;
+        height: 0;
+    }
+    .iframe_container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/kFpXRooGo0c" frameborder="0" allowfullscreen></iframe>
+</div></p>
+
+<p><strong>Further Reading</strong></p>
+
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" target="_blank">What&rsquo;s new in C# 7</a></li>
+</ul>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-list-ol">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/c'>C#</a></li>
+    
+        <li><a href='/categories/.net'>.NET</a></li>
+    
+        <li><a href='/categories/visual-studio'>Visual Studio</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://davidpine.net/blog/overriding-default-di/"
+                class="button big previous">Overriding ASP.NET Core Framework-Provided Services</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/exploring-csharp-seven\/';
+    var disqus_title = 'Exploring C# 7';
+    var disqus_url = 'http:\/\/davidpine.net\/blog\/exploring-csharp-seven\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/logo-corrected.jpg" class="intro-circle" width="" alt="David Pine" />
+                
+            
+            
+                <header>
+                    <h2>David Pine</h2>
+                    <p>Technical Evangelist, with a goal of changing the world - one line of code at a time <i class='fa fa-code' aria-hidden='true'></i></p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/exploring-csharp-seven/">Exploring C# 7</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-03-26'>
+                                    March 26, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/overriding-default-di/">Overriding ASP.NET Core Framework-Provided Services</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-02-14'>
+                                    February 14, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net-core/">.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/c/">C#</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/angular2/">Angular2</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net/">.NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/typescript/">TypeScript</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/compression/">Compression</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+

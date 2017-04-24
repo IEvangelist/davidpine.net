@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://ievangelist.github.io/</loc>
+    <lastmod>2016-05-20T22:40:31-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ievangelist.github.io/blog/migrating-to-rc2/</loc>
+    <lastmod>2016-05-20T22:40:31-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ievangelist.github.io/about/</loc>
+    <lastmod>2016-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

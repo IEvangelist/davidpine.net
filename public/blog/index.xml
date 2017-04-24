@@ -1,0 +1,2646 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on IEvangelist</title>
+    <link>http://davidpine.net/blog/</link>
+    <description>Recent content in Blogs on IEvangelist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://davidpine.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Exploring C# 7</title>
+      <link>http://davidpine.net/blog/exploring-csharp-seven/</link>
+      <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/exploring-csharp-seven/</guid>
+      <description>
+
+&lt;h1 id=&#34;intro:0efe24a7225e878a472913ac049c49a3&#34;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;Since we have all been actively celebrating the 20&lt;sup&gt;th&lt;/sup&gt; anniversary of &lt;strong&gt;Visual Studio&lt;/strong&gt;, it felt appropriate to post about &lt;strong&gt;C# 7&lt;/strong&gt;!
+In this post we will explore the features that make &lt;strong&gt;C# 7&lt;/strong&gt; so promising. I&amp;rsquo;ve put together a demonstration &lt;strong&gt;C# 7&lt;/strong&gt; project, that is available
+&lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.CSharp&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This post contains examples and details on five of the nine new &lt;strong&gt;C# 7&lt;/strong&gt; features.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pattern matching&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;out&lt;/code&gt; variables&lt;/li&gt;
+&lt;li&gt;Tuples&lt;/li&gt;
+&lt;li&gt;Local functions&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;throw&lt;/code&gt; expressions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are the remaining features, that I &lt;strong&gt;do not&lt;/strong&gt; cover in this post.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ref&lt;/code&gt; locals and returns&lt;/li&gt;
+&lt;li&gt;More expression-bodied members&lt;/li&gt;
+&lt;li&gt;Generalized &lt;code&gt;async&lt;/code&gt; return types&lt;/li&gt;
+&lt;li&gt;Numeric literal syntax improvements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pattern-matching:0efe24a7225e878a472913ac049c49a3&#34;&gt;Pattern Matching&lt;/h2&gt;
+
+&lt;p&gt;With &lt;strong&gt;C# 7&lt;/strong&gt; we welcomed the concept of &amp;ldquo;patterns&amp;rdquo;. This concept allows for the extraction of information when a variable is tested for a certain &amp;ldquo;shape&amp;rdquo; and matches a
+specified pattern. We&amp;rsquo;re able to leverage the &amp;ldquo;shape&amp;rdquo; from which we matched on as a declared variable in scope, consuming it as we deem necessary. This is referred to as
+&amp;ldquo;dynamic&amp;rdquo; (or &amp;ldquo;method&amp;rdquo;) dispatch.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p&gt; In computer science, dynamic dispatch is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time.
+It is commonly employed in, and considered a prime characteristic of, object-oriented programming (OOP) languages and systems.
+&lt;cite&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Dynamic_dispatch&#34; target=&#34;_blank&#34;&gt;Wiki - Dynamic Dispatch&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Dynamic dispatch is nothing new to &lt;strong&gt;C#&lt;/strong&gt;, and has been around forever. &lt;strong&gt;C# 7&lt;/strong&gt; exposes this functionality via constant and type patterns.&lt;/p&gt;
+
+&lt;h3 id=&#34;constant-patterns:0efe24a7225e878a472913ac049c49a3&#34;&gt;Constant Patterns&lt;/h3&gt;
+
+&lt;p&gt;Constant pattern &lt;code&gt;null&lt;/code&gt;, similar to &lt;code&gt;(obj == null)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p&gt; The &amp;ldquo;is expression&amp;rdquo; has been expanded&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void IsExpression(object obj)
+{
+    if (obj is null) // Constant pattern &amp;quot;obj is null&amp;quot;
+    {
+        return;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;type-patterns:0efe24a7225e878a472913ac049c49a3&#34;&gt;Type Patterns&lt;/h3&gt;
+
+&lt;p&gt;Look closely at this syntax. This is where we start mixing metaphors. Prior to &lt;strong&gt;C# 7&lt;/strong&gt; we could use the &amp;ldquo;is&amp;rdquo; expression to do simple type assertions
+&lt;code&gt;obj is [type]&lt;/code&gt;. Additionally, we all know how to declare a variable &lt;code&gt;int i&lt;/code&gt;. This new syntax merges these concepts together and is more compound and
+expressive.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void IsExpression(object obj)
+{
+    // (obj is int i)
+    // &amp;quot;obj is int&amp;quot;     // type assertion &amp;quot;typically evaluates type compatibility at run time&amp;quot;
+    //        &amp;quot;int i&amp;quot;   // declaration
+
+    if (obj is int i) // Type pattern &amp;quot;obj is int i&amp;quot;
+    {
+        // We can then use the &amp;quot;i&amp;quot; (integer) variable 
+    }
+
+    // Note, the variable &amp;quot;i&amp;quot; is also available in this scope.
+    // This is in fact by design, more on that out the &amp;quot;out variable&amp;quot; section 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p&gt; The &amp;ldquo;switch statement&amp;rdquo; has been generalized&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;code&gt;when&lt;/code&gt; keyword has also been extended, now it not only applies to the &lt;code&gt;catch&lt;/code&gt; statement but also the &lt;code&gt;case&lt;/code&gt; labels within a &lt;code&gt;switch&lt;/code&gt; statement.
+Consider the following classes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;class Shape
+{
+    protected internal double Height { get; }
+
+    protected internal double Length { get; }
+
+    protected Shape(double height, double length)
+    {
+        Height = height;
+        Length = length;
+    }
+}
+
+class Circle : Shape
+{
+    internal double Radius =&amp;gt; Height / 2;
+
+    internal double Diameter =&amp;gt; Radius * 2;
+
+    internal double Circumference =&amp;gt; 2 * Math.PI * Radius;
+
+    internal Circle(double height, double length) 
+        : base(height, length) { }
+}
+
+class Rectangle : Shape
+{
+    internal bool IsSquare =&amp;gt; Height == Length;
+
+    internal Rectangle(double height, double length) 
+        : base(height, length) { }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now imagine that we have a collection of these &lt;code&gt;Shape&lt;/code&gt; objects, and we want to print out their various details - we could use &amp;ldquo;pattern matching&amp;rdquo; as such:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;static void OutputShapes(IEnumerable&amp;lt;Shape&amp;gt; shapes)
+{
+    foreach (var shape in shapes)
+    {
+        // Previously, this was not permitted. Case labels had to be concrete
+        // such as enums, numerics, bools, strings, etc.
+        switch (shape)
+        {
+            case Circle c:
+                WriteLine($&amp;quot;circle with circumference {c.Circumference}&amp;quot;);
+                break;
+            case Rectangle s when (s.IsSquare):
+                WriteLine($&amp;quot;{s.Length} x {s.Height} square&amp;quot;);
+                break;
+            case Rectangle r:
+                WriteLine($&amp;quot;{r.Length} x {r.Height} rectangle&amp;quot;);
+                break;
+            default:
+                WriteLine(&amp;quot;This is not a shape that we&#39;re familiar with...&amp;quot;);
+                break;
+            case null:
+                throw new ArgumentNullException(nameof(shape));
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we are able to more easily reason about the specific &lt;code&gt;shape&lt;/code&gt; in context. For example, with each iteration of our collection we &lt;code&gt;switch&lt;/code&gt;
+on the &lt;code&gt;shape&lt;/code&gt;. If the &lt;code&gt;shape&lt;/code&gt; is an instance of the &lt;code&gt;Circle&lt;/code&gt; subclass, we&amp;rsquo;ll execute the &lt;code&gt;case&lt;/code&gt; label &amp;ldquo;Circle&amp;rdquo; and we get the instance declared as
+its type in the variable &lt;code&gt;c&lt;/code&gt;. Likewise, if the &lt;code&gt;shape&lt;/code&gt; is a &lt;code&gt;Rectangle&lt;/code&gt; and that rectangle &lt;code&gt;s&lt;/code&gt; just so happens to also be a square &lt;code&gt;when (s.IsSquare)&lt;/code&gt;
+evaluates to &lt;code&gt;true&lt;/code&gt; - we will then execute the square &lt;code&gt;case&lt;/code&gt; label. If the &lt;code&gt;shape&lt;/code&gt; is an instance of a &lt;code&gt;Rectangle&lt;/code&gt; but not a square, we execute the
+&amp;ldquo;Rectangle&amp;rdquo; &lt;code&gt;case&lt;/code&gt; label. Notice we still have &lt;code&gt;default&lt;/code&gt; fall-thru. Finally, we can also have a &amp;ldquo;null&amp;rdquo; &lt;code&gt;case&lt;/code&gt; label.&lt;/p&gt;
+
+&lt;h2 id=&#34;out-variables:0efe24a7225e878a472913ac049c49a3&#34;&gt;&lt;code&gt;out&lt;/code&gt; variables&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;.NET&lt;/code&gt; developers are more than familiar with the &lt;code&gt;Try*&lt;/code&gt; pattern, but as a refresher this is what it looks like. Imagine we are trying to parse
+a &lt;code&gt;System.String&lt;/code&gt; input value as a &lt;code&gt;System.Int32&lt;/code&gt;. Imagine that the consumer doesn&amp;rsquo;t really care if it is parsed, they&amp;rsquo;re fine with a &lt;code&gt;default(int)&lt;/code&gt;
+if it fails.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public int ToInt32(string input)
+{
+    int result;
+    if (int.TryParse(input, out result))
+    {
+        return result;
+    }
+
+    return default(int);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s quickly recap this. First, we declare a variable namely &lt;code&gt;result&lt;/code&gt;. We then invoke the &lt;code&gt;int.TryParse&lt;/code&gt; which returns a &lt;code&gt;bool&lt;/code&gt; whether or not the
+parse was successful. If &lt;code&gt;true&lt;/code&gt; then the declare &lt;code&gt;result&lt;/code&gt; variable is not equal to the parsed &lt;code&gt;int&lt;/code&gt; value. If the &lt;code&gt;input&lt;/code&gt; was &lt;code&gt;&amp;quot;12&amp;quot;&lt;/code&gt;, then &lt;code&gt;result&lt;/code&gt; would be &lt;code&gt;12&lt;/code&gt;. If the &lt;code&gt;input&lt;/code&gt;
+was &lt;code&gt;&amp;quot;Pickles&amp;quot;&lt;/code&gt;, then the return from the invocation to the &lt;code&gt;ToInt32&lt;/code&gt; would be &lt;code&gt;0&lt;/code&gt; as &lt;code&gt;int.TryParse&lt;/code&gt; would return &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now with &lt;strong&gt;C# 7&lt;/strong&gt; we can declare our &lt;code&gt;out&lt;/code&gt; variable inline as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public int ToInt32(string input)
+{
+    // Note: the declaration is inline with the out keyword
+    if (int.TryParse(input, out int result))
+    {
+        return result;
+    }
+
+    return default(int);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The scope of the &lt;code&gt;result&lt;/code&gt; variable is identical to the previous example, as it actually &amp;ldquo;leaks&amp;rdquo; out to the &lt;code&gt;if&lt;/code&gt; statement. We can re-write this even
+more expressively:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public int ToInt32(string input) =&amp;gt; int.TryParse(input, out var result) ? result : result;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A few things you might notice. First, this is now a single line as we can express this with the lambda operator. We leverage the ternary operator as
+well. Additionally, we can use the &lt;code&gt;var&lt;/code&gt; keyword for our declaration. And since the &lt;code&gt;result&lt;/code&gt; variable is in scope we can use it as both return cases.
+If unable to be parsed, it is in fact a &lt;code&gt;default(int)&lt;/code&gt; anyways.&lt;/p&gt;
+
+&lt;h2 id=&#34;tuples:0efe24a7225e878a472913ac049c49a3&#34;&gt;Tuples&lt;/h2&gt;
+
+&lt;p&gt;Most developers are familiar with &lt;code&gt;System.Tuple&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt;. This &lt;code&gt;class&lt;/code&gt; has served us well all the while it has been around.
+One of the advantages is that it exposes &lt;code&gt;readonly&lt;/code&gt; fields - from the values that it is instantiated with. This
+was also great for equality comparisons and even using the tuple as a dictionary key.&lt;/p&gt;
+
+&lt;p&gt;In &lt;strong&gt;C# 7&lt;/strong&gt; we have a new syntax for expressing tuples. Enter the &lt;code&gt;ValueTuple&lt;/code&gt;, and as the name implies - this is a &lt;code&gt;struct&lt;/code&gt; instead of a &lt;code&gt;class&lt;/code&gt;. There
+are obvious performance gains from using a light-weight value-type over the allocation of a &lt;code&gt;class&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void LegacyTuple()
+{
+    var letters = new Tuple&amp;lt;char, char&amp;gt;(&#39;a&#39;, &#39;b&#39;);
+    
+    // Values were accessible via these Item* fields.
+    var a = letters.Item1;
+    var b = letters.Item2;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This wasn&amp;rsquo;t overly exciting from an API perspective, as the field names do not really imply anything about their intention.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void ValueTuple()
+{
+    var letters = (&#39;a&#39;, &#39;b&#39;);
+    var a = letters.Item1;
+    var b = letters.Item2;
+
+    // Note: ToTuple extension method
+    var systemTuple = letters.ToTuple();
+    var c = systemTuple.Item1;
+    var d = systemTuple.Item2;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You might notice that the syntactic sugar is pouring over this new feature. This is referred to as a &amp;ldquo;tuple literal&amp;rdquo;. We dropped the entire &lt;code&gt;new&lt;/code&gt; keyword
+usage, as well as specifying the types. They are all inferred and in fact known, IntelliSense proves this immediately. But we still have the issue of
+these tuples not being very API friendly. Let&amp;rsquo;s explore how we can give them custom names.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void MoreValueTuples()
+{
+    var lessonDetails = 
+        (Subject: &amp;quot;C# Language Semantics&amp;quot;, Category: Categories.Programming, Level: 300);
+
+    // Note: IntelliSense now hides Item1, Item2 and Item3
+    // Instead we are provided with the following:
+
+    var subject = lessonDetails.Subject;    // string
+    var category = lessonDetails.Category;  // Categories [enum]
+    var level = lessonDetails.Level;        // int
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;deconstruction:0efe24a7225e878a472913ac049c49a3&#34;&gt;Deconstruction&lt;/h3&gt;
+
+&lt;p&gt;Now that we see how we can instantiate a &lt;code&gt;ValueTuple&lt;/code&gt;, let&amp;rsquo;s take a look at how we can declare one for usage.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void DeconstructionExamples()
+{
+    var lessonDetails = 
+        (Subject: &amp;quot;C# Language Semantics&amp;quot;, Category: Categories.Programming, Level: 300);
+    
+    // We can deconstruct in three various ways
+    // First, the fully qualified type
+    (string subject, Categories category, int level) = lessonDetails;
+    
+    // Next using the var keyword per named declaration
+    (var subject, var category, var level) = lessonDetails;
+
+    // Finally, omitting any type declaration and using var wholeheartedly
+    var (subject, category, level) = lessonDetails;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are often questions about how deconstruction is implemented, and whether or not it is ordinal based. For the &lt;code&gt;ValueTuple&lt;/code&gt; it is in fact
+ordinal based. However, note that deconstruction is not actually limited to tuples. With &lt;strong&gt;C# 7&lt;/strong&gt; any &lt;code&gt;object&lt;/code&gt; that defines a &lt;code&gt;public void Deconstruct&lt;/code&gt;
+method can be deconstructed. Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;class Person
+{
+    private readonly (string First, string Middle, string Last) _name;
+
+    private readonly DateTime DateOfBirth _dateOfBirth;
+
+    public Person((string f, string m, string l) name, DateTime dob)
+    {
+        _name = name;
+        _dateOfBirth = dob;
+    }
+
+    public void Deconstruct(out double age, 
+                            out string firstName,
+                            out string middleName, 
+                            out string lastName)
+    {
+        age = (DateTime.Now - _dateOfBirth).TotalYears;
+        firstName = _name.First;
+        middleName = _name.Middle;
+        lastName = _name.Last;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that the &lt;code&gt;Person&lt;/code&gt; is defined with this &lt;code&gt;Deconstruct&lt;/code&gt; method, we can deconstruct it following the same ordinal based semantics.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void DeconstructNonTuple()
+{
+    var person = new Person((&amp;quot;David&amp;quot;, &amp;quot;Michael&amp;quot;, &amp;quot;Pine&amp;quot;), new DateTime(1984, 7, 7));
+
+    (int age, string first, string middle, string last) = person;
+
+    // Note: to partially deconstruct you can ignore a specific ordinal by using the _
+    // This does not actually naming the ordinal variable, but truly ignoring it.
+
+    var (_, _, _, _) = person;          // Ignore all, not very useful
+    var (_, firstName, _, _) = person;  // Cherry-pick first name
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;comparing-anonymous-object-vs-valuetuple:0efe24a7225e878a472913ac049c49a3&#34;&gt;Comparing Anonymous &lt;code&gt;object&lt;/code&gt; vs. &lt;code&gt;ValueTuple&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
+a &lt;code&gt;ValueTuple&lt;/code&gt; is a &lt;code&gt;struct&lt;/code&gt; - value type. Also, you can only return an anonymous object from a method as an &lt;code&gt;object&lt;/code&gt; which isn&amp;rsquo;t very API friendly.
+Within a fluent &lt;code&gt;LINQ&lt;/code&gt; chained method anonymous objects are great and will still be normal for projection.&lt;/p&gt;
+
+&lt;h2 id=&#34;local-functions:0efe24a7225e878a472913ac049c49a3&#34;&gt;Local Functions&lt;/h2&gt;
+
+&lt;p&gt;At first glance, local functions seem a bit odd. I&amp;rsquo;ve heard people say, &amp;ldquo;this method is starting to look like a class&amp;rdquo;. At first,
+I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick
+comparison of the two, note the benefits of local functions as they compare to lambdas.&lt;/p&gt;
+
+&lt;style&gt;
+    .red { color: red; }
+    .green { color: green; }
+&lt;/style&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;right&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Lambda(s)&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Local Function(s)&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Details&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Generics&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Local functions allow for the use of generics&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Iterators&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;The &lt;code&gt;yield&lt;/code&gt; keyword is valid within local functions&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Recursion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Local functions support recursion&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Allocatey&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Delegates require an &lt;code&gt;object&lt;/code&gt; allocation&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Potential Variable Lifting&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Implicitly captured closure is non-existent&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;It is vital to understand that local functions are &lt;strong&gt;not&lt;/strong&gt; a replacement for &lt;code&gt;Action&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt; or &lt;code&gt;Func&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt;. These delegate declarations are still
+needed as parameters to enable lambda expression arguments. If you see the &lt;strong&gt;#notasugly&lt;/strong&gt; hashtag, this was coined by Mads Torgersen.&lt;/p&gt;
+
+&lt;h3 id=&#34;more-efficient:0efe24a7225e878a472913ac049c49a3&#34;&gt;More efficient&lt;/h3&gt;
+
+&lt;p&gt;When using local functions, there is no &lt;code&gt;object&lt;/code&gt; created - unlike delegates that require an object for it to be used. Likewise, local functions
+help to alleviate another issue with lambdas in that they do not need to implicitly capture a variable longer than it is potentially needed.
+In &lt;strong&gt;C#&lt;/strong&gt; lambdas capture values by reference, meaning that garbage collection may not be able to correctly clean up code that is &amp;ldquo;allocatey&amp;rdquo;.&lt;/p&gt;
+
+&lt;h4 id=&#34;declaration:0efe24a7225e878a472913ac049c49a3&#34;&gt;Declaration&lt;/h4&gt;
+
+&lt;p&gt;With local functions, the declaration of the local function can actually occur after the &lt;code&gt;return&lt;/code&gt; statement - as long as it is within the method body
+in which it is consumed. If you&amp;rsquo;re familiar with some of the implementations of the &lt;code&gt;LINQ&lt;/code&gt; extension methods on &lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;, you would know a lot
+of the methods are defined with argument validation followed by the instantiation of &amp;ldquo;Iterator&amp;rdquo; classes, where these classes do the actual work.&lt;/p&gt;
+
+&lt;p&gt;Because of deferred execution, iterators do not actually execute validation logic until they are iterated - for example invoking &lt;code&gt;.ToList()&lt;/code&gt;, &lt;code&gt;.ToArray()&lt;/code&gt;,
+or simply using them in a &lt;code&gt;foreach&lt;/code&gt; statement. Ideally, we would like our iterators to &amp;ldquo;fail-fast&amp;rdquo; in the event of being given invalid arguments. Let&amp;rsquo;s
+imagine that the &lt;code&gt;.Select&lt;/code&gt; extension method was implemented as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static IEnumerable&amp;lt;TResult&amp;gt; Select&amp;lt;T, TResult&amp;gt;(this IEnumerable&amp;lt;T&amp;gt; source, 
+                                                           Func&amp;lt;T, TResult&amp;gt; selector)
+{
+    if (source == null) throw new ArgumentNullException(nameof(source));
+    if (selector == null) throw new ArgumentNullException(nameof(selector));
+
+    foreach (var item in source)
+    {
+        yield return selector(item);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since this method is written as an iterator, the validation is skipped until it&amp;rsquo;s iterated. With &lt;strong&gt;C# 7&lt;/strong&gt; we can use local function to get both
+&amp;ldquo;fail-fast&amp;rdquo; validation and the iterator together.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static IEnumerable&amp;lt;TResult&amp;gt; Select&amp;lt;T, TResult&amp;gt;(this IEnumerable&amp;lt;T&amp;gt; source, 
+                                                           Func&amp;lt;T, TResult&amp;gt; selector)
+{
+    if (source == null) throw new ArgumentNullException(nameof(source));
+    if (selector == null) throw new ArgumentNullException(nameof(selector));
+
+    return iterator();
+
+    IEnumerable&amp;lt;TResult&amp;gt; iterator()
+    {
+        foreach (var item in source)
+        {
+            yield return selector(item);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;throw-expressions:0efe24a7225e878a472913ac049c49a3&#34;&gt;&lt;code&gt;throw&lt;/code&gt; expressions&lt;/h1&gt;
+
+&lt;p&gt;Leveraging some pre-existing &lt;strong&gt;C#&lt;/strong&gt; functionality - &lt;code&gt;null&lt;/code&gt; coalescing, we can now &lt;code&gt;throw&lt;/code&gt; when a value is evaluated as &lt;code&gt;null&lt;/code&gt;. A common validation
+mechanism is to &lt;code&gt;throw&lt;/code&gt; if an argument is &lt;code&gt;null&lt;/code&gt;. Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;class LegacyService : IService
+{
+    private readonly IContextProvider _provider;
+
+    public LegacyService(IContextProvider provider)
+    {
+        if (provider == null)
+        {
+            throw new ArgumentNullException(nameof(provider));
+        }
+
+        _provider = provider;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With &lt;strong&gt;C# 7&lt;/strong&gt; we can simplify this with the &lt;code&gt;throw&lt;/code&gt; expression.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;class ModernService : IService
+{
+    private readonly IContextProvider _provider;
+
+    public ModernService(IContextProvider provider)
+    {
+        _provider = provider ?? throw new ArgumentNullException(nameof(provider));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the given &lt;code&gt;provider&lt;/code&gt; argument is &lt;code&gt;null&lt;/code&gt; we&amp;rsquo;ll coalesce over to the &lt;code&gt;throw&lt;/code&gt; expression.&lt;/p&gt;
+
+&lt;h1 id=&#34;from-c-6-to-c-7-then-and-now:0efe24a7225e878a472913ac049c49a3&#34;&gt;From C# 6 to C# 7, then and now!&lt;/h1&gt;
+
+&lt;p&gt;I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
+made sense to share it here - Enjoy!!&lt;/p&gt;
+
+&lt;p&gt;&lt;style&gt;
+    .iframe_container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
+        padding-top: 25px;
+        height: 0;
+    }
+    .iframe_container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/kFpXRooGo0c&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Further Reading&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7&#34; target=&#34;_blank&#34;&gt;What&amp;rsquo;s new in C# 7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Overriding ASP.NET Core Framework-Provided Services</title>
+      <link>http://davidpine.net/blog/overriding-default-di/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/overriding-default-di/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;In &lt;strong&gt;.NET&lt;/strong&gt; it&amp;rsquo;s really easy to create your own interfaces and implementations. Likewise, it&amp;rsquo;s seemingly effortless to register them for dependency injection. But it is not always
+obvious how to override existing implementations.  Let&amp;rsquo;s discuss various aspects of &amp;ldquo;dependency injection&amp;rdquo; and how you can override the &amp;ldquo;framework-provided services&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;As an example, let&amp;rsquo;s take a recent story on our product backlog for building a security audit of login attempts.  The story involved the capture of attempted usernames along
+with their corresponding IP addresses.  This would allow system administrators to monitor for potential attackers. This would require our &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application to have
+custom logging implemented.&lt;/p&gt;
+
+&lt;h2 id=&#34;logging:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Logging&lt;/h2&gt;
+
+&lt;p&gt;Luckily &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ASP.NET Core Logging&lt;/code&gt;&lt;/a&gt; is simple to use and is a first-class
+citizen within &lt;code&gt;ASP.NET Core&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;strong&gt;Logging&lt;/strong&gt; repository there is an extension method namely
+&lt;a href=&#34;https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging/LoggingServiceCollectionExtensions.cs&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;AddLogging&lt;/code&gt;&lt;/a&gt;, here is what it
+looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static IServiceCollection AddLogging(this IServiceCollection services)
+{
+    if (services == null)
+    {
+        throw new ArgumentNullException(nameof(services));
+    }
+
+    services.TryAdd(ServiceDescriptor.Singleton&amp;lt;ILoggerFactory, LoggerFactory&amp;gt;());
+    services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger&amp;lt;&amp;gt;), typeof(Logger&amp;lt;&amp;gt;)));
+
+    return services;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, it is rather simple. It adds two &lt;code&gt;ServiceDescriptor&lt;/code&gt; instances to the &lt;code&gt;IServiceCollection&lt;/code&gt;, effectively registering the given service type to the
+corresponding implementation type.&lt;/p&gt;
+
+&lt;h4 id=&#34;following-the-rabbit-down-the-hole:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Following the rabbit down the hole&lt;/h4&gt;
+
+&lt;p&gt;When you create a new &lt;code&gt;ASP.NET Core&lt;/code&gt; project from &lt;strong&gt;Visual Studio&lt;/strong&gt;, all the templates follow the same pattern. They have the &lt;code&gt;Program.cs&lt;/code&gt; file with a &lt;code&gt;Main&lt;/code&gt; method that looks
+very similar to this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static void Main(string[] args)
+{
+    var host = new WebHostBuilder()
+        .UseKestrel()
+        .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseIISIntegration()
+        .UseStartup&amp;lt;Startup&amp;gt;()
+        .UseApplicationInsights()
+        .Build();
+
+    host.Run();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;templates-program-cs:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Templates &lt;code&gt;Program.cs&lt;/code&gt;&lt;/h6&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/EmptyWeb/Program.cs&#34; target=&#34;_blank&#34;&gt;Empty &amp;nbsp; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/StarterWeb/Program.cs&#34; target=&#34;_blank&#34;&gt;Starter Web &amp;nbsp; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/WebAPI/Program.cs&#34; target=&#34;_blank&#34;&gt;Web API &amp;nbsp; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;One thing that is concerning about a template like this is that the &lt;code&gt;IWebHost&lt;/code&gt; is an &lt;code&gt;IDisposable&lt;/code&gt;, so why then is this statement not wrapped in a &lt;code&gt;using&lt;/code&gt;
+&lt;a href=&#34;https://github.com/IEvangelist/Templates/commit/37e78bd0dc33069901cc51924fe8a2740d1e141c&#34; target=&#34;_blank&#34;&gt;you ask&lt;/a&gt;? The answer is that the &lt;code&gt;Run&lt;/code&gt; extension method
+internally wraps itself in a &lt;code&gt;using&lt;/code&gt;. If you were wondering where the &lt;code&gt;AddLogging&lt;/code&gt; occurs, it is a result of invoking the &lt;code&gt;Build&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;[ Microsoft.AspNetCore.Hosting.WebHostBuilder ] 
+    public IWebHost Build() ...
+        private IServiceCollection BuildCommonServices() ...
+            creates services then invokes services.AddLogging()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;a-few-words-on-the-service-descriptor:d7c1ff5c185090641e598e96532d52e8&#34;&gt;A few words on the Service Descriptor&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class is an object that &lt;em&gt;describes&lt;/em&gt; a &lt;em&gt;service&lt;/em&gt;, and this is used by dependency injection. In other words, instances of the &lt;code&gt;ServiceDescriptor&lt;/code&gt; are
+descriptions of services. The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class exposes several static methods that allow its instantiation.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;ILoggerFactory&lt;/code&gt; interface is registered as a
+&lt;a href=&#34;https://github.com/aspnet/DependencyInjection/blob/dev/src/Microsoft.Extensions.DependencyInjection.Abstractions/ServiceLifetime.cs#L14&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ServiceLifetime.Singleton&lt;/code&gt;&lt;/a&gt;
+and its implementation is mapped to the &lt;code&gt;LoggerFactory&lt;/code&gt;. Likewise, the generic type &lt;code&gt;typeof(ILogger&amp;lt;&amp;gt;)&lt;/code&gt; is mapped to &lt;code&gt;typeof(Logger&amp;lt;&amp;gt;)&lt;/code&gt;. This is just one of the several key
+&amp;ldquo;Framework-Provided Services&amp;rdquo; that are registered.&lt;/p&gt;
+
+&lt;h2 id=&#34;putting-it-together:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Putting it together&lt;/h2&gt;
+
+&lt;p&gt;Now we know that the framework is providing all implementations of &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt;, and resolving them as their &lt;code&gt;Logger&amp;lt;T&amp;gt;&lt;/code&gt;. We also know that we could write our own implementation of
+the &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt; interface. Being that this is open-source
+&lt;a href=&#34;https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging.Abstractions/LoggerOfT.cs&#34; target=&#34;_blank&#34;&gt;we can look to their implementation&lt;/a&gt; for inspiration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public class RequestDetailLogger&amp;lt;T&amp;gt; : ILogger&amp;lt;T&amp;gt;
+{
+    private readonly ILogger _logger;
+
+    public RequestDetailLogger(ILoggerFactory factory,
+                               IRequestCategoryProvider requestCategoryProvider)
+    {
+        if (factory == null)
+        {
+            throw new ArgumentNullException(nameof(factory));
+        }
+        if (requestCategoryProvider == null)
+        {
+            throw new ArgumentNullException(nameof(requestCategoryProvider));
+        }
+
+        var category = requestDetailCategoryProvider.CreateCategory&amp;lt;T&amp;gt;();
+        _logger = factory.CreateLogger(category);
+    }
+
+    IDisposable ILogger.BeginScope&amp;lt;TState&amp;gt;(TState state)
+        =&amp;gt; _logger.BeginScope(state);
+
+    bool ILogger.IsEnabled(LogLevel logLevel)
+        =&amp;gt; _logger.IsEnabled(logLevel);
+
+    void ILogger.Log&amp;lt;TState&amp;gt;(LogLevel logLevel, 
+                             EventId eventId, 
+                             TState state, 
+                             Exception exception, 
+                             Func&amp;lt;TState, Exception, string&amp;gt; formatter)
+        =&amp;gt; _logger.Log(logLevel, eventId, state, exception, formatter);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;IRequestCategoryProvider&lt;/code&gt; is defined and implemented as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using static Microsoft.Extensions.Logging.Abstractions.Internal.TypeNameHelper;
+
+public interface IRequestCategoryProvider
+{
+    string CreateCategory&amp;lt;T&amp;gt;();
+}
+
+public class RequestCategoryProvider : IRequestCategoryProvider
+{
+    private readonly IPrincipal _principal;
+    private readonly IPAddress _ipAddress;
+
+    public RequestCategoryProvider(IPrincipal principal,
+                                   IPAddress ipAddress)
+    {
+        _principal = principal;
+        _ipAddress = ipAddress;
+    }
+
+    public string CreateCategory&amp;lt;T&amp;gt;()
+    {
+        var typeDisplayName = GetTypeDisplayName(typeof(T));
+
+        if (_principal == null || _ipAddress == null)
+        {
+            return typeDisplayName;
+        }
+
+        var username = _principal?.Identity?.Name;
+        return $&amp;quot;User: {username}, IP: {_ipAddress} {typeDisplayName}&amp;quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you&amp;rsquo;re curious how to get the &lt;code&gt;IPrincipal&lt;/code&gt; and &lt;code&gt;IPAddress&lt;/code&gt; into this implementation (with DI) -
+&lt;a href=&#34;http://davidpine.net/blog/principal-architecture-changes/&#34; target=&#34;_blank&#34;&gt;I discussed it here&lt;/a&gt; briefly. It is pretty straight-forward. In the &lt;code&gt;Startup.ConfigureServices&lt;/code&gt;
+method do the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void ConfigureServices(IServiceCollection services)
+{
+    // ... omitted for brevity
+
+    services.AddTransient&amp;lt;IRequestCategoryProvider, RequestCategoryProvider&amp;gt;();
+    services.AddTransient&amp;lt;IHttpContextAccessor, HttpContextAccessor&amp;gt;();
+    services.AddTransient&amp;lt;IPrincipal&amp;gt;(
+        provider =&amp;gt; provider.GetService&amp;lt;IHttpContextAccessor&amp;gt;()
+                           ?.HttpContext
+                           ?.User);
+    services.AddTransient&amp;lt;IPAddress&amp;gt;(
+        provider =&amp;gt; provider.GetService&amp;lt;IHttpContextAccessor&amp;gt;()
+                           ?.HttpContext
+                           ?.Connection
+                           ?.RemoteIpAddress);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, we can
+&lt;a href=&#34;https://github.com/aspnet/DependencyInjection/blob/dev/src/Microsoft.Extensions.DependencyInjection.Abstractions/Extensions/ServiceCollectionDescriptorExtensions.cs&#34;
+   target=&#34;_blank&#34;&gt;&lt;code&gt;Replace&lt;/code&gt;&lt;/a&gt; the implementations for the &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt; by using the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void ConfigureServices(IServiceCollection services)
+{
+    // ... omitted for brevity
+    services.Replace(ServiceDescriptor.Transient(typeof(ILogger&amp;lt;&amp;gt;), 
+                                                 typeof(RequestDetailLogger&amp;lt;&amp;gt;)));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that we replace the framework-provided service as a &lt;code&gt;ServiceLifetime.Transient&lt;/code&gt;. Opposed to the default &lt;code&gt;ServiceLifetime.Singleton&lt;/code&gt;. This is more or less an extra
+precaution. We know that with each request we get the &lt;code&gt;HttpContext&lt;/code&gt; from the &lt;code&gt;IHttpContextAccessor&lt;/code&gt;, and from this we have the &lt;code&gt;User&lt;/code&gt;. This is what is passed to each
+&lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;This approach is valid for overriding any of the various framework-provided service implementations. It is simply a matter of knowing the correct &lt;code&gt;ServiceLifetime&lt;/code&gt; for your
+specific needs. Likewise, it is a good idea to leverage the open-source libraries of the framework for inspiration. With this you can take finite control of your web-stack.&lt;/p&gt;
+
+&lt;h1 id=&#34;further-reading:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Further Reading&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;fa fa-file-text-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;code&gt;ASP.NET Core - Dependency Injection&lt;/code&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What happened to my Thread.CurrentPrincipal</title>
+      <link>http://davidpine.net/blog/principal-architecture-changes/</link>
+      <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/principal-architecture-changes/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:7e1a3c88d019532475826e491625ef2c&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;Like the title claims, if you&amp;rsquo;re using &lt;code&gt;ASP.NET Core&lt;/code&gt; and expecting the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; or &lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; to be populated you&amp;rsquo;d be wrong. This is not the
+&lt;code&gt;IPrincipal&lt;/code&gt; you&amp;rsquo;re looking for. In this post we&amp;rsquo;ll discuss what happened and what you need to do now. Additionally we&amp;rsquo;ll cover all the peripheral benefits as a result of this
+change.&lt;/p&gt;
+
+&lt;h2 id=&#34;history:7e1a3c88d019532475826e491625ef2c&#34;&gt;History&lt;/h2&gt;
+
+&lt;p&gt;If you have ever done any &lt;strong&gt;.NET Framework&lt;/strong&gt; development, you&amp;rsquo;ve probably seen the &lt;code&gt;Thread&lt;/code&gt; class. You&amp;rsquo;re probably familiar with the
+&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt;&lt;/a&gt; member. This member of the &lt;code&gt;Thread&lt;/code&gt; class
+is defined as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static IPrincipal CurrentPrincipal
+{
+    [System.Security.SecuritySafeCritical]  // auto-generated
+    get
+    {
+        lock (CurrentThread)
+        {
+            var principal = (IPrincipal)CallContext.Principal;
+            if (principal == null)
+            {
+                principal = GetDomain().GetThreadPrincipal();
+                CallContext.Principal = principal;
+            }
+            return principal;
+        }
+    }
+
+    [System.Security.SecuritySafeCritical]  // auto-generated
+    [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlPrincipal)]
+    set
+    {
+        CallContext.Principal = value;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Gets or sets the thread&amp;rsquo;s current principal (for role-based security).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Does anyone see the issue with this? Can you say, &amp;ldquo;publically static mutable state, oh my&amp;rdquo;?! You should be alarmed. This property was never a good idea and today it
+simply doesn&amp;rsquo;t belong. &lt;strong&gt;ASP.NET Core&lt;/strong&gt; is not responsible for assigning this. You might not agree with that decision, but it is final.&lt;/p&gt;
+
+&lt;p&gt;Before diving into this, pop over to &lt;a href=&#34;https://github.com/aspnet/Security/issues/322&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+Microsoft.AspNetCore.Security &amp;ndash; Issue 332&lt;/a&gt; for more of the back story.&lt;/p&gt;
+
+&lt;h2 id=&#34;thread-currentprincipal-today-in-asp-net-core:7e1a3c88d019532475826e491625ef2c&#34;&gt;Thread.CurrentPrincipal Today in ASP.NET Core&lt;/h2&gt;
+
+&lt;p&gt;As part of the &lt;code&gt;ASP.NET Core&lt;/code&gt; framework, the following middleware packages are provided:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/aspnet/Identity&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;code&gt;Microsoft.AspNetCore.Identity&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/aspnet/Security&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;code&gt;Microsoft.AspNetCore.Security&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you opt-in to using this middleware and you provide a login page (or expose an external provider) you&amp;rsquo;d end up creating an instance of a &lt;code&gt;ClaimsPrincipal&lt;/code&gt; that represents
+an authenticated user. Subsequent requests to the web server would be handed the cookie that holds the user&amp;rsquo;s claims. However the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; would &lt;strong&gt;not&lt;/strong&gt;
+actually reflect the &lt;code&gt;ClaimsPrincipal&lt;/code&gt; object that was created as the result of the login. In fact,
+it would simply be an instance of the &lt;code&gt;GenericPrincipal&lt;/code&gt; implementation. Likewise, walking up to the &lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; property and asking it for the current claims
+principal in context wouldn&amp;rsquo;t give you what you might expect either. Additionally, the
+&lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; internally relies on the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; for its value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static ClaimsPrincipal Current
+{
+    get
+    {
+         return ClaimsPrincipal.s_principalSelector() ??
+                ClaimsPrincipal.SelectClaimsPrincipal();
+    }
+}
+
+private static ClaimsPrincipal SelectClaimsPrincipal()
+{
+    return Thread.CurrentPrincipal as ClaimsPrincipal ?? 
+           new ClaimsPrincipal(Thread.CurrentPrincipal);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You might be asking yourself, &amp;ldquo;how do I access this value then?&amp;rdquo;. If you&amp;rsquo;re in the context of a controller then you already have access to it via the
+&lt;code&gt;.User&lt;/code&gt; property. Otherwise, the answer is &amp;ldquo;dependency injection&amp;rdquo;. Wherever you&amp;rsquo;re in need of the identity for accessing claims, use &lt;code&gt;.cstor&lt;/code&gt; injection
+and give yourself the &lt;code&gt;IPrincipal&lt;/code&gt; you need. If you&amp;rsquo;re in the context of an action you might be tempted to use the &lt;code&gt;[FromServices]&lt;/code&gt; attribute to inject
+the &lt;code&gt;IPrincipal&lt;/code&gt; instance, but remember that this actually comes from the current user - which is
+already accessible via the controller&amp;rsquo;s &lt;code&gt;.User&lt;/code&gt; property.&lt;/p&gt;
+
+&lt;h2 id=&#34;dependency-injection:7e1a3c88d019532475826e491625ef2c&#34;&gt;Dependency Injection&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; made dependency injection (DI) a first class citizen, and it is so easy to use. The &lt;code&gt;Startup.cs&lt;/code&gt; by convention has a &lt;code&gt;ConfigureServices&lt;/code&gt; method where you&amp;rsquo;ll
+register the dependencies. In the case of &lt;code&gt;ASP.NET Core&lt;/code&gt; you&amp;rsquo;ll need to do the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;// This method gets called by the runtime. Use this method to add services to the container.
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton&amp;lt;IHttpContextAccessor, HttpContextAccessor&amp;gt;();
+    services.AddTransient&amp;lt;IPrincipal&amp;gt;(
+        provider =&amp;gt; provider.GetService&amp;lt;IHttpContextAccessor&amp;gt;().HttpContext.User);
+
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You might have noticed that we explicitly register the &lt;code&gt;IHttpContextAccessor&lt;/code&gt; and corresponding implementation. This is necessary as that service is not registered for
+us. With that in place we can now specify that any class asking for an &lt;code&gt;IPrincipal&lt;/code&gt; will be given the &lt;code&gt;IHttpContextAccessor.HttpContext.User&lt;/code&gt; as the implementation.
+This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the &lt;code&gt;ClaimsPrincipal&lt;/code&gt;
+implementation of the &lt;code&gt;IPrincipal&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;example:7e1a3c88d019532475826e491625ef2c&#34;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using System.Security.Claims;
+using System.Security.Principal;
+
+public class SampleService : ISampleService
+{
+    private readonly ClaimsPrincipal _principal;
+
+    public SampleService(IPrincipal principal)
+    {
+        _principal = principal as ClaimsPrincipal;
+    }
+
+    public Task ConsumeAsync()
+    {
+        var dobClaim = _principal?.FindFirst(ClaimTypes.DateOfBirth);
+        // Take some action ...
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From the example above we can see how simple it is to use dependency injection. Simply define the &lt;code&gt;IPrincipal&lt;/code&gt; as a &lt;code&gt;.cstor&lt;/code&gt; parameter, store it in a field and consume it as needed.&lt;/p&gt;
+
+&lt;h3 id=&#34;but-why:7e1a3c88d019532475826e491625ef2c&#34;&gt;But Why?&lt;/h3&gt;
+
+&lt;p&gt;There are a lot of people who feel as though DI is overrated and that it is much easier to ask the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; for its value. While that is easy, it is also
+risky&amp;hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between
+the &lt;code&gt;Thread&lt;/code&gt; and &lt;code&gt;ClaimsPrincipal&lt;/code&gt; classes. Scott Hanselman blogged about a
+&lt;a href=&#34;http://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx&#34; target=&#34;_blank&#34;&gt;similar issue&lt;/a&gt;
+nearly thirteen years ago!&lt;/p&gt;
+
+&lt;p&gt;One of the first benefits that comes to mind from this is the fact that with DI the code is unit-testable. It is extremely easy to mock out an &lt;code&gt;IPrincipal&lt;/code&gt; to use for unit
+testing. Additionally, this alleviates all of the concerns about synchronization and reliability. The &lt;code&gt;IPrincipal&lt;/code&gt; you&amp;rsquo;re given is the principal you&amp;rsquo;d expect and it is fully
+populated accordingly.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building a Magic Mirror</title>
+      <link>http://davidpine.net/blog/building-a-magic-mirror/</link>
+      <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/building-a-magic-mirror/</guid>
+      <description>
+
+&lt;h1 id=&#34;inspiration:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Inspiration&lt;/h1&gt;
+
+&lt;p&gt;I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators&amp;hellip;some might say,
+&amp;ldquo;I&amp;rsquo;m standing on the shoulders of giants&amp;rdquo;. They would probably we right, and I&amp;rsquo;m okay with that. Earlier this year, I stumbled upon a tweet about someone how created a
+magic mirror&amp;hellip;this is the root of my inspiration.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+    &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+        Yup, it is official &amp;ndash; I want a mirror like this one!
+        &lt;a href=&#34;https://t.co/MVcM1nca7A&#34;&gt;https://t.co/MVcM1nca7A&lt;/a&gt;
+    &lt;/p&gt;
+    &amp;mdash; David Pine (@davidpine7)
+    &lt;a href=&#34;https://twitter.com/davidpine7/status/695318303326265345&#34;&gt;
+        February 4, 2016
+    &lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Before continuing on, allow me to explain what a magic mirror is. A magic mirror is simply a two-way mirror with a monitor positioned behind it that projects through the
+mirror. The monitor displays the application. The application is running on a small computer, in most cases a &lt;strong&gt;Raspberry Pi&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.raspberrypi.org/&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2016/12/pi-logo.png&#34; alt=&#34;Raspberry Pi&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I noticed that a lot of the magic mirror&amp;rsquo;s had greeting messages such as &amp;ldquo;you look handsome&amp;rdquo; or &amp;ldquo;good morning sexy&amp;rdquo; and other curiously intuitive sayings.
+I thought &amp;ldquo;wow&amp;rdquo; this really is a smart mirror, much to my surprise these were all just static messages (or only dynamic when accounting for the time of day). I was thinking
+to myself, &amp;ldquo;I wonder if I could improve upon this&amp;rdquo;, and that was my motivation!&lt;/p&gt;
+
+&lt;h2 id=&#34;open-source:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Open Source&lt;/h2&gt;
+
+&lt;p&gt;If you want to skip out from reading this post, you can checkout my project up on &lt;strong&gt;GitHub&lt;/strong&gt; &amp;nbsp;
+&lt;a href=&#34;https://www.github.com/IEvangelist/Mirror&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &amp;nbsp; IEvangelist.Mirror&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;hardware:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Hardware&lt;/h1&gt;
+
+&lt;p&gt;I was excited when &lt;strong&gt;Microsoft&lt;/strong&gt; started selling the &lt;strong&gt;Raspberry Pi 3, Model B&lt;/strong&gt; - I ordered one immediately.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/pi3.gif&#34; alt=&#34;Raspberry Pi 3&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;specs:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Specs&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/pi-layout.png&#34; alt=&#34;Specs&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;miscellaneous:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Miscellaneous&lt;/h3&gt;
+
+&lt;p&gt;Below is a semi-comprehensive listing of all the materials and their corresponding cost that I used for building my magic mirror.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Rough Cost&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Hardware&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$60&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.microsoftstore.com/store/msusa/en_US/pdp/Raspberry-Pi-3-Bundle/productID.5068162700&#34; target=&#34;_blank&#34;&gt;Raspberry Pi 3 Bundle &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$130&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/gp/product/B00IZBIMLK/ref=oh_aui_search_detailpage?ie=UTF8&amp;psc=1&#34; target=&#34;_blank&#34;&gt;BenQ 27&amp;rdquo; HDMI LED Monitor &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$90&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.tapplastics.com/product/plastics/cut_to_size_plastic/two_way_mirrored_acrylic/558&#34; target=&#34;_blank&#34;&gt;Custom-sized Two-way Mirrored Acrylic &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$40&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Microsoft-LifeCam-Cinema-720p-Webcam/dp/B009CPC6QA&#34; target=&#34;_blank&#34;&gt;Microsoft LifeCam &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/gp/product/B00DEJXRAE/ref=oh_aui_search_detailpage?ie=UTF8&amp;psc=1&#34; target=&#34;_blank&#34;&gt;Dell USB Wired Soundbar &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/gp/product/B000234UFG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&amp;psc=1&#34; target=&#34;_blank&#34;&gt;Power Cord Splitter &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Full HDMI Cable, USB Extension Cables&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$50&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Carpentry Materials&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$50&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Glenlivet 12 Year Old Scotch Whisky (not technically hardware)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;~$480&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Considering the total investment is still under $500 bucks, that&amp;rsquo;s not too bad!&lt;/p&gt;
+
+&lt;h1 id=&#34;os-platform:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;OS &amp;ndash; Platform&lt;/h1&gt;
+
+&lt;p&gt;One of my favorite parts about developing the magic mirror was the fact that I could do so from the comfort of &lt;strong&gt;Visual Studio&lt;/strong&gt; using the worlds most powerful programming
+language today, &lt;strong&gt;C#&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.visualstudio.com/&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2016/12/vs.png&#34; alt=&#34;Visual Studio&#34; style=&#34;max-width: 175px;&#34; /&gt;
+&lt;/a&gt;
+&amp;nbsp; &amp;nbsp;
+&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/kx37x362.aspx&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2016/12/csharp.png&#34; alt=&#34;C#&#34; style=&#34;max-width: 175px;&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name &amp;ndash; Link&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://developer.microsoft.com/en-us/windows/iot/explore/iotcore&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Windows 10 IoT Core, &amp;quot;Build 10.0.14393&amp;quot;&lt;/code&gt; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Platform&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Universal Windows Platform (UWP), &amp;quot;UAP 1.0&amp;quot;&lt;/code&gt; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;software:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Software&lt;/h1&gt;
+
+&lt;p&gt;When people throw around the acronym &lt;strong&gt;IoT&lt;/strong&gt; it can mean a lot of different things. For this specific application, it is essential. Using the built-in &lt;em&gt;WIFI&lt;/em&gt; on the &lt;strong&gt;Pi 3&lt;/strong&gt; we
+can leverage the power of the internet to gather and share information.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Software is simply the movement and manipulation of data. But without context, said data is meaningless.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The magic mirror application strives to provide data that is all of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Relevant&lt;/li&gt;
+&lt;li&gt;Practical&lt;/li&gt;
+&lt;li&gt;Convenient&lt;/li&gt;
+&lt;li&gt;Timely&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Below is the user-interface layout. Let&amp;rsquo;s have a look at the various components that our application is built on.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/layout.png&#34; alt=&#34;Layout&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;components:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Components&lt;/h2&gt;
+
+&lt;p&gt;From the layout above, it is clear to visualize the key components of the application. Most of these components implement the
+&lt;code&gt;IContextSynthesizer&lt;/code&gt; interface. These implementations are indicators that each component is capable of handling voice commands, and providing a message that is consumable
+by the &lt;strong&gt;UWP&lt;/strong&gt; speech-synthesizer.  More on this later&amp;hellip;&lt;/p&gt;
+
+&lt;h3 id=&#34;weather-forecast:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Weather &amp;ndash; Forecast&lt;/h3&gt;
+
+&lt;p&gt;The current weather and forecast are retrieved every fifteen minutes from the free &lt;a href=&#34;http://openweathermap.org/api&#34; target=&#34;_blank&#34;&gt;Open Weather API&lt;/a&gt;.
+The developer API key and zip code are configurable. Additionally the unit-of-measure is configurable, where you can specify &lt;code&gt;imperial&lt;/code&gt; or &lt;code&gt;metric&lt;/code&gt; as valid settings.&lt;/p&gt;
+
+&lt;h3 id=&#34;clock:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Clock&lt;/h3&gt;
+
+&lt;p&gt;The clock is extremely simple. It is literally just the current date and time. It updates every second, formatting to the hour, minute and second &amp;ndash; additionally displaying the
+name of the day followed by the month and day number.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;pre&gt;
+&lt;code class=&#34;language-yaml&#34;&gt;&lt;span style=&#34;font-size: large&#34;&gt;8:29&lt;/span&gt; &lt;sup&gt;34&lt;/sup&gt;
+Wednesday, December 21&lt;sup&gt;st&lt;/sup&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+Note: I opted to omit whether or not we&amp;rsquo;re in ante or post meridiem as it is assumed the user would know if it&amp;rsquo;s morning or in the afternoon.&lt;/p&gt;
+
+&lt;h3 id=&#34;event-calendar-schedule:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Event Calendar / Schedule&lt;/h3&gt;
+
+&lt;p&gt;My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to
+&lt;a href=&#34;https://github.com/IEvangelist/Mirror#fork-destination-box&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-code-fork&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; fork my repo&lt;/a&gt; &amp;ndash; you would need to setup
+your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid &lt;code&gt;iCal&lt;/code&gt; &lt;a href=&#34;http://icalendar.org/&#34; target=&#34;_blank&#34;&gt;(*.ics) formatting&lt;/a&gt;.
+The events are truncated to fit on the page and ordered by the date of the event.&lt;/p&gt;
+
+&lt;h3 id=&#34;music-player:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Music Player&lt;/h3&gt;
+
+&lt;p&gt;Imagine you have the magic mirror mounted in your bathroom, or bedroom&amp;hellip;it would be nice to say, &amp;ldquo;play a song&amp;rdquo;, or &amp;ldquo;play Deftones&amp;rdquo; for example and music starts playing. That is
+the idea behind the music player component. The current implementation of the music player is limited. I spent a few long nights trying to figure out how to use the built-in &lt;strong&gt;Bluetooth&lt;/strong&gt;
+on the &lt;strong&gt;Pi 3&lt;/strong&gt;, while &lt;strong&gt;UWP&lt;/strong&gt; does have some support it is limited. I was able to pair but not stream songs from my &lt;strong&gt;iPod&lt;/strong&gt; for example, which was really frustrating. For the meantime
+I simply placed several songs in the &lt;code&gt;Assets&lt;/code&gt; directory as content and I can play these resources. Ideally, I will use a web-based service like Spotify or Pandora.&lt;/p&gt;
+
+&lt;h3 id=&#34;voice-commands:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Voice Commands&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;Universal Windows Platform&lt;/strong&gt; provides two very useful classes, the
+&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechrecognition.speechrecognizer.aspx&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;SpeechRecognizer&lt;/code&gt;&lt;/a&gt; and the
+&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechsynthesis.speechsynthesizer.aspx&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;SpeechSynthesizer&lt;/code&gt;&lt;/a&gt;. Leveraging this
+I have built out the ability to talk to my magic mirror, I can ask it things like &amp;ldquo;what&amp;rsquo;s the weather&amp;rdquo;, &amp;ldquo;what&amp;rsquo;s my schedule for Wednesday&amp;rdquo;, or even tell it commands like &amp;ldquo;turn
+this up&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;microsoft-cognitive-services:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Microsoft Cognitive Services&lt;/h2&gt;
+
+&lt;p&gt;Formally known was &amp;ldquo;Project Oxford&amp;rdquo;, Microsoft Cognitive Services offers a ton of programming power and you can start using it today for &lt;strong&gt;free&lt;/strong&gt;. Simply
+&lt;a href=&#34;https://www.microsoft.com/cognitive-services/en-us/subscriptions&#34; target=&#34;_blank&#34;&gt;subscribe&lt;/a&gt; and use your subscription key as the argument to the client &lt;code&gt;.ctor&lt;/code&gt;.
+The magic mirror makes use of the Emotion API, and corresponding &lt;code&gt;EmotionServiceClient&lt;/code&gt; from the
+&lt;a href=&#34;https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Microsoft.ProjectOxford.Emotion&lt;/code&gt;&lt;/a&gt; package.&lt;/p&gt;
+
+&lt;p&gt;Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;async Task&amp;lt;IEnumerable&amp;lt;RawEmotion&amp;gt;&amp;gt; CaptureEmotionAsync()
+{
+    RawEmotion[] result;
+
+    try
+    {
+        var photoFile = await _photoService.CreateAsync();
+        var imageProperties = ImageEncodingProperties.CreateBmp();
+        await _mediaManager.CapturePhotoToStorageFileAsync(imageProperties, photoFile);
+        result = await _emotionClient.RecognizeAsync(await photoFile.OpenStreamForReadAsync());
+    }
+    finally
+    {
+        await _photoService.CleanupAsync();
+    }
+
+    return result.IsNullOrEmpty()
+        ? await TaskCache&amp;lt;IEnumerable&amp;lt;RawEmotion&amp;gt;&amp;gt;.Value(() =&amp;gt; Enumerable.Empty&amp;lt;RawEmotion&amp;gt;())
+        : result;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;First our &lt;code&gt;_photoService&lt;/code&gt; asynchronously creates a photo file&lt;/li&gt;
+&lt;li&gt;From the &lt;code&gt;ImageEncodingProperties&lt;/code&gt; class, we create a bitmap encoding property set&lt;/li&gt;
+&lt;li&gt;Our &lt;code&gt;_mediaManager&lt;/code&gt; captures a photo, storing it in the photo file with the specified encoding&lt;/li&gt;
+&lt;li&gt;Finally we invoke the &lt;code&gt;_emotionClient&lt;/code&gt; passing it the stream from the persisted photo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The &lt;code&gt;result&lt;/code&gt; object contains a &lt;code&gt;Scores&lt;/code&gt; class that looks like the following (from my mugshot):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/set.png&#34; alt=&#34;Set&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The service returned a result. The result claims an &lt;strong&gt;81.5%&lt;/strong&gt; level of confidence that I&amp;rsquo;m happy based on the given image, what do you think? What you don&amp;rsquo;t see is that I&amp;rsquo;m actually taking a selfie
+with 
+
+    
+        
+    
+
+    &lt;a href=&#34;https://twitter.com/codefoster&#34; target=&#39;_blank&#39;&gt;Jeremy Foster&lt;/a&gt;
+
+ &amp;ndash; so, yeah &amp;ndash; I was pretty happy!&lt;/p&gt;
+
+&lt;h1 id=&#34;construction:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Construction&lt;/h1&gt;
+
+&lt;p&gt;I would be lying if I tried taking credit for any of the construction. I&amp;rsquo;m slightly embarrassed to admit that I opted out of building it, as I lack the carpentry skills needed
+to do a decent job. Instead I asked a friend who just so happens to be awesome at carpentry. After persuading him with a bottle of single malt scotch whiskey, I had my magic
+mirror constructed and the results were amazing!&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-1.jpg&#39;
+                            alt=&#34;Step 1&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-2.jpg&#39;
+                            alt=&#34;Step 2&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-3.jpg&#39;
+                            alt=&#34;Step 3&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-4.jpg&#39;
+                            alt=&#34;Step 4&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-5.jpg&#39;
+                            alt=&#34;Step 5&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-6.jpg&#39;
+                            alt=&#34;Step 6&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/p&gt;
+
+&lt;p&gt;I was really excited to deploy my mirror software and give it a go.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/magic mirror.jpg&#34; alt=&#34;Mirror&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;check-it-out:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Check it out&lt;/h1&gt;
+
+&lt;p&gt;&lt;style&gt;
+    .iframe_container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
+        padding-top: 25px;
+        height: 0;
+    }
+    .iframe_container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/KOTYW8EioBk&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/PWr1zRBO90o&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Response Optimization</title>
+      <link>http://davidpine.net/blog/asp-net-core-optimization/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/asp-net-core-optimization/</guid>
+      <description>
+
+&lt;h2 id=&#34;intro:f7ba068c12f661d5bfa879f663970183&#34;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in
+tandem on an &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.&lt;/p&gt;
+
+&lt;p&gt;If you haven&amp;rsquo;t had a chance to use &lt;a href=&#34;https://www.asp.net/core&#34;&gt;&lt;code&gt;ASP.NET Core&lt;/code&gt;&lt;/a&gt; yet, you&amp;rsquo;re missing out! As my friend &lt;a href=&#34;https://scottaddie.com/&#34;&gt;Scott Addie&lt;/a&gt; likes to say:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; is a cafeteria plan in which developers choose application dependencies &lt;em&gt;à la carte&lt;/em&gt;. This is in stark contrast to &lt;strong&gt;ASP.NET&lt;/strong&gt; proper, where developers
+are provided a set meal (a bloated dependency chain) containing undesired items. Don&amp;rsquo;t like broccoli with your steak? Maybe it&amp;rsquo;s time to consider &lt;strong&gt;ASP.NET Core&lt;/strong&gt;.
+&lt;cite&gt;Scott Addie&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In other words, all dependencies are pluggable middleware. This provides ultimate control as you have to explicitly &lt;em&gt;opt-in&lt;/em&gt; for the middleware you desire.&lt;/p&gt;
+
+&lt;h3 id=&#34;know-thy-middleware:f7ba068c12f661d5bfa879f663970183&#34;&gt;Know thy Middleware&lt;/h3&gt;
+
+&lt;p&gt;Not all middleware is equal. Different middleware serves different purposes (obviously). Try to think of each middleware as its own standalone feature-set. Not all middleware is
+given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In
+fact, this is the case when using static file caching and response compression together.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;The &lt;em&gt;order&lt;/em&gt; in which middleware is added matters and dictates the order of execution during a request.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;installing-dependencies:f7ba068c12f661d5bfa879f663970183&#34;&gt;Installing Dependencies&lt;/h4&gt;
+
+&lt;p&gt;I wrote a tiny application and put it up on GitHub, check it out &lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; if you want
+to follow along. Now let&amp;rsquo;s install the dependencies we&amp;rsquo;ll need. For static file caching and response compression we need to add two &lt;code&gt;dependencies&lt;/code&gt; to the project.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; &lt;code&gt;Microsoft.AspNetCore.StaticFiles&lt;/code&gt; will already have been installed if you started from a &lt;strong&gt;Visual Studio&lt;/strong&gt; template.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Repository&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Version&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Nuget Package&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Add / Use Extension Method(s)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/StaticFiles&#34; target=&#34;_blank&#34; title=&#34;Static File Caching, GitHub Repo&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;1.1.0&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/&#34; target=&#34;_blank&#34;&gt;Static Files&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileExtensions.cs#L56-L68&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.UseStaticFiles&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/BasicMiddleware&#34; target=&#34;_blank&#34; title=&#34;Response Compression, GitHub Repo&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;1.0.0&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/&#34; target=&#34;_blank&#34;&gt;Response Compression&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionServicesExtensions.cs#L38-L53&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.AddResponseCompression&lt;/code&gt;&lt;/a&gt; &lt;a href=&#34;https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionBuilderExtensions.cs#L20-L29&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.UseResponseCompression&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Follow these instructions, from within &lt;strong&gt;Visual Studio&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;Tools ➪
+    NuGet Package Manager ➪
+        Manage NuGet Packages for Solution... ➪ 
+            Browse ➪
+                Search ➪
+                    [ Install ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;configuring-startup:f7ba068c12f661d5bfa879f663970183&#34;&gt;Configuring Startup&lt;/h3&gt;
+
+&lt;p&gt;There are two common nomenclatures that exist for wiring up middleware in your startup classes, the &lt;code&gt;.Add*&lt;/code&gt; and &lt;code&gt;.Use*&lt;/code&gt; extension methods. The &lt;code&gt;.Add*&lt;/code&gt; calls are intended to add
+services to the &lt;code&gt;IServiceCollection&lt;/code&gt; instance, ensuring that they are ready for &lt;em&gt;usage&lt;/em&gt;. The &lt;code&gt;.Use*&lt;/code&gt; calls specify that you want to use the middleware and makes the assumption
+that any services required by &lt;strong&gt;DI&lt;/strong&gt; will have already been &lt;em&gt;added&lt;/em&gt; with the corresponding &lt;code&gt;.Add*&lt;/code&gt; call.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s &amp;ldquo;add&amp;rdquo; response compression in the &lt;code&gt;.ConfigureServices&lt;/code&gt; call of our &lt;code&gt;Startup.cs&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void ConfigureServices(IServiceCollection services)
+{    
+    services.AddMvc();
+    services.AddResponseCompression(
+        options =&amp;gt; 
+            options.MimeTypes = ResponseCompressionMimeTypes.Defaults);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Several bits of the implementation details should jump out at you. First, we do not need to call an &lt;code&gt;.AddStaticFiles&lt;/code&gt; extension method because there are no services required
+for this middleware, as such it doesn&amp;rsquo;t exist. Second, we are providing a lambda expression to satisfy the &lt;code&gt;Action&amp;lt;ResponseCompressionOptions&amp;gt;&lt;/code&gt; parameter. We also assign the
+&lt;code&gt;.MimeTypes&lt;/code&gt; property from the &lt;code&gt;ResponseCompressionMimeTypes.Defaults&lt;/code&gt; we are targeting for compression.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; If no compression providers are specified then &lt;code&gt;GZip&lt;/code&gt; is used by default.
+&lt;cite&gt;&lt;a href=&#34;https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionProvider.cs#L22&#34; target=&#34;_blank&#34;&gt;ASP.NET Core Team - GitHub&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;code&gt;ResponseCompressionMimeTypes.cs&lt;/code&gt; is defined as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using System.Collections.Generic;
+using System.Linq;
+using static Microsoft.AspNetCore.ResponseCompression.ResponseCompressionDefaults;
+
+namespace IEvangelist.AspNetCore.Optimization
+{
+    public static class ResponseCompressionMimeTypes
+    {
+        public static IEnumerable&amp;lt;string&amp;gt; Defaults
+            =&amp;gt; MimeTypes.Concat(new[]
+                                {
+                                    &amp;quot;image/svg+xml&amp;quot;,
+                                    &amp;quot;application/font-woff2&amp;quot;
+                                });
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are several types defined by default in &lt;strong&gt;ASP.NET Core&lt;/strong&gt; class &lt;code&gt;ResponseCompressionDefaults.MimeTypes&lt;/code&gt;, we are simply expanding that to include &amp;ldquo;SVG&amp;rdquo; images and the &amp;ldquo;Woff2&amp;rdquo; fonts.&lt;/p&gt;
+
+&lt;h3 id=&#34;order-exemplified:f7ba068c12f661d5bfa879f663970183&#34;&gt;Order Exemplified&lt;/h3&gt;
+
+&lt;p&gt;Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseStaticFiles()          // Adds the static middleware to the request pipeline
+       .UseResponseCompression(); // Adds the response compression to the request pipeline
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The snippet above will absolutely work for serving static files, but it will not compress or cache anything. Note the differences below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseResponseCompression()  // Adds the response compression to the request pipeline
+       .UseStaticFiles();         // Adds the static middleware to the request pipeline       
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;em&gt;order&lt;/em&gt; in which the middleware was invoked in the pipeline changed, as such the order in which the middleware is executed on a request is also changed.
+When static file middleware occurs before response compression, it returns the file as a response before compression has a chance to execute.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Client requests &lt;code&gt;main.css&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Static file middleware determines it can fully satisfy said request&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;main.css&lt;/code&gt; file is &lt;a href=&#34;https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109&#34; target=&#34;_blank&#34;&gt;sent&lt;/a&gt; and the &lt;a href=&#34;https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;next&amp;rdquo;&lt;/a&gt; middleware in the pipeline is never exectued&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now that we have these two pieces of middleware wired into out pipeline in the correct order, what else is left. There is one important thing that we forgot to do.
+While we do have static file middleware, we didn&amp;rsquo;t know that &amp;ldquo;caching&amp;rdquo; is off by default. So we&amp;rsquo;ll need to handle this with an instance of the the &lt;code&gt;StaticFileOptions&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;Keep your &lt;i class=&#34;fa fa-eye&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fa fa-eye&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&amp;rsquo;s open for extension method overloads. These are often clues that there are &lt;em&gt;options&lt;/em&gt; for providing customized configuration for the middleware you&amp;rsquo;re wiring up.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseResponseCompression()
+       .UseStaticFiles(
+           new StaticFileOptions
+           {
+               OnPrepareResponse =
+                   _ =&amp;gt; _.Context.Response.Headers[HeaderNames.CacheControl] = 
+                        &amp;quot;public,max-age=604800&amp;quot; // A week in seconds
+           })
+       .UseMvc(routes =&amp;gt; routes.MapRoute(&amp;quot;default&amp;quot;, &amp;quot;{controller=Home}/{action=Index}/{id?}&amp;quot;));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The instance of the &lt;code&gt;StaticFileOptions&lt;/code&gt; object has a public property namely &amp;ldquo;OnPrepareResponse&amp;rdquo; of type &lt;code&gt;Action&amp;lt;StaticFileResponseContext&amp;gt;&lt;/code&gt;. So we can again specify a lambda
+expression. This expression can be used to delegate the preperation of the response. Notice we&amp;rsquo;re simply setting the &lt;code&gt;Cache-Control&lt;/code&gt; header to a &amp;ldquo;max-age&amp;rdquo; of a week. That was
+pretty simple, hey?!&lt;/p&gt;
+
+&lt;h3 id=&#34;compression-awareness:f7ba068c12f661d5bfa879f663970183&#34;&gt;Compression Awareness&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s all the little things! The response compression middleware boasts deterministic compression, i.e.; if the
+&lt;a href=&#34;https://github.com/aspnet/KestrelHttpServer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;KestrelHttpServer&lt;/code&gt;&lt;/a&gt; is running behind the
+&lt;a href=&#34;https://www.iis.net/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;IIS&lt;/strong&gt;&lt;/a&gt; reverse proxy then the middleware may or may not compress the response. The middleware determines the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If the request accepts compression&lt;/li&gt;
+&lt;li&gt;If the requested resource matches the configured MIME types&lt;/li&gt;
+&lt;li&gt;Whether or not the response needs to be compressed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;results:f7ba068c12f661d5bfa879f663970183&#34;&gt;Results&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;rsquo;s spend some time examining the results of our response optimization efforts.&lt;/p&gt;
+
+&lt;h4 id=&#34;before:f7ba068c12f661d5bfa879f663970183&#34;&gt;Before&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/before.png&#34; alt=&#34;Before&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;total-s:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 549 KB transfered | ... | ... 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;banner1.svg Response Headers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;HTTP/1.1 200 OK
+Content-Length: 9679
+Content-Type: image/svg+xml
+Accept-Ranges: bytes
+ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;after:f7ba068c12f661d5bfa879f663970183&#34;&gt;After&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/after.png&#34; alt=&#34;After&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;total-s-1:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 175 KB transfered | ... | ... 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The total payload for all 13 requests is a total of 3.137 times smaller (a meager 31.9% of the original size). The larger the application, the more dramatic and valuable
+this becomes! Consider an &lt;strong&gt;Angular2&lt;/strong&gt; application (or other SPA framwork based application), which has tons of &lt;strong&gt;JavaScript&lt;/strong&gt; files to download &amp;ndash; 5 MB turns into ~1.5 MB.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;banner1.svg Response Headers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;HTTP/1.1 200 OK
+Content-Type: image/svg+xml
+Server: Kestrel
+Cache-Control: public,max-age=604800
+Transfer-Encoding: chunked
+Content-Encoding: gzip
+Accept-Ranges: bytes
+ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;subsequent-cached-requests:f7ba068c12f661d5bfa879f663970183&#34;&gt;Subsequent (Cached) Requests&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/cached.png&#34; alt=&#34;Cached&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;let-s-summarize:f7ba068c12f661d5bfa879f663970183&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
+
+&lt;p&gt;We learned some of the basics about &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Together we implemented a response optimization strategy that included deterministic response compression, as well
+as static file caching. We learned some of the common patterns and naming conventions for integrating with &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Finally, we have a good understanding of
+the &lt;strong&gt;ASP.NET Core&lt;/strong&gt; request pipeline middleware precedence.&lt;/p&gt;
+
+&lt;h3 id=&#34;source-code:f7ba068c12f661d5bfa879f663970183&#34;&gt;Source Code&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;
+   &lt;i class=&#34;fa fa-github-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &amp;nbsp; IEvangelist.AspNetCore.Optimization
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Overcoming Impostor Syndrome</title>
+      <link>http://davidpine.net/blog/imposter-syndrome/</link>
+      <pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/imposter-syndrome/</guid>
+      <description>
+
+&lt;p&gt;What is &amp;ldquo;impostor syndrome&amp;rdquo; you ask?&lt;/p&gt;
+
+&lt;p&gt;According to &lt;cite&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Impostor_syndrome&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt;&lt;/cite&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;&lt;strong&gt;Impostor syndrome&lt;/strong&gt; (also known as &lt;em&gt;impostor phenomenon&lt;/em&gt; or &lt;em&gt;fraud syndrome&lt;/em&gt;) is a term coined in 1978 by clinical psychologists Dr. Pauline R. Clance and Suzanne A.
+Imes referring to high-achieving individuals marked by an inability to internalize their accomplishments and a persistent fear of being exposed as a &amp;ldquo;fraud&amp;rdquo;.
+Despite external evidence of their competence, those exhibiting the syndrome remain convinced that they are frauds and do not deserve the success they have achieved.
+Proof of success is dismissed as luck, timing, or as a result of deceiving others into thinking they are more intelligent and competent than they believe themselves to be.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It seems as though this syndrome has plauged our generation of developers! I have found that this syndrome has spread like wildfire through the
+technical community, devastating an individuals confidence and leveling their ambitions! Too often developers are doubting themselves and this needs to stop. As an
+industry we need to work to correct this.&lt;/p&gt;
+
+&lt;p&gt;We can all agree that &lt;a href=&#34;http://www.hanselman.com/blog/ImAPhonyAreYou.aspx&#34;&gt;I&amp;rsquo;m not the only one&lt;/a&gt;. If you haven&amp;rsquo;t felt this way, [ close this tab now ]. If you&amp;rsquo;re still
+reading, then thank you for your honesty.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m certain you&amp;rsquo;ve heard of &amp;ldquo;technical debt&amp;rdquo;, I&amp;rsquo;d like to coin a new phrase - &amp;ldquo;technical doubt&amp;rdquo;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;&lt;strong&gt;Technical Doubt&lt;/strong&gt; is a term used to define an individuals lack of confidence as it pertains to a technical problem, wherein every solution the individual arrives at is
+combated with reluctancy and inadequacy.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Software engineering can be boiled down to the manipulation and movement of data. When you&amp;rsquo;re a software engineer working on a task that involves either of these aspects of development
+you have to solve problems. Therefore, we&amp;rsquo;re really just problem solvers, right?! The interesting thing is that there is always more than one way to solve a problem. And more often
+than not the way that you choose to solve said problem will not exactly align with the visions of your peers - this leads to potential conflict, and with conflict comes frustration
+and disarray!&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ve all heard of the &amp;ldquo;Tabs vs Spaces&amp;rdquo; argument, right &amp;ndash; it&amp;rsquo;s somewhat like that but much worse.&lt;/p&gt;
+
+&lt;p&gt;&lt;style&gt;
+    .iframe_container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
+        padding-top: 25px;
+        height: 0;
+    }
+    .iframe_container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/cowtgmZuai0&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;I believe that this is often the root of imposter syndrome, the fear of getting it wrong or being involved in some sort of conflict. I finally feel as though I no longer have this
+fear, therefore &amp;ndash; I have overcome imposter syndrome. I wanted to share some of the reasons that have led up to this monumental event.&lt;/p&gt;
+
+&lt;h3 id=&#34;positivity:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Positivity&lt;/h3&gt;
+
+&lt;p&gt;If you want to see a blackhole, bear witness to how negitivity spreads through an office. A single person with a bad additude can &amp;ldquo;infect&amp;rdquo; others and really be a drain! Be the one
+who combats that, be the person who seeks out the positive aspects of every situation. I&amp;rsquo;m the guy who says &amp;ldquo;it could always be worse&amp;rdquo;, because it literally could. I act as the voice
+of reason &amp;ndash; and pure myself into living as a positive influence on the team.&lt;/p&gt;
+
+&lt;h3 id=&#34;take-action:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Take Action&lt;/h3&gt;
+
+&lt;p&gt;Personally, I have discovered that the more I compliment others the more I get complimented in return. The more I encourage others, the more I&amp;rsquo;m encouraged by them in return.
+The more you give, the more you get. Be humble and open-minded!&lt;/p&gt;
+
+&lt;h3 id=&#34;mentor:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Mentor&lt;/h3&gt;
+
+&lt;p&gt;I have found pride in mentoring. I feel as though there is always a satisfying challenge to overcome and a lesson learned. Often the lesson is two-sided, where I am a secondary
+beneficiary from the engagement. Often, explaining your experiences to the mentee reminds you of how much you have really been through. Reflecting on how you&amp;rsquo;ve navigated through
+a situation is surprisingly insightful. It&amp;rsquo;s kind of like &lt;a href=&#34;https://blog.codinghorror.com/rubber-duck-problem-solving/&#34;&gt;rubber duck programming&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;fear-not:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Fear not&lt;/h3&gt;
+
+&lt;p&gt;Never be afraid to ask &amp;ldquo;why&amp;rdquo;, this can be extremely powerful. Sometimes the root of the problem is that there has been a misunderstanding at the root &amp;ndash; therefore all things
+leading up to where you&amp;rsquo;re asking (what you believe to be a stupid question) is actually the best question that could have been asked. Find the root!&lt;/p&gt;
+
+&lt;h3 id=&#34;community:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Community&lt;/h3&gt;
+
+&lt;p&gt;If you have ever spent more than a few minutes with me, you will know that I&amp;rsquo;m an advocate of the technical community. Believe it or not, the community is extremely supportive and
+willing to lift you up &amp;ndash; all you have to do is being willing to put yourself out there. While this is humbling, it is also be rewarding&amp;hellip;&lt;/p&gt;
+
+&lt;h3 id=&#34;mke-dot-net:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;MKE DOT NET&lt;/h3&gt;
+
+&lt;p&gt;I sit on the technical committee for &lt;a href=&#34;http://www.mkedotnet.com/&#34;&gt;MKE DOT NET&lt;/a&gt;, a developer conference in the Milwaukee area. Recently I was fortunate enough to get
+&lt;a href=&#34;http://www.hanselman.com/&#34;&gt;Scott Hanselman&lt;/a&gt; to be our keynote speaker.
+During his keynote (which was amazing) I shouted out several times to assist him with live coding / demostration errors. He referred to me as his &amp;ldquo;second compiler&amp;rdquo;!&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;When &lt;a href=&#34;https://twitter.com/shanselman&#34;&gt;@shanselman&lt;/a&gt; is giving his keynote and calls you his second compiler - you take that as a compliment &lt;a href=&#34;https://twitter.com/hashtag/mkedotnet?src=hash&#34;&gt;#mkedotnet&lt;/a&gt; &lt;a href=&#34;https://twitter.com/dotnet&#34;&gt;@dotnet&lt;/a&gt; &lt;a href=&#34;https://twitter.com/aspnet&#34;&gt;@aspnet&lt;/a&gt;&lt;/p&gt;&amp;mdash; David Pine (@davidpine7) &lt;a href=&#34;https://twitter.com/davidpine7/status/792480943416156161&#34;&gt;October 29, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+    &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+        &lt;a href=&#34;https://twitter.com/shanselman&#34;&gt;@shanselman&lt;/a&gt; I can only take credit for three ;-) It was a blast, thank you again sir!! 
+        &lt;a href=&#34;https://twitter.com/hashtag/mkedotnet?src=hash&#34;&gt;#mkedotnet&lt;/a&gt;
+    &lt;/p&gt;&amp;mdash; David Pine (@davidpine7) 
+    &lt;a href=&#34;https://twitter.com/davidpine7/status/792544455635132417&#34;&gt;October 30, 2016&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;stackoverflow:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Stackoverflow&lt;/h3&gt;
+
+&lt;p&gt;I set out at the beginning of the 2016 year with a goal to try to answer one SO question a day. Honestly, it is a lot more demanding than you might imagine &amp;ndash; but it&amp;rsquo;s extremely
+gratifying! I have literally learned more attempting to answer questions than I have had asking or reading others questions. I answered
+&lt;a href=&#34;http://stackoverflow.com/a/40045456/2410379&#34;&gt;an &lt;strong&gt;ASP.NET Core&lt;/strong&gt; question&lt;/a&gt; that got the attention of &lt;a href=&#34;http://davidfowl.com/&#34;&gt;David Folwer&lt;/a&gt;, holy crap &amp;ndash; IKR!
+Luckily after his &lt;em&gt;code review&lt;/em&gt; and my &lt;em&gt;update&lt;/em&gt; to the answer, &amp;ldquo;the garbage collector thanked me&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Getting the accepted answer over mega-super stars like &lt;a href=&#34;http://stackoverflow.com/a/36950086/2410379&#34;&gt;Stephan Cleary&lt;/a&gt; can really make your head spin, even if they get more upvotes.&lt;/p&gt;
+
+&lt;h4 id=&#34;let-me-compile-that-for-you:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Let me compile that for you&lt;/h4&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This C# doesn&amp;#39;t compile - I think it should: var parameterName = nameof(parameterName);
+&lt;/p&gt;&amp;mdash; Jon Skeet (@jonskeet) 
+&lt;a href=&#34;https://twitter.com/jonskeet/status/742718249725480960&#34;&gt;June 14, 2016
+&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+&lt;a href=&#34;https://twitter.com/davidpine7&#34;&gt;@davidpine7
+&lt;/a&gt; Indeed, I would have done if I&amp;#39;d expected that to make a difference. I didn&amp;#39;t, but it does.
+&lt;/p&gt;&amp;mdash; Jon Skeet (@jonskeet) 
+&lt;a href=&#34;https://twitter.com/jonskeet/status/742739271107366912&#34;&gt;June 14, 2016
+&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;let-me-asp-net-5-that-for-you:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Let me ASP.NET 5 that for you&lt;/h4&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+&lt;a href=&#34;https://twitter.com/jonskeet&#34;&gt;@jonskeet&lt;/a&gt; dnvm upgrade is what you&amp;#39;re looking for
+&lt;/p&gt;&amp;mdash; David Pine (@davidpine7) 
+&lt;a href=&#34;https://twitter.com/davidpine7/status/716378423824945152&#34;&gt;April 2, 2016
+&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/davidpine7&#34;&gt;@davidpine7
+&lt;/a&gt; Ah yes - thanks! Silly me. Doesn&amp;#39;t fix this issue, but good to do anyway :)
+&lt;/p&gt;&amp;mdash; Jon Skeet (@jonskeet) 
+&lt;a href=&#34;https://twitter.com/jonskeet/status/716382973671706628&#34;&gt;April 2, 2016
+&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Yes, you read that correctly. That is me helping out the legand &lt;a href=&#34;http://stackoverflow.com/users/22656/jon-skeet&#34;&gt;Jon Skeet&lt;/a&gt; (arguably the world&amp;rsquo;s best software engineer)!&lt;/p&gt;
+
+&lt;h2 id=&#34;summary:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;These are miniscule things that really add up. Don&amp;rsquo;t take it from me, you owe it to yourself to see what you&amp;rsquo;re really made off. I believe in you already, if you made it through this
+post you have already accomplished more than most of your peers today. There is so much more that I want to give back to the community that I know this is only the beginnging of
+something profound. I strive to do my best and I now know that it&amp;rsquo;s enough!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Positivity, be the seeker of all things good and the voice of reason&lt;/li&gt;
+&lt;li&gt;Take action, give encouragement, compliments and praise&lt;/li&gt;
+&lt;li&gt;Be a mentor, there is nothing like teaching and you&amp;rsquo;ll learn too&lt;/li&gt;
+&lt;li&gt;Fear not, never be afraid to ask &amp;ldquo;why&amp;rdquo;, it might just solve the problem&lt;/li&gt;
+&lt;li&gt;Community, get involved and give back&lt;/li&gt;
+&lt;li&gt;Inject yourself where you want to be&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These tips will help you overcome imposter syndrome &amp;ndash; it worked for me. Together we can kill &amp;ldquo;technical doubt&amp;rdquo;!!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Angular2 Http with RxJS Observables</title>
+      <link>http://davidpine.net/blog/angular-2-http/</link>
+      <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/angular-2-http/</guid>
+      <description>
+
+&lt;p&gt;If you have been following the development efforts of the &lt;strong&gt;Angular2&lt;/strong&gt; project, you have witnessed certain highs and lows - but it has been a fun ride. The latest version is only a &lt;strong&gt;Release Candidate&lt;/strong&gt; and the team
+is getting closer to the final release. I&amp;rsquo;m really looking forward to that! I wanted to take a moment to highlight (IMO) one of the key services of &lt;strong&gt;Angular2&lt;/strong&gt;, the &lt;code&gt;http&lt;/code&gt; service.&lt;/p&gt;
+
+&lt;p&gt;In &lt;strong&gt;AngularJs 1&lt;/strong&gt; the &lt;code&gt;ng.IHttpService&lt;/code&gt; (aka, &lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$http&#34;&gt;&lt;code&gt;$http&lt;/code&gt;&lt;/a&gt;) was based on
+&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&#34;&gt;promises&lt;/a&gt; and deferrals.
+In &lt;strong&gt;Angular2&lt;/strong&gt; we now rely on &lt;strong&gt;RxJS&lt;/strong&gt; and the observable pattern. In my opinion this is a huge win!
+If you&amp;rsquo;re unfamiliar with &lt;em&gt;Reactive Extensions&lt;/em&gt; in general, I suggest starting &lt;a href=&#34;https://msdn.microsoft.com/en-us/data/gg577609.aspx&#34;&gt;here&lt;/a&gt;.
+&lt;strong&gt;RxJS&lt;/strong&gt; is the &lt;code&gt;JavaScript&lt;/code&gt; implementation of &lt;em&gt;Reactive Extensions&lt;/em&gt;.
+Let&amp;rsquo;s take a moment to compare and contrast the two, and immerse ourselves in the wonderful world of &lt;strong&gt;RxJS&lt;/strong&gt;.
+Let me be clear upfront that I&amp;rsquo;m developing with &lt;code&gt;TypeScript&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;legacy-pattern:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Legacy Pattern&lt;/h2&gt;
+
+&lt;p&gt;As a developer you would have to use both the &lt;code&gt;ng.IHttpService&lt;/code&gt; and the &lt;code&gt;ng.IQService&lt;/code&gt; in combination to collaborate the deferral of the
+HTTP request and the promise that represented it. Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;module ExampleModule {
+    export class ExampleService implements IExampleService {
+        static $inject = [&amp;quot;$http&amp;quot;, &amp;quot;$q&amp;quot;];
+
+        private $http: ng.IHttpService;
+        private $q: ng.IQService;
+
+        constructor($http: ng.IHttpService, 
+                    $q: ng.IQService) {
+            this.$http = $http;
+            this.$q = $q;
+        }
+        
+        public getFooBars(): ng.IPromise&amp;lt;FooBar[]&amp;gt; {
+          var deferred = this.$q.defer&amp;lt;FooBar[]&amp;gt;();
+          this.$http
+              .get(&amp;quot;api/foobar&amp;quot;)
+              .success((data) =&amp;gt; {
+                  deferred.resolve(data);
+              })
+              .error((error) =&amp;gt; {
+                  console.log(&amp;quot;An error occurred when requesting api/foobar.&amp;quot;, error);
+                  deferred.reject(error);
+              });
+
+          return deferred.promise;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example, we can easily see the interaction betwixt the &lt;code&gt;ng.IHttpService ($http)&lt;/code&gt; and &lt;code&gt;ng.IQService ($q)&lt;/code&gt; services. The &lt;code&gt;$q&lt;/code&gt; variable exposes a &lt;code&gt;.defer&amp;lt;T&amp;gt;&lt;/code&gt; function that returns a deferred object.&lt;/p&gt;
+
+&lt;h3 id=&#34;deferred-api-https-docs-angularjs-org-api-ng-service-q-the-deferred-api:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$q#the-deferred-api&#34;&gt;Deferred API&lt;/a&gt;&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;right&#34;&gt;Function&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Parameters&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;code&gt;resolve&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;(value: T)&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Resolved yielding the materialized value of type &lt;code&gt;T&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;code&gt;reject&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;(reason: string)&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Rejected with the given reason&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The deferred object instance is passed into the fluent API&amp;rsquo;s of the &lt;code&gt;$http&#39;s&lt;/code&gt; &lt;code&gt;.success&lt;/code&gt; and &lt;code&gt;.error&lt;/code&gt; functions accordingly. This pattern works great, but is very limiting and repetitive.
+You end up writing a lot of boilerplate code and that isn&amp;rsquo;t very &lt;a href=&#34;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&#34;&gt;DRY&lt;/a&gt;. Let&amp;rsquo;s look at how this is approached with &lt;strong&gt;Angular2&amp;rsquo;s&lt;/strong&gt; &lt;code&gt;http&lt;/code&gt; service using the observable pattern from &lt;strong&gt;RxJS&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;h2 id=&#34;new-pattern:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;New Pattern&lt;/h2&gt;
+
+&lt;p&gt;To be fair, let&amp;rsquo;s implement the same functionality and public surface-area such that our example services are equivalent.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import {Observable} from &amp;quot;RxJS/Rx&amp;quot;;
+import {Injectable} from &amp;quot;@angular/core&amp;quot;;
+import {Http} from &amp;quot;@angular/http&amp;quot;;
+
+@Injectable() export class ExampleService {
+    constructor(private http: Http) { }
+
+    getFooBars(onNext: (fooBars: FooBar[]) =&amp;gt; void) {
+        this.http
+            .get(&amp;quot;api/foobar&amp;quot;)
+            .map(response =&amp;gt; response.json() as FooBar[])
+            .subscribe(onNext,
+                       error =&amp;gt; 
+                       console.log(&amp;quot;An error occurred when requesting api/foobar.&amp;quot;, error));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;I am hoping that you noticed how much cleaner this code is, as well as how much more readable!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, I know what you&amp;rsquo;re thinking&amp;hellip;these cannot possibly be the same examples, but they are in fact doing the same thing. &lt;em&gt;Dependency Injection (DI)&lt;/em&gt; in &lt;strong&gt;Angular2&lt;/strong&gt; is a lot less error prone (no more magic strings) and way easier than
+it was in &lt;strong&gt;AngularJs 1&lt;/strong&gt;.
+Simply do what you&amp;rsquo;d expect from any other common constructor-based DI framework, ensure that your desired &lt;code&gt;Http&lt;/code&gt; type is registered as a provider to the system. This happens by way of the &lt;code&gt;HTTP_PROVIDERS&lt;/code&gt; defined in our &lt;code&gt;boot.js&lt;/code&gt; file.
+More on that in another post. With modern &lt;code&gt;TypeScript&lt;/code&gt; we can define properties and fields, and their corresponding access modifiers right from within our constructors.&lt;/p&gt;
+
+&lt;h4 id=&#34;syntax-tip:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Syntax Tip&lt;/h4&gt;
+
+&lt;p&gt;This exemplifies the comparisons in syntax between a simple constructor and the more verbose constructor.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// Simple .ctor()
+constructor(private http: Http) { }
+
+// Is equivalent to...
+private http: Http;
+constructor(http: Http) {
+   this.http = http;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Likewise, the following is true regarding public access modifiers.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// Simple .ctor()
+constructor(http: Http) { }
+
+// Is equivalent to...
+http: Http; // When the access modifier is omitted it&#39;s defaulted to public
+constructor(http: Http) {
+   this.http = http;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;comparing-the-apis:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Comparing the APIs&lt;/h2&gt;
+
+&lt;p&gt;Instead of the &lt;code&gt;.success&lt;/code&gt; invocation with a corresponding &lt;code&gt;deferred.resolve&lt;/code&gt; call, we now utilize the &lt;strong&gt;RxJS&lt;/strong&gt; &lt;code&gt;.map&lt;/code&gt; and &lt;code&gt;.subscribe&lt;/code&gt; operators. Let&amp;rsquo;s look at these below:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;right&#34;&gt;Operator&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;http://reactivex.io/documentation/operators/map.html&#34;&gt;&lt;code&gt;map&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Transform the items emitted by an &lt;code&gt;Observable&lt;/code&gt; by applying a function to each item&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;http://reactivex.io/documentation/operators/subscribe.html&#34;&gt;&lt;code&gt;subscribe&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;The &lt;code&gt;Subscribe&lt;/code&gt; operator is the glue that connects an observer to an &lt;code&gt;Observable&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Mapping is easy and we can leverage some of the &lt;code&gt;TypeScript&lt;/code&gt; language features to cast the &lt;strong&gt;JSON&lt;/strong&gt; blobs returned from our services as strongly typed objects. The &lt;code&gt;map&lt;/code&gt; operator is actually
+synonymous with the &lt;code&gt;select&lt;/code&gt; operator, so if you&amp;rsquo;re more familiar with that terminology you can use it interchangeably.&lt;/p&gt;
+
+&lt;h3 id=&#34;advantages:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Advantages&lt;/h3&gt;
+
+&lt;p&gt;Now that we have an understanding of how &lt;strong&gt;RxJS&lt;/strong&gt; compares to the legacy pattern, we can take advantage of all the various benefits. Imagine with me that we have a need to implement retry logic,
+this would have been challenging with the legacy pattern but with the new pattern it&amp;rsquo;s as simple as saying &lt;code&gt;.retry&lt;/code&gt;. Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// If this call fails, we&#39;ll try it again with the same payload two times
+getFooBars(onNext: (fooBars: FooBar[]) =&amp;gt; void) {
+    this.http
+        .get(&amp;quot;api/foobar&amp;quot;)
+        .map(response =&amp;gt; &amp;lt;FooBar[]&amp;gt;response.json())
+        .retry(2)
+        .subscribe(onNext,
+                   error =&amp;gt; 
+                   console.log(&amp;quot;An error occurred when requesting api/foobar.&amp;quot;, error));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now imagine a scenario where a user is typing and you want to provide an autocomplete, you could use &lt;code&gt;.debounce&lt;/code&gt; to pause for a brief moment prior to sending the request. Likewise,
+we could apply a &lt;code&gt;.filter&lt;/code&gt; that only takes action when a certain number of characters have been entered. Finally, we might utilize &lt;code&gt;.distinctUntilChanged&lt;/code&gt; to only execute the request once
+the values are actually different than they once were.&lt;/p&gt;
+
+&lt;p&gt;You could take advantage of &lt;code&gt;.buffer&lt;/code&gt;, &lt;code&gt;.throttle&lt;/code&gt;, &lt;code&gt;.interval&lt;/code&gt;, &lt;code&gt;.window&lt;/code&gt;, &lt;code&gt;.range&lt;/code&gt;, etc&amp;hellip; The list goes on and on,
+and &lt;a href=&#34;https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable&#34; target=&#34;_blank&#34;&gt;this is the source for most of what you can take advantage&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;let-s-summarize:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Angular2&lt;/strong&gt; has a new implementation of their &lt;code&gt;http&lt;/code&gt; service that relies on &lt;strong&gt;RxJS&lt;/strong&gt;. The &lt;em&gt;API&lt;/em&gt; uses &lt;code&gt;observables&lt;/code&gt; and the &lt;code&gt;observer&lt;/code&gt; pattern to allow for a fluent experience that is rich and robust.
+Getting started is straight-forward and simple. Before too long you&amp;rsquo;ll be taking advantage of the feature-full set of &lt;strong&gt;Reactive Extensions&lt;/strong&gt; and thinking in terms of data streams.
+This mindset will make your life easier - trust me!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Further Reading&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/api/http/index/Http-class.html&#34; target=&#34;_blank&#34;&gt;Angular2 for TypeScript, Http&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Reactive-Extensions/RxJS#why-RxJS&#34; target=&#34;_blank&#34;&gt;Why RxJS?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The power of the global.json</title>
+      <link>http://davidpine.net/blog/the-global-json/</link>
+      <pubDate>Mon, 18 Jul 2016 22:40:31 -0500</pubDate>
+      
+      <guid>http://davidpine.net/blog/the-global-json/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduction:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;As I&amp;rsquo;m sure you&amp;rsquo;re all aware by now, &lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2016/06/27/announcing-net-core-1-0/&#34;&gt;Monday June 27&lt;sup&gt;th&lt;/sup&gt;&lt;/a&gt; was a
+special day for those of you who were anticipating the release of  &lt;code&gt;.NET Core&lt;/code&gt; and &lt;code&gt;ASP.NET Core&lt;/code&gt;. While the &amp;ldquo;core&amp;rdquo; frameworks and runtimes are RTM, the
+tooling is actually still in preview. In fact, we&amp;rsquo;re currently on &lt;em&gt;Tools Preview 2&lt;/em&gt;. I wanted to focus this post entirely on one specific enhancement
+to &lt;strong&gt;Visual Studio&lt;/strong&gt; solutions, enter the &lt;code&gt;global.json&lt;/code&gt;.
+&lt;hr/&gt;
+Let me paint a picture for you&amp;hellip;you&amp;rsquo;re developing an application. This application doesn&amp;rsquo;t have all the source code in the world, so you take on some dependencies.
+Since we&amp;rsquo;re not living in caves, we have packages &amp;ndash; this is common nomenclature for and the norm for any modern software development project.
+One of the aforementioned dependencies is a package that you just so happen to also work on and develop for. Imagine that you find a bug or want to make
+an improvement to said package, what does that work-flow look like?&lt;/p&gt;
+
+&lt;p&gt;For me, this typically involved the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open dependency project in a new instance of &lt;strong&gt;Visual Studio&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Make code change&lt;/li&gt;
+&lt;li&gt;Code review&lt;/li&gt;
+&lt;li&gt;Commit code&lt;/li&gt;
+&lt;li&gt;Build server builds code&lt;/li&gt;
+&lt;li&gt;Build goes &amp;ldquo;green&amp;rdquo; (tests passed)&lt;/li&gt;
+&lt;li&gt;Build server publishes package&lt;/li&gt;
+&lt;li&gt;Wander the halls playing Pokémon Go&lt;/li&gt;
+&lt;li&gt;Return to original project, update package reference&lt;/li&gt;
+&lt;li&gt;Continue with life&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;What if I told you, that headache is all but gone and you will never have to go through those agonizing steps again! Say it ain&amp;rsquo;t so
+(queue &lt;a href=&#34;https://youtu.be/ENXvZ9YRjbo&#34; target=&#34;_blank&#34;&gt;Weezer&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;global-json:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Global.json&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;global.json&lt;/code&gt; file sits out at the solution directory-level and literally has one of the simplest &lt;code&gt;JSON&lt;/code&gt; schemas you will ever see. The default templates
+generate the following (for the &lt;a href=&#34;http://json.schemastore.org/global&#34;&gt;full schema&lt;/a&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
+  &amp;quot;projects&amp;quot;: [ &amp;quot;src&amp;quot;, &amp;quot;test&amp;quot; ],
+  &amp;quot;sdk&amp;quot;: {
+    &amp;quot;version&amp;quot;: &amp;quot;1.0.0-preview2-003121&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I always immediately delete the &lt;code&gt;sdk&lt;/code&gt; property. If omitted the tooling simply assumes the latest &lt;strong&gt;SDK&lt;/strong&gt; installed. Now, for all the fun! The &lt;code&gt;projects&lt;/code&gt;
+property is an array of strings. It&amp;rsquo;s defined as the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; A list of project folders relative to this file.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;These folders are search locations for resolving dependencies, where projects take precedence over packages.&lt;/p&gt;
+
+&lt;h3 id=&#34;projects-over-packages:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Projects over Packages&lt;/h3&gt;
+
+&lt;p&gt;Assume you&amp;rsquo;re developing in a project, namely &lt;code&gt;IEvangelist.NetCore.App&lt;/code&gt; and it takes a dependency on &lt;code&gt;IEvangelist.NetCore.ClassLib&lt;/code&gt; and &lt;code&gt;IEvangelist.NetCore.Services&lt;/code&gt;. These
+dependencies are packages (outside the solution) and you can use the &lt;code&gt;global.json/projects&lt;/code&gt; array to your advantage. Using our imaginations, let us find a need
+to source-step into &lt;code&gt;IEvangelist.NetCore.ClassLib&lt;/code&gt;. Let us also imagine that this project is in a neighboring folder outside our solution, perhaps the same repo,
+we can now use a relative path like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
+  &amp;quot;projects&amp;quot;: [ 
+    &amp;quot;src&amp;quot;, 
+    &amp;quot;../../IEvangelist.NetCore.ClassLib/src&amp;quot;, // &amp;lt;-- Relative path to packaged source
+    &amp;quot;../../IEvangelist.NetCore.Services/src&amp;quot;    
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;before:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Before&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/07/before.jpg&#34; alt=&#34;Before global.json changes&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;after:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;After&lt;/h4&gt;
+
+&lt;p&gt;After saving these changes to the &lt;code&gt;global.json&lt;/code&gt; you&amp;rsquo;ll notice &lt;strong&gt;Visual Studio&lt;/strong&gt; pull this project into solution, but outside of the &lt;code&gt;src&lt;/code&gt; folder. Now when
+you debug you can actually step into the source and treat it like any other source code you have. Project dependencies are resolved by way of their &lt;code&gt;project.json&lt;/code&gt; being discovered.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/07/after.jpg&#34; alt=&#34;After global.json changes&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;open-source-for-everyone:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Open Source for Everyone&lt;/h3&gt;
+
+&lt;p&gt;One of the biggest advantages in my opinion is the ability to pull down source from &lt;code&gt;github&lt;/code&gt; that I rely on and source-step into it. For example, I have been developing with &lt;code&gt;ASP.NET
+Core&lt;/code&gt; since &lt;strong&gt;RC1&lt;/strong&gt;, nearly eight months!! With the power of the &lt;code&gt;global.json&lt;/code&gt; I can pull down source that I&amp;rsquo;m relying on in a package and fulfill my understanding of it
+as it executes. Simply amazing!&lt;/p&gt;
+
+&lt;h2 id=&#34;further-reading:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Further reading&lt;/h2&gt;
+
+&lt;p&gt;For more details, these are some additional links and points of reference.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/articles/core/tools/global-json&#34;&gt;&lt;strong&gt;Global.json Reference&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/a/34794054/2410379&#34;&gt;&lt;strong&gt;Explanation of projects section in Global.json&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core RC2 (Migration Guide)</title>
+      <link>http://davidpine.net/blog/migrating-to-rc2/</link>
+      <pubDate>Fri, 20 May 2016 22:40:31 -0500</pubDate>
+      
+      <guid>http://davidpine.net/blog/migrating-to-rc2/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduction:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;On Monday, May 16&lt;sup&gt;th&lt;/sup&gt; 2016 there was an amazing announcement from the &lt;strong&gt;.NET Blog&lt;/strong&gt; team!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;&lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2016/05/16/announcing-net-core-rc2/&#34;&gt;Announcing .NET Core RC2 and .NET Core SDK Preview 1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This post will serve as a guide that walks you through the steps as I experienced them from migrating existing &lt;code&gt;ASP.NET Core RC1&lt;/code&gt; applications to &lt;code&gt;ASP.NET Core RC2&lt;/code&gt;.
+It is worth mentioning that I&amp;rsquo;m am targeting the &lt;code&gt;.NET 4.6&lt;/code&gt; framework. So, I &lt;em&gt;do not&lt;/em&gt; cover the &lt;code&gt;.netcoreapp&lt;/code&gt; or &lt;code&gt;netstandard&lt;/code&gt; TFMs (target framework monikers).&lt;/p&gt;
+
+&lt;h2 id=&#34;tooling:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Tooling&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;RC2&lt;/strong&gt; release brings the &lt;code&gt;.NET Core CLI&lt;/code&gt; to the forefront, and with that all the other command line tooling that
+you&amp;rsquo;ve grown accustomed to should be stricken from your environment, i.e.; &lt;code&gt;DNX&lt;/code&gt;, &lt;code&gt;DNU&lt;/code&gt;, and &lt;code&gt;DNVM&lt;/code&gt;. Let&amp;rsquo;s start with the
+removal of all these utilities.&lt;/p&gt;
+
+&lt;h3 id=&#34;removing-dnvm:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Removing DNVM&lt;/h3&gt;
+
+&lt;p&gt;Believe it or not, you might have a dated version of the &lt;strong&gt;DNVM CLI&lt;/strong&gt; and in order to invoke the &lt;code&gt;uninstall&lt;/code&gt; you might have to first
+perform an &lt;code&gt;update-self&lt;/code&gt; command. Doing so will ensure that you have the latest version, which will contain the &lt;code&gt;uninstall&lt;/code&gt; command.
+From a &lt;code&gt;cmd&lt;/code&gt; window &lt;em&gt;running as admininistrator&lt;/em&gt;, execute the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dnvm update-self
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then execute the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dnvm uninstall
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;verification:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Verification&lt;/h4&gt;
+
+&lt;p&gt;From a new &lt;code&gt;cmd&lt;/code&gt; window, the &lt;code&gt;dnvm&lt;/code&gt; command should result in the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;λ dnvm
+&#39;dnvm&#39; is not recognized as an internal or external command, operable program or batch file.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;removing-dnx-dnu:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Removing DNX &amp;amp; DNU&lt;/h3&gt;
+
+&lt;p&gt;From a &lt;code&gt;cmd&lt;/code&gt; line window, execute &lt;code&gt;dnx&lt;/code&gt; - you should see something similar to this as output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;λ dnx
+Microsoft .NET Execution environment Clr-x86-1.0.0-rc1-16231
+
+Usage: dnx [options]
+
+Options:
+  --project|-p &amp;lt;PATH&amp;gt;              Path to the project.json file or the application folder. Defaults to the current folder if not provided.
+  --appbase &amp;lt;PATH&amp;gt;                 Application base directory path
+  --lib &amp;lt;LIB_PATHS&amp;gt;                Paths used for library look-up
+  --debug                          Waits for the debugger to attach before beginning execution.
+  --bootstrapper-debug             Waits for the debugger to attach before bootstrapping runtime.
+  --framework &amp;lt;FRAMEWORK_ID&amp;gt;       Set the framework version to use when running (i.e. dnx451, dnx452, dnx46, ...)
+  -?|-h|--help                     Show help information
+  --version                        Show version information
+  --watch                          Watch file changes
+  --packages &amp;lt;PACKAGE_DIR&amp;gt;         Directory containing packages
+  --configuration &amp;lt;CONFIGURATION&amp;gt;  The configuration to run under
+  --port &amp;lt;PORT&amp;gt;                    The port to the compilation server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Likewise enter &lt;code&gt;dnu&lt;/code&gt; in the same &lt;code&gt;cmd&lt;/code&gt; window, expecting the following output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;λ dnu
+Microsoft .NET Development Utility Clr-x86-1.0.0-rc1-16231
+
+Usage: dnu [options] [command]
+
+Options:
+  -v|--verbose  Show verbose output
+  -?|-h|--help  Show help information
+  --version     Show version information
+
+Commands:
+  build             Produce assemblies for the project in given directory
+  clear-http-cache  Clears the package cache.
+  commands          Commands related to managing application commands (install, uninstall)
+  feeds             Commands related to managing package feeds currently in use
+  install           Install the given dependency
+  list              Print the dependencies of a given project
+  pack              Build NuGet packages for the project in given directory
+  packages          Commands related to managing local and remote packages folders
+  publish           Publish application for deployment
+  restore           Restore packages
+  wrap              Wrap a csproj/assembly into a project.json, which can be referenced by project.json files
+
+Use &amp;quot;dnu [command] --help&amp;quot; for more information about a command.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;DNX&lt;/code&gt; and &lt;code&gt;DNU&lt;/code&gt; command line tools are simply &lt;code&gt;exe&#39;s&lt;/code&gt; in your &lt;code&gt;%USERPROFILE%\.dnx&lt;/code&gt; and &lt;code&gt;%USERPROFILE%\.dnx\bin&lt;/code&gt; directories. Navigate to your &lt;code&gt;%USERPROFILE%&lt;/code&gt;
+directory from windows explorer and delete the &lt;code&gt;.dnx&lt;/code&gt; directory entirely. Once you have successfully deleted this directory you
+should be able to execute the &lt;code&gt;dnx&lt;/code&gt; and &lt;code&gt;dnu&lt;/code&gt; commands again from a &lt;code&gt;cmd&lt;/code&gt; window and the system should complain that they are not
+recognized.&lt;/p&gt;
+
+&lt;h4 id=&#34;verification-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Verification&lt;/h4&gt;
+
+&lt;p&gt;From a new &lt;code&gt;cmd&lt;/code&gt; window, the &lt;code&gt;dnx&lt;/code&gt; and &lt;code&gt;dnu&lt;/code&gt; commands should result in the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;λ dnx
+&#39;dnx&#39; is not recognized as an internal or external command, operable program or batch file.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;λ dnu
+&#39;dnu&#39; is not recognized as an internal or external command, operable program or batch file.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;environment-variables:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Environment Variables&lt;/h3&gt;
+
+&lt;p&gt;Unfortunately, the &lt;code&gt;PATH&lt;/code&gt; environment variable is not cleaned up and this needs to be done manually.&lt;/p&gt;
+
+&lt;p&gt;Press the &lt;kbd&gt;Windows&lt;/kbd&gt; key, then begin typing &amp;ldquo;environment&amp;rdquo;, then select either of the two top options returned:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/05/win-search.png&#34; alt=&#34;Windows Search&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You are then presented the &amp;ldquo;system properties&amp;rdquo; dialog, select &lt;strong&gt;Environment Variables&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/05/sys-props.png&#34; alt=&#34;System Properties&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We will need to ensure that both &lt;code&gt;PATH&lt;/code&gt; variables are cleaned up, including your &lt;code&gt;%USERPROFILE%&lt;/code&gt; and the &lt;code&gt;System&lt;/code&gt; variables. Let&amp;rsquo;s &lt;kbd&gt;Edit&lt;/kbd&gt; both of them.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/05/env-vars.png&#34; alt=&#34;Environment Variables&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the &lt;strong&gt;Edit Variables&lt;/strong&gt; dialog, remove any and all of the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Users\[ your global identifier ]\.dnx\bin;
+C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-update1\bin;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/05/edit-vars.png&#34; alt=&#34;Edit User Variables&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;net-core-cli:0349d6d87cad08484fba4056f258e4f0&#34;&gt;.NET Core CLI&lt;/h3&gt;
+
+&lt;p&gt;Simply follow &lt;a href=&#34;https://www.microsoft.com/net/core#windows&#34;&gt;these instuctions&lt;/a&gt;. Once you&amp;rsquo;re able to &amp;ldquo;Run the app&amp;rdquo; from the new &lt;strong&gt;CLI&lt;/strong&gt; you&amp;rsquo;re good to go.&lt;/p&gt;
+
+&lt;h4 id=&#34;review:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Review&lt;/h4&gt;
+
+&lt;p&gt;You should the following checklist fully satisfied at this point.&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&#34;fa fa-check-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;strong&gt;DNX&lt;/strong&gt;, &lt;strong&gt;DNU&lt;/strong&gt; and &lt;strong&gt;DNVM&lt;/strong&gt; completely removed / uninstalled&lt;br&gt;
+&lt;i class=&#34;fa fa-check-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;strong&gt;Visual Studio 2015 Update 2&lt;/strong&gt; installed&lt;br&gt;
+&lt;i class=&#34;fa fa-check-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;strong&gt;.NET Core CLI&lt;/strong&gt; installed&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Edit by Hand &lt;i class=&#34;fa fa-pencil-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/h2&gt;
+
+&lt;p&gt;There were changes to &lt;strong&gt;APIs&lt;/strong&gt; which required changes to implementation aspects of the source code. Additionally, &lt;code&gt;namespace&lt;/code&gt;
+changes such as (but not limited to) &lt;code&gt;Microsoft.AspNet.*&lt;/code&gt; to &lt;code&gt;Microsoft.AspNetCore.*&lt;/code&gt;. But the bulk of the work was really in the hand-editing
+of &lt;code&gt;.sln&lt;/code&gt;, &lt;code&gt;global.json&lt;/code&gt;, &lt;code&gt;.xproj&lt;/code&gt;, &lt;code&gt;project.json&lt;/code&gt;, etc. files. Let&amp;rsquo;s look at what changed.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-sln-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;.sln&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Change the &lt;strong&gt;VisualStudioVersion&lt;/strong&gt; from &lt;code&gt;14.0.24720.0&lt;/code&gt; to &lt;code&gt;14.0.25123.0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;VisualStudioVersion = 14.0.25123.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-global-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;global.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Change the &lt;strong&gt;version&lt;/strong&gt; from &lt;code&gt;1.0.0-rc1-update1&lt;/code&gt; to &lt;code&gt;1.0.0-preview1-002702&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;projects&amp;quot;: [ &amp;quot;src&amp;quot;, &amp;quot;test&amp;quot; ],
+  &amp;quot;sdk&amp;quot;: {
+    &amp;quot;version&amp;quot;: &amp;quot;1.0.0-preview1-002702&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-xproj-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;.xproj&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;.xproj&lt;/code&gt; files are a little more involved, there are a few items that are required to be changed. In &lt;strong&gt;RC1&lt;/strong&gt; we had proprerties that
+were specific to &lt;strong&gt;DNX&lt;/strong&gt;, now we replace these with &lt;strong&gt;DOTNET&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DNX\Microsoft.DNX.Props&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.Props&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Additionally, we need to change the targets. This one requires that you know the type of project you&amp;rsquo;re editing, for example &lt;em&gt;&amp;ldquo;class library&amp;rdquo;&lt;/em&gt; vs. &lt;em&gt;&amp;ldquo;web site&amp;rdquo;&lt;/em&gt;. In &lt;strong&gt;RC1&lt;/strong&gt;
+there was only one target, but with &lt;strong&gt;RC2&lt;/strong&gt; they are differeniated.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DNX\Microsoft.DNX.targets&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-class-library:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2 (class library)&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.targets&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-web:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2 (web)&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-project-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;project.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;There has been a large reworking of the &lt;code&gt;project.json&lt;/code&gt; file - detailed &lt;a href=&#34;https://github.com/aspnet/Announcements/issues/175&#34;&gt;here&lt;/a&gt;. I will not be covering all
+of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official
+&lt;a href=&#34;http://json.schemastore.org/project-1.0.0-rc2&#34;&gt;&lt;code&gt;project.json schema&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We will look at various sections of the &lt;code&gt;project.json&lt;/code&gt; file changes. Let&amp;rsquo;s start with replacing &lt;code&gt;compilationOptionsbuildOptions&lt;/code&gt; with &lt;code&gt;buildOptions&lt;/code&gt;, and notice that
+we are adding much more options than before.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;compilationOptions&amp;quot;: {
+  &amp;quot;emitEntryPoint&amp;quot;: true,
+  &amp;quot;warningsAsErrors&amp;quot;: true
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;buildOptions&amp;quot;: {		
+  &amp;quot;emitEntryPoint&amp;quot;: true,
+  &amp;quot;warningsAsErrors&amp;quot;: true,
+  &amp;quot;preserveCompilationContext&amp;quot;: true,
+  &amp;quot;embed&amp;quot;: &amp;quot;Views/**&amp;quot;, // Instead of &amp;quot;.:resource&amp;quot;: &amp;quot;Views/**&amp;quot;,
+  &amp;quot;compile&amp;quot;: {
+    &amp;quot;exclude&amp;quot;: [ &amp;quot;wwwroot&amp;quot;, &amp;quot;node_modules&amp;quot; ] // Now here, instead of &amp;quot;.:exclude&amp;quot;
+  }
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Additionally, we have &lt;code&gt;publishOptions&lt;/code&gt; that we can utilize - consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;publishOptions&amp;quot;: {
+  &amp;quot;include&amp;quot;: [
+    &amp;quot;wwwroot&amp;quot;,
+    &amp;quot;appsettings.json&amp;quot;,
+    &amp;quot;web.config&amp;quot;
+  ]
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, we have to be a little more specific with how we want the server to handle garbage collection.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;runtimeOptions&amp;quot;: {
+  &amp;quot;gcServer&amp;quot;: true, // Yes, please perform garbage collection
+  &amp;quot;gcConcurrent&amp;quot;: true // Yes, please do so concurrently...
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-web-config-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;web.config&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Now, &lt;strong&gt;IIS&lt;/strong&gt; is a little smarter and is starting to recognize &lt;strong&gt;ASP.NET Core&lt;/strong&gt; a little more.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-3:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
+&amp;lt;configuration&amp;gt;
+  &amp;lt;system.webServer&amp;gt;
+    &amp;lt;handlers&amp;gt;
+      &amp;lt;add name=&amp;quot;httpPlatformHandler&amp;quot; path=&amp;quot;*&amp;quot; verb=&amp;quot;*&amp;quot; modules=&amp;quot;httpPlatformHandler&amp;quot; 
+           resourceType=&amp;quot;Unspecified&amp;quot;/&amp;gt;
+    &amp;lt;/handlers&amp;gt;
+    &amp;lt;httpPlatform processPath=&amp;quot;%DNX_PATH%&amp;quot; arguments=&amp;quot;%DNX_ARGS%&amp;quot; stdoutLogEnabled=&amp;quot;false&amp;quot; /&amp;gt;
+  &amp;lt;/system.webServer&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
+&amp;lt;configuration&amp;gt;
+  &amp;lt;system.webServer&amp;gt;
+    &amp;lt;handlers&amp;gt;
+      &amp;lt;add name=&amp;quot;aspNetCore&amp;quot; path=&amp;quot;*&amp;quot; verb=&amp;quot;*&amp;quot; modules=&amp;quot;AspNetCoreModule&amp;quot; 
+           resourceType=&amp;quot;Unspecified&amp;quot; /&amp;gt;
+    &amp;lt;/handlers&amp;gt;
+    &amp;lt;aspNetCore processPath=&amp;quot;%LAUNCHER_PATH%&amp;quot; arguments=&amp;quot;%LAUNCHER_ARGS%&amp;quot; 
+                forwardWindowsAuthToken=&amp;quot;false&amp;quot; stdoutLogEnabled=&amp;quot;false&amp;quot; /&amp;gt;
+  &amp;lt;/system.webServer&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-hosting-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;hosting.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;With the release of &lt;strong&gt;RC2&lt;/strong&gt;, the &lt;code&gt;project.json&lt;/code&gt; schema removed the &lt;code&gt;webroot&lt;/code&gt; property. Now in order to specify the websites&amp;rsquo; static content directory we need to
+create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;webroot&amp;quot;: &amp;quot;wwwroot&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-appsettings-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;appsettings.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;This was a minor change, but if you forgot to change this - then you&amp;rsquo;ll end up with a runtime exception. The &lt;code&gt;Logging:LogLevel:Default&lt;/code&gt; should now be
+&lt;code&gt;Debug&lt;/code&gt; as &lt;code&gt;Verbose&lt;/code&gt; was removed altogether.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-4:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;Logging&amp;quot;: {
+      &amp;quot;IncludeScopes&amp;quot;: false,
+      &amp;quot;LogLevel&amp;quot;: {
+        &amp;quot;Default&amp;quot;: &amp;quot;Verbose&amp;quot;, // &amp;lt; -- Change &amp;quot;Verbose&amp;quot;
+        &amp;quot;System&amp;quot;: &amp;quot;Information&amp;quot;,
+        &amp;quot;Microsoft&amp;quot;: &amp;quot;Information&amp;quot;
+      }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-3:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;Logging&amp;quot;: {
+      &amp;quot;IncludeScopes&amp;quot;: false,
+      &amp;quot;LogLevel&amp;quot;: {
+        &amp;quot;Default&amp;quot;: &amp;quot;Debug&amp;quot;, // &amp;lt; --- To &amp;quot;Debug&amp;quot;
+        &amp;quot;System&amp;quot;: &amp;quot;Information&amp;quot;,
+        &amp;quot;Microsoft&amp;quot;: &amp;quot;Information&amp;quot;
+      }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-launchsettings-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;launchSettings.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;environmentVariables&lt;/code&gt; changed, such that the key name for the environment is no longer referred to as &amp;ldquo;Hosting:Environment&amp;rdquo;.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-5:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;environmentVariables&amp;quot;: {
+  &amp;quot;Hosting:Environment&amp;quot;: &amp;quot;Development&amp;quot; // &amp;lt; -- Change &amp;quot;Hosting:Environment&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-4:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;environmentVariables&amp;quot;: {
+  &amp;quot;ASPNETCORE_ENVIRONMENT&amp;quot;: &amp;quot;Development&amp;quot; // &amp;lt; -- To &amp;quot;ASPNETCORE_ENVIRONMENT&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-cs-files:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;*.cs&lt;/code&gt; files&lt;/h3&gt;
+
+&lt;p&gt;Some of these were very simple to fix. After updating your &lt;code&gt;project.json&lt;/code&gt; with the latest &lt;strong&gt;RC2&lt;/strong&gt; versions - some changes are as simple as a &lt;code&gt;namespace&lt;/code&gt; change (but others are more involed).&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-6:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNet.*;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-5:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNetCore.*;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;api-changes:0349d6d87cad08484fba4056f258e4f0&#34;&gt;API changes&lt;/h3&gt;
+
+&lt;p&gt;There was an attempt to unify some of the APIs as it pertains to consistency. As such, I had to make the following changes to my projects.
+The &lt;code&gt;IApplicationBuilder.Use*&lt;/code&gt; pattern now takes a new &lt;code&gt;*Options&lt;/code&gt; instance rather than an &lt;code&gt;Action&amp;lt;*Options&amp;gt;&lt;/code&gt;, providing more control to the consumer.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-7:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;app.UseCookieAuthentication(options =&amp;gt;
+{
+    options.AuthenticationScheme = &amp;quot;AspNetCookie&amp;quot;;
+    options.AutomaticAuthenticate = true;
+    options.AutomaticChallenge = true;
+    options.LoginPath = &amp;quot;/account/login&amp;quot;;
+    options.LogoutPath = &amp;quot;/account/logout&amp;quot;;
+    options.AccessDeniedPath = &amp;quot;/account/forbidden&amp;quot;;
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-6:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;app.UseCookieAuthentication(new CookieAuthenticationOptions
+{
+    AuthenticationScheme = AuthenticationScheme.JciCookie,
+    AutomaticAuthenticate = true,
+    AutomaticChallenge = true,
+    LoginPath = &amp;quot;/account/login&amp;quot;,
+    LogoutPath = &amp;quot;/account/logout&amp;quot;,
+    AccessDeniedPath = &amp;quot;/account/forbidden&amp;quot;,
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The service locator pattern (or should I say &amp;ldquo;anti-pattern&amp;rdquo;) is slowing being removed from the framework. As such, if you were relying on the &lt;code&gt;CallContextServiceLocator.Locator.ServiceProvider&lt;/code&gt;
+you can no longer do so with the &lt;strong&gt;RC2&lt;/strong&gt; release.&lt;/p&gt;
+
+&lt;p&gt;Wherever you were using the &lt;code&gt;IApplication&lt;/code&gt; interface, you should be able to instead use the &lt;code&gt;IWebHost&lt;/code&gt; interface.&lt;/p&gt;
+
+&lt;h3 id=&#34;controllers-as-services:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Controllers as Services&lt;/h3&gt;
+
+&lt;p&gt;In &lt;strong&gt;RC1&lt;/strong&gt;, there was a nice little feature that allowed for any &lt;code&gt;Type&lt;/code&gt; to exist in a list of plausible controller/services - meaning that you could basically register external controllers as
+valid API and View entry points into your hosting application. You simply needed to add the types via the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;IMvcBuilder.AddControllersAsServices(params Type[] types);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This method signature changed with &lt;strong&gt;RC2&lt;/strong&gt; and it no longer accepts any arguments. In order to retain this functionality, you must first add the desired external assemblies as an &lt;code&gt;AssemblyPart&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;foreach (var assembly in GetExternalAssemblies())
+{
+    builder.PartManager.ApplicationParts.Add(new AssemblyPart(assembly));    
+}
+
+builder.AddControllersAsServices();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-startup-ctor:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The Startup &lt;code&gt;.ctor&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;One little change, you&amp;rsquo;re now required to explicitly set the base path and you can do so with the following.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public Startup(IHostingEnvironment env)
+{
+    var builder =
+        new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath) // Explicity set base from the content root path
+            .AddJsonFile(&amp;quot;appsettings.json&amp;quot;, true)
+            .AddJsonFile($&amp;quot;appsettings.{env.EnvironmentName}.json&amp;quot;, true)
+            .AddEnvironmentVariables();
+    // Omitted for brevity...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-program-cs-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;Program.cs&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Yes, we are now a console application&amp;hellip;so we&amp;rsquo;ll need this for our entry point.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public class Program
+{
+    public static void Main(string[] arguments)
+    {
+        using (var host = 
+            new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup&amp;lt;Startup&amp;gt;()
+                .Build();)
+        {
+            host.Run();
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;breaking-changes:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Breaking changes&lt;/h2&gt;
+
+&lt;p&gt;For a complete listing of all the announcements, please visit the official
+&lt;a href=&#34;https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2&#34;&gt;&lt;strong&gt;ASP.NET &lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Repo&lt;/strong&gt;&lt;/a&gt; announcements issue.&lt;/p&gt;
+
+&lt;h2 id=&#34;further-reading:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Further reading&lt;/h2&gt;
+
+&lt;p&gt;The previous steps were really to get your environment in an &lt;strong&gt;RC2&lt;/strong&gt; ready state, but there is so much more you can learn that has changed.
+I encourage bookmarking and reading the following articles as time permits.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotnet.github.io/docs/core-concepts/dnx-migration.html&#34;&gt;&lt;strong&gt;Migrating from DNX to .NET Core CLI&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.asp.net/en/latest/migration/rc1-to-rc2.html&#34;&gt;&lt;strong&gt;Migrating from ASP.NET 5 RC1 to ASP.NET Core&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md&#34;&gt;&lt;strong&gt;The .NET Platform Standard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html&#34;&gt;&lt;strong&gt;Writing Libraries with Cross Platform Tools&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conclusion:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;There, that really wasn&amp;rsquo;t too bad - was it? I&amp;rsquo;m certain that I didn&amp;rsquo;t cover everything and that I probably missed something. I hope that this was helpful, please feel free to share this!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

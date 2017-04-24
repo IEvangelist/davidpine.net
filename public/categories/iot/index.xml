@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IoT on IEvangelist</title>
+    <link>http://davidpine.net/categories/iot/</link>
+    <description>Recent content in IoT on IEvangelist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://davidpine.net/categories/iot/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building a Magic Mirror</title>
+      <link>http://davidpine.net/blog/building-a-magic-mirror/</link>
+      <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/building-a-magic-mirror/</guid>
+      <description>
+
+&lt;h1 id=&#34;inspiration:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Inspiration&lt;/h1&gt;
+
+&lt;p&gt;I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators&amp;hellip;some might say,
+&amp;ldquo;I&amp;rsquo;m standing on the shoulders of giants&amp;rdquo;. They would probably we right, and I&amp;rsquo;m okay with that. Earlier this year, I stumbled upon a tweet about someone how created a
+magic mirror&amp;hellip;this is the root of my inspiration.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+    &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+        Yup, it is official &amp;ndash; I want a mirror like this one!
+        &lt;a href=&#34;https://t.co/MVcM1nca7A&#34;&gt;https://t.co/MVcM1nca7A&lt;/a&gt;
+    &lt;/p&gt;
+    &amp;mdash; David Pine (@davidpine7)
+    &lt;a href=&#34;https://twitter.com/davidpine7/status/695318303326265345&#34;&gt;
+        February 4, 2016
+    &lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Before continuing on, allow me to explain what a magic mirror is. A magic mirror is simply a two-way mirror with a monitor positioned behind it that projects through the
+mirror. The monitor displays the application. The application is running on a small computer, in most cases a &lt;strong&gt;Raspberry Pi&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.raspberrypi.org/&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2016/12/pi-logo.png&#34; alt=&#34;Raspberry Pi&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I noticed that a lot of the magic mirror&amp;rsquo;s had greeting messages such as &amp;ldquo;you look handsome&amp;rdquo; or &amp;ldquo;good morning sexy&amp;rdquo; and other curiously intuitive sayings.
+I thought &amp;ldquo;wow&amp;rdquo; this really is a smart mirror, much to my surprise these were all just static messages (or only dynamic when accounting for the time of day). I was thinking
+to myself, &amp;ldquo;I wonder if I could improve upon this&amp;rdquo;, and that was my motivation!&lt;/p&gt;
+
+&lt;h2 id=&#34;open-source:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Open Source&lt;/h2&gt;
+
+&lt;p&gt;If you want to skip out from reading this post, you can checkout my project up on &lt;strong&gt;GitHub&lt;/strong&gt; &amp;nbsp;
+&lt;a href=&#34;https://www.github.com/IEvangelist/Mirror&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &amp;nbsp; IEvangelist.Mirror&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;hardware:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Hardware&lt;/h1&gt;
+
+&lt;p&gt;I was excited when &lt;strong&gt;Microsoft&lt;/strong&gt; started selling the &lt;strong&gt;Raspberry Pi 3, Model B&lt;/strong&gt; - I ordered one immediately.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/pi3.gif&#34; alt=&#34;Raspberry Pi 3&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;specs:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Specs&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/pi-layout.png&#34; alt=&#34;Specs&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;miscellaneous:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Miscellaneous&lt;/h3&gt;
+
+&lt;p&gt;Below is a semi-comprehensive listing of all the materials and their corresponding cost that I used for building my magic mirror.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Rough Cost&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Hardware&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$60&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.microsoftstore.com/store/msusa/en_US/pdp/Raspberry-Pi-3-Bundle/productID.5068162700&#34; target=&#34;_blank&#34;&gt;Raspberry Pi 3 Bundle &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$130&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/gp/product/B00IZBIMLK/ref=oh_aui_search_detailpage?ie=UTF8&amp;psc=1&#34; target=&#34;_blank&#34;&gt;BenQ 27&amp;rdquo; HDMI LED Monitor &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$90&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.tapplastics.com/product/plastics/cut_to_size_plastic/two_way_mirrored_acrylic/558&#34; target=&#34;_blank&#34;&gt;Custom-sized Two-way Mirrored Acrylic &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$40&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Microsoft-LifeCam-Cinema-720p-Webcam/dp/B009CPC6QA&#34; target=&#34;_blank&#34;&gt;Microsoft LifeCam &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/gp/product/B00DEJXRAE/ref=oh_aui_search_detailpage?ie=UTF8&amp;psc=1&#34; target=&#34;_blank&#34;&gt;Dell USB Wired Soundbar &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.amazon.com/gp/product/B000234UFG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&amp;psc=1&#34; target=&#34;_blank&#34;&gt;Power Cord Splitter &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;a/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Full HDMI Cable, USB Extension Cables&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$50&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Carpentry Materials&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$50&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Glenlivet 12 Year Old Scotch Whisky (not technically hardware)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;~$480&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Considering the total investment is still under $500 bucks, that&amp;rsquo;s not too bad!&lt;/p&gt;
+
+&lt;h1 id=&#34;os-platform:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;OS &amp;ndash; Platform&lt;/h1&gt;
+
+&lt;p&gt;One of my favorite parts about developing the magic mirror was the fact that I could do so from the comfort of &lt;strong&gt;Visual Studio&lt;/strong&gt; using the worlds most powerful programming
+language today, &lt;strong&gt;C#&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.visualstudio.com/&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2016/12/vs.png&#34; alt=&#34;Visual Studio&#34; style=&#34;max-width: 175px;&#34; /&gt;
+&lt;/a&gt;
+&amp;nbsp; &amp;nbsp;
+&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/kx37x362.aspx&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2016/12/csharp.png&#34; alt=&#34;C#&#34; style=&#34;max-width: 175px;&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name &amp;ndash; Link&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://developer.microsoft.com/en-us/windows/iot/explore/iotcore&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Windows 10 IoT Core, &amp;quot;Build 10.0.14393&amp;quot;&lt;/code&gt; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Platform&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Universal Windows Platform (UWP), &amp;quot;UAP 1.0&amp;quot;&lt;/code&gt; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;software:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Software&lt;/h1&gt;
+
+&lt;p&gt;When people throw around the acronym &lt;strong&gt;IoT&lt;/strong&gt; it can mean a lot of different things. For this specific application, it is essential. Using the built-in &lt;em&gt;WIFI&lt;/em&gt; on the &lt;strong&gt;Pi 3&lt;/strong&gt; we
+can leverage the power of the internet to gather and share information.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Software is simply the movement and manipulation of data. But without context, said data is meaningless.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The magic mirror application strives to provide data that is all of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Relevant&lt;/li&gt;
+&lt;li&gt;Practical&lt;/li&gt;
+&lt;li&gt;Convenient&lt;/li&gt;
+&lt;li&gt;Timely&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Below is the user-interface layout. Let&amp;rsquo;s have a look at the various components that our application is built on.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/layout.png&#34; alt=&#34;Layout&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;components:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Components&lt;/h2&gt;
+
+&lt;p&gt;From the layout above, it is clear to visualize the key components of the application. Most of these components implement the
+&lt;code&gt;IContextSynthesizer&lt;/code&gt; interface. These implementations are indicators that each component is capable of handling voice commands, and providing a message that is consumable
+by the &lt;strong&gt;UWP&lt;/strong&gt; speech-synthesizer.  More on this later&amp;hellip;&lt;/p&gt;
+
+&lt;h3 id=&#34;weather-forecast:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Weather &amp;ndash; Forecast&lt;/h3&gt;
+
+&lt;p&gt;The current weather and forecast are retrieved every fifteen minutes from the free &lt;a href=&#34;http://openweathermap.org/api&#34; target=&#34;_blank&#34;&gt;Open Weather API&lt;/a&gt;.
+The developer API key and zip code are configurable. Additionally the unit-of-measure is configurable, where you can specify &lt;code&gt;imperial&lt;/code&gt; or &lt;code&gt;metric&lt;/code&gt; as valid settings.&lt;/p&gt;
+
+&lt;h3 id=&#34;clock:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Clock&lt;/h3&gt;
+
+&lt;p&gt;The clock is extremely simple. It is literally just the current date and time. It updates every second, formatting to the hour, minute and second &amp;ndash; additionally displaying the
+name of the day followed by the month and day number.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;
+&lt;pre&gt;
+&lt;code class=&#34;language-yaml&#34;&gt;&lt;span style=&#34;font-size: large&#34;&gt;8:29&lt;/span&gt; &lt;sup&gt;34&lt;/sup&gt;
+Wednesday, December 21&lt;sup&gt;st&lt;/sup&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+Note: I opted to omit whether or not we&amp;rsquo;re in ante or post meridiem as it is assumed the user would know if it&amp;rsquo;s morning or in the afternoon.&lt;/p&gt;
+
+&lt;h3 id=&#34;event-calendar-schedule:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Event Calendar / Schedule&lt;/h3&gt;
+
+&lt;p&gt;My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to
+&lt;a href=&#34;https://github.com/IEvangelist/Mirror#fork-destination-box&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-code-fork&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; fork my repo&lt;/a&gt; &amp;ndash; you would need to setup
+your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid &lt;code&gt;iCal&lt;/code&gt; &lt;a href=&#34;http://icalendar.org/&#34; target=&#34;_blank&#34;&gt;(*.ics) formatting&lt;/a&gt;.
+The events are truncated to fit on the page and ordered by the date of the event.&lt;/p&gt;
+
+&lt;h3 id=&#34;music-player:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Music Player&lt;/h3&gt;
+
+&lt;p&gt;Imagine you have the magic mirror mounted in your bathroom, or bedroom&amp;hellip;it would be nice to say, &amp;ldquo;play a song&amp;rdquo;, or &amp;ldquo;play Deftones&amp;rdquo; for example and music starts playing. That is
+the idea behind the music player component. The current implementation of the music player is limited. I spent a few long nights trying to figure out how to use the built-in &lt;strong&gt;Bluetooth&lt;/strong&gt;
+on the &lt;strong&gt;Pi 3&lt;/strong&gt;, while &lt;strong&gt;UWP&lt;/strong&gt; does have some support it is limited. I was able to pair but not stream songs from my &lt;strong&gt;iPod&lt;/strong&gt; for example, which was really frustrating. For the meantime
+I simply placed several songs in the &lt;code&gt;Assets&lt;/code&gt; directory as content and I can play these resources. Ideally, I will use a web-based service like Spotify or Pandora.&lt;/p&gt;
+
+&lt;h3 id=&#34;voice-commands:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Voice Commands&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;Universal Windows Platform&lt;/strong&gt; provides two very useful classes, the
+&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechrecognition.speechrecognizer.aspx&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;SpeechRecognizer&lt;/code&gt;&lt;/a&gt; and the
+&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechsynthesis.speechsynthesizer.aspx&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;SpeechSynthesizer&lt;/code&gt;&lt;/a&gt;. Leveraging this
+I have built out the ability to talk to my magic mirror, I can ask it things like &amp;ldquo;what&amp;rsquo;s the weather&amp;rdquo;, &amp;ldquo;what&amp;rsquo;s my schedule for Wednesday&amp;rdquo;, or even tell it commands like &amp;ldquo;turn
+this up&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;microsoft-cognitive-services:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Microsoft Cognitive Services&lt;/h2&gt;
+
+&lt;p&gt;Formally known was &amp;ldquo;Project Oxford&amp;rdquo;, Microsoft Cognitive Services offers a ton of programming power and you can start using it today for &lt;strong&gt;free&lt;/strong&gt;. Simply
+&lt;a href=&#34;https://www.microsoft.com/cognitive-services/en-us/subscriptions&#34; target=&#34;_blank&#34;&gt;subscribe&lt;/a&gt; and use your subscription key as the argument to the client &lt;code&gt;.ctor&lt;/code&gt;.
+The magic mirror makes use of the Emotion API, and corresponding &lt;code&gt;EmotionServiceClient&lt;/code&gt; from the
+&lt;a href=&#34;https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Microsoft.ProjectOxford.Emotion&lt;/code&gt;&lt;/a&gt; package.&lt;/p&gt;
+
+&lt;p&gt;Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;async Task&amp;lt;IEnumerable&amp;lt;RawEmotion&amp;gt;&amp;gt; CaptureEmotionAsync()
+{
+    RawEmotion[] result;
+
+    try
+    {
+        var photoFile = await _photoService.CreateAsync();
+        var imageProperties = ImageEncodingProperties.CreateBmp();
+        await _mediaManager.CapturePhotoToStorageFileAsync(imageProperties, photoFile);
+        result = await _emotionClient.RecognizeAsync(await photoFile.OpenStreamForReadAsync());
+    }
+    finally
+    {
+        await _photoService.CleanupAsync();
+    }
+
+    return result.IsNullOrEmpty()
+        ? await TaskCache&amp;lt;IEnumerable&amp;lt;RawEmotion&amp;gt;&amp;gt;.Value(() =&amp;gt; Enumerable.Empty&amp;lt;RawEmotion&amp;gt;())
+        : result;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;First our &lt;code&gt;_photoService&lt;/code&gt; asynchronously creates a photo file&lt;/li&gt;
+&lt;li&gt;From the &lt;code&gt;ImageEncodingProperties&lt;/code&gt; class, we create a bitmap encoding property set&lt;/li&gt;
+&lt;li&gt;Our &lt;code&gt;_mediaManager&lt;/code&gt; captures a photo, storing it in the photo file with the specified encoding&lt;/li&gt;
+&lt;li&gt;Finally we invoke the &lt;code&gt;_emotionClient&lt;/code&gt; passing it the stream from the persisted photo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The &lt;code&gt;result&lt;/code&gt; object contains a &lt;code&gt;Scores&lt;/code&gt; class that looks like the following (from my mugshot):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/set.png&#34; alt=&#34;Set&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The service returned a result. The result claims an &lt;strong&gt;81.5%&lt;/strong&gt; level of confidence that I&amp;rsquo;m happy based on the given image, what do you think? What you don&amp;rsquo;t see is that I&amp;rsquo;m actually taking a selfie
+with 
+
+    
+        
+    
+
+    &lt;a href=&#34;https://twitter.com/codefoster&#34; target=&#39;_blank&#39;&gt;Jeremy Foster&lt;/a&gt;
+
+ &amp;ndash; so, yeah &amp;ndash; I was pretty happy!&lt;/p&gt;
+
+&lt;h1 id=&#34;construction:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Construction&lt;/h1&gt;
+
+&lt;p&gt;I would be lying if I tried taking credit for any of the construction. I&amp;rsquo;m slightly embarrassed to admit that I opted out of building it, as I lack the carpentry skills needed
+to do a decent job. Instead I asked a friend who just so happens to be awesome at carpentry. After persuading him with a bottle of single malt scotch whiskey, I had my magic
+mirror constructed and the results were amazing!&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-1.jpg&#39;
+                            alt=&#34;Step 1&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-2.jpg&#39;
+                            alt=&#34;Step 2&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-3.jpg&#39;
+                            alt=&#34;Step 3&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-4.jpg&#39;
+                            alt=&#34;Step 4&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-5.jpg&#39;
+                            alt=&#34;Step 5&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2016/12/con-6.jpg&#39;
+                            alt=&#34;Step 6&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/p&gt;
+
+&lt;p&gt;I was really excited to deploy my mirror software and give it a go.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/magic mirror.jpg&#34; alt=&#34;Mirror&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;check-it-out:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Check it out&lt;/h1&gt;
+
+&lt;p&gt;&lt;style&gt;
+    .iframe_container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
+        padding-top: 25px;
+        height: 0;
+    }
+    .iframe_container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/KOTYW8EioBk&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/PWr1zRBO90o&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

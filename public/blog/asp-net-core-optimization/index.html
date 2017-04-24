@@ -1,0 +1,1238 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <link rel="icon" href="/img/main/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        
+            
+                <title>ASP.NET Core Response Optimization</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.15" />
+        
+
+
+        
+            <meta name="author" content="David Pine">
+        
+        
+            <meta name="description" content="Static File Caching &amp; Compression">
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="ASP.NET Core Response Optimization"/>
+<meta name="twitter:description" content="Static File Caching &amp; Compression"/>
+<meta name="twitter:site" content="@davidpine7"/>
+
+
+        <meta property="og:title" content="ASP.NET Core Response Optimization" />
+<meta property="og:description" content="Static File Caching &amp; Compression" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidpine.net/blog/asp-net-core-optimization/" />
+
+
+<meta property="og:updated_time" content="2016-12-12T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="ASP.NET Core Response Optimization">
+<meta itemprop="description" content="Static File Caching &amp; Compression">
+
+
+<meta itemprop="dateModified" content="2016-12-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1170">
+
+
+
+<meta itemprop="keywords" content=".NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <link rel="stylesheet" href="/css/main.min.css" />
+                
+            
+        
+
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78203613-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">IEvangelist</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog/">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                        
+                            <i class="fa fa-list-ol">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                        
+                            <i class="fa fa-smile-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/speaking/">
+                        
+                            <i class="fa fa-bullhorn">&nbsp;</i>Speaking
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/conclusions/">
+                        
+                            <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://davidpine.net">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://davidpine.net">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                
+                                    <i class="fa fa-list-ol">&nbsp;</i>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                
+                                    <i class="fa fa-smile-o">&nbsp;</i>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/speaking/">
+                            <h3>
+                                
+                                    <i class="fa fa-bullhorn">&nbsp;</i>
+                                
+                                Speaking
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/conclusions/">
+                            <h3>
+                                
+                                    <i class="fa fa-lightbulb-o">&nbsp;</i>
+                                
+                                Conclusions
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/exploring-csharp-seven/"><p>Exploring C# 7</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/overriding-default-di/"><p>Overriding ASP.NET Core Framework-Provided Services</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f&text=ASP.NET%20Core%20Response%20Optimization&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f&title=ASP.NET%20Core%20Response%20Optimization" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f&title=ASP.NET%20Core%20Response%20Optimization" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f&title=ASP.NET%20Core%20Response%20Optimization" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://davidpine.net/blog/asp-net-core-optimization/">ASP.NET Core Response Optimization</a></h1>
+            
+        
+        
+            <p>Static File Caching &amp; Compression</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-12-12'>
+            December 12, 2016</time>
+        <span class="author">David Pine</span>
+        
+            <p>6 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f&text=ASP.NET%20Core%20Response%20Optimization&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f&title=ASP.NET%20Core%20Response%20Optimization" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f&title=ASP.NET%20Core%20Response%20Optimization" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f&title=ASP.NET%20Core%20Response%20Optimization" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2fasp-net-core-optimization%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://davidpine.net/blog/asp-net-core-optimization/" class="image featured">
+            <img src="/img/2016/12/speedy.jpg" alt="" />
+        </a>
+    
+
+
+    <div id="content">
+        
+
+<h2 id="intro:f7ba068c12f661d5bfa879f663970183">Intro</h2>
+
+<p>If you&rsquo;re a web developer, chances are you&rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in
+tandem on an <strong>ASP.NET Core</strong> application that I have been developing&hellip; I&rsquo;m going to share what I have learned.</p>
+
+<p>If you haven&rsquo;t had a chance to use <a href="https://www.asp.net/core"><code>ASP.NET Core</code></a> yet, you&rsquo;re missing out! As my friend <a href="https://scottaddie.com/">Scott Addie</a> likes to say:</p>
+
+<blockquote>
+<p><p/><strong>ASP.NET Core</strong> is a cafeteria plan in which developers choose application dependencies <em>à la carte</em>. This is in stark contrast to <strong>ASP.NET</strong> proper, where developers
+are provided a set meal (a bloated dependency chain) containing undesired items. Don&rsquo;t like broccoli with your steak? Maybe it&rsquo;s time to consider <strong>ASP.NET Core</strong>.
+<cite>Scott Addie</cite></p>
+</blockquote>
+
+<p>In other words, all dependencies are pluggable middleware. This provides ultimate control as you have to explicitly <em>opt-in</em> for the middleware you desire.</p>
+
+<h3 id="know-thy-middleware:f7ba068c12f661d5bfa879f663970183">Know thy Middleware</h3>
+
+<p>Not all middleware is equal. Different middleware serves different purposes (obviously). Try to think of each middleware as its own standalone feature-set. Not all middleware is
+given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In
+fact, this is the case when using static file caching and response compression together.</p>
+
+<blockquote>
+<p><p/>The <em>order</em> in which middleware is added matters and dictates the order of execution during a request.</p>
+</blockquote>
+
+<h4 id="installing-dependencies:f7ba068c12f661d5bfa879f663970183">Installing Dependencies</h4>
+
+<p>I wrote a tiny application and put it up on GitHub, check it out <a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target="_blank">here</a> if you want
+to follow along. Now let&rsquo;s install the dependencies we&rsquo;ll need. For static file caching and response compression we need to add two <code>dependencies</code> to the project.</p>
+
+<p><em>Note:</em> <code>Microsoft.AspNetCore.StaticFiles</code> will already have been installed if you started from a <strong>Visual Studio</strong> template.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Repository</th>
+<th align="left">Version</th>
+<th align="left">Nuget Package</th>
+<th align="left">Add / Use Extension Method(s)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><a href="https://github.com/aspnet/StaticFiles" target="_blank" title="Static File Caching, GitHub Repo"><i class="fa fa-github-alt" aria-hidden="true"></i></a></td>
+<td align="left"><code>1.1.0</code></td>
+<td align="left"><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/" target="_blank">Static Files</a></td>
+<td align="left"><a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileExtensions.cs#L56-L68" target="_blank"><code>.UseStaticFiles</code></a></td>
+</tr>
+
+<tr>
+<td align="center"><a href="https://github.com/aspnet/BasicMiddleware" target="_blank" title="Response Compression, GitHub Repo"><i class="fa fa-github-alt" aria-hidden="true"></i></a></td>
+<td align="left"><code>1.0.0</code></td>
+<td align="left"><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/" target="_blank">Response Compression</a></td>
+<td align="left"><a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionServicesExtensions.cs#L38-L53" target="_blank"><code>.AddResponseCompression</code></a> <a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionBuilderExtensions.cs#L20-L29" target="_blank"><code>.UseResponseCompression</code></a></td>
+</tr>
+</tbody>
+</table>
+
+<p>Follow these instructions, from within <strong>Visual Studio</strong>:</p>
+
+<pre><code class="language-yaml">Tools ➪
+    NuGet Package Manager ➪
+        Manage NuGet Packages for Solution... ➪ 
+            Browse ➪
+                Search ➪
+                    [ Install ]
+</code></pre>
+
+<h3 id="configuring-startup:f7ba068c12f661d5bfa879f663970183">Configuring Startup</h3>
+
+<p>There are two common nomenclatures that exist for wiring up middleware in your startup classes, the <code>.Add*</code> and <code>.Use*</code> extension methods. The <code>.Add*</code> calls are intended to add
+services to the <code>IServiceCollection</code> instance, ensuring that they are ready for <em>usage</em>. The <code>.Use*</code> calls specify that you want to use the middleware and makes the assumption
+that any services required by <strong>DI</strong> will have already been <em>added</em> with the corresponding <code>.Add*</code> call.</p>
+
+<p>Now let&rsquo;s &ldquo;add&rdquo; response compression in the <code>.ConfigureServices</code> call of our <code>Startup.cs</code>.</p>
+
+<pre><code class="language-csharp">public void ConfigureServices(IServiceCollection services)
+{    
+    services.AddMvc();
+    services.AddResponseCompression(
+        options =&gt; 
+            options.MimeTypes = ResponseCompressionMimeTypes.Defaults);
+}
+</code></pre>
+
+<p>Several bits of the implementation details should jump out at you. First, we do not need to call an <code>.AddStaticFiles</code> extension method because there are no services required
+for this middleware, as such it doesn&rsquo;t exist. Second, we are providing a lambda expression to satisfy the <code>Action&lt;ResponseCompressionOptions&gt;</code> parameter. We also assign the
+<code>.MimeTypes</code> property from the <code>ResponseCompressionMimeTypes.Defaults</code> we are targeting for compression.</p>
+
+<blockquote>
+<p><p/> If no compression providers are specified then <code>GZip</code> is used by default.
+<cite><a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionProvider.cs#L22" target="_blank">ASP.NET Core Team - GitHub</a></cite></p>
+</blockquote>
+
+<p>The <code>ResponseCompressionMimeTypes.cs</code> is defined as follows:</p>
+
+<pre><code class="language-csharp">using System.Collections.Generic;
+using System.Linq;
+using static Microsoft.AspNetCore.ResponseCompression.ResponseCompressionDefaults;
+
+namespace IEvangelist.AspNetCore.Optimization
+{
+    public static class ResponseCompressionMimeTypes
+    {
+        public static IEnumerable&lt;string&gt; Defaults
+            =&gt; MimeTypes.Concat(new[]
+                                {
+                                    &quot;image/svg+xml&quot;,
+                                    &quot;application/font-woff2&quot;
+                                });
+    }
+}
+</code></pre>
+
+<p>There are several types defined by default in <strong>ASP.NET Core</strong> class <code>ResponseCompressionDefaults.MimeTypes</code>, we are simply expanding that to include &ldquo;SVG&rdquo; images and the &ldquo;Woff2&rdquo; fonts.</p>
+
+<h3 id="order-exemplified:f7ba068c12f661d5bfa879f663970183">Order Exemplified</h3>
+
+<p>Consider the following:</p>
+
+<pre><code class="language-csharp">public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseStaticFiles()          // Adds the static middleware to the request pipeline
+       .UseResponseCompression(); // Adds the response compression to the request pipeline
+}
+</code></pre>
+
+<p>The snippet above will absolutely work for serving static files, but it will not compress or cache anything. Note the differences below:</p>
+
+<pre><code class="language-csharp">public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseResponseCompression()  // Adds the response compression to the request pipeline
+       .UseStaticFiles();         // Adds the static middleware to the request pipeline       
+}
+</code></pre>
+
+<p>The <em>order</em> in which the middleware was invoked in the pipeline changed, as such the order in which the middleware is executed on a request is also changed.
+When static file middleware occurs before response compression, it returns the file as a response before compression has a chance to execute.</p>
+
+<ul>
+<li>Client requests <code>main.css</code></li>
+<li>Static file middleware determines it can fully satisfy said request</li>
+<li>The <code>main.css</code> file is <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" target="_blank">sent</a> and the <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126" target="_blank">&ldquo;next&rdquo;</a> middleware in the pipeline is never exectued</li>
+</ul>
+
+<p>Now that we have these two pieces of middleware wired into out pipeline in the correct order, what else is left. There is one important thing that we forgot to do.
+While we do have static file middleware, we didn&rsquo;t know that &ldquo;caching&rdquo; is off by default. So we&rsquo;ll need to handle this with an instance of the the <code>StaticFileOptions</code>.</p>
+
+<blockquote>
+<p><p/>Keep your <i class="fa fa-eye" aria-hidden="true"></i><i class="fa fa-eye" aria-hidden="true"></i>&rsquo;s open for extension method overloads. These are often clues that there are <em>options</em> for providing customized configuration for the middleware you&rsquo;re wiring up.</p>
+</blockquote>
+
+<pre><code class="language-csharp">public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseResponseCompression()
+       .UseStaticFiles(
+           new StaticFileOptions
+           {
+               OnPrepareResponse =
+                   _ =&gt; _.Context.Response.Headers[HeaderNames.CacheControl] = 
+                        &quot;public,max-age=604800&quot; // A week in seconds
+           })
+       .UseMvc(routes =&gt; routes.MapRoute(&quot;default&quot;, &quot;{controller=Home}/{action=Index}/{id?}&quot;));
+}
+</code></pre>
+
+<p>The instance of the <code>StaticFileOptions</code> object has a public property namely &ldquo;OnPrepareResponse&rdquo; of type <code>Action&lt;StaticFileResponseContext&gt;</code>. So we can again specify a lambda
+expression. This expression can be used to delegate the preperation of the response. Notice we&rsquo;re simply setting the <code>Cache-Control</code> header to a &ldquo;max-age&rdquo; of a week. That was
+pretty simple, hey?!</p>
+
+<h3 id="compression-awareness:f7ba068c12f661d5bfa879f663970183">Compression Awareness</h3>
+
+<p>It&rsquo;s all the little things! The response compression middleware boasts deterministic compression, i.e.; if the
+<a href="https://github.com/aspnet/KestrelHttpServer" target="_blank"><code>KestrelHttpServer</code></a> is running behind the
+<a href="https://www.iis.net/" target="_blank"><strong>IIS</strong></a> reverse proxy then the middleware may or may not compress the response. The middleware determines the following:</p>
+
+<ul>
+<li>If the request accepts compression</li>
+<li>If the requested resource matches the configured MIME types</li>
+<li>Whether or not the response needs to be compressed</li>
+</ul>
+
+<h3 id="results:f7ba068c12f661d5bfa879f663970183">Results</h3>
+
+<p>Let&rsquo;s spend some time examining the results of our response optimization efforts.</p>
+
+<h4 id="before:f7ba068c12f661d5bfa879f663970183">Before</h4>
+
+<p><img src="/img/2016/12/before.png" alt="Before" /></p>
+
+<h5 id="total-s:f7ba068c12f661d5bfa879f663970183">Total(s)</h5>
+
+<pre><code class="language-yaml">13 Requests | 549 KB transfered | ... | ... 
+</code></pre>
+
+<p><strong>banner1.svg Response Headers</strong></p>
+
+<pre><code class="language-yaml">HTTP/1.1 200 OK
+Content-Length: 9679
+Content-Type: image/svg+xml
+Accept-Ranges: bytes
+ETag: &quot;1d1ce31e3bd09cf&quot;
+</code></pre>
+
+<h4 id="after:f7ba068c12f661d5bfa879f663970183">After</h4>
+
+<p><img src="/img/2016/12/after.png" alt="After" /></p>
+
+<h5 id="total-s-1:f7ba068c12f661d5bfa879f663970183">Total(s)</h5>
+
+<pre><code class="language-yaml">13 Requests | 175 KB transfered | ... | ... 
+</code></pre>
+
+<p>The total payload for all 13 requests is a total of 3.137 times smaller (a meager 31.9% of the original size). The larger the application, the more dramatic and valuable
+this becomes! Consider an <strong>Angular2</strong> application (or other SPA framwork based application), which has tons of <strong>JavaScript</strong> files to download &ndash; 5 MB turns into ~1.5 MB.</p>
+
+<p><strong>banner1.svg Response Headers</strong></p>
+
+<pre><code class="language-yaml">HTTP/1.1 200 OK
+Content-Type: image/svg+xml
+Server: Kestrel
+Cache-Control: public,max-age=604800
+Transfer-Encoding: chunked
+Content-Encoding: gzip
+Accept-Ranges: bytes
+ETag: &quot;1d1ce31e3bd09cf&quot;
+</code></pre>
+
+<h4 id="subsequent-cached-requests:f7ba068c12f661d5bfa879f663970183">Subsequent (Cached) Requests</h4>
+
+<p><img src="/img/2016/12/cached.png" alt="Cached" /></p>
+
+<h3 id="let-s-summarize:f7ba068c12f661d5bfa879f663970183">Let&rsquo;s Summarize</h3>
+
+<p>We learned some of the basics about <strong>ASP.NET Core</strong> middleware. Together we implemented a response optimization strategy that included deterministic response compression, as well
+as static file caching. We learned some of the common patterns and naming conventions for integrating with <strong>ASP.NET Core</strong> middleware. Finally, we have a good understanding of
+the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
+
+<h3 id="source-code:f7ba068c12f661d5bfa879f663970183">Source Code</h3>
+
+<ul>
+<li><a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target="_blank">
+   <i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; IEvangelist.AspNetCore.Optimization
+</a></li>
+</ul>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-list-ol">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/asp.net-core'>ASP.NET Core</a></li>
+    
+        <li><a href='/categories/gzip'>GZip</a></li>
+    
+        <li><a href='/categories/compression'>Compression</a></li>
+    
+        <li><a href='/categories/caching'>Caching</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://davidpine.net/blog/imposter-syndrome/"
+                class="button big previous">Overcoming Impostor Syndrome</a></li>
+    
+
+    
+        <li><a href="http://davidpine.net/blog/building-a-magic-mirror/"
+                class="button big next">Building a Magic Mirror</a></li>
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/asp-net-core-optimization\/';
+    var disqus_title = 'ASP.NET Core Response Optimization';
+    var disqus_url = 'http:\/\/davidpine.net\/blog\/asp-net-core-optimization\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/logo-corrected.jpg" class="intro-circle" width="" alt="David Pine" />
+                
+            
+            
+                <header>
+                    <h2>David Pine</h2>
+                    <p>Technical Evangelist, with a goal of changing the world - one line of code at a time <i class='fa fa-code' aria-hidden='true'></i></p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/exploring-csharp-seven/">Exploring C# 7</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-03-26'>
+                                    March 26, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/overriding-default-di/">Overriding ASP.NET Core Framework-Provided Services</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-02-14'>
+                                    February 14, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net-core/">.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/c/">C#</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/compression/">Compression</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/typescript/">TypeScript</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/angular2/">Angular2</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net/">.NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+

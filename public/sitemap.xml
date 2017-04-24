@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://davidpine.net/</loc>
+    <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/speaking/</loc>
+    <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/exploring-csharp-seven/</loc>
+    <lastmod>2017-03-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/overriding-default-di/</loc>
+    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/conclusions/</loc>
+    <lastmod>2017-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/principal-architecture-changes/</loc>
+    <lastmod>2017-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/building-a-magic-mirror/</loc>
+    <lastmod>2016-12-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/asp-net-core-optimization/</loc>
+    <lastmod>2016-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/imposter-syndrome/</loc>
+    <lastmod>2016-11-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/angular-2-http/</loc>
+    <lastmod>2016-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/the-global-json/</loc>
+    <lastmod>2016-07-18T22:40:31-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/migrating-to-rc2/</loc>
+    <lastmod>2016-05-20T22:40:31-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/about/</loc>
+    <lastmod>2016-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

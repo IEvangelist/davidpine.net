@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Identity on IEvangelist</title>
+    <link>http://davidpine.net/categories/identity/</link>
+    <description>Recent content in Identity on IEvangelist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://davidpine.net/categories/identity/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>What happened to my Thread.CurrentPrincipal</title>
+      <link>http://davidpine.net/blog/principal-architecture-changes/</link>
+      <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/principal-architecture-changes/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:7e1a3c88d019532475826e491625ef2c&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;Like the title claims, if you&amp;rsquo;re using &lt;code&gt;ASP.NET Core&lt;/code&gt; and expecting the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; or &lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; to be populated you&amp;rsquo;d be wrong. This is not the
+&lt;code&gt;IPrincipal&lt;/code&gt; you&amp;rsquo;re looking for. In this post we&amp;rsquo;ll discuss what happened and what you need to do now. Additionally we&amp;rsquo;ll cover all the peripheral benefits as a result of this
+change.&lt;/p&gt;
+
+&lt;h2 id=&#34;history:7e1a3c88d019532475826e491625ef2c&#34;&gt;History&lt;/h2&gt;
+
+&lt;p&gt;If you have ever done any &lt;strong&gt;.NET Framework&lt;/strong&gt; development, you&amp;rsquo;ve probably seen the &lt;code&gt;Thread&lt;/code&gt; class. You&amp;rsquo;re probably familiar with the
+&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt;&lt;/a&gt; member. This member of the &lt;code&gt;Thread&lt;/code&gt; class
+is defined as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static IPrincipal CurrentPrincipal
+{
+    [System.Security.SecuritySafeCritical]  // auto-generated
+    get
+    {
+        lock (CurrentThread)
+        {
+            var principal = (IPrincipal)CallContext.Principal;
+            if (principal == null)
+            {
+                principal = GetDomain().GetThreadPrincipal();
+                CallContext.Principal = principal;
+            }
+            return principal;
+        }
+    }
+
+    [System.Security.SecuritySafeCritical]  // auto-generated
+    [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlPrincipal)]
+    set
+    {
+        CallContext.Principal = value;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Gets or sets the thread&amp;rsquo;s current principal (for role-based security).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Does anyone see the issue with this? Can you say, &amp;ldquo;publically static mutable state, oh my&amp;rdquo;?! You should be alarmed. This property was never a good idea and today it
+simply doesn&amp;rsquo;t belong. &lt;strong&gt;ASP.NET Core&lt;/strong&gt; is not responsible for assigning this. You might not agree with that decision, but it is final.&lt;/p&gt;
+
+&lt;p&gt;Before diving into this, pop over to &lt;a href=&#34;https://github.com/aspnet/Security/issues/322&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+Microsoft.AspNetCore.Security &amp;ndash; Issue 332&lt;/a&gt; for more of the back story.&lt;/p&gt;
+
+&lt;h2 id=&#34;thread-currentprincipal-today-in-asp-net-core:7e1a3c88d019532475826e491625ef2c&#34;&gt;Thread.CurrentPrincipal Today in ASP.NET Core&lt;/h2&gt;
+
+&lt;p&gt;As part of the &lt;code&gt;ASP.NET Core&lt;/code&gt; framework, the following middleware packages are provided:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/aspnet/Identity&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;code&gt;Microsoft.AspNetCore.Identity&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/aspnet/Security&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;code&gt;Microsoft.AspNetCore.Security&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you opt-in to using this middleware and you provide a login page (or expose an external provider) you&amp;rsquo;d end up creating an instance of a &lt;code&gt;ClaimsPrincipal&lt;/code&gt; that represents
+an authenticated user. Subsequent requests to the web server would be handed the cookie that holds the user&amp;rsquo;s claims. However the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; would &lt;strong&gt;not&lt;/strong&gt;
+actually reflect the &lt;code&gt;ClaimsPrincipal&lt;/code&gt; object that was created as the result of the login. In fact,
+it would simply be an instance of the &lt;code&gt;GenericPrincipal&lt;/code&gt; implementation. Likewise, walking up to the &lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; property and asking it for the current claims
+principal in context wouldn&amp;rsquo;t give you what you might expect either. Additionally, the
+&lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; internally relies on the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; for its value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static ClaimsPrincipal Current
+{
+    get
+    {
+         return ClaimsPrincipal.s_principalSelector() ??
+                ClaimsPrincipal.SelectClaimsPrincipal();
+    }
+}
+
+private static ClaimsPrincipal SelectClaimsPrincipal()
+{
+    return Thread.CurrentPrincipal as ClaimsPrincipal ?? 
+           new ClaimsPrincipal(Thread.CurrentPrincipal);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You might be asking yourself, &amp;ldquo;how do I access this value then?&amp;rdquo;. If you&amp;rsquo;re in the context of a controller then you already have access to it via the
+&lt;code&gt;.User&lt;/code&gt; property. Otherwise, the answer is &amp;ldquo;dependency injection&amp;rdquo;. Wherever you&amp;rsquo;re in need of the identity for accessing claims, use &lt;code&gt;.cstor&lt;/code&gt; injection
+and give yourself the &lt;code&gt;IPrincipal&lt;/code&gt; you need. If you&amp;rsquo;re in the context of an action you might be tempted to use the &lt;code&gt;[FromServices]&lt;/code&gt; attribute to inject
+the &lt;code&gt;IPrincipal&lt;/code&gt; instance, but remember that this actually comes from the current user - which is
+already accessible via the controller&amp;rsquo;s &lt;code&gt;.User&lt;/code&gt; property.&lt;/p&gt;
+
+&lt;h2 id=&#34;dependency-injection:7e1a3c88d019532475826e491625ef2c&#34;&gt;Dependency Injection&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; made dependency injection (DI) a first class citizen, and it is so easy to use. The &lt;code&gt;Startup.cs&lt;/code&gt; by convention has a &lt;code&gt;ConfigureServices&lt;/code&gt; method where you&amp;rsquo;ll
+register the dependencies. In the case of &lt;code&gt;ASP.NET Core&lt;/code&gt; you&amp;rsquo;ll need to do the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;// This method gets called by the runtime. Use this method to add services to the container.
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton&amp;lt;IHttpContextAccessor, HttpContextAccessor&amp;gt;();
+    services.AddTransient&amp;lt;IPrincipal&amp;gt;(
+        provider =&amp;gt; provider.GetService&amp;lt;IHttpContextAccessor&amp;gt;().HttpContext.User);
+
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You might have noticed that we explicitly register the &lt;code&gt;IHttpContextAccessor&lt;/code&gt; and corresponding implementation. This is necessary as that service is not registered for
+us. With that in place we can now specify that any class asking for an &lt;code&gt;IPrincipal&lt;/code&gt; will be given the &lt;code&gt;IHttpContextAccessor.HttpContext.User&lt;/code&gt; as the implementation.
+This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the &lt;code&gt;ClaimsPrincipal&lt;/code&gt;
+implementation of the &lt;code&gt;IPrincipal&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;example:7e1a3c88d019532475826e491625ef2c&#34;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using System.Security.Claims;
+using System.Security.Principal;
+
+public class SampleService : ISampleService
+{
+    private readonly ClaimsPrincipal _principal;
+
+    public SampleService(IPrincipal principal)
+    {
+        _principal = principal as ClaimsPrincipal;
+    }
+
+    public Task ConsumeAsync()
+    {
+        var dobClaim = _principal?.FindFirst(ClaimTypes.DateOfBirth);
+        // Take some action ...
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From the example above we can see how simple it is to use dependency injection. Simply define the &lt;code&gt;IPrincipal&lt;/code&gt; as a &lt;code&gt;.cstor&lt;/code&gt; parameter, store it in a field and consume it as needed.&lt;/p&gt;
+
+&lt;h3 id=&#34;but-why:7e1a3c88d019532475826e491625ef2c&#34;&gt;But Why?&lt;/h3&gt;
+
+&lt;p&gt;There are a lot of people who feel as though DI is overrated and that it is much easier to ask the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; for its value. While that is easy, it is also
+risky&amp;hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between
+the &lt;code&gt;Thread&lt;/code&gt; and &lt;code&gt;ClaimsPrincipal&lt;/code&gt; classes. Scott Hanselman blogged about a
+&lt;a href=&#34;http://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx&#34; target=&#34;_blank&#34;&gt;similar issue&lt;/a&gt;
+nearly thirteen years ago!&lt;/p&gt;
+
+&lt;p&gt;One of the first benefits that comes to mind from this is the fact that with DI the code is unit-testable. It is extremely easy to mock out an &lt;code&gt;IPrincipal&lt;/code&gt; to use for unit
+testing. Additionally, this alleviates all of the concerns about synchronization and reliability. The &lt;code&gt;IPrincipal&lt;/code&gt; you&amp;rsquo;re given is the principal you&amp;rsquo;d expect and it is fully
+populated accordingly.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

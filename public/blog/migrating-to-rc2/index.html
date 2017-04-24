@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <link rel="icon" href="/img/main/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        
+            
+                <title>ASP.NET Core RC2 (Migration Guide)</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.15" />
+        
+
+
+        
+            <meta name="author" content="David Pine">
+        
+        
+            <meta name="description" content="Migrating from RC1 to RC2">
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="ASP.NET Core RC2 (Migration Guide)"/>
+<meta name="twitter:description" content="Migrating from RC1 to RC2"/>
+<meta name="twitter:site" content="@davidpine7"/>
+
+
+        <meta property="og:title" content="ASP.NET Core RC2 (Migration Guide)" />
+<meta property="og:description" content="Migrating from RC1 to RC2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidpine.net/blog/migrating-to-rc2/" />
+
+
+<meta property="og:updated_time" content="2016-05-20T22:40:31-05:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="ASP.NET Core RC2 (Migration Guide)">
+<meta itemprop="description" content="Migrating from RC1 to RC2">
+
+
+<meta itemprop="dateModified" content="2016-05-20T22:40:31-05:00" />
+<meta itemprop="wordCount" content="1846">
+
+
+
+<meta itemprop="keywords" content=".NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <link rel="stylesheet" href="/css/main.min.css" />
+                
+            
+        
+
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78203613-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">IEvangelist</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog/">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                        
+                            <i class="fa fa-list-ol">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                        
+                            <i class="fa fa-smile-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/speaking/">
+                        
+                            <i class="fa fa-bullhorn">&nbsp;</i>Speaking
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/conclusions/">
+                        
+                            <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://davidpine.net">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://davidpine.net">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                
+                                    <i class="fa fa-list-ol">&nbsp;</i>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                
+                                    <i class="fa fa-smile-o">&nbsp;</i>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/speaking/">
+                            <h3>
+                                
+                                    <i class="fa fa-bullhorn">&nbsp;</i>
+                                
+                                Speaking
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/conclusions/">
+                            <h3>
+                                
+                                    <i class="fa fa-lightbulb-o">&nbsp;</i>
+                                
+                                Conclusions
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/exploring-csharp-seven/"><p>Exploring C# 7</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/overriding-default-di/"><p>Overriding ASP.NET Core Framework-Provided Services</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f&text=ASP.NET%20Core%20RC2%20%28Migration%20Guide%29&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f&title=ASP.NET%20Core%20RC2%20%28Migration%20Guide%29" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f&title=ASP.NET%20Core%20RC2%20%28Migration%20Guide%29" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f&title=ASP.NET%20Core%20RC2%20%28Migration%20Guide%29" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://davidpine.net/blog/migrating-to-rc2/">ASP.NET Core RC2 (Migration Guide)</a></h1>
+            
+        
+        
+            <p>Migrating from RC1 to RC2</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-05-20'>
+            May 20, 2016</time>
+        <span class="author">David Pine</span>
+        
+            <p>9 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f&text=ASP.NET%20Core%20RC2%20%28Migration%20Guide%29&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f&title=ASP.NET%20Core%20RC2%20%28Migration%20Guide%29" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f&title=ASP.NET%20Core%20RC2%20%28Migration%20Guide%29" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f&title=ASP.NET%20Core%20RC2%20%28Migration%20Guide%29" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2fmigrating-to-rc2%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://davidpine.net/blog/migrating-to-rc2/" class="image featured">
+            <img src="/img/2016/05/migrating.jpg" alt="" />
+        </a>
+    
+
+
+    <div id="content">
+        
+
+<h1 id="introduction:0349d6d87cad08484fba4056f258e4f0">Introduction</h1>
+
+<p>On Monday, May 16<sup>th</sup> 2016 there was an amazing announcement from the <strong>.NET Blog</strong> team!</p>
+
+<blockquote>
+<p><p/><a href="https://blogs.msdn.microsoft.com/dotnet/2016/05/16/announcing-net-core-rc2/">Announcing .NET Core RC2 and .NET Core SDK Preview 1</a></p>
+</blockquote>
+
+<p>This post will serve as a guide that walks you through the steps as I experienced them from migrating existing <code>ASP.NET Core RC1</code> applications to <code>ASP.NET Core RC2</code>.
+It is worth mentioning that I&rsquo;m am targeting the <code>.NET 4.6</code> framework. So, I <em>do not</em> cover the <code>.netcoreapp</code> or <code>netstandard</code> TFMs (target framework monikers).</p>
+
+<h2 id="tooling:0349d6d87cad08484fba4056f258e4f0">Tooling</h2>
+
+<p>The <strong>RC2</strong> release brings the <code>.NET Core CLI</code> to the forefront, and with that all the other command line tooling that
+you&rsquo;ve grown accustomed to should be stricken from your environment, i.e.; <code>DNX</code>, <code>DNU</code>, and <code>DNVM</code>. Let&rsquo;s start with the
+removal of all these utilities.</p>
+
+<h3 id="removing-dnvm:0349d6d87cad08484fba4056f258e4f0">Removing DNVM</h3>
+
+<p>Believe it or not, you might have a dated version of the <strong>DNVM CLI</strong> and in order to invoke the <code>uninstall</code> you might have to first
+perform an <code>update-self</code> command. Doing so will ensure that you have the latest version, which will contain the <code>uninstall</code> command.
+From a <code>cmd</code> window <em>running as admininistrator</em>, execute the following:</p>
+
+<pre><code>dnvm update-self
+</code></pre>
+
+<p>Then execute the following:</p>
+
+<pre><code>dnvm uninstall
+</code></pre>
+
+<h4 id="verification:0349d6d87cad08484fba4056f258e4f0">Verification</h4>
+
+<p>From a new <code>cmd</code> window, the <code>dnvm</code> command should result in the following:</p>
+
+<pre><code>λ dnvm
+'dnvm' is not recognized as an internal or external command, operable program or batch file.
+</code></pre>
+
+<h3 id="removing-dnx-dnu:0349d6d87cad08484fba4056f258e4f0">Removing DNX &amp; DNU</h3>
+
+<p>From a <code>cmd</code> line window, execute <code>dnx</code> - you should see something similar to this as output:</p>
+
+<pre><code class="language-yaml">λ dnx
+Microsoft .NET Execution environment Clr-x86-1.0.0-rc1-16231
+
+Usage: dnx [options]
+
+Options:
+  --project|-p &lt;PATH&gt;              Path to the project.json file or the application folder. Defaults to the current folder if not provided.
+  --appbase &lt;PATH&gt;                 Application base directory path
+  --lib &lt;LIB_PATHS&gt;                Paths used for library look-up
+  --debug                          Waits for the debugger to attach before beginning execution.
+  --bootstrapper-debug             Waits for the debugger to attach before bootstrapping runtime.
+  --framework &lt;FRAMEWORK_ID&gt;       Set the framework version to use when running (i.e. dnx451, dnx452, dnx46, ...)
+  -?|-h|--help                     Show help information
+  --version                        Show version information
+  --watch                          Watch file changes
+  --packages &lt;PACKAGE_DIR&gt;         Directory containing packages
+  --configuration &lt;CONFIGURATION&gt;  The configuration to run under
+  --port &lt;PORT&gt;                    The port to the compilation server
+</code></pre>
+
+<p>Likewise enter <code>dnu</code> in the same <code>cmd</code> window, expecting the following output:</p>
+
+<pre><code class="language-yaml">λ dnu
+Microsoft .NET Development Utility Clr-x86-1.0.0-rc1-16231
+
+Usage: dnu [options] [command]
+
+Options:
+  -v|--verbose  Show verbose output
+  -?|-h|--help  Show help information
+  --version     Show version information
+
+Commands:
+  build             Produce assemblies for the project in given directory
+  clear-http-cache  Clears the package cache.
+  commands          Commands related to managing application commands (install, uninstall)
+  feeds             Commands related to managing package feeds currently in use
+  install           Install the given dependency
+  list              Print the dependencies of a given project
+  pack              Build NuGet packages for the project in given directory
+  packages          Commands related to managing local and remote packages folders
+  publish           Publish application for deployment
+  restore           Restore packages
+  wrap              Wrap a csproj/assembly into a project.json, which can be referenced by project.json files
+
+Use &quot;dnu [command] --help&quot; for more information about a command.
+</code></pre>
+
+<p>The <code>DNX</code> and <code>DNU</code> command line tools are simply <code>exe's</code> in your <code>%USERPROFILE%\.dnx</code> and <code>%USERPROFILE%\.dnx\bin</code> directories. Navigate to your <code>%USERPROFILE%</code>
+directory from windows explorer and delete the <code>.dnx</code> directory entirely. Once you have successfully deleted this directory you
+should be able to execute the <code>dnx</code> and <code>dnu</code> commands again from a <code>cmd</code> window and the system should complain that they are not
+recognized.</p>
+
+<h4 id="verification-1:0349d6d87cad08484fba4056f258e4f0">Verification</h4>
+
+<p>From a new <code>cmd</code> window, the <code>dnx</code> and <code>dnu</code> commands should result in the following:</p>
+
+<pre><code>λ dnx
+'dnx' is not recognized as an internal or external command, operable program or batch file.
+</code></pre>
+
+<pre><code>λ dnu
+'dnu' is not recognized as an internal or external command, operable program or batch file.
+</code></pre>
+
+<h3 id="environment-variables:0349d6d87cad08484fba4056f258e4f0">Environment Variables</h3>
+
+<p>Unfortunately, the <code>PATH</code> environment variable is not cleaned up and this needs to be done manually.</p>
+
+<p>Press the <kbd>Windows</kbd> key, then begin typing &ldquo;environment&rdquo;, then select either of the two top options returned:</p>
+
+<p><img src="/img/2016/05/win-search.png" alt="Windows Search" /></p>
+
+<p>You are then presented the &ldquo;system properties&rdquo; dialog, select <strong>Environment Variables</strong>.</p>
+
+<p><img src="/img/2016/05/sys-props.png" alt="System Properties" /></p>
+
+<p>We will need to ensure that both <code>PATH</code> variables are cleaned up, including your <code>%USERPROFILE%</code> and the <code>System</code> variables. Let&rsquo;s <kbd>Edit</kbd> both of them.</p>
+
+<p><img src="/img/2016/05/env-vars.png" alt="Environment Variables" /></p>
+
+<p>From the <strong>Edit Variables</strong> dialog, remove any and all of the following:</p>
+
+<pre><code>C:\Users\[ your global identifier ]\.dnx\bin;
+C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-update1\bin;
+</code></pre>
+
+<p><img src="/img/2016/05/edit-vars.png" alt="Edit User Variables" /></p>
+
+<h3 id="net-core-cli:0349d6d87cad08484fba4056f258e4f0">.NET Core CLI</h3>
+
+<p>Simply follow <a href="https://www.microsoft.com/net/core#windows">these instuctions</a>. Once you&rsquo;re able to &ldquo;Run the app&rdquo; from the new <strong>CLI</strong> you&rsquo;re good to go.</p>
+
+<h4 id="review:0349d6d87cad08484fba4056f258e4f0">Review</h4>
+
+<p>You should the following checklist fully satisfied at this point.</p>
+
+<p><i class="fa fa-check-square-o" aria-hidden="true"></i> <strong>DNX</strong>, <strong>DNU</strong> and <strong>DNVM</strong> completely removed / uninstalled<br>
+<i class="fa fa-check-square-o" aria-hidden="true"></i> <strong>Visual Studio 2015 Update 2</strong> installed<br>
+<i class="fa fa-check-square-o" aria-hidden="true"></i> <strong>.NET Core CLI</strong> installed</p>
+
+<hr />
+
+<h2 id="edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i:0349d6d87cad08484fba4056f258e4f0">Edit by Hand <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h2>
+
+<p>There were changes to <strong>APIs</strong> which required changes to implementation aspects of the source code. Additionally, <code>namespace</code>
+changes such as (but not limited to) <code>Microsoft.AspNet.*</code> to <code>Microsoft.AspNetCore.*</code>. But the bulk of the work was really in the hand-editing
+of <code>.sln</code>, <code>global.json</code>, <code>.xproj</code>, <code>project.json</code>, etc. files. Let&rsquo;s look at what changed.</p>
+
+<h3 id="the-sln-file:0349d6d87cad08484fba4056f258e4f0">The <code>.sln</code> file</h3>
+
+<p>Change the <strong>VisualStudioVersion</strong> from <code>14.0.24720.0</code> to <code>14.0.25123.0</code>.</p>
+
+<pre><code>VisualStudioVersion = 14.0.25123.0
+</code></pre>
+
+<h3 id="the-global-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>global.json</code> file</h3>
+
+<p>Change the <strong>version</strong> from <code>1.0.0-rc1-update1</code> to <code>1.0.0-preview1-002702</code>.</p>
+
+<pre><code class="language-json">{
+  &quot;projects&quot;: [ &quot;src&quot;, &quot;test&quot; ],
+  &quot;sdk&quot;: {
+    &quot;version&quot;: &quot;1.0.0-preview1-002702&quot;
+  }
+}
+</code></pre>
+
+<h3 id="the-xproj-file:0349d6d87cad08484fba4056f258e4f0">The <code>.xproj</code> file</h3>
+
+<p>The <code>.xproj</code> files are a little more involved, there are a few items that are required to be changed. In <strong>RC1</strong> we had proprerties that
+were specific to <strong>DNX</strong>, now we replace these with <strong>DOTNET</strong>.</p>
+
+<h4 id="rc1:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+
+<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DNX\Microsoft.DNX.Props&quot; 
+        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
+</code></pre>
+
+<h4 id="rc2:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+
+<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.Props&quot; 
+        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
+</code></pre>
+
+<p>Additionally, we need to change the targets. This one requires that you know the type of project you&rsquo;re editing, for example <em>&ldquo;class library&rdquo;</em> vs. <em>&ldquo;web site&rdquo;</em>. In <strong>RC1</strong>
+there was only one target, but with <strong>RC2</strong> they are differeniated.</p>
+
+<h4 id="rc1-1:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+
+<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DNX\Microsoft.DNX.targets&quot; 
+        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
+</code></pre>
+
+<h4 id="rc2-class-library:0349d6d87cad08484fba4056f258e4f0">RC2 (class library)</h4>
+
+<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.targets&quot; 
+        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
+</code></pre>
+
+<h4 id="rc2-web:0349d6d87cad08484fba4056f258e4f0">RC2 (web)</h4>
+
+<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets&quot; 
+        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
+</code></pre>
+
+<h3 id="the-project-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>project.json</code> file</h3>
+
+<p>There has been a large reworking of the <code>project.json</code> file - detailed <a href="https://github.com/aspnet/Announcements/issues/175">here</a>. I will not be covering all
+of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official
+<a href="http://json.schemastore.org/project-1.0.0-rc2"><code>project.json schema</code></a>.</p>
+
+<p>We will look at various sections of the <code>project.json</code> file changes. Let&rsquo;s start with replacing <code>compilationOptionsbuildOptions</code> with <code>buildOptions</code>, and notice that
+we are adding much more options than before.</p>
+
+<h4 id="rc1-2:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+
+<pre><code class="language-json">&quot;compilationOptions&quot;: {
+  &quot;emitEntryPoint&quot;: true,
+  &quot;warningsAsErrors&quot;: true
+},
+</code></pre>
+
+<h4 id="rc2-1:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+
+<pre><code class="language-json">&quot;buildOptions&quot;: {		
+  &quot;emitEntryPoint&quot;: true,
+  &quot;warningsAsErrors&quot;: true,
+  &quot;preserveCompilationContext&quot;: true,
+  &quot;embed&quot;: &quot;Views/**&quot;, // Instead of &quot;.:resource&quot;: &quot;Views/**&quot;,
+  &quot;compile&quot;: {
+    &quot;exclude&quot;: [ &quot;wwwroot&quot;, &quot;node_modules&quot; ] // Now here, instead of &quot;.:exclude&quot;
+  }
+},
+</code></pre>
+
+<p>Additionally, we have <code>publishOptions</code> that we can utilize - consider the following:</p>
+
+<pre><code class="language-json">&quot;publishOptions&quot;: {
+  &quot;include&quot;: [
+    &quot;wwwroot&quot;,
+    &quot;appsettings.json&quot;,
+    &quot;web.config&quot;
+  ]
+},
+</code></pre>
+
+<p>Finally, we have to be a little more specific with how we want the server to handle garbage collection.</p>
+
+<pre><code class="language-json">&quot;runtimeOptions&quot;: {
+  &quot;gcServer&quot;: true, // Yes, please perform garbage collection
+  &quot;gcConcurrent&quot;: true // Yes, please do so concurrently...
+},
+</code></pre>
+
+<h3 id="the-web-config-file:0349d6d87cad08484fba4056f258e4f0">The <code>web.config</code> file</h3>
+
+<p>Now, <strong>IIS</strong> is a little smarter and is starting to recognize <strong>ASP.NET Core</strong> a little more.</p>
+
+<h4 id="rc1-3:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration&gt;
+  &lt;system.webServer&gt;
+    &lt;handlers&gt;
+      &lt;add name=&quot;httpPlatformHandler&quot; path=&quot;*&quot; verb=&quot;*&quot; modules=&quot;httpPlatformHandler&quot; 
+           resourceType=&quot;Unspecified&quot;/&gt;
+    &lt;/handlers&gt;
+    &lt;httpPlatform processPath=&quot;%DNX_PATH%&quot; arguments=&quot;%DNX_ARGS%&quot; stdoutLogEnabled=&quot;false&quot; /&gt;
+  &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<h4 id="rc2-2:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration&gt;
+  &lt;system.webServer&gt;
+    &lt;handlers&gt;
+      &lt;add name=&quot;aspNetCore&quot; path=&quot;*&quot; verb=&quot;*&quot; modules=&quot;AspNetCoreModule&quot; 
+           resourceType=&quot;Unspecified&quot; /&gt;
+    &lt;/handlers&gt;
+    &lt;aspNetCore processPath=&quot;%LAUNCHER_PATH%&quot; arguments=&quot;%LAUNCHER_ARGS%&quot; 
+                forwardWindowsAuthToken=&quot;false&quot; stdoutLogEnabled=&quot;false&quot; /&gt;
+  &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<h3 id="the-hosting-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>hosting.json</code> file</h3>
+
+<p>With the release of <strong>RC2</strong>, the <code>project.json</code> schema removed the <code>webroot</code> property. Now in order to specify the websites&rsquo; static content directory we need to
+create a <code>hosting.json</code> file. This file should look like this.</p>
+
+<pre><code class="language-json">{
+  &quot;webroot&quot;: &quot;wwwroot&quot;
+}
+</code></pre>
+
+<h3 id="the-appsettings-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>appsettings.json</code> file</h3>
+
+<p>This was a minor change, but if you forgot to change this - then you&rsquo;ll end up with a runtime exception. The <code>Logging:LogLevel:Default</code> should now be
+<code>Debug</code> as <code>Verbose</code> was removed altogether.</p>
+
+<h4 id="rc1-4:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+
+<pre><code class="language-json">&quot;Logging&quot;: {
+      &quot;IncludeScopes&quot;: false,
+      &quot;LogLevel&quot;: {
+        &quot;Default&quot;: &quot;Verbose&quot;, // &lt; -- Change &quot;Verbose&quot;
+        &quot;System&quot;: &quot;Information&quot;,
+        &quot;Microsoft&quot;: &quot;Information&quot;
+      }
+</code></pre>
+
+<h4 id="rc2-3:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+
+<pre><code class="language-json">&quot;Logging&quot;: {
+      &quot;IncludeScopes&quot;: false,
+      &quot;LogLevel&quot;: {
+        &quot;Default&quot;: &quot;Debug&quot;, // &lt; --- To &quot;Debug&quot;
+        &quot;System&quot;: &quot;Information&quot;,
+        &quot;Microsoft&quot;: &quot;Information&quot;
+      }
+</code></pre>
+
+<h3 id="the-launchsettings-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>launchSettings.json</code> file</h3>
+
+<p>The <code>environmentVariables</code> changed, such that the key name for the environment is no longer referred to as &ldquo;Hosting:Environment&rdquo;.</p>
+
+<h4 id="rc1-5:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+
+<pre><code class="language-json">&quot;environmentVariables&quot;: {
+  &quot;Hosting:Environment&quot;: &quot;Development&quot; // &lt; -- Change &quot;Hosting:Environment&quot;
+}
+</code></pre>
+
+<h4 id="rc2-4:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+
+<pre><code class="language-json">&quot;environmentVariables&quot;: {
+  &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot; // &lt; -- To &quot;ASPNETCORE_ENVIRONMENT&quot;
+}
+</code></pre>
+
+<h3 id="the-cs-files:0349d6d87cad08484fba4056f258e4f0">The <code>*.cs</code> files</h3>
+
+<p>Some of these were very simple to fix. After updating your <code>project.json</code> with the latest <strong>RC2</strong> versions - some changes are as simple as a <code>namespace</code> change (but others are more involed).</p>
+
+<h4 id="rc1-6:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+
+<pre><code class="language-csharp">using Microsoft.AspNet.*;
+</code></pre>
+
+<h4 id="rc2-5:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+
+<pre><code class="language-csharp">using Microsoft.AspNetCore.*;
+</code></pre>
+
+<h3 id="api-changes:0349d6d87cad08484fba4056f258e4f0">API changes</h3>
+
+<p>There was an attempt to unify some of the APIs as it pertains to consistency. As such, I had to make the following changes to my projects.
+The <code>IApplicationBuilder.Use*</code> pattern now takes a new <code>*Options</code> instance rather than an <code>Action&lt;*Options&gt;</code>, providing more control to the consumer.</p>
+
+<h4 id="rc1-7:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+
+<pre><code class="language-csharp">app.UseCookieAuthentication(options =&gt;
+{
+    options.AuthenticationScheme = &quot;AspNetCookie&quot;;
+    options.AutomaticAuthenticate = true;
+    options.AutomaticChallenge = true;
+    options.LoginPath = &quot;/account/login&quot;;
+    options.LogoutPath = &quot;/account/logout&quot;;
+    options.AccessDeniedPath = &quot;/account/forbidden&quot;;
+});
+</code></pre>
+
+<h4 id="rc2-6:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+
+<pre><code class="language-csharp">app.UseCookieAuthentication(new CookieAuthenticationOptions
+{
+    AuthenticationScheme = AuthenticationScheme.JciCookie,
+    AutomaticAuthenticate = true,
+    AutomaticChallenge = true,
+    LoginPath = &quot;/account/login&quot;,
+    LogoutPath = &quot;/account/logout&quot;,
+    AccessDeniedPath = &quot;/account/forbidden&quot;,
+});
+</code></pre>
+
+<p>The service locator pattern (or should I say &ldquo;anti-pattern&rdquo;) is slowing being removed from the framework. As such, if you were relying on the <code>CallContextServiceLocator.Locator.ServiceProvider</code>
+you can no longer do so with the <strong>RC2</strong> release.</p>
+
+<p>Wherever you were using the <code>IApplication</code> interface, you should be able to instead use the <code>IWebHost</code> interface.</p>
+
+<h3 id="controllers-as-services:0349d6d87cad08484fba4056f258e4f0">Controllers as Services</h3>
+
+<p>In <strong>RC1</strong>, there was a nice little feature that allowed for any <code>Type</code> to exist in a list of plausible controller/services - meaning that you could basically register external controllers as
+valid API and View entry points into your hosting application. You simply needed to add the types via the following:</p>
+
+<pre><code class="language-csharp">IMvcBuilder.AddControllersAsServices(params Type[] types);
+</code></pre>
+
+<p>This method signature changed with <strong>RC2</strong> and it no longer accepts any arguments. In order to retain this functionality, you must first add the desired external assemblies as an <code>AssemblyPart</code>.</p>
+
+<pre><code class="language-csharp">foreach (var assembly in GetExternalAssemblies())
+{
+    builder.PartManager.ApplicationParts.Add(new AssemblyPart(assembly));    
+}
+
+builder.AddControllersAsServices();
+</code></pre>
+
+<h3 id="the-startup-ctor:0349d6d87cad08484fba4056f258e4f0">The Startup <code>.ctor</code></h3>
+
+<p>One little change, you&rsquo;re now required to explicitly set the base path and you can do so with the following.</p>
+
+<pre><code class="language-csharp">public Startup(IHostingEnvironment env)
+{
+    var builder =
+        new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath) // Explicity set base from the content root path
+            .AddJsonFile(&quot;appsettings.json&quot;, true)
+            .AddJsonFile($&quot;appsettings.{env.EnvironmentName}.json&quot;, true)
+            .AddEnvironmentVariables();
+    // Omitted for brevity...
+}
+</code></pre>
+
+<h3 id="the-program-cs-file:0349d6d87cad08484fba4056f258e4f0">The <code>Program.cs</code> file</h3>
+
+<p>Yes, we are now a console application&hellip;so we&rsquo;ll need this for our entry point.</p>
+
+<pre><code class="language-csharp">public class Program
+{
+    public static void Main(string[] arguments)
+    {
+        using (var host = 
+            new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup&lt;Startup&gt;()
+                .Build();)
+        {
+            host.Run();
+        }
+    }
+}
+</code></pre>
+
+<h2 id="breaking-changes:0349d6d87cad08484fba4056f258e4f0">Breaking changes</h2>
+
+<p>For a complete listing of all the announcements, please visit the official
+<a href="https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2"><strong>ASP.NET <i class="fa fa-github-alt" aria-hidden="true"></i> Repo</strong></a> announcements issue.</p>
+
+<h2 id="further-reading:0349d6d87cad08484fba4056f258e4f0">Further reading</h2>
+
+<p>The previous steps were really to get your environment in an <strong>RC2</strong> ready state, but there is so much more you can learn that has changed.
+I encourage bookmarking and reading the following articles as time permits.</p>
+
+<ul>
+<li><a href="http://dotnet.github.io/docs/core-concepts/dnx-migration.html"><strong>Migrating from DNX to .NET Core CLI</strong></a></li>
+<li><a href="https://docs.asp.net/en/latest/migration/rc1-to-rc2.html"><strong>Migrating from ASP.NET 5 RC1 to ASP.NET Core</strong></a></li>
+<li><a href="https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md"><strong>The .NET Platform Standard</strong></a></li>
+<li><a href="http://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html"><strong>Writing Libraries with Cross Platform Tools</strong></a></li>
+</ul>
+
+<h2 id="conclusion:0349d6d87cad08484fba4056f258e4f0">Conclusion</h2>
+
+<p>There, that really wasn&rsquo;t too bad - was it? I&rsquo;m certain that I didn&rsquo;t cover everything and that I probably missed something. I hope that this was helpful, please feel free to share this!</p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-list-ol">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/asp.net-core'>ASP.NET Core</a></li>
+    
+        <li><a href='/categories/.net-core'>.NET Core</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+
+    
+        <li><a href="http://davidpine.net/blog/the-global-json/"
+                class="button big next">The power of the global.json</a></li>
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/migrating-to-rc2\/';
+    var disqus_title = 'ASP.NET Core RC2 (Migration Guide)';
+    var disqus_url = 'http:\/\/davidpine.net\/blog\/migrating-to-rc2\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/logo-corrected.jpg" class="intro-circle" width="" alt="David Pine" />
+                
+            
+            
+                <header>
+                    <h2>David Pine</h2>
+                    <p>Technical Evangelist, with a goal of changing the world - one line of code at a time <i class='fa fa-code' aria-hidden='true'></i></p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/exploring-csharp-seven/">Exploring C# 7</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-03-26'>
+                                    March 26, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/overriding-default-di/">Overriding ASP.NET Core Framework-Provided Services</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-02-14'>
+                                    February 14, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net-core/">.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/c/">C#</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/angular2/">Angular2</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net/">.NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/typescript/">TypeScript</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/compression/">Compression</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+

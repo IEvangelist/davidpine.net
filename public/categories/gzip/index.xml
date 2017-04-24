@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GZip on IEvangelist</title>
+    <link>http://davidpine.net/categories/gzip/</link>
+    <description>Recent content in GZip on IEvangelist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://davidpine.net/categories/gzip/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ASP.NET Core Response Optimization</title>
+      <link>http://davidpine.net/blog/asp-net-core-optimization/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/asp-net-core-optimization/</guid>
+      <description>
+
+&lt;h2 id=&#34;intro:f7ba068c12f661d5bfa879f663970183&#34;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in
+tandem on an &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.&lt;/p&gt;
+
+&lt;p&gt;If you haven&amp;rsquo;t had a chance to use &lt;a href=&#34;https://www.asp.net/core&#34;&gt;&lt;code&gt;ASP.NET Core&lt;/code&gt;&lt;/a&gt; yet, you&amp;rsquo;re missing out! As my friend &lt;a href=&#34;https://scottaddie.com/&#34;&gt;Scott Addie&lt;/a&gt; likes to say:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; is a cafeteria plan in which developers choose application dependencies &lt;em&gt;à la carte&lt;/em&gt;. This is in stark contrast to &lt;strong&gt;ASP.NET&lt;/strong&gt; proper, where developers
+are provided a set meal (a bloated dependency chain) containing undesired items. Don&amp;rsquo;t like broccoli with your steak? Maybe it&amp;rsquo;s time to consider &lt;strong&gt;ASP.NET Core&lt;/strong&gt;.
+&lt;cite&gt;Scott Addie&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In other words, all dependencies are pluggable middleware. This provides ultimate control as you have to explicitly &lt;em&gt;opt-in&lt;/em&gt; for the middleware you desire.&lt;/p&gt;
+
+&lt;h3 id=&#34;know-thy-middleware:f7ba068c12f661d5bfa879f663970183&#34;&gt;Know thy Middleware&lt;/h3&gt;
+
+&lt;p&gt;Not all middleware is equal. Different middleware serves different purposes (obviously). Try to think of each middleware as its own standalone feature-set. Not all middleware is
+given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In
+fact, this is the case when using static file caching and response compression together.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;The &lt;em&gt;order&lt;/em&gt; in which middleware is added matters and dictates the order of execution during a request.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;installing-dependencies:f7ba068c12f661d5bfa879f663970183&#34;&gt;Installing Dependencies&lt;/h4&gt;
+
+&lt;p&gt;I wrote a tiny application and put it up on GitHub, check it out &lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; if you want
+to follow along. Now let&amp;rsquo;s install the dependencies we&amp;rsquo;ll need. For static file caching and response compression we need to add two &lt;code&gt;dependencies&lt;/code&gt; to the project.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; &lt;code&gt;Microsoft.AspNetCore.StaticFiles&lt;/code&gt; will already have been installed if you started from a &lt;strong&gt;Visual Studio&lt;/strong&gt; template.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Repository&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Version&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Nuget Package&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Add / Use Extension Method(s)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/StaticFiles&#34; target=&#34;_blank&#34; title=&#34;Static File Caching, GitHub Repo&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;1.1.0&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/&#34; target=&#34;_blank&#34;&gt;Static Files&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileExtensions.cs#L56-L68&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.UseStaticFiles&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/BasicMiddleware&#34; target=&#34;_blank&#34; title=&#34;Response Compression, GitHub Repo&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;1.0.0&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/&#34; target=&#34;_blank&#34;&gt;Response Compression&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionServicesExtensions.cs#L38-L53&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.AddResponseCompression&lt;/code&gt;&lt;/a&gt; &lt;a href=&#34;https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionBuilderExtensions.cs#L20-L29&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.UseResponseCompression&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Follow these instructions, from within &lt;strong&gt;Visual Studio&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;Tools ➪
+    NuGet Package Manager ➪
+        Manage NuGet Packages for Solution... ➪ 
+            Browse ➪
+                Search ➪
+                    [ Install ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;configuring-startup:f7ba068c12f661d5bfa879f663970183&#34;&gt;Configuring Startup&lt;/h3&gt;
+
+&lt;p&gt;There are two common nomenclatures that exist for wiring up middleware in your startup classes, the &lt;code&gt;.Add*&lt;/code&gt; and &lt;code&gt;.Use*&lt;/code&gt; extension methods. The &lt;code&gt;.Add*&lt;/code&gt; calls are intended to add
+services to the &lt;code&gt;IServiceCollection&lt;/code&gt; instance, ensuring that they are ready for &lt;em&gt;usage&lt;/em&gt;. The &lt;code&gt;.Use*&lt;/code&gt; calls specify that you want to use the middleware and makes the assumption
+that any services required by &lt;strong&gt;DI&lt;/strong&gt; will have already been &lt;em&gt;added&lt;/em&gt; with the corresponding &lt;code&gt;.Add*&lt;/code&gt; call.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s &amp;ldquo;add&amp;rdquo; response compression in the &lt;code&gt;.ConfigureServices&lt;/code&gt; call of our &lt;code&gt;Startup.cs&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void ConfigureServices(IServiceCollection services)
+{    
+    services.AddMvc();
+    services.AddResponseCompression(
+        options =&amp;gt; 
+            options.MimeTypes = ResponseCompressionMimeTypes.Defaults);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Several bits of the implementation details should jump out at you. First, we do not need to call an &lt;code&gt;.AddStaticFiles&lt;/code&gt; extension method because there are no services required
+for this middleware, as such it doesn&amp;rsquo;t exist. Second, we are providing a lambda expression to satisfy the &lt;code&gt;Action&amp;lt;ResponseCompressionOptions&amp;gt;&lt;/code&gt; parameter. We also assign the
+&lt;code&gt;.MimeTypes&lt;/code&gt; property from the &lt;code&gt;ResponseCompressionMimeTypes.Defaults&lt;/code&gt; we are targeting for compression.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; If no compression providers are specified then &lt;code&gt;GZip&lt;/code&gt; is used by default.
+&lt;cite&gt;&lt;a href=&#34;https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionProvider.cs#L22&#34; target=&#34;_blank&#34;&gt;ASP.NET Core Team - GitHub&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;code&gt;ResponseCompressionMimeTypes.cs&lt;/code&gt; is defined as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using System.Collections.Generic;
+using System.Linq;
+using static Microsoft.AspNetCore.ResponseCompression.ResponseCompressionDefaults;
+
+namespace IEvangelist.AspNetCore.Optimization
+{
+    public static class ResponseCompressionMimeTypes
+    {
+        public static IEnumerable&amp;lt;string&amp;gt; Defaults
+            =&amp;gt; MimeTypes.Concat(new[]
+                                {
+                                    &amp;quot;image/svg+xml&amp;quot;,
+                                    &amp;quot;application/font-woff2&amp;quot;
+                                });
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are several types defined by default in &lt;strong&gt;ASP.NET Core&lt;/strong&gt; class &lt;code&gt;ResponseCompressionDefaults.MimeTypes&lt;/code&gt;, we are simply expanding that to include &amp;ldquo;SVG&amp;rdquo; images and the &amp;ldquo;Woff2&amp;rdquo; fonts.&lt;/p&gt;
+
+&lt;h3 id=&#34;order-exemplified:f7ba068c12f661d5bfa879f663970183&#34;&gt;Order Exemplified&lt;/h3&gt;
+
+&lt;p&gt;Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseStaticFiles()          // Adds the static middleware to the request pipeline
+       .UseResponseCompression(); // Adds the response compression to the request pipeline
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The snippet above will absolutely work for serving static files, but it will not compress or cache anything. Note the differences below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseResponseCompression()  // Adds the response compression to the request pipeline
+       .UseStaticFiles();         // Adds the static middleware to the request pipeline       
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;em&gt;order&lt;/em&gt; in which the middleware was invoked in the pipeline changed, as such the order in which the middleware is executed on a request is also changed.
+When static file middleware occurs before response compression, it returns the file as a response before compression has a chance to execute.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Client requests &lt;code&gt;main.css&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Static file middleware determines it can fully satisfy said request&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;main.css&lt;/code&gt; file is &lt;a href=&#34;https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109&#34; target=&#34;_blank&#34;&gt;sent&lt;/a&gt; and the &lt;a href=&#34;https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;next&amp;rdquo;&lt;/a&gt; middleware in the pipeline is never exectued&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now that we have these two pieces of middleware wired into out pipeline in the correct order, what else is left. There is one important thing that we forgot to do.
+While we do have static file middleware, we didn&amp;rsquo;t know that &amp;ldquo;caching&amp;rdquo; is off by default. So we&amp;rsquo;ll need to handle this with an instance of the the &lt;code&gt;StaticFileOptions&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt;Keep your &lt;i class=&#34;fa fa-eye&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fa fa-eye&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&amp;rsquo;s open for extension method overloads. These are often clues that there are &lt;em&gt;options&lt;/em&gt; for providing customized configuration for the middleware you&amp;rsquo;re wiring up.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void Configure(IApplicationBuilder app,
+                      IHostingEnvironment env,
+                      ILoggerFactory loggerFactory)
+{
+    app.UseResponseCompression()
+       .UseStaticFiles(
+           new StaticFileOptions
+           {
+               OnPrepareResponse =
+                   _ =&amp;gt; _.Context.Response.Headers[HeaderNames.CacheControl] = 
+                        &amp;quot;public,max-age=604800&amp;quot; // A week in seconds
+           })
+       .UseMvc(routes =&amp;gt; routes.MapRoute(&amp;quot;default&amp;quot;, &amp;quot;{controller=Home}/{action=Index}/{id?}&amp;quot;));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The instance of the &lt;code&gt;StaticFileOptions&lt;/code&gt; object has a public property namely &amp;ldquo;OnPrepareResponse&amp;rdquo; of type &lt;code&gt;Action&amp;lt;StaticFileResponseContext&amp;gt;&lt;/code&gt;. So we can again specify a lambda
+expression. This expression can be used to delegate the preperation of the response. Notice we&amp;rsquo;re simply setting the &lt;code&gt;Cache-Control&lt;/code&gt; header to a &amp;ldquo;max-age&amp;rdquo; of a week. That was
+pretty simple, hey?!&lt;/p&gt;
+
+&lt;h3 id=&#34;compression-awareness:f7ba068c12f661d5bfa879f663970183&#34;&gt;Compression Awareness&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s all the little things! The response compression middleware boasts deterministic compression, i.e.; if the
+&lt;a href=&#34;https://github.com/aspnet/KestrelHttpServer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;KestrelHttpServer&lt;/code&gt;&lt;/a&gt; is running behind the
+&lt;a href=&#34;https://www.iis.net/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;IIS&lt;/strong&gt;&lt;/a&gt; reverse proxy then the middleware may or may not compress the response. The middleware determines the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If the request accepts compression&lt;/li&gt;
+&lt;li&gt;If the requested resource matches the configured MIME types&lt;/li&gt;
+&lt;li&gt;Whether or not the response needs to be compressed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;results:f7ba068c12f661d5bfa879f663970183&#34;&gt;Results&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;rsquo;s spend some time examining the results of our response optimization efforts.&lt;/p&gt;
+
+&lt;h4 id=&#34;before:f7ba068c12f661d5bfa879f663970183&#34;&gt;Before&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/before.png&#34; alt=&#34;Before&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;total-s:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 549 KB transfered | ... | ... 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;banner1.svg Response Headers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;HTTP/1.1 200 OK
+Content-Length: 9679
+Content-Type: image/svg+xml
+Accept-Ranges: bytes
+ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;after:f7ba068c12f661d5bfa879f663970183&#34;&gt;After&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/after.png&#34; alt=&#34;After&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;total-s-1:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 175 KB transfered | ... | ... 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The total payload for all 13 requests is a total of 3.137 times smaller (a meager 31.9% of the original size). The larger the application, the more dramatic and valuable
+this becomes! Consider an &lt;strong&gt;Angular2&lt;/strong&gt; application (or other SPA framwork based application), which has tons of &lt;strong&gt;JavaScript&lt;/strong&gt; files to download &amp;ndash; 5 MB turns into ~1.5 MB.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;banner1.svg Response Headers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;HTTP/1.1 200 OK
+Content-Type: image/svg+xml
+Server: Kestrel
+Cache-Control: public,max-age=604800
+Transfer-Encoding: chunked
+Content-Encoding: gzip
+Accept-Ranges: bytes
+ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;subsequent-cached-requests:f7ba068c12f661d5bfa879f663970183&#34;&gt;Subsequent (Cached) Requests&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/cached.png&#34; alt=&#34;Cached&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;let-s-summarize:f7ba068c12f661d5bfa879f663970183&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
+
+&lt;p&gt;We learned some of the basics about &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Together we implemented a response optimization strategy that included deterministic response compression, as well
+as static file caching. We learned some of the common patterns and naming conventions for integrating with &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Finally, we have a good understanding of
+the &lt;strong&gt;ASP.NET Core&lt;/strong&gt; request pipeline middleware precedence.&lt;/p&gt;
+
+&lt;h3 id=&#34;source-code:f7ba068c12f661d5bfa879f663970183&#34;&gt;Source Code&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;
+   &lt;i class=&#34;fa fa-github-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &amp;nbsp; IEvangelist.AspNetCore.Optimization
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

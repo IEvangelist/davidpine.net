@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on IEvangelist</title>
+    <link>https://ievangelist.github.io/blog/</link>
+    <description>Recent content in Blogs on IEvangelist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 May 2016 22:40:31 -0500</lastBuildDate>
+    <atom:link href="https://ievangelist.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ASP.NET Core RC2 (Migration Guide)</title>
+      <link>https://ievangelist.github.io/blog/migrating-to-rc2/</link>
+      <pubDate>Fri, 20 May 2016 22:40:31 -0500</pubDate>
+      
+      <guid>https://ievangelist.github.io/blog/migrating-to-rc2/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduction:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;On Monday, May 16&lt;sup&gt;th&lt;/sup&gt; 2016 there was an amazing announcement from the &lt;strong&gt;.NET Blog&lt;/strong&gt; team!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Announcing .NET Core RC2 and .NET Core SDK Preview 1
+&lt;em&gt;&lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2016/05/16/announcing-net-core-rc2/&#34;&gt;https://blogs.msdn.microsoft.com/dotnet/2016/05/16/announcing-net-core-rc2/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This post will serve as a guide that walks you through the steps as I experienced them from migrating existing &lt;code&gt;ASP.NET Core RC1&lt;/code&gt; applications to &lt;code&gt;ASP.NET Core RC2&lt;/code&gt;.
+It is worth mentioning that I&amp;rsquo;m am targeting the &lt;code&gt;.NET 4.6&lt;/code&gt; framework. So, I &lt;em&gt;do not&lt;/em&gt; cover the &lt;code&gt;.netcoreapp&lt;/code&gt; or &lt;code&gt;netstandard&lt;/code&gt; TFMs (target framework monikers).&lt;/p&gt;
+
+&lt;h2 id=&#34;tooling:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Tooling&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;RC2&lt;/strong&gt; release brings the &lt;code&gt;.NET Core CLI&lt;/code&gt; to the forefront, and with that all the other command line tooling that
+you&amp;rsquo;ve grown accustomed to should be stricken from your environment, i.e.; &lt;code&gt;DNX&lt;/code&gt;, &lt;code&gt;DNU&lt;/code&gt;, and &lt;code&gt;DNVM&lt;/code&gt;. Let&amp;rsquo;s start with the
+removal of all these utilities.&lt;/p&gt;
+
+&lt;h3 id=&#34;removing-dnvm:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Removing DNVM&lt;/h3&gt;
+
+&lt;p&gt;Believe it or not, you might have a dated version of the &lt;strong&gt;DNVM CLI&lt;/strong&gt; and in order to invoke the &lt;code&gt;uninstall&lt;/code&gt; you might have to first
+perform an &lt;code&gt;update-self&lt;/code&gt; command. Doing so will ensure that you have the latest version, which will contain the &lt;code&gt;uninstall&lt;/code&gt; command.
+From a &lt;code&gt;cmd&lt;/code&gt; window execute the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dnvm update-self
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then execute the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dnvm uninstall
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;verification:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Verification&lt;/h4&gt;
+
+&lt;p&gt;From a new &lt;code&gt;cmd&lt;/code&gt; window, the &lt;code&gt;dnvm&lt;/code&gt; command should result in the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;λ dnvm
+&#39;dnvm&#39; is not recognized as an internal or external command, operable program or batch file.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;removing-dnx-dnu:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Removing DNX &amp;amp; DNU&lt;/h3&gt;
+
+&lt;p&gt;From a &lt;code&gt;cmd&lt;/code&gt; line window, execute &lt;code&gt;dnx&lt;/code&gt; - you should see something similar to this as output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;λ dnx
+Microsoft .NET Execution environment Clr-x86-1.0.0-rc1-16231
+
+Usage: dnx [options]
+
+Options:
+  --project|-p &amp;lt;PATH&amp;gt;              Path to the project.json file or the application folder. Defaults to the current folder if not provided.
+  --appbase &amp;lt;PATH&amp;gt;                 Application base directory path
+  --lib &amp;lt;LIB_PATHS&amp;gt;                Paths used for library look-up
+  --debug                          Waits for the debugger to attach before beginning execution.
+  --bootstrapper-debug             Waits for the debugger to attach before bootstrapping runtime.
+  --framework &amp;lt;FRAMEWORK_ID&amp;gt;       Set the framework version to use when running (i.e. dnx451, dnx452, dnx46, ...)
+  -?|-h|--help                     Show help information
+  --version                        Show version information
+  --watch                          Watch file changes
+  --packages &amp;lt;PACKAGE_DIR&amp;gt;         Directory containing packages
+  --configuration &amp;lt;CONFIGURATION&amp;gt;  The configuration to run under
+  --port &amp;lt;PORT&amp;gt;                    The port to the compilation server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Likewise enter &lt;code&gt;dnu&lt;/code&gt; in the same &lt;code&gt;cmd&lt;/code&gt; window, expecting the following output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;λ dnu
+Microsoft .NET Development Utility Clr-x86-1.0.0-rc1-16231
+
+Usage: dnu [options] [command]
+
+Options:
+  -v|--verbose  Show verbose output
+  -?|-h|--help  Show help information
+  --version     Show version information
+
+Commands:
+  build             Produce assemblies for the project in given directory
+  clear-http-cache  Clears the package cache.
+  commands          Commands related to managing application commands (install, uninstall)
+  feeds             Commands related to managing package feeds currently in use
+  install           Install the given dependency
+  list              Print the dependencies of a given project
+  pack              Build NuGet packages for the project in given directory
+  packages          Commands related to managing local and remote packages folders
+  publish           Publish application for deployment
+  restore           Restore packages
+  wrap              Wrap a csproj/assembly into a project.json, which can be referenced by project.json files
+
+Use &amp;quot;dnu [command] --help&amp;quot; for more information about a command.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;DNX&lt;/code&gt; and &lt;code&gt;DNU&lt;/code&gt; command line tools are simply &lt;code&gt;exe&#39;s&lt;/code&gt; in your &lt;code&gt;%USERPROFILE%\.dnx&lt;/code&gt; and &lt;code&gt;%USERPROFILE%\.dnx\bin&lt;/code&gt; directories. Navigate to your &lt;code&gt;%USERPROFILE%&lt;/code&gt;
+directory from windows explorer and delete the &lt;code&gt;.dnx&lt;/code&gt; directory entirely. Once you have successfully deleted this directory you
+should be able to execute the &lt;code&gt;dnx&lt;/code&gt; and &lt;code&gt;dnu&lt;/code&gt; commands again from a &lt;code&gt;cmd&lt;/code&gt; window and the system should complain that they are not
+recognized.&lt;/p&gt;
+
+&lt;h4 id=&#34;verification-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Verification&lt;/h4&gt;
+
+&lt;p&gt;From a new &lt;code&gt;cmd&lt;/code&gt; window, the &lt;code&gt;dnx&lt;/code&gt; and &lt;code&gt;dnu&lt;/code&gt; commands should result in the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;λ dnx
+&#39;dnx&#39; is not recognized as an internal or external command, operable program or batch file.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;λ dnu
+&#39;dnu&#39; is not recognized as an internal or external command, operable program or batch file.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;environment-variables:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Environment Variables&lt;/h3&gt;
+
+&lt;p&gt;Unfortunately, the &lt;code&gt;PATH&lt;/code&gt; environment variable is not cleaned up and this needs to be done manually.&lt;/p&gt;
+
+&lt;p&gt;Press the &lt;kbd&gt;Windows&lt;/kbd&gt; key, then begin typing &amp;ldquo;environment&amp;rdquo;, then select either of the two top options returned:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ievangelist.github.io/img/2016/05/win-search.png&#34; alt=&#34;Windows Search&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You are then presented the &amp;ldquo;system properties&amp;rdquo; dialog, select &lt;strong&gt;Environment Variables&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ievangelist.github.io/img/2016/05/sys-props.png&#34; alt=&#34;System Properties&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We will need to ensure that both &lt;code&gt;PATH&lt;/code&gt; variables are cleaned up, including your &lt;code&gt;%USERPROFILE%&lt;/code&gt; and the &lt;code&gt;System&lt;/code&gt; variables. Let&amp;rsquo;s &lt;kbd&gt;Edit&lt;/kbd&gt; both of them.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ievangelist.github.io/img/2016/05/env-vars.png&#34; alt=&#34;Environment Variables&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the &lt;strong&gt;Edit Variables&lt;/strong&gt; dialog, remove any and all of the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\Users\[ your global identifier ]\.dnx\bin;
+C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-update1\bin;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ievangelist.github.io/img/2016/05/edit-vars.png&#34; alt=&#34;Edit User Variables&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;net-core-cli:0349d6d87cad08484fba4056f258e4f0&#34;&gt;.NET Core CLI&lt;/h3&gt;
+
+&lt;p&gt;Simply follow &lt;a href=&#34;https://www.microsoft.com/net/core#windows&#34;&gt;these instuctions&lt;/a&gt;. Once you&amp;rsquo;re able to &amp;ldquo;Run the app&amp;rdquo; from the new &lt;strong&gt;CLI&lt;/strong&gt; you&amp;rsquo;re good to go.&lt;/p&gt;
+
+&lt;h4 id=&#34;review:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Review&lt;/h4&gt;
+
+&lt;p&gt;You should the following checklist fully satisfied at this point.&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&#34;fa fa-check-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;strong&gt;DNX&lt;/strong&gt;, &lt;strong&gt;DNU&lt;/strong&gt; and &lt;strong&gt;DNVM&lt;/strong&gt; completely removed / uninstalled&lt;br&gt;
+&lt;i class=&#34;fa fa-check-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;strong&gt;Visual Studio 2015 Update 2&lt;/strong&gt; installed&lt;br&gt;
+&lt;i class=&#34;fa fa-check-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &lt;strong&gt;.NET Core CLI&lt;/strong&gt; installed&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Edit by Hand &lt;i class=&#34;fa fa-pencil-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/h2&gt;
+
+&lt;p&gt;There were changes to &lt;strong&gt;APIs&lt;/strong&gt; which required changes to implementation aspects of the source code. Additionally, &lt;code&gt;namespace&lt;/code&gt;
+changes such as (but not limited to) &lt;code&gt;Microsoft.AspNet.*&lt;/code&gt; to &lt;code&gt;Microsoft.AspNetCore.*&lt;/code&gt;. But the bulk of the work was really in the hand-editing
+of &lt;code&gt;.sln&lt;/code&gt;, &lt;code&gt;global.json&lt;/code&gt;, &lt;code&gt;.xproj&lt;/code&gt;, &lt;code&gt;project.json&lt;/code&gt;, etc. files. Let&amp;rsquo;s look at what changed.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-sln-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;.sln&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Change the &lt;strong&gt;VisualStudioVersion&lt;/strong&gt; from &lt;code&gt;14.0.24720.0&lt;/code&gt; to &lt;code&gt;14.0.25123.0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;VisualStudioVersion = 14.0.25123.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-global-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;global.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Change the &lt;strong&gt;version&lt;/strong&gt; from &lt;code&gt;1.0.0-rc1-update1&lt;/code&gt; to &lt;code&gt;1.0.0-preview1-002702&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;projects&amp;quot;: [ &amp;quot;src&amp;quot;, &amp;quot;test&amp;quot; ],
+  &amp;quot;sdk&amp;quot;: {
+    &amp;quot;version&amp;quot;: &amp;quot;1.0.0-preview1-002702&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-xproj-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;.xproj&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;.xproj&lt;/code&gt; files are a little more involved, there are a few items that are required to be changed. In &lt;strong&gt;RC1&lt;/strong&gt; we had proprerties that
+were specific to &lt;strong&gt;DNX&lt;/strong&gt;, now we replace these with &lt;strong&gt;DOTNET&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DNX\Microsoft.DNX.Props&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.Props&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Additionally, we need to change the targets. This one requires that you know the type of project you&amp;rsquo;re editing, for example &lt;em&gt;&amp;ldquo;class library&amp;rdquo;&lt;/em&gt; vs. &lt;em&gt;&amp;ldquo;web site&amp;rdquo;&lt;/em&gt;. In &lt;strong&gt;RC1&lt;/strong&gt;
+there was only one target, but with &lt;strong&gt;RC2&lt;/strong&gt; they are differeniated.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DNX\Microsoft.DNX.targets&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-class-library:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2 (class library)&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.targets&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-web:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2 (web)&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets&amp;quot; 
+        Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-project-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;project.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;There has been a large reworking of the &lt;code&gt;project.json&lt;/code&gt; file - detailed &lt;a href=&#34;https://github.com/aspnet/Announcements/issues/175&#34;&gt;here&lt;/a&gt;. I will not be covering all
+of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official
+&lt;a href=&#34;http://json.schemastore.org/project-1.0.0-rc2&#34;&gt;&lt;code&gt;project.json schema&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We will look at various sections of the &lt;code&gt;project.json&lt;/code&gt; file changes. Let&amp;rsquo;s start with replacing &lt;code&gt;buildOptions&lt;/code&gt; with &lt;code&gt;compilationOptions&lt;/code&gt;, and notice that
+we are adding much more options than before.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;buildOptions&amp;quot;: {
+  &amp;quot;emitEntryPoint&amp;quot;: true,
+  &amp;quot;warningsAsErrors&amp;quot;: true
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;compilationOptions&amp;quot;: {		
+  &amp;quot;emitEntryPoint&amp;quot;: true,
+  &amp;quot;warningsAsErrors&amp;quot;: true,
+  &amp;quot;preserveCompilationContext&amp;quot;: true,
+  &amp;quot;embed&amp;quot;: &amp;quot;Views/**&amp;quot;, // Instead of &amp;quot;.:resource&amp;quot;: &amp;quot;Views/**&amp;quot;,
+  &amp;quot;compile&amp;quot;: {
+    &amp;quot;exclude&amp;quot;: [ &amp;quot;wwwroot&amp;quot;, &amp;quot;node_modules&amp;quot; ] // Now here, instead of &amp;quot;.:exclude&amp;quot;
+  }
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Additionally, we have &lt;code&gt;publishOptions&lt;/code&gt; that we can utilize - consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;publishOptions&amp;quot;: {
+  &amp;quot;include&amp;quot;: [
+    &amp;quot;wwwroot&amp;quot;,
+    &amp;quot;appsettings.json&amp;quot;,
+    &amp;quot;web.config&amp;quot;
+  ]
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, we have to be a little more specific with how we want the server to handle garbage collection.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;runtimeOptions&amp;quot;: {
+  &amp;quot;gcServer&amp;quot;: true, // Yes, please perform garbage collection
+  &amp;quot;gcConcurrent&amp;quot;: true // Yes, please do so concurrently...
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-web-config-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;web.config&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Now, &lt;strong&gt;IIS&lt;/strong&gt; is a little smarter and is starting to recognize &lt;strong&gt;ASP.NET Core&lt;/strong&gt; a little more.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-3:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
+&amp;lt;configuration&amp;gt;
+  &amp;lt;system.webServer&amp;gt;
+    &amp;lt;handlers&amp;gt;
+      &amp;lt;add name=&amp;quot;httpPlatformHandler&amp;quot; path=&amp;quot;*&amp;quot; verb=&amp;quot;*&amp;quot; modules=&amp;quot;httpPlatformHandler&amp;quot; 
+           resourceType=&amp;quot;Unspecified&amp;quot;/&amp;gt;
+    &amp;lt;/handlers&amp;gt;
+    &amp;lt;httpPlatform processPath=&amp;quot;%DNX_PATH%&amp;quot; arguments=&amp;quot;%DNX_ARGS%&amp;quot; stdoutLogEnabled=&amp;quot;false&amp;quot; /&amp;gt;
+  &amp;lt;/system.webServer&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
+&amp;lt;configuration&amp;gt;
+  &amp;lt;system.webServer&amp;gt;
+    &amp;lt;handlers&amp;gt;
+      &amp;lt;add name=&amp;quot;aspNetCore&amp;quot; path=&amp;quot;*&amp;quot; verb=&amp;quot;*&amp;quot; modules=&amp;quot;AspNetCoreModule&amp;quot; 
+           resourceType=&amp;quot;Unspecified&amp;quot; /&amp;gt;
+    &amp;lt;/handlers&amp;gt;
+    &amp;lt;aspNetCore processPath=&amp;quot;%LAUNCHER_PATH%&amp;quot; arguments=&amp;quot;%LAUNCHER_ARGS%&amp;quot; 
+                forwardWindowsAuthToken=&amp;quot;false&amp;quot; stdoutLogEnabled=&amp;quot;false&amp;quot; /&amp;gt;
+  &amp;lt;/system.webServer&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-hosting-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;hosting.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;With the release of &lt;strong&gt;RC2&lt;/strong&gt;, the &lt;code&gt;project.json&lt;/code&gt; schema removed the &lt;code&gt;webroot&lt;/code&gt; property. Now in order to specify the websites&amp;rsquo; static content directory we need to
+create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;webroot&amp;quot;: &amp;quot;wwwroot&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-appsettings-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;appsettings.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;This was a minor change, but if you forgot to change this - then you&amp;rsquo;ll end up with a runtime exception. The &lt;code&gt;Logging:LogLevel:Default&lt;/code&gt; should now be
+&lt;code&gt;Debug&lt;/code&gt; as &lt;code&gt;Verbose&lt;/code&gt; was removed altogether.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-4:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;Logging&amp;quot;: {
+      &amp;quot;IncludeScopes&amp;quot;: false,
+      &amp;quot;LogLevel&amp;quot;: {
+        &amp;quot;Default&amp;quot;: &amp;quot;Verbose&amp;quot;, // &amp;lt; -- Change &amp;quot;Verbose&amp;quot;
+        &amp;quot;System&amp;quot;: &amp;quot;Information&amp;quot;,
+        &amp;quot;Microsoft&amp;quot;: &amp;quot;Information&amp;quot;
+      }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-3:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;Logging&amp;quot;: {
+      &amp;quot;IncludeScopes&amp;quot;: false,
+      &amp;quot;LogLevel&amp;quot;: {
+        &amp;quot;Default&amp;quot;: &amp;quot;Debug&amp;quot;, // &amp;lt; --- To &amp;quot;Debug&amp;quot;
+        &amp;quot;System&amp;quot;: &amp;quot;Information&amp;quot;,
+        &amp;quot;Microsoft&amp;quot;: &amp;quot;Information&amp;quot;
+      }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-launchsettings-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;launchSettings.json&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;environmentVariables&lt;/code&gt; changed, such that the key name for the environment is no longer referred to as &amp;ldquo;Hosting:Environment&amp;rdquo;.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-5:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;environmentVariables&amp;quot;: {
+  &amp;quot;Hosting:Environment&amp;quot;: &amp;quot;Development&amp;quot; // &amp;lt; -- Change &amp;quot;Hosting:Environment&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-4:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;environmentVariables&amp;quot;: {
+  &amp;quot;ASPNETCORE_ENVIRONMENT&amp;quot;: &amp;quot;Development&amp;quot; // &amp;lt; -- To &amp;quot;ASPNETCORE_ENVIRONMENT&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-cs-files:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;*.cs&lt;/code&gt; files&lt;/h3&gt;
+
+&lt;p&gt;Some of these were very simple to fix. After updating your &lt;code&gt;project.json&lt;/code&gt; with the latest &lt;strong&gt;RC2&lt;/strong&gt; versions - some changes are as simple as a &lt;code&gt;namespace&lt;/code&gt; change (but others are more involed).&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-6:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNet.*;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-5:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNetCore.*;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;api-changes:0349d6d87cad08484fba4056f258e4f0&#34;&gt;API changes&lt;/h3&gt;
+
+&lt;p&gt;There was an attempt to unify some of the APIs as it pertains to consistency. As such, I had to make the following changes to my projects.
+The &lt;code&gt;IApplicationBuilder.Use*&lt;/code&gt; pattern now takes a new &lt;code&gt;*Options&lt;/code&gt; instance rather than an &lt;code&gt;Action&amp;lt;*Options&amp;gt;&lt;/code&gt;, providing more control to the consumer.&lt;/p&gt;
+
+&lt;h4 id=&#34;rc1-7:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;app.UseCookieAuthentication(options =&amp;gt;
+{
+    options.AuthenticationScheme = &amp;quot;AspNetCookie&amp;quot;;
+    options.AutomaticAuthenticate = true;
+    options.AutomaticChallenge = true;
+    options.LoginPath = &amp;quot;/account/login&amp;quot;;
+    options.LogoutPath = &amp;quot;/account/logout&amp;quot;;
+    options.AccessDeniedPath = &amp;quot;/account/forbidden&amp;quot;;
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;rc2-6:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;app.UseCookieAuthentication(new CookieAuthenticationOptions
+{
+    AuthenticationScheme = AuthenticationScheme.JciCookie,
+    AutomaticAuthenticate = true,
+    AutomaticChallenge = true,
+    LoginPath = &amp;quot;/account/login&amp;quot;,
+    LogoutPath = &amp;quot;/account/logout&amp;quot;,
+    AccessDeniedPath = &amp;quot;/account/forbidden&amp;quot;,
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The service locator pattern (or should I say &amp;ldquo;anti-pattern&amp;rdquo;) is slowing being removed from the framework. As such, if you were relying on the &lt;code&gt;CallContextServiceLocator.Locator.ServiceProvider&lt;/code&gt;
+you can no longer do so with the &lt;strong&gt;RC2&lt;/strong&gt; release.&lt;/p&gt;
+
+&lt;p&gt;Wherever you were using the &lt;code&gt;IApplication&lt;/code&gt; interface, you should be able to instead use the &lt;code&gt;IWebHost&lt;/code&gt; interface.&lt;/p&gt;
+
+&lt;h3 id=&#34;controllers-as-services:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Controllers as Services&lt;/h3&gt;
+
+&lt;p&gt;In &lt;strong&gt;RC1&lt;/strong&gt;, there was a nice little feature that allowed for any &lt;code&gt;Type&lt;/code&gt; to exist in a list of plausible controller/services - meaning that you could basically register external controllers as
+valid API and View entry points into your hosting application. You simply needed to add the types via the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;IMvcBuilder.AddControllersAsServices(params Type[] types);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This method signature changed with &lt;strong&gt;RC2&lt;/strong&gt; and it no longer accepts any arguments. In order to retain this functionality, you must first add the desired external assemblies as an &lt;code&gt;AssemblyPart&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;foreach (var assembly in GetExternalAssemblies())
+{
+    builder.PartManager.ApplicationParts.Add(new AssemblyPart(assembly));    
+}
+
+builder.AddControllersAsServices();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-startup-ctor:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The Startup &lt;code&gt;.ctor&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;One little change, you&amp;rsquo;re now required to explicitly set the base path and you can do so with the following.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public Startup(IHostingEnvironment env)
+{
+    var builder =
+        new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath) // Explicity set base from the content root path
+            .AddJsonFile(&amp;quot;appsettings.json&amp;quot;, true)
+            .AddJsonFile($&amp;quot;appsettings.{env.EnvironmentName}.json&amp;quot;, true)
+            .AddEnvironmentVariables();
+    // Omitted for brevity...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-program-cs-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;Program.cs&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;p&gt;Yes, we are now a console application&amp;hellip;so we&amp;rsquo;ll need this for our entry point.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public class Program
+{
+    public static void Main(string[] arguments)
+    {
+        using (var host = 
+            new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup&amp;lt;Startup&amp;gt;()
+                .Build();)
+        {
+            host.Run();
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;breaking-changes:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Breaking changes&lt;/h2&gt;
+
+&lt;p&gt;For a complete listing of all the announcements, please visit the official
+&lt;a href=&#34;https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2&#34;&gt;&lt;strong&gt;ASP.NET &lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Repo&lt;/strong&gt;&lt;/a&gt; announcements issue.&lt;/p&gt;
+
+&lt;h2 id=&#34;further-reading:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Further reading&lt;/h2&gt;
+
+&lt;p&gt;The previous steps were really to get your environment in an &lt;strong&gt;RC2&lt;/strong&gt; ready state, but there is so much more you can learn that has changed.
+I encourage bookmarking and reading the following articles as time permits.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotnet.github.io/docs/core-concepts/dnx-migration.html&#34;&gt;&lt;strong&gt;Migrating from DNX to .NET Core CLI&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.asp.net/en/latest/migration/rc1-to-rc2.html&#34;&gt;&lt;strong&gt;Migrating from ASP.NET 5 RC1 to ASP.NET Core&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md&#34;&gt;&lt;strong&gt;The .NET Platform Standard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html&#34;&gt;&lt;strong&gt;Writing Libraries with Cross Platform Tools&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conclusion:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;There, that really wasn&amp;rsquo;t too bad - was it? I&amp;rsquo;m certain that I didn&amp;rsquo;t cover everything and that I probably missed something. I hope that this was helpful, please feel free to share this!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

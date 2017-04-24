@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.NET on IEvangelist</title>
+    <link>http://davidpine.net/categories/index.net/</link>
+    <description>Recent content in .NET on IEvangelist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://davidpine.net/categories/.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Exploring C# 7</title>
+      <link>http://davidpine.net/blog/exploring-csharp-seven/</link>
+      <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/exploring-csharp-seven/</guid>
+      <description>
+
+&lt;h1 id=&#34;intro:0efe24a7225e878a472913ac049c49a3&#34;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;Since we have all been actively celebrating the 20&lt;sup&gt;th&lt;/sup&gt; anniversary of &lt;strong&gt;Visual Studio&lt;/strong&gt;, it felt appropriate to post about &lt;strong&gt;C# 7&lt;/strong&gt;!
+In this post we will explore the features that make &lt;strong&gt;C# 7&lt;/strong&gt; so promising. I&amp;rsquo;ve put together a demonstration &lt;strong&gt;C# 7&lt;/strong&gt; project, that is available
+&lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.CSharp&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This post contains examples and details on five of the nine new &lt;strong&gt;C# 7&lt;/strong&gt; features.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pattern matching&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;out&lt;/code&gt; variables&lt;/li&gt;
+&lt;li&gt;Tuples&lt;/li&gt;
+&lt;li&gt;Local functions&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;throw&lt;/code&gt; expressions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are the remaining features, that I &lt;strong&gt;do not&lt;/strong&gt; cover in this post.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ref&lt;/code&gt; locals and returns&lt;/li&gt;
+&lt;li&gt;More expression-bodied members&lt;/li&gt;
+&lt;li&gt;Generalized &lt;code&gt;async&lt;/code&gt; return types&lt;/li&gt;
+&lt;li&gt;Numeric literal syntax improvements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pattern-matching:0efe24a7225e878a472913ac049c49a3&#34;&gt;Pattern Matching&lt;/h2&gt;
+
+&lt;p&gt;With &lt;strong&gt;C# 7&lt;/strong&gt; we welcomed the concept of &amp;ldquo;patterns&amp;rdquo;. This concept allows for the extraction of information when a variable is tested for a certain &amp;ldquo;shape&amp;rdquo; and matches a
+specified pattern. We&amp;rsquo;re able to leverage the &amp;ldquo;shape&amp;rdquo; from which we matched on as a declared variable in scope, consuming it as we deem necessary. This is referred to as
+&amp;ldquo;dynamic&amp;rdquo; (or &amp;ldquo;method&amp;rdquo;) dispatch.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p&gt; In computer science, dynamic dispatch is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time.
+It is commonly employed in, and considered a prime characteristic of, object-oriented programming (OOP) languages and systems.
+&lt;cite&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Dynamic_dispatch&#34; target=&#34;_blank&#34;&gt;Wiki - Dynamic Dispatch&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Dynamic dispatch is nothing new to &lt;strong&gt;C#&lt;/strong&gt;, and has been around forever. &lt;strong&gt;C# 7&lt;/strong&gt; exposes this functionality via constant and type patterns.&lt;/p&gt;
+
+&lt;h3 id=&#34;constant-patterns:0efe24a7225e878a472913ac049c49a3&#34;&gt;Constant Patterns&lt;/h3&gt;
+
+&lt;p&gt;Constant pattern &lt;code&gt;null&lt;/code&gt;, similar to &lt;code&gt;(obj == null)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p&gt; The &amp;ldquo;is expression&amp;rdquo; has been expanded&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void IsExpression(object obj)
+{
+    if (obj is null) // Constant pattern &amp;quot;obj is null&amp;quot;
+    {
+        return;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;type-patterns:0efe24a7225e878a472913ac049c49a3&#34;&gt;Type Patterns&lt;/h3&gt;
+
+&lt;p&gt;Look closely at this syntax. This is where we start mixing metaphors. Prior to &lt;strong&gt;C# 7&lt;/strong&gt; we could use the &amp;ldquo;is&amp;rdquo; expression to do simple type assertions
+&lt;code&gt;obj is [type]&lt;/code&gt;. Additionally, we all know how to declare a variable &lt;code&gt;int i&lt;/code&gt;. This new syntax merges these concepts together and is more compound and
+expressive.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void IsExpression(object obj)
+{
+    // (obj is int i)
+    // &amp;quot;obj is int&amp;quot;     // type assertion &amp;quot;typically evaluates type compatibility at run time&amp;quot;
+    //        &amp;quot;int i&amp;quot;   // declaration
+
+    if (obj is int i) // Type pattern &amp;quot;obj is int i&amp;quot;
+    {
+        // We can then use the &amp;quot;i&amp;quot; (integer) variable 
+    }
+
+    // Note, the variable &amp;quot;i&amp;quot; is also available in this scope.
+    // This is in fact by design, more on that out the &amp;quot;out variable&amp;quot; section 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p&gt; The &amp;ldquo;switch statement&amp;rdquo; has been generalized&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;code&gt;when&lt;/code&gt; keyword has also been extended, now it not only applies to the &lt;code&gt;catch&lt;/code&gt; statement but also the &lt;code&gt;case&lt;/code&gt; labels within a &lt;code&gt;switch&lt;/code&gt; statement.
+Consider the following classes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;class Shape
+{
+    protected internal double Height { get; }
+
+    protected internal double Length { get; }
+
+    protected Shape(double height, double length)
+    {
+        Height = height;
+        Length = length;
+    }
+}
+
+class Circle : Shape
+{
+    internal double Radius =&amp;gt; Height / 2;
+
+    internal double Diameter =&amp;gt; Radius * 2;
+
+    internal double Circumference =&amp;gt; 2 * Math.PI * Radius;
+
+    internal Circle(double height, double length) 
+        : base(height, length) { }
+}
+
+class Rectangle : Shape
+{
+    internal bool IsSquare =&amp;gt; Height == Length;
+
+    internal Rectangle(double height, double length) 
+        : base(height, length) { }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now imagine that we have a collection of these &lt;code&gt;Shape&lt;/code&gt; objects, and we want to print out their various details - we could use &amp;ldquo;pattern matching&amp;rdquo; as such:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;static void OutputShapes(IEnumerable&amp;lt;Shape&amp;gt; shapes)
+{
+    foreach (var shape in shapes)
+    {
+        // Previously, this was not permitted. Case labels had to be concrete
+        // such as enums, numerics, bools, strings, etc.
+        switch (shape)
+        {
+            case Circle c:
+                WriteLine($&amp;quot;circle with circumference {c.Circumference}&amp;quot;);
+                break;
+            case Rectangle s when (s.IsSquare):
+                WriteLine($&amp;quot;{s.Length} x {s.Height} square&amp;quot;);
+                break;
+            case Rectangle r:
+                WriteLine($&amp;quot;{r.Length} x {r.Height} rectangle&amp;quot;);
+                break;
+            default:
+                WriteLine(&amp;quot;This is not a shape that we&#39;re familiar with...&amp;quot;);
+                break;
+            case null:
+                throw new ArgumentNullException(nameof(shape));
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we are able to more easily reason about the specific &lt;code&gt;shape&lt;/code&gt; in context. For example, with each iteration of our collection we &lt;code&gt;switch&lt;/code&gt;
+on the &lt;code&gt;shape&lt;/code&gt;. If the &lt;code&gt;shape&lt;/code&gt; is an instance of the &lt;code&gt;Circle&lt;/code&gt; subclass, we&amp;rsquo;ll execute the &lt;code&gt;case&lt;/code&gt; label &amp;ldquo;Circle&amp;rdquo; and we get the instance declared as
+its type in the variable &lt;code&gt;c&lt;/code&gt;. Likewise, if the &lt;code&gt;shape&lt;/code&gt; is a &lt;code&gt;Rectangle&lt;/code&gt; and that rectangle &lt;code&gt;s&lt;/code&gt; just so happens to also be a square &lt;code&gt;when (s.IsSquare)&lt;/code&gt;
+evaluates to &lt;code&gt;true&lt;/code&gt; - we will then execute the square &lt;code&gt;case&lt;/code&gt; label. If the &lt;code&gt;shape&lt;/code&gt; is an instance of a &lt;code&gt;Rectangle&lt;/code&gt; but not a square, we execute the
+&amp;ldquo;Rectangle&amp;rdquo; &lt;code&gt;case&lt;/code&gt; label. Notice we still have &lt;code&gt;default&lt;/code&gt; fall-thru. Finally, we can also have a &amp;ldquo;null&amp;rdquo; &lt;code&gt;case&lt;/code&gt; label.&lt;/p&gt;
+
+&lt;h2 id=&#34;out-variables:0efe24a7225e878a472913ac049c49a3&#34;&gt;&lt;code&gt;out&lt;/code&gt; variables&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;.NET&lt;/code&gt; developers are more than familiar with the &lt;code&gt;Try*&lt;/code&gt; pattern, but as a refresher this is what it looks like. Imagine we are trying to parse
+a &lt;code&gt;System.String&lt;/code&gt; input value as a &lt;code&gt;System.Int32&lt;/code&gt;. Imagine that the consumer doesn&amp;rsquo;t really care if it is parsed, they&amp;rsquo;re fine with a &lt;code&gt;default(int)&lt;/code&gt;
+if it fails.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public int ToInt32(string input)
+{
+    int result;
+    if (int.TryParse(input, out result))
+    {
+        return result;
+    }
+
+    return default(int);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s quickly recap this. First, we declare a variable namely &lt;code&gt;result&lt;/code&gt;. We then invoke the &lt;code&gt;int.TryParse&lt;/code&gt; which returns a &lt;code&gt;bool&lt;/code&gt; whether or not the
+parse was successful. If &lt;code&gt;true&lt;/code&gt; then the declare &lt;code&gt;result&lt;/code&gt; variable is not equal to the parsed &lt;code&gt;int&lt;/code&gt; value. If the &lt;code&gt;input&lt;/code&gt; was &lt;code&gt;&amp;quot;12&amp;quot;&lt;/code&gt;, then &lt;code&gt;result&lt;/code&gt; would be &lt;code&gt;12&lt;/code&gt;. If the &lt;code&gt;input&lt;/code&gt;
+was &lt;code&gt;&amp;quot;Pickles&amp;quot;&lt;/code&gt;, then the return from the invocation to the &lt;code&gt;ToInt32&lt;/code&gt; would be &lt;code&gt;0&lt;/code&gt; as &lt;code&gt;int.TryParse&lt;/code&gt; would return &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now with &lt;strong&gt;C# 7&lt;/strong&gt; we can declare our &lt;code&gt;out&lt;/code&gt; variable inline as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public int ToInt32(string input)
+{
+    // Note: the declaration is inline with the out keyword
+    if (int.TryParse(input, out int result))
+    {
+        return result;
+    }
+
+    return default(int);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The scope of the &lt;code&gt;result&lt;/code&gt; variable is identical to the previous example, as it actually &amp;ldquo;leaks&amp;rdquo; out to the &lt;code&gt;if&lt;/code&gt; statement. We can re-write this even
+more expressively:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public int ToInt32(string input) =&amp;gt; int.TryParse(input, out var result) ? result : result;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A few things you might notice. First, this is now a single line as we can express this with the lambda operator. We leverage the ternary operator as
+well. Additionally, we can use the &lt;code&gt;var&lt;/code&gt; keyword for our declaration. And since the &lt;code&gt;result&lt;/code&gt; variable is in scope we can use it as both return cases.
+If unable to be parsed, it is in fact a &lt;code&gt;default(int)&lt;/code&gt; anyways.&lt;/p&gt;
+
+&lt;h2 id=&#34;tuples:0efe24a7225e878a472913ac049c49a3&#34;&gt;Tuples&lt;/h2&gt;
+
+&lt;p&gt;Most developers are familiar with &lt;code&gt;System.Tuple&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt;. This &lt;code&gt;class&lt;/code&gt; has served us well all the while it has been around.
+One of the advantages is that it exposes &lt;code&gt;readonly&lt;/code&gt; fields - from the values that it is instantiated with. This
+was also great for equality comparisons and even using the tuple as a dictionary key.&lt;/p&gt;
+
+&lt;p&gt;In &lt;strong&gt;C# 7&lt;/strong&gt; we have a new syntax for expressing tuples. Enter the &lt;code&gt;ValueTuple&lt;/code&gt;, and as the name implies - this is a &lt;code&gt;struct&lt;/code&gt; instead of a &lt;code&gt;class&lt;/code&gt;. There
+are obvious performance gains from using a light-weight value-type over the allocation of a &lt;code&gt;class&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void LegacyTuple()
+{
+    var letters = new Tuple&amp;lt;char, char&amp;gt;(&#39;a&#39;, &#39;b&#39;);
+    
+    // Values were accessible via these Item* fields.
+    var a = letters.Item1;
+    var b = letters.Item2;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This wasn&amp;rsquo;t overly exciting from an API perspective, as the field names do not really imply anything about their intention.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void ValueTuple()
+{
+    var letters = (&#39;a&#39;, &#39;b&#39;);
+    var a = letters.Item1;
+    var b = letters.Item2;
+
+    // Note: ToTuple extension method
+    var systemTuple = letters.ToTuple();
+    var c = systemTuple.Item1;
+    var d = systemTuple.Item2;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You might notice that the syntactic sugar is pouring over this new feature. This is referred to as a &amp;ldquo;tuple literal&amp;rdquo;. We dropped the entire &lt;code&gt;new&lt;/code&gt; keyword
+usage, as well as specifying the types. They are all inferred and in fact known, IntelliSense proves this immediately. But we still have the issue of
+these tuples not being very API friendly. Let&amp;rsquo;s explore how we can give them custom names.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void MoreValueTuples()
+{
+    var lessonDetails = 
+        (Subject: &amp;quot;C# Language Semantics&amp;quot;, Category: Categories.Programming, Level: 300);
+
+    // Note: IntelliSense now hides Item1, Item2 and Item3
+    // Instead we are provided with the following:
+
+    var subject = lessonDetails.Subject;    // string
+    var category = lessonDetails.Category;  // Categories [enum]
+    var level = lessonDetails.Level;        // int
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;deconstruction:0efe24a7225e878a472913ac049c49a3&#34;&gt;Deconstruction&lt;/h3&gt;
+
+&lt;p&gt;Now that we see how we can instantiate a &lt;code&gt;ValueTuple&lt;/code&gt;, let&amp;rsquo;s take a look at how we can declare one for usage.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void DeconstructionExamples()
+{
+    var lessonDetails = 
+        (Subject: &amp;quot;C# Language Semantics&amp;quot;, Category: Categories.Programming, Level: 300);
+    
+    // We can deconstruct in three various ways
+    // First, the fully qualified type
+    (string subject, Categories category, int level) = lessonDetails;
+    
+    // Next using the var keyword per named declaration
+    (var subject, var category, var level) = lessonDetails;
+
+    // Finally, omitting any type declaration and using var wholeheartedly
+    var (subject, category, level) = lessonDetails;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are often questions about how deconstruction is implemented, and whether or not it is ordinal based. For the &lt;code&gt;ValueTuple&lt;/code&gt; it is in fact
+ordinal based. However, note that deconstruction is not actually limited to tuples. With &lt;strong&gt;C# 7&lt;/strong&gt; any &lt;code&gt;object&lt;/code&gt; that defines a &lt;code&gt;public void Deconstruct&lt;/code&gt;
+method can be deconstructed. Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;class Person
+{
+    private readonly (string First, string Middle, string Last) _name;
+
+    private readonly DateTime DateOfBirth _dateOfBirth;
+
+    public Person((string f, string m, string l) name, DateTime dob)
+    {
+        _name = name;
+        _dateOfBirth = dob;
+    }
+
+    public void Deconstruct(out double age, 
+                            out string firstName,
+                            out string middleName, 
+                            out string lastName)
+    {
+        age = (DateTime.Now - _dateOfBirth).TotalYears;
+        firstName = _name.First;
+        middleName = _name.Middle;
+        lastName = _name.Last;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that the &lt;code&gt;Person&lt;/code&gt; is defined with this &lt;code&gt;Deconstruct&lt;/code&gt; method, we can deconstruct it following the same ordinal based semantics.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;void DeconstructNonTuple()
+{
+    var person = new Person((&amp;quot;David&amp;quot;, &amp;quot;Michael&amp;quot;, &amp;quot;Pine&amp;quot;), new DateTime(1984, 7, 7));
+
+    (int age, string first, string middle, string last) = person;
+
+    // Note: to partially deconstruct you can ignore a specific ordinal by using the _
+    // This does not actually naming the ordinal variable, but truly ignoring it.
+
+    var (_, _, _, _) = person;          // Ignore all, not very useful
+    var (_, firstName, _, _) = person;  // Cherry-pick first name
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;comparing-anonymous-object-vs-valuetuple:0efe24a7225e878a472913ac049c49a3&#34;&gt;Comparing Anonymous &lt;code&gt;object&lt;/code&gt; vs. &lt;code&gt;ValueTuple&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
+a &lt;code&gt;ValueTuple&lt;/code&gt; is a &lt;code&gt;struct&lt;/code&gt; - value type. Also, you can only return an anonymous object from a method as an &lt;code&gt;object&lt;/code&gt; which isn&amp;rsquo;t very API friendly.
+Within a fluent &lt;code&gt;LINQ&lt;/code&gt; chained method anonymous objects are great and will still be normal for projection.&lt;/p&gt;
+
+&lt;h2 id=&#34;local-functions:0efe24a7225e878a472913ac049c49a3&#34;&gt;Local Functions&lt;/h2&gt;
+
+&lt;p&gt;At first glance, local functions seem a bit odd. I&amp;rsquo;ve heard people say, &amp;ldquo;this method is starting to look like a class&amp;rdquo;. At first,
+I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick
+comparison of the two, note the benefits of local functions as they compare to lambdas.&lt;/p&gt;
+
+&lt;style&gt;
+    .red { color: red; }
+    .green { color: green; }
+&lt;/style&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;right&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Lambda(s)&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Local Function(s)&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Details&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Generics&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Local functions allow for the use of generics&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Iterators&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;The &lt;code&gt;yield&lt;/code&gt; keyword is valid within local functions&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Recursion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Local functions support recursion&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Allocatey&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Delegates require an &lt;code&gt;object&lt;/code&gt; allocation&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;Potential Variable Lifting&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-check green&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-times red&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Implicitly captured closure is non-existent&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;It is vital to understand that local functions are &lt;strong&gt;not&lt;/strong&gt; a replacement for &lt;code&gt;Action&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt; or &lt;code&gt;Func&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt;. These delegate declarations are still
+needed as parameters to enable lambda expression arguments. If you see the &lt;strong&gt;#notasugly&lt;/strong&gt; hashtag, this was coined by Mads Torgersen.&lt;/p&gt;
+
+&lt;h3 id=&#34;more-efficient:0efe24a7225e878a472913ac049c49a3&#34;&gt;More efficient&lt;/h3&gt;
+
+&lt;p&gt;When using local functions, there is no &lt;code&gt;object&lt;/code&gt; created - unlike delegates that require an object for it to be used. Likewise, local functions
+help to alleviate another issue with lambdas in that they do not need to implicitly capture a variable longer than it is potentially needed.
+In &lt;strong&gt;C#&lt;/strong&gt; lambdas capture values by reference, meaning that garbage collection may not be able to correctly clean up code that is &amp;ldquo;allocatey&amp;rdquo;.&lt;/p&gt;
+
+&lt;h4 id=&#34;declaration:0efe24a7225e878a472913ac049c49a3&#34;&gt;Declaration&lt;/h4&gt;
+
+&lt;p&gt;With local functions, the declaration of the local function can actually occur after the &lt;code&gt;return&lt;/code&gt; statement - as long as it is within the method body
+in which it is consumed. If you&amp;rsquo;re familiar with some of the implementations of the &lt;code&gt;LINQ&lt;/code&gt; extension methods on &lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;, you would know a lot
+of the methods are defined with argument validation followed by the instantiation of &amp;ldquo;Iterator&amp;rdquo; classes, where these classes do the actual work.&lt;/p&gt;
+
+&lt;p&gt;Because of deferred execution, iterators do not actually execute validation logic until they are iterated - for example invoking &lt;code&gt;.ToList()&lt;/code&gt;, &lt;code&gt;.ToArray()&lt;/code&gt;,
+or simply using them in a &lt;code&gt;foreach&lt;/code&gt; statement. Ideally, we would like our iterators to &amp;ldquo;fail-fast&amp;rdquo; in the event of being given invalid arguments. Let&amp;rsquo;s
+imagine that the &lt;code&gt;.Select&lt;/code&gt; extension method was implemented as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static IEnumerable&amp;lt;TResult&amp;gt; Select&amp;lt;T, TResult&amp;gt;(this IEnumerable&amp;lt;T&amp;gt; source, 
+                                                           Func&amp;lt;T, TResult&amp;gt; selector)
+{
+    if (source == null) throw new ArgumentNullException(nameof(source));
+    if (selector == null) throw new ArgumentNullException(nameof(selector));
+
+    foreach (var item in source)
+    {
+        yield return selector(item);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since this method is written as an iterator, the validation is skipped until it&amp;rsquo;s iterated. With &lt;strong&gt;C# 7&lt;/strong&gt; we can use local function to get both
+&amp;ldquo;fail-fast&amp;rdquo; validation and the iterator together.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static IEnumerable&amp;lt;TResult&amp;gt; Select&amp;lt;T, TResult&amp;gt;(this IEnumerable&amp;lt;T&amp;gt; source, 
+                                                           Func&amp;lt;T, TResult&amp;gt; selector)
+{
+    if (source == null) throw new ArgumentNullException(nameof(source));
+    if (selector == null) throw new ArgumentNullException(nameof(selector));
+
+    return iterator();
+
+    IEnumerable&amp;lt;TResult&amp;gt; iterator()
+    {
+        foreach (var item in source)
+        {
+            yield return selector(item);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;throw-expressions:0efe24a7225e878a472913ac049c49a3&#34;&gt;&lt;code&gt;throw&lt;/code&gt; expressions&lt;/h1&gt;
+
+&lt;p&gt;Leveraging some pre-existing &lt;strong&gt;C#&lt;/strong&gt; functionality - &lt;code&gt;null&lt;/code&gt; coalescing, we can now &lt;code&gt;throw&lt;/code&gt; when a value is evaluated as &lt;code&gt;null&lt;/code&gt;. A common validation
+mechanism is to &lt;code&gt;throw&lt;/code&gt; if an argument is &lt;code&gt;null&lt;/code&gt;. Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;class LegacyService : IService
+{
+    private readonly IContextProvider _provider;
+
+    public LegacyService(IContextProvider provider)
+    {
+        if (provider == null)
+        {
+            throw new ArgumentNullException(nameof(provider));
+        }
+
+        _provider = provider;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With &lt;strong&gt;C# 7&lt;/strong&gt; we can simplify this with the &lt;code&gt;throw&lt;/code&gt; expression.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;class ModernService : IService
+{
+    private readonly IContextProvider _provider;
+
+    public ModernService(IContextProvider provider)
+    {
+        _provider = provider ?? throw new ArgumentNullException(nameof(provider));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the given &lt;code&gt;provider&lt;/code&gt; argument is &lt;code&gt;null&lt;/code&gt; we&amp;rsquo;ll coalesce over to the &lt;code&gt;throw&lt;/code&gt; expression.&lt;/p&gt;
+
+&lt;h1 id=&#34;from-c-6-to-c-7-then-and-now:0efe24a7225e878a472913ac049c49a3&#34;&gt;From C# 6 to C# 7, then and now!&lt;/h1&gt;
+
+&lt;p&gt;I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
+made sense to share it here - Enjoy!!&lt;/p&gt;
+
+&lt;p&gt;&lt;style&gt;
+    .iframe_container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
+        padding-top: 25px;
+        height: 0;
+    }
+    .iframe_container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/kFpXRooGo0c&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Further Reading&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7&#34; target=&#34;_blank&#34;&gt;What&amp;rsquo;s new in C# 7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

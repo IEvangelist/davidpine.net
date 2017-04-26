@@ -23,4 +23,21 @@ language are only getting larger.
 
 ## "The Good Parts"
 
-Douglas Crockford authored a book "JavaScript: The Good Parts", sadily it was a rather short book.
+Douglas Crockford authored a book "JavaScript: The Good Parts", sadily it was a rather short book. If you're a JavaScript developer, knowing "the good parts"
+is great - but knowing the limitations and shortcomings of a language is even more powerful. Sometimes it feels like JavaScript is a hammer and not every 
+problem we're trying to solve is a nail. NodeJs is a great example of this in my opinion, but I digress... If you want a good laugh watch
+<a href="https://www.destroyallsoftware.com/talks/wat" target="_blank">Gary Bernhardt's WAT video</a>, go ahead -- I'll wait!
+
+### Mental Modal
+
+I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. I had two major takeaways 
+from the debate that I think will stick with me for a while.
+
+#### Point One
+
+There was an analogy that kept being mentioned, something about how "we cannot all be Tour De France champions" and I agreed with that. That is why I think
+that TypeScript is like "training wheels" for JavaScript developers. And that is not at all a bad thing. Just look at what you can do with "training wheels".
+
+![Training Wheels](/img/2017/04/training-wheels.gif)
+
+#### Point Two 

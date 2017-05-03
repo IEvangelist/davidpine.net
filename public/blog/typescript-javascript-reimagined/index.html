@@ -1,0 +1,1251 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <link rel="icon" href="/img/main/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        
+            
+                <title>TypeScript - JavaScript Reimagined</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.15" />
+        
+
+
+        
+            <meta name="author" content="David Pine">
+        
+        
+            <meta name="description" content="&#34;Making JavaScript tolerable&#34;">
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="TypeScript - JavaScript Reimagined"/>
+<meta name="twitter:description" content="&#34;Making JavaScript tolerable&#34;"/>
+<meta name="twitter:site" content="@davidpine7"/>
+
+
+        <meta property="og:title" content="TypeScript - JavaScript Reimagined" />
+<meta property="og:description" content="&#34;Making JavaScript tolerable&#34;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidpine.net/blog/typescript-javascript-reimagined/" />
+
+
+<meta property="og:updated_time" content="2017-05-02T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="TypeScript - JavaScript Reimagined">
+<meta itemprop="description" content="&#34;Making JavaScript tolerable&#34;">
+
+
+<meta itemprop="dateModified" content="2017-05-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1122">
+
+
+
+<meta itemprop="keywords" content=".NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,JavaScript,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <link rel="stylesheet" href="/css/main.min.css" />
+                
+            
+        
+
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78203613-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">IEvangelist</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog/">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                        
+                            <i class="fa fa-list-ol">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                        
+                            <i class="fa fa-smile-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/speaking/">
+                        
+                            <i class="fa fa-bullhorn">&nbsp;</i>Speaking
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/conclusions/">
+                        
+                            <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://davidpine.net">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://davidpine.net">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                
+                                    <i class="fa fa-list-ol">&nbsp;</i>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                
+                                    <i class="fa fa-smile-o">&nbsp;</i>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/speaking/">
+                            <h3>
+                                
+                                    <i class="fa fa-bullhorn">&nbsp;</i>
+                                
+                                Speaking
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/conclusions/">
+                            <h3>
+                                
+                                    <i class="fa fa-lightbulb-o">&nbsp;</i>
+                                
+                                Conclusions
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/typescript-javascript-reimagined/"><p>TypeScript - JavaScript Reimagined</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://davidpine.net/blog/exploring-csharp-seven/"><p>Exploring C# 7</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f&text=TypeScript%20-%20JavaScript%20Reimagined&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f&title=TypeScript%20-%20JavaScript%20Reimagined" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f&title=TypeScript%20-%20JavaScript%20Reimagined" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f&title=TypeScript%20-%20JavaScript%20Reimagined" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://davidpine.net/blog/typescript-javascript-reimagined/">TypeScript - JavaScript Reimagined</a></h1>
+            
+        
+        
+            <p>&#34;Making JavaScript tolerable&#34;</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-05-02'>
+            May 2, 2017</time>
+        <span class="author">David Pine</span>
+        
+            <p>6 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f&text=TypeScript%20-%20JavaScript%20Reimagined&via=davidpine7" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f&title=TypeScript%20-%20JavaScript%20Reimagined" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f&title=TypeScript%20-%20JavaScript%20Reimagined" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f&title=TypeScript%20-%20JavaScript%20Reimagined" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by David%20Pine&body=http%3a%2f%2fdavidpine.net%2fblog%2ftypescript-javascript-reimagined%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://davidpine.net/blog/typescript-javascript-reimagined/" class="image featured">
+            <img src="/img/2017/05/type-writer.jpg" alt="" />
+        </a>
+    
+
+
+    <div id="content">
+        
+
+<h1 id="first-things-first:983b92988576ed5bc09079031d8a835a">First things First</h1>
+
+<p>JavaScript is the world&rsquo;s third most common programming language today. JavaScript was created by <a href="https://twitter.com/BrendanEich" target="_blank">Brendan Eich</a> in about ten days. It might seem odd that the
+previous two sentences not only exist, but go together&hellip;yet it is true! JavaScript runs seemingly everywhere and applications written in this
+language are only getting larger.</p>
+
+<blockquote>
+<p><p/> JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.
+<cite><a href="https://twitter.com/ahejlsberg" target="_blank">Anders Hejlsberg</a></cite></p>
+</blockquote>
+
+<h2 id="the-good-parts:983b92988576ed5bc09079031d8a835a">&ldquo;The Good Parts&rdquo;</h2>
+
+<p><a href="http://www.crockford.com/" target="_blank">Douglas Crockford</a> authored a book &ldquo;JavaScript: The Good Parts&rdquo;, sadly it was a rather short book. If you&rsquo;re a JavaScript developer, knowing &ldquo;the good parts&rdquo;
+is great - but knowing the limitations and shortcomings of a language is even more powerful. Sometimes it feels like JavaScript is a hammer and not every
+problem we&rsquo;re trying to solve is a nail. NodeJs is a great example of this in my opinion &ndash; because I&rsquo;m a <code>.NET</code> developer, but I digress&hellip; If you want a good laugh watch
+Gary Bernhardt&rsquo;s <a href="https://www.destroyallsoftware.com/talks/wat" target="_blank">WAT video</a>, go ahead &ndash; I&rsquo;ll wait! In all seriousness, JavaScript
+is a great programming language for countless reasons, but it is easy to poke fun at.</p>
+
+<h3 id="mental-modal:983b92988576ed5bc09079031d8a835a">Mental Modal</h3>
+
+<p>I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. There are several key takeaways
+from the debate that I think will stick with me for a while.</p>
+
+<h4 id="learn-it:983b92988576ed5bc09079031d8a835a">Learn it</h4>
+
+<blockquote>
+<p><p/> You should learn the JavaScript programming language</p>
+</blockquote>
+
+<p>I already know JavaScript (but I really don&rsquo;t know JavaScript) &ndash; I would never consider myself an expert or a guru! However, I write TypeScript nearly
+every single day that I develop. Some of the aforementioned names are among the very few who might be considered as such. I recall that when this part
+of the conversation was encountered, we came up with an analogy.</p>
+
+<blockquote>
+<p><p/> Not all JavaScript developers are Tour de France champions (or contenders)</p>
+</blockquote>
+
+<p>This was the reoccurring analogy and I agreed with it wholeheartedly. That is why I think that TypeScript is like &ldquo;training wheels&rdquo; for JavaScript developers.
+That is not at all a bad thing! Just look at what you can do with &ldquo;training wheels&rdquo;.</p>
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    <div class="box alt">
+        <div class="row uniform">
+        
+        
+        
+            
+                <div class="7u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/2017/05/training-wheels.gif'
+                            alt="With style" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="5u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/2017/05/training-wheels-2.gif'
+                            alt="Or Bust" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="0u$">
+            
+            
+        
+            
+                
+                    </div>
+                    
+                
+            
+            
+        
+            
+                
+                
+            
+            
+        
+        </div>
+    </div>
+
+
+
+<p>Seriously though, with that fact that <strong>we are not compilers</strong> and we cannot predict certain behaviors that occur in the &ldquo;wild west&rdquo; of JavaScript &ndash; <strong>we should
+rely on tooling to help</strong>. It is simply a pragmatic approach to developing with a true sense of reliability and consistency. Training wheels provide you with the
+confidence and security. Once your TypeScript is compiled to JavaScript, the training wheels are removed and your code is ready to brave the new world!</p>
+
+<h1 id="typescript:983b92988576ed5bc09079031d8a835a">TypeScript</h1>
+
+<p>I could never compete with the TypeScript site. They have a beautifully composed tutorial, handbook and rich set of documentation. If that is what
+you&rsquo;re looking for - by all means 
+
+    
+        
+    
+
+    <a href="http://www.typescriptlang.org/docs/tutorial.html" target='_blank'>go check it out</a>
+
+. If you&rsquo;d like to hear more
+on my thoughts - keep reading.</p>
+
+<p>All valid JavaScript is also valid TypeScript, as TypeScript is a superset of JavaScript. TypeScript allows you as a developer to program in the
+latest version of the ECMAScript standard, while still being about to target all the way back to ES3. Upon compilation, your code is pure JavaScript
+and all the type notations are removed. The static type system is only applicable when working with TypeScript related files.</p>
+
+<h2 id="extensions-explained:983b92988576ed5bc09079031d8a835a">Extensions Explained</h2>
+
+<p>I initially had some confusion about the various file extensions. It was obvious what <code>.ts</code> and <code>.js</code> files were, but what were these <code>.map</code> and <code>.d.ts</code> files?
+Ironically, <code>.map</code> files have been around since CoffeeScript and are nothing new. They map JavaScript files to their corresponding abstractions, in the case of
+TypeScript - they map <code>.ts</code> to <code>.js</code> files. The <code>.d.ts</code> files are known as type definitions. They define the public surface area or API if you will, of a given
+library. More detail <a href="http://stackoverflow.com/a/37063570/2410379" target="_blank">here <i class="fa fa-stack-overflow" aria-hidden="true"></i></a>.</p>
+
+<h2 id="enough-sales-pitch-show-me-some-code:983b92988576ed5bc09079031d8a835a">Enough Sales Pitch - Show me some code</h2>
+
+<p>The 
+
+    
+        
+    
+
+    <a href="http://www.typescriptlang.org/play/index.html" target='_blank'>TypeScript playground</a>
+
+ is an amazing place, since it has a side-by-side of the input TypeScript and the resulting JavaScript.
+This is an excellent place to learn how TypeScript works and what it is capable of. I always find it interesting seeing how certain
+things are implemented. Take for example an <code>enum</code>. In most languages it&rsquo;s easy to take this for granted, the same is true with
+TypeScript - but seeing how the resulting JavaScript is really something special.</p>
+
+<pre><code class="language-typescript">export enum DayOfWeek {
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+}
+</code></pre>
+
+<p>This seems like a very clean declaration of an <code>enum</code>, right?! We know that <code>DayOfWeek.Monday</code> would have a value of <code>1</code>, and
+<code>DayOfWeek.Friday</code> would then be <code>5</code> for example. But let&rsquo;s have a look at the JavaScript output.</p>
+
+<pre><code class="language-javascript">var DayOfWeek;
+(function (DayOfWeek) {
+    DayOfWeek[DayOfWeek[&quot;Sunday&quot;] = 0] = &quot;Sunday&quot;;
+    DayOfWeek[DayOfWeek[&quot;Monday&quot;] = 1] = &quot;Monday&quot;;
+    DayOfWeek[DayOfWeek[&quot;Tuesday&quot;] = 2] = &quot;Tuesday&quot;;
+    DayOfWeek[DayOfWeek[&quot;Wednesday&quot;] = 3] = &quot;Wednesday&quot;;
+    DayOfWeek[DayOfWeek[&quot;Thursday&quot;] = 4] = &quot;Thursday&quot;;
+    DayOfWeek[DayOfWeek[&quot;Friday&quot;] = 5] = &quot;Friday&quot;;
+    DayOfWeek[DayOfWeek[&quot;Saturday&quot;] = 6] = &quot;Saturday&quot;;
+})(DayOfWeek || (DayOfWeek = {}));
+</code></pre>
+
+<p>If you look at this look enough, you&rsquo;ll see that it&rsquo;s a rather simple solution. It is essentially a reverse map, where properties
+are assigned to from their indexes. On the <code>DayOfWeek</code> instance, we declare and assign property <code>Sunday</code> equal to <code>0</code>. Likewise,
+we declare and assign property <code>0</code> equal to the value <code>Sunday</code>, etc&hellip;</p>
+
+<h3 id="type-aliases-generics-and-mapped-types:983b92988576ed5bc09079031d8a835a">Type Aliases, Generics and  Mapped Types</h3>
+
+<p>I recently learned about the <code>keyof</code> operator in TypeScript, and wow is it powerful! Let&rsquo;s consider the following mutable object.</p>
+
+<pre><code class="language-typescript">export class MutableDataBag&lt;T&gt; {
+    public data: T;
+    public name: string;
+
+    constructor(private id: number) { }
+}
+</code></pre>
+
+<p>This is a rather simple object. It defines several members that are <code>public</code> and assignable, namely the <code>data</code> and <code>name</code> members.
+Imagine that we decide that we actually expose this structure from an API - but we want it to be immutable, i.e.; <code>readonly</code>. Enter
+&ldquo;mapped types&rdquo;.</p>
+
+<pre><code class="language-typescript">export type Readonly&lt;T&gt; = {
+    readonly [P in keyof T]: T[P];
+}
+</code></pre>
+
+<p>The type alias of <code>Readonly</code> takes on an generic of type <code>T</code>, furthermore it defines that all the members of type <code>T</code> are accessible
+as <code>readonly</code> members. This leverages the <code>keyof</code> operator in which <code>P</code> is accessible so long as it is a member of <code>T</code> (key of <code>T</code>).
+So, now we can return a <code>Readonly&lt;MutableDataBag&lt;T&gt;&gt;</code> from our API and rest assured knowing that TypeScript prevents it&rsquo;s members from
+being written to.</p>
+
+<h1 id="conclusion:983b92988576ed5bc09079031d8a835a">Conclusion</h1>
+
+<p>This is literally just the tip of the iceberg (or even less). TypeScript has truly made JavaScript tolerable.
+TypeScript answers so many questions and addresses so many concerns that it&rsquo;s hard to justify not using&hellip;if you&rsquo;re not using
+TypeScript, there are other options out there. Pick your poison!!</p>
+
+<h3 id="resources:983b92988576ed5bc09079031d8a835a">Resources</h3>
+
+<ul>
+<li>
+
+    
+        
+    
+
+    <a href="https://github.com/IEvangelist/IEvangelist.TypeScript" target='_blank'>IEvangelist - TypeScript</a>
+
+</li>
+<li>
+
+    
+        
+    
+
+    <a href="http://www.typescriptlang.org/docs/tutorial.html" target='_blank'>TypeScript Documentation</a>
+
+</li>
+</ul>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-list-ol">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/typescript'>TypeScript</a></li>
+    
+        <li><a href='/categories/javascript'>JavaScript</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://davidpine.net/blog/exploring-csharp-seven/"
+                class="button big previous">Exploring C# 7</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/typescript-javascript-reimagined\/';
+    var disqus_title = 'TypeScript - JavaScript Reimagined';
+    var disqus_url = 'http:\/\/davidpine.net\/blog\/typescript-javascript-reimagined\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/David_Pine_thumb.png" class="intro-circle" width="" alt="David Pine" />
+                
+            
+            
+                <header>
+                    <h2>David Pine</h2>
+                    <p>Technical Evangelist, with a goal of changing the world - one line of code at a time <i class='fa fa-code' aria-hidden='true'></i></p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/typescript-javascript-reimagined/">TypeScript - JavaScript Reimagined</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-05-02'>
+                                    May 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://davidpine.net/blog/exploring-csharp-seven/">Exploring C# 7</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-03-26'>
+                                    March 26, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net-core/">.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/c/">C#</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/typescript/">TypeScript</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/javascript/">JavaScript</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net/">.NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/angular2/">Angular2</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/compression/">Compression</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/IEvangelist" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//youtube.com/user/davidpine7" target="_blank" title="YouTube" class="fa-lg fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//ievangelistblog.wordpress.com" target="_blank" title="WordPress" class="fa-lg fa-wordpress"></a></li>
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/dpine" target="_blank" title="LinkedIn" class="fa-lg fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//stackoverflow.com/users/2410379/david-pine" target="_blank" title="Stack Overflow" class="fa-lg fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/davidpine7" target="_blank" title="Twitter" class="fa-lg fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:david.pine.7@gmail.com" title="Email" class="fa-lg fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+

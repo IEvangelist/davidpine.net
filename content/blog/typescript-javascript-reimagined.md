@@ -29,7 +29,7 @@ problem we're trying to solve is a nail. NodeJs is a great example of this in my
 Gary Bernhardt's <a href="https://www.destroyallsoftware.com/talks/wat" target="_blank">WAT video</a>, go ahead -- I'll wait! In all seriousness, JavaScript
 is a great programming language for countless reasons, but it is easy to poke fun at.
 
-### Mental Modal
+### Mental Model
 
 I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. There are several key takeaways 
 from the debate that I think will stick with me for a while.

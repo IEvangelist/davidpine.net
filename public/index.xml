@@ -36,7 +36,7 @@ problem we&amp;rsquo;re trying to solve is a nail. NodeJs is a great example of 
 Gary Bernhardt&amp;rsquo;s &lt;a href=&#34;https://www.destroyallsoftware.com/talks/wat&#34; target=&#34;_blank&#34;&gt;WAT video&lt;/a&gt;, go ahead &amp;ndash; I&amp;rsquo;ll wait! In all seriousness, JavaScript
 is a great programming language for countless reasons, but it is easy to poke fun at.&lt;/p&gt;
 
-&lt;h3 id=&#34;mental-modal:983b92988576ed5bc09079031d8a835a&#34;&gt;Mental Modal&lt;/h3&gt;
+&lt;h3 id=&#34;mental-model:983b92988576ed5bc09079031d8a835a&#34;&gt;Mental Model&lt;/h3&gt;
 
 &lt;p&gt;I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. There are several key takeaways
 from the debate that I think will stick with me for a while.&lt;/p&gt;
@@ -327,12 +327,6 @@ that I love is just one of those ways I give back. Anytime that I get to express
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.chicagocoderconference.com/&#34; target=&#34;_blank&#34;&gt;Chicago Coders Conference - 2017&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.chicagocoderconference.com/sessions/building-a-magic-mirror-with-net/&#34; target=&#34;_blank&#34;&gt;Building a Magic Mirror w/ .NET&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;May  9, 2017&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.meetup.com/Wisconsin-Net-Users-Group/&#34; target=&#34;_blank&#34;&gt;WI .NET User Group - 2017&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113620/&#34; target=&#34;_blank&#34;&gt;From C# 6 to C# 7, then and now!&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
@@ -348,6 +342,12 @@ that I love is just one of those ways I give back. Anytime that I get to express
 &lt;/thead&gt;
 
 &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;May  9, 2017&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.meetup.com/Wisconsin-Net-Users-Group/&#34; target=&#34;_blank&#34;&gt;WI .NET User Group - 2017&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113620/&#34; target=&#34;_blank&#34;&gt;From C# 6 to C# 7, then and now!&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Apr 29, 2017&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.chicagocodecamp.com/&#34; target=&#34;_blank&#34;&gt;Chicago Code Camp - 2017&lt;/a&gt;&lt;/td&gt;
@@ -856,6 +856,96 @@ that I love is just one of those ways I give back. Anytime that I get to express
                 
                         &lt;img src=&#39;http://davidpine.net/img/2017/04/ccc-typescript.jpg&#39;
                             alt=&#34;Chicago Code Camp - 2017&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;0u$&#34;&gt;
+            
+            
+        
+            
+                
+                    &lt;/div&gt;
+                    
+                
+            
+            
+        
+            
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;0u&#34;&gt;
+            
+            
+        
+            
+                
+                    &lt;/div&gt;
+                    
+                
+            
+            
+        
+            
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;12u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2017/04/wi.net-ug.jpg&#39;
+                            alt=&#34;WI .NET User Group - 2017&#34; /&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 

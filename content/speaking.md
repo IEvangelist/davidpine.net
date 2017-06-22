@@ -16,6 +16,7 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 |:--|:--|:--|
 | Jul 12, 2017 | <a href="https://detroitcode.amegala.com/" target="_blank">Detroit.Code() - 2017</a> | <a href="https://detroitcode.amegala.com/Sessions/315" target="_blank">Building a Magic Mirror w/ .NET</a> |
 | Jul 11, 2017 | <a href="https://detroitcode.amegala.com/" target="_blank">Detroit.Code() - 2017</a> | <a href="https://detroitcode.amegala.com/Sessions/317" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
+| Jun 26, 2017 | <a href="https://www.meetup.com/js-chi/events/238222639/" target="_blank">Chicago JS Meetup - 2017</a> | <a href="https://www.meetup.com/js-chi/events/238222639/" target="_blank">TypeScript -- JavaScript Reimagined</a> |
 | Jun 26, 2017 | <a href="http://www.chicagocoderconference.com/" target="_blank">Chicago Coders Conference - 2017</a> | <a href="http://www.chicagocoderconference.com/sessions/building-a-magic-mirror-with-net/" target="_blank">Building a Magic Mirror w/ .NET</a> |
 
 ## Past

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dependency Injection on IEvangelist</title>
-    <link>http://davidpine.net/categories/dependency-injection/</link>
-    <description>Recent content in Dependency Injection on IEvangelist</description>
+    <title>dependency-injection on IEvangelist</title>
+    <link>http://davidpine.net/categories/dependency-injection/index.xml</link>
+    <description>Recent content in dependency-injection on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,7 +16,7 @@
       <guid>http://davidpine.net/blog/overriding-default-di/</guid>
       <description>
 
-&lt;h1 id=&#34;overview:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Overview&lt;/h1&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;In &lt;strong&gt;.NET&lt;/strong&gt; it&amp;rsquo;s really easy to create your own interfaces and implementations. Likewise, it&amp;rsquo;s seemingly effortless to register them for dependency injection. But it is not always
 obvious how to override existing implementations.  Let&amp;rsquo;s discuss various aspects of &amp;ldquo;dependency injection&amp;rdquo; and how you can override the &amp;ldquo;framework-provided services&amp;rdquo;.&lt;/p&gt;
@@ -26,7 +25,7 @@ obvious how to override existing implementations.  Let&amp;rsquo;s discuss vario
 with their corresponding IP addresses.  This would allow system administrators to monitor for potential attackers. This would require our &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application to have
 custom logging implemented.&lt;/p&gt;
 
-&lt;h2 id=&#34;logging:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Logging&lt;/h2&gt;
+&lt;h2 id=&#34;logging&#34;&gt;Logging&lt;/h2&gt;
 
 &lt;p&gt;Luckily &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ASP.NET Core Logging&lt;/code&gt;&lt;/a&gt; is simple to use and is a first-class
 citizen within &lt;code&gt;ASP.NET Core&lt;/code&gt;.&lt;/p&gt;
@@ -52,7 +51,7 @@ looks like:&lt;/p&gt;
 &lt;p&gt;As you can see, it is rather simple. It adds two &lt;code&gt;ServiceDescriptor&lt;/code&gt; instances to the &lt;code&gt;IServiceCollection&lt;/code&gt;, effectively registering the given service type to the
 corresponding implementation type.&lt;/p&gt;
 
-&lt;h4 id=&#34;following-the-rabbit-down-the-hole:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Following the rabbit down the hole&lt;/h4&gt;
+&lt;h4 id=&#34;following-the-rabbit-down-the-hole&#34;&gt;Following the rabbit down the hole&lt;/h4&gt;
 
 &lt;p&gt;When you create a new &lt;code&gt;ASP.NET Core&lt;/code&gt; project from &lt;strong&gt;Visual Studio&lt;/strong&gt;, all the templates follow the same pattern. They have the &lt;code&gt;Program.cs&lt;/code&gt; file with a &lt;code&gt;Main&lt;/code&gt; method that looks
 very similar to this:&lt;/p&gt;
@@ -71,7 +70,7 @@ very similar to this:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h6 id=&#34;templates-program-cs:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Templates &lt;code&gt;Program.cs&lt;/code&gt;&lt;/h6&gt;
+&lt;h6 id=&#34;templates-program-cs&#34;&gt;Templates &lt;code&gt;Program.cs&lt;/code&gt;&lt;/h6&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -101,7 +100,7 @@ internally wraps itself in a &lt;code&gt;using&lt;/code&gt;. If you were wonderi
             creates services then invokes services.AddLogging()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;a-few-words-on-the-service-descriptor:d7c1ff5c185090641e598e96532d52e8&#34;&gt;A few words on the Service Descriptor&lt;/h3&gt;
+&lt;h3 id=&#34;a-few-words-on-the-service-descriptor&#34;&gt;A few words on the Service Descriptor&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class is an object that &lt;em&gt;describes&lt;/em&gt; a &lt;em&gt;service&lt;/em&gt;, and this is used by dependency injection. In other words, instances of the &lt;code&gt;ServiceDescriptor&lt;/code&gt; are
 descriptions of services. The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class exposes several static methods that allow its instantiation.&lt;/p&gt;
@@ -111,7 +110,7 @@ descriptions of services. The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class e
 and its implementation is mapped to the &lt;code&gt;LoggerFactory&lt;/code&gt;. Likewise, the generic type &lt;code&gt;typeof(ILogger&amp;lt;&amp;gt;)&lt;/code&gt; is mapped to &lt;code&gt;typeof(Logger&amp;lt;&amp;gt;)&lt;/code&gt;. This is just one of the several key
 &amp;ldquo;Framework-Provided Services&amp;rdquo; that are registered.&lt;/p&gt;
 
-&lt;h2 id=&#34;putting-it-together:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Putting it together&lt;/h2&gt;
+&lt;h2 id=&#34;putting-it-together&#34;&gt;Putting it together&lt;/h2&gt;
 
 &lt;p&gt;Now we know that the framework is providing all implementations of &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt;, and resolving them as their &lt;code&gt;Logger&amp;lt;T&amp;gt;&lt;/code&gt;. We also know that we could write our own implementation of
 the &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt; interface. Being that this is open-source
@@ -226,12 +225,12 @@ method do the following:&lt;/p&gt;
 precaution. We know that with each request we get the &lt;code&gt;HttpContext&lt;/code&gt; from the &lt;code&gt;IHttpContextAccessor&lt;/code&gt;, and from this we have the &lt;code&gt;User&lt;/code&gt;. This is what is passed to each
 &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h1 id=&#34;conclusion:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 
 &lt;p&gt;This approach is valid for overriding any of the various framework-provided service implementations. It is simply a matter of knowing the correct &lt;code&gt;ServiceLifetime&lt;/code&gt; for your
 specific needs. Likewise, it is a good idea to leverage the open-source libraries of the framework for inspiration. With this you can take finite control of your web-stack.&lt;/p&gt;
 
-&lt;h1 id=&#34;further-reading:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Further Reading&lt;/h1&gt;
+&lt;h1 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection&#34; target=&#34;_blank&#34;&gt;

@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.18.1" />
         
 
 
@@ -61,7 +61,7 @@
 
 
 
-<meta itemprop="keywords" content=".NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,JavaScript,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
+<meta itemprop="keywords" content=",.NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,JavaScript,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
 
         
 
@@ -74,13 +74,13 @@
 
         
         
-
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/pojoaque.css">
         
-            
-                
-                    <link rel="stylesheet" href="/css/main.min.css" />
-                
-            
+
         
 
         
@@ -115,35 +115,35 @@ ga('send', 'pageview');
         <ul>
             
                 <li>
-                    <a href="/blog/">
+                    <a href="/blog">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="/categories/">
+                    <a href="/categories">
                         
                             <i class="fa fa-list-ol">&nbsp;</i>Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="/about/">
+                    <a href="/about">
                         
                             <i class="fa fa-smile-o">&nbsp;</i>About
                     </a>
                 </li>
             
                 <li>
-                    <a href="/speaking/">
+                    <a href="/speaking">
                         
                             <i class="fa fa-bullhorn">&nbsp;</i>Speaking
                     </a>
                 </li>
             
                 <li>
-                    <a href="/conclusions/">
+                    <a href="/conclusions">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
                     </a>
@@ -188,7 +188,7 @@ ga('send', 'pageview');
             <ul class="links">
                 
                     <li>
-                        <a href="/blog/">
+                        <a href="/blog">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -199,7 +199,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/categories/">
+                        <a href="/categories">
                             <h3>
                                 
                                     <i class="fa fa-list-ol">&nbsp;</i>
@@ -210,7 +210,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/about/">
+                        <a href="/about">
                             <h3>
                                 
                                     <i class="fa fa-smile-o">&nbsp;</i>
@@ -221,7 +221,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/speaking/">
+                        <a href="/speaking">
                             <h3>
                                 
                                     <i class="fa fa-bullhorn">&nbsp;</i>
@@ -232,7 +232,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/conclusions/">
+                        <a href="/conclusions">
                             <h3>
                                 
                                     <i class="fa fa-lightbulb-o">&nbsp;</i>
@@ -257,11 +257,11 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="http://davidpine.net/blog/typescript-javascript-reimagined/"><p>TypeScript - JavaScript Reimagined</p></a>
+                        <a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/"><p>How to organize an amazing tech conf</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://davidpine.net/blog/exploring-csharp-seven/"><p>Exploring C# 7</p></a>
+                        <a href="http://davidpine.net/blog/typescript-javascript-reimagined/"><p>TypeScript - JavaScript Reimagined</p></a>
                     </li>
                 
             </ul>
@@ -432,7 +432,7 @@ ga('send', 'pageview');
     <div id="content">
         
 
-<h1 id="intro:0efe24a7225e878a472913ac049c49a3">Intro</h1>
+<h1 id="intro">Intro</h1>
 
 <p>Since we have all been actively celebrating the 20<sup>th</sup> anniversary of <strong>Visual Studio</strong>, it felt appropriate to post about <strong>C# 7</strong>!
 In this post we will explore the features that make <strong>C# 7</strong> so promising. I&rsquo;ve put together a demonstration <strong>C# 7</strong> project, that is available
@@ -457,7 +457,7 @@ In this post we will explore the features that make <strong>C# 7</strong> so pro
 <li>Numeric literal syntax improvements</li>
 </ul>
 
-<h2 id="pattern-matching:0efe24a7225e878a472913ac049c49a3">Pattern Matching</h2>
+<h2 id="pattern-matching">Pattern Matching</h2>
 
 <p>With <strong>C# 7</strong> we welcomed the concept of &ldquo;patterns&rdquo;. This concept allows for the extraction of information when a variable is tested for a certain &ldquo;shape&rdquo; and matches a
 specified pattern. We&rsquo;re able to leverage the &ldquo;shape&rdquo; from which we matched on as a declared variable in scope, consuming it as we deem necessary. This is referred to as
@@ -471,7 +471,7 @@ It is commonly employed in, and considered a prime characteristic of, object-ori
 
 <p>Dynamic dispatch is nothing new to <strong>C#</strong>, and has been around forever. <strong>C# 7</strong> exposes this functionality via constant and type patterns.</p>
 
-<h3 id="constant-patterns:0efe24a7225e878a472913ac049c49a3">Constant Patterns</h3>
+<h3 id="constant-patterns">Constant Patterns</h3>
 
 <p>Constant pattern <code>null</code>, similar to <code>(obj == null)</code>.</p>
 
@@ -488,7 +488,7 @@ It is commonly employed in, and considered a prime characteristic of, object-ori
 }
 </code></pre>
 
-<h3 id="type-patterns:0efe24a7225e878a472913ac049c49a3">Type Patterns</h3>
+<h3 id="type-patterns">Type Patterns</h3>
 
 <p>Look closely at this syntax. This is where we start mixing metaphors. Prior to <strong>C# 7</strong> we could use the &ldquo;is&rdquo; expression to do simple type assertions
 <code>obj is [type]</code>. Additionally, we all know how to declare a variable <code>int i</code>. This new syntax merges these concepts together and is more compound and
@@ -586,7 +586,7 @@ its type in the variable <code>c</code>. Likewise, if the <code>shape</code> is 
 evaluates to <code>true</code> - we will then execute the square <code>case</code> label. If the <code>shape</code> is an instance of a <code>Rectangle</code> but not a square, we execute the
 &ldquo;Rectangle&rdquo; <code>case</code> label. Notice we still have <code>default</code> fall-thru. Finally, we can also have a &ldquo;null&rdquo; <code>case</code> label.</p>
 
-<h2 id="out-variables:0efe24a7225e878a472913ac049c49a3"><code>out</code> variables</h2>
+<h2 id="out-variables"><code>out</code> variables</h2>
 
 <p><code>.NET</code> developers are more than familiar with the <code>Try*</code> pattern, but as a refresher this is what it looks like. Imagine we are trying to parse
 a <code>System.String</code> input value as a <code>System.Int32</code>. Imagine that the consumer doesn&rsquo;t really care if it is parsed, they&rsquo;re fine with a <code>default(int)</code>
@@ -632,7 +632,7 @@ more expressively:</p>
 well. Additionally, we can use the <code>var</code> keyword for our declaration. And since the <code>result</code> variable is in scope we can use it as both return cases.
 If unable to be parsed, it is in fact a <code>default(int)</code> anyways.</p>
 
-<h2 id="tuples:0efe24a7225e878a472913ac049c49a3">Tuples</h2>
+<h2 id="tuples">Tuples</h2>
 
 <p>Most developers are familiar with <code>System.Tuple&lt;T[,T1...]&gt;</code>. This <code>class</code> has served us well all the while it has been around.
 One of the advantages is that it exposes <code>readonly</code> fields - from the values that it is instantiated with. This
@@ -684,7 +684,7 @@ these tuples not being very API friendly. Let&rsquo;s explore how we can give th
 }
 </code></pre>
 
-<h3 id="deconstruction:0efe24a7225e878a472913ac049c49a3">Deconstruction</h3>
+<h3 id="deconstruction">Deconstruction</h3>
 
 <p>Now that we see how we can instantiate a <code>ValueTuple</code>, let&rsquo;s take a look at how we can declare one for usage.</p>
 
@@ -750,13 +750,13 @@ method can be deconstructed. Consider the following:</p>
 }
 </code></pre>
 
-<h4 id="comparing-anonymous-object-vs-valuetuple:0efe24a7225e878a472913ac049c49a3">Comparing Anonymous <code>object</code> vs. <code>ValueTuple</code></h4>
+<h4 id="comparing-anonymous-object-vs-valuetuple">Comparing Anonymous <code>object</code> vs. <code>ValueTuple</code></h4>
 
 <p>At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
 a <code>ValueTuple</code> is a <code>struct</code> - value type. Also, you can only return an anonymous object from a method as an <code>object</code> which isn&rsquo;t very API friendly.
 Within a fluent <code>LINQ</code> chained method anonymous objects are great and will still be normal for projection.</p>
 
-<h2 id="local-functions:0efe24a7225e878a472913ac049c49a3">Local Functions</h2>
+<h2 id="local-functions">Local Functions</h2>
 
 <p>At first glance, local functions seem a bit odd. I&rsquo;ve heard people say, &ldquo;this method is starting to look like a class&rdquo;. At first,
 I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick
@@ -818,13 +818,13 @@ comparison of the two, note the benefits of local functions as they compare to l
 <p>It is vital to understand that local functions are <strong>not</strong> a replacement for <code>Action&lt;T[,T1...]&gt;</code> or <code>Func&lt;T[,T1...]&gt;</code>. These delegate declarations are still
 needed as parameters to enable lambda expression arguments. If you see the <strong>#notasugly</strong> hashtag, this was coined by Mads Torgersen.</p>
 
-<h3 id="more-efficient:0efe24a7225e878a472913ac049c49a3">More efficient</h3>
+<h3 id="more-efficient">More efficient</h3>
 
 <p>When using local functions, there is no <code>object</code> created - unlike delegates that require an object for it to be used. Likewise, local functions
 help to alleviate another issue with lambdas in that they do not need to implicitly capture a variable longer than it is potentially needed.
 In <strong>C#</strong> lambdas capture values by reference, meaning that garbage collection may not be able to correctly clean up code that is &ldquo;allocatey&rdquo;.</p>
 
-<h4 id="declaration:0efe24a7225e878a472913ac049c49a3">Declaration</h4>
+<h4 id="declaration">Declaration</h4>
 
 <p>With local functions, the declaration of the local function can actually occur after the <code>return</code> statement - as long as it is within the method body
 in which it is consumed. If you&rsquo;re familiar with some of the implementations of the <code>LINQ</code> extension methods on <code>IEnumerable&lt;T&gt;</code>, you would know a lot
@@ -868,7 +868,7 @@ imagine that the <code>.Select</code> extension method was implemented as follow
 }
 </code></pre>
 
-<h1 id="throw-expressions:0efe24a7225e878a472913ac049c49a3"><code>throw</code> expressions</h1>
+<h1 id="throw-expressions"><code>throw</code> expressions</h1>
 
 <p>Leveraging some pre-existing <strong>C#</strong> functionality - <code>null</code> coalescing, we can now <code>throw</code> when a value is evaluated as <code>null</code>. A common validation
 mechanism is to <code>throw</code> if an argument is <code>null</code>. Consider the following:</p>
@@ -904,7 +904,7 @@ mechanism is to <code>throw</code> if an argument is <code>null</code>. Consider
 
 <p>If the given <code>provider</code> argument is <code>null</code> we&rsquo;ll coalesce over to the <code>throw</code> expression.</p>
 
-<h1 id="from-c-6-to-c-7-then-and-now:0efe24a7225e878a472913ac049c49a3">From C# 6 to C# 7, then and now!</h1>
+<h1 id="from-c-6-to-c-7-then-and-now">From C# 6 to C# 7, then and now!</h1>
 
 <p>I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
 made sense to share it here - Enjoy!!</p>
@@ -964,11 +964,11 @@ made sense to share it here - Enjoy!!</p>
 
     
     
-        <li><a href='/categories/c'>C#</a></li>
+        <li><a href='/categoriesc'>C#</a></li>
     
-        <li><a href='/categories/.net'>.NET</a></li>
+        <li><a href='/categories.net'>.NET</a></li>
     
-        <li><a href='/categories/visual-studio'>Visual Studio</a></li>
+        <li><a href='/categoriesvisual-studio'>Visual Studio</a></li>
     
 </ul>
 
@@ -1118,13 +1118,13 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/typescript-javascript-reimagined/">TypeScript - JavaScript Reimagined</a></h3>
+                                <h3><a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/">How to organize an amazing tech conf</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-05-02'>
-                                    May 2, 2017</time>
+                                    '2017-06-24'>
+                                    June 24, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -1132,13 +1132,13 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/exploring-csharp-seven/">Exploring C# 7</a></h3>
+                                <h3><a href="http://davidpine.net/blog/typescript-javascript-reimagined/">TypeScript - JavaScript Reimagined</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-03-26'>
-                                    March 26, 2017</time>
+                                    '2017-05-02'>
+                                    May 2, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -1176,8 +1176,8 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net-core/">.NET Core</a>
-                                <span style="float:right;">5</span>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <span style="float:right;">6</span>
                             </header>
                         </article>
                     </li>
@@ -1185,7 +1185,7 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <a href="/categories/.net-core/">.NET Core</a>
                                 <span style="float:right;">5</span>
                             </header>
                         </article>
@@ -1212,70 +1212,7 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/fear/">Fear</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/rxjs/">RxJS</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/visual-studio/">Visual Studio</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/caching/">Caching</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/self-branding/">Self-Branding</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/http/">Http</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/tooling/">Tooling</a>
+                                <a href="/categories//"></a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1293,7 +1230,7 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <a href="/categories/angular2/">Angular2</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1302,16 +1239,7 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/uwp/">UWP</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/gzip/">GZip</a>
+                                <a href="/categories/caching/">Caching</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1329,7 +1257,7 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1338,7 +1266,7 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/angular2/">Angular2</a>
+                                <a href="/categories/fear/">Fear</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1347,7 +1275,16 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/javascript/">JavaScript</a>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1365,7 +1302,7 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1374,7 +1311,79 @@ made sense to share it here - Enjoy!!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/iot/">IoT</a>
+                                <a href="/categories/javascript/">JavaScript</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1477,13 +1486,14 @@ made sense to share it here - Enjoy!!</p>
 
         
         
-
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
         
-            
-                
-                    <script src="/js/main.min.js"></script>
-                
-            
+
         
 
             

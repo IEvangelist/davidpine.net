@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.18.1" />
         
 
 
@@ -61,7 +61,7 @@
 
 
 
-<meta itemprop="keywords" content=".NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,JavaScript,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
+<meta itemprop="keywords" content=",.NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,JavaScript,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
 
         
 
@@ -74,13 +74,13 @@
 
         
         
-
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/pojoaque.css">
         
-            
-                
-                    <link rel="stylesheet" href="/css/main.min.css" />
-                
-            
+
         
 
         
@@ -115,35 +115,35 @@ ga('send', 'pageview');
         <ul>
             
                 <li>
-                    <a href="/blog/">
+                    <a href="/blog">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="/categories/">
+                    <a href="/categories">
                         
                             <i class="fa fa-list-ol">&nbsp;</i>Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="/about/">
+                    <a href="/about">
                         
                             <i class="fa fa-smile-o">&nbsp;</i>About
                     </a>
                 </li>
             
                 <li>
-                    <a href="/speaking/">
+                    <a href="/speaking">
                         
                             <i class="fa fa-bullhorn">&nbsp;</i>Speaking
                     </a>
                 </li>
             
                 <li>
-                    <a href="/conclusions/">
+                    <a href="/conclusions">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
                     </a>
@@ -188,7 +188,7 @@ ga('send', 'pageview');
             <ul class="links">
                 
                     <li>
-                        <a href="/blog/">
+                        <a href="/blog">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -199,7 +199,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/categories/">
+                        <a href="/categories">
                             <h3>
                                 
                                     <i class="fa fa-list-ol">&nbsp;</i>
@@ -210,7 +210,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/about/">
+                        <a href="/about">
                             <h3>
                                 
                                     <i class="fa fa-smile-o">&nbsp;</i>
@@ -221,7 +221,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/speaking/">
+                        <a href="/speaking">
                             <h3>
                                 
                                     <i class="fa fa-bullhorn">&nbsp;</i>
@@ -232,7 +232,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/conclusions/">
+                        <a href="/conclusions">
                             <h3>
                                 
                                     <i class="fa fa-lightbulb-o">&nbsp;</i>
@@ -257,11 +257,11 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="http://davidpine.net/blog/typescript-javascript-reimagined/"><p>TypeScript - JavaScript Reimagined</p></a>
+                        <a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/"><p>How to organize an amazing tech conf</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://davidpine.net/blog/exploring-csharp-seven/"><p>Exploring C# 7</p></a>
+                        <a href="http://davidpine.net/blog/typescript-javascript-reimagined/"><p>TypeScript - JavaScript Reimagined</p></a>
                     </li>
                 
             </ul>
@@ -432,7 +432,7 @@ ga('send', 'pageview');
     <div id="content">
         
 
-<h1 id="introduction:0349d6d87cad08484fba4056f258e4f0">Introduction</h1>
+<h1 id="introduction">Introduction</h1>
 
 <p>On Monday, May 16<sup>th</sup> 2016 there was an amazing announcement from the <strong>.NET Blog</strong> team!</p>
 
@@ -443,13 +443,13 @@ ga('send', 'pageview');
 <p>This post will serve as a guide that walks you through the steps as I experienced them from migrating existing <code>ASP.NET Core RC1</code> applications to <code>ASP.NET Core RC2</code>.
 It is worth mentioning that I&rsquo;m am targeting the <code>.NET 4.6</code> framework. So, I <em>do not</em> cover the <code>.netcoreapp</code> or <code>netstandard</code> TFMs (target framework monikers).</p>
 
-<h2 id="tooling:0349d6d87cad08484fba4056f258e4f0">Tooling</h2>
+<h2 id="tooling">Tooling</h2>
 
 <p>The <strong>RC2</strong> release brings the <code>.NET Core CLI</code> to the forefront, and with that all the other command line tooling that
 you&rsquo;ve grown accustomed to should be stricken from your environment, i.e.; <code>DNX</code>, <code>DNU</code>, and <code>DNVM</code>. Let&rsquo;s start with the
 removal of all these utilities.</p>
 
-<h3 id="removing-dnvm:0349d6d87cad08484fba4056f258e4f0">Removing DNVM</h3>
+<h3 id="removing-dnvm">Removing DNVM</h3>
 
 <p>Believe it or not, you might have a dated version of the <strong>DNVM CLI</strong> and in order to invoke the <code>uninstall</code> you might have to first
 perform an <code>update-self</code> command. Doing so will ensure that you have the latest version, which will contain the <code>uninstall</code> command.
@@ -463,7 +463,7 @@ From a <code>cmd</code> window <em>running as admininistrator</em>, execute the 
 <pre><code>dnvm uninstall
 </code></pre>
 
-<h4 id="verification:0349d6d87cad08484fba4056f258e4f0">Verification</h4>
+<h4 id="verification">Verification</h4>
 
 <p>From a new <code>cmd</code> window, the <code>dnvm</code> command should result in the following:</p>
 
@@ -471,7 +471,7 @@ From a <code>cmd</code> window <em>running as admininistrator</em>, execute the 
 'dnvm' is not recognized as an internal or external command, operable program or batch file.
 </code></pre>
 
-<h3 id="removing-dnx-dnu:0349d6d87cad08484fba4056f258e4f0">Removing DNX &amp; DNU</h3>
+<h3 id="removing-dnx-dnu">Removing DNX &amp; DNU</h3>
 
 <p>From a <code>cmd</code> line window, execute <code>dnx</code> - you should see something similar to this as output:</p>
 
@@ -528,7 +528,7 @@ directory from windows explorer and delete the <code>.dnx</code> directory entir
 should be able to execute the <code>dnx</code> and <code>dnu</code> commands again from a <code>cmd</code> window and the system should complain that they are not
 recognized.</p>
 
-<h4 id="verification-1:0349d6d87cad08484fba4056f258e4f0">Verification</h4>
+<h4 id="verification-1">Verification</h4>
 
 <p>From a new <code>cmd</code> window, the <code>dnx</code> and <code>dnu</code> commands should result in the following:</p>
 
@@ -540,7 +540,7 @@ recognized.</p>
 'dnu' is not recognized as an internal or external command, operable program or batch file.
 </code></pre>
 
-<h3 id="environment-variables:0349d6d87cad08484fba4056f258e4f0">Environment Variables</h3>
+<h3 id="environment-variables">Environment Variables</h3>
 
 <p>Unfortunately, the <code>PATH</code> environment variable is not cleaned up and this needs to be done manually.</p>
 
@@ -564,11 +564,11 @@ C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-upda
 
 <p><img src="/img/2016/05/edit-vars.png" alt="Edit User Variables" /></p>
 
-<h3 id="net-core-cli:0349d6d87cad08484fba4056f258e4f0">.NET Core CLI</h3>
+<h3 id="net-core-cli">.NET Core CLI</h3>
 
 <p>Simply follow <a href="https://www.microsoft.com/net/core#windows">these instuctions</a>. Once you&rsquo;re able to &ldquo;Run the app&rdquo; from the new <strong>CLI</strong> you&rsquo;re good to go.</p>
 
-<h4 id="review:0349d6d87cad08484fba4056f258e4f0">Review</h4>
+<h4 id="review">Review</h4>
 
 <p>You should the following checklist fully satisfied at this point.</p>
 
@@ -578,20 +578,20 @@ C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-upda
 
 <hr />
 
-<h2 id="edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i:0349d6d87cad08484fba4056f258e4f0">Edit by Hand <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h2>
+<h2 id="edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i">Edit by Hand <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h2>
 
 <p>There were changes to <strong>APIs</strong> which required changes to implementation aspects of the source code. Additionally, <code>namespace</code>
 changes such as (but not limited to) <code>Microsoft.AspNet.*</code> to <code>Microsoft.AspNetCore.*</code>. But the bulk of the work was really in the hand-editing
 of <code>.sln</code>, <code>global.json</code>, <code>.xproj</code>, <code>project.json</code>, etc. files. Let&rsquo;s look at what changed.</p>
 
-<h3 id="the-sln-file:0349d6d87cad08484fba4056f258e4f0">The <code>.sln</code> file</h3>
+<h3 id="the-sln-file">The <code>.sln</code> file</h3>
 
 <p>Change the <strong>VisualStudioVersion</strong> from <code>14.0.24720.0</code> to <code>14.0.25123.0</code>.</p>
 
 <pre><code>VisualStudioVersion = 14.0.25123.0
 </code></pre>
 
-<h3 id="the-global-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>global.json</code> file</h3>
+<h3 id="the-global-json-file">The <code>global.json</code> file</h3>
 
 <p>Change the <strong>version</strong> from <code>1.0.0-rc1-update1</code> to <code>1.0.0-preview1-002702</code>.</p>
 
@@ -603,18 +603,18 @@ of <code>.sln</code>, <code>global.json</code>, <code>.xproj</code>, <code>proje
 }
 </code></pre>
 
-<h3 id="the-xproj-file:0349d6d87cad08484fba4056f258e4f0">The <code>.xproj</code> file</h3>
+<h3 id="the-xproj-file">The <code>.xproj</code> file</h3>
 
 <p>The <code>.xproj</code> files are a little more involved, there are a few items that are required to be changed. In <strong>RC1</strong> we had proprerties that
 were specific to <strong>DNX</strong>, now we replace these with <strong>DOTNET</strong>.</p>
 
-<h4 id="rc1:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+<h4 id="rc1">RC1</h4>
 
 <pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DNX\Microsoft.DNX.Props&quot; 
         Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
 </code></pre>
 
-<h4 id="rc2:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+<h4 id="rc2">RC2</h4>
 
 <pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.Props&quot; 
         Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
@@ -623,25 +623,25 @@ were specific to <strong>DNX</strong>, now we replace these with <strong>DOTNET<
 <p>Additionally, we need to change the targets. This one requires that you know the type of project you&rsquo;re editing, for example <em>&ldquo;class library&rdquo;</em> vs. <em>&ldquo;web site&rdquo;</em>. In <strong>RC1</strong>
 there was only one target, but with <strong>RC2</strong> they are differeniated.</p>
 
-<h4 id="rc1-1:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+<h4 id="rc1-1">RC1</h4>
 
 <pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DNX\Microsoft.DNX.targets&quot; 
         Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
 </code></pre>
 
-<h4 id="rc2-class-library:0349d6d87cad08484fba4056f258e4f0">RC2 (class library)</h4>
+<h4 id="rc2-class-library">RC2 (class library)</h4>
 
 <pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.targets&quot; 
         Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
 </code></pre>
 
-<h4 id="rc2-web:0349d6d87cad08484fba4056f258e4f0">RC2 (web)</h4>
+<h4 id="rc2-web">RC2 (web)</h4>
 
 <pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets&quot; 
         Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
 </code></pre>
 
-<h3 id="the-project-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>project.json</code> file</h3>
+<h3 id="the-project-json-file">The <code>project.json</code> file</h3>
 
 <p>There has been a large reworking of the <code>project.json</code> file - detailed <a href="https://github.com/aspnet/Announcements/issues/175">here</a>. I will not be covering all
 of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official
@@ -650,7 +650,7 @@ of the changes here, but I do intend calling attention to some of the observatio
 <p>We will look at various sections of the <code>project.json</code> file changes. Let&rsquo;s start with replacing <code>compilationOptionsbuildOptions</code> with <code>buildOptions</code>, and notice that
 we are adding much more options than before.</p>
 
-<h4 id="rc1-2:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+<h4 id="rc1-2">RC1</h4>
 
 <pre><code class="language-json">&quot;compilationOptions&quot;: {
   &quot;emitEntryPoint&quot;: true,
@@ -658,9 +658,9 @@ we are adding much more options than before.</p>
 },
 </code></pre>
 
-<h4 id="rc2-1:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+<h4 id="rc2-1">RC2</h4>
 
-<pre><code class="language-json">&quot;buildOptions&quot;: {		
+<pre><code class="language-json">&quot;buildOptions&quot;: {       
   &quot;emitEntryPoint&quot;: true,
   &quot;warningsAsErrors&quot;: true,
   &quot;preserveCompilationContext&quot;: true,
@@ -690,11 +690,11 @@ we are adding much more options than before.</p>
 },
 </code></pre>
 
-<h3 id="the-web-config-file:0349d6d87cad08484fba4056f258e4f0">The <code>web.config</code> file</h3>
+<h3 id="the-web-config-file">The <code>web.config</code> file</h3>
 
 <p>Now, <strong>IIS</strong> is a little smarter and is starting to recognize <strong>ASP.NET Core</strong> a little more.</p>
 
-<h4 id="rc1-3:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+<h4 id="rc1-3">RC1</h4>
 
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;configuration&gt;
@@ -708,7 +708,7 @@ we are adding much more options than before.</p>
 &lt;/configuration&gt;
 </code></pre>
 
-<h4 id="rc2-2:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+<h4 id="rc2-2">RC2</h4>
 
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;configuration&gt;
@@ -723,7 +723,7 @@ we are adding much more options than before.</p>
 &lt;/configuration&gt;
 </code></pre>
 
-<h3 id="the-hosting-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>hosting.json</code> file</h3>
+<h3 id="the-hosting-json-file">The <code>hosting.json</code> file</h3>
 
 <p>With the release of <strong>RC2</strong>, the <code>project.json</code> schema removed the <code>webroot</code> property. Now in order to specify the websites&rsquo; static content directory we need to
 create a <code>hosting.json</code> file. This file should look like this.</p>
@@ -733,12 +733,12 @@ create a <code>hosting.json</code> file. This file should look like this.</p>
 }
 </code></pre>
 
-<h3 id="the-appsettings-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>appsettings.json</code> file</h3>
+<h3 id="the-appsettings-json-file">The <code>appsettings.json</code> file</h3>
 
 <p>This was a minor change, but if you forgot to change this - then you&rsquo;ll end up with a runtime exception. The <code>Logging:LogLevel:Default</code> should now be
 <code>Debug</code> as <code>Verbose</code> was removed altogether.</p>
 
-<h4 id="rc1-4:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+<h4 id="rc1-4">RC1</h4>
 
 <pre><code class="language-json">&quot;Logging&quot;: {
       &quot;IncludeScopes&quot;: false,
@@ -749,7 +749,7 @@ create a <code>hosting.json</code> file. This file should look like this.</p>
       }
 </code></pre>
 
-<h4 id="rc2-3:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+<h4 id="rc2-3">RC2</h4>
 
 <pre><code class="language-json">&quot;Logging&quot;: {
       &quot;IncludeScopes&quot;: false,
@@ -760,44 +760,44 @@ create a <code>hosting.json</code> file. This file should look like this.</p>
       }
 </code></pre>
 
-<h3 id="the-launchsettings-json-file:0349d6d87cad08484fba4056f258e4f0">The <code>launchSettings.json</code> file</h3>
+<h3 id="the-launchsettings-json-file">The <code>launchSettings.json</code> file</h3>
 
 <p>The <code>environmentVariables</code> changed, such that the key name for the environment is no longer referred to as &ldquo;Hosting:Environment&rdquo;.</p>
 
-<h4 id="rc1-5:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+<h4 id="rc1-5">RC1</h4>
 
 <pre><code class="language-json">&quot;environmentVariables&quot;: {
   &quot;Hosting:Environment&quot;: &quot;Development&quot; // &lt; -- Change &quot;Hosting:Environment&quot;
 }
 </code></pre>
 
-<h4 id="rc2-4:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+<h4 id="rc2-4">RC2</h4>
 
 <pre><code class="language-json">&quot;environmentVariables&quot;: {
   &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot; // &lt; -- To &quot;ASPNETCORE_ENVIRONMENT&quot;
 }
 </code></pre>
 
-<h3 id="the-cs-files:0349d6d87cad08484fba4056f258e4f0">The <code>*.cs</code> files</h3>
+<h3 id="the-cs-files">The <code>*.cs</code> files</h3>
 
 <p>Some of these were very simple to fix. After updating your <code>project.json</code> with the latest <strong>RC2</strong> versions - some changes are as simple as a <code>namespace</code> change (but others are more involed).</p>
 
-<h4 id="rc1-6:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+<h4 id="rc1-6">RC1</h4>
 
 <pre><code class="language-csharp">using Microsoft.AspNet.*;
 </code></pre>
 
-<h4 id="rc2-5:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+<h4 id="rc2-5">RC2</h4>
 
 <pre><code class="language-csharp">using Microsoft.AspNetCore.*;
 </code></pre>
 
-<h3 id="api-changes:0349d6d87cad08484fba4056f258e4f0">API changes</h3>
+<h3 id="api-changes">API changes</h3>
 
 <p>There was an attempt to unify some of the APIs as it pertains to consistency. As such, I had to make the following changes to my projects.
 The <code>IApplicationBuilder.Use*</code> pattern now takes a new <code>*Options</code> instance rather than an <code>Action&lt;*Options&gt;</code>, providing more control to the consumer.</p>
 
-<h4 id="rc1-7:0349d6d87cad08484fba4056f258e4f0">RC1</h4>
+<h4 id="rc1-7">RC1</h4>
 
 <pre><code class="language-csharp">app.UseCookieAuthentication(options =&gt;
 {
@@ -810,7 +810,7 @@ The <code>IApplicationBuilder.Use*</code> pattern now takes a new <code>*Options
 });
 </code></pre>
 
-<h4 id="rc2-6:0349d6d87cad08484fba4056f258e4f0">RC2</h4>
+<h4 id="rc2-6">RC2</h4>
 
 <pre><code class="language-csharp">app.UseCookieAuthentication(new CookieAuthenticationOptions
 {
@@ -828,7 +828,7 @@ you can no longer do so with the <strong>RC2</strong> release.</p>
 
 <p>Wherever you were using the <code>IApplication</code> interface, you should be able to instead use the <code>IWebHost</code> interface.</p>
 
-<h3 id="controllers-as-services:0349d6d87cad08484fba4056f258e4f0">Controllers as Services</h3>
+<h3 id="controllers-as-services">Controllers as Services</h3>
 
 <p>In <strong>RC1</strong>, there was a nice little feature that allowed for any <code>Type</code> to exist in a list of plausible controller/services - meaning that you could basically register external controllers as
 valid API and View entry points into your hosting application. You simply needed to add the types via the following:</p>
@@ -846,7 +846,7 @@ valid API and View entry points into your hosting application. You simply needed
 builder.AddControllersAsServices();
 </code></pre>
 
-<h3 id="the-startup-ctor:0349d6d87cad08484fba4056f258e4f0">The Startup <code>.ctor</code></h3>
+<h3 id="the-startup-ctor">The Startup <code>.ctor</code></h3>
 
 <p>One little change, you&rsquo;re now required to explicitly set the base path and you can do so with the following.</p>
 
@@ -862,7 +862,7 @@ builder.AddControllersAsServices();
 }
 </code></pre>
 
-<h3 id="the-program-cs-file:0349d6d87cad08484fba4056f258e4f0">The <code>Program.cs</code> file</h3>
+<h3 id="the-program-cs-file">The <code>Program.cs</code> file</h3>
 
 <p>Yes, we are now a console application&hellip;so we&rsquo;ll need this for our entry point.</p>
 
@@ -884,12 +884,12 @@ builder.AddControllersAsServices();
 }
 </code></pre>
 
-<h2 id="breaking-changes:0349d6d87cad08484fba4056f258e4f0">Breaking changes</h2>
+<h2 id="breaking-changes">Breaking changes</h2>
 
 <p>For a complete listing of all the announcements, please visit the official
 <a href="https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2"><strong>ASP.NET <i class="fa fa-github-alt" aria-hidden="true"></i> Repo</strong></a> announcements issue.</p>
 
-<h2 id="further-reading:0349d6d87cad08484fba4056f258e4f0">Further reading</h2>
+<h2 id="further-reading">Further reading</h2>
 
 <p>The previous steps were really to get your environment in an <strong>RC2</strong> ready state, but there is so much more you can learn that has changed.
 I encourage bookmarking and reading the following articles as time permits.</p>
@@ -901,7 +901,7 @@ I encourage bookmarking and reading the following articles as time permits.</p>
 <li><a href="http://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html"><strong>Writing Libraries with Cross Platform Tools</strong></a></li>
 </ul>
 
-<h2 id="conclusion:0349d6d87cad08484fba4056f258e4f0">Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>There, that really wasn&rsquo;t too bad - was it? I&rsquo;m certain that I didn&rsquo;t cover everything and that I probably missed something. I hope that this was helpful, please feel free to share this!</p>
 
@@ -935,9 +935,9 @@ I encourage bookmarking and reading the following articles as time permits.</p>
 
     
     
-        <li><a href='/categories/asp.net-core'>ASP.NET Core</a></li>
+        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
     
-        <li><a href='/categories/.net-core'>.NET Core</a></li>
+        <li><a href='/categories.net-core'>.NET Core</a></li>
     
 </ul>
 
@@ -1084,13 +1084,13 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/typescript-javascript-reimagined/">TypeScript - JavaScript Reimagined</a></h3>
+                                <h3><a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/">How to organize an amazing tech conf</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-05-02'>
-                                    May 2, 2017</time>
+                                    '2017-06-24'>
+                                    June 24, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -1098,13 +1098,13 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/exploring-csharp-seven/">Exploring C# 7</a></h3>
+                                <h3><a href="http://davidpine.net/blog/typescript-javascript-reimagined/">TypeScript - JavaScript Reimagined</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-03-26'>
-                                    March 26, 2017</time>
+                                    '2017-05-02'>
+                                    May 2, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -1143,7 +1143,7 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                         <article>
                             <header>
                                 <a href="/categories/asp.net-core/">ASP.NET Core</a>
-                                <span style="float:right;">5</span>
+                                <span style="float:right;">6</span>
                             </header>
                         </article>
                     </li>
@@ -1160,15 +1160,6 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/typescript/">TypeScript</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/c/">C#</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -1178,8 +1169,8 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
-                                <span style="float:right;">1</span>
+                                <a href="/categories/typescript/">TypeScript</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -1187,79 +1178,7 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/iot/">IoT</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/fear/">Fear</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/rxjs/">RxJS</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/visual-studio/">Visual Studio</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/caching/">Caching</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/self-branding/">Self-Branding</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/http/">Http</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/tooling/">Tooling</a>
+                                <a href="/categories//"></a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1277,7 +1196,7 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <a href="/categories/angular2/">Angular2</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1286,16 +1205,7 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/uwp/">UWP</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/gzip/">GZip</a>
+                                <a href="/categories/caching/">Caching</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1313,7 +1223,7 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1322,7 +1232,43 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/angular2/">Angular2</a>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1340,7 +1286,70 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/identity/">Identity</a>
+                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1443,13 +1452,14 @@ I encourage bookmarking and reading the following articles as time permits.</p>
 
         
         
-
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
         
-            
-                
-                    <script src="/js/main.min.js"></script>
-                
-            
+
         
 
             

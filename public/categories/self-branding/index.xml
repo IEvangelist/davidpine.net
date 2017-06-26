@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Self-Branding on IEvangelist</title>
-    <link>http://davidpine.net/categories/self-branding/</link>
-    <description>Recent content in Self-Branding on IEvangelist</description>
+    <title>self-branding on IEvangelist</title>
+    <link>http://davidpine.net/categories/self-branding/index.xml</link>
+    <description>Recent content in self-branding on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Nov 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/self-branding/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -71,34 +70,34 @@ and disarray!&lt;/p&gt;
 &lt;p&gt;I believe that this is often the root of imposter syndrome, the fear of getting it wrong or being involved in some sort of conflict. I finally feel as though I no longer have this
 fear, therefore &amp;ndash; I have overcome imposter syndrome. I wanted to share some of the reasons that have led up to this monumental event.&lt;/p&gt;
 
-&lt;h3 id=&#34;positivity:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Positivity&lt;/h3&gt;
+&lt;h3 id=&#34;positivity&#34;&gt;Positivity&lt;/h3&gt;
 
 &lt;p&gt;If you want to see a blackhole, bear witness to how negitivity spreads through an office. A single person with a bad additude can &amp;ldquo;infect&amp;rdquo; others and really be a drain! Be the one
 who combats that, be the person who seeks out the positive aspects of every situation. I&amp;rsquo;m the guy who says &amp;ldquo;it could always be worse&amp;rdquo;, because it literally could. I act as the voice
 of reason &amp;ndash; and pure myself into living as a positive influence on the team.&lt;/p&gt;
 
-&lt;h3 id=&#34;take-action:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Take Action&lt;/h3&gt;
+&lt;h3 id=&#34;take-action&#34;&gt;Take Action&lt;/h3&gt;
 
 &lt;p&gt;Personally, I have discovered that the more I compliment others the more I get complimented in return. The more I encourage others, the more I&amp;rsquo;m encouraged by them in return.
 The more you give, the more you get. Be humble and open-minded!&lt;/p&gt;
 
-&lt;h3 id=&#34;mentor:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Mentor&lt;/h3&gt;
+&lt;h3 id=&#34;mentor&#34;&gt;Mentor&lt;/h3&gt;
 
 &lt;p&gt;I have found pride in mentoring. I feel as though there is always a satisfying challenge to overcome and a lesson learned. Often the lesson is two-sided, where I am a secondary
 beneficiary from the engagement. Often, explaining your experiences to the mentee reminds you of how much you have really been through. Reflecting on how you&amp;rsquo;ve navigated through
 a situation is surprisingly insightful. It&amp;rsquo;s kind of like &lt;a href=&#34;https://blog.codinghorror.com/rubber-duck-problem-solving/&#34;&gt;rubber duck programming&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;fear-not:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Fear not&lt;/h3&gt;
+&lt;h3 id=&#34;fear-not&#34;&gt;Fear not&lt;/h3&gt;
 
 &lt;p&gt;Never be afraid to ask &amp;ldquo;why&amp;rdquo;, this can be extremely powerful. Sometimes the root of the problem is that there has been a misunderstanding at the root &amp;ndash; therefore all things
 leading up to where you&amp;rsquo;re asking (what you believe to be a stupid question) is actually the best question that could have been asked. Find the root!&lt;/p&gt;
 
-&lt;h3 id=&#34;community:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Community&lt;/h3&gt;
+&lt;h3 id=&#34;community&#34;&gt;Community&lt;/h3&gt;
 
 &lt;p&gt;If you have ever spent more than a few minutes with me, you will know that I&amp;rsquo;m an advocate of the technical community. Believe it or not, the community is extremely supportive and
 willing to lift you up &amp;ndash; all you have to do is being willing to put yourself out there. While this is humbling, it is also be rewarding&amp;hellip;&lt;/p&gt;
 
-&lt;h3 id=&#34;mke-dot-net:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;MKE DOT NET&lt;/h3&gt;
+&lt;h3 id=&#34;mke-dot-net&#34;&gt;MKE DOT NET&lt;/h3&gt;
 
 &lt;p&gt;I sit on the technical committee for &lt;a href=&#34;http://www.mkedotnet.com/&#34;&gt;MKE DOT NET&lt;/a&gt;, a developer conference in the Milwaukee area. Recently I was fortunate enough to get
 &lt;a href=&#34;http://www.hanselman.com/&#34;&gt;Scott Hanselman&lt;/a&gt; to be our keynote speaker.
@@ -116,7 +115,7 @@ During his keynote (which was amazing) I shouted out several times to assist him
     &lt;a href=&#34;https://twitter.com/davidpine7/status/792544455635132417&#34;&gt;October 30, 2016&lt;/a&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;stackoverflow:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Stackoverflow&lt;/h3&gt;
+&lt;h3 id=&#34;stackoverflow&#34;&gt;Stackoverflow&lt;/h3&gt;
 
 &lt;p&gt;I set out at the beginning of the 2016 year with a goal to try to answer one SO question a day. Honestly, it is a lot more demanding than you might imagine &amp;ndash; but it&amp;rsquo;s extremely
 gratifying! I have literally learned more attempting to answer questions than I have had asking or reading others questions. I answered
@@ -125,7 +124,7 @@ Luckily after his &lt;em&gt;code review&lt;/em&gt; and my &lt;em&gt;update&lt;/e
 
 &lt;p&gt;Getting the accepted answer over mega-super stars like &lt;a href=&#34;http://stackoverflow.com/a/36950086/2410379&#34;&gt;Stephan Cleary&lt;/a&gt; can really make your head spin, even if they get more upvotes.&lt;/p&gt;
 
-&lt;h4 id=&#34;let-me-compile-that-for-you:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Let me compile that for you&lt;/h4&gt;
+&lt;h4 id=&#34;let-me-compile-that-for-you&#34;&gt;Let me compile that for you&lt;/h4&gt;
 
 &lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
 &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This C# doesn&amp;#39;t compile - I think it should: var parameterName = nameof(parameterName);
@@ -142,7 +141,7 @@ Luckily after his &lt;em&gt;code review&lt;/em&gt; and my &lt;em&gt;update&lt;/e
 &lt;/a&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;let-me-asp-net-5-that-for-you:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Let me ASP.NET 5 that for you&lt;/h4&gt;
+&lt;h4 id=&#34;let-me-asp-net-5-that-for-you&#34;&gt;Let me ASP.NET 5 that for you&lt;/h4&gt;
 
 &lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
 &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
@@ -161,7 +160,7 @@ Luckily after his &lt;em&gt;code review&lt;/em&gt; and my &lt;em&gt;update&lt;/e
 
 &lt;p&gt;Yes, you read that correctly. That is me helping out the legand &lt;a href=&#34;http://stackoverflow.com/users/22656/jon-skeet&#34;&gt;Jon Skeet&lt;/a&gt; (arguably the world&amp;rsquo;s best software engineer)!&lt;/p&gt;
 
-&lt;h2 id=&#34;summary:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Summary&lt;/h2&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 
 &lt;p&gt;These are miniscule things that really add up. Don&amp;rsquo;t take it from me, you owe it to yourself to see what you&amp;rsquo;re really made off. I believe in you already, if you made it through this
 post you have already accomplished more than most of your peers today. There is so much more that I want to give back to the community that I know this is only the beginnging of

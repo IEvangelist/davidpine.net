@@ -20,7 +20,7 @@ Scott said:
 
 > <p/> Had I looked at the lineup of speakers prior to agreeing, I would have declined
 
-My mind immediately started racing with thoughts like "does he only want to speak with well-known speakers" or "is this too small of a conference for such a celebrity?". None of these thoughts were the least bit accurate. In fact, the reason was simple "we were not diverse enough". Honestly this was something that I didn't even think about. I was driving Scott to the hotel where he was going to stay. The hotel was also the place where the conference was to be held.
+My mind immediately started racing with thoughts like "does he only want to speak with well-known speakers" or "is this too small of a conference for such a celebrity?". None of these thoughts were the least bit accurate. In fact, the reason was simple "we were not inclusive enough". Honestly this was something that I didn't even think about. I was driving Scott to the hotel where he was going to stay. The hotel was also the place where the conference was to be held.
 
 ![One does not simply drop "Hanselman" off at the hotel](/img/2017/06/hanselman.jpg)
 
@@ -32,13 +32,13 @@ One of his initial comments was hysterical:
 
 He was referring to the decor of the hotel (very 60's) and that the halls had a stale scent of mildew (the hotel has a water-park in it). Having just taken a sip of water, I nearly spit it out of my mouth in laughter - finally someone said what we had all been thinking! This resulted in a change of venue for 2017 and years to come. We'll be at <a href="https://www.paysbig.com/" target="_blank">Potawatomi Hotel & Casino</a> this year. The new joke is obviously that it will now smell like cigarette smoke instead.
 
-## Embracing Diversity
+## Inclusion
 
 The truth was simple. <a href="http://www.mkedotnet.com/2016/speakers/" target="_blank">MKE DOT NET 2016</a> only had one woman speaker and ironically she was speaking about Diversity. We were ready to lick our wounds and rise above it. I'm so proud to be part of this change and happy to communicate that <a href="http://www.mkedotnet.com/" target="_blank">MKE DOT NET</a> now takes an active approach to ensure a more diverse speaker lineup.
 
-This year, we started leveraging <a href="https://www.papercall.io" target="_blank">PaperCall.io</a> as our event management system. It allowed us to make the speaker voting anonymized - but you're probably wondering how that helps with diversity. It actually doesn't and that would be naive to assume so. What we did was invite <a href="https://twitter.com/AshleyPQPQP" target="_blank">Ashley Powell</a> and <a href="https://www.linkedin.com/in/samsaha1/" target="_blank">Samrat Saha</a> (both MKE DOT NET speaker alumni) to join our technical committee. We loved that they were both eager to help and happily joined the team. They both have been a major part of the entire process and helped with the CFP outreach efforts. We believe this led to more submissions from their networks, ultimately leading to a more diverse speaker lineup.
+This year, we started leveraging <a href="https://www.papercall.io" target="_blank">PaperCall.io</a> as our event management system. It allowed us to make the speaker voting anonymized - but you're probably wondering how that helps with diversity. It actually doesn't and that would be naive to assume so. What we did was invite <a href="https://twitter.com/AshleyPQPQP" target="_blank">Ashley Powell</a> and <a href="https://www.linkedin.com/in/samsaha1/" target="_blank">Samrat Saha</a> (both MKE DOT NET speaker alumni) to join our technical committee. We loved that they were both eager to help and happily joined the team. They both have been a major part of the entire process and helped with the CFP outreach efforts. We believe this led to more submissions from their networks, ultimately leading to a more inclusive speaker lineup.
 
-Of the 24 sessions and including the keynote, we are proud to have eight women speakers this year! If you're a numbers person - that is an <strong>800% increase</strong> year-over-year and we plan on doing even better as we evolve. We are actively putting diversity as a priority of our conference, embracing it wholeheartedly.
+Of the 24 sessions and including the keynote, we are proud to have eight women speakers this year! If you're a numbers person - that is an <strong>800% increase</strong> year-over-year and we plan on doing even better as we evolve. We are actively making our conference as inclusive as possible - and we celebrate the communities participation.
 
 ## Evolution
 

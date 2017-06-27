@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.18.1" />
+        <meta name="generator" content="Hugo 0.15" />
         
 
 
@@ -61,7 +61,7 @@
 
 
 
-<meta itemprop="keywords" content=",.NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,JavaScript,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
+<meta itemprop="keywords" content=".NET,.NET Core,ASP.NET Core,Angular2,C#,Caching,Compression,Dependency Injection,Fear,GZip,Http,Identity,IoT,JavaScript,MKE DOT NET,Magic Mirror,Raspberry Pi,RxJS,Self-Branding,Technical Conference,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio," />
 
         
 
@@ -74,13 +74,13 @@
 
         
         
-            <link rel="stylesheet" href="/css/google-font.css" />
-            <link rel="stylesheet" href="/css/font-awesome.min.css" />
-            <link rel="stylesheet" href="/css/main.css" />
-            <link rel="stylesheet" href="/css/add-on.css" />
-            <link rel="stylesheet" href="/css/pojoaque.css">
-        
 
+        
+            
+                
+                    <link rel="stylesheet" href="/css/main.min.css" />
+                
+            
         
 
         
@@ -115,35 +115,35 @@ ga('send', 'pageview');
         <ul>
             
                 <li>
-                    <a href="/blog">
+                    <a href="/blog/">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="/categories">
+                    <a href="/categories/">
                         
                             <i class="fa fa-list-ol">&nbsp;</i>Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="/about">
+                    <a href="/about/">
                         
                             <i class="fa fa-smile-o">&nbsp;</i>About
                     </a>
                 </li>
             
                 <li>
-                    <a href="/speaking">
+                    <a href="/speaking/">
                         
                             <i class="fa fa-bullhorn">&nbsp;</i>Speaking
                     </a>
                 </li>
             
                 <li>
-                    <a href="/conclusions">
+                    <a href="/conclusions/">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
                     </a>
@@ -188,7 +188,7 @@ ga('send', 'pageview');
             <ul class="links">
                 
                     <li>
-                        <a href="/blog">
+                        <a href="/blog/">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -199,7 +199,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/categories">
+                        <a href="/categories/">
                             <h3>
                                 
                                     <i class="fa fa-list-ol">&nbsp;</i>
@@ -210,7 +210,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/about">
+                        <a href="/about/">
                             <h3>
                                 
                                     <i class="fa fa-smile-o">&nbsp;</i>
@@ -221,7 +221,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/speaking">
+                        <a href="/speaking/">
                             <h3>
                                 
                                     <i class="fa fa-bullhorn">&nbsp;</i>
@@ -232,7 +232,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/conclusions">
+                        <a href="/conclusions/">
                             <h3>
                                 
                                     <i class="fa fa-lightbulb-o">&nbsp;</i>
@@ -257,7 +257,7 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/"><p>How to organize an amazing tech conf</p></a>
+                        <a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/"><p>How to organize an amazing technical conference</p></a>
                     </li>
                 
                     <li>
@@ -432,7 +432,7 @@ ga('send', 'pageview');
     <div id="content">
         
 
-<h1 id="overview">Overview</h1>
+<h1 id="overview:d7c1ff5c185090641e598e96532d52e8">Overview</h1>
 
 <p>In <strong>.NET</strong> it&rsquo;s really easy to create your own interfaces and implementations. Likewise, it&rsquo;s seemingly effortless to register them for dependency injection. But it is not always
 obvious how to override existing implementations.  Let&rsquo;s discuss various aspects of &ldquo;dependency injection&rdquo; and how you can override the &ldquo;framework-provided services&rdquo;.</p>
@@ -441,7 +441,7 @@ obvious how to override existing implementations.  Let&rsquo;s discuss various a
 with their corresponding IP addresses.  This would allow system administrators to monitor for potential attackers. This would require our <strong>ASP.NET Core</strong> application to have
 custom logging implemented.</p>
 
-<h2 id="logging">Logging</h2>
+<h2 id="logging:d7c1ff5c185090641e598e96532d52e8">Logging</h2>
 
 <p>Luckily <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging" target="_blank"><code>ASP.NET Core Logging</code></a> is simple to use and is a first-class
 citizen within <code>ASP.NET Core</code>.</p>
@@ -467,7 +467,7 @@ looks like:</p>
 <p>As you can see, it is rather simple. It adds two <code>ServiceDescriptor</code> instances to the <code>IServiceCollection</code>, effectively registering the given service type to the
 corresponding implementation type.</p>
 
-<h4 id="following-the-rabbit-down-the-hole">Following the rabbit down the hole</h4>
+<h4 id="following-the-rabbit-down-the-hole:d7c1ff5c185090641e598e96532d52e8">Following the rabbit down the hole</h4>
 
 <p>When you create a new <code>ASP.NET Core</code> project from <strong>Visual Studio</strong>, all the templates follow the same pattern. They have the <code>Program.cs</code> file with a <code>Main</code> method that looks
 very similar to this:</p>
@@ -486,7 +486,7 @@ very similar to this:</p>
 }
 </code></pre>
 
-<h6 id="templates-program-cs">Templates <code>Program.cs</code></h6>
+<h6 id="templates-program-cs:d7c1ff5c185090641e598e96532d52e8">Templates <code>Program.cs</code></h6>
 
 <table>
 <thead>
@@ -516,7 +516,7 @@ internally wraps itself in a <code>using</code>. If you were wondering where the
             creates services then invokes services.AddLogging()
 </code></pre>
 
-<h3 id="a-few-words-on-the-service-descriptor">A few words on the Service Descriptor</h3>
+<h3 id="a-few-words-on-the-service-descriptor:d7c1ff5c185090641e598e96532d52e8">A few words on the Service Descriptor</h3>
 
 <p>The <code>ServiceDescriptor</code> class is an object that <em>describes</em> a <em>service</em>, and this is used by dependency injection. In other words, instances of the <code>ServiceDescriptor</code> are
 descriptions of services. The <code>ServiceDescriptor</code> class exposes several static methods that allow its instantiation.</p>
@@ -526,7 +526,7 @@ descriptions of services. The <code>ServiceDescriptor</code> class exposes sever
 and its implementation is mapped to the <code>LoggerFactory</code>. Likewise, the generic type <code>typeof(ILogger&lt;&gt;)</code> is mapped to <code>typeof(Logger&lt;&gt;)</code>. This is just one of the several key
 &ldquo;Framework-Provided Services&rdquo; that are registered.</p>
 
-<h2 id="putting-it-together">Putting it together</h2>
+<h2 id="putting-it-together:d7c1ff5c185090641e598e96532d52e8">Putting it together</h2>
 
 <p>Now we know that the framework is providing all implementations of <code>ILogger&lt;T&gt;</code>, and resolving them as their <code>Logger&lt;T&gt;</code>. We also know that we could write our own implementation of
 the <code>ILogger&lt;T&gt;</code> interface. Being that this is open-source
@@ -641,12 +641,12 @@ method do the following:</p>
 precaution. We know that with each request we get the <code>HttpContext</code> from the <code>IHttpContextAccessor</code>, and from this we have the <code>User</code>. This is what is passed to each
 <code>ILogger&lt;T&gt;</code>.</p>
 
-<h1 id="conclusion">Conclusion</h1>
+<h1 id="conclusion:d7c1ff5c185090641e598e96532d52e8">Conclusion</h1>
 
 <p>This approach is valid for overriding any of the various framework-provided service implementations. It is simply a matter of knowing the correct <code>ServiceLifetime</code> for your
 specific needs. Likewise, it is a good idea to leverage the open-source libraries of the framework for inspiration. With this you can take finite control of your web-stack.</p>
 
-<h1 id="further-reading">Further Reading</h1>
+<h1 id="further-reading:d7c1ff5c185090641e598e96532d52e8">Further Reading</h1>
 
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection" target="_blank">
@@ -684,11 +684,11 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
 
     
     
-        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
+        <li><a href='/categories/asp.net-core'>ASP.NET Core</a></li>
     
-        <li><a href='/categories.net-core'>.NET Core</a></li>
+        <li><a href='/categories/.net-core'>.NET Core</a></li>
     
-        <li><a href='/categoriesdependency-injection'>Dependency Injection</a></li>
+        <li><a href='/categories/dependency-injection'>Dependency Injection</a></li>
     
 </ul>
 
@@ -838,7 +838,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/">How to organize an amazing tech conf</a></h3>
+                                <h3><a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/">How to organize an amazing technical conference</a></h3>
                                 
                                     
                                 
@@ -896,15 +896,6 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
-                                <span style="float:right;">6</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/.net-core/">.NET Core</a>
                                 <span style="float:right;">5</span>
                             </header>
@@ -914,8 +905,8 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/c/">C#</a>
-                                <span style="float:right;">2</span>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <span style="float:right;">5</span>
                             </header>
                         </article>
                     </li>
@@ -932,53 +923,8 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories//"></a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/.net/">.NET</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/angular2/">Angular2</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/caching/">Caching</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/compression/">Compression</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
-                                <span style="float:right;">1</span>
+                                <a href="/categories/c/">C#</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -987,42 +933,6 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                         <article>
                             <header>
                                 <a href="/categories/fear/">Fear</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/gzip/">GZip</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/http/">Http</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/identity/">Identity</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1040,52 +950,34 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/.net/">.NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/magic-mirror/">Magic Mirror</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/rxjs/">RxJS</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/self-branding/">Self-Branding</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/technical-doubt/">Technical Doubt</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/tooling/">Tooling</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1103,7 +995,124 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/mke-dot-net/">MKE DOT NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/compression/">Compression</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-conference/">Technical Conference</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/visual-studio/">Visual Studio</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/angular2/">Angular2</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1206,14 +1215,13 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
 
         
         
-            <script src="/js/jquery.min.js"></script>
-            <script src="/js/skel.min.js"></script>
-            <script src="/js/util.js"></script>
-            <script src="/js/main.js"></script>
-            <script src="/js/backToTop.js"></script>
-            <script src="/js/highlight.pack.js"></script>
-        
 
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
         
 
             

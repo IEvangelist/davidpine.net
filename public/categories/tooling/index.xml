@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tooling on IEvangelist</title>
-    <link>http://davidpine.net/categories/tooling/index.xml</link>
-    <description>Recent content in tooling on IEvangelist</description>
+    <title>Tooling on IEvangelist</title>
+    <link>http://davidpine.net/categories/tooling/</link>
+    <description>Recent content in Tooling on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 18 Jul 2016 22:40:31 -0500</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/tooling/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,7 +17,7 @@
       <guid>http://davidpine.net/blog/the-global-json/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h1 id=&#34;introduction:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Introduction&lt;/h1&gt;
 
 &lt;p&gt;As I&amp;rsquo;m sure you&amp;rsquo;re all aware by now, &lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2016/06/27/announcing-net-core-1-0/&#34;&gt;Monday June 27&lt;sup&gt;th&lt;/sup&gt;&lt;/a&gt; was a
 special day for those of you who were anticipating the release of  &lt;code&gt;.NET Core&lt;/code&gt; and &lt;code&gt;ASP.NET Core&lt;/code&gt;. While the &amp;ldquo;core&amp;rdquo; frameworks and runtimes are RTM, the
@@ -46,7 +47,7 @@ an improvement to said package, what does that work-flow look like?&lt;/p&gt;
 &lt;p&gt;What if I told you, that headache is all but gone and you will never have to go through those agonizing steps again! Say it ain&amp;rsquo;t so
 (queue &lt;a href=&#34;https://youtu.be/ENXvZ9YRjbo&#34; target=&#34;_blank&#34;&gt;Weezer&lt;/a&gt;).&lt;/p&gt;
 
-&lt;h2 id=&#34;global-json&#34;&gt;Global.json&lt;/h2&gt;
+&lt;h2 id=&#34;global-json:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Global.json&lt;/h2&gt;
 
 &lt;p&gt;The &lt;code&gt;global.json&lt;/code&gt; file sits out at the solution directory-level and literally has one of the simplest &lt;code&gt;JSON&lt;/code&gt; schemas you will ever see. The default templates
 generate the following (for the &lt;a href=&#34;http://json.schemastore.org/global&#34;&gt;full schema&lt;/a&gt;):&lt;/p&gt;
@@ -68,7 +69,7 @@ property is an array of strings. It&amp;rsquo;s defined as the following:&lt;/p&
 
 &lt;p&gt;These folders are search locations for resolving dependencies, where projects take precedence over packages.&lt;/p&gt;
 
-&lt;h3 id=&#34;projects-over-packages&#34;&gt;Projects over Packages&lt;/h3&gt;
+&lt;h3 id=&#34;projects-over-packages:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Projects over Packages&lt;/h3&gt;
 
 &lt;p&gt;Assume you&amp;rsquo;re developing in a project, namely &lt;code&gt;IEvangelist.NetCore.App&lt;/code&gt; and it takes a dependency on &lt;code&gt;IEvangelist.NetCore.ClassLib&lt;/code&gt; and &lt;code&gt;IEvangelist.NetCore.Services&lt;/code&gt;. These
 dependencies are packages (outside the solution) and you can use the &lt;code&gt;global.json/projects&lt;/code&gt; array to your advantage. Using our imaginations, let us find a need
@@ -84,24 +85,24 @@ we can now use a relative path like so:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;before&#34;&gt;Before&lt;/h4&gt;
+&lt;h4 id=&#34;before:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Before&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/07/before.jpg&#34; alt=&#34;Before global.json changes&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;after&#34;&gt;After&lt;/h4&gt;
+&lt;h4 id=&#34;after:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;After&lt;/h4&gt;
 
 &lt;p&gt;After saving these changes to the &lt;code&gt;global.json&lt;/code&gt; you&amp;rsquo;ll notice &lt;strong&gt;Visual Studio&lt;/strong&gt; pull this project into solution, but outside of the &lt;code&gt;src&lt;/code&gt; folder. Now when
 you debug you can actually step into the source and treat it like any other source code you have. Project dependencies are resolved by way of their &lt;code&gt;project.json&lt;/code&gt; being discovered.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/07/after.jpg&#34; alt=&#34;After global.json changes&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;open-source-for-everyone&#34;&gt;Open Source for Everyone&lt;/h3&gt;
+&lt;h3 id=&#34;open-source-for-everyone:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Open Source for Everyone&lt;/h3&gt;
 
 &lt;p&gt;One of the biggest advantages in my opinion is the ability to pull down source from &lt;code&gt;github&lt;/code&gt; that I rely on and source-step into it. For example, I have been developing with &lt;code&gt;ASP.NET
 Core&lt;/code&gt; since &lt;strong&gt;RC1&lt;/strong&gt;, nearly eight months!! With the power of the &lt;code&gt;global.json&lt;/code&gt; I can pull down source that I&amp;rsquo;m relying on in a package and fulfill my understanding of it
 as it executes. Simply amazing!&lt;/p&gt;
 
-&lt;h2 id=&#34;further-reading&#34;&gt;Further reading&lt;/h2&gt;
+&lt;h2 id=&#34;further-reading:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Further reading&lt;/h2&gt;
 
 &lt;p&gt;For more details, these are some additional links and points of reference.&lt;/p&gt;
 

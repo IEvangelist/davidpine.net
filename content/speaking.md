@@ -14,15 +14,17 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
+| Sept 29, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/409" target="_blank">Building a Magic Mirror w/ .NET</a> |
+| Sept 28, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/394" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
 | Jul 12, 2017 | <a href="https://detroitcode.amegala.com/" target="_blank">Detroit.Code() - 2017</a> | <a href="https://detroitcode.amegala.com/Sessions/315" target="_blank">Building a Magic Mirror w/ .NET</a> |
 | Jul 11, 2017 | <a href="https://detroitcode.amegala.com/" target="_blank">Detroit.Code() - 2017</a> | <a href="https://detroitcode.amegala.com/Sessions/317" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
-| Jun 26, 2017 | <a href="https://www.meetup.com/js-chi/events/238222639/" target="_blank">Chicago JS Meetup - 2017</a> | <a href="https://www.meetup.com/js-chi/events/238222639/" target="_blank">TypeScript -- JavaScript Reimagined</a> |
-| Jun 26, 2017 | <a href="http://www.chicagocoderconference.com/" target="_blank">Chicago Coders Conference - 2017</a> | <a href="http://www.chicagocoderconference.com/sessions/building-a-magic-mirror-with-net/" target="_blank">Building a Magic Mirror w/ .NET</a> |
 
 ## Past
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
+| Jun 26, 2017 | <a href="https://www.meetup.com/js-chi/events/238222639/" target="_blank">Chicago JS Meetup - 2017</a> | <a href="https://www.meetup.com/js-chi/events/238222639/" target="_blank">TypeScript -- JavaScript Reimagined</a> |
+| Jun 26, 2017 | <a href="http://www.chicagocoderconference.com/" target="_blank">Chicago Coders Conference - 2017</a> | <a href="http://www.chicagocoderconference.com/sessions/building-a-magic-mirror-with-net/" target="_blank">Building a Magic Mirror w/ .NET</a> |
 | May  9, 2017 | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/" target="_blank">WI .NET User Group - 2017</a> | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113620/" target="_blank">From C# 6 to C# 7, then and now!</a> |
 | Apr 29, 2017 | <a href="https://www.chicagocodecamp.com/" target="_blank">Chicago Code Camp - 2017</a> | <a href="https://www.chicagocodecamp.com/sessions/detail/1172" target="_blank">TypeScript -- JavaScript Reimagined</a> |
 | Apr 18, 2017 | <a href="https://partner.microsoft.com/en-US/" target="_blank">MPN Demo (Skyward) - 2017</a> | <a href="https://gist.github.com/IEvangelist/688502ca6ec59d071b2ae656babda4a4" target="_blank">From C# 6 to C# 7, then and now!</a> |

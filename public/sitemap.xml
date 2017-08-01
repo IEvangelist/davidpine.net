@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://davidpine.net/</loc>
-    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/csharp-seven-dot-one/</loc>
+    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -75,6 +80,10 @@
   <url>
     <loc>http://davidpine.net/about/</loc>
     <lastmod>2016-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/swagger-for-the-win/</loc>
   </url>
   
 </urlset>

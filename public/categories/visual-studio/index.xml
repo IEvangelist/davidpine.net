@@ -6,8 +6,206 @@
     <description>Recent content in Visual Studio on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jul 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/visual-studio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Perusing C# 7.1</title>
+      <link>http://davidpine.net/blog/csharp-seven-dot-one/</link>
+      <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/csharp-seven-dot-one/</guid>
+      <description>
+
+&lt;p&gt;Earlier this year in March &amp;ndash; Visual Studio 2017 was released. With this the world was given C# 7, check my post on &lt;a href=&#34;http://davidpine.net/blog/exploring-csharp-seven&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Exploring C# 7&amp;rdquo; here&lt;/a&gt;. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.&lt;/p&gt;
+
+&lt;h1 id=&#34;async-main-a-target-blank-href-https-github-com-dotnet-csharplang-issues-97-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;Async Main &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/97&#34;&gt;&lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;Since the release of C# 5, developers have either embraced the &lt;code&gt;async&lt;/code&gt; and &lt;code&gt;await&lt;/code&gt; keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you&amp;rsquo;re not alone. Many others have been just as confused, but that&amp;rsquo;s not to say that the language didn&amp;rsquo;t make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with implementation!&lt;/p&gt;
+
+&lt;p&gt;Many developer advocates set forth on a journey of biblical proportions &amp;ndash; making strides through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates &lt;strong&gt;Stephen Toub&lt;/strong&gt; and &lt;strong&gt;Stephen Cleary&lt;/strong&gt; rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One &lt;a href=&#34;https://msdn.microsoft.com/en-us/magazine/jj991977.aspx&#34; target=&#34;_blank&#34;&gt;best practice&lt;/a&gt; is as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Instead of &lt;code&gt;Task.Result&lt;/code&gt; or &lt;code&gt;.Task.Wait()&lt;/code&gt;, use &lt;code&gt;await&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Prior to C# 7.1 developers who wrote console applications were forced to alleviate from this guideline. We were forced to use &lt;code&gt;.Result&lt;/code&gt; or &lt;code&gt;.Wait()&lt;/code&gt;. Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static void Main()
+{
+    var httpClient = new HttpClient();
+    var result = httpClient.GetAsync(&amp;quot;some/url&amp;quot;).Result;
+
+    // Another common alternative was using the get awaiter / result.
+    result = httpClient.GetAsync(&amp;quot;some/url&amp;quot;).GetWaiter().GetResult();
+
+    // Consume the result...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With C# 7.1, we can leverage &lt;a href=&#34;https://github.com/dotnet/csharplang/blob/master/proposals/async-main.md&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Async Main&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static async Task Main()
+{
+    var httpClient = new HttpClient();
+    var result = await httpClient.GetAsync(&amp;quot;some/url&amp;quot;);
+
+    // Consume the result...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This feature extends the previous four possible entry points to their &lt;code&gt;Task&lt;/code&gt; and &lt;code&gt;Task&amp;lt;int&amp;gt;&lt;/code&gt; based equivalents. Now the following entry points are valid:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;static Task Main() { }                      // static void Main() { }
+static Task&amp;lt;int&amp;gt; Main() { }                 // static int Main() { }
+static Task Main(string[] args) { }         // static void Main(string[] args) { }
+static Task&amp;lt;int&amp;gt; Main(string[] args) { }    // static int Main(string[] args) { }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this task-based approach the new entry points simply provide that &amp;ldquo;feels good&amp;rdquo; approach to development.&lt;/p&gt;
+
+&lt;h1 id=&#34;default-expression-a-target-blank-href-https-github-com-dotnet-csharplang-issues-102-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;&lt;code&gt;default&lt;/code&gt; Expression &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/102&#34;&gt;&lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;default&lt;/code&gt; keyword has been around forever. It was used to tell the compiler give me the &amp;ldquo;default&amp;rdquo; value for the given type.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;var number = default(int);      // 0
+var date = default(DateTime);   // DateTime.MinValue
+var obj = default(object);      // null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This was also used for generics, for example when the type of &lt;code&gt;T&lt;/code&gt; is used we could return &lt;code&gt;default(T)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static T TryPeekOrDefault&amp;lt;T&amp;gt;(this ConcurrentQueue&amp;lt;T&amp;gt; queue)
+   =&amp;gt; (queue?.TryPeek(out var result) ?? false) 
+      ? result 
+      : default(T);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Likewise, the &lt;code&gt;default&lt;/code&gt; keyword was used in the &lt;code&gt;switch&lt;/code&gt; statement as well &amp;ndash; and signified the &lt;code&gt;default&lt;/code&gt; case label. If all other cases were not executed, the &lt;code&gt;default&lt;/code&gt; case would be.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;switch (dayOfWeek) 
+{
+    case DayOfWeek.Monday:
+        return &amp;quot;Ugh... off to work again&amp;quot;;
+    case DayOfWeek.Friday:
+        return &amp;quot;Excitement sets in...&amp;quot;;
+    
+    default:
+        return string.Empty;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, with C# 7.1 the compiler will use type inference to simplify the &lt;code&gt;default&lt;/code&gt; expression (sometimes referred to as &lt;code&gt;default&lt;/code&gt; literals). So we could declare an &lt;code&gt;int&lt;/code&gt; and assign it to &lt;code&gt;default&lt;/code&gt; without passing the type &lt;code&gt;int&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;int number = default;   // 0
+Guid guid = default;    // 00000000-0000-0000-0000-000000000000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Not only can the type be inferred from the declaration but also the literal expression:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;var number = isLucky ? 7 : default; // when &#39;isLucky&#39; is false number is 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The great news is that this feature is for the entire type-system, not just &lt;code&gt;int&#39;s&lt;/code&gt; &lt;i class=&#34;fa fa-thumbs-o-up&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;. You can now use the &lt;code&gt;default&lt;/code&gt; keyword in all sorts of places. You can use it to check against a value, or to pass it as an argument.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public int Sum(params int[] numbers)
+{
+    if (numbers == null || numbers.Length == 0)
+    {
+        return default; // Returns 0
+    }
+}
+
+// Pass in default. This is null for int[].
+var sum = Sum(default);
+if (sum == default)
+{
+    // Take an action when sum is 0.
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;tuple-projection-initializers-a-target-blank-href-https-github-com-dotnet-csharplang-issues-415-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;Tuple Projection Initializers &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/415&#34;&gt;&lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;I detailed the introduction of &lt;code&gt;tuples&lt;/code&gt; in my &lt;a href=&#34;http://davidpine.net/blog/exploring-csharp-seven&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Exploring C# 7&amp;rdquo;&lt;/a&gt; post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 &amp;ndash; this is no longer the case.&lt;/p&gt;
+
+&lt;p&gt;With &lt;code&gt;tuple&lt;/code&gt; projection initializers our C# &lt;code&gt;tuple&lt;/code&gt; literals is simplified and effectively DRY, as the redundancies of duplicating the field names can be inferred.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;var firstName = &amp;quot;David&amp;quot;;
+var lastName = &amp;quot;Pine&amp;quot;;
+var dateOfBirth = new Date(1984, 7, 7);
+
+// C# 7.0, required &amp;quot;explicit names&amp;quot;
+var person = (firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth);
+person.firstName;   // &amp;quot;David&amp;quot;
+person.lastName;    // &amp;quot;Pine&amp;quot;
+person.dateOfBirth  // 7/7/1984
+
+// C# 7.1, allows &amp;quot;inferred names&amp;quot;
+person = (firstName, lastName, dateOfBirth);
+person.firstName;   // &amp;quot;David&amp;quot;
+person.lastName;    // &amp;quot;Pine&amp;quot;
+person.dateOfBirth  // 7/7/1984
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;pattern-matching-with-generics-a-target-blank-href-https-github-com-dotnet-csharplang-issues-154-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;Pattern-matching with Generics &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/154&#34;&gt; &lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;With C# 7.0, pattern-matching was introduced &amp;ndash; I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and complex decision trees more legible and comprehensive. However, when it was introduced it didn&amp;rsquo;t correctly support generics. With C# 7.1, that has changed.&lt;/p&gt;
+
+&lt;p&gt;Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public class Animal { }
+
+public class Dog : Animal
+{
+    public Breed Breed { get; }
+}
+
+public void Interact&amp;lt;TAnimal&amp;gt;(TAnimal animal)
+    where TAnimal : Animal
+{
+    if (animal is Dog dog)
+    {
+        // Play fetch with dog
+    }
+
+    switch (animal)
+    {
+        case Dog dog when (dog.Breed == Breed.LabradorRetriever):
+            // Feed dog, the let &#39;em outside
+            break;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This was not actually possible, in fact it wouldn&amp;rsquo;t even compile. Ignoring the scoping issue, as the &lt;code&gt;dog&lt;/code&gt; variable is declared twice within the same scope &amp;ndash; we&amp;rsquo;d end up with the following compilation error:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; An expression of type TAnimal cannot be handled by a pattern of Dog.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You could use the &lt;code&gt;as&lt;/code&gt; operator:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;var dog = animal as Dog;
+if (dog != null) 
+{
+    // Play with man&#39;s best friend...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But that isn&amp;rsquo;t really pattern-matching. The limitation that exists is due to explicit type conversions and open types; however, the design specification is changing as follows in the bold area:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Certain combinations of static type of the left-hand-side and the given type are considered incompatible and result in compile-time error. A value of static type &lt;code&gt;E&lt;/code&gt; is said to be pattern compatible with the type &lt;code&gt;T&lt;/code&gt; if there exists an identity conversion, an implicit reference conversion, a boxing conversion, an explicit reference conversion, or an unboxing conversion from &lt;code&gt;E&lt;/code&gt; to &lt;code&gt;T&lt;/code&gt;, &lt;strong&gt;or if either &lt;code&gt;E&lt;/code&gt; or &lt;code&gt;T&lt;/code&gt; is an open type.&lt;/strong&gt; It is a compile-time error if an expression of type &lt;code&gt;E&lt;/code&gt; is not pattern compatible with the type in a type pattern that it is matched with.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;references:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/roslyn&#34;&gt;Roslyn, The .NET Compiler Platform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang&#34;&gt;C# Language Design&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Exploring C# 7</title>

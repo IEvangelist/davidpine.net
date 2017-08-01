@@ -21,7 +21,7 @@ Many developer advocates set forth on a journey of biblical proportions -- makin
 
 > <p/> Instead of `Task.Result` or `.Task.Wait()`, use `await`
 
-Prior to C# 7.1 developers who wrote console applications were forced to alleviate from this guideline. We were forced to use `.Result` or `.Wait()`. Consider the following:
+Prior to C# 7.1 developers who wrote console applications were forced to deviate from this guideline. We were forced to use `.Result` or `.Wait()`. Consider the following:
 
 ```csharp
 public static void Main()

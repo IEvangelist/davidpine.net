@@ -17,7 +17,7 @@
       <guid>http://davidpine.net/blog/csharp-seven-dot-one/</guid>
       <description>
 
-&lt;p&gt;Earlier this year in March &amp;ndash; Visual Studio 2017 was released. With this the world was given C# 7, check my post on &lt;a href=&#34;http://davidpine.net/blog/exploring-csharp-seven&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Exploring C# 7&amp;rdquo; here&lt;/a&gt;. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.&lt;/p&gt;
+&lt;p&gt;Earlier this year in March &amp;ndash; Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on &lt;a href=&#34;http://davidpine.net/blog/exploring-csharp-seven&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Exploring C# 7&amp;rdquo; here&lt;/a&gt;. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.&lt;/p&gt;
 
 &lt;h1 id=&#34;async-main-a-target-blank-href-https-github-com-dotnet-csharplang-issues-97-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;Async Main &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/97&#34;&gt;&lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
 
@@ -29,7 +29,7 @@
 &lt;p&gt;&lt;p/&gt; Instead of &lt;code&gt;Task.Result&lt;/code&gt; or &lt;code&gt;.Task.Wait()&lt;/code&gt;, use &lt;code&gt;await&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Prior to C# 7.1 developers who wrote console applications were forced to alleviate from this guideline. We were forced to use &lt;code&gt;.Result&lt;/code&gt; or &lt;code&gt;.Wait()&lt;/code&gt;. Consider the following:&lt;/p&gt;
+&lt;p&gt;Prior to C# 7.1 developers who wrote console applications were forced to deviate from this guideline. We were forced to use &lt;code&gt;.Result&lt;/code&gt; or &lt;code&gt;.Wait()&lt;/code&gt;. Consider the following:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static void Main()
 {

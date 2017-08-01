@@ -19,6 +19,14 @@
                     <p>{{ .paragraph | safeHTML }}</p>
                 </header>
             {{ end }}
+
+            <a target="_blank" rel="noopener" 
+               href="https://mvp.microsoft.com/en-us/publicprofile/5002736?fullName=David%20M%20Pine">
+                <img src="img/main/mvp.png" width="250px" />
+            </a>
+
+            <hr/>
+
             <ul class="icons">
                 {{ if .RSSLink }}
                     <li><a href="{{ .RSSLink }}" type="application/rss+xml"

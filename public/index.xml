@@ -21,9 +21,9 @@
 
 &lt;h1 id=&#34;async-main-a-target-blank-href-https-github-com-dotnet-csharplang-issues-97-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;Async Main &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/97&#34;&gt;&lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
 
-&lt;p&gt;Since the release of C# 5, developers have either embraced the &lt;code&gt;async&lt;/code&gt; and &lt;code&gt;await&lt;/code&gt; keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you&amp;rsquo;re not alone. Many others have been just as confused, but that&amp;rsquo;s not to say that the language didn&amp;rsquo;t make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with implementation!&lt;/p&gt;
+&lt;p&gt;Since the release of C# 5, developers have either embraced the &lt;code&gt;async&lt;/code&gt; and &lt;code&gt;await&lt;/code&gt; keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you&amp;rsquo;re not alone. Many others have been just as confused, but that&amp;rsquo;s not to say that the language didn&amp;rsquo;t make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with its implementation!&lt;/p&gt;
 
-&lt;p&gt;Many developer advocates set forth on a journey of biblical proportions &amp;ndash; making strides through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates &lt;strong&gt;Stephen Toub&lt;/strong&gt; and &lt;strong&gt;Stephen Cleary&lt;/strong&gt; rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One &lt;a href=&#34;https://msdn.microsoft.com/en-us/magazine/jj991977.aspx&#34; target=&#34;_blank&#34;&gt;best practice&lt;/a&gt; is as follows:&lt;/p&gt;
+&lt;p&gt;Many developer advocates set forth on a journey of biblical proportions &amp;ndash; progressing through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates &lt;strong&gt;Stephen Toub&lt;/strong&gt; and &lt;strong&gt;Stephen Cleary&lt;/strong&gt; rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One &lt;a href=&#34;https://msdn.microsoft.com/en-us/magazine/jj991977.aspx&#34; target=&#34;_blank&#34;&gt;best practice&lt;/a&gt; is as follows:&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;p/&gt; Instead of &lt;code&gt;Task.Result&lt;/code&gt; or &lt;code&gt;.Task.Wait()&lt;/code&gt;, use &lt;code&gt;await&lt;/code&gt;&lt;/p&gt;
@@ -110,7 +110,7 @@ Guid guid = default;    // 00000000-0000-0000-0000-000000000000
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public int Sum(params int[] numbers)
 {
-    if (numbers == null || numbers.Length == 0)
+    if (numbers is default || numbers.Length == default)
     {
         return default; // Returns 0
     }
@@ -126,9 +126,9 @@ if (sum == default)
 
 &lt;h1 id=&#34;tuple-projection-initializers-a-target-blank-href-https-github-com-dotnet-csharplang-issues-415-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;Tuple Projection Initializers &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/415&#34;&gt;&lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
 
-&lt;p&gt;I detailed the introduction of &lt;code&gt;tuples&lt;/code&gt; in my &lt;a href=&#34;http://davidpine.net/blog/exploring-csharp-seven&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Exploring C# 7&amp;rdquo;&lt;/a&gt; post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 &amp;ndash; this is no longer the case.&lt;/p&gt;
+&lt;p&gt;I detailed the introduction of &lt;code&gt;tuples&lt;/code&gt; in my &lt;a href=&#34;http://davidpine.net/blog/exploring-csharp-seven&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Exploring C# 7&amp;rdquo;&lt;/a&gt; post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 &amp;ndash; this is no longer a limitation.&lt;/p&gt;
 
-&lt;p&gt;With &lt;code&gt;tuple&lt;/code&gt; projection initializers our C# &lt;code&gt;tuple&lt;/code&gt; literals is simplified and effectively DRY, as the redundancies of duplicating the field names can be inferred.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;tuple&lt;/code&gt; projection initializers our C# &lt;code&gt;tuple&lt;/code&gt; literals are simplified and effectively DRY, as the redundancies of duplicating the field names are inferred.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;var firstName = &amp;quot;David&amp;quot;;
 var lastName = &amp;quot;Pine&amp;quot;;
@@ -149,7 +149,7 @@ person.dateOfBirth  // 7/7/1984
 
 &lt;h1 id=&#34;pattern-matching-with-generics-a-target-blank-href-https-github-com-dotnet-csharplang-issues-154-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;Pattern-matching with Generics &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/154&#34;&gt; &lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
 
-&lt;p&gt;With C# 7.0, pattern-matching was introduced &amp;ndash; I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and complex decision trees more legible and comprehensive. However, when it was introduced it didn&amp;rsquo;t correctly support generics. With C# 7.1, that has changed.&lt;/p&gt;
+&lt;p&gt;With C# 7.0, pattern-matching was introduced &amp;ndash; I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and makes complex decision trees more legible and comprehensive. However, when it was introduced it didn&amp;rsquo;t correctly support generics. With C# 7.1, that has changed.&lt;/p&gt;
 
 &lt;p&gt;Consider the following:&lt;/p&gt;
 

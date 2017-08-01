@@ -436,9 +436,9 @@ ga('send', 'pageview');
 
 <h1 id="async-main-a-target-blank-href-https-github-com-dotnet-csharplang-issues-97-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078">Async Main <a target="_blank" href="https://github.com/dotnet/csharplang/issues/97"><i class="fa fa-external-link"></i></a></h1>
 
-<p>Since the release of C# 5, developers have either embraced the <code>async</code> and <code>await</code> keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you&rsquo;re not alone. Many others have been just as confused, but that&rsquo;s not to say that the language didn&rsquo;t make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with implementation!</p>
+<p>Since the release of C# 5, developers have either embraced the <code>async</code> and <code>await</code> keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you&rsquo;re not alone. Many others have been just as confused, but that&rsquo;s not to say that the language didn&rsquo;t make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with its implementation!</p>
 
-<p>Many developer advocates set forth on a journey of biblical proportions &ndash; making strides through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates <strong>Stephen Toub</strong> and <strong>Stephen Cleary</strong> rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One <a href="https://msdn.microsoft.com/en-us/magazine/jj991977.aspx" target="_blank">best practice</a> is as follows:</p>
+<p>Many developer advocates set forth on a journey of biblical proportions &ndash; progressing through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates <strong>Stephen Toub</strong> and <strong>Stephen Cleary</strong> rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One <a href="https://msdn.microsoft.com/en-us/magazine/jj991977.aspx" target="_blank">best practice</a> is as follows:</p>
 
 <blockquote>
 <p><p/> Instead of <code>Task.Result</code> or <code>.Task.Wait()</code>, use <code>await</code></p>
@@ -525,7 +525,7 @@ Guid guid = default;    // 00000000-0000-0000-0000-000000000000
 
 <pre><code class="language-csharp">public int Sum(params int[] numbers)
 {
-    if (numbers == null || numbers.Length == 0)
+    if (numbers is default || numbers.Length == default)
     {
         return default; // Returns 0
     }
@@ -541,9 +541,9 @@ if (sum == default)
 
 <h1 id="tuple-projection-initializers-a-target-blank-href-https-github-com-dotnet-csharplang-issues-415-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078">Tuple Projection Initializers <a target="_blank" href="https://github.com/dotnet/csharplang/issues/415"><i class="fa fa-external-link"></i></a></h1>
 
-<p>I detailed the introduction of <code>tuples</code> in my <a href="/blog/exploring-csharp-seven" target="_blank">&ldquo;Exploring C# 7&rdquo;</a> post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 &ndash; this is no longer the case.</p>
+<p>I detailed the introduction of <code>tuples</code> in my <a href="/blog/exploring-csharp-seven" target="_blank">&ldquo;Exploring C# 7&rdquo;</a> post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 &ndash; this is no longer a limitation.</p>
 
-<p>With <code>tuple</code> projection initializers our C# <code>tuple</code> literals is simplified and effectively DRY, as the redundancies of duplicating the field names can be inferred.</p>
+<p>With <code>tuple</code> projection initializers our C# <code>tuple</code> literals are simplified and effectively DRY, as the redundancies of duplicating the field names are inferred.</p>
 
 <pre><code class="language-csharp">var firstName = &quot;David&quot;;
 var lastName = &quot;Pine&quot;;
@@ -564,7 +564,7 @@ person.dateOfBirth  // 7/7/1984
 
 <h1 id="pattern-matching-with-generics-a-target-blank-href-https-github-com-dotnet-csharplang-issues-154-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078">Pattern-matching with Generics <a target="_blank" href="https://github.com/dotnet/csharplang/issues/154"> <i class="fa fa-external-link"></i></a></h1>
 
-<p>With C# 7.0, pattern-matching was introduced &ndash; I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and complex decision trees more legible and comprehensive. However, when it was introduced it didn&rsquo;t correctly support generics. With C# 7.1, that has changed.</p>
+<p>With C# 7.0, pattern-matching was introduced &ndash; I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and makes complex decision trees more legible and comprehensive. However, when it was introduced it didn&rsquo;t correctly support generics. With C# 7.1, that has changed.</p>
 
 <p>Consider the following:</p>
 
@@ -859,7 +859,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <a href="/categories/.net-core/">.NET Core</a>
                                 <span style="float:right;">5</span>
                             </header>
                         </article>
@@ -868,7 +868,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net-core/">.NET Core</a>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
                                 <span style="float:right;">5</span>
                             </header>
                         </article>
@@ -886,7 +886,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net/">.NET</a>
+                                <a href="/categories/typescript/">TypeScript</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -904,7 +904,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/typescript/">TypeScript</a>
+                                <a href="/categories/.net/">.NET</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -913,34 +913,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/angular2/">Angular2</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/technical-conference/">Technical Conference</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/javascript/">JavaScript</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -958,7 +931,16 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-conference/">Technical Conference</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -976,7 +958,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/http/">Http</a>
+                                <a href="/categories/angular2/">Angular2</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -985,7 +967,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/fear/">Fear</a>
+                                <a href="/categories/tooling/">Tooling</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1012,7 +994,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/identity/">Identity</a>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1030,7 +1012,34 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/caching/">Caching</a>
+                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1066,16 +1075,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/technical-doubt/">Technical Doubt</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/tooling/">Tooling</a>
+                                <a href="/categories/caching/">Caching</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

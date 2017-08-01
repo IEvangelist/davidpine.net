@@ -15,9 +15,9 @@ Earlier this year in March -- Visual Studio 2017 was released. With this the wor
 
 # Async Main <a target="_blank" href="https://github.com/dotnet/csharplang/issues/97"><i class="fa fa-external-link"></i></a>
 
-Since the release of C# 5, developers have either embraced the `async` and `await` keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you're not alone. Many others have been just as confused, but that's not to say that the language didn't make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with implementation!
+Since the release of C# 5, developers have either embraced the `async` and `await` keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you're not alone. Many others have been just as confused, but that's not to say that the language didn't make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with its implementation!
 
-Many developer advocates set forth on a journey of biblical proportions -- making strides through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates **Stephen Toub** and **Stephen Cleary** rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One <a href="https://msdn.microsoft.com/en-us/magazine/jj991977.aspx" target="_blank">best practice</a> is as follows:
+Many developer advocates set forth on a journey of biblical proportions -- progressing through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates **Stephen Toub** and **Stephen Cleary** rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One <a href="https://msdn.microsoft.com/en-us/magazine/jj991977.aspx" target="_blank">best practice</a> is as follows:
 
 > <p/> Instead of `Task.Result` or `.Task.Wait()`, use `await`
 
@@ -110,7 +110,7 @@ The great news is that this feature is for the entire type-system, not just `int
 ```csharp
 public int Sum(params int[] numbers)
 {
-    if (numbers == null || numbers.Length == 0)
+    if (numbers is default || numbers.Length == default)
     {
         return default; // Returns 0
     }
@@ -126,9 +126,9 @@ if (sum == default)
 
 # Tuple Projection Initializers <a target="_blank" href="https://github.com/dotnet/csharplang/issues/415"><i class="fa fa-external-link"></i></a>
 
-I detailed the introduction of `tuples` in my <a href="/blog/exploring-csharp-seven" target="_blank">"Exploring C# 7"</a> post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 -- this is no longer the case.
+I detailed the introduction of `tuples` in my <a href="/blog/exploring-csharp-seven" target="_blank">"Exploring C# 7"</a> post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 -- this is no longer a limitation.
 
-With `tuple` projection initializers our C# `tuple` literals is simplified and effectively DRY, as the redundancies of duplicating the field names can be inferred.
+With `tuple` projection initializers our C# `tuple` literals are simplified and effectively DRY, as the redundancies of duplicating the field names are inferred.
 
 ```csharp
 var firstName = "David";
@@ -150,7 +150,7 @@ person.dateOfBirth  // 7/7/1984
 
 # Pattern-matching with Generics <a target="_blank" href="https://github.com/dotnet/csharplang/issues/154"> <i class="fa fa-external-link"></i></a>
 
-With C# 7.0, pattern-matching was introduced -- I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and complex decision trees more legible and comprehensive. However, when it was introduced it didn't correctly support generics. With C# 7.1, that has changed.
+With C# 7.0, pattern-matching was introduced -- I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and makes complex decision trees more legible and comprehensive. However, when it was introduced it didn't correctly support generics. With C# 7.1, that has changed.
 
 Consider the following:
 

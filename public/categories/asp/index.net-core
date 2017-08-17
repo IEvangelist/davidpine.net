@@ -38,7 +38,7 @@
 <meta property="og:url" content="http://davidpine.net/categories/asp/index.net-core/" />
 
 
-<meta property="og:updated_time" content="2017-06-24T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-02-14T00:00:00&#43;00:00"/>
 
 
 
@@ -242,7 +242,7 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/"><p>How to organize an amazing tech conf</p></a>
+                        <a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/"><p>How to organize an amazing technical conference</p></a>
                     </li>
                 
                     <li>
@@ -260,99 +260,6 @@ ga('send', 'pageview');
     <div id="main">
         <h1>asp.net-core</h1>
         
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/">How to organize an amazing tech conf</a></h2>
-        
-        
-            <p>Behind the scenes of MKE DOT NET</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-06-24'>
-            June 24, 2017</time>
-        <span class="author">David Pine</span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-    
-
-    
-        
-        
-
-
-
-
-    
-    
-        
-    
-
-
-        
-
-        <a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/" class="image featured">
-            <img src="/img/2017/06/red-or-blue-pill-matrix-neo-morpheus.jpg" alt="" />
-        </a>
-    
-
-
-    <p>Overview</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-list-ol">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
-    
-        <li><a href='/categories'></a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
         
             <article class="post">
     <header>
@@ -546,6 +453,104 @@ History If you have ever done any .NET Framework development, you&rsquo;ve proba
 </article>
 
         
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://davidpine.net/blog/asp-net-core-optimization/">ASP.NET Core Response Optimization</a></h2>
+        
+        
+            <p>Static File Caching &amp; Compression</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-12-12'>
+            December 12, 2016</time>
+        <span class="author">David Pine</span>
+        
+            <p>6 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://davidpine.net/blog/asp-net-core-optimization/" class="image featured">
+            <img src="/img/2016/12/speedy.jpg" alt="" />
+        </a>
+    
+
+
+    <p>Intro If you&rsquo;re a web developer, chances are you&rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in tandem on an ASP.NET Core application that I have been developing&hellip; I&rsquo;m going to share what I have learned.
+If you haven&rsquo;t had a chance to use ASP.NET Core yet, you&rsquo;re missing out! As my friend Scott Addie likes to say:</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://davidpine.net/blog/asp-net-core-optimization/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-list-ol">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
+    
+        <li><a href='/categoriesgzip'>GZip</a></li>
+    
+        <li><a href='/categoriescompression'>Compression</a></li>
+    
+        <li><a href='/categoriescaching'>Caching</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
 
         
 <ul class="actions pagination">
@@ -671,7 +676,7 @@ History If you have ever done any .NET Framework development, you&rsquo;ve proba
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/">How to organize an amazing tech conf</a></h3>
+                                <h3><a href="http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/">How to organize an amazing technical conference</a></h3>
                                 
                                     
                                 
@@ -729,8 +734,8 @@ History If you have ever done any .NET Framework development, you&rsquo;ve proba
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
-                                <span style="float:right;">6</span>
+                                <a href="/categories/.net-core/">.NET Core</a>
+                                <span style="float:right;">5</span>
                             </header>
                         </article>
                     </li>
@@ -738,7 +743,7 @@ History If you have ever done any .NET Framework development, you&rsquo;ve proba
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net-core/">.NET Core</a>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
                                 <span style="float:right;">5</span>
                             </header>
                         </article>
@@ -758,15 +763,6 @@ History If you have ever done any .NET Framework development, you&rsquo;ve proba
                             <header>
                                 <a href="/categories/typescript/">TypeScript</a>
                                 <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories//"></a>
-                                <span style="float:right;">1</span>
                             </header>
                         </article>
                     </li>
@@ -873,6 +869,15 @@ History If you have ever done any .NET Framework development, you&rsquo;ve proba
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/mke-dot-net/">MKE DOT NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/magic-mirror/">Magic Mirror</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -901,6 +906,15 @@ History If you have ever done any .NET Framework development, you&rsquo;ve proba
                         <article>
                             <header>
                                 <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-conference/">Technical Conference</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

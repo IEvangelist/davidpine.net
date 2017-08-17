@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TypeScript on IEvangelist</title>
-    <link>http://davidpine.net/categories/typescript/</link>
-    <description>Recent content in TypeScript on IEvangelist</description>
+    <title>typescript on IEvangelist</title>
+    <link>http://davidpine.net/categories/typescript/index.xml</link>
+    <description>Recent content in typescript on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,7 +16,7 @@
       <guid>http://davidpine.net/blog/typescript-javascript-reimagined/</guid>
       <description>
 
-&lt;h1 id=&#34;first-things-first:983b92988576ed5bc09079031d8a835a&#34;&gt;First things First&lt;/h1&gt;
+&lt;h1 id=&#34;first-things-first&#34;&gt;First things First&lt;/h1&gt;
 
 &lt;p&gt;JavaScript is the world&amp;rsquo;s third most common programming language today. JavaScript was created by &lt;a href=&#34;https://twitter.com/BrendanEich&#34; target=&#34;_blank&#34;&gt;Brendan Eich&lt;/a&gt; in about ten days. It might seem odd that the
 previous two sentences not only exist, but go together&amp;hellip;yet it is true! JavaScript runs seemingly everywhere and applications written in this
@@ -28,7 +27,7 @@ language are only getting larger.&lt;/p&gt;
 &lt;cite&gt;&lt;a href=&#34;https://twitter.com/ahejlsberg&#34; target=&#34;_blank&#34;&gt;Anders Hejlsberg&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;the-good-parts:983b92988576ed5bc09079031d8a835a&#34;&gt;&amp;ldquo;The Good Parts&amp;rdquo;&lt;/h2&gt;
+&lt;h2 id=&#34;the-good-parts&#34;&gt;&amp;ldquo;The Good Parts&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.crockford.com/&#34; target=&#34;_blank&#34;&gt;Douglas Crockford&lt;/a&gt; authored a book &amp;ldquo;JavaScript: The Good Parts&amp;rdquo;, sadly it was a rather short book. If you&amp;rsquo;re a JavaScript developer, knowing &amp;ldquo;the good parts&amp;rdquo;
 is great - but knowing the limitations and shortcomings of a language is even more powerful. Sometimes it feels like JavaScript is a hammer and not every
@@ -36,12 +35,12 @@ problem we&amp;rsquo;re trying to solve is a nail. NodeJs is a great example of 
 Gary Bernhardt&amp;rsquo;s &lt;a href=&#34;https://www.destroyallsoftware.com/talks/wat&#34; target=&#34;_blank&#34;&gt;WAT video&lt;/a&gt;, go ahead &amp;ndash; I&amp;rsquo;ll wait! In all seriousness, JavaScript
 is a great programming language for countless reasons, but it is easy to poke fun at.&lt;/p&gt;
 
-&lt;h3 id=&#34;mental-model:983b92988576ed5bc09079031d8a835a&#34;&gt;Mental Model&lt;/h3&gt;
+&lt;h3 id=&#34;mental-model&#34;&gt;Mental Model&lt;/h3&gt;
 
 &lt;p&gt;I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. There are several key takeaways
 from the debate that I think will stick with me for a while.&lt;/p&gt;
 
-&lt;h4 id=&#34;learn-it:983b92988576ed5bc09079031d8a835a&#34;&gt;Learn it&lt;/h4&gt;
+&lt;h4 id=&#34;learn-it&#34;&gt;Learn it&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;p/&gt; You should learn the JavaScript programming language&lt;/p&gt;
@@ -156,7 +155,7 @@ That is not at all a bad thing! Just look at what you can do with &amp;ldquo;tra
 rely on tooling to help&lt;/strong&gt;. It is simply a pragmatic approach to developing with a true sense of reliability and consistency. Training wheels provide you with the
 confidence and security. Once your TypeScript is compiled to JavaScript, the training wheels are removed and your code is ready to brave the new world!&lt;/p&gt;
 
-&lt;h1 id=&#34;typescript:983b92988576ed5bc09079031d8a835a&#34;&gt;TypeScript&lt;/h1&gt;
+&lt;h1 id=&#34;typescript&#34;&gt;TypeScript&lt;/h1&gt;
 
 &lt;p&gt;I could never compete with the TypeScript site. They have a beautifully composed tutorial, handbook and rich set of documentation. If that is what
 you&amp;rsquo;re looking for - by all means 
@@ -174,14 +173,14 @@ on my thoughts - keep reading.&lt;/p&gt;
 latest version of the ECMAScript standard, while still being about to target all the way back to ES3. Upon compilation, your code is pure JavaScript
 and all the type notations are removed. The static type system is only applicable when working with TypeScript related files.&lt;/p&gt;
 
-&lt;h2 id=&#34;extensions-explained:983b92988576ed5bc09079031d8a835a&#34;&gt;Extensions Explained&lt;/h2&gt;
+&lt;h2 id=&#34;extensions-explained&#34;&gt;Extensions Explained&lt;/h2&gt;
 
 &lt;p&gt;I initially had some confusion about the various file extensions. It was obvious what &lt;code&gt;.ts&lt;/code&gt; and &lt;code&gt;.js&lt;/code&gt; files were, but what were these &lt;code&gt;.map&lt;/code&gt; and &lt;code&gt;.d.ts&lt;/code&gt; files?
 Ironically, &lt;code&gt;.map&lt;/code&gt; files have been around since CoffeeScript and are nothing new. They map JavaScript files to their corresponding abstractions, in the case of
 TypeScript - they map &lt;code&gt;.ts&lt;/code&gt; to &lt;code&gt;.js&lt;/code&gt; files. The &lt;code&gt;.d.ts&lt;/code&gt; files are known as type definitions. They define the public surface area or API if you will, of a given
 library. More detail &lt;a href=&#34;http://stackoverflow.com/a/37063570/2410379&#34; target=&#34;_blank&#34;&gt;here &lt;i class=&#34;fa fa-stack-overflow&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;enough-sales-pitch-show-me-some-code:983b92988576ed5bc09079031d8a835a&#34;&gt;Enough Sales Pitch - Show me some code&lt;/h2&gt;
+&lt;h2 id=&#34;enough-sales-pitch-show-me-some-code&#34;&gt;Enough Sales Pitch - Show me some code&lt;/h2&gt;
 
 &lt;p&gt;The 
 
@@ -226,7 +225,7 @@ TypeScript - but seeing how the resulting JavaScript is really something special
 are assigned to from their indexes. On the &lt;code&gt;DayOfWeek&lt;/code&gt; instance, we declare and assign property &lt;code&gt;Sunday&lt;/code&gt; equal to &lt;code&gt;0&lt;/code&gt;. Likewise,
 we declare and assign property &lt;code&gt;0&lt;/code&gt; equal to the value &lt;code&gt;Sunday&lt;/code&gt;, etc&amp;hellip;&lt;/p&gt;
 
-&lt;h3 id=&#34;type-aliases-generics-and-mapped-types:983b92988576ed5bc09079031d8a835a&#34;&gt;Type Aliases, Generics and  Mapped Types&lt;/h3&gt;
+&lt;h3 id=&#34;type-aliases-generics-and-mapped-types&#34;&gt;Type Aliases, Generics and  Mapped Types&lt;/h3&gt;
 
 &lt;p&gt;I recently learned about the &lt;code&gt;keyof&lt;/code&gt; operator in TypeScript, and wow is it powerful! Let&amp;rsquo;s consider the following mutable object.&lt;/p&gt;
 
@@ -252,13 +251,13 @@ as &lt;code&gt;readonly&lt;/code&gt; members. This leverages the &lt;code&gt;key
 So, now we can return a &lt;code&gt;Readonly&amp;lt;MutableDataBag&amp;lt;T&amp;gt;&amp;gt;&lt;/code&gt; from our API and rest assured knowing that TypeScript prevents it&amp;rsquo;s members from
 being written to.&lt;/p&gt;
 
-&lt;h1 id=&#34;conclusion:983b92988576ed5bc09079031d8a835a&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 
 &lt;p&gt;This is literally just the tip of the iceberg (or even less). TypeScript has truly made JavaScript tolerable.
 TypeScript answers so many questions and addresses so many concerns that it&amp;rsquo;s hard to justify not using&amp;hellip;if you&amp;rsquo;re not using
 TypeScript, there are other options out there. Pick your poison!!&lt;/p&gt;
 
-&lt;h3 id=&#34;resources:983b92988576ed5bc09079031d8a835a&#34;&gt;Resources&lt;/h3&gt;
+&lt;h3 id=&#34;resources&#34;&gt;Resources&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;
@@ -302,7 +301,7 @@ If you&amp;rsquo;re unfamiliar with &lt;em&gt;Reactive Extensions&lt;/em&gt; in 
 Let&amp;rsquo;s take a moment to compare and contrast the two, and immerse ourselves in the wonderful world of &lt;strong&gt;RxJS&lt;/strong&gt;.
 Let me be clear upfront that I&amp;rsquo;m developing with &lt;code&gt;TypeScript&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;legacy-pattern:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Legacy Pattern&lt;/h2&gt;
+&lt;h2 id=&#34;legacy-pattern&#34;&gt;Legacy Pattern&lt;/h2&gt;
 
 &lt;p&gt;As a developer you would have to use both the &lt;code&gt;ng.IHttpService&lt;/code&gt; and the &lt;code&gt;ng.IQService&lt;/code&gt; in combination to collaborate the deferral of the
 HTTP request and the promise that represented it. Consider the following:&lt;/p&gt;
@@ -340,7 +339,7 @@ HTTP request and the promise that represented it. Consider the following:&lt;/p&
 
 &lt;p&gt;In this example, we can easily see the interaction betwixt the &lt;code&gt;ng.IHttpService ($http)&lt;/code&gt; and &lt;code&gt;ng.IQService ($q)&lt;/code&gt; services. The &lt;code&gt;$q&lt;/code&gt; variable exposes a &lt;code&gt;.defer&amp;lt;T&amp;gt;&lt;/code&gt; function that returns a deferred object.&lt;/p&gt;
 
-&lt;h3 id=&#34;deferred-api-https-docs-angularjs-org-api-ng-service-q-the-deferred-api:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$q#the-deferred-api&#34;&gt;Deferred API&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;deferred-api-https-docs-angularjs-org-api-ng-service-q-the-deferred-api&#34;&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$q#the-deferred-api&#34;&gt;Deferred API&lt;/a&gt;&lt;/h3&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -369,7 +368,7 @@ HTTP request and the promise that represented it. Consider the following:&lt;/p&
 &lt;p&gt;The deferred object instance is passed into the fluent API&amp;rsquo;s of the &lt;code&gt;$http&#39;s&lt;/code&gt; &lt;code&gt;.success&lt;/code&gt; and &lt;code&gt;.error&lt;/code&gt; functions accordingly. This pattern works great, but is very limiting and repetitive.
 You end up writing a lot of boilerplate code and that isn&amp;rsquo;t very &lt;a href=&#34;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&#34;&gt;DRY&lt;/a&gt;. Let&amp;rsquo;s look at how this is approached with &lt;strong&gt;Angular2&amp;rsquo;s&lt;/strong&gt; &lt;code&gt;http&lt;/code&gt; service using the observable pattern from &lt;strong&gt;RxJS&lt;/strong&gt;!&lt;/p&gt;
 
-&lt;h2 id=&#34;new-pattern:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;New Pattern&lt;/h2&gt;
+&lt;h2 id=&#34;new-pattern&#34;&gt;New Pattern&lt;/h2&gt;
 
 &lt;p&gt;To be fair, let&amp;rsquo;s implement the same functionality and public surface-area such that our example services are equivalent.&lt;/p&gt;
 
@@ -398,7 +397,7 @@ it was in &lt;strong&gt;AngularJs 1&lt;/strong&gt;.
 Simply do what you&amp;rsquo;d expect from any other common constructor-based DI framework, ensure that your desired &lt;code&gt;Http&lt;/code&gt; type is registered as a provider to the system. This happens by way of the &lt;code&gt;HTTP_PROVIDERS&lt;/code&gt; defined in our &lt;code&gt;boot.js&lt;/code&gt; file.
 More on that in another post. With modern &lt;code&gt;TypeScript&lt;/code&gt; we can define properties and fields, and their corresponding access modifiers right from within our constructors.&lt;/p&gt;
 
-&lt;h4 id=&#34;syntax-tip:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Syntax Tip&lt;/h4&gt;
+&lt;h4 id=&#34;syntax-tip&#34;&gt;Syntax Tip&lt;/h4&gt;
 
 &lt;p&gt;This exemplifies the comparisons in syntax between a simple constructor and the more verbose constructor.&lt;/p&gt;
 
@@ -424,7 +423,7 @@ constructor(http: Http) {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;comparing-the-apis:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Comparing the APIs&lt;/h2&gt;
+&lt;h2 id=&#34;comparing-the-apis&#34;&gt;Comparing the APIs&lt;/h2&gt;
 
 &lt;p&gt;Instead of the &lt;code&gt;.success&lt;/code&gt; invocation with a corresponding &lt;code&gt;deferred.resolve&lt;/code&gt; call, we now utilize the &lt;strong&gt;RxJS&lt;/strong&gt; &lt;code&gt;.map&lt;/code&gt; and &lt;code&gt;.subscribe&lt;/code&gt; operators. Let&amp;rsquo;s look at these below:&lt;/p&gt;
 
@@ -452,7 +451,7 @@ constructor(http: Http) {
 &lt;p&gt;Mapping is easy and we can leverage some of the &lt;code&gt;TypeScript&lt;/code&gt; language features to cast the &lt;strong&gt;JSON&lt;/strong&gt; blobs returned from our services as strongly typed objects. The &lt;code&gt;map&lt;/code&gt; operator is actually
 synonymous with the &lt;code&gt;select&lt;/code&gt; operator, so if you&amp;rsquo;re more familiar with that terminology you can use it interchangeably.&lt;/p&gt;
 
-&lt;h3 id=&#34;advantages:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Advantages&lt;/h3&gt;
+&lt;h3 id=&#34;advantages&#34;&gt;Advantages&lt;/h3&gt;
 
 &lt;p&gt;Now that we have an understanding of how &lt;strong&gt;RxJS&lt;/strong&gt; compares to the legacy pattern, we can take advantage of all the various benefits. Imagine with me that we have a need to implement retry logic,
 this would have been challenging with the legacy pattern but with the new pattern it&amp;rsquo;s as simple as saying &lt;code&gt;.retry&lt;/code&gt;. Consider the following:&lt;/p&gt;
@@ -476,7 +475,7 @@ the values are actually different than they once were.&lt;/p&gt;
 &lt;p&gt;You could take advantage of &lt;code&gt;.buffer&lt;/code&gt;, &lt;code&gt;.throttle&lt;/code&gt;, &lt;code&gt;.interval&lt;/code&gt;, &lt;code&gt;.window&lt;/code&gt;, &lt;code&gt;.range&lt;/code&gt;, etc&amp;hellip; The list goes on and on,
 and &lt;a href=&#34;https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable&#34; target=&#34;_blank&#34;&gt;this is the source for most of what you can take advantage&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;let-s-summarize:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
+&lt;h3 id=&#34;let-s-summarize&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;Angular2&lt;/strong&gt; has a new implementation of their &lt;code&gt;http&lt;/code&gt; service that relies on &lt;strong&gt;RxJS&lt;/strong&gt;. The &lt;em&gt;API&lt;/em&gt; uses &lt;code&gt;observables&lt;/code&gt; and the &lt;code&gt;observer&lt;/code&gt; pattern to allow for a fluent experience that is rich and robust.
 Getting started is straight-forward and simple. Before too long you&amp;rsquo;ll be taking advantage of the feature-full set of &lt;strong&gt;Reactive Extensions&lt;/strong&gt; and thinking in terms of data streams.

@@ -76,3 +76,21 @@ Here is where I have been and where I'm going to be, I hope to see you there!
     "12u" "wi.net-ug.jpg" "WI .NET User Group - 2017"
     "0u$" "" ""
     "date" >}}
+
+{{< img-fit
+    "0u" "" ""
+    "12u" "chi-js.jpg" "Chicago JS Meetup - 2017"
+    "0u$" "" ""
+    "date" >}}
+
+{{< img-fit
+    "8u" "chi-coder-conf.jpg" "Chicago Coders Conference - 2017"
+    "4u" "chi-coder-conf-2.jpg" "Chicago Coders Conference 2 - 2017"
+    "0u$" "" ""
+    "date" >}}
+
+{{< img-fit
+    "0u" "" ""
+    "12u" "chi-js-2.jpg" "Chicago JS Meetup - 2017"
+    "0u$" "" ""
+    "date" >}}

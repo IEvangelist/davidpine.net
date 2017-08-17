@@ -1,13 +1,266 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>.NET on IEvangelist</title>
-    <link>http://davidpine.net/categories/index.net/</link>
-    <description>Recent content in .NET on IEvangelist</description>
+    <title>.net on IEvangelist</title>
+    <link>http://davidpine.net/categories/.net/index.xml</link>
+    <description>Recent content in .net on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Jul 2017 00:00:00 +0000</lastBuildDate>
+<<<<<<< HEAD
+    <lastBuildDate>Wed, 16 Aug 2017 00:00:00 +0000</lastBuildDate>
+=======
+>>>>>>> c929a95f15e6d2bb07dbdb876907a6ef0a3e6c5e
     <atom:link href="http://davidpine.net/categories/.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Demystifying .NET Standard</title>
+      <link>http://davidpine.net/blog/dot-net-standard-demystified/</link>
+      <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/dot-net-standard-demystified/</guid>
+      <description>
+
+&lt;h1 id=&#34;intro:25e21f0afa689597cb12cf94537509e8&#34;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;Monday, August 14&lt;sup&gt;th&lt;/sup&gt; was an amazing day to be a &lt;code&gt;.NET&lt;/code&gt; developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; What is this &lt;code&gt;.NET Standard&lt;/code&gt; thing?
+&lt;p/&gt; What does it mean to target &lt;code&gt;.NET Standard&lt;/code&gt; versus &lt;code&gt;.NET Core&lt;/code&gt;, or even the &lt;code&gt;.NET Framework&lt;/code&gt;?
+&lt;p/&gt; As a developer, what &lt;code&gt;.NET&lt;/code&gt; should I target and why?
+&lt;p/&gt; Are Portable Class Libraries (PCLs) dead?
+&lt;cite&gt;Developer Community&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;All of these questions have already been answered, you just have to know where to look. In this post I will provide some invaluable resources and educate those of you who are still confused.&lt;/p&gt;
+
+&lt;h2 id=&#34;announcements:25e21f0afa689597cb12cf94537509e8&#34;&gt;Announcements&lt;/h2&gt;
+
+&lt;p&gt;Here are all the recent announcements, feel free to spend some time checking them out &amp;ndash; be sure to come back.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blogs.msdn.microsoft.com/webdev/2017/08/14/announcing-asp-net-core-2-0/&#34; target=&#34;_blank&#34;&gt;The ASP.NET team is proud to announce general availability of ASP.NET Core 2.0.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-core-2-0/&#34; target=&#34;_blank&#34;&gt;.NET Core 2.0 is available today August 14, as a final release&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/&#34; target=&#34;_blank&#34;&gt;The .NET Standard 2.0 specification is now complete&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blogs.msdn.microsoft.com/visualstudio/2017/08/14/visual-studio-2017-version-15-3-released/&#34; target=&#34;_blank&#34;&gt;Visual Studio 17 version 15.3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start by answering all these common questions.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-href-https-docs-microsoft-com-en-us-dotnet-standard-net-standard-target-blank-net-standard-i-class-fa-fa-external-link-aria-hidden-true-i-a:25e21f0afa689597cb12cf94537509e8&#34;&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/standard/net-standard/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.NET Standard&lt;/code&gt; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;If the name &lt;a href=&#34;https://github.com/terrajobst&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Immo Landwerth&lt;/em&gt;&lt;/a&gt; doesn&amp;rsquo;t ring a bell, perhaps &lt;a href=&#34;https://twitter.com/terrajobst&#34; target=&#34;_blank&#34;&gt;@terrajobst&lt;/a&gt; will? Regardless of whether you&amp;rsquo;ve heard of him before &amp;ndash; you&amp;rsquo;d be wise to remember him now. He is a program manager for Microsoft and has a huge part in the &lt;code&gt;.NET&lt;/code&gt; ecosystem as a whole. Immo has a &lt;code&gt;.NET Standard&lt;/code&gt; video series on &lt;i class=&#34;fa fa-lg fa-youtube&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; and if you do not have time to read this post, by all means &lt;a href=&#34;https://www.youtube.com/playlist?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&#34; target=&#34;_blank&#34;&gt;watch his videos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; &lt;code&gt;.NET Standard&lt;/code&gt; is a specification. It represents a set of APIs that all &lt;code&gt;.NET&lt;/code&gt; platforms have to implement.
+&lt;cite&gt;&lt;a href=&#34;https://youtu.be/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;t=191&#34; target=&#34;_blank&#34;&gt;Immo Landwerth&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Often, the &lt;code&gt;.NET Standard&lt;/code&gt; is mistaken for a runtime. Consider the name &lt;code&gt;.NET Standard&lt;/code&gt; at face value, it has the word &amp;ldquo;standard&amp;rdquo; in it&amp;hellip;because it is not a framework or a core runtime.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; &lt;code&gt;.NET Standard&lt;/code&gt; isn&amp;rsquo;t a runtime, it&amp;rsquo;s a version interface - a list of methods you can use under many different &amp;ldquo;&lt;code&gt;.NETs&lt;/code&gt;&amp;rdquo;.
+&lt;cite&gt;&lt;a href=&#34;https://www.hanselman.com/blog/ExploringRefitAnAutomaticTypesafeRESTLibraryForNETStandard.aspx&#34; target=&#34;_blank&#34;&gt;Scott Hanselman&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As true with all standards (or specifications), implementations can either be compliant or non-compliant. At this point in time there are four &lt;code&gt;.NET&lt;/code&gt; implementations that are &lt;code&gt;.NET Standard 2&lt;/code&gt; compliant. They are as follows, &lt;code&gt;.NET Core&lt;/code&gt;, &lt;code&gt;.NET Framework&lt;/code&gt;, &lt;code&gt;Mono&lt;/code&gt; and &lt;code&gt;Xamarin&lt;/code&gt;. Below is a more comprehensive listing of all the &lt;code&gt;.NET&lt;/code&gt; platforms and their corresponding standard that they implement.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-net-standard-version-table-a-href-https-github-com-dotnet-standard-blob-master-docs-versions-md-net-standard-versions-target-blank-i-class-fa-fa-external-link-aria-hidden-true-i-a:25e21f0afa689597cb12cf94537509e8&#34;&gt;The .NET Standard Version Table &lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions.md#net-standard-versions&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;.NET Standard&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.0.md&#34;&gt;1.0&lt;/a&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md&#34;&gt;1.1&lt;/a&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.2.md&#34;&gt;1.2&lt;/a&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.3.md&#34;&gt;1.3&lt;/a&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.4.md&#34;&gt;1.4&lt;/a&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.5.md&#34;&gt;1.5&lt;/a&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.6.md&#34;&gt;1.6&lt;/a&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md&#34;&gt;2.0&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;.NET Core&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2.0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;.NET Framework&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.5.1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6.1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6.1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6.1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6.1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;Mono&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;5.4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;Xamarin.iOS&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;Xamarin.Mac&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;Xamarin.Android&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7.5&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;Universal Windows Platform&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;vNext&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;vNext&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;vNext&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;Windows&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8.1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;Windows Phone&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8.1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8.1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8.1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;Windows Phone Silverlight&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8.0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;For example, we can see the &lt;code&gt;.NET Framework 4.5&lt;/code&gt; is an implementation of &lt;code&gt;.NET Standard 1.1&lt;/code&gt;. This means that if you&amp;rsquo;re to author a &lt;code&gt;.NET Standard&lt;/code&gt; class library and you target &lt;code&gt;1.1&lt;/code&gt; of the standard, it can run on &lt;code&gt;.NET Core 1.0&lt;/code&gt;, &lt;code&gt;.NET Framework 4.5&lt;/code&gt;, &lt;code&gt;Mono 4.6&lt;/code&gt;, etc&amp;hellip; you get the point now I&amp;rsquo;m sure.&lt;/p&gt;
+
+&lt;h4 id=&#34;the-trade-off:25e21f0afa689597cb12cf94537509e8&#34;&gt;The Trade-off&lt;/h4&gt;
+
+&lt;p&gt;There is a bit of a trade-off though that you should consider. With every version of the &lt;code&gt;.NET Standard&lt;/code&gt; there is an inverse relationship to the number of implementations. The higher the version of the &lt;code&gt;.NET Standard&lt;/code&gt;, the more APIs you have access to. However, there are fewer implementations that exist for higher versions of the &lt;code&gt;.NET Standard&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is typically advised that you target the lowest version of the standard that you can get away with. This allows your code to run in more places, as there are more implementations of lower versioned standards. Portable Class Libraries (or PCLs) have been replaced by the &lt;code&gt;.NET Standard&lt;/code&gt;. If you&amp;rsquo;re like me, you probably want the latest and greatest &amp;ndash; the fullest set of APIs&amp;hellip;and that is ok. As long as you control the environment in which it&amp;rsquo;s consumed, great!&lt;/p&gt;
+
+&lt;h3 id=&#34;net-api-explorer:25e21f0afa689597cb12cf94537509e8&#34;&gt;&lt;code&gt;.NET&lt;/code&gt; API Explorer&lt;/h3&gt;
+
+&lt;p&gt;Microsoft has been hard at work, and their documentation teams have been putting together some incredibly useful ways to consume documentation. As a developer, I typically rely on &lt;strong&gt;StackOverflow&lt;/strong&gt; as a source of truth &amp;ndash; however, I have been finding myself spending more time on the official documentation sites. A big &lt;i class=&#34;fa fa-lg fa-thumbs-o-up&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; to the team for making the &lt;code&gt;.NET&lt;/code&gt; docs so much better than before. They even have a &lt;code&gt;.NET&lt;/code&gt; API Explorer. This is immensely powerful &amp;ndash; in a matter of seconds I can quickly explore APIs and determine if something is lacking.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/api/?view=netstandard-2.0&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2017/08/dot-net-standard-api-explorer.png&#34; alt=&#34;.NET Standard API Explorer&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-href-https-docs-microsoft-com-en-us-dotnet-core-target-blank-net-core-i-class-fa-fa-external-link-aria-hidden-true-i-a:25e21f0afa689597cb12cf94537509e8&#34;&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/core/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.NET Core&lt;/code&gt; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; &lt;code&gt;.NET Core&lt;/code&gt; is a general purpose development platform maintained by Microsoft and the &lt;code&gt;.NET&lt;/code&gt; community on GitHub. It is cross-platform, supporting Windows, macOS and Linux, and can be used in device, cloud, and embedded/IoT scenarios.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The obvious advantages are that &lt;code&gt;.NET Core&lt;/code&gt; is cross-platform and open source. Unlike &lt;code&gt;.NET Framework&lt;/code&gt; that is neither of those two things.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-href-https-docs-microsoft-com-en-us-dotnet-framework-target-blank-net-framework-i-class-fa-fa-external-link-aria-hidden-true-i-a:25e21f0afa689597cb12cf94537509e8&#34;&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/framework/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.NET Framework&lt;/code&gt; &lt;i class=&#34;fa fa-external-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;If you have been a &lt;code&gt;.NET&lt;/code&gt; developer for more than a few years, then you should already be familiar with the &lt;code&gt;.NET Framework&lt;/code&gt;. This is what you have been developing on and targeting forever. However, with the introduction of &lt;code&gt;.NET Standard&lt;/code&gt; and &lt;code&gt;.NET Core&lt;/code&gt;, that is likely to change. You no longer have to limit your OS or platform to Windows.&lt;/p&gt;
+
+&lt;h2 id=&#34;net-foundation:25e21f0afa689597cb12cf94537509e8&#34;&gt;&lt;code&gt;.NET Foundation&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;With all the &lt;code&gt;.NET&lt;/code&gt; terms flying around the web, it felt appropriate to throw another one at you.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; The &lt;code&gt;.NET Foundation&lt;/code&gt; is an independent organization to foster open development and collaboration around the &lt;code&gt;.NET&lt;/code&gt; ecosystem. It serves as a forum for community and commercial developers alike to broaden and strengthen the future of the &lt;code&gt;.NET&lt;/code&gt; ecosystem by promoting openness and community participation to encourage innovation.
+&lt;cite&gt;www.dotnetfoundation.org&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Be sure to visit their site and get involved!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://dotnetfoundation.org/&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2017/08/dot-net-fondation.png&#34; alt=&#34;.NET Foundation&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion:25e21f0afa689597cb12cf94537509e8&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;.NET&lt;/code&gt; ecosystem is rapidly evolving! With open source and cross-platform being two key priorities, you&amp;rsquo;re in good hands. When developing for &lt;code&gt;.NET&lt;/code&gt; be familiar with what version of the &lt;code&gt;.NET Standard&lt;/code&gt; suits your needs &amp;ndash; and target accordingly.&lt;/p&gt;
+
+&lt;h3 id=&#34;resources:25e21f0afa689597cb12cf94537509e8&#34;&gt;Resources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/standard/net-standard&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.NET Standard - Microsoft Docs&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/core/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.NET Core - Microsoft Docs&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/framework/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;.NET Framework - Microsoft Docs&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Perusing C# 7.1</title>
@@ -215,7 +468,7 @@ if (dog != null)
       <guid>http://davidpine.net/blog/exploring-csharp-seven/</guid>
       <description>
 
-&lt;h1 id=&#34;intro:0efe24a7225e878a472913ac049c49a3&#34;&gt;Intro&lt;/h1&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
 
 &lt;p&gt;Since we have all been actively celebrating the 20&lt;sup&gt;th&lt;/sup&gt; anniversary of &lt;strong&gt;Visual Studio&lt;/strong&gt;, it felt appropriate to post about &lt;strong&gt;C# 7&lt;/strong&gt;!
 In this post we will explore the features that make &lt;strong&gt;C# 7&lt;/strong&gt; so promising. I&amp;rsquo;ve put together a demonstration &lt;strong&gt;C# 7&lt;/strong&gt; project, that is available
@@ -240,7 +493,7 @@ In this post we will explore the features that make &lt;strong&gt;C# 7&lt;/stron
 &lt;li&gt;Numeric literal syntax improvements&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;pattern-matching:0efe24a7225e878a472913ac049c49a3&#34;&gt;Pattern Matching&lt;/h2&gt;
+&lt;h2 id=&#34;pattern-matching&#34;&gt;Pattern Matching&lt;/h2&gt;
 
 &lt;p&gt;With &lt;strong&gt;C# 7&lt;/strong&gt; we welcomed the concept of &amp;ldquo;patterns&amp;rdquo;. This concept allows for the extraction of information when a variable is tested for a certain &amp;ldquo;shape&amp;rdquo; and matches a
 specified pattern. We&amp;rsquo;re able to leverage the &amp;ldquo;shape&amp;rdquo; from which we matched on as a declared variable in scope, consuming it as we deem necessary. This is referred to as
@@ -254,7 +507,7 @@ It is commonly employed in, and considered a prime characteristic of, object-ori
 
 &lt;p&gt;Dynamic dispatch is nothing new to &lt;strong&gt;C#&lt;/strong&gt;, and has been around forever. &lt;strong&gt;C# 7&lt;/strong&gt; exposes this functionality via constant and type patterns.&lt;/p&gt;
 
-&lt;h3 id=&#34;constant-patterns:0efe24a7225e878a472913ac049c49a3&#34;&gt;Constant Patterns&lt;/h3&gt;
+&lt;h3 id=&#34;constant-patterns&#34;&gt;Constant Patterns&lt;/h3&gt;
 
 &lt;p&gt;Constant pattern &lt;code&gt;null&lt;/code&gt;, similar to &lt;code&gt;(obj == null)&lt;/code&gt;.&lt;/p&gt;
 
@@ -271,7 +524,7 @@ It is commonly employed in, and considered a prime characteristic of, object-ori
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;type-patterns:0efe24a7225e878a472913ac049c49a3&#34;&gt;Type Patterns&lt;/h3&gt;
+&lt;h3 id=&#34;type-patterns&#34;&gt;Type Patterns&lt;/h3&gt;
 
 &lt;p&gt;Look closely at this syntax. This is where we start mixing metaphors. Prior to &lt;strong&gt;C# 7&lt;/strong&gt; we could use the &amp;ldquo;is&amp;rdquo; expression to do simple type assertions
 &lt;code&gt;obj is [type]&lt;/code&gt;. Additionally, we all know how to declare a variable &lt;code&gt;int i&lt;/code&gt;. This new syntax merges these concepts together and is more compound and
@@ -369,7 +622,7 @@ its type in the variable &lt;code&gt;c&lt;/code&gt;. Likewise, if the &lt;code&g
 evaluates to &lt;code&gt;true&lt;/code&gt; - we will then execute the square &lt;code&gt;case&lt;/code&gt; label. If the &lt;code&gt;shape&lt;/code&gt; is an instance of a &lt;code&gt;Rectangle&lt;/code&gt; but not a square, we execute the
 &amp;ldquo;Rectangle&amp;rdquo; &lt;code&gt;case&lt;/code&gt; label. Notice we still have &lt;code&gt;default&lt;/code&gt; fall-thru. Finally, we can also have a &amp;ldquo;null&amp;rdquo; &lt;code&gt;case&lt;/code&gt; label.&lt;/p&gt;
 
-&lt;h2 id=&#34;out-variables:0efe24a7225e878a472913ac049c49a3&#34;&gt;&lt;code&gt;out&lt;/code&gt; variables&lt;/h2&gt;
+&lt;h2 id=&#34;out-variables&#34;&gt;&lt;code&gt;out&lt;/code&gt; variables&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;.NET&lt;/code&gt; developers are more than familiar with the &lt;code&gt;Try*&lt;/code&gt; pattern, but as a refresher this is what it looks like. Imagine we are trying to parse
 a &lt;code&gt;System.String&lt;/code&gt; input value as a &lt;code&gt;System.Int32&lt;/code&gt;. Imagine that the consumer doesn&amp;rsquo;t really care if it is parsed, they&amp;rsquo;re fine with a &lt;code&gt;default(int)&lt;/code&gt;
@@ -415,7 +668,7 @@ more expressively:&lt;/p&gt;
 well. Additionally, we can use the &lt;code&gt;var&lt;/code&gt; keyword for our declaration. And since the &lt;code&gt;result&lt;/code&gt; variable is in scope we can use it as both return cases.
 If unable to be parsed, it is in fact a &lt;code&gt;default(int)&lt;/code&gt; anyways.&lt;/p&gt;
 
-&lt;h2 id=&#34;tuples:0efe24a7225e878a472913ac049c49a3&#34;&gt;Tuples&lt;/h2&gt;
+&lt;h2 id=&#34;tuples&#34;&gt;Tuples&lt;/h2&gt;
 
 &lt;p&gt;Most developers are familiar with &lt;code&gt;System.Tuple&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt;. This &lt;code&gt;class&lt;/code&gt; has served us well all the while it has been around.
 One of the advantages is that it exposes &lt;code&gt;readonly&lt;/code&gt; fields - from the values that it is instantiated with. This
@@ -467,7 +720,7 @@ these tuples not being very API friendly. Let&amp;rsquo;s explore how we can giv
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;deconstruction:0efe24a7225e878a472913ac049c49a3&#34;&gt;Deconstruction&lt;/h3&gt;
+&lt;h3 id=&#34;deconstruction&#34;&gt;Deconstruction&lt;/h3&gt;
 
 &lt;p&gt;Now that we see how we can instantiate a &lt;code&gt;ValueTuple&lt;/code&gt;, let&amp;rsquo;s take a look at how we can declare one for usage.&lt;/p&gt;
 
@@ -533,13 +786,13 @@ method can be deconstructed. Consider the following:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;comparing-anonymous-object-vs-valuetuple:0efe24a7225e878a472913ac049c49a3&#34;&gt;Comparing Anonymous &lt;code&gt;object&lt;/code&gt; vs. &lt;code&gt;ValueTuple&lt;/code&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;comparing-anonymous-object-vs-valuetuple&#34;&gt;Comparing Anonymous &lt;code&gt;object&lt;/code&gt; vs. &lt;code&gt;ValueTuple&lt;/code&gt;&lt;/h4&gt;
 
 &lt;p&gt;At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
 a &lt;code&gt;ValueTuple&lt;/code&gt; is a &lt;code&gt;struct&lt;/code&gt; - value type. Also, you can only return an anonymous object from a method as an &lt;code&gt;object&lt;/code&gt; which isn&amp;rsquo;t very API friendly.
 Within a fluent &lt;code&gt;LINQ&lt;/code&gt; chained method anonymous objects are great and will still be normal for projection.&lt;/p&gt;
 
-&lt;h2 id=&#34;local-functions:0efe24a7225e878a472913ac049c49a3&#34;&gt;Local Functions&lt;/h2&gt;
+&lt;h2 id=&#34;local-functions&#34;&gt;Local Functions&lt;/h2&gt;
 
 &lt;p&gt;At first glance, local functions seem a bit odd. I&amp;rsquo;ve heard people say, &amp;ldquo;this method is starting to look like a class&amp;rdquo;. At first,
 I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick
@@ -601,13 +854,13 @@ comparison of the two, note the benefits of local functions as they compare to l
 &lt;p&gt;It is vital to understand that local functions are &lt;strong&gt;not&lt;/strong&gt; a replacement for &lt;code&gt;Action&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt; or &lt;code&gt;Func&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt;. These delegate declarations are still
 needed as parameters to enable lambda expression arguments. If you see the &lt;strong&gt;#notasugly&lt;/strong&gt; hashtag, this was coined by Mads Torgersen.&lt;/p&gt;
 
-&lt;h3 id=&#34;more-efficient:0efe24a7225e878a472913ac049c49a3&#34;&gt;More efficient&lt;/h3&gt;
+&lt;h3 id=&#34;more-efficient&#34;&gt;More efficient&lt;/h3&gt;
 
 &lt;p&gt;When using local functions, there is no &lt;code&gt;object&lt;/code&gt; created - unlike delegates that require an object for it to be used. Likewise, local functions
 help to alleviate another issue with lambdas in that they do not need to implicitly capture a variable longer than it is potentially needed.
 In &lt;strong&gt;C#&lt;/strong&gt; lambdas capture values by reference, meaning that garbage collection may not be able to correctly clean up code that is &amp;ldquo;allocatey&amp;rdquo;.&lt;/p&gt;
 
-&lt;h4 id=&#34;declaration:0efe24a7225e878a472913ac049c49a3&#34;&gt;Declaration&lt;/h4&gt;
+&lt;h4 id=&#34;declaration&#34;&gt;Declaration&lt;/h4&gt;
 
 &lt;p&gt;With local functions, the declaration of the local function can actually occur after the &lt;code&gt;return&lt;/code&gt; statement - as long as it is within the method body
 in which it is consumed. If you&amp;rsquo;re familiar with some of the implementations of the &lt;code&gt;LINQ&lt;/code&gt; extension methods on &lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;, you would know a lot
@@ -651,7 +904,7 @@ imagine that the &lt;code&gt;.Select&lt;/code&gt; extension method was implement
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;throw-expressions:0efe24a7225e878a472913ac049c49a3&#34;&gt;&lt;code&gt;throw&lt;/code&gt; expressions&lt;/h1&gt;
+&lt;h1 id=&#34;throw-expressions&#34;&gt;&lt;code&gt;throw&lt;/code&gt; expressions&lt;/h1&gt;
 
 &lt;p&gt;Leveraging some pre-existing &lt;strong&gt;C#&lt;/strong&gt; functionality - &lt;code&gt;null&lt;/code&gt; coalescing, we can now &lt;code&gt;throw&lt;/code&gt; when a value is evaluated as &lt;code&gt;null&lt;/code&gt;. A common validation
 mechanism is to &lt;code&gt;throw&lt;/code&gt; if an argument is &lt;code&gt;null&lt;/code&gt;. Consider the following:&lt;/p&gt;
@@ -687,7 +940,7 @@ mechanism is to &lt;code&gt;throw&lt;/code&gt; if an argument is &lt;code&gt;nul
 
 &lt;p&gt;If the given &lt;code&gt;provider&lt;/code&gt; argument is &lt;code&gt;null&lt;/code&gt; we&amp;rsquo;ll coalesce over to the &lt;code&gt;throw&lt;/code&gt; expression.&lt;/p&gt;
 
-&lt;h1 id=&#34;from-c-6-to-c-7-then-and-now:0efe24a7225e878a472913ac049c49a3&#34;&gt;From C# 6 to C# 7, then and now!&lt;/h1&gt;
+&lt;h1 id=&#34;from-c-6-to-c-7-then-and-now&#34;&gt;From C# 6 to C# 7, then and now!&lt;/h1&gt;
 
 &lt;p&gt;I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
 made sense to share it here - Enjoy!!&lt;/p&gt;

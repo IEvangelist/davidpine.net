@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>asp.net-core on IEvangelist</title>
-    <link>http://davidpine.net/categories/asp.net-core/index.xml</link>
-    <description>Recent content in asp.net-core on IEvangelist</description>
+    <title>ASP.NET Core on IEvangelist</title>
+    <link>http://davidpine.net/categories/asp/index.net-core/</link>
+    <description>Recent content in ASP.NET Core on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/asp.net-core/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,7 +17,7 @@
       <guid>http://davidpine.net/blog/overriding-default-di/</guid>
       <description>
 
-&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;h1 id=&#34;overview:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;In &lt;strong&gt;.NET&lt;/strong&gt; it&amp;rsquo;s really easy to create your own interfaces and implementations. Likewise, it&amp;rsquo;s seemingly effortless to register them for dependency injection. But it is not always
 obvious how to override existing implementations.  Let&amp;rsquo;s discuss various aspects of &amp;ldquo;dependency injection&amp;rdquo; and how you can override the &amp;ldquo;framework-provided services&amp;rdquo;.&lt;/p&gt;
@@ -25,7 +26,7 @@ obvious how to override existing implementations.  Let&amp;rsquo;s discuss vario
 with their corresponding IP addresses.  This would allow system administrators to monitor for potential attackers. This would require our &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application to have
 custom logging implemented.&lt;/p&gt;
 
-&lt;h2 id=&#34;logging&#34;&gt;Logging&lt;/h2&gt;
+&lt;h2 id=&#34;logging:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Logging&lt;/h2&gt;
 
 &lt;p&gt;Luckily &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ASP.NET Core Logging&lt;/code&gt;&lt;/a&gt; is simple to use and is a first-class
 citizen within &lt;code&gt;ASP.NET Core&lt;/code&gt;.&lt;/p&gt;
@@ -51,7 +52,7 @@ looks like:&lt;/p&gt;
 &lt;p&gt;As you can see, it is rather simple. It adds two &lt;code&gt;ServiceDescriptor&lt;/code&gt; instances to the &lt;code&gt;IServiceCollection&lt;/code&gt;, effectively registering the given service type to the
 corresponding implementation type.&lt;/p&gt;
 
-&lt;h4 id=&#34;following-the-rabbit-down-the-hole&#34;&gt;Following the rabbit down the hole&lt;/h4&gt;
+&lt;h4 id=&#34;following-the-rabbit-down-the-hole:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Following the rabbit down the hole&lt;/h4&gt;
 
 &lt;p&gt;When you create a new &lt;code&gt;ASP.NET Core&lt;/code&gt; project from &lt;strong&gt;Visual Studio&lt;/strong&gt;, all the templates follow the same pattern. They have the &lt;code&gt;Program.cs&lt;/code&gt; file with a &lt;code&gt;Main&lt;/code&gt; method that looks
 very similar to this:&lt;/p&gt;
@@ -70,7 +71,7 @@ very similar to this:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h6 id=&#34;templates-program-cs&#34;&gt;Templates &lt;code&gt;Program.cs&lt;/code&gt;&lt;/h6&gt;
+&lt;h6 id=&#34;templates-program-cs:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Templates &lt;code&gt;Program.cs&lt;/code&gt;&lt;/h6&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -100,7 +101,7 @@ internally wraps itself in a &lt;code&gt;using&lt;/code&gt;. If you were wonderi
             creates services then invokes services.AddLogging()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;a-few-words-on-the-service-descriptor&#34;&gt;A few words on the Service Descriptor&lt;/h3&gt;
+&lt;h3 id=&#34;a-few-words-on-the-service-descriptor:d7c1ff5c185090641e598e96532d52e8&#34;&gt;A few words on the Service Descriptor&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class is an object that &lt;em&gt;describes&lt;/em&gt; a &lt;em&gt;service&lt;/em&gt;, and this is used by dependency injection. In other words, instances of the &lt;code&gt;ServiceDescriptor&lt;/code&gt; are
 descriptions of services. The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class exposes several static methods that allow its instantiation.&lt;/p&gt;
@@ -110,7 +111,7 @@ descriptions of services. The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class e
 and its implementation is mapped to the &lt;code&gt;LoggerFactory&lt;/code&gt;. Likewise, the generic type &lt;code&gt;typeof(ILogger&amp;lt;&amp;gt;)&lt;/code&gt; is mapped to &lt;code&gt;typeof(Logger&amp;lt;&amp;gt;)&lt;/code&gt;. This is just one of the several key
 &amp;ldquo;Framework-Provided Services&amp;rdquo; that are registered.&lt;/p&gt;
 
-&lt;h2 id=&#34;putting-it-together&#34;&gt;Putting it together&lt;/h2&gt;
+&lt;h2 id=&#34;putting-it-together:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Putting it together&lt;/h2&gt;
 
 &lt;p&gt;Now we know that the framework is providing all implementations of &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt;, and resolving them as their &lt;code&gt;Logger&amp;lt;T&amp;gt;&lt;/code&gt;. We also know that we could write our own implementation of
 the &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt; interface. Being that this is open-source
@@ -225,12 +226,12 @@ method do the following:&lt;/p&gt;
 precaution. We know that with each request we get the &lt;code&gt;HttpContext&lt;/code&gt; from the &lt;code&gt;IHttpContextAccessor&lt;/code&gt;, and from this we have the &lt;code&gt;User&lt;/code&gt;. This is what is passed to each
 &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id=&#34;conclusion:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Conclusion&lt;/h1&gt;
 
 &lt;p&gt;This approach is valid for overriding any of the various framework-provided service implementations. It is simply a matter of knowing the correct &lt;code&gt;ServiceLifetime&lt;/code&gt; for your
 specific needs. Likewise, it is a good idea to leverage the open-source libraries of the framework for inspiration. With this you can take finite control of your web-stack.&lt;/p&gt;
 
-&lt;h1 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h1&gt;
+&lt;h1 id=&#34;further-reading:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Further Reading&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection&#34; target=&#34;_blank&#34;&gt;
@@ -248,13 +249,13 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
       <guid>http://davidpine.net/blog/principal-architecture-changes/</guid>
       <description>
 
-&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;h1 id=&#34;overview:7e1a3c88d019532475826e491625ef2c&#34;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;Like the title claims, if you&amp;rsquo;re using &lt;code&gt;ASP.NET Core&lt;/code&gt; and expecting the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; or &lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; to be populated you&amp;rsquo;d be wrong. This is not the
 &lt;code&gt;IPrincipal&lt;/code&gt; you&amp;rsquo;re looking for. In this post we&amp;rsquo;ll discuss what happened and what you need to do now. Additionally we&amp;rsquo;ll cover all the peripheral benefits as a result of this
 change.&lt;/p&gt;
 
-&lt;h2 id=&#34;history&#34;&gt;History&lt;/h2&gt;
+&lt;h2 id=&#34;history:7e1a3c88d019532475826e491625ef2c&#34;&gt;History&lt;/h2&gt;
 
 &lt;p&gt;If you have ever done any &lt;strong&gt;.NET Framework&lt;/strong&gt; development, you&amp;rsquo;ve probably seen the &lt;code&gt;Thread&lt;/code&gt; class. You&amp;rsquo;re probably familiar with the
 &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt;&lt;/a&gt; member. This member of the &lt;code&gt;Thread&lt;/code&gt; class
@@ -296,7 +297,7 @@ simply doesn&amp;rsquo;t belong. &lt;strong&gt;ASP.NET Core&lt;/strong&gt; is no
 &lt;p&gt;Before diving into this, pop over to &lt;a href=&#34;https://github.com/aspnet/Security/issues/322&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
 Microsoft.AspNetCore.Security &amp;ndash; Issue 332&lt;/a&gt; for more of the back story.&lt;/p&gt;
 
-&lt;h2 id=&#34;thread-currentprincipal-today-in-asp-net-core&#34;&gt;Thread.CurrentPrincipal Today in ASP.NET Core&lt;/h2&gt;
+&lt;h2 id=&#34;thread-currentprincipal-today-in-asp-net-core:7e1a3c88d019532475826e491625ef2c&#34;&gt;Thread.CurrentPrincipal Today in ASP.NET Core&lt;/h2&gt;
 
 &lt;p&gt;As part of the &lt;code&gt;ASP.NET Core&lt;/code&gt; framework, the following middleware packages are provided:&lt;/p&gt;
 
@@ -334,7 +335,7 @@ and give yourself the &lt;code&gt;IPrincipal&lt;/code&gt; you need. If you&amp;r
 the &lt;code&gt;IPrincipal&lt;/code&gt; instance, but remember that this actually comes from the current user - which is
 already accessible via the controller&amp;rsquo;s &lt;code&gt;.User&lt;/code&gt; property.&lt;/p&gt;
 
-&lt;h2 id=&#34;dependency-injection&#34;&gt;Dependency Injection&lt;/h2&gt;
+&lt;h2 id=&#34;dependency-injection:7e1a3c88d019532475826e491625ef2c&#34;&gt;Dependency Injection&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; made dependency injection (DI) a first class citizen, and it is so easy to use. The &lt;code&gt;Startup.cs&lt;/code&gt; by convention has a &lt;code&gt;ConfigureServices&lt;/code&gt; method where you&amp;rsquo;ll
 register the dependencies. In the case of &lt;code&gt;ASP.NET Core&lt;/code&gt; you&amp;rsquo;ll need to do the following:&lt;/p&gt;
@@ -355,7 +356,7 @@ us. With that in place we can now specify that any class asking for an &lt;code&
 This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the &lt;code&gt;ClaimsPrincipal&lt;/code&gt;
 implementation of the &lt;code&gt;IPrincipal&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;h3 id=&#34;example:7e1a3c88d019532475826e491625ef2c&#34;&gt;Example&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using System.Security.Claims;
 using System.Security.Principal;
@@ -379,7 +380,7 @@ public class SampleService : ISampleService
 
 &lt;p&gt;From the example above we can see how simple it is to use dependency injection. Simply define the &lt;code&gt;IPrincipal&lt;/code&gt; as a &lt;code&gt;.cstor&lt;/code&gt; parameter, store it in a field and consume it as needed.&lt;/p&gt;
 
-&lt;h3 id=&#34;but-why&#34;&gt;But Why?&lt;/h3&gt;
+&lt;h3 id=&#34;but-why:7e1a3c88d019532475826e491625ef2c&#34;&gt;But Why?&lt;/h3&gt;
 
 &lt;p&gt;There are a lot of people who feel as though DI is overrated and that it is much easier to ask the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; for its value. While that is easy, it is also
 risky&amp;hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between
@@ -401,7 +402,7 @@ populated accordingly.&lt;/p&gt;
       <guid>http://davidpine.net/blog/asp-net-core-optimization/</guid>
       <description>
 
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;h2 id=&#34;intro:f7ba068c12f661d5bfa879f663970183&#34;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in
 tandem on an &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.&lt;/p&gt;
@@ -416,7 +417,7 @@ are provided a set meal (a bloated dependency chain) containing undesired items.
 
 &lt;p&gt;In other words, all dependencies are pluggable middleware. This provides ultimate control as you have to explicitly &lt;em&gt;opt-in&lt;/em&gt; for the middleware you desire.&lt;/p&gt;
 
-&lt;h3 id=&#34;know-thy-middleware&#34;&gt;Know thy Middleware&lt;/h3&gt;
+&lt;h3 id=&#34;know-thy-middleware:f7ba068c12f661d5bfa879f663970183&#34;&gt;Know thy Middleware&lt;/h3&gt;
 
 &lt;p&gt;Not all middleware is equal. Different middleware serves different purposes (obviously). Try to think of each middleware as its own standalone feature-set. Not all middleware is
 given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In
@@ -426,7 +427,7 @@ fact, this is the case when using static file caching and response compression t
 &lt;p&gt;&lt;p/&gt;The &lt;em&gt;order&lt;/em&gt; in which middleware is added matters and dictates the order of execution during a request.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;installing-dependencies&#34;&gt;Installing Dependencies&lt;/h4&gt;
+&lt;h4 id=&#34;installing-dependencies:f7ba068c12f661d5bfa879f663970183&#34;&gt;Installing Dependencies&lt;/h4&gt;
 
 &lt;p&gt;I wrote a tiny application and put it up on GitHub, check it out &lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; if you want
 to follow along. Now let&amp;rsquo;s install the dependencies we&amp;rsquo;ll need. For static file caching and response compression we need to add two &lt;code&gt;dependencies&lt;/code&gt; to the project.&lt;/p&gt;
@@ -470,7 +471,7 @@ to follow along. Now let&amp;rsquo;s install the dependencies we&amp;rsquo;ll ne
                     [ Install ]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;configuring-startup&#34;&gt;Configuring Startup&lt;/h3&gt;
+&lt;h3 id=&#34;configuring-startup:f7ba068c12f661d5bfa879f663970183&#34;&gt;Configuring Startup&lt;/h3&gt;
 
 &lt;p&gt;There are two common nomenclatures that exist for wiring up middleware in your startup classes, the &lt;code&gt;.Add*&lt;/code&gt; and &lt;code&gt;.Use*&lt;/code&gt; extension methods. The &lt;code&gt;.Add*&lt;/code&gt; calls are intended to add
 services to the &lt;code&gt;IServiceCollection&lt;/code&gt; instance, ensuring that they are ready for &lt;em&gt;usage&lt;/em&gt;. The &lt;code&gt;.Use*&lt;/code&gt; calls specify that you want to use the middleware and makes the assumption
@@ -518,7 +519,7 @@ namespace IEvangelist.AspNetCore.Optimization
 
 &lt;p&gt;There are several types defined by default in &lt;strong&gt;ASP.NET Core&lt;/strong&gt; class &lt;code&gt;ResponseCompressionDefaults.MimeTypes&lt;/code&gt;, we are simply expanding that to include &amp;ldquo;SVG&amp;rdquo; images and the &amp;ldquo;Woff2&amp;rdquo; fonts.&lt;/p&gt;
 
-&lt;h3 id=&#34;order-exemplified&#34;&gt;Order Exemplified&lt;/h3&gt;
+&lt;h3 id=&#34;order-exemplified:f7ba068c12f661d5bfa879f663970183&#34;&gt;Order Exemplified&lt;/h3&gt;
 
 &lt;p&gt;Consider the following:&lt;/p&gt;
 
@@ -578,7 +579,7 @@ While we do have static file middleware, we didn&amp;rsquo;t know that &amp;ldqu
 expression. This expression can be used to delegate the preperation of the response. Notice we&amp;rsquo;re simply setting the &lt;code&gt;Cache-Control&lt;/code&gt; header to a &amp;ldquo;max-age&amp;rdquo; of a week. That was
 pretty simple, hey?!&lt;/p&gt;
 
-&lt;h3 id=&#34;compression-awareness&#34;&gt;Compression Awareness&lt;/h3&gt;
+&lt;h3 id=&#34;compression-awareness:f7ba068c12f661d5bfa879f663970183&#34;&gt;Compression Awareness&lt;/h3&gt;
 
 &lt;p&gt;It&amp;rsquo;s all the little things! The response compression middleware boasts deterministic compression, i.e.; if the
 &lt;a href=&#34;https://github.com/aspnet/KestrelHttpServer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;KestrelHttpServer&lt;/code&gt;&lt;/a&gt; is running behind the
@@ -590,15 +591,15 @@ pretty simple, hey?!&lt;/p&gt;
 &lt;li&gt;Whether or not the response needs to be compressed&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;h3 id=&#34;results:f7ba068c12f661d5bfa879f663970183&#34;&gt;Results&lt;/h3&gt;
 
 &lt;p&gt;Let&amp;rsquo;s spend some time examining the results of our response optimization efforts.&lt;/p&gt;
 
-&lt;h4 id=&#34;before&#34;&gt;Before&lt;/h4&gt;
+&lt;h4 id=&#34;before:f7ba068c12f661d5bfa879f663970183&#34;&gt;Before&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/before.png&#34; alt=&#34;Before&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;total-s&#34;&gt;Total(s)&lt;/h5&gt;
+&lt;h5 id=&#34;total-s:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 549 KB transfered | ... | ... 
 &lt;/code&gt;&lt;/pre&gt;
@@ -612,11 +613,11 @@ Accept-Ranges: bytes
 ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;after&#34;&gt;After&lt;/h4&gt;
+&lt;h4 id=&#34;after:f7ba068c12f661d5bfa879f663970183&#34;&gt;After&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/after.png&#34; alt=&#34;After&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;total-s-1&#34;&gt;Total(s)&lt;/h5&gt;
+&lt;h5 id=&#34;total-s-1:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 175 KB transfered | ... | ... 
 &lt;/code&gt;&lt;/pre&gt;
@@ -636,17 +637,17 @@ Accept-Ranges: bytes
 ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;subsequent-cached-requests&#34;&gt;Subsequent (Cached) Requests&lt;/h4&gt;
+&lt;h4 id=&#34;subsequent-cached-requests:f7ba068c12f661d5bfa879f663970183&#34;&gt;Subsequent (Cached) Requests&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/cached.png&#34; alt=&#34;Cached&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;let-s-summarize&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
+&lt;h3 id=&#34;let-s-summarize:f7ba068c12f661d5bfa879f663970183&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
 
 &lt;p&gt;We learned some of the basics about &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Together we implemented a response optimization strategy that included deterministic response compression, as well
 as static file caching. We learned some of the common patterns and naming conventions for integrating with &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Finally, we have a good understanding of
 the &lt;strong&gt;ASP.NET Core&lt;/strong&gt; request pipeline middleware precedence.&lt;/p&gt;
 
-&lt;h3 id=&#34;source-code&#34;&gt;Source Code&lt;/h3&gt;
+&lt;h3 id=&#34;source-code:f7ba068c12f661d5bfa879f663970183&#34;&gt;Source Code&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;
@@ -664,7 +665,7 @@ the &lt;strong&gt;ASP.NET Core&lt;/strong&gt; request pipeline middleware preced
       <guid>http://davidpine.net/blog/the-global-json/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h1 id=&#34;introduction:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Introduction&lt;/h1&gt;
 
 &lt;p&gt;As I&amp;rsquo;m sure you&amp;rsquo;re all aware by now, &lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2016/06/27/announcing-net-core-1-0/&#34;&gt;Monday June 27&lt;sup&gt;th&lt;/sup&gt;&lt;/a&gt; was a
 special day for those of you who were anticipating the release of  &lt;code&gt;.NET Core&lt;/code&gt; and &lt;code&gt;ASP.NET Core&lt;/code&gt;. While the &amp;ldquo;core&amp;rdquo; frameworks and runtimes are RTM, the
@@ -694,7 +695,7 @@ an improvement to said package, what does that work-flow look like?&lt;/p&gt;
 &lt;p&gt;What if I told you, that headache is all but gone and you will never have to go through those agonizing steps again! Say it ain&amp;rsquo;t so
 (queue &lt;a href=&#34;https://youtu.be/ENXvZ9YRjbo&#34; target=&#34;_blank&#34;&gt;Weezer&lt;/a&gt;).&lt;/p&gt;
 
-&lt;h2 id=&#34;global-json&#34;&gt;Global.json&lt;/h2&gt;
+&lt;h2 id=&#34;global-json:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Global.json&lt;/h2&gt;
 
 &lt;p&gt;The &lt;code&gt;global.json&lt;/code&gt; file sits out at the solution directory-level and literally has one of the simplest &lt;code&gt;JSON&lt;/code&gt; schemas you will ever see. The default templates
 generate the following (for the &lt;a href=&#34;http://json.schemastore.org/global&#34;&gt;full schema&lt;/a&gt;):&lt;/p&gt;
@@ -716,7 +717,7 @@ property is an array of strings. It&amp;rsquo;s defined as the following:&lt;/p&
 
 &lt;p&gt;These folders are search locations for resolving dependencies, where projects take precedence over packages.&lt;/p&gt;
 
-&lt;h3 id=&#34;projects-over-packages&#34;&gt;Projects over Packages&lt;/h3&gt;
+&lt;h3 id=&#34;projects-over-packages:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Projects over Packages&lt;/h3&gt;
 
 &lt;p&gt;Assume you&amp;rsquo;re developing in a project, namely &lt;code&gt;IEvangelist.NetCore.App&lt;/code&gt; and it takes a dependency on &lt;code&gt;IEvangelist.NetCore.ClassLib&lt;/code&gt; and &lt;code&gt;IEvangelist.NetCore.Services&lt;/code&gt;. These
 dependencies are packages (outside the solution) and you can use the &lt;code&gt;global.json/projects&lt;/code&gt; array to your advantage. Using our imaginations, let us find a need
@@ -732,24 +733,24 @@ we can now use a relative path like so:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;before&#34;&gt;Before&lt;/h4&gt;
+&lt;h4 id=&#34;before:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Before&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/07/before.jpg&#34; alt=&#34;Before global.json changes&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;after&#34;&gt;After&lt;/h4&gt;
+&lt;h4 id=&#34;after:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;After&lt;/h4&gt;
 
 &lt;p&gt;After saving these changes to the &lt;code&gt;global.json&lt;/code&gt; you&amp;rsquo;ll notice &lt;strong&gt;Visual Studio&lt;/strong&gt; pull this project into solution, but outside of the &lt;code&gt;src&lt;/code&gt; folder. Now when
 you debug you can actually step into the source and treat it like any other source code you have. Project dependencies are resolved by way of their &lt;code&gt;project.json&lt;/code&gt; being discovered.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/07/after.jpg&#34; alt=&#34;After global.json changes&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;open-source-for-everyone&#34;&gt;Open Source for Everyone&lt;/h3&gt;
+&lt;h3 id=&#34;open-source-for-everyone:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Open Source for Everyone&lt;/h3&gt;
 
 &lt;p&gt;One of the biggest advantages in my opinion is the ability to pull down source from &lt;code&gt;github&lt;/code&gt; that I rely on and source-step into it. For example, I have been developing with &lt;code&gt;ASP.NET
 Core&lt;/code&gt; since &lt;strong&gt;RC1&lt;/strong&gt;, nearly eight months!! With the power of the &lt;code&gt;global.json&lt;/code&gt; I can pull down source that I&amp;rsquo;m relying on in a package and fulfill my understanding of it
 as it executes. Simply amazing!&lt;/p&gt;
 
-&lt;h2 id=&#34;further-reading&#34;&gt;Further reading&lt;/h2&gt;
+&lt;h2 id=&#34;further-reading:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Further reading&lt;/h2&gt;
 
 &lt;p&gt;For more details, these are some additional links and points of reference.&lt;/p&gt;
 
@@ -768,7 +769,7 @@ as it executes. Simply amazing!&lt;/p&gt;
       <guid>http://davidpine.net/blog/migrating-to-rc2/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h1 id=&#34;introduction:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Introduction&lt;/h1&gt;
 
 &lt;p&gt;On Monday, May 16&lt;sup&gt;th&lt;/sup&gt; 2016 there was an amazing announcement from the &lt;strong&gt;.NET Blog&lt;/strong&gt; team!&lt;/p&gt;
 
@@ -779,13 +780,13 @@ as it executes. Simply amazing!&lt;/p&gt;
 &lt;p&gt;This post will serve as a guide that walks you through the steps as I experienced them from migrating existing &lt;code&gt;ASP.NET Core RC1&lt;/code&gt; applications to &lt;code&gt;ASP.NET Core RC2&lt;/code&gt;.
 It is worth mentioning that I&amp;rsquo;m am targeting the &lt;code&gt;.NET 4.6&lt;/code&gt; framework. So, I &lt;em&gt;do not&lt;/em&gt; cover the &lt;code&gt;.netcoreapp&lt;/code&gt; or &lt;code&gt;netstandard&lt;/code&gt; TFMs (target framework monikers).&lt;/p&gt;
 
-&lt;h2 id=&#34;tooling&#34;&gt;Tooling&lt;/h2&gt;
+&lt;h2 id=&#34;tooling:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Tooling&lt;/h2&gt;
 
 &lt;p&gt;The &lt;strong&gt;RC2&lt;/strong&gt; release brings the &lt;code&gt;.NET Core CLI&lt;/code&gt; to the forefront, and with that all the other command line tooling that
 you&amp;rsquo;ve grown accustomed to should be stricken from your environment, i.e.; &lt;code&gt;DNX&lt;/code&gt;, &lt;code&gt;DNU&lt;/code&gt;, and &lt;code&gt;DNVM&lt;/code&gt;. Let&amp;rsquo;s start with the
 removal of all these utilities.&lt;/p&gt;
 
-&lt;h3 id=&#34;removing-dnvm&#34;&gt;Removing DNVM&lt;/h3&gt;
+&lt;h3 id=&#34;removing-dnvm:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Removing DNVM&lt;/h3&gt;
 
 &lt;p&gt;Believe it or not, you might have a dated version of the &lt;strong&gt;DNVM CLI&lt;/strong&gt; and in order to invoke the &lt;code&gt;uninstall&lt;/code&gt; you might have to first
 perform an &lt;code&gt;update-self&lt;/code&gt; command. Doing so will ensure that you have the latest version, which will contain the &lt;code&gt;uninstall&lt;/code&gt; command.
@@ -799,7 +800,7 @@ From a &lt;code&gt;cmd&lt;/code&gt; window &lt;em&gt;running as admininistrator&
 &lt;pre&gt;&lt;code&gt;dnvm uninstall
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;verification&#34;&gt;Verification&lt;/h4&gt;
+&lt;h4 id=&#34;verification:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Verification&lt;/h4&gt;
 
 &lt;p&gt;From a new &lt;code&gt;cmd&lt;/code&gt; window, the &lt;code&gt;dnvm&lt;/code&gt; command should result in the following:&lt;/p&gt;
 
@@ -807,7 +808,7 @@ From a &lt;code&gt;cmd&lt;/code&gt; window &lt;em&gt;running as admininistrator&
 &#39;dnvm&#39; is not recognized as an internal or external command, operable program or batch file.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;removing-dnx-dnu&#34;&gt;Removing DNX &amp;amp; DNU&lt;/h3&gt;
+&lt;h3 id=&#34;removing-dnx-dnu:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Removing DNX &amp;amp; DNU&lt;/h3&gt;
 
 &lt;p&gt;From a &lt;code&gt;cmd&lt;/code&gt; line window, execute &lt;code&gt;dnx&lt;/code&gt; - you should see something similar to this as output:&lt;/p&gt;
 
@@ -864,7 +865,7 @@ directory from windows explorer and delete the &lt;code&gt;.dnx&lt;/code&gt; dir
 should be able to execute the &lt;code&gt;dnx&lt;/code&gt; and &lt;code&gt;dnu&lt;/code&gt; commands again from a &lt;code&gt;cmd&lt;/code&gt; window and the system should complain that they are not
 recognized.&lt;/p&gt;
 
-&lt;h4 id=&#34;verification-1&#34;&gt;Verification&lt;/h4&gt;
+&lt;h4 id=&#34;verification-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Verification&lt;/h4&gt;
 
 &lt;p&gt;From a new &lt;code&gt;cmd&lt;/code&gt; window, the &lt;code&gt;dnx&lt;/code&gt; and &lt;code&gt;dnu&lt;/code&gt; commands should result in the following:&lt;/p&gt;
 
@@ -876,7 +877,7 @@ recognized.&lt;/p&gt;
 &#39;dnu&#39; is not recognized as an internal or external command, operable program or batch file.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;environment-variables&#34;&gt;Environment Variables&lt;/h3&gt;
+&lt;h3 id=&#34;environment-variables:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Environment Variables&lt;/h3&gt;
 
 &lt;p&gt;Unfortunately, the &lt;code&gt;PATH&lt;/code&gt; environment variable is not cleaned up and this needs to be done manually.&lt;/p&gt;
 
@@ -900,11 +901,11 @@ C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-upda
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/05/edit-vars.png&#34; alt=&#34;Edit User Variables&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;net-core-cli&#34;&gt;.NET Core CLI&lt;/h3&gt;
+&lt;h3 id=&#34;net-core-cli:0349d6d87cad08484fba4056f258e4f0&#34;&gt;.NET Core CLI&lt;/h3&gt;
 
 &lt;p&gt;Simply follow &lt;a href=&#34;https://www.microsoft.com/net/core#windows&#34;&gt;these instuctions&lt;/a&gt;. Once you&amp;rsquo;re able to &amp;ldquo;Run the app&amp;rdquo; from the new &lt;strong&gt;CLI&lt;/strong&gt; you&amp;rsquo;re good to go.&lt;/p&gt;
 
-&lt;h4 id=&#34;review&#34;&gt;Review&lt;/h4&gt;
+&lt;h4 id=&#34;review:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Review&lt;/h4&gt;
 
 &lt;p&gt;You should the following checklist fully satisfied at this point.&lt;/p&gt;
 
@@ -914,20 +915,20 @@ C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-upda
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i&#34;&gt;Edit by Hand &lt;i class=&#34;fa fa-pencil-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Edit by Hand &lt;i class=&#34;fa fa-pencil-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/h2&gt;
 
 &lt;p&gt;There were changes to &lt;strong&gt;APIs&lt;/strong&gt; which required changes to implementation aspects of the source code. Additionally, &lt;code&gt;namespace&lt;/code&gt;
 changes such as (but not limited to) &lt;code&gt;Microsoft.AspNet.*&lt;/code&gt; to &lt;code&gt;Microsoft.AspNetCore.*&lt;/code&gt;. But the bulk of the work was really in the hand-editing
 of &lt;code&gt;.sln&lt;/code&gt;, &lt;code&gt;global.json&lt;/code&gt;, &lt;code&gt;.xproj&lt;/code&gt;, &lt;code&gt;project.json&lt;/code&gt;, etc. files. Let&amp;rsquo;s look at what changed.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-sln-file&#34;&gt;The &lt;code&gt;.sln&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-sln-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;.sln&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Change the &lt;strong&gt;VisualStudioVersion&lt;/strong&gt; from &lt;code&gt;14.0.24720.0&lt;/code&gt; to &lt;code&gt;14.0.25123.0&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;VisualStudioVersion = 14.0.25123.0
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-global-json-file&#34;&gt;The &lt;code&gt;global.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-global-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;global.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Change the &lt;strong&gt;version&lt;/strong&gt; from &lt;code&gt;1.0.0-rc1-update1&lt;/code&gt; to &lt;code&gt;1.0.0-preview1-002702&lt;/code&gt;.&lt;/p&gt;
 
@@ -939,18 +940,18 @@ of &lt;code&gt;.sln&lt;/code&gt;, &lt;code&gt;global.json&lt;/code&gt;, &lt;code
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-xproj-file&#34;&gt;The &lt;code&gt;.xproj&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-xproj-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;.xproj&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;.xproj&lt;/code&gt; files are a little more involved, there are a few items that are required to be changed. In &lt;strong&gt;RC1&lt;/strong&gt; we had proprerties that
 were specific to &lt;strong&gt;DNX&lt;/strong&gt;, now we replace these with &lt;strong&gt;DOTNET&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DNX\Microsoft.DNX.Props&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.Props&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
@@ -959,25 +960,25 @@ were specific to &lt;strong&gt;DNX&lt;/strong&gt;, now we replace these with &lt
 &lt;p&gt;Additionally, we need to change the targets. This one requires that you know the type of project you&amp;rsquo;re editing, for example &lt;em&gt;&amp;ldquo;class library&amp;rdquo;&lt;/em&gt; vs. &lt;em&gt;&amp;ldquo;web site&amp;rdquo;&lt;/em&gt;. In &lt;strong&gt;RC1&lt;/strong&gt;
 there was only one target, but with &lt;strong&gt;RC2&lt;/strong&gt; they are differeniated.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-1&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DNX\Microsoft.DNX.targets&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-class-library&#34;&gt;RC2 (class library)&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-class-library:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2 (class library)&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.targets&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-web&#34;&gt;RC2 (web)&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-web:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2 (web)&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-project-json-file&#34;&gt;The &lt;code&gt;project.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-project-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;project.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;There has been a large reworking of the &lt;code&gt;project.json&lt;/code&gt; file - detailed &lt;a href=&#34;https://github.com/aspnet/Announcements/issues/175&#34;&gt;here&lt;/a&gt;. I will not be covering all
 of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official
@@ -986,7 +987,7 @@ of the changes here, but I do intend calling attention to some of the observatio
 &lt;p&gt;We will look at various sections of the &lt;code&gt;project.json&lt;/code&gt; file changes. Let&amp;rsquo;s start with replacing &lt;code&gt;compilationOptionsbuildOptions&lt;/code&gt; with &lt;code&gt;buildOptions&lt;/code&gt;, and notice that
 we are adding much more options than before.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-2&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;compilationOptions&amp;quot;: {
   &amp;quot;emitEntryPoint&amp;quot;: true,
@@ -994,9 +995,9 @@ we are adding much more options than before.&lt;/p&gt;
 },
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-1&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;buildOptions&amp;quot;: {       
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;buildOptions&amp;quot;: {		
   &amp;quot;emitEntryPoint&amp;quot;: true,
   &amp;quot;warningsAsErrors&amp;quot;: true,
   &amp;quot;preserveCompilationContext&amp;quot;: true,
@@ -1026,11 +1027,11 @@ we are adding much more options than before.&lt;/p&gt;
 },
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-web-config-file&#34;&gt;The &lt;code&gt;web.config&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-web-config-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;web.config&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Now, &lt;strong&gt;IIS&lt;/strong&gt; is a little smarter and is starting to recognize &lt;strong&gt;ASP.NET Core&lt;/strong&gt; a little more.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-3&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-3:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
 &amp;lt;configuration&amp;gt;
@@ -1044,7 +1045,7 @@ we are adding much more options than before.&lt;/p&gt;
 &amp;lt;/configuration&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-2&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
 &amp;lt;configuration&amp;gt;
@@ -1059,7 +1060,7 @@ we are adding much more options than before.&lt;/p&gt;
 &amp;lt;/configuration&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-hosting-json-file&#34;&gt;The &lt;code&gt;hosting.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-hosting-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;hosting.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;With the release of &lt;strong&gt;RC2&lt;/strong&gt;, the &lt;code&gt;project.json&lt;/code&gt; schema removed the &lt;code&gt;webroot&lt;/code&gt; property. Now in order to specify the websites&amp;rsquo; static content directory we need to
 create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like this.&lt;/p&gt;
@@ -1069,12 +1070,12 @@ create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like 
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-appsettings-json-file&#34;&gt;The &lt;code&gt;appsettings.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-appsettings-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;appsettings.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;This was a minor change, but if you forgot to change this - then you&amp;rsquo;ll end up with a runtime exception. The &lt;code&gt;Logging:LogLevel:Default&lt;/code&gt; should now be
 &lt;code&gt;Debug&lt;/code&gt; as &lt;code&gt;Verbose&lt;/code&gt; was removed altogether.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-4&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-4:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;Logging&amp;quot;: {
       &amp;quot;IncludeScopes&amp;quot;: false,
@@ -1085,7 +1086,7 @@ create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like 
       }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-3&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-3:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;Logging&amp;quot;: {
       &amp;quot;IncludeScopes&amp;quot;: false,
@@ -1096,44 +1097,44 @@ create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like 
       }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-launchsettings-json-file&#34;&gt;The &lt;code&gt;launchSettings.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-launchsettings-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;launchSettings.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;environmentVariables&lt;/code&gt; changed, such that the key name for the environment is no longer referred to as &amp;ldquo;Hosting:Environment&amp;rdquo;.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-5&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-5:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;environmentVariables&amp;quot;: {
   &amp;quot;Hosting:Environment&amp;quot;: &amp;quot;Development&amp;quot; // &amp;lt; -- Change &amp;quot;Hosting:Environment&amp;quot;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-4&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-4:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;environmentVariables&amp;quot;: {
   &amp;quot;ASPNETCORE_ENVIRONMENT&amp;quot;: &amp;quot;Development&amp;quot; // &amp;lt; -- To &amp;quot;ASPNETCORE_ENVIRONMENT&amp;quot;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-cs-files&#34;&gt;The &lt;code&gt;*.cs&lt;/code&gt; files&lt;/h3&gt;
+&lt;h3 id=&#34;the-cs-files:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;*.cs&lt;/code&gt; files&lt;/h3&gt;
 
 &lt;p&gt;Some of these were very simple to fix. After updating your &lt;code&gt;project.json&lt;/code&gt; with the latest &lt;strong&gt;RC2&lt;/strong&gt; versions - some changes are as simple as a &lt;code&gt;namespace&lt;/code&gt; change (but others are more involed).&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-6&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-6:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNet.*;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-5&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-5:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNetCore.*;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;api-changes&#34;&gt;API changes&lt;/h3&gt;
+&lt;h3 id=&#34;api-changes:0349d6d87cad08484fba4056f258e4f0&#34;&gt;API changes&lt;/h3&gt;
 
 &lt;p&gt;There was an attempt to unify some of the APIs as it pertains to consistency. As such, I had to make the following changes to my projects.
 The &lt;code&gt;IApplicationBuilder.Use*&lt;/code&gt; pattern now takes a new &lt;code&gt;*Options&lt;/code&gt; instance rather than an &lt;code&gt;Action&amp;lt;*Options&amp;gt;&lt;/code&gt;, providing more control to the consumer.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-7&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-7:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;app.UseCookieAuthentication(options =&amp;gt;
 {
@@ -1146,7 +1147,7 @@ The &lt;code&gt;IApplicationBuilder.Use*&lt;/code&gt; pattern now takes a new &l
 });
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-6&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-6:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;app.UseCookieAuthentication(new CookieAuthenticationOptions
 {
@@ -1164,7 +1165,7 @@ you can no longer do so with the &lt;strong&gt;RC2&lt;/strong&gt; release.&lt;/p
 
 &lt;p&gt;Wherever you were using the &lt;code&gt;IApplication&lt;/code&gt; interface, you should be able to instead use the &lt;code&gt;IWebHost&lt;/code&gt; interface.&lt;/p&gt;
 
-&lt;h3 id=&#34;controllers-as-services&#34;&gt;Controllers as Services&lt;/h3&gt;
+&lt;h3 id=&#34;controllers-as-services:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Controllers as Services&lt;/h3&gt;
 
 &lt;p&gt;In &lt;strong&gt;RC1&lt;/strong&gt;, there was a nice little feature that allowed for any &lt;code&gt;Type&lt;/code&gt; to exist in a list of plausible controller/services - meaning that you could basically register external controllers as
 valid API and View entry points into your hosting application. You simply needed to add the types via the following:&lt;/p&gt;
@@ -1182,7 +1183,7 @@ valid API and View entry points into your hosting application. You simply needed
 builder.AddControllersAsServices();
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-startup-ctor&#34;&gt;The Startup &lt;code&gt;.ctor&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;the-startup-ctor:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The Startup &lt;code&gt;.ctor&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;One little change, you&amp;rsquo;re now required to explicitly set the base path and you can do so with the following.&lt;/p&gt;
 
@@ -1198,7 +1199,7 @@ builder.AddControllersAsServices();
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-program-cs-file&#34;&gt;The &lt;code&gt;Program.cs&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-program-cs-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;Program.cs&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Yes, we are now a console application&amp;hellip;so we&amp;rsquo;ll need this for our entry point.&lt;/p&gt;
 
@@ -1220,12 +1221,12 @@ builder.AddControllersAsServices();
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;breaking-changes&#34;&gt;Breaking changes&lt;/h2&gt;
+&lt;h2 id=&#34;breaking-changes:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Breaking changes&lt;/h2&gt;
 
 &lt;p&gt;For a complete listing of all the announcements, please visit the official
 &lt;a href=&#34;https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2&#34;&gt;&lt;strong&gt;ASP.NET &lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Repo&lt;/strong&gt;&lt;/a&gt; announcements issue.&lt;/p&gt;
 
-&lt;h2 id=&#34;further-reading&#34;&gt;Further reading&lt;/h2&gt;
+&lt;h2 id=&#34;further-reading:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Further reading&lt;/h2&gt;
 
 &lt;p&gt;The previous steps were really to get your environment in an &lt;strong&gt;RC2&lt;/strong&gt; ready state, but there is so much more you can learn that has changed.
 I encourage bookmarking and reading the following articles as time permits.&lt;/p&gt;
@@ -1237,7 +1238,7 @@ I encourage bookmarking and reading the following articles as time permits.&lt;/
 &lt;li&gt;&lt;a href=&#34;http://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html&#34;&gt;&lt;strong&gt;Writing Libraries with Cross Platform Tools&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;There, that really wasn&amp;rsquo;t too bad - was it? I&amp;rsquo;m certain that I didn&amp;rsquo;t cover everything and that I probably missed something. I hope that this was helpful, please feel free to share this!&lt;/p&gt;
 </description>

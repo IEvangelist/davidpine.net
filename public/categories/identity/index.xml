@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>identity on IEvangelist</title>
-    <link>http://davidpine.net/categories/identity/index.xml</link>
-    <description>Recent content in identity on IEvangelist</description>
+    <title>Identity on IEvangelist</title>
+    <link>http://davidpine.net/categories/identity/</link>
+    <description>Recent content in Identity on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/identity/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,13 +17,13 @@
       <guid>http://davidpine.net/blog/principal-architecture-changes/</guid>
       <description>
 
-&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;h1 id=&#34;overview:7e1a3c88d019532475826e491625ef2c&#34;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;Like the title claims, if you&amp;rsquo;re using &lt;code&gt;ASP.NET Core&lt;/code&gt; and expecting the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; or &lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; to be populated you&amp;rsquo;d be wrong. This is not the
 &lt;code&gt;IPrincipal&lt;/code&gt; you&amp;rsquo;re looking for. In this post we&amp;rsquo;ll discuss what happened and what you need to do now. Additionally we&amp;rsquo;ll cover all the peripheral benefits as a result of this
 change.&lt;/p&gt;
 
-&lt;h2 id=&#34;history&#34;&gt;History&lt;/h2&gt;
+&lt;h2 id=&#34;history:7e1a3c88d019532475826e491625ef2c&#34;&gt;History&lt;/h2&gt;
 
 &lt;p&gt;If you have ever done any &lt;strong&gt;.NET Framework&lt;/strong&gt; development, you&amp;rsquo;ve probably seen the &lt;code&gt;Thread&lt;/code&gt; class. You&amp;rsquo;re probably familiar with the
 &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt;&lt;/a&gt; member. This member of the &lt;code&gt;Thread&lt;/code&gt; class
@@ -64,7 +65,7 @@ simply doesn&amp;rsquo;t belong. &lt;strong&gt;ASP.NET Core&lt;/strong&gt; is no
 &lt;p&gt;Before diving into this, pop over to &lt;a href=&#34;https://github.com/aspnet/Security/issues/322&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
 Microsoft.AspNetCore.Security &amp;ndash; Issue 332&lt;/a&gt; for more of the back story.&lt;/p&gt;
 
-&lt;h2 id=&#34;thread-currentprincipal-today-in-asp-net-core&#34;&gt;Thread.CurrentPrincipal Today in ASP.NET Core&lt;/h2&gt;
+&lt;h2 id=&#34;thread-currentprincipal-today-in-asp-net-core:7e1a3c88d019532475826e491625ef2c&#34;&gt;Thread.CurrentPrincipal Today in ASP.NET Core&lt;/h2&gt;
 
 &lt;p&gt;As part of the &lt;code&gt;ASP.NET Core&lt;/code&gt; framework, the following middleware packages are provided:&lt;/p&gt;
 
@@ -102,7 +103,7 @@ and give yourself the &lt;code&gt;IPrincipal&lt;/code&gt; you need. If you&amp;r
 the &lt;code&gt;IPrincipal&lt;/code&gt; instance, but remember that this actually comes from the current user - which is
 already accessible via the controller&amp;rsquo;s &lt;code&gt;.User&lt;/code&gt; property.&lt;/p&gt;
 
-&lt;h2 id=&#34;dependency-injection&#34;&gt;Dependency Injection&lt;/h2&gt;
+&lt;h2 id=&#34;dependency-injection:7e1a3c88d019532475826e491625ef2c&#34;&gt;Dependency Injection&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; made dependency injection (DI) a first class citizen, and it is so easy to use. The &lt;code&gt;Startup.cs&lt;/code&gt; by convention has a &lt;code&gt;ConfigureServices&lt;/code&gt; method where you&amp;rsquo;ll
 register the dependencies. In the case of &lt;code&gt;ASP.NET Core&lt;/code&gt; you&amp;rsquo;ll need to do the following:&lt;/p&gt;
@@ -123,7 +124,7 @@ us. With that in place we can now specify that any class asking for an &lt;code&
 This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the &lt;code&gt;ClaimsPrincipal&lt;/code&gt;
 implementation of the &lt;code&gt;IPrincipal&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;h3 id=&#34;example:7e1a3c88d019532475826e491625ef2c&#34;&gt;Example&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using System.Security.Claims;
 using System.Security.Principal;
@@ -147,7 +148,7 @@ public class SampleService : ISampleService
 
 &lt;p&gt;From the example above we can see how simple it is to use dependency injection. Simply define the &lt;code&gt;IPrincipal&lt;/code&gt; as a &lt;code&gt;.cstor&lt;/code&gt; parameter, store it in a field and consume it as needed.&lt;/p&gt;
 
-&lt;h3 id=&#34;but-why&#34;&gt;But Why?&lt;/h3&gt;
+&lt;h3 id=&#34;but-why:7e1a3c88d019532475826e491625ef2c&#34;&gt;But Why?&lt;/h3&gt;
 
 &lt;p&gt;There are a lot of people who feel as though DI is overrated and that it is much easier to ask the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; for its value. While that is easy, it is also
 risky&amp;hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between

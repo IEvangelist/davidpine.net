@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on IEvangelist</title>
-    <link>http://davidpine.net/blog/index.xml</link>
+    <link>http://davidpine.net/blog/</link>
     <description>Recent content in Blogs on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -465,7 +465,7 @@ if (dog != null)
       <guid>http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</guid>
       <description>
 
-&lt;h1 id=&#34;story-time&#34;&gt;Story Time&lt;/h1&gt;
+&lt;h1 id=&#34;story-time:63ba67321c591922a170805947a2568e&#34;&gt;Story Time&lt;/h1&gt;
 
 &lt;p&gt;This is my third year organizing &lt;a href=&#34;http://www.mkedotnet.com/&#34; target=&#34;_blank&#34;&gt;MKE DOT NET&lt;/a&gt;, so I&amp;rsquo;ve been accumulating plenty of interesting stories. Last year I was fortunate enough to have convinced Scott Hanselman to be our keynote speaker. Yes, &amp;ldquo;the &lt;a href=&#34;https://twitter.com/shanselman&#34; target=&#34;_blank&#34;&gt;Scott Hanselman&lt;/a&gt;&amp;rdquo; - arguably the worlds most influential person in the tech industry. I was his ride to and from the airport and the conversations we had actually led to several key changes. As a result &lt;a href=&#34;http://www.mkedotnet.com/&#34; target=&#34;_blank&#34;&gt;MKE DOT NET&lt;/a&gt; will be even better than ever before!&lt;/p&gt;
 
@@ -489,7 +489,7 @@ if (dog != null)
 
 &lt;p&gt;He was referring to the decor of the hotel (very 60&amp;rsquo;s) and that the halls had a stale scent of mildew (the hotel has a water-park in it). Having just taken a sip of water, I nearly spit it out of my mouth in laughter - finally someone said what we had all been thinking! This resulted in a change of venue for 2017 and years to come. We&amp;rsquo;ll be at &lt;a href=&#34;https://www.paysbig.com/&#34; target=&#34;_blank&#34;&gt;Potawatomi Hotel &amp;amp; Casino&lt;/a&gt; this year. The new joke is obviously that it will now smell like cigarette smoke instead.&lt;/p&gt;
 
-&lt;h2 id=&#34;inclusion&#34;&gt;Inclusion&lt;/h2&gt;
+&lt;h2 id=&#34;inclusion:63ba67321c591922a170805947a2568e&#34;&gt;Inclusion&lt;/h2&gt;
 
 &lt;p&gt;The truth was simple. &lt;a href=&#34;http://www.mkedotnet.com/2016/speakers/&#34; target=&#34;_blank&#34;&gt;MKE DOT NET 2016&lt;/a&gt; only had one woman speaker and ironically she was speaking about Diversity. We were ready to lick our wounds and rise above it. I&amp;rsquo;m so proud to be part of this change and happy to communicate that &lt;a href=&#34;http://www.mkedotnet.com/&#34; target=&#34;_blank&#34;&gt;MKE DOT NET&lt;/a&gt; now takes an active approach to ensure a more diverse speaker lineup.&lt;/p&gt;
 
@@ -497,15 +497,15 @@ if (dog != null)
 
 &lt;p&gt;Of the 24 sessions and including the keynote, we are proud to have eight women speakers this year! If you&amp;rsquo;re a numbers person - that is an &lt;strong&gt;800% increase&lt;/strong&gt; year-over-year and we plan on doing even better as we evolve. We are actively making our conference as inclusive as possible - and we celebrate the communities participation.&lt;/p&gt;
 
-&lt;h2 id=&#34;evolution&#34;&gt;Evolution&lt;/h2&gt;
+&lt;h2 id=&#34;evolution:63ba67321c591922a170805947a2568e&#34;&gt;Evolution&lt;/h2&gt;
 
 &lt;p&gt;We are only going to grow and learn and become a better more cohesive unit as time marches forward. We are evolving! The people who make up the team are so passionate about bringing forth their visions for a better Midwest technical community. But that isn&amp;rsquo;t without conflict or disagreement. In fact our team is great at hashing things out. Not every idea is the best! Knowing how to work together and encouraging ideas is key. We foster an environment which breeds creativity but also bases our direction on results. The team shares a vision and we strive to make that vision obvious.&lt;/p&gt;
 
-&lt;h3 id=&#34;community&#34;&gt;Community&lt;/h3&gt;
+&lt;h3 id=&#34;community:63ba67321c591922a170805947a2568e&#34;&gt;Community&lt;/h3&gt;
 
 &lt;p&gt;Of course none of this would be possible without our strong community. I&amp;rsquo;m proud to play my part and contribute what I can, and I&amp;rsquo;m humbled to be immersed in such a rich pool of technical knowledge and passion. It is inspiring to see the things we&amp;rsquo;re doing and even more so to be involved! Often the hallways of a technical conference are the stomping grounds for some of the best bits of conversation. In my regional speaking engagements this year I&amp;rsquo;m hearing just how amazing we are in the Midwest time and time again. I&amp;rsquo;m grateful for all of these awesome success stories.&lt;/p&gt;
 
-&lt;h3 id=&#34;tools&#34;&gt;Tools&lt;/h3&gt;
+&lt;h3 id=&#34;tools:63ba67321c591922a170805947a2568e&#34;&gt;Tools&lt;/h3&gt;
 
 &lt;p&gt;Being that the entire team cannot always be in the same place at the same time - it is vital to leverage tools that allow everyone on the team to work together. This will serve as a simple listing of some of things that we have used along the way.&lt;/p&gt;
 
@@ -523,7 +523,7 @@ if (dog != null)
 
 &lt;p&gt;A word on the website, we use for source control &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub - &lt;i class=&#34;fa fa-github-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt; and it is actually a static website. It uses &lt;a href=&#34;http://harpjs.com/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;HarpJs&lt;/code&gt;&lt;/a&gt; which sits atop &lt;a href=&#34;https://nodejs.org/en/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;NodeJs&lt;/code&gt;&lt;/a&gt;. Updates are seamless and fast with &lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34;&gt;Visual Studio Code - &lt;i class=&#34;fa fa-file-code-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;closing-story&#34;&gt;Closing Story&lt;/h2&gt;
+&lt;h2 id=&#34;closing-story:63ba67321c591922a170805947a2568e&#34;&gt;Closing Story&lt;/h2&gt;
 
 &lt;p&gt;I spoke at &lt;a href=&#34;https://indycode.amegala.com/&#34; target=&#34;_blank&#34;&gt;Indy.Code()&lt;/a&gt; in Indianapolis back in March, 2017. It was a great experience and the folks over at &lt;a href=&#34;https://www.amegala.com/&#34; target=&#34;_blank&#34;&gt;Amegala&lt;/a&gt; really know how to organize a technical conference! Anyways, prior to one of my talks I was asking the crowd a little about technical conferences in Indianapolis. I was told that &lt;a href=&#34;https://indycode.amegala.com/&#34; target=&#34;_blank&#34;&gt;Indy.Code()&lt;/a&gt; was the first major conference in seven years. When I asked them what they do to fill that void, three of them immediately shouted out.&lt;/p&gt;
 
@@ -533,7 +533,7 @@ if (dog != null)
 
 &lt;p&gt;What a small world, hey! They were extremely excited to learn my role&amp;hellip;and I too shared in their excitement. For in that moment I knew that all the hard work was paying off.&lt;/p&gt;
 
-&lt;h2 id=&#34;thank-you&#34;&gt;Thank you&lt;/h2&gt;
+&lt;h2 id=&#34;thank-you:63ba67321c591922a170805947a2568e&#34;&gt;Thank you&lt;/h2&gt;
 
 &lt;p&gt;A sincere thank you is in order for everyone who makes this possible. Thank you to &lt;a href=&#34;https://twitter.com/LadyNaggaga&#34; target=&#34;_blank&#34;&gt;Maria Naggaga&lt;/a&gt; for not only being willing to speak at &lt;a href=&#34;http://www.mkedotnet.com/&#34; target=&#34;_blank&#34;&gt;MKE DOT NET&lt;/a&gt;, but responding to my ask within minutes - stating that she would be honored! Thank you to the community, the speakers, those who submit who don&amp;rsquo;t get to speak, those of you who attend. Thank you to &lt;a href=&#34;http://www.centare.com/&#34; target=&#34;_blank&#34;&gt;Centare&lt;/a&gt; for supporting all these efforts year-after-year and the investment back into the community. Thank you to all the sub-committees of &lt;a href=&#34;http://www.mkedotnet.com/&#34; target=&#34;_blank&#34;&gt;MKE DOT NET&lt;/a&gt; that give their brilliance and support taking on tasks like, marketing, driving attendance, seeking sponsorship, creating and maintaining the website, deciding on scheduling, venue, meals, logistics, all the countless planning efforts - thank you. Anyone else that I couldn&amp;rsquo;t think of, thank you!&lt;/p&gt;
 </description>
@@ -547,7 +547,7 @@ if (dog != null)
       <guid>http://davidpine.net/blog/typescript-javascript-reimagined/</guid>
       <description>
 
-&lt;h1 id=&#34;first-things-first&#34;&gt;First things First&lt;/h1&gt;
+&lt;h1 id=&#34;first-things-first:983b92988576ed5bc09079031d8a835a&#34;&gt;First things First&lt;/h1&gt;
 
 &lt;p&gt;JavaScript is the world&amp;rsquo;s third most common programming language today. JavaScript was created by &lt;a href=&#34;https://twitter.com/BrendanEich&#34; target=&#34;_blank&#34;&gt;Brendan Eich&lt;/a&gt; in about ten days. It might seem odd that the
 previous two sentences not only exist, but go together&amp;hellip;yet it is true! JavaScript runs seemingly everywhere and applications written in this
@@ -558,7 +558,7 @@ language are only getting larger.&lt;/p&gt;
 &lt;cite&gt;&lt;a href=&#34;https://twitter.com/ahejlsberg&#34; target=&#34;_blank&#34;&gt;Anders Hejlsberg&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;the-good-parts&#34;&gt;&amp;ldquo;The Good Parts&amp;rdquo;&lt;/h2&gt;
+&lt;h2 id=&#34;the-good-parts:983b92988576ed5bc09079031d8a835a&#34;&gt;&amp;ldquo;The Good Parts&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.crockford.com/&#34; target=&#34;_blank&#34;&gt;Douglas Crockford&lt;/a&gt; authored a book &amp;ldquo;JavaScript: The Good Parts&amp;rdquo;, sadly it was a rather short book. If you&amp;rsquo;re a JavaScript developer, knowing &amp;ldquo;the good parts&amp;rdquo;
 is great - but knowing the limitations and shortcomings of a language is even more powerful. Sometimes it feels like JavaScript is a hammer and not every
@@ -566,12 +566,12 @@ problem we&amp;rsquo;re trying to solve is a nail. NodeJs is a great example of 
 Gary Bernhardt&amp;rsquo;s &lt;a href=&#34;https://www.destroyallsoftware.com/talks/wat&#34; target=&#34;_blank&#34;&gt;WAT video&lt;/a&gt;, go ahead &amp;ndash; I&amp;rsquo;ll wait! In all seriousness, JavaScript
 is a great programming language for countless reasons, but it is easy to poke fun at.&lt;/p&gt;
 
-&lt;h3 id=&#34;mental-model&#34;&gt;Mental Model&lt;/h3&gt;
+&lt;h3 id=&#34;mental-model:983b92988576ed5bc09079031d8a835a&#34;&gt;Mental Model&lt;/h3&gt;
 
 &lt;p&gt;I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. There are several key takeaways
 from the debate that I think will stick with me for a while.&lt;/p&gt;
 
-&lt;h4 id=&#34;learn-it&#34;&gt;Learn it&lt;/h4&gt;
+&lt;h4 id=&#34;learn-it:983b92988576ed5bc09079031d8a835a&#34;&gt;Learn it&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;p/&gt; You should learn the JavaScript programming language&lt;/p&gt;
@@ -686,7 +686,7 @@ That is not at all a bad thing! Just look at what you can do with &amp;ldquo;tra
 rely on tooling to help&lt;/strong&gt;. It is simply a pragmatic approach to developing with a true sense of reliability and consistency. Training wheels provide you with the
 confidence and security. Once your TypeScript is compiled to JavaScript, the training wheels are removed and your code is ready to brave the new world!&lt;/p&gt;
 
-&lt;h1 id=&#34;typescript&#34;&gt;TypeScript&lt;/h1&gt;
+&lt;h1 id=&#34;typescript:983b92988576ed5bc09079031d8a835a&#34;&gt;TypeScript&lt;/h1&gt;
 
 &lt;p&gt;I could never compete with the TypeScript site. They have a beautifully composed tutorial, handbook and rich set of documentation. If that is what
 you&amp;rsquo;re looking for - by all means 
@@ -704,14 +704,14 @@ on my thoughts - keep reading.&lt;/p&gt;
 latest version of the ECMAScript standard, while still being about to target all the way back to ES3. Upon compilation, your code is pure JavaScript
 and all the type notations are removed. The static type system is only applicable when working with TypeScript related files.&lt;/p&gt;
 
-&lt;h2 id=&#34;extensions-explained&#34;&gt;Extensions Explained&lt;/h2&gt;
+&lt;h2 id=&#34;extensions-explained:983b92988576ed5bc09079031d8a835a&#34;&gt;Extensions Explained&lt;/h2&gt;
 
 &lt;p&gt;I initially had some confusion about the various file extensions. It was obvious what &lt;code&gt;.ts&lt;/code&gt; and &lt;code&gt;.js&lt;/code&gt; files were, but what were these &lt;code&gt;.map&lt;/code&gt; and &lt;code&gt;.d.ts&lt;/code&gt; files?
 Ironically, &lt;code&gt;.map&lt;/code&gt; files have been around since CoffeeScript and are nothing new. They map JavaScript files to their corresponding abstractions, in the case of
 TypeScript - they map &lt;code&gt;.ts&lt;/code&gt; to &lt;code&gt;.js&lt;/code&gt; files. The &lt;code&gt;.d.ts&lt;/code&gt; files are known as type definitions. They define the public surface area or API if you will, of a given
 library. More detail &lt;a href=&#34;http://stackoverflow.com/a/37063570/2410379&#34; target=&#34;_blank&#34;&gt;here &lt;i class=&#34;fa fa-stack-overflow&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;enough-sales-pitch-show-me-some-code&#34;&gt;Enough Sales Pitch - Show me some code&lt;/h2&gt;
+&lt;h2 id=&#34;enough-sales-pitch-show-me-some-code:983b92988576ed5bc09079031d8a835a&#34;&gt;Enough Sales Pitch - Show me some code&lt;/h2&gt;
 
 &lt;p&gt;The 
 
@@ -756,7 +756,7 @@ TypeScript - but seeing how the resulting JavaScript is really something special
 are assigned to from their indexes. On the &lt;code&gt;DayOfWeek&lt;/code&gt; instance, we declare and assign property &lt;code&gt;Sunday&lt;/code&gt; equal to &lt;code&gt;0&lt;/code&gt;. Likewise,
 we declare and assign property &lt;code&gt;0&lt;/code&gt; equal to the value &lt;code&gt;Sunday&lt;/code&gt;, etc&amp;hellip;&lt;/p&gt;
 
-&lt;h3 id=&#34;type-aliases-generics-and-mapped-types&#34;&gt;Type Aliases, Generics and  Mapped Types&lt;/h3&gt;
+&lt;h3 id=&#34;type-aliases-generics-and-mapped-types:983b92988576ed5bc09079031d8a835a&#34;&gt;Type Aliases, Generics and  Mapped Types&lt;/h3&gt;
 
 &lt;p&gt;I recently learned about the &lt;code&gt;keyof&lt;/code&gt; operator in TypeScript, and wow is it powerful! Let&amp;rsquo;s consider the following mutable object.&lt;/p&gt;
 
@@ -782,13 +782,13 @@ as &lt;code&gt;readonly&lt;/code&gt; members. This leverages the &lt;code&gt;key
 So, now we can return a &lt;code&gt;Readonly&amp;lt;MutableDataBag&amp;lt;T&amp;gt;&amp;gt;&lt;/code&gt; from our API and rest assured knowing that TypeScript prevents it&amp;rsquo;s members from
 being written to.&lt;/p&gt;
 
-&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id=&#34;conclusion:983b92988576ed5bc09079031d8a835a&#34;&gt;Conclusion&lt;/h1&gt;
 
 &lt;p&gt;This is literally just the tip of the iceberg (or even less). TypeScript has truly made JavaScript tolerable.
 TypeScript answers so many questions and addresses so many concerns that it&amp;rsquo;s hard to justify not using&amp;hellip;if you&amp;rsquo;re not using
 TypeScript, there are other options out there. Pick your poison!!&lt;/p&gt;
 
-&lt;h3 id=&#34;resources&#34;&gt;Resources&lt;/h3&gt;
+&lt;h3 id=&#34;resources:983b92988576ed5bc09079031d8a835a&#34;&gt;Resources&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;
@@ -821,7 +821,7 @@ TypeScript, there are other options out there. Pick your poison!!&lt;/p&gt;
       <guid>http://davidpine.net/blog/exploring-csharp-seven/</guid>
       <description>
 
-&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;h1 id=&#34;intro:0efe24a7225e878a472913ac049c49a3&#34;&gt;Intro&lt;/h1&gt;
 
 &lt;p&gt;Since we have all been actively celebrating the 20&lt;sup&gt;th&lt;/sup&gt; anniversary of &lt;strong&gt;Visual Studio&lt;/strong&gt;, it felt appropriate to post about &lt;strong&gt;C# 7&lt;/strong&gt;!
 In this post we will explore the features that make &lt;strong&gt;C# 7&lt;/strong&gt; so promising. I&amp;rsquo;ve put together a demonstration &lt;strong&gt;C# 7&lt;/strong&gt; project, that is available
@@ -846,7 +846,7 @@ In this post we will explore the features that make &lt;strong&gt;C# 7&lt;/stron
 &lt;li&gt;Numeric literal syntax improvements&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;pattern-matching&#34;&gt;Pattern Matching&lt;/h2&gt;
+&lt;h2 id=&#34;pattern-matching:0efe24a7225e878a472913ac049c49a3&#34;&gt;Pattern Matching&lt;/h2&gt;
 
 &lt;p&gt;With &lt;strong&gt;C# 7&lt;/strong&gt; we welcomed the concept of &amp;ldquo;patterns&amp;rdquo;. This concept allows for the extraction of information when a variable is tested for a certain &amp;ldquo;shape&amp;rdquo; and matches a
 specified pattern. We&amp;rsquo;re able to leverage the &amp;ldquo;shape&amp;rdquo; from which we matched on as a declared variable in scope, consuming it as we deem necessary. This is referred to as
@@ -860,7 +860,7 @@ It is commonly employed in, and considered a prime characteristic of, object-ori
 
 &lt;p&gt;Dynamic dispatch is nothing new to &lt;strong&gt;C#&lt;/strong&gt;, and has been around forever. &lt;strong&gt;C# 7&lt;/strong&gt; exposes this functionality via constant and type patterns.&lt;/p&gt;
 
-&lt;h3 id=&#34;constant-patterns&#34;&gt;Constant Patterns&lt;/h3&gt;
+&lt;h3 id=&#34;constant-patterns:0efe24a7225e878a472913ac049c49a3&#34;&gt;Constant Patterns&lt;/h3&gt;
 
 &lt;p&gt;Constant pattern &lt;code&gt;null&lt;/code&gt;, similar to &lt;code&gt;(obj == null)&lt;/code&gt;.&lt;/p&gt;
 
@@ -877,7 +877,7 @@ It is commonly employed in, and considered a prime characteristic of, object-ori
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;type-patterns&#34;&gt;Type Patterns&lt;/h3&gt;
+&lt;h3 id=&#34;type-patterns:0efe24a7225e878a472913ac049c49a3&#34;&gt;Type Patterns&lt;/h3&gt;
 
 &lt;p&gt;Look closely at this syntax. This is where we start mixing metaphors. Prior to &lt;strong&gt;C# 7&lt;/strong&gt; we could use the &amp;ldquo;is&amp;rdquo; expression to do simple type assertions
 &lt;code&gt;obj is [type]&lt;/code&gt;. Additionally, we all know how to declare a variable &lt;code&gt;int i&lt;/code&gt;. This new syntax merges these concepts together and is more compound and
@@ -975,7 +975,7 @@ its type in the variable &lt;code&gt;c&lt;/code&gt;. Likewise, if the &lt;code&g
 evaluates to &lt;code&gt;true&lt;/code&gt; - we will then execute the square &lt;code&gt;case&lt;/code&gt; label. If the &lt;code&gt;shape&lt;/code&gt; is an instance of a &lt;code&gt;Rectangle&lt;/code&gt; but not a square, we execute the
 &amp;ldquo;Rectangle&amp;rdquo; &lt;code&gt;case&lt;/code&gt; label. Notice we still have &lt;code&gt;default&lt;/code&gt; fall-thru. Finally, we can also have a &amp;ldquo;null&amp;rdquo; &lt;code&gt;case&lt;/code&gt; label.&lt;/p&gt;
 
-&lt;h2 id=&#34;out-variables&#34;&gt;&lt;code&gt;out&lt;/code&gt; variables&lt;/h2&gt;
+&lt;h2 id=&#34;out-variables:0efe24a7225e878a472913ac049c49a3&#34;&gt;&lt;code&gt;out&lt;/code&gt; variables&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;.NET&lt;/code&gt; developers are more than familiar with the &lt;code&gt;Try*&lt;/code&gt; pattern, but as a refresher this is what it looks like. Imagine we are trying to parse
 a &lt;code&gt;System.String&lt;/code&gt; input value as a &lt;code&gt;System.Int32&lt;/code&gt;. Imagine that the consumer doesn&amp;rsquo;t really care if it is parsed, they&amp;rsquo;re fine with a &lt;code&gt;default(int)&lt;/code&gt;
@@ -1021,7 +1021,7 @@ more expressively:&lt;/p&gt;
 well. Additionally, we can use the &lt;code&gt;var&lt;/code&gt; keyword for our declaration. And since the &lt;code&gt;result&lt;/code&gt; variable is in scope we can use it as both return cases.
 If unable to be parsed, it is in fact a &lt;code&gt;default(int)&lt;/code&gt; anyways.&lt;/p&gt;
 
-&lt;h2 id=&#34;tuples&#34;&gt;Tuples&lt;/h2&gt;
+&lt;h2 id=&#34;tuples:0efe24a7225e878a472913ac049c49a3&#34;&gt;Tuples&lt;/h2&gt;
 
 &lt;p&gt;Most developers are familiar with &lt;code&gt;System.Tuple&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt;. This &lt;code&gt;class&lt;/code&gt; has served us well all the while it has been around.
 One of the advantages is that it exposes &lt;code&gt;readonly&lt;/code&gt; fields - from the values that it is instantiated with. This
@@ -1073,7 +1073,7 @@ these tuples not being very API friendly. Let&amp;rsquo;s explore how we can giv
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;deconstruction&#34;&gt;Deconstruction&lt;/h3&gt;
+&lt;h3 id=&#34;deconstruction:0efe24a7225e878a472913ac049c49a3&#34;&gt;Deconstruction&lt;/h3&gt;
 
 &lt;p&gt;Now that we see how we can instantiate a &lt;code&gt;ValueTuple&lt;/code&gt;, let&amp;rsquo;s take a look at how we can declare one for usage.&lt;/p&gt;
 
@@ -1139,13 +1139,13 @@ method can be deconstructed. Consider the following:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;comparing-anonymous-object-vs-valuetuple&#34;&gt;Comparing Anonymous &lt;code&gt;object&lt;/code&gt; vs. &lt;code&gt;ValueTuple&lt;/code&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;comparing-anonymous-object-vs-valuetuple:0efe24a7225e878a472913ac049c49a3&#34;&gt;Comparing Anonymous &lt;code&gt;object&lt;/code&gt; vs. &lt;code&gt;ValueTuple&lt;/code&gt;&lt;/h4&gt;
 
 &lt;p&gt;At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
 a &lt;code&gt;ValueTuple&lt;/code&gt; is a &lt;code&gt;struct&lt;/code&gt; - value type. Also, you can only return an anonymous object from a method as an &lt;code&gt;object&lt;/code&gt; which isn&amp;rsquo;t very API friendly.
 Within a fluent &lt;code&gt;LINQ&lt;/code&gt; chained method anonymous objects are great and will still be normal for projection.&lt;/p&gt;
 
-&lt;h2 id=&#34;local-functions&#34;&gt;Local Functions&lt;/h2&gt;
+&lt;h2 id=&#34;local-functions:0efe24a7225e878a472913ac049c49a3&#34;&gt;Local Functions&lt;/h2&gt;
 
 &lt;p&gt;At first glance, local functions seem a bit odd. I&amp;rsquo;ve heard people say, &amp;ldquo;this method is starting to look like a class&amp;rdquo;. At first,
 I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick
@@ -1207,13 +1207,13 @@ comparison of the two, note the benefits of local functions as they compare to l
 &lt;p&gt;It is vital to understand that local functions are &lt;strong&gt;not&lt;/strong&gt; a replacement for &lt;code&gt;Action&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt; or &lt;code&gt;Func&amp;lt;T[,T1...]&amp;gt;&lt;/code&gt;. These delegate declarations are still
 needed as parameters to enable lambda expression arguments. If you see the &lt;strong&gt;#notasugly&lt;/strong&gt; hashtag, this was coined by Mads Torgersen.&lt;/p&gt;
 
-&lt;h3 id=&#34;more-efficient&#34;&gt;More efficient&lt;/h3&gt;
+&lt;h3 id=&#34;more-efficient:0efe24a7225e878a472913ac049c49a3&#34;&gt;More efficient&lt;/h3&gt;
 
 &lt;p&gt;When using local functions, there is no &lt;code&gt;object&lt;/code&gt; created - unlike delegates that require an object for it to be used. Likewise, local functions
 help to alleviate another issue with lambdas in that they do not need to implicitly capture a variable longer than it is potentially needed.
 In &lt;strong&gt;C#&lt;/strong&gt; lambdas capture values by reference, meaning that garbage collection may not be able to correctly clean up code that is &amp;ldquo;allocatey&amp;rdquo;.&lt;/p&gt;
 
-&lt;h4 id=&#34;declaration&#34;&gt;Declaration&lt;/h4&gt;
+&lt;h4 id=&#34;declaration:0efe24a7225e878a472913ac049c49a3&#34;&gt;Declaration&lt;/h4&gt;
 
 &lt;p&gt;With local functions, the declaration of the local function can actually occur after the &lt;code&gt;return&lt;/code&gt; statement - as long as it is within the method body
 in which it is consumed. If you&amp;rsquo;re familiar with some of the implementations of the &lt;code&gt;LINQ&lt;/code&gt; extension methods on &lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt;, you would know a lot
@@ -1257,7 +1257,7 @@ imagine that the &lt;code&gt;.Select&lt;/code&gt; extension method was implement
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;throw-expressions&#34;&gt;&lt;code&gt;throw&lt;/code&gt; expressions&lt;/h1&gt;
+&lt;h1 id=&#34;throw-expressions:0efe24a7225e878a472913ac049c49a3&#34;&gt;&lt;code&gt;throw&lt;/code&gt; expressions&lt;/h1&gt;
 
 &lt;p&gt;Leveraging some pre-existing &lt;strong&gt;C#&lt;/strong&gt; functionality - &lt;code&gt;null&lt;/code&gt; coalescing, we can now &lt;code&gt;throw&lt;/code&gt; when a value is evaluated as &lt;code&gt;null&lt;/code&gt;. A common validation
 mechanism is to &lt;code&gt;throw&lt;/code&gt; if an argument is &lt;code&gt;null&lt;/code&gt;. Consider the following:&lt;/p&gt;
@@ -1293,7 +1293,7 @@ mechanism is to &lt;code&gt;throw&lt;/code&gt; if an argument is &lt;code&gt;nul
 
 &lt;p&gt;If the given &lt;code&gt;provider&lt;/code&gt; argument is &lt;code&gt;null&lt;/code&gt; we&amp;rsquo;ll coalesce over to the &lt;code&gt;throw&lt;/code&gt; expression.&lt;/p&gt;
 
-&lt;h1 id=&#34;from-c-6-to-c-7-then-and-now&#34;&gt;From C# 6 to C# 7, then and now!&lt;/h1&gt;
+&lt;h1 id=&#34;from-c-6-to-c-7-then-and-now:0efe24a7225e878a472913ac049c49a3&#34;&gt;From C# 6 to C# 7, then and now!&lt;/h1&gt;
 
 &lt;p&gt;I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
 made sense to share it here - Enjoy!!&lt;/p&gt;
@@ -1333,7 +1333,7 @@ made sense to share it here - Enjoy!!&lt;/p&gt;
       <guid>http://davidpine.net/blog/overriding-default-di/</guid>
       <description>
 
-&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;h1 id=&#34;overview:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;In &lt;strong&gt;.NET&lt;/strong&gt; it&amp;rsquo;s really easy to create your own interfaces and implementations. Likewise, it&amp;rsquo;s seemingly effortless to register them for dependency injection. But it is not always
 obvious how to override existing implementations.  Let&amp;rsquo;s discuss various aspects of &amp;ldquo;dependency injection&amp;rdquo; and how you can override the &amp;ldquo;framework-provided services&amp;rdquo;.&lt;/p&gt;
@@ -1342,7 +1342,7 @@ obvious how to override existing implementations.  Let&amp;rsquo;s discuss vario
 with their corresponding IP addresses.  This would allow system administrators to monitor for potential attackers. This would require our &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application to have
 custom logging implemented.&lt;/p&gt;
 
-&lt;h2 id=&#34;logging&#34;&gt;Logging&lt;/h2&gt;
+&lt;h2 id=&#34;logging:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Logging&lt;/h2&gt;
 
 &lt;p&gt;Luckily &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ASP.NET Core Logging&lt;/code&gt;&lt;/a&gt; is simple to use and is a first-class
 citizen within &lt;code&gt;ASP.NET Core&lt;/code&gt;.&lt;/p&gt;
@@ -1368,7 +1368,7 @@ looks like:&lt;/p&gt;
 &lt;p&gt;As you can see, it is rather simple. It adds two &lt;code&gt;ServiceDescriptor&lt;/code&gt; instances to the &lt;code&gt;IServiceCollection&lt;/code&gt;, effectively registering the given service type to the
 corresponding implementation type.&lt;/p&gt;
 
-&lt;h4 id=&#34;following-the-rabbit-down-the-hole&#34;&gt;Following the rabbit down the hole&lt;/h4&gt;
+&lt;h4 id=&#34;following-the-rabbit-down-the-hole:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Following the rabbit down the hole&lt;/h4&gt;
 
 &lt;p&gt;When you create a new &lt;code&gt;ASP.NET Core&lt;/code&gt; project from &lt;strong&gt;Visual Studio&lt;/strong&gt;, all the templates follow the same pattern. They have the &lt;code&gt;Program.cs&lt;/code&gt; file with a &lt;code&gt;Main&lt;/code&gt; method that looks
 very similar to this:&lt;/p&gt;
@@ -1387,7 +1387,7 @@ very similar to this:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h6 id=&#34;templates-program-cs&#34;&gt;Templates &lt;code&gt;Program.cs&lt;/code&gt;&lt;/h6&gt;
+&lt;h6 id=&#34;templates-program-cs:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Templates &lt;code&gt;Program.cs&lt;/code&gt;&lt;/h6&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -1417,7 +1417,7 @@ internally wraps itself in a &lt;code&gt;using&lt;/code&gt;. If you were wonderi
             creates services then invokes services.AddLogging()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;a-few-words-on-the-service-descriptor&#34;&gt;A few words on the Service Descriptor&lt;/h3&gt;
+&lt;h3 id=&#34;a-few-words-on-the-service-descriptor:d7c1ff5c185090641e598e96532d52e8&#34;&gt;A few words on the Service Descriptor&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class is an object that &lt;em&gt;describes&lt;/em&gt; a &lt;em&gt;service&lt;/em&gt;, and this is used by dependency injection. In other words, instances of the &lt;code&gt;ServiceDescriptor&lt;/code&gt; are
 descriptions of services. The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class exposes several static methods that allow its instantiation.&lt;/p&gt;
@@ -1427,7 +1427,7 @@ descriptions of services. The &lt;code&gt;ServiceDescriptor&lt;/code&gt; class e
 and its implementation is mapped to the &lt;code&gt;LoggerFactory&lt;/code&gt;. Likewise, the generic type &lt;code&gt;typeof(ILogger&amp;lt;&amp;gt;)&lt;/code&gt; is mapped to &lt;code&gt;typeof(Logger&amp;lt;&amp;gt;)&lt;/code&gt;. This is just one of the several key
 &amp;ldquo;Framework-Provided Services&amp;rdquo; that are registered.&lt;/p&gt;
 
-&lt;h2 id=&#34;putting-it-together&#34;&gt;Putting it together&lt;/h2&gt;
+&lt;h2 id=&#34;putting-it-together:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Putting it together&lt;/h2&gt;
 
 &lt;p&gt;Now we know that the framework is providing all implementations of &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt;, and resolving them as their &lt;code&gt;Logger&amp;lt;T&amp;gt;&lt;/code&gt;. We also know that we could write our own implementation of
 the &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt; interface. Being that this is open-source
@@ -1542,12 +1542,12 @@ method do the following:&lt;/p&gt;
 precaution. We know that with each request we get the &lt;code&gt;HttpContext&lt;/code&gt; from the &lt;code&gt;IHttpContextAccessor&lt;/code&gt;, and from this we have the &lt;code&gt;User&lt;/code&gt;. This is what is passed to each
 &lt;code&gt;ILogger&amp;lt;T&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id=&#34;conclusion:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Conclusion&lt;/h1&gt;
 
 &lt;p&gt;This approach is valid for overriding any of the various framework-provided service implementations. It is simply a matter of knowing the correct &lt;code&gt;ServiceLifetime&lt;/code&gt; for your
 specific needs. Likewise, it is a good idea to leverage the open-source libraries of the framework for inspiration. With this you can take finite control of your web-stack.&lt;/p&gt;
 
-&lt;h1 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h1&gt;
+&lt;h1 id=&#34;further-reading:d7c1ff5c185090641e598e96532d52e8&#34;&gt;Further Reading&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection&#34; target=&#34;_blank&#34;&gt;
@@ -1565,13 +1565,13 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
       <guid>http://davidpine.net/blog/principal-architecture-changes/</guid>
       <description>
 
-&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;h1 id=&#34;overview:7e1a3c88d019532475826e491625ef2c&#34;&gt;Overview&lt;/h1&gt;
 
 &lt;p&gt;Like the title claims, if you&amp;rsquo;re using &lt;code&gt;ASP.NET Core&lt;/code&gt; and expecting the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; or &lt;code&gt;ClaimsPrincipal.Current&lt;/code&gt; to be populated you&amp;rsquo;d be wrong. This is not the
 &lt;code&gt;IPrincipal&lt;/code&gt; you&amp;rsquo;re looking for. In this post we&amp;rsquo;ll discuss what happened and what you need to do now. Additionally we&amp;rsquo;ll cover all the peripheral benefits as a result of this
 change.&lt;/p&gt;
 
-&lt;h2 id=&#34;history&#34;&gt;History&lt;/h2&gt;
+&lt;h2 id=&#34;history:7e1a3c88d019532475826e491625ef2c&#34;&gt;History&lt;/h2&gt;
 
 &lt;p&gt;If you have ever done any &lt;strong&gt;.NET Framework&lt;/strong&gt; development, you&amp;rsquo;ve probably seen the &lt;code&gt;Thread&lt;/code&gt; class. You&amp;rsquo;re probably familiar with the
 &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt;&lt;/a&gt; member. This member of the &lt;code&gt;Thread&lt;/code&gt; class
@@ -1613,7 +1613,7 @@ simply doesn&amp;rsquo;t belong. &lt;strong&gt;ASP.NET Core&lt;/strong&gt; is no
 &lt;p&gt;Before diving into this, pop over to &lt;a href=&#34;https://github.com/aspnet/Security/issues/322&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
 Microsoft.AspNetCore.Security &amp;ndash; Issue 332&lt;/a&gt; for more of the back story.&lt;/p&gt;
 
-&lt;h2 id=&#34;thread-currentprincipal-today-in-asp-net-core&#34;&gt;Thread.CurrentPrincipal Today in ASP.NET Core&lt;/h2&gt;
+&lt;h2 id=&#34;thread-currentprincipal-today-in-asp-net-core:7e1a3c88d019532475826e491625ef2c&#34;&gt;Thread.CurrentPrincipal Today in ASP.NET Core&lt;/h2&gt;
 
 &lt;p&gt;As part of the &lt;code&gt;ASP.NET Core&lt;/code&gt; framework, the following middleware packages are provided:&lt;/p&gt;
 
@@ -1651,7 +1651,7 @@ and give yourself the &lt;code&gt;IPrincipal&lt;/code&gt; you need. If you&amp;r
 the &lt;code&gt;IPrincipal&lt;/code&gt; instance, but remember that this actually comes from the current user - which is
 already accessible via the controller&amp;rsquo;s &lt;code&gt;.User&lt;/code&gt; property.&lt;/p&gt;
 
-&lt;h2 id=&#34;dependency-injection&#34;&gt;Dependency Injection&lt;/h2&gt;
+&lt;h2 id=&#34;dependency-injection:7e1a3c88d019532475826e491625ef2c&#34;&gt;Dependency Injection&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; made dependency injection (DI) a first class citizen, and it is so easy to use. The &lt;code&gt;Startup.cs&lt;/code&gt; by convention has a &lt;code&gt;ConfigureServices&lt;/code&gt; method where you&amp;rsquo;ll
 register the dependencies. In the case of &lt;code&gt;ASP.NET Core&lt;/code&gt; you&amp;rsquo;ll need to do the following:&lt;/p&gt;
@@ -1672,7 +1672,7 @@ us. With that in place we can now specify that any class asking for an &lt;code&
 This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the &lt;code&gt;ClaimsPrincipal&lt;/code&gt;
 implementation of the &lt;code&gt;IPrincipal&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;h3 id=&#34;example:7e1a3c88d019532475826e491625ef2c&#34;&gt;Example&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using System.Security.Claims;
 using System.Security.Principal;
@@ -1696,7 +1696,7 @@ public class SampleService : ISampleService
 
 &lt;p&gt;From the example above we can see how simple it is to use dependency injection. Simply define the &lt;code&gt;IPrincipal&lt;/code&gt; as a &lt;code&gt;.cstor&lt;/code&gt; parameter, store it in a field and consume it as needed.&lt;/p&gt;
 
-&lt;h3 id=&#34;but-why&#34;&gt;But Why?&lt;/h3&gt;
+&lt;h3 id=&#34;but-why:7e1a3c88d019532475826e491625ef2c&#34;&gt;But Why?&lt;/h3&gt;
 
 &lt;p&gt;There are a lot of people who feel as though DI is overrated and that it is much easier to ask the &lt;code&gt;Thread.CurrentPrincipal&lt;/code&gt; for its value. While that is easy, it is also
 risky&amp;hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between
@@ -1718,7 +1718,7 @@ populated accordingly.&lt;/p&gt;
       <guid>http://davidpine.net/blog/building-a-magic-mirror/</guid>
       <description>
 
-&lt;h1 id=&#34;inspiration&#34;&gt;Inspiration&lt;/h1&gt;
+&lt;h1 id=&#34;inspiration:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Inspiration&lt;/h1&gt;
 
 &lt;p&gt;I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators&amp;hellip;some might say,
 &amp;ldquo;I&amp;rsquo;m standing on the shoulders of giants&amp;rdquo;. They would probably we right, and I&amp;rsquo;m okay with that. Earlier this year, I stumbled upon a tweet about someone how created a
@@ -1747,22 +1747,22 @@ mirror. The monitor displays the application. The application is running on a sm
 I thought &amp;ldquo;wow&amp;rdquo; this really is a smart mirror, much to my surprise these were all just static messages (or only dynamic when accounting for the time of day). I was thinking
 to myself, &amp;ldquo;I wonder if I could improve upon this&amp;rdquo;, and that was my motivation!&lt;/p&gt;
 
-&lt;h2 id=&#34;open-source&#34;&gt;Open Source&lt;/h2&gt;
+&lt;h2 id=&#34;open-source:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Open Source&lt;/h2&gt;
 
 &lt;p&gt;If you want to skip out from reading this post, you can checkout my project up on &lt;strong&gt;GitHub&lt;/strong&gt; &amp;nbsp;
 &lt;a href=&#34;https://www.github.com/IEvangelist/Mirror&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &amp;nbsp; IEvangelist.Mirror&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1 id=&#34;hardware&#34;&gt;Hardware&lt;/h1&gt;
+&lt;h1 id=&#34;hardware:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Hardware&lt;/h1&gt;
 
 &lt;p&gt;I was excited when &lt;strong&gt;Microsoft&lt;/strong&gt; started selling the &lt;strong&gt;Raspberry Pi 3, Model B&lt;/strong&gt; - I ordered one immediately.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/pi3.gif&#34; alt=&#34;Raspberry Pi 3&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;specs&#34;&gt;Specs&lt;/h2&gt;
+&lt;h2 id=&#34;specs:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Specs&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/pi-layout.png&#34; alt=&#34;Specs&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;miscellaneous&#34;&gt;Miscellaneous&lt;/h3&gt;
+&lt;h3 id=&#34;miscellaneous:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Miscellaneous&lt;/h3&gt;
 
 &lt;p&gt;Below is a semi-comprehensive listing of all the materials and their corresponding cost that I used for building my magic mirror.&lt;/p&gt;
 
@@ -1829,7 +1829,7 @@ to myself, &amp;ldquo;I wonder if I could improve upon this&amp;rdquo;, and that
 
 &lt;p&gt;Considering the total investment is still under $500 bucks, that&amp;rsquo;s not too bad!&lt;/p&gt;
 
-&lt;h1 id=&#34;os-platform&#34;&gt;OS &amp;ndash; Platform&lt;/h1&gt;
+&lt;h1 id=&#34;os-platform:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;OS &amp;ndash; Platform&lt;/h1&gt;
 
 &lt;p&gt;One of my favorite parts about developing the magic mirror was the fact that I could do so from the comfort of &lt;strong&gt;Visual Studio&lt;/strong&gt; using the worlds most powerful programming
 language today, &lt;strong&gt;C#&lt;/strong&gt;.&lt;/p&gt;
@@ -1863,7 +1863,7 @@ language today, &lt;strong&gt;C#&lt;/strong&gt;.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h1 id=&#34;software&#34;&gt;Software&lt;/h1&gt;
+&lt;h1 id=&#34;software:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Software&lt;/h1&gt;
 
 &lt;p&gt;When people throw around the acronym &lt;strong&gt;IoT&lt;/strong&gt; it can mean a lot of different things. For this specific application, it is essential. Using the built-in &lt;em&gt;WIFI&lt;/em&gt; on the &lt;strong&gt;Pi 3&lt;/strong&gt; we
 can leverage the power of the internet to gather and share information.&lt;/p&gt;
@@ -1885,18 +1885,18 @@ can leverage the power of the internet to gather and share information.&lt;/p&gt
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/layout.png&#34; alt=&#34;Layout&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;components&#34;&gt;Components&lt;/h2&gt;
+&lt;h2 id=&#34;components:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Components&lt;/h2&gt;
 
 &lt;p&gt;From the layout above, it is clear to visualize the key components of the application. Most of these components implement the
 &lt;code&gt;IContextSynthesizer&lt;/code&gt; interface. These implementations are indicators that each component is capable of handling voice commands, and providing a message that is consumable
 by the &lt;strong&gt;UWP&lt;/strong&gt; speech-synthesizer.  More on this later&amp;hellip;&lt;/p&gt;
 
-&lt;h3 id=&#34;weather-forecast&#34;&gt;Weather &amp;ndash; Forecast&lt;/h3&gt;
+&lt;h3 id=&#34;weather-forecast:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Weather &amp;ndash; Forecast&lt;/h3&gt;
 
 &lt;p&gt;The current weather and forecast are retrieved every fifteen minutes from the free &lt;a href=&#34;http://openweathermap.org/api&#34; target=&#34;_blank&#34;&gt;Open Weather API&lt;/a&gt;.
 The developer API key and zip code are configurable. Additionally the unit-of-measure is configurable, where you can specify &lt;code&gt;imperial&lt;/code&gt; or &lt;code&gt;metric&lt;/code&gt; as valid settings.&lt;/p&gt;
 
-&lt;h3 id=&#34;clock&#34;&gt;Clock&lt;/h3&gt;
+&lt;h3 id=&#34;clock:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Clock&lt;/h3&gt;
 
 &lt;p&gt;The clock is extremely simple. It is literally just the current date and time. It updates every second, formatting to the hour, minute and second &amp;ndash; additionally displaying the
 name of the day followed by the month and day number.&lt;/p&gt;
@@ -1909,21 +1909,21 @@ Wednesday, December 21&lt;sup&gt;st&lt;/sup&gt;
 &lt;/pre&gt;
 Note: I opted to omit whether or not we&amp;rsquo;re in ante or post meridiem as it is assumed the user would know if it&amp;rsquo;s morning or in the afternoon.&lt;/p&gt;
 
-&lt;h3 id=&#34;event-calendar-schedule&#34;&gt;Event Calendar / Schedule&lt;/h3&gt;
+&lt;h3 id=&#34;event-calendar-schedule:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Event Calendar / Schedule&lt;/h3&gt;
 
 &lt;p&gt;My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to
 &lt;a href=&#34;https://github.com/IEvangelist/Mirror#fork-destination-box&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-code-fork&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; fork my repo&lt;/a&gt; &amp;ndash; you would need to setup
 your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid &lt;code&gt;iCal&lt;/code&gt; &lt;a href=&#34;http://icalendar.org/&#34; target=&#34;_blank&#34;&gt;(*.ics) formatting&lt;/a&gt;.
 The events are truncated to fit on the page and ordered by the date of the event.&lt;/p&gt;
 
-&lt;h3 id=&#34;music-player&#34;&gt;Music Player&lt;/h3&gt;
+&lt;h3 id=&#34;music-player:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Music Player&lt;/h3&gt;
 
 &lt;p&gt;Imagine you have the magic mirror mounted in your bathroom, or bedroom&amp;hellip;it would be nice to say, &amp;ldquo;play a song&amp;rdquo;, or &amp;ldquo;play Deftones&amp;rdquo; for example and music starts playing. That is
 the idea behind the music player component. The current implementation of the music player is limited. I spent a few long nights trying to figure out how to use the built-in &lt;strong&gt;Bluetooth&lt;/strong&gt;
 on the &lt;strong&gt;Pi 3&lt;/strong&gt;, while &lt;strong&gt;UWP&lt;/strong&gt; does have some support it is limited. I was able to pair but not stream songs from my &lt;strong&gt;iPod&lt;/strong&gt; for example, which was really frustrating. For the meantime
 I simply placed several songs in the &lt;code&gt;Assets&lt;/code&gt; directory as content and I can play these resources. Ideally, I will use a web-based service like Spotify or Pandora.&lt;/p&gt;
 
-&lt;h3 id=&#34;voice-commands&#34;&gt;Voice Commands&lt;/h3&gt;
+&lt;h3 id=&#34;voice-commands:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Voice Commands&lt;/h3&gt;
 
 &lt;p&gt;The &lt;strong&gt;Universal Windows Platform&lt;/strong&gt; provides two very useful classes, the
 &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechrecognition.speechrecognizer.aspx&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;SpeechRecognizer&lt;/code&gt;&lt;/a&gt; and the
@@ -1931,7 +1931,7 @@ I simply placed several songs in the &lt;code&gt;Assets&lt;/code&gt; directory a
 I have built out the ability to talk to my magic mirror, I can ask it things like &amp;ldquo;what&amp;rsquo;s the weather&amp;rdquo;, &amp;ldquo;what&amp;rsquo;s my schedule for Wednesday&amp;rdquo;, or even tell it commands like &amp;ldquo;turn
 this up&amp;rdquo;.&lt;/p&gt;
 
-&lt;h2 id=&#34;microsoft-cognitive-services&#34;&gt;Microsoft Cognitive Services&lt;/h2&gt;
+&lt;h2 id=&#34;microsoft-cognitive-services:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Microsoft Cognitive Services&lt;/h2&gt;
 
 &lt;p&gt;Formally known was &amp;ldquo;Project Oxford&amp;rdquo;, Microsoft Cognitive Services offers a ton of programming power and you can start using it today for &lt;strong&gt;free&lt;/strong&gt;. Simply
 &lt;a href=&#34;https://www.microsoft.com/cognitive-services/en-us/subscriptions&#34; target=&#34;_blank&#34;&gt;subscribe&lt;/a&gt; and use your subscription key as the argument to the client &lt;code&gt;.ctor&lt;/code&gt;.
@@ -1984,7 +1984,7 @@ with
 
  &amp;ndash; so, yeah &amp;ndash; I was pretty happy!&lt;/p&gt;
 
-&lt;h1 id=&#34;construction&#34;&gt;Construction&lt;/h1&gt;
+&lt;h1 id=&#34;construction:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Construction&lt;/h1&gt;
 
 &lt;p&gt;I would be lying if I tried taking credit for any of the construction. I&amp;rsquo;m slightly embarrassed to admit that I opted out of building it, as I lack the carpentry skills needed
 to do a decent job. Instead I asked a friend who just so happens to be awesome at carpentry. After persuading him with a bottle of single malt scotch whiskey, I had my magic
@@ -2088,7 +2088,7 @@ mirror constructed and the results were amazing!&lt;/p&gt;
 
 
 
-
+&lt;p&gt;
 
 
     
@@ -2184,13 +2184,13 @@ mirror constructed and the results were amazing!&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 
-
+&lt;/p&gt;
 
 &lt;p&gt;I was really excited to deploy my mirror software and give it a go.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/magic mirror.jpg&#34; alt=&#34;Mirror&#34; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;check-it-out&#34;&gt;Check it out&lt;/h1&gt;
+&lt;h1 id=&#34;check-it-out:55632f6cd2da9389f0018360d3bd5ef5&#34;&gt;Check it out&lt;/h1&gt;
 
 &lt;p&gt;&lt;style&gt;
     .iframe_container {
@@ -2225,7 +2225,7 @@ mirror constructed and the results were amazing!&lt;/p&gt;
       <guid>http://davidpine.net/blog/asp-net-core-optimization/</guid>
       <description>
 
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;h2 id=&#34;intro:f7ba068c12f661d5bfa879f663970183&#34;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in
 tandem on an &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.&lt;/p&gt;
@@ -2240,7 +2240,7 @@ are provided a set meal (a bloated dependency chain) containing undesired items.
 
 &lt;p&gt;In other words, all dependencies are pluggable middleware. This provides ultimate control as you have to explicitly &lt;em&gt;opt-in&lt;/em&gt; for the middleware you desire.&lt;/p&gt;
 
-&lt;h3 id=&#34;know-thy-middleware&#34;&gt;Know thy Middleware&lt;/h3&gt;
+&lt;h3 id=&#34;know-thy-middleware:f7ba068c12f661d5bfa879f663970183&#34;&gt;Know thy Middleware&lt;/h3&gt;
 
 &lt;p&gt;Not all middleware is equal. Different middleware serves different purposes (obviously). Try to think of each middleware as its own standalone feature-set. Not all middleware is
 given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In
@@ -2250,7 +2250,7 @@ fact, this is the case when using static file caching and response compression t
 &lt;p&gt;&lt;p/&gt;The &lt;em&gt;order&lt;/em&gt; in which middleware is added matters and dictates the order of execution during a request.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;installing-dependencies&#34;&gt;Installing Dependencies&lt;/h4&gt;
+&lt;h4 id=&#34;installing-dependencies:f7ba068c12f661d5bfa879f663970183&#34;&gt;Installing Dependencies&lt;/h4&gt;
 
 &lt;p&gt;I wrote a tiny application and put it up on GitHub, check it out &lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; if you want
 to follow along. Now let&amp;rsquo;s install the dependencies we&amp;rsquo;ll need. For static file caching and response compression we need to add two &lt;code&gt;dependencies&lt;/code&gt; to the project.&lt;/p&gt;
@@ -2294,7 +2294,7 @@ to follow along. Now let&amp;rsquo;s install the dependencies we&amp;rsquo;ll ne
                     [ Install ]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;configuring-startup&#34;&gt;Configuring Startup&lt;/h3&gt;
+&lt;h3 id=&#34;configuring-startup:f7ba068c12f661d5bfa879f663970183&#34;&gt;Configuring Startup&lt;/h3&gt;
 
 &lt;p&gt;There are two common nomenclatures that exist for wiring up middleware in your startup classes, the &lt;code&gt;.Add*&lt;/code&gt; and &lt;code&gt;.Use*&lt;/code&gt; extension methods. The &lt;code&gt;.Add*&lt;/code&gt; calls are intended to add
 services to the &lt;code&gt;IServiceCollection&lt;/code&gt; instance, ensuring that they are ready for &lt;em&gt;usage&lt;/em&gt;. The &lt;code&gt;.Use*&lt;/code&gt; calls specify that you want to use the middleware and makes the assumption
@@ -2342,7 +2342,7 @@ namespace IEvangelist.AspNetCore.Optimization
 
 &lt;p&gt;There are several types defined by default in &lt;strong&gt;ASP.NET Core&lt;/strong&gt; class &lt;code&gt;ResponseCompressionDefaults.MimeTypes&lt;/code&gt;, we are simply expanding that to include &amp;ldquo;SVG&amp;rdquo; images and the &amp;ldquo;Woff2&amp;rdquo; fonts.&lt;/p&gt;
 
-&lt;h3 id=&#34;order-exemplified&#34;&gt;Order Exemplified&lt;/h3&gt;
+&lt;h3 id=&#34;order-exemplified:f7ba068c12f661d5bfa879f663970183&#34;&gt;Order Exemplified&lt;/h3&gt;
 
 &lt;p&gt;Consider the following:&lt;/p&gt;
 
@@ -2402,7 +2402,7 @@ While we do have static file middleware, we didn&amp;rsquo;t know that &amp;ldqu
 expression. This expression can be used to delegate the preperation of the response. Notice we&amp;rsquo;re simply setting the &lt;code&gt;Cache-Control&lt;/code&gt; header to a &amp;ldquo;max-age&amp;rdquo; of a week. That was
 pretty simple, hey?!&lt;/p&gt;
 
-&lt;h3 id=&#34;compression-awareness&#34;&gt;Compression Awareness&lt;/h3&gt;
+&lt;h3 id=&#34;compression-awareness:f7ba068c12f661d5bfa879f663970183&#34;&gt;Compression Awareness&lt;/h3&gt;
 
 &lt;p&gt;It&amp;rsquo;s all the little things! The response compression middleware boasts deterministic compression, i.e.; if the
 &lt;a href=&#34;https://github.com/aspnet/KestrelHttpServer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;KestrelHttpServer&lt;/code&gt;&lt;/a&gt; is running behind the
@@ -2414,15 +2414,15 @@ pretty simple, hey?!&lt;/p&gt;
 &lt;li&gt;Whether or not the response needs to be compressed&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;h3 id=&#34;results:f7ba068c12f661d5bfa879f663970183&#34;&gt;Results&lt;/h3&gt;
 
 &lt;p&gt;Let&amp;rsquo;s spend some time examining the results of our response optimization efforts.&lt;/p&gt;
 
-&lt;h4 id=&#34;before&#34;&gt;Before&lt;/h4&gt;
+&lt;h4 id=&#34;before:f7ba068c12f661d5bfa879f663970183&#34;&gt;Before&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/before.png&#34; alt=&#34;Before&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;total-s&#34;&gt;Total(s)&lt;/h5&gt;
+&lt;h5 id=&#34;total-s:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 549 KB transfered | ... | ... 
 &lt;/code&gt;&lt;/pre&gt;
@@ -2436,11 +2436,11 @@ Accept-Ranges: bytes
 ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;after&#34;&gt;After&lt;/h4&gt;
+&lt;h4 id=&#34;after:f7ba068c12f661d5bfa879f663970183&#34;&gt;After&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/after.png&#34; alt=&#34;After&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;total-s-1&#34;&gt;Total(s)&lt;/h5&gt;
+&lt;h5 id=&#34;total-s-1:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 175 KB transfered | ... | ... 
 &lt;/code&gt;&lt;/pre&gt;
@@ -2460,17 +2460,17 @@ Accept-Ranges: bytes
 ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;subsequent-cached-requests&#34;&gt;Subsequent (Cached) Requests&lt;/h4&gt;
+&lt;h4 id=&#34;subsequent-cached-requests:f7ba068c12f661d5bfa879f663970183&#34;&gt;Subsequent (Cached) Requests&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/cached.png&#34; alt=&#34;Cached&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;let-s-summarize&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
+&lt;h3 id=&#34;let-s-summarize:f7ba068c12f661d5bfa879f663970183&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
 
 &lt;p&gt;We learned some of the basics about &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Together we implemented a response optimization strategy that included deterministic response compression, as well
 as static file caching. We learned some of the common patterns and naming conventions for integrating with &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Finally, we have a good understanding of
 the &lt;strong&gt;ASP.NET Core&lt;/strong&gt; request pipeline middleware precedence.&lt;/p&gt;
 
-&lt;h3 id=&#34;source-code&#34;&gt;Source Code&lt;/h3&gt;
+&lt;h3 id=&#34;source-code:f7ba068c12f661d5bfa879f663970183&#34;&gt;Source Code&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;
@@ -2542,34 +2542,34 @@ and disarray!&lt;/p&gt;
 &lt;p&gt;I believe that this is often the root of imposter syndrome, the fear of getting it wrong or being involved in some sort of conflict. I finally feel as though I no longer have this
 fear, therefore &amp;ndash; I have overcome imposter syndrome. I wanted to share some of the reasons that have led up to this monumental event.&lt;/p&gt;
 
-&lt;h3 id=&#34;positivity&#34;&gt;Positivity&lt;/h3&gt;
+&lt;h3 id=&#34;positivity:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Positivity&lt;/h3&gt;
 
 &lt;p&gt;If you want to see a blackhole, bear witness to how negitivity spreads through an office. A single person with a bad additude can &amp;ldquo;infect&amp;rdquo; others and really be a drain! Be the one
 who combats that, be the person who seeks out the positive aspects of every situation. I&amp;rsquo;m the guy who says &amp;ldquo;it could always be worse&amp;rdquo;, because it literally could. I act as the voice
 of reason &amp;ndash; and pure myself into living as a positive influence on the team.&lt;/p&gt;
 
-&lt;h3 id=&#34;take-action&#34;&gt;Take Action&lt;/h3&gt;
+&lt;h3 id=&#34;take-action:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Take Action&lt;/h3&gt;
 
 &lt;p&gt;Personally, I have discovered that the more I compliment others the more I get complimented in return. The more I encourage others, the more I&amp;rsquo;m encouraged by them in return.
 The more you give, the more you get. Be humble and open-minded!&lt;/p&gt;
 
-&lt;h3 id=&#34;mentor&#34;&gt;Mentor&lt;/h3&gt;
+&lt;h3 id=&#34;mentor:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Mentor&lt;/h3&gt;
 
 &lt;p&gt;I have found pride in mentoring. I feel as though there is always a satisfying challenge to overcome and a lesson learned. Often the lesson is two-sided, where I am a secondary
 beneficiary from the engagement. Often, explaining your experiences to the mentee reminds you of how much you have really been through. Reflecting on how you&amp;rsquo;ve navigated through
 a situation is surprisingly insightful. It&amp;rsquo;s kind of like &lt;a href=&#34;https://blog.codinghorror.com/rubber-duck-problem-solving/&#34;&gt;rubber duck programming&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;fear-not&#34;&gt;Fear not&lt;/h3&gt;
+&lt;h3 id=&#34;fear-not:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Fear not&lt;/h3&gt;
 
 &lt;p&gt;Never be afraid to ask &amp;ldquo;why&amp;rdquo;, this can be extremely powerful. Sometimes the root of the problem is that there has been a misunderstanding at the root &amp;ndash; therefore all things
 leading up to where you&amp;rsquo;re asking (what you believe to be a stupid question) is actually the best question that could have been asked. Find the root!&lt;/p&gt;
 
-&lt;h3 id=&#34;community&#34;&gt;Community&lt;/h3&gt;
+&lt;h3 id=&#34;community:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Community&lt;/h3&gt;
 
 &lt;p&gt;If you have ever spent more than a few minutes with me, you will know that I&amp;rsquo;m an advocate of the technical community. Believe it or not, the community is extremely supportive and
 willing to lift you up &amp;ndash; all you have to do is being willing to put yourself out there. While this is humbling, it is also be rewarding&amp;hellip;&lt;/p&gt;
 
-&lt;h3 id=&#34;mke-dot-net&#34;&gt;MKE DOT NET&lt;/h3&gt;
+&lt;h3 id=&#34;mke-dot-net:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;MKE DOT NET&lt;/h3&gt;
 
 &lt;p&gt;I sit on the technical committee for &lt;a href=&#34;http://www.mkedotnet.com/&#34;&gt;MKE DOT NET&lt;/a&gt;, a developer conference in the Milwaukee area. Recently I was fortunate enough to get
 &lt;a href=&#34;http://www.hanselman.com/&#34;&gt;Scott Hanselman&lt;/a&gt; to be our keynote speaker.
@@ -2587,7 +2587,7 @@ During his keynote (which was amazing) I shouted out several times to assist him
     &lt;a href=&#34;https://twitter.com/davidpine7/status/792544455635132417&#34;&gt;October 30, 2016&lt;/a&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;stackoverflow&#34;&gt;Stackoverflow&lt;/h3&gt;
+&lt;h3 id=&#34;stackoverflow:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Stackoverflow&lt;/h3&gt;
 
 &lt;p&gt;I set out at the beginning of the 2016 year with a goal to try to answer one SO question a day. Honestly, it is a lot more demanding than you might imagine &amp;ndash; but it&amp;rsquo;s extremely
 gratifying! I have literally learned more attempting to answer questions than I have had asking or reading others questions. I answered
@@ -2596,7 +2596,7 @@ Luckily after his &lt;em&gt;code review&lt;/em&gt; and my &lt;em&gt;update&lt;/e
 
 &lt;p&gt;Getting the accepted answer over mega-super stars like &lt;a href=&#34;http://stackoverflow.com/a/36950086/2410379&#34;&gt;Stephan Cleary&lt;/a&gt; can really make your head spin, even if they get more upvotes.&lt;/p&gt;
 
-&lt;h4 id=&#34;let-me-compile-that-for-you&#34;&gt;Let me compile that for you&lt;/h4&gt;
+&lt;h4 id=&#34;let-me-compile-that-for-you:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Let me compile that for you&lt;/h4&gt;
 
 &lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
 &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This C# doesn&amp;#39;t compile - I think it should: var parameterName = nameof(parameterName);
@@ -2613,7 +2613,7 @@ Luckily after his &lt;em&gt;code review&lt;/em&gt; and my &lt;em&gt;update&lt;/e
 &lt;/a&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;let-me-asp-net-5-that-for-you&#34;&gt;Let me ASP.NET 5 that for you&lt;/h4&gt;
+&lt;h4 id=&#34;let-me-asp-net-5-that-for-you:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Let me ASP.NET 5 that for you&lt;/h4&gt;
 
 &lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
 &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
@@ -2632,7 +2632,7 @@ Luckily after his &lt;em&gt;code review&lt;/em&gt; and my &lt;em&gt;update&lt;/e
 
 &lt;p&gt;Yes, you read that correctly. That is me helping out the legand &lt;a href=&#34;http://stackoverflow.com/users/22656/jon-skeet&#34;&gt;Jon Skeet&lt;/a&gt; (arguably the world&amp;rsquo;s best software engineer)!&lt;/p&gt;
 
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;h2 id=&#34;summary:7350cd2e0c830d659fc43d06fec82fd0&#34;&gt;Summary&lt;/h2&gt;
 
 &lt;p&gt;These are miniscule things that really add up. Don&amp;rsquo;t take it from me, you owe it to yourself to see what you&amp;rsquo;re really made off. I believe in you already, if you made it through this
 post you have already accomplished more than most of your peers today. There is so much more that I want to give back to the community that I know this is only the beginnging of
@@ -2670,7 +2670,7 @@ If you&amp;rsquo;re unfamiliar with &lt;em&gt;Reactive Extensions&lt;/em&gt; in 
 Let&amp;rsquo;s take a moment to compare and contrast the two, and immerse ourselves in the wonderful world of &lt;strong&gt;RxJS&lt;/strong&gt;.
 Let me be clear upfront that I&amp;rsquo;m developing with &lt;code&gt;TypeScript&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;legacy-pattern&#34;&gt;Legacy Pattern&lt;/h2&gt;
+&lt;h2 id=&#34;legacy-pattern:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Legacy Pattern&lt;/h2&gt;
 
 &lt;p&gt;As a developer you would have to use both the &lt;code&gt;ng.IHttpService&lt;/code&gt; and the &lt;code&gt;ng.IQService&lt;/code&gt; in combination to collaborate the deferral of the
 HTTP request and the promise that represented it. Consider the following:&lt;/p&gt;
@@ -2708,7 +2708,7 @@ HTTP request and the promise that represented it. Consider the following:&lt;/p&
 
 &lt;p&gt;In this example, we can easily see the interaction betwixt the &lt;code&gt;ng.IHttpService ($http)&lt;/code&gt; and &lt;code&gt;ng.IQService ($q)&lt;/code&gt; services. The &lt;code&gt;$q&lt;/code&gt; variable exposes a &lt;code&gt;.defer&amp;lt;T&amp;gt;&lt;/code&gt; function that returns a deferred object.&lt;/p&gt;
 
-&lt;h3 id=&#34;deferred-api-https-docs-angularjs-org-api-ng-service-q-the-deferred-api&#34;&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$q#the-deferred-api&#34;&gt;Deferred API&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;deferred-api-https-docs-angularjs-org-api-ng-service-q-the-deferred-api:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$q#the-deferred-api&#34;&gt;Deferred API&lt;/a&gt;&lt;/h3&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -2737,7 +2737,7 @@ HTTP request and the promise that represented it. Consider the following:&lt;/p&
 &lt;p&gt;The deferred object instance is passed into the fluent API&amp;rsquo;s of the &lt;code&gt;$http&#39;s&lt;/code&gt; &lt;code&gt;.success&lt;/code&gt; and &lt;code&gt;.error&lt;/code&gt; functions accordingly. This pattern works great, but is very limiting and repetitive.
 You end up writing a lot of boilerplate code and that isn&amp;rsquo;t very &lt;a href=&#34;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&#34;&gt;DRY&lt;/a&gt;. Let&amp;rsquo;s look at how this is approached with &lt;strong&gt;Angular2&amp;rsquo;s&lt;/strong&gt; &lt;code&gt;http&lt;/code&gt; service using the observable pattern from &lt;strong&gt;RxJS&lt;/strong&gt;!&lt;/p&gt;
 
-&lt;h2 id=&#34;new-pattern&#34;&gt;New Pattern&lt;/h2&gt;
+&lt;h2 id=&#34;new-pattern:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;New Pattern&lt;/h2&gt;
 
 &lt;p&gt;To be fair, let&amp;rsquo;s implement the same functionality and public surface-area such that our example services are equivalent.&lt;/p&gt;
 
@@ -2766,7 +2766,7 @@ it was in &lt;strong&gt;AngularJs 1&lt;/strong&gt;.
 Simply do what you&amp;rsquo;d expect from any other common constructor-based DI framework, ensure that your desired &lt;code&gt;Http&lt;/code&gt; type is registered as a provider to the system. This happens by way of the &lt;code&gt;HTTP_PROVIDERS&lt;/code&gt; defined in our &lt;code&gt;boot.js&lt;/code&gt; file.
 More on that in another post. With modern &lt;code&gt;TypeScript&lt;/code&gt; we can define properties and fields, and their corresponding access modifiers right from within our constructors.&lt;/p&gt;
 
-&lt;h4 id=&#34;syntax-tip&#34;&gt;Syntax Tip&lt;/h4&gt;
+&lt;h4 id=&#34;syntax-tip:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Syntax Tip&lt;/h4&gt;
 
 &lt;p&gt;This exemplifies the comparisons in syntax between a simple constructor and the more verbose constructor.&lt;/p&gt;
 
@@ -2792,7 +2792,7 @@ constructor(http: Http) {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;comparing-the-apis&#34;&gt;Comparing the APIs&lt;/h2&gt;
+&lt;h2 id=&#34;comparing-the-apis:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Comparing the APIs&lt;/h2&gt;
 
 &lt;p&gt;Instead of the &lt;code&gt;.success&lt;/code&gt; invocation with a corresponding &lt;code&gt;deferred.resolve&lt;/code&gt; call, we now utilize the &lt;strong&gt;RxJS&lt;/strong&gt; &lt;code&gt;.map&lt;/code&gt; and &lt;code&gt;.subscribe&lt;/code&gt; operators. Let&amp;rsquo;s look at these below:&lt;/p&gt;
 
@@ -2820,7 +2820,7 @@ constructor(http: Http) {
 &lt;p&gt;Mapping is easy and we can leverage some of the &lt;code&gt;TypeScript&lt;/code&gt; language features to cast the &lt;strong&gt;JSON&lt;/strong&gt; blobs returned from our services as strongly typed objects. The &lt;code&gt;map&lt;/code&gt; operator is actually
 synonymous with the &lt;code&gt;select&lt;/code&gt; operator, so if you&amp;rsquo;re more familiar with that terminology you can use it interchangeably.&lt;/p&gt;
 
-&lt;h3 id=&#34;advantages&#34;&gt;Advantages&lt;/h3&gt;
+&lt;h3 id=&#34;advantages:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Advantages&lt;/h3&gt;
 
 &lt;p&gt;Now that we have an understanding of how &lt;strong&gt;RxJS&lt;/strong&gt; compares to the legacy pattern, we can take advantage of all the various benefits. Imagine with me that we have a need to implement retry logic,
 this would have been challenging with the legacy pattern but with the new pattern it&amp;rsquo;s as simple as saying &lt;code&gt;.retry&lt;/code&gt;. Consider the following:&lt;/p&gt;
@@ -2844,7 +2844,7 @@ the values are actually different than they once were.&lt;/p&gt;
 &lt;p&gt;You could take advantage of &lt;code&gt;.buffer&lt;/code&gt;, &lt;code&gt;.throttle&lt;/code&gt;, &lt;code&gt;.interval&lt;/code&gt;, &lt;code&gt;.window&lt;/code&gt;, &lt;code&gt;.range&lt;/code&gt;, etc&amp;hellip; The list goes on and on,
 and &lt;a href=&#34;https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable&#34; target=&#34;_blank&#34;&gt;this is the source for most of what you can take advantage&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;let-s-summarize&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
+&lt;h3 id=&#34;let-s-summarize:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;Angular2&lt;/strong&gt; has a new implementation of their &lt;code&gt;http&lt;/code&gt; service that relies on &lt;strong&gt;RxJS&lt;/strong&gt;. The &lt;em&gt;API&lt;/em&gt; uses &lt;code&gt;observables&lt;/code&gt; and the &lt;code&gt;observer&lt;/code&gt; pattern to allow for a fluent experience that is rich and robust.
 Getting started is straight-forward and simple. Before too long you&amp;rsquo;ll be taking advantage of the feature-full set of &lt;strong&gt;Reactive Extensions&lt;/strong&gt; and thinking in terms of data streams.
@@ -2867,7 +2867,7 @@ This mindset will make your life easier - trust me!&lt;/p&gt;
       <guid>http://davidpine.net/blog/the-global-json/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h1 id=&#34;introduction:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Introduction&lt;/h1&gt;
 
 &lt;p&gt;As I&amp;rsquo;m sure you&amp;rsquo;re all aware by now, &lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2016/06/27/announcing-net-core-1-0/&#34;&gt;Monday June 27&lt;sup&gt;th&lt;/sup&gt;&lt;/a&gt; was a
 special day for those of you who were anticipating the release of  &lt;code&gt;.NET Core&lt;/code&gt; and &lt;code&gt;ASP.NET Core&lt;/code&gt;. While the &amp;ldquo;core&amp;rdquo; frameworks and runtimes are RTM, the
@@ -2897,7 +2897,7 @@ an improvement to said package, what does that work-flow look like?&lt;/p&gt;
 &lt;p&gt;What if I told you, that headache is all but gone and you will never have to go through those agonizing steps again! Say it ain&amp;rsquo;t so
 (queue &lt;a href=&#34;https://youtu.be/ENXvZ9YRjbo&#34; target=&#34;_blank&#34;&gt;Weezer&lt;/a&gt;).&lt;/p&gt;
 
-&lt;h2 id=&#34;global-json&#34;&gt;Global.json&lt;/h2&gt;
+&lt;h2 id=&#34;global-json:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Global.json&lt;/h2&gt;
 
 &lt;p&gt;The &lt;code&gt;global.json&lt;/code&gt; file sits out at the solution directory-level and literally has one of the simplest &lt;code&gt;JSON&lt;/code&gt; schemas you will ever see. The default templates
 generate the following (for the &lt;a href=&#34;http://json.schemastore.org/global&#34;&gt;full schema&lt;/a&gt;):&lt;/p&gt;
@@ -2919,7 +2919,7 @@ property is an array of strings. It&amp;rsquo;s defined as the following:&lt;/p&
 
 &lt;p&gt;These folders are search locations for resolving dependencies, where projects take precedence over packages.&lt;/p&gt;
 
-&lt;h3 id=&#34;projects-over-packages&#34;&gt;Projects over Packages&lt;/h3&gt;
+&lt;h3 id=&#34;projects-over-packages:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Projects over Packages&lt;/h3&gt;
 
 &lt;p&gt;Assume you&amp;rsquo;re developing in a project, namely &lt;code&gt;IEvangelist.NetCore.App&lt;/code&gt; and it takes a dependency on &lt;code&gt;IEvangelist.NetCore.ClassLib&lt;/code&gt; and &lt;code&gt;IEvangelist.NetCore.Services&lt;/code&gt;. These
 dependencies are packages (outside the solution) and you can use the &lt;code&gt;global.json/projects&lt;/code&gt; array to your advantage. Using our imaginations, let us find a need
@@ -2935,24 +2935,24 @@ we can now use a relative path like so:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;before&#34;&gt;Before&lt;/h4&gt;
+&lt;h4 id=&#34;before:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Before&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/07/before.jpg&#34; alt=&#34;Before global.json changes&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;after&#34;&gt;After&lt;/h4&gt;
+&lt;h4 id=&#34;after:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;After&lt;/h4&gt;
 
 &lt;p&gt;After saving these changes to the &lt;code&gt;global.json&lt;/code&gt; you&amp;rsquo;ll notice &lt;strong&gt;Visual Studio&lt;/strong&gt; pull this project into solution, but outside of the &lt;code&gt;src&lt;/code&gt; folder. Now when
 you debug you can actually step into the source and treat it like any other source code you have. Project dependencies are resolved by way of their &lt;code&gt;project.json&lt;/code&gt; being discovered.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/07/after.jpg&#34; alt=&#34;After global.json changes&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;open-source-for-everyone&#34;&gt;Open Source for Everyone&lt;/h3&gt;
+&lt;h3 id=&#34;open-source-for-everyone:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Open Source for Everyone&lt;/h3&gt;
 
 &lt;p&gt;One of the biggest advantages in my opinion is the ability to pull down source from &lt;code&gt;github&lt;/code&gt; that I rely on and source-step into it. For example, I have been developing with &lt;code&gt;ASP.NET
 Core&lt;/code&gt; since &lt;strong&gt;RC1&lt;/strong&gt;, nearly eight months!! With the power of the &lt;code&gt;global.json&lt;/code&gt; I can pull down source that I&amp;rsquo;m relying on in a package and fulfill my understanding of it
 as it executes. Simply amazing!&lt;/p&gt;
 
-&lt;h2 id=&#34;further-reading&#34;&gt;Further reading&lt;/h2&gt;
+&lt;h2 id=&#34;further-reading:919389ea8ea658b3eb14ef94d6f5803e&#34;&gt;Further reading&lt;/h2&gt;
 
 &lt;p&gt;For more details, these are some additional links and points of reference.&lt;/p&gt;
 
@@ -2971,7 +2971,7 @@ as it executes. Simply amazing!&lt;/p&gt;
       <guid>http://davidpine.net/blog/migrating-to-rc2/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h1 id=&#34;introduction:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Introduction&lt;/h1&gt;
 
 &lt;p&gt;On Monday, May 16&lt;sup&gt;th&lt;/sup&gt; 2016 there was an amazing announcement from the &lt;strong&gt;.NET Blog&lt;/strong&gt; team!&lt;/p&gt;
 
@@ -2982,13 +2982,13 @@ as it executes. Simply amazing!&lt;/p&gt;
 &lt;p&gt;This post will serve as a guide that walks you through the steps as I experienced them from migrating existing &lt;code&gt;ASP.NET Core RC1&lt;/code&gt; applications to &lt;code&gt;ASP.NET Core RC2&lt;/code&gt;.
 It is worth mentioning that I&amp;rsquo;m am targeting the &lt;code&gt;.NET 4.6&lt;/code&gt; framework. So, I &lt;em&gt;do not&lt;/em&gt; cover the &lt;code&gt;.netcoreapp&lt;/code&gt; or &lt;code&gt;netstandard&lt;/code&gt; TFMs (target framework monikers).&lt;/p&gt;
 
-&lt;h2 id=&#34;tooling&#34;&gt;Tooling&lt;/h2&gt;
+&lt;h2 id=&#34;tooling:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Tooling&lt;/h2&gt;
 
 &lt;p&gt;The &lt;strong&gt;RC2&lt;/strong&gt; release brings the &lt;code&gt;.NET Core CLI&lt;/code&gt; to the forefront, and with that all the other command line tooling that
 you&amp;rsquo;ve grown accustomed to should be stricken from your environment, i.e.; &lt;code&gt;DNX&lt;/code&gt;, &lt;code&gt;DNU&lt;/code&gt;, and &lt;code&gt;DNVM&lt;/code&gt;. Let&amp;rsquo;s start with the
 removal of all these utilities.&lt;/p&gt;
 
-&lt;h3 id=&#34;removing-dnvm&#34;&gt;Removing DNVM&lt;/h3&gt;
+&lt;h3 id=&#34;removing-dnvm:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Removing DNVM&lt;/h3&gt;
 
 &lt;p&gt;Believe it or not, you might have a dated version of the &lt;strong&gt;DNVM CLI&lt;/strong&gt; and in order to invoke the &lt;code&gt;uninstall&lt;/code&gt; you might have to first
 perform an &lt;code&gt;update-self&lt;/code&gt; command. Doing so will ensure that you have the latest version, which will contain the &lt;code&gt;uninstall&lt;/code&gt; command.
@@ -3002,7 +3002,7 @@ From a &lt;code&gt;cmd&lt;/code&gt; window &lt;em&gt;running as admininistrator&
 &lt;pre&gt;&lt;code&gt;dnvm uninstall
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;verification&#34;&gt;Verification&lt;/h4&gt;
+&lt;h4 id=&#34;verification:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Verification&lt;/h4&gt;
 
 &lt;p&gt;From a new &lt;code&gt;cmd&lt;/code&gt; window, the &lt;code&gt;dnvm&lt;/code&gt; command should result in the following:&lt;/p&gt;
 
@@ -3010,7 +3010,7 @@ From a &lt;code&gt;cmd&lt;/code&gt; window &lt;em&gt;running as admininistrator&
 &#39;dnvm&#39; is not recognized as an internal or external command, operable program or batch file.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;removing-dnx-dnu&#34;&gt;Removing DNX &amp;amp; DNU&lt;/h3&gt;
+&lt;h3 id=&#34;removing-dnx-dnu:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Removing DNX &amp;amp; DNU&lt;/h3&gt;
 
 &lt;p&gt;From a &lt;code&gt;cmd&lt;/code&gt; line window, execute &lt;code&gt;dnx&lt;/code&gt; - you should see something similar to this as output:&lt;/p&gt;
 
@@ -3067,7 +3067,7 @@ directory from windows explorer and delete the &lt;code&gt;.dnx&lt;/code&gt; dir
 should be able to execute the &lt;code&gt;dnx&lt;/code&gt; and &lt;code&gt;dnu&lt;/code&gt; commands again from a &lt;code&gt;cmd&lt;/code&gt; window and the system should complain that they are not
 recognized.&lt;/p&gt;
 
-&lt;h4 id=&#34;verification-1&#34;&gt;Verification&lt;/h4&gt;
+&lt;h4 id=&#34;verification-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Verification&lt;/h4&gt;
 
 &lt;p&gt;From a new &lt;code&gt;cmd&lt;/code&gt; window, the &lt;code&gt;dnx&lt;/code&gt; and &lt;code&gt;dnu&lt;/code&gt; commands should result in the following:&lt;/p&gt;
 
@@ -3079,7 +3079,7 @@ recognized.&lt;/p&gt;
 &#39;dnu&#39; is not recognized as an internal or external command, operable program or batch file.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;environment-variables&#34;&gt;Environment Variables&lt;/h3&gt;
+&lt;h3 id=&#34;environment-variables:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Environment Variables&lt;/h3&gt;
 
 &lt;p&gt;Unfortunately, the &lt;code&gt;PATH&lt;/code&gt; environment variable is not cleaned up and this needs to be done manually.&lt;/p&gt;
 
@@ -3103,11 +3103,11 @@ C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-upda
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/05/edit-vars.png&#34; alt=&#34;Edit User Variables&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;net-core-cli&#34;&gt;.NET Core CLI&lt;/h3&gt;
+&lt;h3 id=&#34;net-core-cli:0349d6d87cad08484fba4056f258e4f0&#34;&gt;.NET Core CLI&lt;/h3&gt;
 
 &lt;p&gt;Simply follow &lt;a href=&#34;https://www.microsoft.com/net/core#windows&#34;&gt;these instuctions&lt;/a&gt;. Once you&amp;rsquo;re able to &amp;ldquo;Run the app&amp;rdquo; from the new &lt;strong&gt;CLI&lt;/strong&gt; you&amp;rsquo;re good to go.&lt;/p&gt;
 
-&lt;h4 id=&#34;review&#34;&gt;Review&lt;/h4&gt;
+&lt;h4 id=&#34;review:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Review&lt;/h4&gt;
 
 &lt;p&gt;You should the following checklist fully satisfied at this point.&lt;/p&gt;
 
@@ -3117,20 +3117,20 @@ C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-upda
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i&#34;&gt;Edit by Hand &lt;i class=&#34;fa fa-pencil-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Edit by Hand &lt;i class=&#34;fa fa-pencil-square-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/h2&gt;
 
 &lt;p&gt;There were changes to &lt;strong&gt;APIs&lt;/strong&gt; which required changes to implementation aspects of the source code. Additionally, &lt;code&gt;namespace&lt;/code&gt;
 changes such as (but not limited to) &lt;code&gt;Microsoft.AspNet.*&lt;/code&gt; to &lt;code&gt;Microsoft.AspNetCore.*&lt;/code&gt;. But the bulk of the work was really in the hand-editing
 of &lt;code&gt;.sln&lt;/code&gt;, &lt;code&gt;global.json&lt;/code&gt;, &lt;code&gt;.xproj&lt;/code&gt;, &lt;code&gt;project.json&lt;/code&gt;, etc. files. Let&amp;rsquo;s look at what changed.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-sln-file&#34;&gt;The &lt;code&gt;.sln&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-sln-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;.sln&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Change the &lt;strong&gt;VisualStudioVersion&lt;/strong&gt; from &lt;code&gt;14.0.24720.0&lt;/code&gt; to &lt;code&gt;14.0.25123.0&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;VisualStudioVersion = 14.0.25123.0
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-global-json-file&#34;&gt;The &lt;code&gt;global.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-global-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;global.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Change the &lt;strong&gt;version&lt;/strong&gt; from &lt;code&gt;1.0.0-rc1-update1&lt;/code&gt; to &lt;code&gt;1.0.0-preview1-002702&lt;/code&gt;.&lt;/p&gt;
 
@@ -3142,18 +3142,18 @@ of &lt;code&gt;.sln&lt;/code&gt;, &lt;code&gt;global.json&lt;/code&gt;, &lt;code
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-xproj-file&#34;&gt;The &lt;code&gt;.xproj&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-xproj-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;.xproj&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;.xproj&lt;/code&gt; files are a little more involved, there are a few items that are required to be changed. In &lt;strong&gt;RC1&lt;/strong&gt; we had proprerties that
 were specific to &lt;strong&gt;DNX&lt;/strong&gt;, now we replace these with &lt;strong&gt;DOTNET&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DNX\Microsoft.DNX.Props&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.Props&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
@@ -3162,25 +3162,25 @@ were specific to &lt;strong&gt;DNX&lt;/strong&gt;, now we replace these with &lt
 &lt;p&gt;Additionally, we need to change the targets. This one requires that you know the type of project you&amp;rsquo;re editing, for example &lt;em&gt;&amp;ldquo;class library&amp;rdquo;&lt;/em&gt; vs. &lt;em&gt;&amp;ldquo;web site&amp;rdquo;&lt;/em&gt;. In &lt;strong&gt;RC1&lt;/strong&gt;
 there was only one target, but with &lt;strong&gt;RC2&lt;/strong&gt; they are differeniated.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-1&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DNX\Microsoft.DNX.targets&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-class-library&#34;&gt;RC2 (class library)&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-class-library:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2 (class library)&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.targets&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-web&#34;&gt;RC2 (web)&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-web:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2 (web)&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;Import Project=&amp;quot;$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets&amp;quot; 
         Condition=&amp;quot;&#39;$(VSToolsPath)&#39; != &#39;&#39;&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-project-json-file&#34;&gt;The &lt;code&gt;project.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-project-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;project.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;There has been a large reworking of the &lt;code&gt;project.json&lt;/code&gt; file - detailed &lt;a href=&#34;https://github.com/aspnet/Announcements/issues/175&#34;&gt;here&lt;/a&gt;. I will not be covering all
 of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official
@@ -3189,7 +3189,7 @@ of the changes here, but I do intend calling attention to some of the observatio
 &lt;p&gt;We will look at various sections of the &lt;code&gt;project.json&lt;/code&gt; file changes. Let&amp;rsquo;s start with replacing &lt;code&gt;compilationOptionsbuildOptions&lt;/code&gt; with &lt;code&gt;buildOptions&lt;/code&gt;, and notice that
 we are adding much more options than before.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-2&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;compilationOptions&amp;quot;: {
   &amp;quot;emitEntryPoint&amp;quot;: true,
@@ -3197,9 +3197,9 @@ we are adding much more options than before.&lt;/p&gt;
 },
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-1&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-1:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;buildOptions&amp;quot;: {       
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;buildOptions&amp;quot;: {		
   &amp;quot;emitEntryPoint&amp;quot;: true,
   &amp;quot;warningsAsErrors&amp;quot;: true,
   &amp;quot;preserveCompilationContext&amp;quot;: true,
@@ -3229,11 +3229,11 @@ we are adding much more options than before.&lt;/p&gt;
 },
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-web-config-file&#34;&gt;The &lt;code&gt;web.config&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-web-config-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;web.config&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Now, &lt;strong&gt;IIS&lt;/strong&gt; is a little smarter and is starting to recognize &lt;strong&gt;ASP.NET Core&lt;/strong&gt; a little more.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-3&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-3:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
 &amp;lt;configuration&amp;gt;
@@ -3247,7 +3247,7 @@ we are adding much more options than before.&lt;/p&gt;
 &amp;lt;/configuration&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-2&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-2:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
 &amp;lt;configuration&amp;gt;
@@ -3262,7 +3262,7 @@ we are adding much more options than before.&lt;/p&gt;
 &amp;lt;/configuration&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-hosting-json-file&#34;&gt;The &lt;code&gt;hosting.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-hosting-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;hosting.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;With the release of &lt;strong&gt;RC2&lt;/strong&gt;, the &lt;code&gt;project.json&lt;/code&gt; schema removed the &lt;code&gt;webroot&lt;/code&gt; property. Now in order to specify the websites&amp;rsquo; static content directory we need to
 create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like this.&lt;/p&gt;
@@ -3272,12 +3272,12 @@ create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like 
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-appsettings-json-file&#34;&gt;The &lt;code&gt;appsettings.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-appsettings-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;appsettings.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;This was a minor change, but if you forgot to change this - then you&amp;rsquo;ll end up with a runtime exception. The &lt;code&gt;Logging:LogLevel:Default&lt;/code&gt; should now be
 &lt;code&gt;Debug&lt;/code&gt; as &lt;code&gt;Verbose&lt;/code&gt; was removed altogether.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-4&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-4:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;Logging&amp;quot;: {
       &amp;quot;IncludeScopes&amp;quot;: false,
@@ -3288,7 +3288,7 @@ create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like 
       }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-3&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-3:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;Logging&amp;quot;: {
       &amp;quot;IncludeScopes&amp;quot;: false,
@@ -3299,44 +3299,44 @@ create a &lt;code&gt;hosting.json&lt;/code&gt; file. This file should look like 
       }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-launchsettings-json-file&#34;&gt;The &lt;code&gt;launchSettings.json&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-launchsettings-json-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;launchSettings.json&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;The &lt;code&gt;environmentVariables&lt;/code&gt; changed, such that the key name for the environment is no longer referred to as &amp;ldquo;Hosting:Environment&amp;rdquo;.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-5&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-5:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;environmentVariables&amp;quot;: {
   &amp;quot;Hosting:Environment&amp;quot;: &amp;quot;Development&amp;quot; // &amp;lt; -- Change &amp;quot;Hosting:Environment&amp;quot;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-4&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-4:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;environmentVariables&amp;quot;: {
   &amp;quot;ASPNETCORE_ENVIRONMENT&amp;quot;: &amp;quot;Development&amp;quot; // &amp;lt; -- To &amp;quot;ASPNETCORE_ENVIRONMENT&amp;quot;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-cs-files&#34;&gt;The &lt;code&gt;*.cs&lt;/code&gt; files&lt;/h3&gt;
+&lt;h3 id=&#34;the-cs-files:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;*.cs&lt;/code&gt; files&lt;/h3&gt;
 
 &lt;p&gt;Some of these were very simple to fix. After updating your &lt;code&gt;project.json&lt;/code&gt; with the latest &lt;strong&gt;RC2&lt;/strong&gt; versions - some changes are as simple as a &lt;code&gt;namespace&lt;/code&gt; change (but others are more involed).&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-6&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-6:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNet.*;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-5&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-5:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNetCore.*;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;api-changes&#34;&gt;API changes&lt;/h3&gt;
+&lt;h3 id=&#34;api-changes:0349d6d87cad08484fba4056f258e4f0&#34;&gt;API changes&lt;/h3&gt;
 
 &lt;p&gt;There was an attempt to unify some of the APIs as it pertains to consistency. As such, I had to make the following changes to my projects.
 The &lt;code&gt;IApplicationBuilder.Use*&lt;/code&gt; pattern now takes a new &lt;code&gt;*Options&lt;/code&gt; instance rather than an &lt;code&gt;Action&amp;lt;*Options&amp;gt;&lt;/code&gt;, providing more control to the consumer.&lt;/p&gt;
 
-&lt;h4 id=&#34;rc1-7&#34;&gt;RC1&lt;/h4&gt;
+&lt;h4 id=&#34;rc1-7:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC1&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;app.UseCookieAuthentication(options =&amp;gt;
 {
@@ -3349,7 +3349,7 @@ The &lt;code&gt;IApplicationBuilder.Use*&lt;/code&gt; pattern now takes a new &l
 });
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;rc2-6&#34;&gt;RC2&lt;/h4&gt;
+&lt;h4 id=&#34;rc2-6:0349d6d87cad08484fba4056f258e4f0&#34;&gt;RC2&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;app.UseCookieAuthentication(new CookieAuthenticationOptions
 {
@@ -3367,7 +3367,7 @@ you can no longer do so with the &lt;strong&gt;RC2&lt;/strong&gt; release.&lt;/p
 
 &lt;p&gt;Wherever you were using the &lt;code&gt;IApplication&lt;/code&gt; interface, you should be able to instead use the &lt;code&gt;IWebHost&lt;/code&gt; interface.&lt;/p&gt;
 
-&lt;h3 id=&#34;controllers-as-services&#34;&gt;Controllers as Services&lt;/h3&gt;
+&lt;h3 id=&#34;controllers-as-services:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Controllers as Services&lt;/h3&gt;
 
 &lt;p&gt;In &lt;strong&gt;RC1&lt;/strong&gt;, there was a nice little feature that allowed for any &lt;code&gt;Type&lt;/code&gt; to exist in a list of plausible controller/services - meaning that you could basically register external controllers as
 valid API and View entry points into your hosting application. You simply needed to add the types via the following:&lt;/p&gt;
@@ -3385,7 +3385,7 @@ valid API and View entry points into your hosting application. You simply needed
 builder.AddControllersAsServices();
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-startup-ctor&#34;&gt;The Startup &lt;code&gt;.ctor&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;the-startup-ctor:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The Startup &lt;code&gt;.ctor&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;One little change, you&amp;rsquo;re now required to explicitly set the base path and you can do so with the following.&lt;/p&gt;
 
@@ -3401,7 +3401,7 @@ builder.AddControllersAsServices();
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;the-program-cs-file&#34;&gt;The &lt;code&gt;Program.cs&lt;/code&gt; file&lt;/h3&gt;
+&lt;h3 id=&#34;the-program-cs-file:0349d6d87cad08484fba4056f258e4f0&#34;&gt;The &lt;code&gt;Program.cs&lt;/code&gt; file&lt;/h3&gt;
 
 &lt;p&gt;Yes, we are now a console application&amp;hellip;so we&amp;rsquo;ll need this for our entry point.&lt;/p&gt;
 
@@ -3423,12 +3423,12 @@ builder.AddControllersAsServices();
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;breaking-changes&#34;&gt;Breaking changes&lt;/h2&gt;
+&lt;h2 id=&#34;breaking-changes:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Breaking changes&lt;/h2&gt;
 
 &lt;p&gt;For a complete listing of all the announcements, please visit the official
 &lt;a href=&#34;https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2&#34;&gt;&lt;strong&gt;ASP.NET &lt;i class=&#34;fa fa-github-alt&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Repo&lt;/strong&gt;&lt;/a&gt; announcements issue.&lt;/p&gt;
 
-&lt;h2 id=&#34;further-reading&#34;&gt;Further reading&lt;/h2&gt;
+&lt;h2 id=&#34;further-reading:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Further reading&lt;/h2&gt;
 
 &lt;p&gt;The previous steps were really to get your environment in an &lt;strong&gt;RC2&lt;/strong&gt; ready state, but there is so much more you can learn that has changed.
 I encourage bookmarking and reading the following articles as time permits.&lt;/p&gt;
@@ -3440,7 +3440,7 @@ I encourage bookmarking and reading the following articles as time permits.&lt;/
 &lt;li&gt;&lt;a href=&#34;http://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html&#34;&gt;&lt;strong&gt;Writing Libraries with Cross Platform Tools&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:0349d6d87cad08484fba4056f258e4f0&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;There, that really wasn&amp;rsquo;t too bad - was it? I&amp;rsquo;m certain that I didn&amp;rsquo;t cover everything and that I probably missed something. I hope that this was helpful, please feel free to share this!&lt;/p&gt;
 </description>

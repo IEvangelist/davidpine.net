@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>caching on IEvangelist</title>
-    <link>http://davidpine.net/categories/caching/index.xml</link>
-    <description>Recent content in caching on IEvangelist</description>
+    <title>Caching on IEvangelist</title>
+    <link>http://davidpine.net/categories/caching/</link>
+    <description>Recent content in Caching on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/caching/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,7 +17,7 @@
       <guid>http://davidpine.net/blog/asp-net-core-optimization/</guid>
       <description>
 
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;h2 id=&#34;intro:f7ba068c12f661d5bfa879f663970183&#34;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in
 tandem on an &lt;strong&gt;ASP.NET Core&lt;/strong&gt; application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.&lt;/p&gt;
@@ -31,7 +32,7 @@ are provided a set meal (a bloated dependency chain) containing undesired items.
 
 &lt;p&gt;In other words, all dependencies are pluggable middleware. This provides ultimate control as you have to explicitly &lt;em&gt;opt-in&lt;/em&gt; for the middleware you desire.&lt;/p&gt;
 
-&lt;h3 id=&#34;know-thy-middleware&#34;&gt;Know thy Middleware&lt;/h3&gt;
+&lt;h3 id=&#34;know-thy-middleware:f7ba068c12f661d5bfa879f663970183&#34;&gt;Know thy Middleware&lt;/h3&gt;
 
 &lt;p&gt;Not all middleware is equal. Different middleware serves different purposes (obviously). Try to think of each middleware as its own standalone feature-set. Not all middleware is
 given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In
@@ -41,7 +42,7 @@ fact, this is the case when using static file caching and response compression t
 &lt;p&gt;&lt;p/&gt;The &lt;em&gt;order&lt;/em&gt; in which middleware is added matters and dictates the order of execution during a request.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;installing-dependencies&#34;&gt;Installing Dependencies&lt;/h4&gt;
+&lt;h4 id=&#34;installing-dependencies:f7ba068c12f661d5bfa879f663970183&#34;&gt;Installing Dependencies&lt;/h4&gt;
 
 &lt;p&gt;I wrote a tiny application and put it up on GitHub, check it out &lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; if you want
 to follow along. Now let&amp;rsquo;s install the dependencies we&amp;rsquo;ll need. For static file caching and response compression we need to add two &lt;code&gt;dependencies&lt;/code&gt; to the project.&lt;/p&gt;
@@ -85,7 +86,7 @@ to follow along. Now let&amp;rsquo;s install the dependencies we&amp;rsquo;ll ne
                     [ Install ]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;configuring-startup&#34;&gt;Configuring Startup&lt;/h3&gt;
+&lt;h3 id=&#34;configuring-startup:f7ba068c12f661d5bfa879f663970183&#34;&gt;Configuring Startup&lt;/h3&gt;
 
 &lt;p&gt;There are two common nomenclatures that exist for wiring up middleware in your startup classes, the &lt;code&gt;.Add*&lt;/code&gt; and &lt;code&gt;.Use*&lt;/code&gt; extension methods. The &lt;code&gt;.Add*&lt;/code&gt; calls are intended to add
 services to the &lt;code&gt;IServiceCollection&lt;/code&gt; instance, ensuring that they are ready for &lt;em&gt;usage&lt;/em&gt;. The &lt;code&gt;.Use*&lt;/code&gt; calls specify that you want to use the middleware and makes the assumption
@@ -133,7 +134,7 @@ namespace IEvangelist.AspNetCore.Optimization
 
 &lt;p&gt;There are several types defined by default in &lt;strong&gt;ASP.NET Core&lt;/strong&gt; class &lt;code&gt;ResponseCompressionDefaults.MimeTypes&lt;/code&gt;, we are simply expanding that to include &amp;ldquo;SVG&amp;rdquo; images and the &amp;ldquo;Woff2&amp;rdquo; fonts.&lt;/p&gt;
 
-&lt;h3 id=&#34;order-exemplified&#34;&gt;Order Exemplified&lt;/h3&gt;
+&lt;h3 id=&#34;order-exemplified:f7ba068c12f661d5bfa879f663970183&#34;&gt;Order Exemplified&lt;/h3&gt;
 
 &lt;p&gt;Consider the following:&lt;/p&gt;
 
@@ -193,7 +194,7 @@ While we do have static file middleware, we didn&amp;rsquo;t know that &amp;ldqu
 expression. This expression can be used to delegate the preperation of the response. Notice we&amp;rsquo;re simply setting the &lt;code&gt;Cache-Control&lt;/code&gt; header to a &amp;ldquo;max-age&amp;rdquo; of a week. That was
 pretty simple, hey?!&lt;/p&gt;
 
-&lt;h3 id=&#34;compression-awareness&#34;&gt;Compression Awareness&lt;/h3&gt;
+&lt;h3 id=&#34;compression-awareness:f7ba068c12f661d5bfa879f663970183&#34;&gt;Compression Awareness&lt;/h3&gt;
 
 &lt;p&gt;It&amp;rsquo;s all the little things! The response compression middleware boasts deterministic compression, i.e.; if the
 &lt;a href=&#34;https://github.com/aspnet/KestrelHttpServer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;KestrelHttpServer&lt;/code&gt;&lt;/a&gt; is running behind the
@@ -205,15 +206,15 @@ pretty simple, hey?!&lt;/p&gt;
 &lt;li&gt;Whether or not the response needs to be compressed&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;h3 id=&#34;results:f7ba068c12f661d5bfa879f663970183&#34;&gt;Results&lt;/h3&gt;
 
 &lt;p&gt;Let&amp;rsquo;s spend some time examining the results of our response optimization efforts.&lt;/p&gt;
 
-&lt;h4 id=&#34;before&#34;&gt;Before&lt;/h4&gt;
+&lt;h4 id=&#34;before:f7ba068c12f661d5bfa879f663970183&#34;&gt;Before&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/before.png&#34; alt=&#34;Before&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;total-s&#34;&gt;Total(s)&lt;/h5&gt;
+&lt;h5 id=&#34;total-s:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 549 KB transfered | ... | ... 
 &lt;/code&gt;&lt;/pre&gt;
@@ -227,11 +228,11 @@ Accept-Ranges: bytes
 ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;after&#34;&gt;After&lt;/h4&gt;
+&lt;h4 id=&#34;after:f7ba068c12f661d5bfa879f663970183&#34;&gt;After&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/after.png&#34; alt=&#34;After&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;total-s-1&#34;&gt;Total(s)&lt;/h5&gt;
+&lt;h5 id=&#34;total-s-1:f7ba068c12f661d5bfa879f663970183&#34;&gt;Total(s)&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;13 Requests | 175 KB transfered | ... | ... 
 &lt;/code&gt;&lt;/pre&gt;
@@ -251,17 +252,17 @@ Accept-Ranges: bytes
 ETag: &amp;quot;1d1ce31e3bd09cf&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;subsequent-cached-requests&#34;&gt;Subsequent (Cached) Requests&lt;/h4&gt;
+&lt;h4 id=&#34;subsequent-cached-requests:f7ba068c12f661d5bfa879f663970183&#34;&gt;Subsequent (Cached) Requests&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2016/12/cached.png&#34; alt=&#34;Cached&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;let-s-summarize&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
+&lt;h3 id=&#34;let-s-summarize:f7ba068c12f661d5bfa879f663970183&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
 
 &lt;p&gt;We learned some of the basics about &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Together we implemented a response optimization strategy that included deterministic response compression, as well
 as static file caching. We learned some of the common patterns and naming conventions for integrating with &lt;strong&gt;ASP.NET Core&lt;/strong&gt; middleware. Finally, we have a good understanding of
 the &lt;strong&gt;ASP.NET Core&lt;/strong&gt; request pipeline middleware precedence.&lt;/p&gt;
 
-&lt;h3 id=&#34;source-code&#34;&gt;Source Code&lt;/h3&gt;
+&lt;h3 id=&#34;source-code:f7ba068c12f661d5bfa879f663970183&#34;&gt;Source Code&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization&#34; target=&#34;_blank&#34;&gt;

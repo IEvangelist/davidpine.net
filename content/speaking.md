@@ -14,7 +14,9 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
-| Sept 29, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/409" target="_blank">Building a Magic Mirror w/ .NET</a> |
+| Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/575" target="_blank">TypeScript -- JavaScript Reimagined</a> |
+| Oct 16-17, 2017 | <a href=http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/576" target="_blank">From C# 6 to C# 7, then and now!</a> |
+| Sept 29, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/480" target="_blank">TypeScript -- JavaScript Reimagined</a> |
 | Sept 28, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/394" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
 
 ## Past

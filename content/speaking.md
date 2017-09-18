@@ -18,6 +18,8 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 | Oct 16-17, 2017 | <a href=http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/576" target="_blank">From C# 6 to C# 7, then and now!</a> |
 | Sept 29, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/480" target="_blank">TypeScript -- JavaScript Reimagined</a> |
 | Sept 28, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/394" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
+| Sept 25, 2017 | <a href="http://www.milwaukeespin.com" target="_blank">MilwaukeeSPIN - 2017</a> | <a href="http://www.milwaukeespin.com/Events" target="_blank">Current Trends in Technology</a> |
+| Sept 21, 2017 | <a href="www.dotnetconf.net" target="_blank">.NET Conf (local) - 2017</a> | <a href="https://www.eventbrite.com/e/net-conf-2017-tickets-37046195167" target="_blank">What's new in C# (7.1 and 8.0)</a> |
 
 ## Past
 

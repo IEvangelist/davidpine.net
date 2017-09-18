@@ -326,9 +326,14 @@ var obj = default(object);      // null
 &lt;p&gt;This was also used for generics, for example when the type of &lt;code&gt;T&lt;/code&gt; is used we could return &lt;code&gt;default(T)&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static T TryPeekOrDefault&amp;lt;T&amp;gt;(this ConcurrentQueue&amp;lt;T&amp;gt; queue)
-   =&amp;gt; (queue?.TryPeek(out var result) ?? false) 
-      ? result 
-      : default(T);
+{
+    if (queue?.TryPeek(out var result) ?? false)
+    {
+        return result;
+    }
+
+    return default(T);
+}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Likewise, the &lt;code&gt;default&lt;/code&gt; keyword was used in the &lt;code&gt;switch&lt;/code&gt; statement as well &amp;ndash; and signified the &lt;code&gt;default&lt;/code&gt; case label. If all other cases were not executed, the &lt;code&gt;default&lt;/code&gt; case would be.&lt;/p&gt;
@@ -382,19 +387,19 @@ if (sum == default)
 
 &lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;var firstName = &amp;quot;David&amp;quot;;
 var lastName = &amp;quot;Pine&amp;quot;;
-var dateOfBirth = new Date(1984, 7, 7);
+var dateOfBirth = new DateTime(1984, 7, 7);
 
 // C# 7.0, required &amp;quot;explicit names&amp;quot;
 var person = (firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth);
-person.firstName;   // &amp;quot;David&amp;quot;
-person.lastName;    // &amp;quot;Pine&amp;quot;
-person.dateOfBirth  // 7/7/1984
+var fn = person.firstName;      // &amp;quot;David&amp;quot;
+var ln = person.lastName;       // &amp;quot;Pine&amp;quot;
+var dob = person.dateOfBirth;   // 7/7/1984
 
 // C# 7.1, allows &amp;quot;inferred names&amp;quot;
 person = (firstName, lastName, dateOfBirth);
-person.firstName;   // &amp;quot;David&amp;quot;
-person.lastName;    // &amp;quot;Pine&amp;quot;
-person.dateOfBirth  // 7/7/1984
+fn = person.firstName;          // &amp;quot;David&amp;quot;
+ln = person.lastName;           // &amp;quot;Pine&amp;quot;
+dob = person.dateOfBirth;       // 7/7/1984
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&#34;pattern-matching-with-generics-a-target-blank-href-https-github-com-dotnet-csharplang-issues-154-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078&#34;&gt;Pattern-matching with Generics &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dotnet/csharplang/issues/154&#34;&gt; &lt;i class=&#34;fa fa-external-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -420,7 +425,7 @@ public void Interact&amp;lt;TAnimal&amp;gt;(TAnimal animal)
 
     switch (animal)
     {
-        case Dog dog when (dog.Breed == Breed.LabradorRetriever):
+        case Dog d when (d.Breed == Breed.LabradorRetriever):
             // Feed dog, the let &#39;em outside
             break;
     }

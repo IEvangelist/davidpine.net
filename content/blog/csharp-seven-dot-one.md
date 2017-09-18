@@ -72,9 +72,14 @@ This was also used for generics, for example when the type of `T` is used we cou
 
 ```csharp
 public static T TryPeekOrDefault<T>(this ConcurrentQueue<T> queue)
-   => (queue?.TryPeek(out var result) ?? false) 
-      ? result 
-      : default(T);
+{
+    if (queue?.TryPeek(out var result) ?? false)
+    {
+        return result;
+    }
+
+    return default(T);
+}
 ```
 
 Likewise, the `default` keyword was used in the `switch` statement as well -- and signified the `default` case label. If all other cases were not executed, the `default` case would be.
@@ -133,19 +138,19 @@ With `tuple` projection initializers our C# `tuple` literals are simplified and 
 ```csharp
 var firstName = "David";
 var lastName = "Pine";
-var dateOfBirth = new Date(1984, 7, 7);
+var dateOfBirth = new DateTime(1984, 7, 7);
 
 // C# 7.0, required "explicit names"
 var person = (firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth);
-person.firstName;   // "David"
-person.lastName;    // "Pine"
-person.dateOfBirth  // 7/7/1984
+var fn = person.firstName;      // "David"
+var ln = person.lastName;       // "Pine"
+var dob = person.dateOfBirth;   // 7/7/1984
 
 // C# 7.1, allows "inferred names"
 person = (firstName, lastName, dateOfBirth);
-person.firstName;   // "David"
-person.lastName;    // "Pine"
-person.dateOfBirth  // 7/7/1984
+fn = person.firstName;          // "David"
+ln = person.lastName;           // "Pine"
+dob = person.dateOfBirth;       // 7/7/1984
 ```
 
 # Pattern-matching with Generics <a target="_blank" href="https://github.com/dotnet/csharplang/issues/154"> <i class="fa fa-external-link"></i></a>
@@ -172,7 +177,7 @@ public void Interact<TAnimal>(TAnimal animal)
 
     switch (animal)
     {
-        case Dog dog when (dog.Breed == Breed.LabradorRetriever):
+        case Dog d when (d.Breed == Breed.LabradorRetriever):
             // Feed dog, the let 'em outside
             break;
     }

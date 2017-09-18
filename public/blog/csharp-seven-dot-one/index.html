@@ -57,7 +57,7 @@
 
 
 <meta itemprop="dateModified" content="2017-07-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1139">
+<meta itemprop="wordCount" content="1158">
 
 
 
@@ -491,9 +491,14 @@ var obj = default(object);      // null
 <p>This was also used for generics, for example when the type of <code>T</code> is used we could return <code>default(T)</code>.</p>
 
 <pre><code class="language-csharp">public static T TryPeekOrDefault&lt;T&gt;(this ConcurrentQueue&lt;T&gt; queue)
-   =&gt; (queue?.TryPeek(out var result) ?? false) 
-      ? result 
-      : default(T);
+{
+    if (queue?.TryPeek(out var result) ?? false)
+    {
+        return result;
+    }
+
+    return default(T);
+}
 </code></pre>
 
 <p>Likewise, the <code>default</code> keyword was used in the <code>switch</code> statement as well &ndash; and signified the <code>default</code> case label. If all other cases were not executed, the <code>default</code> case would be.</p>
@@ -547,19 +552,19 @@ if (sum == default)
 
 <pre><code class="language-csharp">var firstName = &quot;David&quot;;
 var lastName = &quot;Pine&quot;;
-var dateOfBirth = new Date(1984, 7, 7);
+var dateOfBirth = new DateTime(1984, 7, 7);
 
 // C# 7.0, required &quot;explicit names&quot;
 var person = (firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth);
-person.firstName;   // &quot;David&quot;
-person.lastName;    // &quot;Pine&quot;
-person.dateOfBirth  // 7/7/1984
+var fn = person.firstName;      // &quot;David&quot;
+var ln = person.lastName;       // &quot;Pine&quot;
+var dob = person.dateOfBirth;   // 7/7/1984
 
 // C# 7.1, allows &quot;inferred names&quot;
 person = (firstName, lastName, dateOfBirth);
-person.firstName;   // &quot;David&quot;
-person.lastName;    // &quot;Pine&quot;
-person.dateOfBirth  // 7/7/1984
+fn = person.firstName;          // &quot;David&quot;
+ln = person.lastName;           // &quot;Pine&quot;
+dob = person.dateOfBirth;       // 7/7/1984
 </code></pre>
 
 <h1 id="pattern-matching-with-generics-a-target-blank-href-https-github-com-dotnet-csharplang-issues-154-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078">Pattern-matching with Generics <a target="_blank" href="https://github.com/dotnet/csharplang/issues/154"> <i class="fa fa-external-link"></i></a></h1>
@@ -585,7 +590,7 @@ public void Interact&lt;TAnimal&gt;(TAnimal animal)
 
     switch (animal)
     {
-        case Dog dog when (dog.Breed == Breed.LabradorRetriever):
+        case Dog d when (d.Breed == Breed.LabradorRetriever):
             // Feed dog, the let 'em outside
             break;
     }
@@ -888,15 +893,6 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net/">.NET</a>
-                                <span style="float:right;">3</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/c/">C#</a>
                                 <span style="float:right;">3</span>
                             </header>
@@ -906,8 +902,8 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/typescript/">TypeScript</a>
-                                <span style="float:right;">2</span>
+                                <a href="/categories/.net/">.NET</a>
+                                <span style="float:right;">3</span>
                             </header>
                         </article>
                     </li>
@@ -924,151 +920,16 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/typescript/">TypeScript</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/javascript/">JavaScript</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/compression/">Compression</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/caching/">Caching</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/angular2/">Angular2</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/.net-standard/">.NET Standard</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/technical-conference/">Technical Conference</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/http/">Http</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/rxjs/">RxJS</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/mke-dot-net/">MKE DOT NET</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/uwp/">UWP</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/gzip/">GZip</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/technical-doubt/">Technical Doubt</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/fear/">Fear</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/tooling/">Tooling</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/identity/">Identity</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/magic-mirror/">Magic Mirror</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1095,7 +956,151 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/self-branding/">Self-Branding</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/angular2/">Angular2</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-conference/">Technical Conference</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/magic-mirror/">Magic Mirror</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/compression/">Compression</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net-standard/">.NET Standard</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/mke-dot-net/">MKE DOT NET</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

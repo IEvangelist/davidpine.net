@@ -846,6 +846,12 @@ that I love is just one of those ways I give back. Anytime that I get to express
 
 &lt;tbody&gt;
 &lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Nov 14, 2017&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.meetup.com/Wisconsin-Net-Users-Group/&#34; target=&#34;_blank&#34;&gt;WI .NET User Group - 2017&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113732/&#34; target=&#34;_blank&#34;&gt;TypeScript: Making JavaScript Tolerable&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Oct 16-17, 2017&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://devupconf.org/&#34; target=&#34;_blank&#34;&gt;Dev Up - 2017&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://devupconf.org/Sessions/575&#34; target=&#34;_blank&#34;&gt;TypeScript &amp;ndash; JavaScript Reimagined&lt;/a&gt;&lt;/td&gt;
@@ -856,7 +862,21 @@ that I love is just one of those ways I give back. Anytime that I get to express
 &lt;td align=&#34;left&#34;&gt;&lt;a href=http://devupconf.org/&#34; target=&#34;_blank&#34;&gt;Dev Up - 2017&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://devupconf.org/Sessions/576&#34; target=&#34;_blank&#34;&gt;From C# 6 to C# 7, then and now!&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
+&lt;h2 id=&#34;past:991f6edce4c158f0d781901c75294628&#34;&gt;Past&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Date&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Event / Conference&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Talk / Presentation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Sept 29, 2017&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://prairiecode.amegala.com/&#34; target=&#34;_blank&#34;&gt;Prairie.Code() - 2017&lt;/a&gt;&lt;/td&gt;
@@ -880,21 +900,7 @@ that I love is just one of those ways I give back. Anytime that I get to express
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;www.dotnetconf.net&#34; target=&#34;_blank&#34;&gt;.NET Conf (local) - 2017&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.eventbrite.com/e/net-conf-2017-tickets-37046195167&#34; target=&#34;_blank&#34;&gt;What&amp;rsquo;s new in C# (7.1 and 8.0)&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 
-&lt;h2 id=&#34;past:991f6edce4c158f0d781901c75294628&#34;&gt;Past&lt;/h2&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Date&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Event / Conference&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Talk / Presentation&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Jul 12, 2017&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://detroitcode.amegala.com/&#34; target=&#34;_blank&#34;&gt;Detroit.Code() - 2017&lt;/a&gt;&lt;/td&gt;

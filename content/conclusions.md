@@ -3,6 +3,10 @@ title = "Conclusions"
 date = "2017-02-05"
 +++
 
+# Live
+
+> <p/> Like an aggressive contagion seeking the next victim, negativity can plague an entire team's morale. Negativity is contagious!
+
 # Programming
 
 > <p/> In programming there isn't a "right way" but there is always a "wrong way". There is however a "better way", until you run out of time.
@@ -14,9 +18,9 @@ course of action. We negotiate with our peers, arguing our point of views. We ne
 
 # Motto
 
- - It’s not what you are, it’s what you do
- - It’s not what you do, it’s how you do it
- - It’s not how you do it, it’s why you do it
- - It’s not where you came from, it’s where you are now
- - It’s not where you are now, it’s where you’re going
- - It’s not where you’re going, it’s how you'll get there
+ - It's not what you are, it's what you do
+ - It's not what you do, it's how you do it
+ - It's not how you do it, it's why you do it
+ - It's not where you came from, it's where you are now
+ - It's not where you are now, it's where you're going
+ - It's not where you’re going, it's how you'll get there

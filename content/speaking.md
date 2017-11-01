@@ -14,15 +14,17 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
+| Feb 10, 2018 | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">What's new in C#</a> |
+| Feb 10, 2018 | <a href="https://www.milwaukeecodecamp.com/" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">A Developer for the Community</a> |
 | Nov 14, 2017 | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/" target="_blank">WI .NET User Group - 2017</a> | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113732/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
-| Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/575" target="_blank">TypeScript -- JavaScript Reimagined</a> |
-| Oct 16-17, 2017 | <a href=http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/576" target="_blank">From C# 6 to C# 7, then and now!</a> |
-
+| Nov 11, 2017 | <a href="https://www.milwaukeecodecamp.com/" target="_blank">Milwaukee Code Camp - 2017</a> | <a href="https://www.milwaukeecodecamp.com/sessions" target="_blank">What's new in C#</a> |
 
 ## Past
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
+| Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/575" target="_blank">TypeScript -- JavaScript Reimagined</a> |
+| Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/576" target="_blank">From C# 6 to C# 7, then and now!</a> |
 | Sept 29, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/480" target="_blank">TypeScript -- JavaScript Reimagined</a> |
 | Sept 28, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/394" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
 | Sept 25, 2017 | <a href="http://www.milwaukeespin.com" target="_blank">MilwaukeeSPIN - 2017</a> | <a href="http://www.milwaukeespin.com/Events" target="_blank">Current Trends in Technology</a> |
@@ -40,7 +42,7 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 | Mar 31, 2017 | <a href="https://indycode.amegala.com/" target="_blank">Indy.Code() - 2017</a> | <a href="https://indycode.amegala.com/Sessions/45" target="_blank">From C# 6 to C# 7, then and now!</a> |
 | Mar 24, 2017 | <a href="http://www.centare.com/" target="_blank">Centare (Forward Thinking) - 2017</a> | <a href="https://gist.github.com/IEvangelist/287742b6fe343b89da0be88427405bd1" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
 | Mar 17, 2017 | <a href="https://launch.visualstudio.com/local-events/" target="_blank">Visual Studio 2017 Launch Event</a> | <a href="https://youtu.be/kFpXRooGo0c" target="_blank">From C# 6 to C# 7, then and now!</a> |
-| Jan 12, 2017 | <a href="https://channel9.msdn.com/" target="_blank">Microsoft's Channel 9 - 2017</a> | <a href="channel9.msdn.com/Shows/On-NET/David-Pine-Magic-mirror-on-the-wall-who-is-the-fairest-one-of-all" target="_blank">Magic mirror on the wall, who is the fairest one of all?</a> |
+| Jan 12, 2017 | <a href="https://channel9.msdn.com/" target="_blank">Microsoft's Channel 9 - 2017</a> | <a href="https://channel9.msdn.com/Shows/On-NET/David-Pine-Magic-mirror-on-the-wall-who-is-the-fairest-one-of-all" target="_blank">Magic mirror on the wall, who is the fairest one of all?</a> |
 | Oct 29, 2016 | <a href="http://www.mkedotnet.com/2016" target="_blank">MKE DOT NET - 2016</a> | <a href="http://www.mkedotnet.com/2016/sessions/magic-mirror/" target="_blank">Building a "Magic Mirror"</a> |
 | Oct 15, 2016 | <a href="http://milwaukeecodecamp.com/" target="_blank">Milwaukee Code Camp - 2016</a> | <a href="http://milwaukeecodecamp.com/session/details/1065" target="_blank">TypeScript -- JavaScript Reimagined</a> |
 | Jun 24, 2016 | <a href="https://channel9.msdn.com/Events/Build/2016" target="_blank">//Build/ Recap - 2016</a> | <a href="https://speakerdeck.com/ievangelist/recap" target="_blank">2016 //build/ recap</a> |

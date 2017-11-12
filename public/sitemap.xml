@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://davidpine.net/</loc>
-    <lastmod>2017-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidpine.net/blog/xunit-powered-by-roslyn/</loc>
+    <lastmod>2017-11-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>

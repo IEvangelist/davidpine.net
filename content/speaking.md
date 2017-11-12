@@ -17,12 +17,12 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 | Feb 10, 2018 | <a href="http://www.fladotnet.com/codecamp/Home.aspx" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">What's new in C#</a> |
 | Feb 10, 2018 | <a href="http://www.fladotnet.com/codecamp/Home.aspx" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">A Developer for the Community</a> |
 | Nov 14, 2017 | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/" target="_blank">WI .NET User Group - 2017</a> | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113732/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
-| Nov 11, 2017 | <a href="https://www.milwaukeecodecamp.com/" target="_blank">Milwaukee Code Camp - 2017</a> | <a href="https://www.milwaukeecodecamp.com/sessions" target="_blank">What's new in C#</a> |
 
 ## Past
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
+| Nov 11, 2017 | <a href="https://www.milwaukeecodecamp.com/" target="_blank">Milwaukee Code Camp - 2017</a> | <a href="https://www.milwaukeecodecamp.com/session/details/1118" target="_blank">What's new in C#</a> |
 | Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/575" target="_blank">TypeScript -- JavaScript Reimagined</a> |
 | Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/576" target="_blank">From C# 6 to C# 7, then and now!</a> |
 | Sept 29, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/480" target="_blank">TypeScript -- JavaScript Reimagined</a> |

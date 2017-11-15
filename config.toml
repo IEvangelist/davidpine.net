@@ -99,6 +99,7 @@ googleAnalytics = "UA-78203613-1"
 # The social media icons will appear on the sidebar
 [social]
     github          = "IEvangelist"
+    papercall       = "david-pine"
     bitbucket       = ""
     jsfiddle        = ""
     codepen         = ""

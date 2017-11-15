@@ -2,6 +2,10 @@
 <li><a href="//github.com/{{.}}" target="_blank" title="GitHub" class="fa-lg fa-github"></a></li>
 {{ end }}
 
+{{ with .Site.Social.papercall }}
+<li><a href="//papercall.io/speakers/{{.}}" target="_blank" title="PaperCall" class="fa-lg fa-paper-plane-o"></a></li>
+{{ end }}
+
 {{ with .Site.Social.bitbucket }}
 <li><a href="//bitbucket.com/{{.}}" target="_blank" title="Bitbucket" class="fa-lg fa-bitbucket"></a></li>
 {{ end }}

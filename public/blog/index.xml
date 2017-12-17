@@ -6,8 +6,197 @@
     <description>Recent content in Blogs on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>C# Special Edition</title>
+      <link>http://davidpine.net/blog/csharp-special-edition/</link>
+      <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/csharp-special-edition/</guid>
+      <description>
+
+&lt;p&gt;Welcome to the 17th day of the &lt;a href=&#34;https://crosscuttingconcerns.com/The-First-C-Advent-Calendar&#34; target=&#34;_blank&#34;&gt;C# Advent Calendar&lt;/a&gt;. I&amp;rsquo;d like to take a moment to thank my fellow bloggers who are sharing their passion of C# with everyone following the C# Advent Calendar. Please, share this and their posts - help us all make C# even more widely adopted than it is today.&lt;/p&gt;
+
+&lt;h1 id=&#34;in-the-beginning:83517bab67fab26f20ee96795daa710a&#34;&gt;In the Beginning&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;m honored to blog about my favorite programming language, C#. There is an often forgotten truth about the history of C#, one truth that I like talking about. While C# is a really &amp;ldquo;cool&amp;rdquo; language with awesome features it was actually named &amp;ldquo;Cool&amp;rdquo; in the beginning!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; In January 1999, &lt;em&gt;Anders Hejlsberg&lt;/em&gt; formed a team to build a new language at the time called Cool, which stood for &amp;ldquo;C-like Object Oriented Language&amp;rdquo;. Microsoft had considered keeping the name &amp;ldquo;Cool&amp;rdquo; as the final name of the language, but chose not to do so for trademark reasons.
+&lt;cite&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/C_Sharp_(programming_language)&#34; target=&#34;_blank&#34;&gt;Wiki - C#&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Likewise, the name C# somewhat implies an increment of C++. Imagine, the &lt;code&gt;++&lt;/code&gt; being stacked on-top of each other &amp;ndash; you&amp;rsquo;d have something resembling the &lt;code&gt;#&lt;/code&gt; symbol, clever no?! Unfortunately, my career didn&amp;rsquo;t start with such a cool language. I learned &lt;em&gt;Java&lt;/em&gt; in college and started my career with &lt;em&gt;Visual Basic&lt;/em&gt;. I am now grateful to develop in C# professionally and for fun!&lt;/p&gt;
+
+&lt;h3 id=&#34;it-is-going-to-be-around-for-a-while:83517bab67fab26f20ee96795daa710a&#34;&gt;It is going to be around for a while&lt;/h3&gt;
+
+&lt;p&gt;From all the languages in the &lt;code&gt;.NET&lt;/code&gt; stack, C# is the most prolific.&lt;/p&gt;
+
+&lt;p&gt;This is where &lt;strong&gt;Visual Basic&lt;/strong&gt; lovers&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-vb&#34;&gt;Throw New System.Exception(&amp;quot;Tomatoes!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and &lt;strong&gt;F#&lt;/strong&gt; enthusiasts&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-fs&#34;&gt;raise (new Exception(&amp;quot;their fists in anger!&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The language continues to evolve and innovate. According to the annual &lt;strong&gt;&lt;i class=&#34;fa fa-stack-overflow&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Stack Overflow&lt;/strong&gt; developer survey, &lt;a href=&#34;https://insights.stackoverflow.com/survey/2017#technology-programming-languages&#34; target=&#34;_blank&#34;&gt;C# is the 4th most popular programming language in the world&lt;/a&gt;. And since we&amp;rsquo;re talking about &lt;strong&gt;&lt;i class=&#34;fa fa-stack-overflow&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; Stack Overflow&lt;/strong&gt;, it is noteworthy to mention that 
+
+    
+        
+    
+
+    &lt;a href=&#34;https://stackoverflow.com/users/22656/jon-skeet&#34; target=&#39;_blank&#39;&gt;Jon Skeet&lt;/a&gt;
+
+ is nearing 1 million reputation points &amp;ndash; and he&amp;rsquo;s projecting this will occur mid January. Roughly 55% of all his contributions are for C#, yet he is a Java developer. This never ceases to amaze me!&lt;/p&gt;
+
+&lt;h1 id=&#34;getting-started:83517bab67fab26f20ee96795daa710a&#34;&gt;Getting Started&lt;/h1&gt;
+
+&lt;p&gt;I believe that Microsoft has done an amazing job at not only updating their documentation sites, but unifying them and enhancing the user experience tenfold. The sites seem to flow more naturally while delivering relevant content, and as a developer that is what I want from a resource.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; The &lt;a href=&#34;www.javascript.com&#34; target=&#34;_blank&#34;&gt;JavaScript.com&lt;/a&gt; website has one of the best getting started experiences on the web today.
+&lt;cite&gt;Maria Naggaga &amp;ndash; Keynote &amp;ldquo;It Starts With A Search&amp;rdquo;, MKE DOT NET 2017&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It is more natural for JavaScript to have an online tutorial than C#, but Microsoft made this happen regardless. They have an awesome series of &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/index&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;quick starts&amp;rdquo;&lt;/a&gt; that serve as tutorials. They introduced an in-browser REPL (Read-Eval-Print Loop) for C#, and it is amazing. Here is a listing of a few of them:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/hello-world&#34; target=&#34;_blank&#34;&gt;Hello C#&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/numbers-in-csharp&#34; target=&#34;_blank&#34;&gt;Numbers in C#&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/branches-and-loops&#34; target=&#34;_blank&#34;&gt;Branches and loops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/list-collection&#34; target=&#34;_blank&#34;&gt;Collections in C#&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/introduction-to-classes&#34; target=&#34;_blank&#34;&gt;Introduction to classes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once you&amp;rsquo;re developing you can always rely on the &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/csharp/&#34; target=&#34;_blank&#34;&gt;C# Guide&lt;/a&gt; as well. Finally, the documentation site boasts &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/samples-and-tutorials/&#34; target=&#34;_blank&#34;&gt;Samples and Tutorials&lt;/a&gt; for a more in depth look.&lt;/p&gt;
+
+&lt;h1 id=&#34;speaking-fluently:83517bab67fab26f20ee96795daa710a&#34;&gt;Speaking Fluently&lt;/h1&gt;
+
+&lt;p&gt;C# is a beautiful language with an elegant syntax which is simple, powerful and expressive. Backed by an superb developer experience from Visual Studio, you can quickly immerse yourself into any project. What would a C# post be without some code? Not much of a post at all. Since this is a special edition, let&amp;rsquo;s have a look at something I found interesting and insightful from C# 7. I wrote a post about &lt;a href=&#34;blog/exploring-csharp-seven&#34; target=&#34;_blank&#34;&gt;exploring C# 7&lt;/a&gt; if you&amp;rsquo;d like a refresher.&lt;/p&gt;
+
+&lt;p&gt;C# 7.0 featured &lt;code&gt;out&lt;/code&gt; variables, which enable inline declaration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static class StringExtensions
+{
+    // The declaration is inlined with the out keyword
+    // We can use &#39;var&#39;, as the type int is known
+    // The &#39;result&#39; variable is scope &amp;quot;leaks&amp;quot; to scope of the method body
+    public static int ToInt32(string input)
+        =&amp;gt; int.TryParse(input, out var result)) ? result : result;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can now write super expressive, inlined &lt;code&gt;.TryParse&lt;/code&gt; logic. I wanted to call attention to an issue that I ran into where I made an assumption. The lesson of the story is to never make an assumption, right?! &lt;a href=&#34;https://github.com/dotnet/csharplang/issues/916&#34; target=&#34;_blank&#34;&gt;Here is the issue as it exists on &lt;strong&gt;&lt;i class=&#34;fa fa-github&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; GitHub&lt;/strong&gt; today.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static class ConcurrentExtensions
+{
+    public static T TryPeekOrDefault&amp;lt;T&amp;gt;(this ConcurrentQueue&amp;lt;T&amp;gt; queue)
+        =&amp;gt; (queue?.TryPeek(out T result) ?? false) ? result : default;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This results in the following compiler error:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Error CS0165 Use of unassigned local variable &amp;lsquo;result&amp;rsquo; IEvangelist.Csharp.Seven&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As you can see this does not currently work in C#, but I assumed it would. Let&amp;rsquo;s break it down and figure out why. First, let&amp;rsquo;s remove the single line expression and make it non-ternary.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static class ConcurrentExtensions
+{
+    public static T TryPeekOrDefault&amp;lt;T&amp;gt;(this ConcurrentQueue&amp;lt;T&amp;gt; queue)
+    {
+        if (queue?.TryPeek(out T result) ?? false)
+        {
+            return result;
+        }
+
+        return default;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The first expression within the &lt;code&gt;if&lt;/code&gt; block tests if the &lt;code&gt;queue&lt;/code&gt; parameter in context is &lt;code&gt;null&lt;/code&gt;. If it is &lt;code&gt;null&lt;/code&gt;, it will coalesce to &lt;code&gt;false&lt;/code&gt;. If it is not &lt;code&gt;null&lt;/code&gt;, then if will evaluate the returning result from the &lt;code&gt;.TryPeek&lt;/code&gt; invocation. When the if block is evaluated to be either &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; - after evaluation we know that the &lt;code&gt;result&lt;/code&gt; variable has been definitely assigned. Here is the spec on &lt;strong&gt;&lt;a href=&#34;https://github.com/dotnet/csharplang/blob/master/spec/variables.md#definite-assignment&#34; target=&#34;_blank&#34;&gt;definite assignment&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; At a given location in the executable code of a function member, a variable is said to be definitely assigned if the compiler can prove, by a particular static flow analysis (&lt;a href=&#34;https://github.com/dotnet/csharplang/blob/master/spec/variables.md#precise-rules-for-determining-definite-assignment&#34; target=&#34;_blank&#34;&gt;Precise rules for determining definite assignment&lt;/a&gt;), that the variable has been automatically initialized or has been the target of at least one assignment.
+&lt;cite&gt;&lt;a href=&#34;https://github.com/dotnet/csharplang/blob/master/spec/variables.md#definite-assignment&#34; target=&#34;_blank&#34;&gt;C# Language - &lt;i class=&#34;fa fa-github&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; GitHub&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now consider the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static class ConcurrentExtensions
+{
+    public static T TryPeekOrDefault&amp;lt;T&amp;gt;(this ConcurrentQueue&amp;lt;T&amp;gt; queue)
+    {
+        if (queue == null)
+        {
+            return default;
+        }
+
+        // The &#39;result&#39; variable leaks to this outer scope.
+        // But with the previous eager evaluation and corresponding early exit
+        // the &#39;result&#39; is never accessed.
+        // As such, it is not &amp;quot;definitely assigned&amp;quot;.
+        if (queue.TryPeek(out T result))
+        {
+            return result;
+        }
+
+        return default;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is equivalent to the non-inlined usage of &lt;code&gt;out&lt;/code&gt; variable declaration:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static class ConcurrentExtensions
+{
+    public static T TryPeekOrDefault&amp;lt;T&amp;gt;(this ConcurrentQueue&amp;lt;T&amp;gt; queue)
+    {
+        // The `result` variable may never be accessed.
+        if (queue != null)
+        {
+            T result;
+            if (queue.TryPeek(out result))
+            {
+                return result;
+            }
+        }
+
+        return default;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These are more verbose equivalents in terms of functionality, some with eager evaluation paired with an early exit. Both of these versions compile and would work as you&amp;rsquo;d expect them to. There is talk about getting better support for flow analysis, beyond definite assignment &amp;ndash; I for one would love that. TypeScript has been doing a great job at this, thanks to Anders and company!&lt;/p&gt;
+
+&lt;p&gt;The issue still has a sense of illusion. Yes, as &lt;a href=&#34;https://twitter.com/gafter&#34; target=&#34;_blank&#34;&gt;Neal Gafter&lt;/a&gt; stated I would like definite assignment (which is part of flow analysis) to infer that the variable is only referenced where it was definitely assigned in this case. I&amp;rsquo;m happy that it&amp;rsquo;s been labeled as a &lt;em&gt;Feature Request&lt;/em&gt; and &lt;em&gt;Discussion&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Does that seem reasonable? If not, why? If so, please &lt;a href=&#34;https://github.com/dotnet/csharplang/issues/916&#34; target=&#34;_blank&#34;&gt;visit the issue&lt;/a&gt; and &lt;i class=&#34;fa fa-thumbs-up&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;! I&amp;rsquo;m thrilled that C# is open source and the community is able to contribute in ways such as this. I hope that after reading this you might be inspired to get involved.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Why procrastinate today, when you can procrastinate tomorrow?
+&lt;cite&gt;&lt;a href=&#34;https://twitter.com/reverentgeek&#34; target=&#34;_blank&#34;&gt;David Neal&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;counting-my-blessings:83517bab67fab26f20ee96795daa710a&#34;&gt;Counting my blessings&lt;/h3&gt;
+
+&lt;p&gt;I consider myself to be very fortunate. I work with the owner of &lt;a href=&#34;https://travelswithedwina.com/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Edwina&amp;rdquo;&lt;/a&gt;, who has been patiently teaching and coaching me through the better part of three years of my career. She used to teach algorithms and C# at the Milwaukee School of Engineering (MSOE). I have learned so much from her about C#, language semantics, algebraic reduction, etc&amp;hellip;and I&amp;rsquo;m grateful for that. She has certainly made me a more pragmatic developer. I encourage everyone to find someone who can inspire, motivate or mentor them.&lt;/p&gt;
+
+&lt;h1 id=&#34;final-thoughts:83517bab67fab26f20ee96795daa710a&#34;&gt;Final Thoughts&lt;/h1&gt;
+
+&lt;p&gt;Go learn C#! If you already know it, mentor someone who wants to learn it. Happy Holidays and please support my fellow bloggers as they share their passion for C# with you.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>xUnit Roslyn Analyzers</title>
@@ -3566,15 +3755,6 @@ I encourage bookmarking and reading the following articles as time permits.&lt;/
 
 &lt;p&gt;There, that really wasn&amp;rsquo;t too bad - was it? I&amp;rsquo;m certain that I didn&amp;rsquo;t cover everything and that I probably missed something. I hope that this was helpful, please feel free to share this!&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://davidpine.net/blog/swagger-for-the-win/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://davidpine.net/blog/swagger-for-the-win/</guid>
-      <description></description>
     </item>
     
   </channel>

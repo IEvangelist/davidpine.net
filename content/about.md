@@ -44,11 +44,16 @@ It all started with my middle school ambition - I wanted to learn how those cool
 
 I then had an idea of what I wanted to do. Years later, I decided that I wanted to be a software engineer and that is what I set out to become. I like to think of myself as being a charismatic, results-driven software engineer with proficiency in adaptability and problem solving. Experienced in .NET frameworks, team software engineering and agile development methodologies.
 
-> David is passionate about programming, engineering and problem solving. He is a senior software engineer offering design, development and implementation experience in a variety of environments. David has proven himself to be a versatile team member and possesses the necessary skills to develop 
-> large, complex systems as well as being a very innovative software professional. He has had success working with teams as well as an individual throughout the system development life cycle. David offers the capability to understand complex business requirements and communicate design options 
-> using industry recognized best practices and tools.
+## BIO
+<script src="https://gist.github.com/IEvangelist/38ce34de856dda43803bc48df32cefec.js"></script>
 
-<hr/>
-<h2>SO Flair</h2>
+## <i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter
+<a href="https://twitter.com/davidpine7?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="true" data-show-count="false">Follow @davidpine7</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## <i class="fa fa-stack-overflow" aria-hidden="true"></i> Stack Overflow
 <a href="http://stackoverflow.com/users/2410379/david-pine"><img title="profile for David Pine at Stack Overflow, Q&amp;A for professional and enthusiast programmers" src="http://stackoverflow.com/users/flair/2410379.png" alt="profile for David Pine at Stack Overflow, Q&amp;A for professional and enthusiast programmers" width="208" height="58" />
+</a>
+
+## <i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+<a title="View David Pine's profile on LinkedIn" href="http://www.linkedin.com/in/dpine" target="_blank"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" alt="View David Pine's profile on LinkedIn">
 </a>

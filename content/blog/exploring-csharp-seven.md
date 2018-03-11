@@ -1,6 +1,6 @@
 +++
 author = "David Pine"
-categories = ["C#", ".NET", "Visual Studio"]
+categories = ["CSharp", ".NET", "Visual Studio"]
 date = "2017-03-26"
 description = "Expressiveness Redefined & #notasugly"
 featured = "exploration.png"

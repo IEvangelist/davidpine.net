@@ -1,6 +1,6 @@
 +++
 author = "David Pine"
-categories = ["C#", ".NET", "Visual Studio"]
+categories = ["CSharp", ".NET", "Visual Studio"]
 date = "2017-12-17"
 description = "Ranting about my favorite language"
 featured = "keyboard.jpg"

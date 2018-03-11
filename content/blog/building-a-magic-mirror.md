@@ -1,6 +1,6 @@
 +++
 author = "David Pine"
-categories = ["Magic Mirror", "UWP", "C#", ".NET Core", "IoT", "Raspberry Pi"]
+categories = ["UWP", "CSharp", ".NET Core", "IoT", "Raspberry Pi"]
 date = "2016-12-23"
 description = "Windows 10 IoT Core, UWP, C#, Raspberry Pi 3"
 featured = "mirror.jpg"

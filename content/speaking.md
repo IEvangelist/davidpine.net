@@ -12,15 +12,22 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 
 ## Upcoming
 
+
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
-| Feb 10, 2018 | <a href="http://www.fladotnet.com/codecamp/Home.aspx" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">What's new in C#</a> |
-| Feb 10, 2018 | <a href="http://www.fladotnet.com/codecamp/Home.aspx" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">A Developer for the Community</a> |
+| Jun 26, 2018 | <a href="https://www.meetup.com/milwaukeejs/" target="_blank">MilwaukeeJS - 2018</a> | <a href="https://www.meetup.com/milwaukeejs/events/247249996/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
+| Jun 7, 2018 | <a href="https://2018.syntaxcon.com/" target="_blank">SyntaxCon - 2018</a> | <a href="https://2018.syntaxcon.com/session/typescript-making-javascript-tolerable/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
+| Apr 20, 2018 | <a href="https://itkonekt.com/it-konferencija-novi-sad/" target="_blank">ITKonekt, Novi Sad (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |
+| Apr 17, 2018 | <a href="https://itkonekt.com/it-konferencija-nis/" target="_blank">ITKonekt, Niš (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |
+| Apr 15, 2018 | <a href="https://itkonekt.com/it-konferencija-beograd/" target="_blank">ITKonekt, Belgrade (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |
 
 ## Past
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
+| Feb 27, 2018 | <a href="https://www.meetup.com/milwaukeejs/" target="_blank">MilwaukeeJS - 2018</a> | <a href="https://www.meetup.com/milwaukeejs/events/246445980/" target="_blank">Frontend Framework Panel (Angular)</a> |
+| Feb 10, 2018 | <a href="http://www.fladotnet.com/codecamp/Home.aspx" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
+| Feb 10, 2018 | <a href="http://www.fladotnet.com/codecamp/Home.aspx" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">Upgrade Yourself: Most Valued Developer</a> |
 | Nov 14, 2017 | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/" target="_blank">WI .NET User Group - 2017</a> | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113732/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
 | Nov 11, 2017 | <a href="https://www.milwaukeecodecamp.com/" target="_blank">Milwaukee Code Camp - 2017</a> | <a href="https://www.milwaukeecodecamp.com/session/details/1118" target="_blank">What's new in C#</a> |
 | Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/575" target="_blank">TypeScript -- JavaScript Reimagined</a> |

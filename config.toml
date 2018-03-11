@@ -4,7 +4,7 @@ title = "IEvangelist"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
-disqusShortname = "davidpine"
+disqusShortname = "shortname"
 googleAnalytics = "UA-78203613-1"
 
 [params]

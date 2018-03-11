@@ -3,7 +3,7 @@ title = "Conclusions"
 date = "2017-02-05"
 +++
 
-# Live
+# Life
 
 > <p/> Like an aggressive contagion seeking the next victim, negativity can plague an entire team's morale. Negativity is contagious!
 

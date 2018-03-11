@@ -6,8 +6,122 @@
     <description>Recent content in ASP.NET Core on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Mar 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/asp.net-core/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ASP.NET Core Configuration Tips</title>
+      <link>http://davidpine.net/blog/asp-net-core-configuration/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/asp-net-core-configuration/</guid>
+      <description>
+
+&lt;p&gt;Being a software developer, it&amp;rsquo;s in our nature to configure various aspects of the applications that we write. With &lt;strong&gt;ASP.NET Core&lt;/strong&gt; configuring our applications is really straight forward. Luckily, there is a lot of really well written documentation surrounding this topic.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-file-text&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &amp;nbsp; ASP.NET Core - Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-file-text&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; &amp;nbsp; ASP.NET Core - Options&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, there is still room for improvement. I&amp;rsquo;ve prepared a few tips that can enhance developer productivity by taking advantage of various C# features.&lt;/p&gt;
+
+&lt;h2 id=&#34;c-class-json:edf2d12af56b1a72bd8b2330f7d37998&#34;&gt;C# Class &amp;lt; &amp;ndash; &amp;gt; JSON&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; configuration via the &lt;code&gt;IOptions&amp;lt;T&amp;gt;&lt;/code&gt; and &lt;code&gt;IOptionsSnapshot&amp;lt;T&amp;gt;&lt;/code&gt; have been around for a long time. Their usage is a first class citizen within &lt;strong&gt;ASP.NET Core&lt;/strong&gt; applications, and work to tie &lt;code&gt;appsettings.json&lt;/code&gt; values to corresponding configuration &lt;a href=&#34;https://en.wikipedia.org/wiki/Plain_old_CLR_object&#34; target=&#34;_blank&#34;&gt;POCO&amp;rsquo;s&lt;/a&gt;. As a refresher on configuration, there is a one-to-one relationship between a JSON object in the &lt;code&gt;appsettings.json&lt;/code&gt; and the C# class that represents it.&lt;/p&gt;
+
+&lt;h3 id=&#34;appsettings-json:edf2d12af56b1a72bd8b2330f7d37998&#34;&gt;&lt;code&gt;appsettings.json&lt;/code&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;notificationSettings&amp;quot;: {
+        &amp;quot;notificationInterval&amp;quot;: &amp;quot;00:15:00&amp;quot;,
+        &amp;quot;isMulticast&amp;quot;: true,
+        &amp;quot;sources&amp;quot;: [
+            {
+                &amp;quot;url&amp;quot;: &amp;quot;http://www.contoso.com/notificationHub&amp;quot;,
+                &amp;quot;key&amp;quot;: &amp;quot;f7ea5e2b22bf907344f3a780caa0a166&amp;quot;
+            }
+        ]
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;notificationsettings-cs-and-notificationsource-cs:edf2d12af56b1a72bd8b2330f7d37998&#34;&gt;&lt;code&gt;NotificationSettings.cs&lt;/code&gt; and &lt;code&gt;NotificationSource.cs&lt;/code&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public class NotificationSettings
+{
+    public TimeSpan NotificationInterval { get;set; }
+    public TimeSpan TimeoutInterval { get; set; }
+    public bool IsImplicit { get; set; }
+    public List&amp;lt;NotificationSource&amp;gt; Sources { get; set; }
+
+    public NotificationSetting()
+    {
+        IsImplicit = true;
+        TimeoutInterval = TimeSpan.FromSeconds(30);
+    }
+}
+
+public class NotificationSource
+{
+    public Uri Url { get; set; }
+    public string Key { get; set; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you looked at both the &lt;code&gt;appsettings.json&lt;/code&gt; and the two C# classes, I&amp;rsquo;m hoping that you noticed something. I hope that you noticed that the JSON settings didn&amp;rsquo;t fully provide a value for all the mapped properties in the &lt;code&gt;NotificationSettings&lt;/code&gt; object. We have however, set these values as part of the object&amp;rsquo;s &lt;code&gt;.ctor&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; &lt;cite&gt;&lt;strong&gt;ProTip&lt;/strong&gt;&lt;/cite&gt;
+Use C# 6 Property Initializers to set default values. If the corresponding property exists in the JSON object mapping, it will be overwritten as to be expected; however, if omitted your default value is used.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Using property initializers, this is simplified as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public class NotificationSettings
+{
+    public TimeSpan NotificationInterval { get;set; }
+    public TimeSpan TimeoutInterval { get; set; } = TimeSpan.FromSeconds(30);
+    public bool IsImplicit { get; set; } = true;
+    public List&amp;lt;NotificationSource&amp;gt; Sources { get; set; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It is a good practice to specify default values for your settings classes. As part of the &lt;code&gt;Startup.cs&lt;/code&gt; class, the &lt;code&gt;ConfigureServices&lt;/code&gt; method is where you will &amp;ldquo;Configure&amp;rdquo; your mappings of the JSON section that is associated to the C# object representing it. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void ConfigureServices(
+    IServiceCollection services)
+{
+    // Configure the &amp;quot;NotificationSettings&amp;quot;
+    // mapping it to the corresponding JSON section
+
+    services.Configure&amp;lt;NotificationSettings&amp;gt;(
+        Configuration.GetSection(&amp;quot;NotificationSettings&amp;quot;));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This should look very familiar.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; &lt;cite&gt;&lt;strong&gt;ProTip&lt;/strong&gt;&lt;/cite&gt;
+Use C# 6 &lt;code&gt;nameof&lt;/code&gt; operator to configure your C# class mapping. This alleviates the usage of magic strings and enforces a consistent naming convention.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The change is tiny, however; this is another great usage of the &lt;code&gt;nameof&lt;/code&gt; operator. This assumes that the the section in the JSON file matches the name of the class object representing it. Additionally, it serves as a reason to keep the names matching.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void ConfigureServices(
+    IServiceCollection services)
+{
+    services.Configure&amp;lt;NotificationSettings&amp;gt;(
+        Configuration.GetSection(nameof(NotificationSettings));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conclusion:edf2d12af56b1a72bd8b2330f7d37998&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I have provided a few simple tips for &lt;strong&gt;ASP.NET Core&lt;/strong&gt; configuration leveraging a few C# 6 features. They are nothing earth-shattering, but they are practical and very useful. I often see developers &lt;em&gt;not&lt;/em&gt; taking advantage of simple features like these when they are available. These two features alone in an &lt;strong&gt;ASP.NET Core&lt;/strong&gt; configuration could simplify refactoring and stream-line readability &amp;ndash; that&amp;rsquo;s enough reason for me, I hope it is for you too!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Overriding ASP.NET Core Framework-Provided Services</title>

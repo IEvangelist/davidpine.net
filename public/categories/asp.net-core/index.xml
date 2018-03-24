@@ -6,8 +6,317 @@
     <description>Recent content in ASP.NET Core on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Mar 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/categories/asp.net-core/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ASP.NET Core Unit Testing For Security Attributes</title>
+      <link>http://davidpine.net/blog/asp-net-core-security-unit-testing/</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/asp-net-core-security-unit-testing/</guid>
+      <description>
+
+&lt;h1 id=&#34;intro:62ff3a2cc4e15c531086d495140b895f&#34;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;As a developer, I can say that developers are lazy - at least I know and acknowledge that I am. If I&amp;rsquo;m tasked with something even the slightest bit repetitious I&amp;rsquo;ll script it out, or find a way to automate it. Likewise, if I fall into a habit of forgetting something important - I&amp;rsquo;ll figure out a way to &lt;em&gt;not forget&lt;/em&gt;. Especially when it comes to securing an application.&lt;/p&gt;
+
+&lt;h2 id=&#34;security-soapbox:62ff3a2cc4e15c531086d495140b895f&#34;&gt;Security Soapbox&lt;/h2&gt;
+
+&lt;p&gt;We should take application security very seriously! With &lt;strong&gt;ASP.NET Core&lt;/strong&gt; there&amp;rsquo;s a lot of &lt;a href=&#34;https://docs.microsoft.com/en-us/aspnet/core/security/&#34; target=&#34;_blank&#34;&gt;existing documentation&lt;/a&gt; for securing your application. This covers identity, authentication, authorization, data protection, HTTPS, safe storage, Azure key vault, anti-request forgery, open redirect attack, cross-site scripting, etc&amp;hellip; the list goes on and on. All these things are important and as a developer you&amp;rsquo;re ultimately accountable for writing secure code.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-dilemma:62ff3a2cc4e15c531086d495140b895f&#34;&gt;The Dilemma&lt;/h2&gt;
+
+&lt;p&gt;A while back I spent a fair amount of time writing some &lt;strong&gt;ASP.NET Core Web API&lt;/strong&gt; endpoints and I kept forgetting to provide the &lt;code&gt;AuthorizeAttribute&lt;/code&gt; on various controller classes or even controller actions.&lt;/p&gt;
+
+&lt;p&gt;There is an easy way to solve this. Within &lt;code&gt;ConfigureServices&lt;/code&gt; we could apply an &lt;code&gt;AuthorizeFilter&lt;/code&gt; with a policy that requires an authenticated user. This serves as a nice security blanket, that ensures all endpoints are only accessible from an authenticated user.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public void ConfigureServices(IServicesCollection services)
+{
+    services.AddMvc(
+        options =&amp;gt;
+        {
+            // Only allow authenticated users.
+            var defaultPolicy =
+                new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+
+            options.Filters.Add(new AuthorizeFilter(defaultPolicy));    
+        });
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, based on your needs - you may choose to not apply this filter. If you choose to not apply this filter you&amp;rsquo;re left with three options.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Apply an &lt;code&gt;AuthorizeAttribute&lt;/code&gt; at the controller class level (cascades onto all the actions)&lt;/li&gt;
+&lt;li&gt;Apply an &lt;code&gt;AuthorizeAttribute&lt;/code&gt; on each individual action method &lt;i class=&#34;fa fa-meh-o&#34;&gt;&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;Not protect your API at all &lt;i class=&#34;fa fa-frown-o&#34;&gt;&lt;/i&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;automation-to-the-rescue:62ff3a2cc4e15c531086d495140b895f&#34;&gt;Automation To The Rescue&lt;/h2&gt;
+
+&lt;p&gt;Some of our &lt;strong&gt;ASP.NET Core Web APIs&lt;/strong&gt; were protected by the filter, some by controller class level &lt;code&gt;AuthorizeAttribute&lt;/code&gt; decoration and others by the individual action&amp;hellip; and some not at all. This is a problem! It is common practice to run unit tests prior to pushing code into a feature branch for a pull request. If I forget to do that, my build system has some pull request pre-checks in place - one of which is to run the unit tests. As such, I know that unit tests will be executed. With this, I decided to write a unit test that leveraged a bit of reflection. Since it is a unit test, I&amp;rsquo;m not terribly concerned with performance - so reflection is fine&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Here was the thought process to write a unit test that could ensure that I&amp;rsquo;m not forgetful.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Load all assemblies into the current &lt;code&gt;AppDomain&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Of all the loaded assemblies, get all the controller types
+
+&lt;ul&gt;
+&lt;li&gt;Of those controller types, get the ones that are missing the &lt;code&gt;AuthorizeAttribute&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Of the unauthorized controller types, get the &lt;code&gt;HttpMethodAttribute&lt;/code&gt; methods&lt;/li&gt;
+&lt;li&gt;If missing both the &lt;code&gt;AuthorizeAttribute&lt;/code&gt; and &lt;code&gt;AllowAnonymousAttribute&lt;/code&gt; - &lt;strong&gt;fail&lt;/strong&gt; &lt;i class=&#34;fa fa-frown-o&#34;&gt;&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;codify:62ff3a2cc4e15c531086d495140b895f&#34;&gt;Codify&lt;/h3&gt;
+
+&lt;p&gt;So, our step one is to load all assemblies into the current &lt;code&gt;AppDomain&lt;/code&gt;. This makes some assumptions. It assumes that our test project will have a reference to the &lt;strong&gt;ASP.NET Core Web API&lt;/strong&gt; project, so that its &lt;code&gt;.dll&lt;/code&gt; will be available to us for loading (in our &lt;code&gt;bin&lt;/code&gt; directory). We will also assume the root namespace we&amp;rsquo;re looking for, we should know this anyway as we follow naming conventions and we&amp;rsquo;re the owner of the corresponding project.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public class ActionTests
+{
+    const string RootNamespace = nameof(IEvangelist);
+    static readonly string[] ExecutableExtensions = { &amp;quot;.exe&amp;quot;, &amp;quot;.dll&amp;quot; };
+
+    public ActionTests()
+        =&amp;gt; Directory.EnumerateFiles(
+                Path.GetDirectoryName(
+                        Assembly.GetExecutingAssembly().Location) ?? string.Empty,
+                        $&amp;quot;{RootNamespace}.*&amp;quot;)
+                     .Where(IsExeOrDll)
+                     .Select(Assembly.LoadFrom)
+                     .Select(assembly =&amp;gt; 
+                        TryCatchIgnore(
+                            () =&amp;gt; AppDomain.CurrentDomain.Load(assembly.GetName())))
+                     .ToList();
+
+    static bool IsExeOrDll(string path)
+        =&amp;gt; ExecutableExtensions.Any(
+            extension =&amp;gt; 
+                extension.Equals(
+                    Path.GetExtension(path), 
+                    StringComparison.OrdinalIgnoreCase));
+
+    static T TryCatchIgnore&amp;lt;T&amp;gt;(Func&amp;lt;T&amp;gt; func) {
+        try { return func(); }
+        catch { return default; }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Step two, is really the entry point of our core functionality for the test itself. We&amp;rsquo;ll need a &lt;code&gt;Fact&lt;/code&gt; test method. Yes, &lt;a href=&#34;http://davidpine.net/blog/xunit-powered-by-roslyn&#34; target=&#34;_blank&#34;&gt;I&amp;rsquo;m a HUGE fan of &lt;strong&gt;xUnit&lt;/strong&gt;&lt;/a&gt; - they have done some amazing things! In this test method we will start by getting all the types that are a subclass of &lt;code&gt;Controller&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;[Fact]
+public void AllActionsOrParentControllerHaveAuthorizationAttributeTest()
+{
+    var allControllers = GetAllControllerTypes();
+
+    // we&#39;ll continue here ...
+}
+
+static List&amp;lt;Type&amp;gt; GetAllControllerTypes()
+    =&amp;gt; AppDomain.CurrentDomain
+                .GetAssemblies()
+                .Where(a =&amp;gt; a.FullName.StartsWith(RootNamespace))
+                .SelectMany(a =&amp;gt; a.GetTypes()
+                                  .Where(t =&amp;gt; t.FullName.Contains(Controller)
+                                           || t.BaseType == ControllerType
+                                           || t.DeclaringType == ControllerType))
+                .ToList();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that we have all the controller types from all the assemblies loaded into our &lt;code&gt;AppDomain&lt;/code&gt;, we need to filter them. We need to find the types that are missing the &lt;code&gt;AuthorizeAttribute&lt;/code&gt;, we&amp;rsquo;ll call these &lt;code&gt;unauthorizedControllers&lt;/code&gt; for now.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;[Fact]
+public void AllActionsOrParentControllerHaveAuthorizationAttributeTest()
+{
+    var allControllers = GetAllControllerTypes();
+    var unauthorizedControllers = 
+        GetControllerTypesThatAreMissing&amp;lt;AuthorizeAttribute&amp;gt;(allControllers);
+
+    // We&#39;ll continue from here...
+}
+
+static List&amp;lt;Type&amp;gt; GetControllerTypesThatAreMissing&amp;lt;TAttribute&amp;gt;(
+    IEnumerable&amp;lt;Type&amp;gt; types)
+    where TAttribute : Attribute
+    =&amp;gt; types.Where(t =&amp;gt; t.GetCustomAttribute&amp;lt;TAttribute&amp;gt;() == null)
+            .ToList();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This method iterates through the given &lt;code&gt;IEnumerable&amp;lt;Type&amp;gt;&lt;/code&gt; and returns a &lt;code&gt;List&amp;lt;Type&amp;gt;&lt;/code&gt; that are not attributed with the &lt;code&gt;AuthorizeAttribute&lt;/code&gt;. The reason that we&amp;rsquo;re filtering out controller types that are attributed, is that we&amp;rsquo;ll consider them to be protected from the standpoint of our unit-testing capabilities. Now, we need to find all the methods on these types that match the following criteria:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Are a &lt;code&gt;public&lt;/code&gt; instance method&lt;/li&gt;
+&lt;li&gt;Have any &lt;code&gt;HttpMethodAttribute&lt;/code&gt; subclass&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These methods are the controller&amp;rsquo;s actions. From these actions, we need to find the unauthorized actions. This is done by filtering out actions that explicitly declare themselves with the &lt;code&gt;AllowAnonymousAttribute&lt;/code&gt; and are also missing the &lt;code&gt;AuthorizeAttribute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;foreach (var controller in unauthorizedControllers)
+{
+    var actions =
+        controller.GetMethods(BindingFlags.Public | BindingFlags.Instance)
+                    .Where(m =&amp;gt; m.GetCustomAttribute&amp;lt;HttpMethodAttribute&amp;gt;() != null)
+                    .ToList();
+
+    var unauthorizedActions = 
+        actions.Where(
+            action =&amp;gt; 
+                action.GetCustomAttribute&amp;lt;AuthorizeAttribute&amp;gt;() == null &amp;amp;&amp;amp;
+                action.GetCustomAttribute&amp;lt;AllowAnonymousAttribute&amp;gt;() == null)
+               .ToList();
+    
+    // If unauthorizedActions.Any() is true, sound the alarms!
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can add a few additional sanity checks along the way - with the caveat that this is not your typical &amp;ldquo;unit test&amp;rdquo;. For example we could add the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Assert that we do in fact load assemblies&lt;/li&gt;
+&lt;li&gt;Assert that count of all the controllers is greater than the unauthorized controllers&lt;/li&gt;
+&lt;li&gt;Assert that we find our &amp;ldquo;white-listed&amp;rdquo; controller&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;putting-it-all-together:62ff3a2cc4e15c531086d495140b895f&#34;&gt;Putting It All Together&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Routing;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using Xunit;
+
+namespace IEvangelist.Tests
+{
+    public class ActionTests
+    {
+        const string RootNamespace = nameof(_Evangelist);
+        const string Controller = nameof(Controller);
+        const string WhiteListed = nameof(UnauthorizedActionInController.GetZero);
+
+        static readonly Type ControllerType = typeof(Controller);
+        static readonly string[] ExecutableExtensions = { &amp;quot;.exe&amp;quot;, &amp;quot;.dll&amp;quot; };
+
+        public ActionTests()
+            =&amp;gt; LoadAllAssemblies();
+
+        void LoadAllAssemblies()
+        {
+            var assemblies =
+                Directory.EnumerateFiles(
+                    Path.GetDirectoryName(
+                            Assembly.GetExecutingAssembly().Location) ?? string.Empty,
+                            $&amp;quot;{RootNamespace}.*&amp;quot;)
+                        .Where(IsExeOrDll)
+                        .Select(Assembly.LoadFrom)
+                        .Select(assembly =&amp;gt; 
+                            TryCatchIgnore(
+                                () =&amp;gt; AppDomain.CurrentDomain.Load(assembly.GetName())))
+                        .ToList();
+
+            Assert.False(assemblies.IsNullOrEmpty());        
+        }
+
+        [Fact]
+        public void AllActionsOrParentControllerHaveAuthorizationAttributeTest()
+        {
+            var allControllers = GetAllControllerTypes();
+            var unauthorizedControllers = 
+                GetControllerTypesThatAreMissing&amp;lt;AuthorizeAttribute&amp;gt;(allControllers);
+            
+            Assert.True(allControllers.Count &amp;gt; unauthorizedControllers.Count);
+            
+            foreach (var controller in unauthorizedControllers)
+            {
+                var actions =
+                    controller.GetMethods(BindingFlags.Public | BindingFlags.Instance)
+                              .Where(m =&amp;gt; m.GetCustomAttribute&amp;lt;HttpMethodAttribute&amp;gt;() != null)
+                              .ToList();
+
+                var unauthorizedActions = 
+                    actions.Where(
+                        action =&amp;gt; 
+                            action.GetCustomAttribute&amp;lt;AuthorizeAttribute&amp;gt;() == null &amp;amp;&amp;amp;
+                            action.GetCustomAttribute&amp;lt;AllowAnonymousAttribute&amp;gt;() == null)
+                           .ToList();
+
+                if (unauthorizedActions.IsNullOrEmpty() ||
+                   (unauthorizedActions.Count == 1 &amp;amp;&amp;amp; 
+                    unauthorizedActions[0].Name == WhiteListed))
+                {
+                    continue;
+                }
+
+                unauthorizedActions.ForEach(
+                    action =&amp;gt; Console.WriteLine($&amp;quot;{action} is unauthorized!&amp;quot;));
+
+                Assert.True(false, $&amp;quot;Unauthorized action(s) found!&amp;quot;);
+            }
+        }
+
+        static List&amp;lt;Type&amp;gt; GetAllControllerTypes()
+            =&amp;gt; AppDomain.CurrentDomain
+                        .GetAssemblies()
+                        .Where(a =&amp;gt; a.FullName.StartsWith(RootNamespace))
+                        .SelectMany(a =&amp;gt; a.GetTypes()
+                                          .Where(t =&amp;gt; t.FullName.Contains(Controller) ||
+                                                      t.BaseType == ControllerType ||
+                                                      t.DeclaringType == ControllerType))
+                        .ToList();
+
+        static List&amp;lt;Type&amp;gt; GetControllerTypesThatAreMissing&amp;lt;TAttribute&amp;gt;(
+            IEnumerable&amp;lt;Type&amp;gt; types)
+            where TAttribute : Attribute
+            =&amp;gt; types.Where(t =&amp;gt; t.GetCustomAttribute&amp;lt;TAttribute&amp;gt;() == null)
+                    .ToList();
+
+        static bool IsExeOrDll(string path)
+            =&amp;gt; ExecutableExtensions.Any(
+                extension =&amp;gt; 
+                    extension.Equals(
+                        Path.GetExtension(path), 
+                        StringComparison.OrdinalIgnoreCase));
+
+        static T TryCatchIgnore&amp;lt;T&amp;gt;(Func&amp;lt;T&amp;gt; func) {
+            try { return func(); }
+            catch { return default; }
+        }
+    }
+
+    public class UnauthorizedTestController 
+        : Controller
+    {
+    }
+
+    public class UnauthorizedActionInController 
+        : Controller
+    {
+        [HttpGet]
+        public int GetZero() =&amp;gt; 0;
+
+        [Authorize, HttpPost]
+        public IActionResult Post([FromBody] int number) =&amp;gt; Ok();
+
+        [OverrideAge, HttpDelete]
+        public IActionResult Delete() =&amp;gt; Ok();
+    }
+    
+    public class OverrideAge : Authorize {  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conclusion:62ff3a2cc4e15c531086d495140b895f&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;This solution is not perfect, it has a lot of opportunity for improvement. I&amp;rsquo;m open to suggestions&amp;hellip; If you have an idea, drop it in the comments and feel free to share your source. Likewise, if you like this idea - let me know. I was hoping to eventually find a way to turn this into a &lt;strong&gt;C# Roslyn-Powered Analyzer&lt;/strong&gt; but I&amp;rsquo;m not sure that is possible. There is one fact that remains, this has actually proven itself useful - there have been several times where this test failed as a result of someone (myself included) forgot to apply the appropriate security attributes to an &lt;strong&gt;ASP.NET Core Web API&lt;/strong&gt; endpoint we were writing. I hope that this can help you too!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ASP.NET Core Configuration Tips</title>

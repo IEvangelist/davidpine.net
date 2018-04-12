@@ -149,7 +149,7 @@ foreach (var controller in unauthorizedControllers)
 {
     var actions =
         controller.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-                    .Where(m => m.GetCustomAttribute<HttpMethodAttribute>() != null)
+                    .Where(m => m.GetCustomAttributes<HttpMethodAttribute>().Any())
                     .ToList();
 
     var unauthorizedActions = 
@@ -226,7 +226,7 @@ namespace IEvangelist.Tests
             {
                 var actions =
                     controller.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-                              .Where(m => m.GetCustomAttribute<HttpMethodAttribute>() != null)
+                              .Where(m => m.GetCustomAttributes<HttpMethodAttribute>().Any())
                               .ToList();
 
                 var unauthorizedActions = 

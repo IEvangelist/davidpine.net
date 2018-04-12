@@ -15,8 +15,11 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
+| Aug 7, 2018 | <a href="https://www.thatconference.com/" target="_blank">THAT Conference - 2018</a> | <a href="https://www.thatconference.com/Sessions/Session/12570" target="_blank">WebAssembly: The New Endgame?</a> |
+| July 19, 2018 | <a href="https://www.meetup.com/The-Chicago-NET-Users-Group/" target="_blank">Chicago .NET User Group - 2018</a> | <a href="https://gist.github.com/IEvangelist/e20ec4654cf5965af40156f22be6edad" target="_blank">What's new in C#</a> |
 | Jun 26, 2018 | <a href="https://www.meetup.com/milwaukeejs/" target="_blank">MilwaukeeJS - 2018</a> | <a href="https://www.meetup.com/milwaukeejs/events/247249996/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
 | Jun 7, 2018 | <a href="https://2018.syntaxcon.com/" target="_blank">SyntaxCon - 2018</a> | <a href="https://2018.syntaxcon.com/session/typescript-making-javascript-tolerable/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
+| May 23, 2018 | <a href="http://www.johnsoncontrols.com/" target="_blank">International Tech Challenge - 2018</a> | <a href="https://gist.github.com/IEvangelist/067e02d922df297f14eb0c7b034a400f" target="_blank">Upgrade Yourself: Becoming a Microsoft MVP</a> |
 | Apr 20, 2018 | <a href="https://itkonekt.com/it-konferencija-novi-sad/" target="_blank">ITKonekt, Novi Sad (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |
 | Apr 17, 2018 | <a href="https://itkonekt.com/it-konferencija-nis/" target="_blank">ITKonekt, Niš (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |
 | Apr 15, 2018 | <a href="https://itkonekt.com/it-konferencija-beograd/" target="_blank">ITKonekt, Belgrade (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |

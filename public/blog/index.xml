@@ -159,7 +159,7 @@ static List&amp;lt;Type&amp;gt; GetControllerTypesThatAreMissing&amp;lt;TAttribu
 {
     var actions =
         controller.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-                    .Where(m =&amp;gt; m.GetCustomAttribute&amp;lt;HttpMethodAttribute&amp;gt;() != null)
+                    .Where(m =&amp;gt; m.GetCustomAttributes&amp;lt;HttpMethodAttribute&amp;gt;().Any())
                     .ToList();
 
     var unauthorizedActions = 
@@ -237,7 +237,7 @@ namespace IEvangelist.Tests
             {
                 var actions =
                     controller.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-                              .Where(m =&amp;gt; m.GetCustomAttribute&amp;lt;HttpMethodAttribute&amp;gt;() != null)
+                              .Where(m =&amp;gt; m.GetCustomAttributes&amp;lt;HttpMethodAttribute&amp;gt;().Any())
                               .ToList();
 
                 var unauthorizedActions = 

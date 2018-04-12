@@ -125,6 +125,13 @@ ga('send', 'pageview');
                 </li>
             
                 <li>
+                    <a href="/media/">
+                        
+                            <i class="fa fa-video-camera">&nbsp;</i>Media
+                    </a>
+                </li>
+            
+                <li>
                     <a href="/conclusions/">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
@@ -209,6 +216,17 @@ ga('send', 'pageview');
                                     <i class="fa fa-bullhorn">&nbsp;</i>
                                 
                                 Speaking
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/media/">
+                            <h3>
+                                
+                                    <i class="fa fa-video-camera">&nbsp;</i>
+                                
+                                Media
                             </h3>
                         </a>
                     </li>
@@ -500,7 +518,7 @@ static List&lt;Type&gt; GetControllerTypesThatAreMissing&lt;TAttribute&gt;(
 {
     var actions =
         controller.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-                    .Where(m =&gt; m.GetCustomAttribute&lt;HttpMethodAttribute&gt;() != null)
+                    .Where(m =&gt; m.GetCustomAttributes&lt;HttpMethodAttribute&gt;().Any())
                     .ToList();
 
     var unauthorizedActions = 
@@ -578,7 +596,7 @@ namespace IEvangelist.Tests
             {
                 var actions =
                     controller.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-                              .Where(m =&gt; m.GetCustomAttribute&lt;HttpMethodAttribute&gt;() != null)
+                              .Where(m =&gt; m.GetCustomAttributes&lt;HttpMethodAttribute&gt;().Any())
                               .ToList();
 
                 var unauthorizedActions = 
@@ -1000,15 +1018,6 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net/">.NET</a>
-                                <span style="float:right;">4</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/visual-studio/">Visual Studio</a>
                                 <span style="float:right;">4</span>
                             </header>
@@ -1018,8 +1027,8 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/typescript/">TypeScript</a>
-                                <span style="float:right;">2</span>
+                                <a href="/categories/.net/">.NET</a>
+                                <span style="float:right;">4</span>
                             </header>
                         </article>
                     </li>
@@ -1036,8 +1045,8 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/rxjs/">RxJS</a>
-                                <span style="float:right;">1</span>
+                                <a href="/categories/typescript/">TypeScript</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -1045,52 +1054,7 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/roslyn/">Roslyn</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/gzip/">GZip</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/caching/">Caching</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/fear/">Fear</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/iot/">IoT</a>
+                                <a href="/categories/uwp/">UWP</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1108,25 +1072,34 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/tooling/">Tooling</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/javascript/">JavaScript</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/json/">JSON</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/technical-conference/">Technical Conference</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1153,7 +1126,7 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net-standard/">.NET Standard</a>
+                                <a href="/categories/configuration/">Configuration</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1162,7 +1135,25 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/technical-conference/">Technical Conference</a>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/javascript/">JavaScript</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tooling/">Tooling</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1180,7 +1171,7 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/uwp/">UWP</a>
+                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1189,7 +1180,16 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/self-branding/">Self-Branding</a>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net-standard/">.NET Standard</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1207,6 +1207,15 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/http/">Http</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -1216,7 +1225,7 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/json/">JSON</a>
+                                <a href="/categories/roslyn/">Roslyn</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1225,7 +1234,16 @@ namespace IEvangelist.Tests
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/configuration/">Configuration</a>
+                                <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

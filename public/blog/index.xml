@@ -6,8 +6,418 @@
     <description>Recent content in Blogs on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Apr 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://davidpine.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Journey of a Lifetime</title>
+      <link>http://davidpine.net/blog/journey-of-a-lifetime/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/blog/journey-of-a-lifetime/</guid>
+      <description>
+
+&lt;style&gt;
+    .iframe_container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
+        padding-top: 25px;
+        height: 0;
+    }
+    .iframe_container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;
+
+&lt;h1 id=&#34;intro:838041a67cf795f61b4ef717b1e62653&#34;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;I am returning home from a long trip in Serbia for &lt;a href=&#34;https://itkonekt.com/en/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;IT Konekt&lt;/strong&gt;&lt;/a&gt;. This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of &lt;strong&gt;IT Konekt&lt;/strong&gt;. This was my first time ever leaving the United States of America and I didn&amp;rsquo;t know what to expect. I was really nervous but equally excited. This was more of a journey of epic proportions than it was a conference trip.&lt;/p&gt;
+
+&lt;p&gt;I want to publicly thank &lt;a href=&#34;https://twitter.com/LadyNaggaga&#34; target=&#34;_blank&#34;&gt;Maria Naggaga &lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt; of Microsoft for referring &lt;a href=&#34;https://twitter.com/Milica_Radovic_&#34; target=&#34;_blank&#34;&gt;Milica Radovic &lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt; and &lt;a href=&#34;https://www.linkedin.com/in/milicanastasic&#34; target=&#34;_blank&#34;&gt;Milica Nastasic &lt;i class=&#34;fa fa-linkedin-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt; to me. They were looking for someone from the U.S. to speak about C# and Maria suggested me. This is the such an honor and I couldn&amp;rsquo;t have been more excited to represent the U.S. and C# for my first international speaking engagement.&lt;/p&gt;
+
+&lt;h2 id=&#34;belgrade:838041a67cf795f61b4ef717b1e62653&#34;&gt;Belgrade&lt;/h2&gt;
+
+&lt;h3 id=&#34;april-13-2018:838041a67cf795f61b4ef717b1e62653&#34;&gt;April 13, 2018&lt;/h3&gt;
+
+&lt;p&gt;Our journey began in Belgrade – the capitol city of Serbia. I arrived on the same flight into Belgrade as &lt;a href=&#34;https://twitter.com/jcleblanc&#34; target=&#34;_blank&#34;&gt;Jonathan LeBlanc &lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt; of Box. In true movie fashion, our driver was waiting for us holding our names at the arrival gate of the airport. This was a warm welcome and made me feel special. After a 35 minute Car:Go (European Uber) drive we arrived at our hotel and while I didn&amp;rsquo;t get much sleep on the plane, I had energy from both the adrenaline and excitement. Just as soon as I was settling into my room, it was time to part for the first of seemingly countless speaker dinners. We were hungry and ready to immerse ourselves in the Serbian culture. We had a traditional Serbian dinner after a celebratory shot (or three) of &lt;a href=&#34;https://en.wikipedia.org/wiki/Rakia&#34; target=&#34;_blank&#34;&gt;rakija &lt;i class=&#34;fa fa-wikipedia-w&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt; - &amp;ldquo;serbian fruit brandy&amp;rdquo;. Now, if you&amp;rsquo;re like me you probably didn&amp;rsquo;t know what rakija was&amp;hellip; &lt;em&gt;warning&lt;/em&gt; it is very strong! They fed us like kings and queens, we were treated like royalty!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2018/04/breaking-bread.jpg&#34; alt=&#34;Breaking Bread&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/csswizardry&#34; target=&#34;_blank&#34;&gt;Harry Roberts &lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt; sat to my right - he was a blast. Him and I shared a lot of common thoughts about the developer community. I really enjoyed his company. I asked him if he was on &lt;em&gt;Twitter&lt;/em&gt; so that I could follow him - &lt;i class=&#34;fa fa-smile-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt; yeah 58k+ followers. The food was great. The people of Serbia know how to do meat, I might get myself banned from the United States for saying this but it is true, &amp;ldquo;Serbia has the best bacon in the world!&amp;rdquo; After a long night, I returned to my hotel where I immediately fell asleep.&lt;/p&gt;
+
+&lt;h3 id=&#34;april-14-2018:838041a67cf795f61b4ef717b1e62653&#34;&gt;April 14, 2018&lt;/h3&gt;
+
+&lt;p&gt;I woke up at 8 AM, I then decided I would rest my eyes a little longer (suffering from jetlag) I opened them again around 11 AM. My talk was at 4, so I had plenty of time. It was conference day, I was prepared and looking forward to giving my talk. I believe that presenting on C# was an excellent choice – it is a universal language. The attendees really enjoyed it and were thoroughly engaged. The only time people had their phones out were for taking pictures of me or the slides. I was asked to take pictures with several attendees both before and after my talk. This was the first time this has ever happened to me and it made my day!&lt;/p&gt;
+
+&lt;p&gt;In addition to a great conference, Jonathan LeBlanc and I took a casual stroll through Belgrade. We ended up walking over 14 miles and visited the Belgrade fortress. Along the way we were asked to help someone lift an A/C unit up a shaky ladder onto a roof within a closed market.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2018/04/market.jpg&#39;
+                            alt=&#34;Market&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2018/04/helping-others.jpg&#39;
+                            alt=&#34;Helping Others&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2018/04/back-market.jpg&#39;
+                            alt=&#34;Back Market&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;No one was injured in the photographing of this event&amp;hellip;our walk continued with no more interruptions. We arrived at the Belgrade fortress and it was very interesting. We were able to walk all over it, in the moat, in tunnels and even on the walls. Once we made our way to the back of the fortress we found a hill with a view. Here is a great shot from the fortress walls overlooking where the rivers meet - it truly was a remarkable view.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2018/04/belgrade.jpg&#34; alt=&#34;Beograd&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While touring the fortress we stumbled upon a torture museum, Jonathan and I decided &amp;ldquo;why not&amp;rdquo;. After the first few exhibits we kept asking each other &amp;ldquo;what the hell were we thinking!&amp;rdquo; I was tempted to share some of the pictures from the torture museum but nope, I&amp;rsquo;ll spare you the pain. Once we were finished witnessing the horrors, we were spent&amp;hellip;we walked back to the hotel.&lt;/p&gt;
+
+&lt;h3 id=&#34;april-15-2018:838041a67cf795f61b4ef717b1e62653&#34;&gt;April 15, 2018&lt;/h3&gt;
+
+&lt;p&gt;Sunday was traveling day and we were driving to Niš. The core group of speakers got to know each other extremely well during the trip, and I consider them all personal friends now. We spent hours in a jumbo van traveling the country of Serbia over the course of a week - quite the adventure.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2018/04/the-van.jpg&#34; alt=&#34;The Van&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;niš:838041a67cf795f61b4ef717b1e62653&#34;&gt;Niš&lt;/h2&gt;
+
+&lt;h3 id=&#34;april-16-2018:838041a67cf795f61b4ef717b1e62653&#34;&gt;April 16, 2018&lt;/h3&gt;
+
+&lt;h4 id=&#34;the-humble-giant-jovan-milic:838041a67cf795f61b4ef717b1e62653&#34;&gt;The Humble Giant (Jovan Milic)&lt;/h4&gt;
+
+&lt;p&gt;When we arrived in Niš, we were greeted by several hosts. One of them was &lt;a href=&#34;https://en.wikipedia.org/wiki/Jovan_Milic&#34; target=&#34;_blank&#34;&gt;Jovan Milic &lt;i class=&#34;fa fa-wikipedia-w&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt; and I&amp;rsquo;m referring to him from now on as the &amp;ldquo;humble giant&amp;rdquo;. He is 21 years old and has already been nominated for the &lt;a href=&#34;https://www.nobelprize.org/nobel_prizes/peace/&#34; target=&#34;_blank&#34;&gt;Nobel Peace Prize&lt;/a&gt; four times! He was first nominated at the age of 15, making him the second youngest person in history to have been nominated. If you&amp;rsquo;re ever looking for inspiration read his story, it will hopefully put things a little more into perspective. For me, I can relate very much to his story and appreciate all the things that he&amp;rsquo;s done to earn his place in the world now. The next time you want to complain about the things you take for granted, remember his story and &lt;a href=&#34;http://www.findraoul.tk/&#34; target=&#34;_blank&#34;&gt;support his cause&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davidpine.net/img/2018/04/jovan.jpg&#34; alt=&#34;Jovan Milic&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are several life lessons that I live by - this is one of them.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; Expect nothing, but be grateful for everything.
+&lt;cite&gt;David Pine&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Jovan and the other hosts treated us like celebrities. We had a walking tour of the Niš fortress and city center. After arming ourselves with some umbrellas we were ready to take on the light rain. My umbrella just so happened to be pink. I&amp;rsquo;m not sure the color of my umbrella is relevant for this story, but I felt inclined to share it. After strolling around the fortress and then making our way back towards the city center - we needed some caffeine. We enjoyed turkish coffee and dark beer, because why not both?! I recall this evening very well, this is the night that Håkon told us about the time he built a balsawood raft with a group of volunteers. The raft weighed over 20 tons, and the intended purpose was to set course from South America (Peru) and sail to Easter Island. Why, you might ask - as both Jon&amp;rsquo;s and I did&amp;hellip;we were intrigued, why on earth would anyone want to do this? Simply to prove a point that it could be done. It would prove that Easter Island could have been inhabited by the people of South America. This voyage took place in 2015-2016 and was the spot light of world-wide news, for more details checkout the &lt;a href=&#34;http://kontiki2.com/&#34; target=&#34;_blank&#34;&gt;official website&lt;/a&gt; and &lt;a href=&#34;http://www.wiumlie.no/img/2015/kontiki2.html&#34; target=&#34;_blank&#34;&gt;the story from Håkon himself here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Again we enjoyed a traditional Serbian dinner. There was more rakija and as luck would have it, traditional Serbian music was played/performed live&amp;hellip;with the livlihood from the rakija there was dancing and singing, and all around celebration. Such a joyous time!&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+        
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2018/04/singing.jpg&#39;
+                            alt=&#34;Singing&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2018/04/sitting.jpg&#39;
+                            alt=&#34;Sitting&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://davidpine.net/img/2018/04/dancing.jpg&#39;
+                            alt=&#34;Dancing&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h3 id=&#34;april-17-2018:838041a67cf795f61b4ef717b1e62653&#34;&gt;April 17, 2018&lt;/h3&gt;
+
+&lt;p&gt;Conference Day! The stage was set. The crowds were drawing near, anticipation was building. News crews, wait&amp;hellip;news crews? Yes, we were actually interviewed and made it on the Serbian national news - several times. This was yet another first for me. The media was interested about our take on the IT community in Serbia. They were curious about how the developers of Serbia rank up against the rest of the world. That is a hard question to answer, but one thing was consistent with all of our responses - we believe that any developer can change the world! When you take talent, an idea and hunger to build something incredible there is no limit to what you can achieve.&lt;/p&gt;
+
+&lt;div class=&#34;box alt&#34;&gt;
+   &lt;div class=&#34;row uniform&#34;&gt;
+      &lt;div class=&#34;6u&#34;&gt;
+         &lt;span class=&#34;image fit&#34;&gt;
+            &lt;img src=&#34;http://davidpine.net/img/2018/04/media-1.jpg&#34; alt=&#34;Jon G.&#34;&gt;
+         &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;6u&#34;&gt;
+         &lt;span class=&#34;image fit&#34;&gt;
+            &lt;img src=&#34;http://davidpine.net/img/2018/04/media-2.jpg&#34; alt=&#34;Me&#34;&gt;
+         &lt;/span&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+    &lt;div class=&#34;row uniform&#34;&gt;
+      &lt;div class=&#34;6u&#34;&gt;
+         &lt;span class=&#34;image fit&#34;&gt;
+            &lt;img src=&#34;http://davidpine.net/img/2018/04/media-3.jpg&#34; alt=&#34;Jonathan&#34;&gt;
+         &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;6u&#34;&gt;
+         &lt;span class=&#34;image fit&#34;&gt;
+            &lt;img src=&#34;http://davidpine.net/img/2018/04/media-4.jpg&#34; alt=&#34;Håkon&#34;&gt;
+         &lt;/span&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The conference talks were all really well received. The developer community seemed eager to ask questions after sessions. As a speaker, this is what makes it all worth while - the gratifying moment when you know that you&amp;rsquo;ve been able to help someone and that you&amp;rsquo;ve delivered value. After the conference we spent more time walking around Niš, this is when I learned that Håkon brought a drone. We took turns flying it and taking pictures of the scenery.&lt;/p&gt;
+
+&lt;h2 id=&#34;novi-sad:838041a67cf795f61b4ef717b1e62653&#34;&gt;Novi Sad&lt;/h2&gt;
+
+&lt;h3 id=&#34;april-18-2018:838041a67cf795f61b4ef717b1e62653&#34;&gt;April 18, 2018&lt;/h3&gt;
+
+&lt;p&gt;Wednesday was another traveling day. Our jumbo van trip was scheduled to take roughly four hours. But before we left, we were asked to be part of a ceremony with the President of municipalities, the mayor of Niš. The press was there to capture the moment. It was incredible sharing ideas for shared working spaces and encouraging hackathons. Our hosts served as translators, communicating our ambitions and guidance. The mayor was so pleased that he presented Håkon with a special honor - a medallion of Constantine the Great.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p/&gt; IT experts are visiting the municipalities of Crvena Krst.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/5jCy7oHbDaE&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Shortly after the ceremony we drove to Novi Sad. We arrived without a hitch, settling into our hotels. Followed by a city tour, which proved to be a spectacular site. Dinner was at the &lt;a href=&#34;http://www.terasa.rs/&#34; target=&#34;_blank&#34;&gt;Terasa&lt;/a&gt;. This sits right on the Danube river and at the foot of the Novi Sad fortress. Håkon was able to capture some amazing footage with his drone&amp;hellip;the view was beautifully stunning.&lt;/p&gt;
+
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/rC4pvMA8Qsk&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;sremski-karlovci-danube-river:838041a67cf795f61b4ef717b1e62653&#34;&gt;Sremski Karlovci &amp;amp; Danube River&lt;/h2&gt;
+
+&lt;h3 id=&#34;april-19-2018:838041a67cf795f61b4ef717b1e62653&#34;&gt;April 19, 2018&lt;/h3&gt;
+
+&lt;p&gt;The 19th was a really relaxing day, we had a walking tour, lunch on the Danube river, followed by a wine tasting at the &lt;a href=&#34;http://www.muzejzivanovic.com/&#34; target=&#34;_blank&#34;&gt;Museum of Beekeeping and Wine Cellar Zivanovic&lt;/a&gt;. Again, Håkon let his drone capture some of the essence and scenery. This video starts well beyond the town center, working its way back towards where we had lunch on the river. Yes, that establishment in the distance is where Håkon is navigating his drone recording this clip. I am seriously trying to convince my wife to let me purchase one of these drones. If you want to buy it for yourself &lt;a href=&#34;https://www.amazon.com/Mavic-Platinum-Quadcopter-Camera-Batteries/dp/B07871KXMP&#34; target=&#34;_blank&#34;&gt;here is the link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;iframe_container&#34;&gt;
+    &lt;iframe src=&#34;https://www.youtube.com/embed/h6qwzQ65Fh8&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This footage is amazing, video quality up to 4k if you&amp;rsquo;re into that sort of thing&amp;hellip;&lt;/p&gt;
+
+&lt;h3 id=&#34;april-20-2018:838041a67cf795f61b4ef717b1e62653&#34;&gt;April 20, 2018&lt;/h3&gt;
+
+&lt;p&gt;The final conference day! I was up first and immediately following my talk, I needed to catch a cab back to Belgrade to catch my flight back home. I was sent home with a parting gift from the founders. I love the thoughtfulness, and it is so true that it&amp;rsquo;s better than a notebook and a pen.&lt;/p&gt;
+
+&lt;div class=&#34;box alt&#34;&gt;
+   &lt;div class=&#34;row uniform&#34;&gt;
+      &lt;div class=&#34;5u&#34;&gt;
+         &lt;span class=&#34;image fit&#34;&gt;
+            &lt;img src=&#34;http://davidpine.net/img/2018/04/gift.jpg&#34; alt=&#34;Gift&#34;&gt;
+         &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;7u&#34;&gt;
+         &lt;span class=&#34;image fit&#34;&gt;
+            &lt;img src=&#34;http://davidpine.net/img/2018/04/gift-2.jpg&#34; alt=&#34;Note&#34;&gt;
+         &lt;/span&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I was excited to be returning home. I know that I was missed by Lyric, Londyn, Lennyx (my three sons) and Jen (wife). I&amp;rsquo;m thankful to have had a safe trip and shared so many awesome experiences. For those interested in the conference itself, I&amp;rsquo;ll be posting videos and more photos as they are released. For my talk, see below.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-s-new-in-c-the-talk:838041a67cf795f61b4ef717b1e62653&#34;&gt;What&amp;rsquo;s new in C# (The Talk)&lt;/h3&gt;
+
+&lt;p&gt;I have been using &lt;strong&gt;GitPitch&lt;/strong&gt; for a while now, and I love it. Kudos to David Russel (the creator). For more details on &lt;strong&gt;GitPitch&lt;/strong&gt; checkout the official website by following the link below.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.gitpitch.com&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;http://davidpine.net/img/2018/04/gitpitch.png&#34; style=&#34;width: 400px&#34;&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is the link for my talk, &lt;a href=&#34;https://gitpitch.com/ievangelist/csharp#/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;What&amp;rsquo;s new in C#&amp;rdquo;&lt;/a&gt;. This was the talk that I presented at all three &lt;strong&gt;IT Konekt&lt;/strong&gt; conferences.&lt;/p&gt;
+
+&lt;h2 id=&#34;closing-thoughts:838041a67cf795f61b4ef717b1e62653&#34;&gt;Closing Thoughts&lt;/h2&gt;
+
+&lt;p&gt;I was blessed to have made so many new friends on this journey. These people are inspiring, you should follow them as they are true leaders!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Jon Galloway&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/jongalloway/&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-linkedin-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/jongalloway&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;https://github.com/jongalloway&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;https://weblogs.asp.net/jongalloway&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Executive Director &lt;a href=&#34;http://dotnetfoundation.org/&#34; target=&#34;_blank&#34;&gt;.NET Foundation&lt;/a&gt;, ASP.NET MVC 3/4/5 Author&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jonathan LeBlanc&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/jcleblanc/&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-linkedin-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/jcleblanc&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;https://github.com/jcleblanc&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-github&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;http://www.jcleblanc.com/&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Director of Developer Advocacy &lt;a href=&#34;https://www.box.com/&#34; target=&#34;_blank&#34;&gt;Box&lt;/a&gt;, Emmy Award Winner, O&amp;rsquo;Reilly Author&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Håkon Wium Lie&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/howcome/&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-linkedin-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/wiumlie&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;http://www.wiumlie.no/en&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Creator of CSS, former CTO of Opera, Kontiki Adventurer&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Milica Radovic&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/milicaradovic/&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-linkedin-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/Milica_Radovic_&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Founder, IT Konekt&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/milicanastasic&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Milica Nastasic&lt;/strong&gt; &lt;i class=&#34;fa fa-linkedin-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Co-Founder, IT Konekt&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jovan Milic&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/jovan-milic-68713973&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-linkedin-square&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/JMiliic&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;fa fa-twitter&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;4x Nobel Peace Prize Nominee, Founder of Find Raoul&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>ASP.NET Core Unit Testing For Security Attributes</title>
@@ -3233,7 +3643,7 @@ Despite external evidence of their competence, those exhibiting the syndrome rem
 Proof of success is dismissed as luck, timing, or as a result of deceiving others into thinking they are more intelligent and competent than they believe themselves to be.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;It seems as though this syndrome has plauged our generation of developers! I have found that this syndrome has spread like wildfire through the
+&lt;p&gt;It seems as though this syndrome has plagued our generation of developers! I have found that this syndrome has spread like wildfire through the
 technical community, devastating an individuals confidence and leveling their ambitions! Too often developers are doubting themselves and this needs to stop. As an
 industry we need to work to correct this.&lt;/p&gt;
 
@@ -3382,214 +3792,6 @@ something profound. I strive to do my best and I now know that it&amp;rsquo;s en
 &lt;/ul&gt;
 
 &lt;p&gt;These tips will help you overcome imposter syndrome &amp;ndash; it worked for me. Together we can kill &amp;ldquo;technical doubt&amp;rdquo;!!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Angular2 Http with RxJS Observables</title>
-      <link>http://davidpine.net/blog/angular-2-http/</link>
-      <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://davidpine.net/blog/angular-2-http/</guid>
-      <description>
-
-&lt;p&gt;If you have been following the development efforts of the &lt;strong&gt;Angular2&lt;/strong&gt; project, you have witnessed certain highs and lows - but it has been a fun ride. The latest version is only a &lt;strong&gt;Release Candidate&lt;/strong&gt; and the team
-is getting closer to the final release. I&amp;rsquo;m really looking forward to that! I wanted to take a moment to highlight (IMO) one of the key services of &lt;strong&gt;Angular2&lt;/strong&gt;, the &lt;code&gt;http&lt;/code&gt; service.&lt;/p&gt;
-
-&lt;p&gt;In &lt;strong&gt;AngularJs 1&lt;/strong&gt; the &lt;code&gt;ng.IHttpService&lt;/code&gt; (aka, &lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$http&#34;&gt;&lt;code&gt;$http&lt;/code&gt;&lt;/a&gt;) was based on
-&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&#34;&gt;promises&lt;/a&gt; and deferrals.
-In &lt;strong&gt;Angular2&lt;/strong&gt; we now rely on &lt;strong&gt;RxJS&lt;/strong&gt; and the observable pattern. In my opinion this is a huge win!
-If you&amp;rsquo;re unfamiliar with &lt;em&gt;Reactive Extensions&lt;/em&gt; in general, I suggest starting &lt;a href=&#34;https://msdn.microsoft.com/en-us/data/gg577609.aspx&#34;&gt;here&lt;/a&gt;.
-&lt;strong&gt;RxJS&lt;/strong&gt; is the &lt;code&gt;JavaScript&lt;/code&gt; implementation of &lt;em&gt;Reactive Extensions&lt;/em&gt;.
-Let&amp;rsquo;s take a moment to compare and contrast the two, and immerse ourselves in the wonderful world of &lt;strong&gt;RxJS&lt;/strong&gt;.
-Let me be clear upfront that I&amp;rsquo;m developing with &lt;code&gt;TypeScript&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;legacy-pattern:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Legacy Pattern&lt;/h2&gt;
-
-&lt;p&gt;As a developer you would have to use both the &lt;code&gt;ng.IHttpService&lt;/code&gt; and the &lt;code&gt;ng.IQService&lt;/code&gt; in combination to collaborate the deferral of the
-HTTP request and the promise that represented it. Consider the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;module ExampleModule {
-    export class ExampleService implements IExampleService {
-        static $inject = [&amp;quot;$http&amp;quot;, &amp;quot;$q&amp;quot;];
-
-        private $http: ng.IHttpService;
-        private $q: ng.IQService;
-
-        constructor($http: ng.IHttpService, 
-                    $q: ng.IQService) {
-            this.$http = $http;
-            this.$q = $q;
-        }
-        
-        public getFooBars(): ng.IPromise&amp;lt;FooBar[]&amp;gt; {
-          var deferred = this.$q.defer&amp;lt;FooBar[]&amp;gt;();
-          this.$http
-              .get(&amp;quot;api/foobar&amp;quot;)
-              .success((data) =&amp;gt; {
-                  deferred.resolve(data);
-              })
-              .error((error) =&amp;gt; {
-                  console.log(&amp;quot;An error occurred when requesting api/foobar.&amp;quot;, error);
-                  deferred.reject(error);
-              });
-
-          return deferred.promise;
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this example, we can easily see the interaction betwixt the &lt;code&gt;ng.IHttpService ($http)&lt;/code&gt; and &lt;code&gt;ng.IQService ($q)&lt;/code&gt; services. The &lt;code&gt;$q&lt;/code&gt; variable exposes a &lt;code&gt;.defer&amp;lt;T&amp;gt;&lt;/code&gt; function that returns a deferred object.&lt;/p&gt;
-
-&lt;h3 id=&#34;deferred-api-https-docs-angularjs-org-api-ng-service-q-the-deferred-api:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$q#the-deferred-api&#34;&gt;Deferred API&lt;/a&gt;&lt;/h3&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;right&#34;&gt;Function&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Parameters&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;code&gt;resolve&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;(value: T)&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Resolved yielding the materialized value of type &lt;code&gt;T&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;code&gt;reject&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;(reason: string)&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Rejected with the given reason&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;The deferred object instance is passed into the fluent API&amp;rsquo;s of the &lt;code&gt;$http&#39;s&lt;/code&gt; &lt;code&gt;.success&lt;/code&gt; and &lt;code&gt;.error&lt;/code&gt; functions accordingly. This pattern works great, but is very limiting and repetitive.
-You end up writing a lot of boilerplate code and that isn&amp;rsquo;t very &lt;a href=&#34;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&#34;&gt;DRY&lt;/a&gt;. Let&amp;rsquo;s look at how this is approached with &lt;strong&gt;Angular2&amp;rsquo;s&lt;/strong&gt; &lt;code&gt;http&lt;/code&gt; service using the observable pattern from &lt;strong&gt;RxJS&lt;/strong&gt;!&lt;/p&gt;
-
-&lt;h2 id=&#34;new-pattern:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;New Pattern&lt;/h2&gt;
-
-&lt;p&gt;To be fair, let&amp;rsquo;s implement the same functionality and public surface-area such that our example services are equivalent.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import {Observable} from &amp;quot;RxJS/Rx&amp;quot;;
-import {Injectable} from &amp;quot;@angular/core&amp;quot;;
-import {Http} from &amp;quot;@angular/http&amp;quot;;
-
-@Injectable() export class ExampleService {
-    constructor(private http: Http) { }
-
-    getFooBars(onNext: (fooBars: FooBar[]) =&amp;gt; void) {
-        this.http
-            .get(&amp;quot;api/foobar&amp;quot;)
-            .map(response =&amp;gt; response.json() as FooBar[])
-            .subscribe(onNext,
-                       error =&amp;gt; 
-                       console.log(&amp;quot;An error occurred when requesting api/foobar.&amp;quot;, error));
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;I am hoping that you noticed how much cleaner this code is, as well as how much more readable!&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Now, I know what you&amp;rsquo;re thinking&amp;hellip;these cannot possibly be the same examples, but they are in fact doing the same thing. &lt;em&gt;Dependency Injection (DI)&lt;/em&gt; in &lt;strong&gt;Angular2&lt;/strong&gt; is a lot less error prone (no more magic strings) and way easier than
-it was in &lt;strong&gt;AngularJs 1&lt;/strong&gt;.
-Simply do what you&amp;rsquo;d expect from any other common constructor-based DI framework, ensure that your desired &lt;code&gt;Http&lt;/code&gt; type is registered as a provider to the system. This happens by way of the &lt;code&gt;HTTP_PROVIDERS&lt;/code&gt; defined in our &lt;code&gt;boot.js&lt;/code&gt; file.
-More on that in another post. With modern &lt;code&gt;TypeScript&lt;/code&gt; we can define properties and fields, and their corresponding access modifiers right from within our constructors.&lt;/p&gt;
-
-&lt;h4 id=&#34;syntax-tip:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Syntax Tip&lt;/h4&gt;
-
-&lt;p&gt;This exemplifies the comparisons in syntax between a simple constructor and the more verbose constructor.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// Simple .ctor()
-constructor(private http: Http) { }
-
-// Is equivalent to...
-private http: Http;
-constructor(http: Http) {
-   this.http = http;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Likewise, the following is true regarding public access modifiers.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// Simple .ctor()
-constructor(http: Http) { }
-
-// Is equivalent to...
-http: Http; // When the access modifier is omitted it&#39;s defaulted to public
-constructor(http: Http) {
-   this.http = http;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;comparing-the-apis:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Comparing the APIs&lt;/h2&gt;
-
-&lt;p&gt;Instead of the &lt;code&gt;.success&lt;/code&gt; invocation with a corresponding &lt;code&gt;deferred.resolve&lt;/code&gt; call, we now utilize the &lt;strong&gt;RxJS&lt;/strong&gt; &lt;code&gt;.map&lt;/code&gt; and &lt;code&gt;.subscribe&lt;/code&gt; operators. Let&amp;rsquo;s look at these below:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;right&#34;&gt;Operator&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;http://reactivex.io/documentation/operators/map.html&#34;&gt;&lt;code&gt;map&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Transform the items emitted by an &lt;code&gt;Observable&lt;/code&gt; by applying a function to each item&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;http://reactivex.io/documentation/operators/subscribe.html&#34;&gt;&lt;code&gt;subscribe&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;The &lt;code&gt;Subscribe&lt;/code&gt; operator is the glue that connects an observer to an &lt;code&gt;Observable&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Mapping is easy and we can leverage some of the &lt;code&gt;TypeScript&lt;/code&gt; language features to cast the &lt;strong&gt;JSON&lt;/strong&gt; blobs returned from our services as strongly typed objects. The &lt;code&gt;map&lt;/code&gt; operator is actually
-synonymous with the &lt;code&gt;select&lt;/code&gt; operator, so if you&amp;rsquo;re more familiar with that terminology you can use it interchangeably.&lt;/p&gt;
-
-&lt;h3 id=&#34;advantages:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Advantages&lt;/h3&gt;
-
-&lt;p&gt;Now that we have an understanding of how &lt;strong&gt;RxJS&lt;/strong&gt; compares to the legacy pattern, we can take advantage of all the various benefits. Imagine with me that we have a need to implement retry logic,
-this would have been challenging with the legacy pattern but with the new pattern it&amp;rsquo;s as simple as saying &lt;code&gt;.retry&lt;/code&gt;. Consider the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// If this call fails, we&#39;ll try it again with the same payload two times
-getFooBars(onNext: (fooBars: FooBar[]) =&amp;gt; void) {
-    this.http
-        .get(&amp;quot;api/foobar&amp;quot;)
-        .map(response =&amp;gt; &amp;lt;FooBar[]&amp;gt;response.json())
-        .retry(2)
-        .subscribe(onNext,
-                   error =&amp;gt; 
-                   console.log(&amp;quot;An error occurred when requesting api/foobar.&amp;quot;, error));
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now imagine a scenario where a user is typing and you want to provide an autocomplete, you could use &lt;code&gt;.debounce&lt;/code&gt; to pause for a brief moment prior to sending the request. Likewise,
-we could apply a &lt;code&gt;.filter&lt;/code&gt; that only takes action when a certain number of characters have been entered. Finally, we might utilize &lt;code&gt;.distinctUntilChanged&lt;/code&gt; to only execute the request once
-the values are actually different than they once were.&lt;/p&gt;
-
-&lt;p&gt;You could take advantage of &lt;code&gt;.buffer&lt;/code&gt;, &lt;code&gt;.throttle&lt;/code&gt;, &lt;code&gt;.interval&lt;/code&gt;, &lt;code&gt;.window&lt;/code&gt;, &lt;code&gt;.range&lt;/code&gt;, etc&amp;hellip; The list goes on and on,
-and &lt;a href=&#34;https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable&#34; target=&#34;_blank&#34;&gt;this is the source for most of what you can take advantage&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;let-s-summarize:4af7f8c9f6f0e5c31da5641f50fd8955&#34;&gt;Let&amp;rsquo;s Summarize&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Angular2&lt;/strong&gt; has a new implementation of their &lt;code&gt;http&lt;/code&gt; service that relies on &lt;strong&gt;RxJS&lt;/strong&gt;. The &lt;em&gt;API&lt;/em&gt; uses &lt;code&gt;observables&lt;/code&gt; and the &lt;code&gt;observer&lt;/code&gt; pattern to allow for a fluent experience that is rich and robust.
-Getting started is straight-forward and simple. Before too long you&amp;rsquo;ll be taking advantage of the feature-full set of &lt;strong&gt;Reactive Extensions&lt;/strong&gt; and thinking in terms of data streams.
-This mindset will make your life easier - trust me!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Further Reading&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/api/http/index/Http-class.html&#34; target=&#34;_blank&#34;&gt;Angular2 for TypeScript, Http&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Reactive-Extensions/RxJS#why-RxJS&#34; target=&#34;_blank&#34;&gt;Why RxJS?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

@@ -21,7 +21,7 @@ According to <cite><a href="https://en.wikipedia.org/wiki/Impostor_syndrome" tar
 > Despite external evidence of their competence, those exhibiting the syndrome remain convinced that they are frauds and do not deserve the success they have achieved. 
 > Proof of success is dismissed as luck, timing, or as a result of deceiving others into thinking they are more intelligent and competent than they believe themselves to be.
 
-It seems as though this syndrome has plauged our generation of developers! I have found that this syndrome has spread like wildfire through the 
+It seems as though this syndrome has plagued our generation of developers! I have found that this syndrome has spread like wildfire through the 
 technical community, devastating an individuals confidence and leveling their ambitions! Too often developers are doubting themselves and this needs to stop. As an 
 industry we need to work to correct this.
 

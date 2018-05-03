@@ -4,6 +4,7 @@ categories = ["ASP.NET Core", "GZip", "Compression", "Caching"]
 date = "2016-12-12"
 description = "Static File Caching & Compression"
 featured = "speedy.jpg"
+images = ["/img/2016/12/speedy.jpg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

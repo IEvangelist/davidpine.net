@@ -3,6 +3,7 @@ author = "David Pine"
 categories = ["CSharp", "Technical Conference"]
 date = "2018-04-28"
 description = "IT Konekt - Serbia (Belgrade, Niš and Novi Sad)"
+images =  ["/img/2018/04/drinks.jpg"]
 featured = "drinks.jpg"
 featuredalt = ""
 featuredpath = "date"

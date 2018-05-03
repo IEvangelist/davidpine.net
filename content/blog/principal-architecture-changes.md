@@ -4,6 +4,7 @@ categories = ["ASP.NET Core", ".NET Core", "Identity"]
 date = "2017-01-27"
 description = "This is not the IPrincipal you are looking for..."
 featured = "not-what-you-are-looking-for.png"
+images = ["/img/2017/01/not-what-you-are-looking-for.png"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

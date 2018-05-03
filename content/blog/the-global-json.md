@@ -4,6 +4,7 @@ categories = ["ASP.NET Core", ".NET Core", "Tooling"]
 date = "2016-07-18T22:40:31-05:00"
 description = "Leveraging .NET Core Tooling Features"
 featured = "global-json.png"
+images = ["/img/2016/07/global-json.png"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

@@ -4,6 +4,7 @@ categories = ["ASP.NET Core", "JSON", "Configuration", "CSharp"]
 date = "2018-03-10"
 description = "Configuration tips for success"
 featured = "settings.jpeg"
+images = ["/img/2018/03/settings.jpeg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

@@ -4,6 +4,7 @@ categories = ["Technical Doubt", "Fear", "Self-Branding"]
 date = "2016-11-05"
 description = "Taking off the mask"
 featured = "impostor.png"
+images = ["/img/2016/11/imposter.png"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

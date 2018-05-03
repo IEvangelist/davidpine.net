@@ -4,6 +4,7 @@ categories = ["ASP.NET Core", ".NET Core"]
 date = "2016-05-20T22:40:31-05:00"
 description = "Migrating from RC1 to RC2"
 featured = "migrating.jpg"
+images = ["/img/2016/05/migrating.jpg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

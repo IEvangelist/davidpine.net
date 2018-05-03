@@ -4,6 +4,7 @@ categories = ["Technical Conference", "MKE DOT NET"]
 date = "2017-06-24"
 description = "Behind the scenes of MKE DOT NET"
 featured = "organize.jpeg"
+images = ["/img/2017/06/organize.jpeg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

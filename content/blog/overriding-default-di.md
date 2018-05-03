@@ -4,6 +4,7 @@ categories = ["ASP.NET Core", ".NET Core", "Dependency Injection"]
 date = "2017-02-14"
 description = "You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes"
 featured = "red-or-blue-pill-matrix-neo-morpheus.jpg"
+images = ["/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

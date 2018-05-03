@@ -4,6 +4,7 @@ categories = [".NET", ".NET Core", ".NET Standard"]
 date = "2017-08-16"
 description = "Clearing up the confusion"
 featured = "confused.jpg"
+images = ["/img/2017/08/confused.jpg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""
@@ -72,6 +73,8 @@ As true with all standards (or specifications), implementations can either be co
 [1.5]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.5.md
 [1.6]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.6.md
 [2.0]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md
+
+Additionally, there is an interactive table: http://immo.landwerth.net/netstandard-versions/#.
 
 For example, we can see the `.NET Framework 4.5` is an implementation of `.NET Standard 1.1`. This means that if you're to author a `.NET Standard` class library and you target `1.1` of the standard, it can run on `.NET Core 1.0`, `.NET Framework 4.5`, `Mono 4.6`, etc... you get the point now I'm sure.
 

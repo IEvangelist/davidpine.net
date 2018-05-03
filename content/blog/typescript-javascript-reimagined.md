@@ -4,6 +4,7 @@ categories = ["TypeScript", "JavaScript"]
 date = "2017-05-02"
 description = "\"Making JavaScript tolerable\""
 featured = "type-writer.jpg"
+images = ["/img/2017/05/type-writer.jpg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

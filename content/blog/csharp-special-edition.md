@@ -4,6 +4,7 @@ categories = ["CSharp", ".NET", "Visual Studio"]
 date = "2017-12-17"
 description = "Ranting about my favorite language"
 featured = "keyboard.jpg"
+images = ["/img/2017/12/keyboard.jpg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

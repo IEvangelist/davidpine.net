@@ -4,6 +4,7 @@ categories = ["CSharp", ".NET", "Visual Studio"]
 date = "2017-03-26"
 description = "Expressiveness Redefined & #notasugly"
 featured = "exploration.png"
+images = ["/img/2017/03/exploration.png"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

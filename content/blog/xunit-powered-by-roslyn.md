@@ -4,6 +4,7 @@ categories = ["Visual Studio", "xUnit", "Roslyn"]
 date = "2017-11-11"
 description = "Putting your code under the scope"
 featured = "scope.jpeg"
+images = ["/img/2017/11/scope.jpeg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

@@ -4,6 +4,7 @@ categories = ["ASP.NET Core", "xUnit", "CSharp"]
 date = "2018-03-23"
 description = "Authorization Attribute Safety Net"
 featured = "security.jpg"
+images = ["/img/2018/03/security.jpg"]
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""

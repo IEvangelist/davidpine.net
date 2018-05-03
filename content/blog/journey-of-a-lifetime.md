@@ -40,7 +40,7 @@ Our journey began in Belgrade – the capitol city of Serbia. I arrived on the s
 
 ![Breaking Bread](/img/2018/04/breaking-bread.jpg)
 
-<a href="https://twitter.com/csswizardry" target="_blank">Harry Roberts <i class="fa fa-twitter" aria-hidden="true"></i></a> sat to my right - he was a blast. Him and I shared a lot of common thoughts about the developer community. I really enjoyed his company. I asked him if he was on _Twitter_ so that I could follow him - <i class="fa fa-smile-o" aria-hidden="true"></i> yeah 58k+ followers. The food was great. The people of Serbia know how to do meat, I might get myself banned from the United States for saying this but it is true, "Serbia has the best bacon in the world!" After a long night, I returned to my hotel where I immediately fell asleep.
+<a href="https://twitter.com/csswizardry" target="_blank">Harry Roberts <i class="fa fa-twitter" aria-hidden="true"></i></a> sat to my right - he was a blast. He and I shared a lot of common thoughts about the developer community. I really enjoyed his company. I asked him if he was on _Twitter_ so that I could follow him - <i class="fa fa-smile-o" aria-hidden="true"></i> yeah 58k+ followers. The food was great. The people of Serbia know how to do meat, I might get myself banned from the United States for saying this but it is true, "Serbia has the best bacon in the world!" After a long night, I returned to my hotel where I immediately fell asleep.
 
 ### April 14, 2018
 
@@ -62,7 +62,7 @@ While touring the fortress we stumbled upon a torture museum, Jonathan and I dec
 
 ### April 15, 2018
 
-Sunday was traveling day and we were driving to Niš. The core group of speakers got to know each other extremely well during the trip, and I consider them all personal friends now. We spent hours in a jumbo van traveling the country of Serbia over the course of a week - quite the adventure.
+Sunday was traveling day and we were driving to Niš. The core group of speakers got to know each other extremely well during the trip, and I consider them all personal friends now. We spent hours in a jumbo van traveling the country of Serbia over the course of a week - quite the adventure. The core group of speakers were Jon Galloway, Jonathan LeBlanc, Håkon Wium Lie and myself.
 
 ![The Van](/img/2018/04/the-van.jpg)
 
@@ -193,7 +193,7 @@ I was blessed to have made so many new friends on this journey. These people are
    - Creator of CSS, former CTO of Opera, Kontiki Adventurer
  - __Milica Radovic__ <a href="https://www.linkedin.com/in/milicaradovic/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>, <a href="https://twitter.com/Milica_Radovic_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
    - Founder, IT Konekt 
- - <a href="https://www.linkedin.com/in/milicanastasic" target="_blank">__Milica Nastasic__ <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+ - __Milica Nastasic__ <a href="https://www.linkedin.com/in/milicanastasic" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
    - Co-Founder, IT Konekt
  - __Jovan Milic__ <a href="https://www.linkedin.com/in/jovan-milic-68713973" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>, <a href="https://twitter.com/JMiliic" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
    - 4x Nobel Peace Prize Nominee, Founder of Find Raoul

@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.40" />
         
 
 
@@ -23,16 +23,10 @@
             <meta name="description" content="Static File Caching &amp; Compression">
         
 
-        
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
+        <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ASP.NET Core Response Optimization"/>
 <meta name="twitter:description" content="Static File Caching &amp; Compression"/>
 <meta name="twitter:site" content="@davidpine7"/>
-
 
         <meta property="og:title" content="ASP.NET Core Response Optimization" />
 <meta property="og:description" content="Static File Caching &amp; Compression" />
@@ -40,7 +34,11 @@
 <meta property="og:url" content="http://davidpine.net/blog/asp-net-core-optimization/" />
 
 
-<meta property="og:updated_time" content="2016-12-12T00:00:00&#43;00:00"/>
+
+<meta property="article:published_time" content="2016-12-12T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-12-12T00:00:00&#43;00:00"/>
+
 
 
 
@@ -56,12 +54,13 @@
 <meta itemprop="description" content="Static File Caching &amp; Compression">
 
 
+<meta itemprop="datePublished" content="2016-12-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-12-12T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1170">
 
 
 
-<meta itemprop="keywords" content=".NET,.NET Core,.NET Standard,ASP.NET Core,Angular2,CSharp,Caching,Compression,Configuration,Dependency Injection,Fear,GZip,Http,Identity,IoT,JSON,JavaScript,MKE DOT NET,Raspberry Pi,Roslyn,RxJS,Self-Branding,Technical Conference,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio,xUnit," />
+<meta itemprop="keywords" content="" />
 
         
 
@@ -74,13 +73,13 @@
 
         
         
-
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/pojoaque.css">
         
-            
-                
-                    <link rel="stylesheet" href="/css/main.min.css" />
-                
-            
+
         
 
         
@@ -91,7 +90,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-78203613-1', 'auto');
 ga('send', 'pageview');
@@ -115,42 +114,42 @@ ga('send', 'pageview');
         <ul>
             
                 <li>
-                    <a href="/blog/">
+                    <a href="/blog">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="/categories/">
+                    <a href="/categories">
                         
                             <i class="fa fa-list-ol">&nbsp;</i>Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="/about/">
+                    <a href="/about">
                         
                             <i class="fa fa-smile-o">&nbsp;</i>About
                     </a>
                 </li>
             
                 <li>
-                    <a href="/speaking/">
+                    <a href="/speaking">
                         
                             <i class="fa fa-bullhorn">&nbsp;</i>Speaking
                     </a>
                 </li>
             
                 <li>
-                    <a href="/media/">
+                    <a href="/media">
                         
                             <i class="fa fa-video-camera">&nbsp;</i>Media
                     </a>
                 </li>
             
                 <li>
-                    <a href="/conclusions/">
+                    <a href="/conclusions">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
                     </a>
@@ -195,7 +194,7 @@ ga('send', 'pageview');
             <ul class="links">
                 
                     <li>
-                        <a href="/blog/">
+                        <a href="/blog">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -206,7 +205,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/categories/">
+                        <a href="/categories">
                             <h3>
                                 
                                     <i class="fa fa-list-ol">&nbsp;</i>
@@ -217,7 +216,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/about/">
+                        <a href="/about">
                             <h3>
                                 
                                     <i class="fa fa-smile-o">&nbsp;</i>
@@ -228,7 +227,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/speaking/">
+                        <a href="/speaking">
                             <h3>
                                 
                                     <i class="fa fa-bullhorn">&nbsp;</i>
@@ -239,7 +238,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/media/">
+                        <a href="/media">
                             <h3>
                                 
                                     <i class="fa fa-video-camera">&nbsp;</i>
@@ -250,7 +249,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/conclusions/">
+                        <a href="/conclusions">
                             <h3>
                                 
                                     <i class="fa fa-lightbulb-o">&nbsp;</i>
@@ -450,7 +449,7 @@ ga('send', 'pageview');
     <div id="content">
         
 
-<h2 id="intro:f7ba068c12f661d5bfa879f663970183">Intro</h2>
+<h2 id="intro">Intro</h2>
 
 <p>If you&rsquo;re a web developer, chances are you&rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in
 tandem on an <strong>ASP.NET Core</strong> application that I have been developing&hellip; I&rsquo;m going to share what I have learned.</p>
@@ -465,7 +464,7 @@ are provided a set meal (a bloated dependency chain) containing undesired items.
 
 <p>In other words, all dependencies are pluggable middleware. This provides ultimate control as you have to explicitly <em>opt-in</em> for the middleware you desire.</p>
 
-<h3 id="know-thy-middleware:f7ba068c12f661d5bfa879f663970183">Know thy Middleware</h3>
+<h3 id="know-thy-middleware">Know thy Middleware</h3>
 
 <p>Not all middleware is equal. Different middleware serves different purposes (obviously). Try to think of each middleware as its own standalone feature-set. Not all middleware is
 given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In
@@ -475,7 +474,7 @@ fact, this is the case when using static file caching and response compression t
 <p><p/>The <em>order</em> in which middleware is added matters and dictates the order of execution during a request.</p>
 </blockquote>
 
-<h4 id="installing-dependencies:f7ba068c12f661d5bfa879f663970183">Installing Dependencies</h4>
+<h4 id="installing-dependencies">Installing Dependencies</h4>
 
 <p>I wrote a tiny application and put it up on GitHub, check it out <a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target="_blank">here</a> if you want
 to follow along. Now let&rsquo;s install the dependencies we&rsquo;ll need. For static file caching and response compression we need to add two <code>dependencies</code> to the project.</p>
@@ -519,7 +518,7 @@ to follow along. Now let&rsquo;s install the dependencies we&rsquo;ll need. For 
                     [ Install ]
 </code></pre>
 
-<h3 id="configuring-startup:f7ba068c12f661d5bfa879f663970183">Configuring Startup</h3>
+<h3 id="configuring-startup">Configuring Startup</h3>
 
 <p>There are two common nomenclatures that exist for wiring up middleware in your startup classes, the <code>.Add*</code> and <code>.Use*</code> extension methods. The <code>.Add*</code> calls are intended to add
 services to the <code>IServiceCollection</code> instance, ensuring that they are ready for <em>usage</em>. The <code>.Use*</code> calls specify that you want to use the middleware and makes the assumption
@@ -567,7 +566,7 @@ namespace IEvangelist.AspNetCore.Optimization
 
 <p>There are several types defined by default in <strong>ASP.NET Core</strong> class <code>ResponseCompressionDefaults.MimeTypes</code>, we are simply expanding that to include &ldquo;SVG&rdquo; images and the &ldquo;Woff2&rdquo; fonts.</p>
 
-<h3 id="order-exemplified:f7ba068c12f661d5bfa879f663970183">Order Exemplified</h3>
+<h3 id="order-exemplified">Order Exemplified</h3>
 
 <p>Consider the following:</p>
 
@@ -627,7 +626,7 @@ While we do have static file middleware, we didn&rsquo;t know that &ldquo;cachin
 expression. This expression can be used to delegate the preperation of the response. Notice we&rsquo;re simply setting the <code>Cache-Control</code> header to a &ldquo;max-age&rdquo; of a week. That was
 pretty simple, hey?!</p>
 
-<h3 id="compression-awareness:f7ba068c12f661d5bfa879f663970183">Compression Awareness</h3>
+<h3 id="compression-awareness">Compression Awareness</h3>
 
 <p>It&rsquo;s all the little things! The response compression middleware boasts deterministic compression, i.e.; if the
 <a href="https://github.com/aspnet/KestrelHttpServer" target="_blank"><code>KestrelHttpServer</code></a> is running behind the
@@ -639,15 +638,15 @@ pretty simple, hey?!</p>
 <li>Whether or not the response needs to be compressed</li>
 </ul>
 
-<h3 id="results:f7ba068c12f661d5bfa879f663970183">Results</h3>
+<h3 id="results">Results</h3>
 
 <p>Let&rsquo;s spend some time examining the results of our response optimization efforts.</p>
 
-<h4 id="before:f7ba068c12f661d5bfa879f663970183">Before</h4>
+<h4 id="before">Before</h4>
 
 <p><img src="/img/2016/12/before.png" alt="Before" /></p>
 
-<h5 id="total-s:f7ba068c12f661d5bfa879f663970183">Total(s)</h5>
+<h5 id="total-s">Total(s)</h5>
 
 <pre><code class="language-yaml">13 Requests | 549 KB transfered | ... | ... 
 </code></pre>
@@ -661,11 +660,11 @@ Accept-Ranges: bytes
 ETag: &quot;1d1ce31e3bd09cf&quot;
 </code></pre>
 
-<h4 id="after:f7ba068c12f661d5bfa879f663970183">After</h4>
+<h4 id="after">After</h4>
 
 <p><img src="/img/2016/12/after.png" alt="After" /></p>
 
-<h5 id="total-s-1:f7ba068c12f661d5bfa879f663970183">Total(s)</h5>
+<h5 id="total-s-1">Total(s)</h5>
 
 <pre><code class="language-yaml">13 Requests | 175 KB transfered | ... | ... 
 </code></pre>
@@ -685,17 +684,17 @@ Accept-Ranges: bytes
 ETag: &quot;1d1ce31e3bd09cf&quot;
 </code></pre>
 
-<h4 id="subsequent-cached-requests:f7ba068c12f661d5bfa879f663970183">Subsequent (Cached) Requests</h4>
+<h4 id="subsequent-cached-requests">Subsequent (Cached) Requests</h4>
 
 <p><img src="/img/2016/12/cached.png" alt="Cached" /></p>
 
-<h3 id="let-s-summarize:f7ba068c12f661d5bfa879f663970183">Let&rsquo;s Summarize</h3>
+<h3 id="let-s-summarize">Let&rsquo;s Summarize</h3>
 
 <p>We learned some of the basics about <strong>ASP.NET Core</strong> middleware. Together we implemented a response optimization strategy that included deterministic response compression, as well
 as static file caching. We learned some of the common patterns and naming conventions for integrating with <strong>ASP.NET Core</strong> middleware. Finally, we have a good understanding of
 the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
 
-<h3 id="source-code:f7ba068c12f661d5bfa879f663970183">Source Code</h3>
+<h3 id="source-code">Source Code</h3>
 
 <ul>
 <li><a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target="_blank">
@@ -733,13 +732,13 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
 
     
     
-        <li><a href='/categories/asp.net-core'>ASP.NET Core</a></li>
+        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
     
-        <li><a href='/categories/gzip'>GZip</a></li>
+        <li><a href='/categoriesgzip'>GZip</a></li>
     
-        <li><a href='/categories/compression'>Compression</a></li>
+        <li><a href='/categoriescompression'>Compression</a></li>
     
-        <li><a href='/categories/caching'>Caching</a></li>
+        <li><a href='/categoriescaching'>Caching</a></li>
     
 </ul>
 
@@ -762,20 +761,25 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
     
         <article class="post">
             <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'davidpine';
-    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/asp-net-core-optimization\/';
-    var disqus_title = 'ASP.NET Core Response Optimization';
-    var disqus_url = 'http:\/\/davidpine.net\/blog\/asp-net-core-optimization\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidpine" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </article>
     
 
@@ -992,7 +996,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/visual-studio/">Visual Studio</a>
+                                <a href="/categories/.net/">.NET</a>
                                 <span style="float:right;">4</span>
                             </header>
                         </article>
@@ -1001,7 +1005,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net/">.NET</a>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
                                 <span style="float:right;">4</span>
                             </header>
                         </article>
@@ -1019,15 +1023,6 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/xunit/">xUnit</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/typescript/">TypeScript</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -1037,7 +1032,16 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/uwp/">UWP</a>
+                                <a href="/categories/xunit/">xUnit</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/.net-standard/">.NET Standard</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1046,7 +1050,43 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <a href="/categories/angular2/">Angular2</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/caching/">Caching</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/compression/">Compression</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/configuration/">Configuration</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1056,6 +1096,42 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                         <article>
                             <header>
                                 <a href="/categories/fear/">Fear</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/gzip/">GZip</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1082,79 +1158,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net-standard/">.NET Standard</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/iot/">IoT</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/configuration/">Configuration</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/mke-dot-net/">MKE DOT NET</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/caching/">Caching</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/self-branding/">Self-Branding</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/identity/">Identity</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/http/">Http</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1172,16 +1176,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/compression/">Compression</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/angular2/">Angular2</a>
+                                <a href="/categories/roslyn/">Roslyn</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1199,7 +1194,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/roslyn/">Roslyn</a>
+                                <a href="/categories/self-branding/">Self-Branding</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1208,7 +1203,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/gzip/">GZip</a>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1218,6 +1213,15 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                         <article>
                             <header>
                                 <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/uwp/">UWP</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1330,13 +1334,14 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
 
         
         
-
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
         
-            
-                
-                    <script src="/js/main.min.js"></script>
-                
-            
+
         
 
             

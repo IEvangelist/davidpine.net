@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.40" />
         
 
 
@@ -23,16 +23,10 @@
             <meta name="description" content="The language features you&#39;ve been waiting for">
         
 
-        
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
+        <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Perusing C# 7.1"/>
 <meta name="twitter:description" content="The language features you&#39;ve been waiting for"/>
 <meta name="twitter:site" content="@davidpine7"/>
-
 
         <meta property="og:title" content="Perusing C# 7.1" />
 <meta property="og:description" content="The language features you&#39;ve been waiting for" />
@@ -40,7 +34,11 @@
 <meta property="og:url" content="http://davidpine.net/blog/csharp-seven-dot-one/" />
 
 
-<meta property="og:updated_time" content="2017-07-29T00:00:00&#43;00:00"/>
+
+<meta property="article:published_time" content="2017-07-29T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-07-29T00:00:00&#43;00:00"/>
+
 
 
 
@@ -56,12 +54,13 @@
 <meta itemprop="description" content="The language features you&#39;ve been waiting for">
 
 
+<meta itemprop="datePublished" content="2017-07-29T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-07-29T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1158">
 
 
 
-<meta itemprop="keywords" content=".NET,.NET Core,.NET Standard,ASP.NET Core,Angular2,CSharp,Caching,Compression,Configuration,Dependency Injection,Fear,GZip,Http,Identity,IoT,JSON,JavaScript,MKE DOT NET,Raspberry Pi,Roslyn,RxJS,Self-Branding,Technical Conference,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio,xUnit," />
+<meta itemprop="keywords" content="" />
 
         
 
@@ -74,13 +73,13 @@
 
         
         
-
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/pojoaque.css">
         
-            
-                
-                    <link rel="stylesheet" href="/css/main.min.css" />
-                
-            
+
         
 
         
@@ -91,7 +90,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-78203613-1', 'auto');
 ga('send', 'pageview');
@@ -115,42 +114,42 @@ ga('send', 'pageview');
         <ul>
             
                 <li>
-                    <a href="/blog/">
+                    <a href="/blog">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="/categories/">
+                    <a href="/categories">
                         
                             <i class="fa fa-list-ol">&nbsp;</i>Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="/about/">
+                    <a href="/about">
                         
                             <i class="fa fa-smile-o">&nbsp;</i>About
                     </a>
                 </li>
             
                 <li>
-                    <a href="/speaking/">
+                    <a href="/speaking">
                         
                             <i class="fa fa-bullhorn">&nbsp;</i>Speaking
                     </a>
                 </li>
             
                 <li>
-                    <a href="/media/">
+                    <a href="/media">
                         
                             <i class="fa fa-video-camera">&nbsp;</i>Media
                     </a>
                 </li>
             
                 <li>
-                    <a href="/conclusions/">
+                    <a href="/conclusions">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
                     </a>
@@ -195,7 +194,7 @@ ga('send', 'pageview');
             <ul class="links">
                 
                     <li>
-                        <a href="/blog/">
+                        <a href="/blog">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -206,7 +205,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/categories/">
+                        <a href="/categories">
                             <h3>
                                 
                                     <i class="fa fa-list-ol">&nbsp;</i>
@@ -217,7 +216,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/about/">
+                        <a href="/about">
                             <h3>
                                 
                                     <i class="fa fa-smile-o">&nbsp;</i>
@@ -228,7 +227,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/speaking/">
+                        <a href="/speaking">
                             <h3>
                                 
                                     <i class="fa fa-bullhorn">&nbsp;</i>
@@ -239,7 +238,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/media/">
+                        <a href="/media">
                             <h3>
                                 
                                     <i class="fa fa-video-camera">&nbsp;</i>
@@ -250,7 +249,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/conclusions/">
+                        <a href="/conclusions">
                             <h3>
                                 
                                     <i class="fa fa-lightbulb-o">&nbsp;</i>
@@ -452,7 +451,7 @@ ga('send', 'pageview');
 
 <p>Earlier this year in March &ndash; Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on <a href="/blog/exploring-csharp-seven" target="_blank">&ldquo;Exploring C# 7&rdquo; here</a>. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.</p>
 
-<h1 id="async-main-a-target-blank-href-https-github-com-dotnet-csharplang-issues-97-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078">Async Main <a target="_blank" href="https://github.com/dotnet/csharplang/issues/97"><i class="fa fa-external-link"></i></a></h1>
+<h1 id="async-main-a-target-blank-href-https-github-com-dotnet-csharplang-issues-97-i-class-fa-fa-external-link-i-a">Async Main <a target="_blank" href="https://github.com/dotnet/csharplang/issues/97"><i class="fa fa-external-link"></i></a></h1>
 
 <p>Since the release of C# 5, developers have either embraced the <code>async</code> and <code>await</code> keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you&rsquo;re not alone. Many others have been just as confused, but that&rsquo;s not to say that the language didn&rsquo;t make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with its implementation!</p>
 
@@ -497,7 +496,7 @@ static Task&lt;int&gt; Main(string[] args) { }    // static int Main(string[] ar
 
 <p>With this task-based approach the new entry points simply provide that &ldquo;feels good&rdquo; approach to development.</p>
 
-<h1 id="default-expression-a-target-blank-href-https-github-com-dotnet-csharplang-issues-102-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078"><code>default</code> Expression <a target="_blank" href="https://github.com/dotnet/csharplang/issues/102"><i class="fa fa-external-link"></i></a></h1>
+<h1 id="default-expression-a-target-blank-href-https-github-com-dotnet-csharplang-issues-102-i-class-fa-fa-external-link-i-a"><code>default</code> Expression <a target="_blank" href="https://github.com/dotnet/csharplang/issues/102"><i class="fa fa-external-link"></i></a></h1>
 
 <p>The <code>default</code> keyword has been around forever. It was used to tell the compiler give me the &ldquo;default&rdquo; value for the given type.</p>
 
@@ -562,7 +561,7 @@ if (sum == default)
 }
 </code></pre>
 
-<h1 id="tuple-projection-initializers-a-target-blank-href-https-github-com-dotnet-csharplang-issues-415-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078">Tuple Projection Initializers <a target="_blank" href="https://github.com/dotnet/csharplang/issues/415"><i class="fa fa-external-link"></i></a></h1>
+<h1 id="tuple-projection-initializers-a-target-blank-href-https-github-com-dotnet-csharplang-issues-415-i-class-fa-fa-external-link-i-a">Tuple Projection Initializers <a target="_blank" href="https://github.com/dotnet/csharplang/issues/415"><i class="fa fa-external-link"></i></a></h1>
 
 <p>I detailed the introduction of <code>tuples</code> in my <a href="/blog/exploring-csharp-seven" target="_blank">&ldquo;Exploring C# 7&rdquo;</a> post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 &ndash; this is no longer a limitation.</p>
 
@@ -585,7 +584,7 @@ ln = person.lastName;           // &quot;Pine&quot;
 dob = person.dateOfBirth;       // 7/7/1984
 </code></pre>
 
-<h1 id="pattern-matching-with-generics-a-target-blank-href-https-github-com-dotnet-csharplang-issues-154-i-class-fa-fa-external-link-i-a:c3d9d0c20d91f17ec5db26344e1a2078">Pattern-matching with Generics <a target="_blank" href="https://github.com/dotnet/csharplang/issues/154"> <i class="fa fa-external-link"></i></a></h1>
+<h1 id="pattern-matching-with-generics-a-target-blank-href-https-github-com-dotnet-csharplang-issues-154-i-class-fa-fa-external-link-i-a">Pattern-matching with Generics <a target="_blank" href="https://github.com/dotnet/csharplang/issues/154"> <i class="fa fa-external-link"></i></a></h1>
 
 <p>With C# 7.0, pattern-matching was introduced &ndash; I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and makes complex decision trees more legible and comprehensive. However, when it was introduced it didn&rsquo;t correctly support generics. With C# 7.1, that has changed.</p>
 
@@ -636,7 +635,7 @@ if (dog != null)
 <p><p/> Certain combinations of static type of the left-hand-side and the given type are considered incompatible and result in compile-time error. A value of static type <code>E</code> is said to be pattern compatible with the type <code>T</code> if there exists an identity conversion, an implicit reference conversion, a boxing conversion, an explicit reference conversion, or an unboxing conversion from <code>E</code> to <code>T</code>, <strong>or if either <code>E</code> or <code>T</code> is an open type.</strong> It is a compile-time error if an expression of type <code>E</code> is not pattern compatible with the type in a type pattern that it is matched with.</p>
 </blockquote>
 
-<h2 id="references:c3d9d0c20d91f17ec5db26344e1a2078">References</h2>
+<h2 id="references">References</h2>
 
 <ul>
 <li><a target="_blank" href="https://github.com/dotnet/roslyn">Roslyn, The .NET Compiler Platform</a></li>
@@ -673,11 +672,11 @@ if (dog != null)
 
     
     
-        <li><a href='/categories/csharp'>CSharp</a></li>
+        <li><a href='/categoriescsharp'>CSharp</a></li>
     
-        <li><a href='/categories/.net'>.NET</a></li>
+        <li><a href='/categories.net'>.NET</a></li>
     
-        <li><a href='/categories/visual-studio'>Visual Studio</a></li>
+        <li><a href='/categoriesvisual-studio'>Visual Studio</a></li>
     
 </ul>
 
@@ -700,20 +699,25 @@ if (dog != null)
     
         <article class="post">
             <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'davidpine';
-    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/csharp-seven-dot-one\/';
-    var disqus_title = 'Perusing C# 7.1';
-    var disqus_url = 'http:\/\/davidpine.net\/blog\/csharp-seven-dot-one\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidpine" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </article>
     
 
@@ -903,7 +907,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/csharp/">CSharp</a>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
                                 <span style="float:right;">7</span>
                             </header>
                         </article>
@@ -912,7 +916,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <a href="/categories/csharp/">CSharp</a>
                                 <span style="float:right;">7</span>
                             </header>
                         </article>
@@ -957,15 +961,6 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/xunit/">xUnit</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/typescript/">TypeScript</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -975,8 +970,8 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
-                                <span style="float:right;">1</span>
+                                <a href="/categories/xunit/">xUnit</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -984,43 +979,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/identity/">Identity</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/caching/">Caching</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/self-branding/">Self-Branding</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/compression/">Compression</a>
+                                <a href="/categories/.net-standard/">.NET Standard</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1038,7 +997,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/rxjs/">RxJS</a>
+                                <a href="/categories/caching/">Caching</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1047,7 +1006,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/http/">Http</a>
+                                <a href="/categories/compression/">Compression</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1056,7 +1015,25 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/roslyn/">Roslyn</a>
+                                <a href="/categories/configuration/">Configuration</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1074,7 +1051,25 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/tooling/">Tooling</a>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1101,7 +1096,43 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/uwp/">UWP</a>
+                                <a href="/categories/mke-dot-net/">MKE DOT NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/roslyn/">Roslyn</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1119,7 +1150,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/fear/">Fear</a>
+                                <a href="/categories/tooling/">Tooling</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1128,34 +1159,7 @@ if (dog != null)
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net-standard/">.NET Standard</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/iot/">IoT</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/configuration/">Configuration</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/mke-dot-net/">MKE DOT NET</a>
+                                <a href="/categories/uwp/">UWP</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1268,13 +1272,14 @@ if (dog != null)
 
         
         
-
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
         
-            
-                
-                    <script src="/js/main.min.js"></script>
-                
-            
+
         
 
             

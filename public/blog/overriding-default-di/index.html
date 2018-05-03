@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.40" />
         
 
 
@@ -23,16 +23,10 @@
             <meta name="description" content="You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes">
         
 
-        
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
+        <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Overriding ASP.NET Core Framework-Provided Services"/>
 <meta name="twitter:description" content="You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes"/>
 <meta name="twitter:site" content="@davidpine7"/>
-
 
         <meta property="og:title" content="Overriding ASP.NET Core Framework-Provided Services" />
 <meta property="og:description" content="You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes" />
@@ -40,7 +34,11 @@
 <meta property="og:url" content="http://davidpine.net/blog/overriding-default-di/" />
 
 
-<meta property="og:updated_time" content="2017-02-14T00:00:00&#43;00:00"/>
+
+<meta property="article:published_time" content="2017-02-14T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-02-14T00:00:00&#43;00:00"/>
+
 
 
 
@@ -56,12 +54,13 @@
 <meta itemprop="description" content="You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes">
 
 
+<meta itemprop="datePublished" content="2017-02-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-02-14T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="813">
 
 
 
-<meta itemprop="keywords" content=".NET,.NET Core,.NET Standard,ASP.NET Core,Angular2,CSharp,Caching,Compression,Configuration,Dependency Injection,Fear,GZip,Http,Identity,IoT,JSON,JavaScript,MKE DOT NET,Raspberry Pi,Roslyn,RxJS,Self-Branding,Technical Conference,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio,xUnit," />
+<meta itemprop="keywords" content="" />
 
         
 
@@ -74,13 +73,13 @@
 
         
         
-
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/pojoaque.css">
         
-            
-                
-                    <link rel="stylesheet" href="/css/main.min.css" />
-                
-            
+
         
 
         
@@ -91,7 +90,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-78203613-1', 'auto');
 ga('send', 'pageview');
@@ -115,42 +114,42 @@ ga('send', 'pageview');
         <ul>
             
                 <li>
-                    <a href="/blog/">
+                    <a href="/blog">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="/categories/">
+                    <a href="/categories">
                         
                             <i class="fa fa-list-ol">&nbsp;</i>Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="/about/">
+                    <a href="/about">
                         
                             <i class="fa fa-smile-o">&nbsp;</i>About
                     </a>
                 </li>
             
                 <li>
-                    <a href="/speaking/">
+                    <a href="/speaking">
                         
                             <i class="fa fa-bullhorn">&nbsp;</i>Speaking
                     </a>
                 </li>
             
                 <li>
-                    <a href="/media/">
+                    <a href="/media">
                         
                             <i class="fa fa-video-camera">&nbsp;</i>Media
                     </a>
                 </li>
             
                 <li>
-                    <a href="/conclusions/">
+                    <a href="/conclusions">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
                     </a>
@@ -195,7 +194,7 @@ ga('send', 'pageview');
             <ul class="links">
                 
                     <li>
-                        <a href="/blog/">
+                        <a href="/blog">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -206,7 +205,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/categories/">
+                        <a href="/categories">
                             <h3>
                                 
                                     <i class="fa fa-list-ol">&nbsp;</i>
@@ -217,7 +216,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/about/">
+                        <a href="/about">
                             <h3>
                                 
                                     <i class="fa fa-smile-o">&nbsp;</i>
@@ -228,7 +227,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/speaking/">
+                        <a href="/speaking">
                             <h3>
                                 
                                     <i class="fa fa-bullhorn">&nbsp;</i>
@@ -239,7 +238,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/media/">
+                        <a href="/media">
                             <h3>
                                 
                                     <i class="fa fa-video-camera">&nbsp;</i>
@@ -250,7 +249,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/conclusions/">
+                        <a href="/conclusions">
                             <h3>
                                 
                                     <i class="fa fa-lightbulb-o">&nbsp;</i>
@@ -450,7 +449,7 @@ ga('send', 'pageview');
     <div id="content">
         
 
-<h1 id="overview:d7c1ff5c185090641e598e96532d52e8">Overview</h1>
+<h1 id="overview">Overview</h1>
 
 <p>In <strong>.NET</strong> it&rsquo;s really easy to create your own interfaces and implementations. Likewise, it&rsquo;s seemingly effortless to register them for dependency injection. But it is not always
 obvious how to override existing implementations.  Let&rsquo;s discuss various aspects of &ldquo;dependency injection&rdquo; and how you can override the &ldquo;framework-provided services&rdquo;.</p>
@@ -459,7 +458,7 @@ obvious how to override existing implementations.  Let&rsquo;s discuss various a
 with their corresponding IP addresses.  This would allow system administrators to monitor for potential attackers. This would require our <strong>ASP.NET Core</strong> application to have
 custom logging implemented.</p>
 
-<h2 id="logging:d7c1ff5c185090641e598e96532d52e8">Logging</h2>
+<h2 id="logging">Logging</h2>
 
 <p>Luckily <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging" target="_blank"><code>ASP.NET Core Logging</code></a> is simple to use and is a first-class
 citizen within <code>ASP.NET Core</code>.</p>
@@ -485,7 +484,7 @@ looks like:</p>
 <p>As you can see, it is rather simple. It adds two <code>ServiceDescriptor</code> instances to the <code>IServiceCollection</code>, effectively registering the given service type to the
 corresponding implementation type.</p>
 
-<h4 id="following-the-rabbit-down-the-hole:d7c1ff5c185090641e598e96532d52e8">Following the rabbit down the hole</h4>
+<h4 id="following-the-rabbit-down-the-hole">Following the rabbit down the hole</h4>
 
 <p>When you create a new <code>ASP.NET Core</code> project from <strong>Visual Studio</strong>, all the templates follow the same pattern. They have the <code>Program.cs</code> file with a <code>Main</code> method that looks
 very similar to this:</p>
@@ -504,7 +503,7 @@ very similar to this:</p>
 }
 </code></pre>
 
-<h6 id="templates-program-cs:d7c1ff5c185090641e598e96532d52e8">Templates <code>Program.cs</code></h6>
+<h6 id="templates-program-cs">Templates <code>Program.cs</code></h6>
 
 <table>
 <thead>
@@ -534,7 +533,7 @@ internally wraps itself in a <code>using</code>. If you were wondering where the
             creates services then invokes services.AddLogging()
 </code></pre>
 
-<h3 id="a-few-words-on-the-service-descriptor:d7c1ff5c185090641e598e96532d52e8">A few words on the Service Descriptor</h3>
+<h3 id="a-few-words-on-the-service-descriptor">A few words on the Service Descriptor</h3>
 
 <p>The <code>ServiceDescriptor</code> class is an object that <em>describes</em> a <em>service</em>, and this is used by dependency injection. In other words, instances of the <code>ServiceDescriptor</code> are
 descriptions of services. The <code>ServiceDescriptor</code> class exposes several static methods that allow its instantiation.</p>
@@ -544,7 +543,7 @@ descriptions of services. The <code>ServiceDescriptor</code> class exposes sever
 and its implementation is mapped to the <code>LoggerFactory</code>. Likewise, the generic type <code>typeof(ILogger&lt;&gt;)</code> is mapped to <code>typeof(Logger&lt;&gt;)</code>. This is just one of the several key
 &ldquo;Framework-Provided Services&rdquo; that are registered.</p>
 
-<h2 id="putting-it-together:d7c1ff5c185090641e598e96532d52e8">Putting it together</h2>
+<h2 id="putting-it-together">Putting it together</h2>
 
 <p>Now we know that the framework is providing all implementations of <code>ILogger&lt;T&gt;</code>, and resolving them as their <code>Logger&lt;T&gt;</code>. We also know that we could write our own implementation of
 the <code>ILogger&lt;T&gt;</code> interface. Being that this is open-source
@@ -659,12 +658,12 @@ method do the following:</p>
 precaution. We know that with each request we get the <code>HttpContext</code> from the <code>IHttpContextAccessor</code>, and from this we have the <code>User</code>. This is what is passed to each
 <code>ILogger&lt;T&gt;</code>.</p>
 
-<h1 id="conclusion:d7c1ff5c185090641e598e96532d52e8">Conclusion</h1>
+<h1 id="conclusion">Conclusion</h1>
 
 <p>This approach is valid for overriding any of the various framework-provided service implementations. It is simply a matter of knowing the correct <code>ServiceLifetime</code> for your
 specific needs. Likewise, it is a good idea to leverage the open-source libraries of the framework for inspiration. With this you can take finite control of your web-stack.</p>
 
-<h1 id="further-reading:d7c1ff5c185090641e598e96532d52e8">Further Reading</h1>
+<h1 id="further-reading">Further Reading</h1>
 
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection" target="_blank">
@@ -702,11 +701,11 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
 
     
     
-        <li><a href='/categories/asp.net-core'>ASP.NET Core</a></li>
+        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
     
-        <li><a href='/categories/.net-core'>.NET Core</a></li>
+        <li><a href='/categories.net-core'>.NET Core</a></li>
     
-        <li><a href='/categories/dependency-injection'>Dependency Injection</a></li>
+        <li><a href='/categoriesdependency-injection'>Dependency Injection</a></li>
     
 </ul>
 
@@ -729,20 +728,25 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
     
         <article class="post">
             <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'davidpine';
-    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/overriding-default-di\/';
-    var disqus_title = 'Overriding ASP.NET Core Framework-Provided Services';
-    var disqus_url = 'http:\/\/davidpine.net\/blog\/overriding-default-di\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidpine" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </article>
     
 
@@ -959,7 +963,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/visual-studio/">Visual Studio</a>
+                                <a href="/categories/.net/">.NET</a>
                                 <span style="float:right;">4</span>
                             </header>
                         </article>
@@ -968,7 +972,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net/">.NET</a>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
                                 <span style="float:right;">4</span>
                             </header>
                         </article>
@@ -986,15 +990,6 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/xunit/">xUnit</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/typescript/">TypeScript</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -1004,8 +999,8 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
-                                <span style="float:right;">1</span>
+                                <a href="/categories/xunit/">xUnit</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -1013,7 +1008,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/compression/">Compression</a>
+                                <a href="/categories/.net-standard/">.NET Standard</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1031,7 +1026,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/rxjs/">RxJS</a>
+                                <a href="/categories/caching/">Caching</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1040,7 +1035,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/http/">Http</a>
+                                <a href="/categories/compression/">Compression</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1049,7 +1044,25 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/roslyn/">Roslyn</a>
+                                <a href="/categories/configuration/">Configuration</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1067,7 +1080,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/tooling/">Tooling</a>
+                                <a href="/categories/http/">Http</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1076,7 +1089,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <a href="/categories/identity/">Identity</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1085,7 +1098,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/fear/">Fear</a>
+                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1112,43 +1125,34 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/uwp/">UWP</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/.net-standard/">.NET Standard</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/iot/">IoT</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/configuration/">Configuration</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/mke-dot-net/">MKE DOT NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/roslyn/">Roslyn</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1166,7 +1170,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1175,7 +1179,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/identity/">Identity</a>
+                                <a href="/categories/tooling/">Tooling</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1184,7 +1188,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/caching/">Caching</a>
+                                <a href="/categories/uwp/">UWP</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1297,13 +1301,14 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
 
         
         
-
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
         
-            
-                
-                    <script src="/js/main.min.js"></script>
-                
-            
+
         
 
             

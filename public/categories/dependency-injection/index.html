@@ -20,7 +20,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.40" />
         
 
 
@@ -31,14 +31,20 @@
             
         
 
-        
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dependency Injection"/>
+<meta name="twitter:description" content="Powered by &lt;a href=&#39;http://gohugo.io/&#39;&gt;Hugo&lt;/a&gt;"/>
+<meta name="twitter:site" content="@davidpine7"/>
+
         <meta property="og:title" content="Dependency Injection" />
 <meta property="og:description" content="Powered by &lt;a href=&#39;http://gohugo.io/&#39;&gt;Hugo&lt;/a&gt;" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://davidpine.net/categories/dependency-injection/" />
 
 
+
 <meta property="og:updated_time" content="2017-02-14T00:00:00&#43;00:00"/>
+
 
 
 
@@ -64,13 +70,13 @@
 
         
         
-
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/pojoaque.css">
         
-            
-                
-                    <link rel="stylesheet" href="/css/main.min.css" />
-                
-            
+
         
 
         
@@ -81,7 +87,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-78203613-1', 'auto');
 ga('send', 'pageview');
@@ -104,42 +110,42 @@ ga('send', 'pageview');
         <ul>
             
                 <li>
-                    <a href="/blog/">
+                    <a href="/blog">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="/categories/">
+                    <a href="/categories">
                         
                             <i class="fa fa-list-ol">&nbsp;</i>Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="/about/">
+                    <a href="/about">
                         
                             <i class="fa fa-smile-o">&nbsp;</i>About
                     </a>
                 </li>
             
                 <li>
-                    <a href="/speaking/">
+                    <a href="/speaking">
                         
                             <i class="fa fa-bullhorn">&nbsp;</i>Speaking
                     </a>
                 </li>
             
                 <li>
-                    <a href="/media/">
+                    <a href="/media">
                         
                             <i class="fa fa-video-camera">&nbsp;</i>Media
                     </a>
                 </li>
             
                 <li>
-                    <a href="/conclusions/">
+                    <a href="/conclusions">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
                     </a>
@@ -180,7 +186,7 @@ ga('send', 'pageview');
             <ul class="links">
                 
                     <li>
-                        <a href="/blog/">
+                        <a href="/blog">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -191,7 +197,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/categories/">
+                        <a href="/categories">
                             <h3>
                                 
                                     <i class="fa fa-list-ol">&nbsp;</i>
@@ -202,7 +208,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/about/">
+                        <a href="/about">
                             <h3>
                                 
                                     <i class="fa fa-smile-o">&nbsp;</i>
@@ -213,7 +219,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/speaking/">
+                        <a href="/speaking">
                             <h3>
                                 
                                     <i class="fa fa-bullhorn">&nbsp;</i>
@@ -224,7 +230,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/media/">
+                        <a href="/media">
                             <h3>
                                 
                                     <i class="fa fa-video-camera">&nbsp;</i>
@@ -235,7 +241,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/conclusions/">
+                        <a href="/conclusions">
                             <h3>
                                 
                                     <i class="fa fa-lightbulb-o">&nbsp;</i>
@@ -329,7 +335,8 @@ ga('send', 'pageview');
     
 
 
-    <p>Overview In .NET it&rsquo;s really easy to create your own interfaces and implementations. Likewise, it&rsquo;s seemingly effortless to register them for dependency injection. But it is not always obvious how to override existing implementations. Let&rsquo;s discuss various aspects of &ldquo;dependency injection&rdquo; and how you can override the &ldquo;framework-provided services&rdquo;. As an example, let&rsquo;s take a recent story on our product backlog for building a security audit of login attempts. The story involved the capture of attempted usernames along with their corresponding IP addresses.</p>
+    <p>Overview In .NET it&rsquo;s really easy to create your own interfaces and implementations. Likewise, it&rsquo;s seemingly effortless to register them for dependency injection. But it is not always obvious how to override existing implementations. Let&rsquo;s discuss various aspects of &ldquo;dependency injection&rdquo; and how you can override the &ldquo;framework-provided services&rdquo;.
+As an example, let&rsquo;s take a recent story on our product backlog for building a security audit of login attempts. The story involved the capture of attempted usernames along with their corresponding IP addresses.</p>
 
     <footer>
         <ul class="actions">
@@ -362,11 +369,11 @@ ga('send', 'pageview');
 
     
     
-        <li><a href='/categories/asp.net-core'>ASP.NET Core</a></li>
+        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
     
-        <li><a href='/categories/.net-core'>.NET Core</a></li>
+        <li><a href='/categories.net-core'>.NET Core</a></li>
     
-        <li><a href='/categories/dependency-injection'>Dependency Injection</a></li>
+        <li><a href='/categoriesdependency-injection'>Dependency Injection</a></li>
     
 </ul>
 
@@ -574,7 +581,7 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/csharp/">CSharp</a>
+                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
                                 <span style="float:right;">7</span>
                             </header>
                         </article>
@@ -583,7 +590,7 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/asp.net-core/">ASP.NET Core</a>
+                                <a href="/categories/csharp/">CSharp</a>
                                 <span style="float:right;">7</span>
                             </header>
                         </article>
@@ -628,15 +635,6 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/xunit/">xUnit</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/typescript/">TypeScript</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -646,8 +644,8 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
-                                <span style="float:right;">1</span>
+                                <a href="/categories/xunit/">xUnit</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -655,43 +653,7 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/identity/">Identity</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/caching/">Caching</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/self-branding/">Self-Branding</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/compression/">Compression</a>
+                                <a href="/categories/.net-standard/">.NET Standard</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -709,7 +671,7 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/rxjs/">RxJS</a>
+                                <a href="/categories/caching/">Caching</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -718,7 +680,7 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/http/">Http</a>
+                                <a href="/categories/compression/">Compression</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -727,7 +689,25 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/roslyn/">Roslyn</a>
+                                <a href="/categories/configuration/">Configuration</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -745,7 +725,25 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/tooling/">Tooling</a>
+                                <a href="/categories/http/">Http</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/identity/">Identity</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -772,7 +770,43 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/uwp/">UWP</a>
+                                <a href="/categories/mke-dot-net/">MKE DOT NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/roslyn/">Roslyn</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/self-branding/">Self-Branding</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -790,7 +824,7 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/fear/">Fear</a>
+                                <a href="/categories/tooling/">Tooling</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -799,34 +833,7 @@ ga('send', 'pageview');
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net-standard/">.NET Standard</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/iot/">IoT</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/configuration/">Configuration</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/mke-dot-net/">MKE DOT NET</a>
+                                <a href="/categories/uwp/">UWP</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -942,13 +949,14 @@ ga('send', 'pageview');
 
         
         
-
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
         
-            
-                
-                    <script src="/js/main.min.js"></script>
-                
-            
+
         
 
             

@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.40" />
         
 
 
@@ -23,16 +23,10 @@
             <meta name="description" content="Leveraging .NET Core Tooling Features">
         
 
-        
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
+        <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The power of the global.json"/>
 <meta name="twitter:description" content="Leveraging .NET Core Tooling Features"/>
 <meta name="twitter:site" content="@davidpine7"/>
-
 
         <meta property="og:title" content="The power of the global.json" />
 <meta property="og:description" content="Leveraging .NET Core Tooling Features" />
@@ -40,7 +34,11 @@
 <meta property="og:url" content="http://davidpine.net/blog/the-global-json/" />
 
 
-<meta property="og:updated_time" content="2016-07-18T22:40:31-05:00"/>
+
+<meta property="article:published_time" content="2016-07-18T22:40:31-05:00"/>
+
+<meta property="article:modified_time" content="2016-07-18T22:40:31-05:00"/>
+
 
 
 
@@ -56,12 +54,13 @@
 <meta itemprop="description" content="Leveraging .NET Core Tooling Features">
 
 
+<meta itemprop="datePublished" content="2016-07-18T22:40:31-05:00" />
 <meta itemprop="dateModified" content="2016-07-18T22:40:31-05:00" />
 <meta itemprop="wordCount" content="592">
 
 
 
-<meta itemprop="keywords" content=".NET,.NET Core,.NET Standard,ASP.NET Core,Angular2,CSharp,Caching,Compression,Configuration,Dependency Injection,Fear,GZip,Http,Identity,IoT,JSON,JavaScript,MKE DOT NET,Raspberry Pi,Roslyn,RxJS,Self-Branding,Technical Conference,Technical Doubt,Tooling,TypeScript,UWP,Visual Studio,xUnit," />
+<meta itemprop="keywords" content="" />
 
         
 
@@ -74,13 +73,13 @@
 
         
         
-
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/pojoaque.css">
         
-            
-                
-                    <link rel="stylesheet" href="/css/main.min.css" />
-                
-            
+
         
 
         
@@ -91,7 +90,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-78203613-1', 'auto');
 ga('send', 'pageview');
@@ -115,42 +114,42 @@ ga('send', 'pageview');
         <ul>
             
                 <li>
-                    <a href="/blog/">
+                    <a href="/blog">
                         
                             <i class="fa fa-newspaper-o">&nbsp;</i>Blog
                     </a>
                 </li>
             
                 <li>
-                    <a href="/categories/">
+                    <a href="/categories">
                         
                             <i class="fa fa-list-ol">&nbsp;</i>Categories
                     </a>
                 </li>
             
                 <li>
-                    <a href="/about/">
+                    <a href="/about">
                         
                             <i class="fa fa-smile-o">&nbsp;</i>About
                     </a>
                 </li>
             
                 <li>
-                    <a href="/speaking/">
+                    <a href="/speaking">
                         
                             <i class="fa fa-bullhorn">&nbsp;</i>Speaking
                     </a>
                 </li>
             
                 <li>
-                    <a href="/media/">
+                    <a href="/media">
                         
                             <i class="fa fa-video-camera">&nbsp;</i>Media
                     </a>
                 </li>
             
                 <li>
-                    <a href="/conclusions/">
+                    <a href="/conclusions">
                         
                             <i class="fa fa-lightbulb-o">&nbsp;</i>Conclusions
                     </a>
@@ -195,7 +194,7 @@ ga('send', 'pageview');
             <ul class="links">
                 
                     <li>
-                        <a href="/blog/">
+                        <a href="/blog">
                             <h3>
                                 
                                     <i class="fa fa-newspaper-o">&nbsp;</i>
@@ -206,7 +205,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/categories/">
+                        <a href="/categories">
                             <h3>
                                 
                                     <i class="fa fa-list-ol">&nbsp;</i>
@@ -217,7 +216,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/about/">
+                        <a href="/about">
                             <h3>
                                 
                                     <i class="fa fa-smile-o">&nbsp;</i>
@@ -228,7 +227,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/speaking/">
+                        <a href="/speaking">
                             <h3>
                                 
                                     <i class="fa fa-bullhorn">&nbsp;</i>
@@ -239,7 +238,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/media/">
+                        <a href="/media">
                             <h3>
                                 
                                     <i class="fa fa-video-camera">&nbsp;</i>
@@ -250,7 +249,7 @@ ga('send', 'pageview');
                     </li>
                 
                     <li>
-                        <a href="/conclusions/">
+                        <a href="/conclusions">
                             <h3>
                                 
                                     <i class="fa fa-lightbulb-o">&nbsp;</i>
@@ -450,7 +449,7 @@ ga('send', 'pageview');
     <div id="content">
         
 
-<h1 id="introduction:919389ea8ea658b3eb14ef94d6f5803e">Introduction</h1>
+<h1 id="introduction">Introduction</h1>
 
 <p>As I&rsquo;m sure you&rsquo;re all aware by now, <a href="https://blogs.msdn.microsoft.com/dotnet/2016/06/27/announcing-net-core-1-0/">Monday June 27<sup>th</sup></a> was a
 special day for those of you who were anticipating the release of  <code>.NET Core</code> and <code>ASP.NET Core</code>. While the &ldquo;core&rdquo; frameworks and runtimes are RTM, the
@@ -480,7 +479,7 @@ an improvement to said package, what does that work-flow look like?</p>
 <p>What if I told you, that headache is all but gone and you will never have to go through those agonizing steps again! Say it ain&rsquo;t so
 (queue <a href="https://youtu.be/ENXvZ9YRjbo" target="_blank">Weezer</a>).</p>
 
-<h2 id="global-json:919389ea8ea658b3eb14ef94d6f5803e">Global.json</h2>
+<h2 id="global-json">Global.json</h2>
 
 <p>The <code>global.json</code> file sits out at the solution directory-level and literally has one of the simplest <code>JSON</code> schemas you will ever see. The default templates
 generate the following (for the <a href="http://json.schemastore.org/global">full schema</a>):</p>
@@ -502,7 +501,7 @@ property is an array of strings. It&rsquo;s defined as the following:</p>
 
 <p>These folders are search locations for resolving dependencies, where projects take precedence over packages.</p>
 
-<h3 id="projects-over-packages:919389ea8ea658b3eb14ef94d6f5803e">Projects over Packages</h3>
+<h3 id="projects-over-packages">Projects over Packages</h3>
 
 <p>Assume you&rsquo;re developing in a project, namely <code>IEvangelist.NetCore.App</code> and it takes a dependency on <code>IEvangelist.NetCore.ClassLib</code> and <code>IEvangelist.NetCore.Services</code>. These
 dependencies are packages (outside the solution) and you can use the <code>global.json/projects</code> array to your advantage. Using our imaginations, let us find a need
@@ -518,24 +517,24 @@ we can now use a relative path like so:</p>
 }
 </code></pre>
 
-<h4 id="before:919389ea8ea658b3eb14ef94d6f5803e">Before</h4>
+<h4 id="before">Before</h4>
 
 <p><img src="/img/2016/07/before.jpg" alt="Before global.json changes" /></p>
 
-<h4 id="after:919389ea8ea658b3eb14ef94d6f5803e">After</h4>
+<h4 id="after">After</h4>
 
 <p>After saving these changes to the <code>global.json</code> you&rsquo;ll notice <strong>Visual Studio</strong> pull this project into solution, but outside of the <code>src</code> folder. Now when
 you debug you can actually step into the source and treat it like any other source code you have. Project dependencies are resolved by way of their <code>project.json</code> being discovered.</p>
 
 <p><img src="/img/2016/07/after.jpg" alt="After global.json changes" /></p>
 
-<h3 id="open-source-for-everyone:919389ea8ea658b3eb14ef94d6f5803e">Open Source for Everyone</h3>
+<h3 id="open-source-for-everyone">Open Source for Everyone</h3>
 
 <p>One of the biggest advantages in my opinion is the ability to pull down source from <code>github</code> that I rely on and source-step into it. For example, I have been developing with <code>ASP.NET
 Core</code> since <strong>RC1</strong>, nearly eight months!! With the power of the <code>global.json</code> I can pull down source that I&rsquo;m relying on in a package and fulfill my understanding of it
 as it executes. Simply amazing!</p>
 
-<h2 id="further-reading:919389ea8ea658b3eb14ef94d6f5803e">Further reading</h2>
+<h2 id="further-reading">Further reading</h2>
 
 <p>For more details, these are some additional links and points of reference.</p>
 
@@ -574,11 +573,11 @@ as it executes. Simply amazing!</p>
 
     
     
-        <li><a href='/categories/asp.net-core'>ASP.NET Core</a></li>
+        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
     
-        <li><a href='/categories/.net-core'>.NET Core</a></li>
+        <li><a href='/categories.net-core'>.NET Core</a></li>
     
-        <li><a href='/categories/tooling'>Tooling</a></li>
+        <li><a href='/categoriestooling'>Tooling</a></li>
     
 </ul>
 
@@ -601,20 +600,25 @@ as it executes. Simply amazing!</p>
     
         <article class="post">
             <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'davidpine';
-    var disqus_identifier = 'http:\/\/davidpine.net\/blog\/the-global-json\/';
-    var disqus_title = 'The power of the global.json';
-    var disqus_url = 'http:\/\/davidpine.net\/blog\/the-global-json\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidpine" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </article>
     
 
@@ -831,7 +835,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/visual-studio/">Visual Studio</a>
+                                <a href="/categories/.net/">.NET</a>
                                 <span style="float:right;">4</span>
                             </header>
                         </article>
@@ -840,7 +844,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/.net/">.NET</a>
+                                <a href="/categories/visual-studio/">Visual Studio</a>
                                 <span style="float:right;">4</span>
                             </header>
                         </article>
@@ -858,15 +862,6 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/xunit/">xUnit</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/typescript/">TypeScript</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -876,8 +871,8 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
-                                <span style="float:right;">1</span>
+                                <a href="/categories/xunit/">xUnit</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -885,7 +880,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/compression/">Compression</a>
+                                <a href="/categories/.net-standard/">.NET Standard</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -903,7 +898,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/rxjs/">RxJS</a>
+                                <a href="/categories/caching/">Caching</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -912,7 +907,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/http/">Http</a>
+                                <a href="/categories/compression/">Compression</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -921,7 +916,25 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/roslyn/">Roslyn</a>
+                                <a href="/categories/configuration/">Configuration</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/fear/">Fear</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -939,7 +952,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/tooling/">Tooling</a>
+                                <a href="/categories/http/">Http</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -948,7 +961,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/technical-doubt/">Technical Doubt</a>
+                                <a href="/categories/identity/">Identity</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -957,7 +970,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/fear/">Fear</a>
+                                <a href="/categories/iot/">IoT</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -984,43 +997,34 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/uwp/">UWP</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/.net-standard/">.NET Standard</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/iot/">IoT</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/configuration/">Configuration</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/mke-dot-net/">MKE DOT NET</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/raspberry-pi/">Raspberry Pi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/roslyn/">Roslyn</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/rxjs/">RxJS</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1038,7 +1042,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/dependency-injection/">Dependency Injection</a>
+                                <a href="/categories/technical-doubt/">Technical Doubt</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1047,7 +1051,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/identity/">Identity</a>
+                                <a href="/categories/tooling/">Tooling</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1056,7 +1060,7 @@ as it executes. Simply amazing!</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/caching/">Caching</a>
+                                <a href="/categories/uwp/">UWP</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1169,13 +1173,14 @@ as it executes. Simply amazing!</p>
 
         
         
-
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
         
-            
-                
-                    <script src="/js/main.min.js"></script>
-                
-            
+
         
 
             

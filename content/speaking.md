@@ -1,53 +1,20 @@
 +++
-title = "Speaking"
-date = "2017-04-20"
+title = 'Speaking'
+description = 'A fairly complete listing of past and upcoming speaking engagements'
+date = '2017-04-20'
 +++
 
 I love being able to give back to the community and I enjoy how gratifying it can be. Public speaking on technologies 
-that I love is just one of those ways I give back. Anytime that I get to express myself and share my passions - I'm absolutely thrilled. Here is where I have been and where I'm going to be, I hope to see you there!
+that I love or on professional skills development is just one of the ways I give back. Anytime that I get to express myself and share my passions - I'm absolutely thrilled. Here is where I have been and where I'm going to be, I hope to see you there!
 
-## Upcoming
+<div data-gist='7e423ddad9d8915dc9077b805844905e'>
+    <h2>Loading schedule... <i class="fa fa-cog fa-spin fa-lg fa-fw"></i></h2>
+</div>
 
-| Date | Event / Conference  | Talk / Presentation |
-|:--|:--|:--|
-| Aug 7, 2018 | <a href="https://www.thatconference.com/" target="_blank">THAT Conference - 2018</a> | <a href="https://www.thatconference.com/Sessions/Session/12570" target="_blank">WebAssembly: The New Endgame?</a> |
-| July 19, 2018 | <a href="https://www.meetup.com/The-Chicago-NET-Users-Group/" target="_blank">Chicago .NET User Group - 2018</a> | <a href="https://gist.github.com/IEvangelist/e20ec4654cf5965af40156f22be6edad" target="_blank">What's new in C#</a> |
-| Jun 26, 2018 | <a href="https://www.meetup.com/milwaukeejs/" target="_blank">MilwaukeeJS - 2018</a> | <a href="https://www.meetup.com/milwaukeejs/events/247249996/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
-| Jun 7, 2018 | <a href="https://2018.syntaxcon.com/" target="_blank">SyntaxCon - 2018</a> | <a href="https://2018.syntaxcon.com/session/typescript-making-javascript-tolerable/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
-| May 23, 2018 | <a href="http://www.johnsoncontrols.com/" target="_blank">International Tech Challenge - 2018</a> | <a href="https://gist.github.com/IEvangelist/067e02d922df297f14eb0c7b034a400f" target="_blank">Upgrade Yourself: Becoming a Microsoft MVP</a> |
-
-## Past
-
-| Date | Event / Conference  | Talk / Presentation |
-|:--|:--|:--|
-| Apr 20, 2018 | <a href="https://itkonekt.com/it-konferencija-novi-sad/" target="_blank">ITKonekt, Novi Sad (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |
-| Apr 17, 2018 | <a href="https://itkonekt.com/it-konferencija-nis/" target="_blank">ITKonekt, Niš (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |
-| Apr 15, 2018 | <a href="https://itkonekt.com/it-konferencija-beograd/" target="_blank">ITKonekt, Belgrade (Serbia) - 2018</a> | <a href="https://itkonekt.com/2018/02/09/david-pine/" target="_blank">What's new in C#</a> |
-| Feb 27, 2018 | <a href="https://www.meetup.com/milwaukeejs/" target="_blank">MilwaukeeJS - 2018</a> | <a href="https://www.meetup.com/milwaukeejs/events/246445980/" target="_blank">Frontend Framework Panel (Angular)</a> |
-| Feb 10, 2018 | <a href="http://www.fladotnet.com/codecamp/Home.aspx" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
-| Feb 10, 2018 | <a href="http://www.fladotnet.com/codecamp/Home.aspx" target="_blank">South Florida Code Camp - 2018</a> | <a href="http://www.fladotnet.com/codecamp/SpeakerBio.aspx?SpeakerID=874" target="_blank">Upgrade Yourself: Most Valued Developer</a> |
-| Nov 14, 2017 | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/" target="_blank">WI .NET User Group - 2017</a> | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113732/" target="_blank">TypeScript: Making JavaScript Tolerable</a> |
-| Nov 11, 2017 | <a href="https://www.milwaukeecodecamp.com/" target="_blank">Milwaukee Code Camp - 2017</a> | <a href="https://www.milwaukeecodecamp.com/session/details/1118" target="_blank">What's new in C#</a> |
-| Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/575" target="_blank">TypeScript -- JavaScript Reimagined</a> |
-| Oct 16-17, 2017 | <a href="http://devupconf.org/" target="_blank">Dev Up - 2017</a> | <a href="http://devupconf.org/Sessions/576" target="_blank">From C# 6 to C# 7, then and now!</a> |
-| Sept 29, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/480" target="_blank">TypeScript -- JavaScript Reimagined</a> |
-| Sept 28, 2017 | <a href="https://prairiecode.amegala.com/" target="_blank">Prairie.Code() - 2017</a> | <a href="https://prairiecode.amegala.com/sessions/394" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
-| Sept 25, 2017 | <a href="http://www.milwaukeespin.com" target="_blank">MilwaukeeSPIN - 2017</a> | <a href="http://www.milwaukeespin.com/Events" target="_blank">Current Trends in Technology</a> |
-| Sept 21, 2017 | <a href="www.dotnetconf.net" target="_blank">.NET Conf (local) - 2017</a> | <a href="https://www.eventbrite.com/e/net-conf-2017-tickets-37046195167" target="_blank">What's new in C# (7.1 and 8.0)</a> |
-| Jul 12, 2017 | <a href="https://detroitcode.amegala.com/" target="_blank">Detroit.Code() - 2017</a> | <a href="https://detroitcode.amegala.com/Sessions/315" target="_blank">Building a Magic Mirror w/ .NET</a> |
-| Jul 11, 2017 | <a href="https://detroitcode.amegala.com/" target="_blank">Detroit.Code() - 2017</a> | <a href="https://detroitcode.amegala.com/Sessions/317" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
-| Jun 26, 2017 | <a href="https://www.meetup.com/js-chi/events/238222639/" target="_blank">Chicago JS Meetup - 2017</a> | <a href="https://www.meetup.com/js-chi/events/238222639/" target="_blank">TypeScript -- JavaScript Reimagined</a> |
-| Jun 26, 2017 | <a href="http://www.chicagocoderconference.com/" target="_blank">Chicago Coders Conference - 2017</a> | <a href="http://www.chicagocoderconference.com/sessions/building-a-magic-mirror-with-net/" target="_blank">Building a Magic Mirror w/ .NET</a> |
-| May  9, 2017 | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/" target="_blank">WI .NET User Group - 2017</a> | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113620/" target="_blank">From C# 6 to C# 7, then and now!</a> |
-| Apr 29, 2017 | <a href="https://www.chicagocodecamp.com/" target="_blank">Chicago Code Camp - 2017</a> | <a href="https://www.chicagocodecamp.com/sessions/detail/1172" target="_blank">TypeScript -- JavaScript Reimagined</a> |
-| Apr 18, 2017 | <a href="https://partner.microsoft.com/en-US/" target="_blank">MPN Demo (Skyward) - 2017</a> | <a href="https://gist.github.com/IEvangelist/688502ca6ec59d071b2ae656babda4a4" target="_blank">From C# 6 to C# 7, then and now!</a> |
-| Apr 11, 2017 | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/" target="_blank">WI .NET User Group - 2017</a> | <a href="https://www.meetup.com/Wisconsin-Net-Users-Group/events/237113600/" target="_blank">Azure DocumentDb -- the nano-ORM</a> |
-| Apr  7, 2017 | <a href="http://www.centare.com/" target="_blank">Centare (Forward Thinking) - 2017</a> | <a href="https://gist.github.com/IEvangelist/2bd8a3938f2269151d995262c8265d0e" target="_blank">Azure DocumentDb -- the nano-ORM</a> |
-| Mar 31, 2017 | <a href="https://indycode.amegala.com/" target="_blank">Indy.Code() - 2017</a> | <a href="https://indycode.amegala.com/Sessions/51" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
-| Mar 31, 2017 | <a href="https://indycode.amegala.com/" target="_blank">Indy.Code() - 2017</a> | <a href="https://indycode.amegala.com/Sessions/45" target="_blank">From C# 6 to C# 7, then and now!</a> |
-| Mar 24, 2017 | <a href="http://www.centare.com/" target="_blank">Centare (Forward Thinking) - 2017</a> | <a href="https://gist.github.com/IEvangelist/287742b6fe343b89da0be88427405bd1" target="_blank">Angular2 with an ASP.NET Core backend, happiness ensues...</a> |
-| Mar 17, 2017 | <a href="https://launch.visualstudio.com/local-events/" target="_blank">Visual Studio 2017 Launch Event</a> | <a href="https://youtu.be/kFpXRooGo0c" target="_blank">From C# 6 to C# 7, then and now!</a> |
-| Jan 12, 2017 | <a href="https://channel9.msdn.com/" target="_blank">Microsoft's Channel 9 - 2017</a> | <a href="https://channel9.msdn.com/Shows/On-NET/David-Pine-Magic-mirror-on-the-wall-who-is-the-fairest-one-of-all" target="_blank">Magic mirror on the wall, who is the fairest one of all?</a> |
-| Oct 29, 2016 | <a href="http://www.mkedotnet.com/2016" target="_blank">MKE DOT NET - 2016</a> | <a href="http://www.mkedotnet.com/2016/sessions/magic-mirror/" target="_blank">Building a "Magic Mirror"</a> |
-| Oct 15, 2016 | <a href="http://milwaukeecodecamp.com/" target="_blank">Milwaukee Code Camp - 2016</a> | <a href="http://milwaukeecodecamp.com/session/details/1065" target="_blank">TypeScript -- JavaScript Reimagined</a> |
-| Jun 24, 2016 | <a href="https://channel9.msdn.com/Events/Build/2016" target="_blank">//Build/ Recap - 2016</a> | <a href="https://speakerdeck.com/ievangelist/recap" target="_blank">2016 //build/ recap</a> |
+<script type='text/javascript'>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('[data-gist]').gist();},
+        1000);
+    });
+</script>

@@ -95,10 +95,16 @@ googleAnalytics = "UA-78203613-1"
     weight = 5
 
 [[menu.main]]
+    name = "Pictures"
+    url = "/pictures"
+    identifier = "fa fa-camera"
+    weight = 6
+
+[[menu.main]]
     name = "Conclusions"
     url = "/conclusions"
     identifier = "fa fa-lightbulb-o"
-    weight = 6
+    weight = 7
 
 # Insert your username and the icon will appear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area

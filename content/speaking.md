@@ -4,14 +4,9 @@ date = "2017-04-20"
 +++
 
 I love being able to give back to the community and I enjoy how gratifying it can be. Public speaking on technologies 
-that I love is just one of those ways I give back. Anytime that I get to express myself and share my passions - I'm absolutely thrilled.
-
-![MPN Demo (Skyward) - 2017](/img/2017/04/skyward.jpg)
-
-Here is where I have been and where I'm going to be, I hope to see you there!
+that I love is just one of those ways I give back. Anytime that I get to express myself and share my passions - I'm absolutely thrilled. Here is where I have been and where I'm going to be, I hope to see you there!
 
 ## Upcoming
-
 
 | Date | Event / Conference  | Talk / Presentation |
 |:--|:--|:--|
@@ -56,59 +51,3 @@ Here is where I have been and where I'm going to be, I hope to see you there!
 | Oct 29, 2016 | <a href="http://www.mkedotnet.com/2016" target="_blank">MKE DOT NET - 2016</a> | <a href="http://www.mkedotnet.com/2016/sessions/magic-mirror/" target="_blank">Building a "Magic Mirror"</a> |
 | Oct 15, 2016 | <a href="http://milwaukeecodecamp.com/" target="_blank">Milwaukee Code Camp - 2016</a> | <a href="http://milwaukeecodecamp.com/session/details/1065" target="_blank">TypeScript -- JavaScript Reimagined</a> |
 | Jun 24, 2016 | <a href="https://channel9.msdn.com/Events/Build/2016" target="_blank">//Build/ Recap - 2016</a> | <a href="https://speakerdeck.com/ievangelist/recap" target="_blank">2016 //build/ recap</a> |
-
-## A few pictures
-
-{{< img-fit
-    "5u" "wtf-pine.jpg" "WTF?!"
-    "7u" "launch-event.jpg" "Visual Studio 2017 Launch Event"    
-    "0u$" "" ""
-    "date" >}}
-
-{{< img-fit
-    "0u" "" ""
-    "12u" "indy-code.jpg" "Indy.Code() 2017"
-    "0u$" "" ""
-    "date" >}}
-
-{{< img-fit
-    "7u" "close-up.jpg" "Indy.Code() 2017"
-    "5u" "conferences.jpg" "Conferences"    
-    "0u$" "" ""
-    "date" >}}
-
-{{< img-fit
-    "6u" "ccc-demo.jpg" "Chicago Code Camp - 2017"
-    "6u" "ccc-intro.jpg" "Chicago Code Camp - 2017"
-    "0u$" "" ""
-    "date" >}}
-
-{{< img-fit
-    "0u" "" ""
-    "12u" "ccc-typescript.jpg" "Chicago Code Camp - 2017"
-    "0u$" "" ""
-    "date" >}}
-
-{{< img-fit
-    "0u" "" ""
-    "12u" "wi.net-ug.jpg" "WI .NET User Group - 2017"
-    "0u$" "" ""
-    "date" >}}
-
-{{< img-fit
-    "0u" "" ""
-    "12u" "chi-js.jpg" "Chicago JS Meetup - 2017"
-    "0u$" "" ""
-    "date" >}}
-
-{{< img-fit
-    "8u" "chi-coder-conf.jpg" "Chicago Coders Conference - 2017"
-    "4u" "chi-coder-conf-2.jpg" "Chicago Coders Conference 2 - 2017"
-    "0u$" "" ""
-    "date" >}}
-
-{{< img-fit
-    "0u" "" ""
-    "12u" "chi-js-2.jpg" "Chicago JS Meetup - 2017"
-    "0u$" "" ""
-    "date" >}}

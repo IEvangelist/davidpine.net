@@ -51,7 +51,7 @@
         {{ else }}
             {{ $.Scratch.Set "cssFiles" false }}
         {{ end }}
-
+        
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
@@ -75,8 +75,16 @@
         {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
             {{ template "_internal/google_analytics.html" . }}
         {{ end }}
+    
+        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
+        <link rel="stylesheet" href="/css/lightgallery.min.css">        
     </head>
     <body>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.justifiedGallery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
+        </script>
 
         <!-- Wrapper -->
         <div id="wrapper">

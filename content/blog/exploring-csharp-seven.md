@@ -456,21 +456,6 @@ If the given `provider` argument is `null` we'll coalesce over to the `throw` ex
 I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it 
 made sense to share it here - Enjoy!!
 
-<style>
-    .iframe_container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
-        padding-top: 25px;
-        height: 0;
-    }
-    .iframe_container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/kFpXRooGo0c" frameborder="0" allowfullscreen></iframe>
 </div>

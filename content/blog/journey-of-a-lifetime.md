@@ -12,22 +12,6 @@ title = "Journey of a Lifetime"
 type = "post"
 +++
 
-<style>
-    .iframe_container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
-        padding-top: 25px;
-        height: 0;
-    }
-    .iframe_container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
-
 # Intro
 
 I am returning home from a long trip in Serbia for <a href="https://itkonekt.com/en/" target="_blank">__IT Konekt__</a>. This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of __IT Konekt__. This was my first time ever leaving the United States of America and I didn't know what to expect. I was really nervous but equally excited. This was more of a journey of epic proportions than it was a conference trip.

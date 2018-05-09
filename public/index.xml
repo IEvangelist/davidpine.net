@@ -17,7 +17,16 @@
       <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://davidpine.net/blog/journey-of-a-lifetime/</guid>
-      <description>.iframe_container { position: relative; padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */ padding-top: 25px; height: 0; } .iframe_container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }  Intro I am returning home from a long trip in Serbia for IT Konekt. This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity.</description>
+      <description>Intro I am returning home from a long trip in Serbia for IT Konekt. This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of IT Konekt. This was my first time ever leaving the United States of America and I didn&amp;rsquo;t know what to expect.</description>
+    </item>
+    
+    <item>
+      <title>Pictures</title>
+      <link>http://davidpine.net/pictures/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidpine.net/pictures/</guid>
+      <description>A few pictures (  To open gallery )                                                            $(document).ready(function() { let $gallery = $(&#34;</description>
     </item>
     
     <item>
@@ -26,8 +35,8 @@
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://davidpine.net/media/</guid>
-      <description>Podcasts - Video Appearances AskTHAT | Episode 35  .iframe_container { position: relative; padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */ padding-top: 25px; height: 0; } .iframe_container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }   
- Developer On Fire - Episode 305   David Pine talks with Dave Rael about building a brand for software developers, being a source of positivity, and the importance of mentors.</description>
+      <description>Sometimes, in my travels I get attention and end up with various points of media coverage. This page is a collection of podcasts, webcasts, news and other various publications that I&amp;rsquo;ve been a part of. Enjoy!
+Podcasts  Appearances 6 Figure Developer - Episode 38   David Pine talks with John Callaway, Clayton Hunt and Jon Ash about his love for the Developer Community, programming languages like TypeScript and C#, speaking and blogging.</description>
     </item>
     
     <item>
@@ -113,8 +122,7 @@ Async Main  Since the release of C# 5, developers have either embraced the async
       <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://davidpine.net/speaking/</guid>
-      <description>I love being able to give back to the community and I enjoy how gratifying it can be. Public speaking on technologies that I love is just one of those ways I give back. Anytime that I get to express myself and share my passions - I&amp;rsquo;m absolutely thrilled.
-Here is where I have been and where I&amp;rsquo;m going to be, I hope to see you there!
+      <description>I love being able to give back to the community and I enjoy how gratifying it can be. Public speaking on technologies that I love is just one of those ways I give back. Anytime that I get to express myself and share my passions - I&amp;rsquo;m absolutely thrilled. Here is where I have been and where I&amp;rsquo;m going to be, I hope to see you there!
 Upcoming    Date Event / Conference Talk / Presentation     Aug 7, 2018 THAT Conference - 2018 WebAssembly: The New Endgame?</description>
     </item>
     
@@ -146,8 +154,9 @@ As an example, let&amp;rsquo;s take a recent story on our product backlog for bu
       
       <guid>http://davidpine.net/conclusions/</guid>
       <description>Life   Like an aggressive contagion seeking the next victim, negativity can plague an entire team&amp;rsquo;s morale. Negativity is contagious!
+ Optimism is a choice   Expect nothing, but be grateful for everything.
  Programming   In programming there isn&amp;rsquo;t a &amp;ldquo;right way&amp;rdquo; but there is always a &amp;ldquo;wrong way&amp;rdquo;. There is however a &amp;ldquo;better way&amp;rdquo;, until you run out of time.
- Negotiations   Developers are actually negotiators! We negotiate more than we develop. We negotiate with the keyboard all day long, we negotiate with ourselves determining if we&amp;rsquo;ve taken the right course of action.</description>
+ Negotiations   Developers are actually negotiators!</description>
     </item>
     
     <item>

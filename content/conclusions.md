@@ -7,6 +7,10 @@ date = "2017-02-05"
 
 > <p/> Like an aggressive contagion seeking the next victim, negativity can plague an entire team's morale. Negativity is contagious!
 
+# Optimism is a choice
+
+> <p/> Expect nothing, but be grateful for everything.
+
 # Programming
 
 > <p/> In programming there isn't a "right way" but there is always a "wrong way". There is however a "better way", until you run out of time.

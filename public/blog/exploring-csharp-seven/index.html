@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.40" />
+        <meta name="generator" content="Hugo 0.40.2" />
         
 
 
@@ -60,7 +60,7 @@
 
 <meta itemprop="datePublished" content="2017-03-26T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-03-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2413">
+<meta itemprop="wordCount" content="2373">
 
   <meta itemprop="image" content="http://davidpine.net/img/2017/03/exploration.png">
 
@@ -76,7 +76,7 @@
         
             
         
-
+        
         
         
             <link rel="stylesheet" href="/css/google-font.css" />
@@ -103,8 +103,16 @@ ga('send', 'pageview');
 </script>
 
         
+    
+        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
+        <link rel="stylesheet" href="/css/lightgallery.min.css">        
     </head>
     <body>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.justifiedGallery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
+        </script>
 
         
         <div id="wrapper">
@@ -151,6 +159,13 @@ ga('send', 'pageview');
                     <a href="/media">
                         
                             <i class="fa fa-video-camera">&nbsp;</i>Media
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/pictures">
+                        
+                            <i class="fa fa-camera">&nbsp;</i>Pictures
                     </a>
                 </li>
             
@@ -250,6 +265,17 @@ ga('send', 'pageview');
                                     <i class="fa fa-video-camera">&nbsp;</i>
                                 
                                 Media
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/pictures">
+                            <h3>
+                                
+                                    <i class="fa fa-camera">&nbsp;</i>
+                                
+                                Pictures
                             </h3>
                         </a>
                     </li>
@@ -932,24 +958,9 @@ mechanism is to <code>throw</code> if an argument is <code>null</code>. Consider
 <p>I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
 made sense to share it here - Enjoy!!</p>
 
-<p><style>
-    .iframe_container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 - this is responsive by adjusting the hight according to the width! */
-        padding-top: 25px;
-        height: 0;
-    }
-    .iframe_container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/kFpXRooGo0c" frameborder="0" allowfullscreen></iframe>
-</div></p>
+</div>
 
 <p><strong>Further Reading</strong></p>
 
@@ -1586,8 +1597,7 @@ made sense to share it here - Enjoy!!</p>
         
 
         
-        
-            <script src="/js/jquery.min.js"></script>
+                    
             <script src="/js/skel.min.js"></script>
             <script src="/js/util.js"></script>
             <script src="/js/main.js"></script>

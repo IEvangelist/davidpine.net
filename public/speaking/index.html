@@ -27,7 +27,9 @@
             <meta name="description" content="A fairly complete listing of past and upcoming speaking engagements">
         
 
-        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://davidpine.net/img/main/david.pine.jpg"/>
+
 <meta name="twitter:title" content="Speaking"/>
 <meta name="twitter:description" content="A fairly complete listing of past and upcoming speaking engagements"/>
 <meta name="twitter:site" content="@davidpine7"/>
@@ -36,6 +38,8 @@
 <meta property="og:description" content="A fairly complete listing of past and upcoming speaking engagements" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://davidpine.net/speaking/" />
+
+  <meta property="og:image" content="http://davidpine.net/img/main/david.pine.jpg" />
 
 
 
@@ -60,7 +64,9 @@
 
 <meta itemprop="datePublished" content="2017-04-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-04-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="81">
+<meta itemprop="wordCount" content="90">
+
+  <meta itemprop="image" content="http://davidpine.net/img/main/david.pine.jpg">
 
 
 
@@ -338,10 +344,12 @@ that I love or on professional skills development is just one of the ways I give
 </div>
 
 <script type='text/javascript'>
-    $(document).ready(function() {
-        setTimeout(function() {
-            $('[data-gist]').gist();},
-        1000);
+    $(document).ready(() => {
+        setTimeout(() => {
+            $('[data-gist]').gist();
+            setTimeout(() => $('.gist a').attr('target', '_blank'), 333);
+        },
+        777);
     });
 </script>
 

@@ -204,32 +204,59 @@ with {{< url-link "Jeremy Foster" "https://twitter.com/codefoster" >}} -- so, ye
 
 # Construction
 
-I would be lying if I tried taking credit for any of the construction. I'm slightly embarrassed to admit that I opted out of building it, as I lack the carpentry skills needed
-to do a decent job. Instead I asked a friend who just so happens to be awesome at carpentry. After persuading him with a bottle of single malt scotch whiskey, I had my magic 
-mirror constructed and the results were amazing!
+I would be lying if I tried taking credit for any of the construction. I'm slightly embarrassed to admit that I opted out of building it, as I lack the carpentry skills needed to do a decent job. Instead I asked a friend who just so happens to be awesome at carpentry. After persuading him with a bottle of single malt scotch whiskey, I had my magic mirror constructed and the results were amazing! Needless to say I was excited to try it out.
 
-{{< img-fit
-    "4u" "con-1.jpg" "Step 1"
-    "4u" "con-2.jpg" "Step 2"
-    "4u$" "con-3.jpg" "Step 3"
-    "date" >}}
-
-{{< img-fit
-    "4u" "con-4.jpg" "Step 4"
-    "4u" "con-5.jpg" "Step 5"
-    "4u$" "con-6.jpg" "Step 6"
-    "date" >}}
-
-I was really excited to deploy my mirror software and give it a go.
-
-![Mirror](/img/2016/12/magic mirror.jpg)
-
-# Check it out
-
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/KOTYW8EioBk" frameborder="0" allowfullscreen></iframe>
+<div id="gallery">
+    <a href="/img/2016/12/con-1.jpg">
+        <img src="/img/2016/12/con-1.jpg" />
+        <div class="caption"><i class="fa fa-search icon"></i></div>
+    </a>
+    <a href="/img/2016/12/con-2.jpg">
+        <img src="/img/2016/12/con-2.jpg" />
+        <div class="caption"><i class="fa fa-search icon"></i></div>
+    </a>
+    <a href="/img/2016/12/con-3.jpg">
+        <img src="/img/2016/12/con-3.jpg" />
+        <div class="caption"><i class="fa fa-search icon"></i></div>
+    </a>
+    <a href="/img/2016/12/con-4.jpg">
+        <img src="/img/2016/12/con-4.jpg" />
+        <div class="caption"><i class="fa fa-search icon"></i></div>
+    </a>
+    <a href="/img/2016/12/con-5.jpg">
+        <img src="/img/2016/12/con-5.jpg" />
+        <div class="caption"><i class="fa fa-search icon"></i></div>
+    </a>
+    <a href="/img/2016/12/con-6.jpg">
+        <img src="/img/2016/12/con-6.jpg" />
+        <div class="caption"><i class="fa fa-search icon"></i></div>
+    </a>
+    <a href="/img/2016/12/magic mirror.jpg">
+        <img src="/img/2016/12/magic mirror.jpg" />
+        <div class="caption"><i class="fa fa-search icon"></i></div>
+    </a>
+    <a href="https://www.youtube.com/embed/KOTYW8EioBk">
+        <img src="https://img.youtube.com/vi/KOTYW8EioBk/hqdefault.jpg" />
+        <div class="caption"><i class="fa fa-youtube-play icon"></i></div>
+    </a>
+    <a href="https://www.youtube.com/embed/PWr1zRBO90o">
+        <img src="https://img.youtube.com/vi/PWr1zRBO90o/hqdefault.jpg" />
+        <div class="caption"><i class="fa fa-youtube-play icon"></i></div>
+    </a>
 </div>
-<br/>
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/PWr1zRBO90o" frameborder="0" allowfullscreen></iframe>
-</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        let $gallery = $("#gallery");
+        if ($gallery.length) {
+            $gallery.justifiedGallery({
+                rowHeight: 300
+            }).on('jg.complete', function() {
+                $gallery.lightGallery({
+                    selector: 'a',
+                    thumbnail: false
+                }); 
+            });
+        }                
+    });
+</script>

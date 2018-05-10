@@ -1,6 +1,7 @@
 +++
 title = 'Speaking'
 description = 'A fairly complete listing of past and upcoming speaking engagements'
+images = ["/img/main/david.pine.jpg"]
 date = '2017-04-20'
 +++
 
@@ -12,9 +13,11 @@ that I love or on professional skills development is just one of the ways I give
 </div>
 
 <script type='text/javascript'>
-    $(document).ready(function() {
-        setTimeout(function() {
-            $('[data-gist]').gist();},
-        1000);
+    $(document).ready(() => {
+        setTimeout(() => {
+            $('[data-gist]').gist();
+            setTimeout(() => $('.gist a').attr('target', '_blank'), 333);
+        },
+        777);
     });
 </script>

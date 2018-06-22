@@ -1,6 +1,6 @@
 +++
 author = "David Pine"
-categories = ["Angular2", "TypeScript", "RxJS", "Http"]
+categories = ["Angular", "TypeScript", "RxJS", "Http"]
 date = "2016-08-31"
 description = "Subscribing has never been so easy"
 images = ["/img/2016/08/observables.png"]

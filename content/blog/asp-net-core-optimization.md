@@ -132,7 +132,7 @@ When static file middleware occurs before response compression, it returns the f
 
  - Client requests `main.css`
  - Static file middleware determines it can fully satisfy said request
- - The `main.css` file is <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" target="_blank">sent</a> and the <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126" target="_blank">"next"</a> middleware in the pipeline is never exectued
+ - The `main.css` file is <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" target="_blank">sent</a> and the <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126" target="_blank">"next"</a> middleware in the pipeline is never executed
 
 Now that we have these two pieces of middleware wired into out pipeline in the correct order, what else is left. There is one important thing that we forgot to do.
 While we do have static file middleware, we didn't know that "caching" is off by default. So we'll need to handle this with an instance of the the `StaticFileOptions`.
@@ -156,7 +156,7 @@ public void Configure(IApplicationBuilder app,
 }
 ```
 The instance of the `StaticFileOptions` object has a public property namely "OnPrepareResponse" of type `Action<StaticFileResponseContext>`. So we can again specify a lambda
-expression. This expression can be used to delegate the preperation of the response. Notice we're simply setting the `Cache-Control` header to a "max-age" of a week. That was
+expression. This expression can be used to delegate the preparation of the response. Notice we're simply setting the `Cache-Control` header to a "max-age" of a week. That was
 pretty simple, hey?!
 
 ### Compression Awareness
@@ -180,7 +180,7 @@ Let's spend some time examining the results of our response optimization efforts
 ##### Total(s)
 
 ```yaml
-13 Requests | 549 KB transfered | ... | ... 
+13 Requests | 549 KB transferred | ... | ... 
 ```
 
 **banner1.svg Response Headers**
@@ -200,11 +200,11 @@ ETag: "1d1ce31e3bd09cf"
 ##### Total(s)
 
 ```yaml
-13 Requests | 175 KB transfered | ... | ... 
+13 Requests | 175 KB transferred | ... | ... 
 ```
 
 The total payload for all 13 requests is a total of 3.137 times smaller (a meager 31.9% of the original size). The larger the application, the more dramatic and valuable 
-this becomes! Consider an **Angular2** application (or other SPA framwork based application), which has tons of **JavaScript** files to download -- 5 MB turns into ~1.5 MB.
+this becomes! Consider an **Angular2** application (or other SPA framework based application), which has tons of **JavaScript** files to download -- 5 MB turns into ~1.5 MB.
 
 **banner1.svg Response Headers**
 

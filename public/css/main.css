@@ -3479,11 +3479,13 @@
 			height: 100%;
 		}
 
-		#gallery > a > img {
+		#gallery > a > img,
+		.gallery > a > img {
 			overflow: hidden;
 		}
 		
-		#gallery > a:hover > img {
+		#gallery > a:hover > img,
+		.gallery > a:hover > img {
 			transition: .3s ease-in-out;
 			-webkit-transform: scale3d(1.1, 1.1, 1.1);
 			transform: scale3d(1.1, 1.1, 1.1);  
@@ -3501,7 +3503,8 @@
 		  cursor: pointer;
 		  background-color: rgba(0, 0, 0, 0.5) !important;
 		}
-		#gallery .icon {
+		#gallery .icon,
+		.gallery .icon {
 		  color: white;
 		  font-size: 35px;
 		  position: absolute;

@@ -107,7 +107,7 @@ public void ConfigureServices(
     IServiceCollection services)
 {
     services.Configure<NotificationSettings>(
-        Configuration.GetSection(nameof(NotificationSettings));
+        Configuration.GetSection(nameof(NotificationSettings)));
 }
 ```
 

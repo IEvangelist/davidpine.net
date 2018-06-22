@@ -83,7 +83,7 @@
             <link rel="stylesheet" href="/css/font-awesome.min.css" />
             <link rel="stylesheet" href="/css/main.css" />
             <link rel="stylesheet" href="/css/add-on.css" />
-            <link rel="stylesheet" href="/css/pojoaque.css">
+            <link rel="stylesheet" href="/css/tomorrow-night.css">
         
 
         
@@ -306,11 +306,11 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="http://davidpine.net/blog/journey-of-a-lifetime/"><p>Journey of a Lifetime</p></a>
+                        <a href="http://davidpine.net/blog/photo-booth/"><p>ASP.NET Core &#43; Angular Photo Booth App</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://davidpine.net/blog/asp-net-core-security-unit-testing/"><p>ASP.NET Core Unit Testing For Security Attributes</p></a>
+                        <a href="http://davidpine.net/blog/journey-of-a-lifetime/"><p>Journey of a Lifetime</p></a>
                     </li>
                 
             </ul>
@@ -628,7 +628,7 @@ When static file middleware occurs before response compression, it returns the f
 <ul>
 <li>Client requests <code>main.css</code></li>
 <li>Static file middleware determines it can fully satisfy said request</li>
-<li>The <code>main.css</code> file is <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" target="_blank">sent</a> and the <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126" target="_blank">&ldquo;next&rdquo;</a> middleware in the pipeline is never exectued</li>
+<li>The <code>main.css</code> file is <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" target="_blank">sent</a> and the <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126" target="_blank">&ldquo;next&rdquo;</a> middleware in the pipeline is never executed</li>
 </ul>
 
 <p>Now that we have these two pieces of middleware wired into out pipeline in the correct order, what else is left. There is one important thing that we forgot to do.
@@ -655,7 +655,7 @@ While we do have static file middleware, we didn&rsquo;t know that &ldquo;cachin
 </code></pre>
 
 <p>The instance of the <code>StaticFileOptions</code> object has a public property namely &ldquo;OnPrepareResponse&rdquo; of type <code>Action&lt;StaticFileResponseContext&gt;</code>. So we can again specify a lambda
-expression. This expression can be used to delegate the preperation of the response. Notice we&rsquo;re simply setting the <code>Cache-Control</code> header to a &ldquo;max-age&rdquo; of a week. That was
+expression. This expression can be used to delegate the preparation of the response. Notice we&rsquo;re simply setting the <code>Cache-Control</code> header to a &ldquo;max-age&rdquo; of a week. That was
 pretty simple, hey?!</p>
 
 <h3 id="compression-awareness">Compression Awareness</h3>
@@ -680,7 +680,7 @@ pretty simple, hey?!</p>
 
 <h5 id="total-s">Total(s)</h5>
 
-<pre><code class="language-yaml">13 Requests | 549 KB transfered | ... | ... 
+<pre><code class="language-yaml">13 Requests | 549 KB transferred | ... | ... 
 </code></pre>
 
 <p><strong>banner1.svg Response Headers</strong></p>
@@ -698,11 +698,11 @@ ETag: &quot;1d1ce31e3bd09cf&quot;
 
 <h5 id="total-s-1">Total(s)</h5>
 
-<pre><code class="language-yaml">13 Requests | 175 KB transfered | ... | ... 
+<pre><code class="language-yaml">13 Requests | 175 KB transferred | ... | ... 
 </code></pre>
 
 <p>The total payload for all 13 requests is a total of 3.137 times smaller (a meager 31.9% of the original size). The larger the application, the more dramatic and valuable
-this becomes! Consider an <strong>Angular2</strong> application (or other SPA framwork based application), which has tons of <strong>JavaScript</strong> files to download &ndash; 5 MB turns into ~1.5 MB.</p>
+this becomes! Consider an <strong>Angular2</strong> application (or other SPA framework based application), which has tons of <strong>JavaScript</strong> files to download &ndash; 5 MB turns into ~1.5 MB.</p>
 
 <p><strong>banner1.svg Response Headers</strong></p>
 
@@ -943,13 +943,13 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/journey-of-a-lifetime/">Journey of a Lifetime</a></h3>
+                                <h3><a href="http://davidpine.net/blog/photo-booth/">ASP.NET Core &#43; Angular Photo Booth App</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2018-04-28'>
-                                    April 28, 2018</time>
+                                    '2018-06-18'>
+                                    June 18, 2018</time>
                             </header>
                         </article>
                     </li>
@@ -957,13 +957,13 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/asp-net-core-security-unit-testing/">ASP.NET Core Unit Testing For Security Attributes</a></h3>
+                                <h3><a href="http://davidpine.net/blog/journey-of-a-lifetime/">Journey of a Lifetime</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2018-03-23'>
-                                    March 23, 2018</time>
+                                    '2018-04-28'>
+                                    April 28, 2018</time>
                             </header>
                         </article>
                     </li>
@@ -1002,7 +1002,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                         <article>
                             <header>
                                 <a href="/categories/asp.net-core/">ASP.NET Core</a>
-                                <span style="float:right;">7</span>
+                                <span style="float:right;">8</span>
                             </header>
                         </article>
                     </li>
@@ -1011,7 +1011,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                         <article>
                             <header>
                                 <a href="/categories/csharp/">CSharp</a>
-                                <span style="float:right;">7</span>
+                                <span style="float:right;">8</span>
                             </header>
                         </article>
                     </li>
@@ -1039,6 +1039,15 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                             <header>
                                 <a href="/categories/visual-studio/">Visual Studio</a>
                                 <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/angular/">Angular</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -1082,7 +1091,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/angular2/">Angular2</a>
+                                <a href="/categories/azure/">Azure</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1245,6 +1254,15 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                         <article>
                             <header>
                                 <a href="/categories/tooling/">Tooling</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/twilio/">Twilio</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

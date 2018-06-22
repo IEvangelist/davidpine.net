@@ -23,6 +23,12 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### #MVPBuzzChat CollabTalk
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/UEajhQHBa3Y" frameborder="0" allowfullscreen></iframe>
+</div>
+
 ### Serbia, National News
 
 <div class="iframe_container">
@@ -43,6 +49,14 @@ Sometimes, in my travels I get attention and end up with various points of media
 <hr/>
 
 # Publications <i class="fa fa-file-text-o" aria-hidden="true"></i> Articles
+
+### <a href="https://www.infoq.com/articles/future-of-net-core" target="_blank">The Future of .NET Core <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+
+> <p> In this series, we will explore some of the benefits .NET Core and how it can benefit not only traditional .NET developers but all technologists that need to bring robust, performant and economical solutions to market.
+
+### <a href="http://www.dotnetcurry.com/typescript/1439/typescript-generics" target="_blank">TypeScript – A Tour of Generics <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+
+> <p> TypeScript is an amazing innovation with how we as developers write JavaScript applications. TypeScript boasts its language services as a first-class citizen. These language services empower your favorite integrated development environment with advanced statement completion, refactoring, type-checking, compilation and even flow analysis.
 
 ### <a href="http://www.dotnetcurry.com/csharp/1411/csharp-favorite-features" target="_blank">C#: Favorite Features through the Years <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
 

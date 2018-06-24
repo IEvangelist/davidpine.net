@@ -464,17 +464,27 @@ At this point, the user is presented with the sample animation. They could opt t
 
 Here is a look at the application in action.
 
+<style>
+img {
+    transition: opacity 0.5s;
+}
+
+img[src*=bstill] {
+	filter: blur(1.5rem);
+}
+</style>
+
 <div id='action' class="gallery">
     <a href='/img/2018/06/idle.gif'>
-        <img src='/img/2018/06/idle.gif' />
+        <img src='/img/2018/06/idle.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2018/06/countdown.gif'>
-        <img src='/img/2018/06/countdown.gif' />
+        <img src='/img/2018/06/countdown.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2018/06/presenting.gif'>
-        <img src='/img/2018/06/presenting.gif' />
+        <img src='/img/2018/06/presenting.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2018/06/send.png'>
@@ -484,7 +494,12 @@ Here is a look at the application in action.
 </div>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(() => {
+        [].forEach.call(document.querySelectorAll('img[src*=bstill]'), img => {
+            const src = img.getAttribute('src');
+            img.setAttribute('src', src.replace('.bstill.png', '.gif'));
+        });        
+
         let $action = $("#action");
         if ($action.length) {
             $action.justifiedGallery({

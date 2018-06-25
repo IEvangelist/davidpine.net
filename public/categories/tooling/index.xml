@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tooling on IEvangelist</title>
-    <link>http://davidpine.net/categories/tooling/</link>
+    <link>https://davidpine.net/categories/tooling/</link>
     <description>Recent content in Tooling on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jul 2016 22:40:31 -0500</lastBuildDate>
     
-	<atom:link href="http://davidpine.net/categories/tooling/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidpine.net/categories/tooling/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The power of the global.json</title>
-      <link>http://davidpine.net/blog/the-global-json/</link>
+      <link>https://davidpine.net/blog/the-global-json/</link>
       <pubDate>Mon, 18 Jul 2016 22:40:31 -0500</pubDate>
       
-      <guid>http://davidpine.net/blog/the-global-json/</guid>
+      <guid>https://davidpine.net/blog/the-global-json/</guid>
       <description>Introduction As I&amp;rsquo;m sure you&amp;rsquo;re all aware by now, Monday June 27th was a special day for those of you who were anticipating the release of .NET Core and ASP.NET Core. While the &amp;ldquo;core&amp;rdquo; frameworks and runtimes are RTM, the tooling is actually still in preview. In fact, we&amp;rsquo;re currently on Tools Preview 2. I wanted to focus this post entirely on one specific enhancement to Visual Studio solutions, enter the global.</description>
     </item>
     

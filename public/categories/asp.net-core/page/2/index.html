@@ -39,11 +39,11 @@
         <meta property="og:title" content="ASP.NET Core" />
 <meta property="og:description" content="Powered by &lt;a href=&#39;http://gohugo.io/&#39;&gt;Hugo&lt;/a&gt;" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://davidpine.net/categories/asp.net-core/" />
+<meta property="og:url" content="https://davidpine.net/categories/asp.net-core/" />
 
 
 
-<meta property="og:updated_time" content="2017-02-14T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2016-12-12T00:00:00&#43;00:00"/>
 
 
 
@@ -178,7 +178,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="q" value="site:http://davidpine.net">
+                    <input type="hidden" name="q" value="site:https://davidpine.net">
                 </form>
             </li>
             <li class="menu">
@@ -195,7 +195,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="q" value="site:http://davidpine.net">
+                <input type="hidden" name="q" value="site:https://davidpine.net">
             </form>
         </section>
 
@@ -295,11 +295,15 @@ if (!doNotTrack) {
 
                 
                     <li>
-                        <a href="http://davidpine.net/blog/photo-booth/"><p>ASP.NET Core &#43; Angular Photo Booth App</p></a>
+                        <a href="https://davidpine.net/blog/photo-booth/"><p>ASP.NET Core &#43; Angular Photo Booth App</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://davidpine.net/blog/journey-of-a-lifetime/"><p>Journey of a Lifetime</p></a>
+                        <a href="https://davidpine.net/blog/journey-of-a-lifetime/"><p>Journey of a Lifetime</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/asp-net-core-security-unit-testing/"><p>ASP.NET Core Unit Testing For Security Attributes</p></a>
                     </li>
                 
             </ul>
@@ -318,199 +322,7 @@ if (!doNotTrack) {
     <header>
     <div class="title">
         
-            <h2><a href="http://davidpine.net/blog/overriding-default-di/">Overriding ASP.NET Core Framework-Provided Services</a></h2>
-        
-        
-            <p>You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-02-14'>
-            February 14, 2017</time>
-        <span class="author">David Pine</span>
-        
-            <p>4 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-    
-
-    
-        
-        
-
-
-
-
-    
-    
-        
-    
-
-
-        
-
-        <a href="http://davidpine.net/blog/overriding-default-di/" class="image featured">
-            <img src="/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" alt="" />
-        </a>
-    
-
-
-    <p>Overview In .NET it&rsquo;s really easy to create your own interfaces and implementations. Likewise, it&rsquo;s seemingly effortless to register them for dependency injection. But it is not always obvious how to override existing implementations. Let&rsquo;s discuss various aspects of &ldquo;dependency injection&rdquo; and how you can override the &ldquo;framework-provided services&rdquo;.
-As an example, let&rsquo;s take a recent story on our product backlog for building a security audit of login attempts. The story involved the capture of attempted usernames along with their corresponding IP addresses.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://davidpine.net/blog/overriding-default-di/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-list-ol">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
-    
-        <li><a href='/categories.net-core'>.NET Core</a></li>
-    
-        <li><a href='/categoriesdependency-injection'>Dependency Injection</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://davidpine.net/blog/principal-architecture-changes/">What happened to my Thread.CurrentPrincipal</a></h2>
-        
-        
-            <p>This is not the IPrincipal you are looking for...</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-01-27'>
-            January 27, 2017</time>
-        <span class="author">David Pine</span>
-        
-            <p>4 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-    
-
-    
-        
-        
-
-
-
-
-    
-    
-        
-    
-
-
-        
-
-        <a href="http://davidpine.net/blog/principal-architecture-changes/" class="image featured">
-            <img src="/img/2017/01/not-what-you-are-looking-for.png" alt="" />
-        </a>
-    
-
-
-    <p>Overview Like the title claims, if you&rsquo;re using ASP.NET Core and expecting the Thread.CurrentPrincipal or ClaimsPrincipal.Current to be populated you&rsquo;d be wrong. This is not the IPrincipal you&rsquo;re looking for. In this post we&rsquo;ll discuss what happened and what you need to do now. Additionally we&rsquo;ll cover all the peripheral benefits as a result of this change.
-History If you have ever done any .NET Framework development, you&rsquo;ve probably seen the Thread class.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://davidpine.net/blog/principal-architecture-changes/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-list-ol">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
-    
-        <li><a href='/categories.net-core'>.NET Core</a></li>
-    
-        <li><a href='/categoriesidentity'>Identity</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://davidpine.net/blog/asp-net-core-optimization/">ASP.NET Core Response Optimization</a></h2>
+            <h2><a href="https://davidpine.net/blog/asp-net-core-optimization/">ASP.NET Core Response Optimization</a></h2>
         
         
             <p>Static File Caching &amp; Compression</p>
@@ -550,7 +362,7 @@ History If you have ever done any .NET Framework development, you&rsquo;ve proba
 
         
 
-        <a href="http://davidpine.net/blog/asp-net-core-optimization/" class="image featured">
+        <a href="https://davidpine.net/blog/asp-net-core-optimization/" class="image featured">
             <img src="/img/2016/12/speedy.jpg" alt="" />
         </a>
     
@@ -561,7 +373,7 @@ If you haven&rsquo;t had a chance to use ASP.NET Core yet, you&rsquo;re missing 
 
     <footer>
         <ul class="actions">
-            <li><a href="http://davidpine.net/blog/asp-net-core-optimization/" class="button big">Continue Reading</a></li>
+            <li><a href="https://davidpine.net/blog/asp-net-core-optimization/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -604,6 +416,196 @@ If you haven&rsquo;t had a chance to use ASP.NET Core yet, you&rsquo;re missing 
 </article>
 
         
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://davidpine.net/blog/the-global-json/">The power of the global.json</a></h2>
+        
+        
+            <p>Leveraging .NET Core Tooling Features</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-07-18'>
+            July 18, 2016</time>
+        <span class="author">David Pine</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="https://davidpine.net/blog/the-global-json/" class="image featured">
+            <img src="/img/2016/07/global-json.png" alt="" />
+        </a>
+    
+
+
+    <p>Introduction As I&rsquo;m sure you&rsquo;re all aware by now, Monday June 27th was a special day for those of you who were anticipating the release of .NET Core and ASP.NET Core. While the &ldquo;core&rdquo; frameworks and runtimes are RTM, the tooling is actually still in preview. In fact, we&rsquo;re currently on Tools Preview 2. I wanted to focus this post entirely on one specific enhancement to Visual Studio solutions, enter the global.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://davidpine.net/blog/the-global-json/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-list-ol">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
+    
+        <li><a href='/categories.net-core'>.NET Core</a></li>
+    
+        <li><a href='/categoriestooling'>Tooling</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://davidpine.net/blog/migrating-to-rc2/">ASP.NET Core RC2 (Migration Guide)</a></h2>
+        
+        
+            <p>Migrating from RC1 to RC2</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-05-20'>
+            May 20, 2016</time>
+        <span class="author">David Pine</span>
+        
+            <p>9 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="https://davidpine.net/blog/migrating-to-rc2/" class="image featured">
+            <img src="/img/2016/05/migrating.jpg" alt="" />
+        </a>
+    
+
+
+    <p>Introduction On Monday, May 16th 2016 there was an amazing announcement from the .NET Blog team!
+ Announcing .NET Core RC2 and .NET Core SDK Preview 1
+ This post will serve as a guide that walks you through the steps as I experienced them from migrating existing ASP.NET Core RC1 applications to ASP.NET Core RC2. It is worth mentioning that I&rsquo;m am targeting the .NET 4.6 framework. So, I do not cover the .</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://davidpine.net/blog/migrating-to-rc2/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-list-ol">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categoriesasp.net-core'>ASP.NET Core</a></li>
+    
+        <li><a href='/categories.net-core'>.NET Core</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
 
         
 <ul class="actions pagination">
@@ -613,8 +615,7 @@ If you haven&rsquo;t had a chance to use ASP.NET Core yet, you&rsquo;re missing 
     
 
     
-        <li><a href="/categories/asp.net-core/page/3/"
-                class="button big next">Next Page</a></li>
+        <li><a href="#" class="disabled button big next">Next Page</a></li>
     
 </ul>
 
@@ -646,7 +647,7 @@ If you haven&rsquo;t had a chance to use ASP.NET Core yet, you&rsquo;re missing 
 
             <ul class="icons">
                 
-                    <li><a href="http://davidpine.net/categories/asp.net-core/index.xml" type="application/rss+xml"
+                    <li><a href="https://davidpine.net/categories/asp.net-core/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa-lg fa-rss"></a></li>
                 
                 
@@ -748,7 +749,7 @@ If you haven&rsquo;t had a chance to use ASP.NET Core yet, you&rsquo;re missing 
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/photo-booth/">ASP.NET Core &#43; Angular Photo Booth App</a></h3>
+                                <h3><a href="https://davidpine.net/blog/photo-booth/">ASP.NET Core &#43; Angular Photo Booth App</a></h3>
                                 
                                     
                                 
@@ -762,13 +763,27 @@ If you haven&rsquo;t had a chance to use ASP.NET Core yet, you&rsquo;re missing 
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://davidpine.net/blog/journey-of-a-lifetime/">Journey of a Lifetime</a></h3>
+                                <h3><a href="https://davidpine.net/blog/journey-of-a-lifetime/">Journey of a Lifetime</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
                                     '2018-04-28'>
                                     April 28, 2018</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://davidpine.net/blog/asp-net-core-security-unit-testing/">ASP.NET Core Unit Testing For Security Attributes</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2018-03-23'>
+                                    March 23, 2018</time>
                             </header>
                         </article>
                     </li>
@@ -1093,7 +1108,7 @@ If you haven&rsquo;t had a chance to use ASP.NET Core yet, you&rsquo;re missing 
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="http://davidpine.net/categories/asp.net-core/index.xml" type="application/rss+xml"
+                    <li><a href="https://davidpine.net/categories/asp.net-core/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 

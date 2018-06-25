@@ -2,116 +2,116 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on IEvangelist</title>
-    <link>http://davidpine.net/blog/</link>
+    <link>https://davidpine.net/blog/</link>
     <description>Recent content in Blogs on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://davidpine.net/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidpine.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ASP.NET Core &#43; Angular Photo Booth App</title>
-      <link>http://davidpine.net/blog/photo-booth/</link>
+      <link>https://davidpine.net/blog/photo-booth/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/photo-booth/</guid>
+      <guid>https://davidpine.net/blog/photo-booth/</guid>
       <description>Inspiration I recently returned from Charleston, South Carolina &amp;ndash; where I spoke at SyntaxCon. The event was very professionally organized and gave me inspiration for Cream City Code. In the main hall they had a HALO by Simple Booth. It serves as a photo booth with a conference specific backdrop &amp;ndash; which is perfect for sharing the conference experience. I looked into purchasing one but was encouraged to simply write my own&amp;hellip; so I did and this blog will detail that process.</description>
     </item>
     
     <item>
       <title>Journey of a Lifetime</title>
-      <link>http://davidpine.net/blog/journey-of-a-lifetime/</link>
+      <link>https://davidpine.net/blog/journey-of-a-lifetime/</link>
       <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/journey-of-a-lifetime/</guid>
+      <guid>https://davidpine.net/blog/journey-of-a-lifetime/</guid>
       <description>Intro I am returning home from a long trip in Serbia for IT Konekt. This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of IT Konekt. This was my first time ever leaving the United States of America and I didn&amp;rsquo;t know what to expect.</description>
     </item>
     
     <item>
       <title>ASP.NET Core Unit Testing For Security Attributes</title>
-      <link>http://davidpine.net/blog/asp-net-core-security-unit-testing/</link>
+      <link>https://davidpine.net/blog/asp-net-core-security-unit-testing/</link>
       <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/asp-net-core-security-unit-testing/</guid>
+      <guid>https://davidpine.net/blog/asp-net-core-security-unit-testing/</guid>
       <description>Intro As a developer, I can say that developers are lazy - at least I know and acknowledge that I am. If I&amp;rsquo;m tasked with something even the slightest bit repetitious I&amp;rsquo;ll script it out, or find a way to automate it. Likewise, if I fall into a habit of forgetting something important - I&amp;rsquo;ll figure out a way to not forget. Especially when it comes to securing an application.</description>
     </item>
     
     <item>
       <title>ASP.NET Core Configuration Tips</title>
-      <link>http://davidpine.net/blog/asp-net-core-configuration/</link>
+      <link>https://davidpine.net/blog/asp-net-core-configuration/</link>
       <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/asp-net-core-configuration/</guid>
+      <guid>https://davidpine.net/blog/asp-net-core-configuration/</guid>
       <description>Being a software developer, it&amp;rsquo;s in our nature to configure various aspects of the applications that we write. With ASP.NET Core configuring our applications is really straight forward. Luckily, there is a lot of really well written documentation surrounding this topic.
   &amp;nbsp; ASP.NET Core - Configuration  &amp;nbsp; ASP.NET Core - Options  However, there is still room for improvement. I&amp;rsquo;ve prepared a few tips that can enhance developer productivity by taking advantage of various C# features.</description>
     </item>
     
     <item>
       <title>C# Special Edition</title>
-      <link>http://davidpine.net/blog/csharp-special-edition/</link>
+      <link>https://davidpine.net/blog/csharp-special-edition/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/csharp-special-edition/</guid>
+      <guid>https://davidpine.net/blog/csharp-special-edition/</guid>
       <description>Welcome to the 17th day of the C# Advent Calendar. I&amp;rsquo;d like to take a moment to thank my fellow bloggers who are sharing their passion of C# with everyone following the C# Advent Calendar. Please, share this and their posts - help us all make C# even more widely adopted than it is today.
 In the Beginning I&amp;rsquo;m honored to blog about my favorite programming language, C#. There is an often forgotten truth about the history of C#, one truth that I like talking about.</description>
     </item>
     
     <item>
       <title>xUnit Roslyn Analyzers</title>
-      <link>http://davidpine.net/blog/xunit-powered-by-roslyn/</link>
+      <link>https://davidpine.net/blog/xunit-powered-by-roslyn/</link>
       <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/xunit-powered-by-roslyn/</guid>
+      <guid>https://davidpine.net/blog/xunit-powered-by-roslyn/</guid>
       <description>p { opacity: 1 !important; } Intro At my day job, I wear many hats. I&amp;rsquo;m currently wearing the &amp;ldquo;upgrade our team&amp;rsquo;s tooling&amp;rdquo; hat. I counted 99 *.xproj and project.json based projects spanning four repositories that need to be updated to the revitalized *.csproj project format. With this the team can upgrade to the latest version of Visual Studio (finally upgrading to 2017 from 2015) and start taking advantage of the following:</description>
     </item>
     
     <item>
       <title>Demystifying .NET Standard</title>
-      <link>http://davidpine.net/blog/dot-net-standard-demystified/</link>
+      <link>https://davidpine.net/blog/dot-net-standard-demystified/</link>
       <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/dot-net-standard-demystified/</guid>
+      <guid>https://davidpine.net/blog/dot-net-standard-demystified/</guid>
       <description>Intro Monday, August 14th was an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
   What is this .NET Standard thing?  What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework?  As a developer, what .NET should I target and why?  Are Portable Class Libraries (PCLs) dead?</description>
     </item>
     
     <item>
       <title>Perusing C# 7.1</title>
-      <link>http://davidpine.net/blog/csharp-seven-dot-one/</link>
+      <link>https://davidpine.net/blog/csharp-seven-dot-one/</link>
       <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/csharp-seven-dot-one/</guid>
+      <guid>https://davidpine.net/blog/csharp-seven-dot-one/</guid>
       <description>Earlier this year in March &amp;ndash; Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on &amp;ldquo;Exploring C# 7&amp;rdquo; here. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.
 Async Main  Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
     </item>
     
     <item>
       <title>How to organize an amazing technical conference</title>
-      <link>http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</link>
+      <link>https://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</link>
       <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</guid>
+      <guid>https://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</guid>
       <description>Story Time This is my third year organizing MKE DOT NET, so I&amp;rsquo;ve been accumulating plenty of interesting stories. Last year I was fortunate enough to have convinced Scott Hanselman to be our keynote speaker. Yes, &amp;ldquo;the Scott Hanselman&amp;rdquo; - arguably the worlds most influential person in the tech industry. I was his ride to and from the airport and the conversations we had actually led to several key changes.</description>
     </item>
     
     <item>
       <title>TypeScript - JavaScript Reimagined</title>
-      <link>http://davidpine.net/blog/typescript-javascript-reimagined/</link>
+      <link>https://davidpine.net/blog/typescript-javascript-reimagined/</link>
       <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/typescript-javascript-reimagined/</guid>
+      <guid>https://davidpine.net/blog/typescript-javascript-reimagined/</guid>
       <description>First things First JavaScript is the world&amp;rsquo;s third most common programming language today. JavaScript was created by Brendan Eich in about ten days. It might seem odd that the previous two sentences not only exist, but go together&amp;hellip;yet it is true! JavaScript runs seemingly everywhere and applications written in this language are only getting larger.
   JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.</description>
     </item>
     
     <item>
       <title>Exploring C# 7</title>
-      <link>http://davidpine.net/blog/exploring-csharp-seven/</link>
+      <link>https://davidpine.net/blog/exploring-csharp-seven/</link>
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/exploring-csharp-seven/</guid>
+      <guid>https://davidpine.net/blog/exploring-csharp-seven/</guid>
       <description>Intro Since we have all been actively celebrating the 20th anniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here.
 This post contains examples and details on five of the nine new C# 7 features.
  Pattern matching out variables Tuples Local functions throw expressions  These are the remaining features, that I do not cover in this post.</description>
@@ -119,49 +119,49 @@ This post contains examples and details on five of the nine new C# 7 features.
     
     <item>
       <title>Overriding ASP.NET Core Framework-Provided Services</title>
-      <link>http://davidpine.net/blog/overriding-default-di/</link>
+      <link>https://davidpine.net/blog/overriding-default-di/</link>
       <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/overriding-default-di/</guid>
+      <guid>https://davidpine.net/blog/overriding-default-di/</guid>
       <description>Overview In .NET it&amp;rsquo;s really easy to create your own interfaces and implementations. Likewise, it&amp;rsquo;s seemingly effortless to register them for dependency injection. But it is not always obvious how to override existing implementations. Let&amp;rsquo;s discuss various aspects of &amp;ldquo;dependency injection&amp;rdquo; and how you can override the &amp;ldquo;framework-provided services&amp;rdquo;.
 As an example, let&amp;rsquo;s take a recent story on our product backlog for building a security audit of login attempts. The story involved the capture of attempted usernames along with their corresponding IP addresses.</description>
     </item>
     
     <item>
       <title>What happened to my Thread.CurrentPrincipal</title>
-      <link>http://davidpine.net/blog/principal-architecture-changes/</link>
+      <link>https://davidpine.net/blog/principal-architecture-changes/</link>
       <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/principal-architecture-changes/</guid>
+      <guid>https://davidpine.net/blog/principal-architecture-changes/</guid>
       <description>Overview Like the title claims, if you&amp;rsquo;re using ASP.NET Core and expecting the Thread.CurrentPrincipal or ClaimsPrincipal.Current to be populated you&amp;rsquo;d be wrong. This is not the IPrincipal you&amp;rsquo;re looking for. In this post we&amp;rsquo;ll discuss what happened and what you need to do now. Additionally we&amp;rsquo;ll cover all the peripheral benefits as a result of this change.
 History If you have ever done any .NET Framework development, you&amp;rsquo;ve probably seen the Thread class.</description>
     </item>
     
     <item>
       <title>Building a Magic Mirror</title>
-      <link>http://davidpine.net/blog/building-a-magic-mirror/</link>
+      <link>https://davidpine.net/blog/building-a-magic-mirror/</link>
       <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/building-a-magic-mirror/</guid>
+      <guid>https://davidpine.net/blog/building-a-magic-mirror/</guid>
       <description>Inspiration I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators&amp;hellip;some might say, &amp;ldquo;I&amp;rsquo;m standing on the shoulders of giants&amp;rdquo;. They would probably we right, and I&amp;rsquo;m okay with that. Earlier this year, I stumbled upon a tweet about someone how created a magic mirror&amp;hellip;this is the root of my inspiration.</description>
     </item>
     
     <item>
       <title>ASP.NET Core Response Optimization</title>
-      <link>http://davidpine.net/blog/asp-net-core-optimization/</link>
+      <link>https://davidpine.net/blog/asp-net-core-optimization/</link>
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/asp-net-core-optimization/</guid>
+      <guid>https://davidpine.net/blog/asp-net-core-optimization/</guid>
       <description>Intro If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in tandem on an ASP.NET Core application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.
 If you haven&amp;rsquo;t had a chance to use ASP.NET Core yet, you&amp;rsquo;re missing out! As my friend Scott Addie likes to say:</description>
     </item>
     
     <item>
       <title>Overcoming Impostor Syndrome</title>
-      <link>http://davidpine.net/blog/imposter-syndrome/</link>
+      <link>https://davidpine.net/blog/imposter-syndrome/</link>
       <pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/imposter-syndrome/</guid>
+      <guid>https://davidpine.net/blog/imposter-syndrome/</guid>
       <description>What is &amp;ldquo;impostor syndrome&amp;rdquo; you ask?
 According to Wikipedia:
  Impostor syndrome (also known as impostor phenomenon or fraud syndrome) is a term coined in 1978 by clinical psychologists Dr. Pauline R. Clance and Suzanne A. Imes referring to high-achieving individuals marked by an inability to internalize their accomplishments and a persistent fear of being exposed as a &amp;ldquo;fraud&amp;rdquo;. Despite external evidence of their competence, those exhibiting the syndrome remain convinced that they are frauds and do not deserve the success they have achieved.</description>
@@ -169,28 +169,28 @@ According to Wikipedia:
     
     <item>
       <title>Angular2 Http with RxJS Observables</title>
-      <link>http://davidpine.net/blog/angular-2-http/</link>
+      <link>https://davidpine.net/blog/angular-2-http/</link>
       <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/angular-2-http/</guid>
+      <guid>https://davidpine.net/blog/angular-2-http/</guid>
       <description>If you have been following the development efforts of the Angular2 project, you have witnessed certain highs and lows - but it has been a fun ride. The latest version is only a Release Candidate and the team is getting closer to the final release. I&amp;rsquo;m really looking forward to that! I wanted to take a moment to highlight (IMO) one of the key services of Angular2, the http service.</description>
     </item>
     
     <item>
       <title>The power of the global.json</title>
-      <link>http://davidpine.net/blog/the-global-json/</link>
+      <link>https://davidpine.net/blog/the-global-json/</link>
       <pubDate>Mon, 18 Jul 2016 22:40:31 -0500</pubDate>
       
-      <guid>http://davidpine.net/blog/the-global-json/</guid>
+      <guid>https://davidpine.net/blog/the-global-json/</guid>
       <description>Introduction As I&amp;rsquo;m sure you&amp;rsquo;re all aware by now, Monday June 27th was a special day for those of you who were anticipating the release of .NET Core and ASP.NET Core. While the &amp;ldquo;core&amp;rdquo; frameworks and runtimes are RTM, the tooling is actually still in preview. In fact, we&amp;rsquo;re currently on Tools Preview 2. I wanted to focus this post entirely on one specific enhancement to Visual Studio solutions, enter the global.</description>
     </item>
     
     <item>
       <title>ASP.NET Core RC2 (Migration Guide)</title>
-      <link>http://davidpine.net/blog/migrating-to-rc2/</link>
+      <link>https://davidpine.net/blog/migrating-to-rc2/</link>
       <pubDate>Fri, 20 May 2016 22:40:31 -0500</pubDate>
       
-      <guid>http://davidpine.net/blog/migrating-to-rc2/</guid>
+      <guid>https://davidpine.net/blog/migrating-to-rc2/</guid>
       <description>Introduction On Monday, May 16th 2016 there was an amazing announcement from the .NET Blog team!
  Announcing .NET Core RC2 and .NET Core SDK Preview 1
  This post will serve as a guide that walks you through the steps as I experienced them from migrating existing ASP.NET Core RC1 applications to ASP.NET Core RC2. It is worth mentioning that I&amp;rsquo;m am targeting the .NET 4.6 framework. So, I do not cover the .</description>

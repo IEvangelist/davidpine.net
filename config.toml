@@ -1,9 +1,9 @@
-baseurl = "http://davidpine.net"
+baseurl = "https://davidpine.net"
 languageCode = "en-us"
 title = "IEvangelist"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
-paginate = 3
+paginate = 5
 disqusShortname = "davidpine"
 googleAnalytics = "UA-78203613-1"
 
@@ -60,7 +60,7 @@ googleAnalytics = "UA-78203613-1"
 # Adjust the amount of recent posts on the sidebar.
 # This is optional. The default value 5 will be used
 [params.postAmount]
-    sidebar = 2
+    sidebar = 3
 
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text

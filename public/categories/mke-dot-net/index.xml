@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MKE DOT NET on IEvangelist</title>
-    <link>http://davidpine.net/categories/mke-dot-net/</link>
+    <link>https://davidpine.net/categories/mke-dot-net/</link>
     <description>Recent content in MKE DOT NET on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://davidpine.net/categories/mke-dot-net/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidpine.net/categories/mke-dot-net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to organize an amazing technical conference</title>
-      <link>http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</link>
+      <link>https://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</link>
       <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</guid>
+      <guid>https://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</guid>
       <description>Story Time This is my third year organizing MKE DOT NET, so I&amp;rsquo;ve been accumulating plenty of interesting stories. Last year I was fortunate enough to have convinced Scott Hanselman to be our keynote speaker. Yes, &amp;ldquo;the Scott Hanselman&amp;rdquo; - arguably the worlds most influential person in the tech industry. I was his ride to and from the airport and the conversations we had actually led to several key changes.</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IoT on IEvangelist</title>
-    <link>http://davidpine.net/categories/iot/</link>
+    <link>https://davidpine.net/categories/iot/</link>
     <description>Recent content in IoT on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 23 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://davidpine.net/categories/iot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidpine.net/categories/iot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Building a Magic Mirror</title>
-      <link>http://davidpine.net/blog/building-a-magic-mirror/</link>
+      <link>https://davidpine.net/blog/building-a-magic-mirror/</link>
       <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/building-a-magic-mirror/</guid>
+      <guid>https://davidpine.net/blog/building-a-magic-mirror/</guid>
       <description>Inspiration I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators&amp;hellip;some might say, &amp;ldquo;I&amp;rsquo;m standing on the shoulders of giants&amp;rdquo;. They would probably we right, and I&amp;rsquo;m okay with that. Earlier this year, I stumbled upon a tweet about someone how created a magic mirror&amp;hellip;this is the root of my inspiration.</description>
     </item>
     

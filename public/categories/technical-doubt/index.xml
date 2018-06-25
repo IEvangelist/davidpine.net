@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technical Doubt on IEvangelist</title>
-    <link>http://davidpine.net/categories/technical-doubt/</link>
+    <link>https://davidpine.net/categories/technical-doubt/</link>
     <description>Recent content in Technical Doubt on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Nov 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://davidpine.net/categories/technical-doubt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidpine.net/categories/technical-doubt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Overcoming Impostor Syndrome</title>
-      <link>http://davidpine.net/blog/imposter-syndrome/</link>
+      <link>https://davidpine.net/blog/imposter-syndrome/</link>
       <pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/imposter-syndrome/</guid>
+      <guid>https://davidpine.net/blog/imposter-syndrome/</guid>
       <description>What is &amp;ldquo;impostor syndrome&amp;rdquo; you ask?
 According to Wikipedia:
  Impostor syndrome (also known as impostor phenomenon or fraud syndrome) is a term coined in 1978 by clinical psychologists Dr. Pauline R. Clance and Suzanne A. Imes referring to high-achieving individuals marked by an inability to internalize their accomplishments and a persistent fear of being exposed as a &amp;ldquo;fraud&amp;rdquo;. Despite external evidence of their competence, those exhibiting the syndrome remain convinced that they are frauds and do not deserve the success they have achieved.</description>

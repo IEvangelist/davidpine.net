@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Http on IEvangelist</title>
-    <link>http://davidpine.net/categories/http/</link>
+    <link>https://davidpine.net/categories/http/</link>
     <description>Recent content in Http on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 31 Aug 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://davidpine.net/categories/http/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidpine.net/categories/http/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Angular2 Http with RxJS Observables</title>
-      <link>http://davidpine.net/blog/angular-2-http/</link>
+      <link>https://davidpine.net/blog/angular-2-http/</link>
       <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidpine.net/blog/angular-2-http/</guid>
+      <guid>https://davidpine.net/blog/angular-2-http/</guid>
       <description>If you have been following the development efforts of the Angular2 project, you have witnessed certain highs and lows - but it has been a fun ride. The latest version is only a Release Candidate and the team is getting closer to the final release. I&amp;rsquo;m really looking forward to that! I wanted to take a moment to highlight (IMO) one of the key services of Angular2, the http service.</description>
     </item>
     

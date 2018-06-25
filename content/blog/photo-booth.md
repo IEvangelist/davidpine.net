@@ -19,35 +19,19 @@ I recently returned from Charleston, South Carolina -- where I spoke at <a href=
 Ultimately, the resulting social media share ends up looking something like these ( <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> To open gallery ). It generates an animated image (`*.gif`) from the series of photos taken.
 
 <div id='syntax' class="gallery">
-    <a href='/img/2018/06/smplbth-one.gif'>
-        <img src='/img/2018/06/smplbth-one.gif' />
+    <a href='/img/2018/06/smplbth-one.bstill.png'>
+        <img src='/img/2018/06/smplbth-one.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
-    <a href='/img/2018/06/smplbth-two.gif'>
-        <img src='/img/2018/06/smplbth-two.gif' />
+    <a href='/img/2018/06/smplbth-two.bstill.png'>
+        <img src='/img/2018/06/smplbth-two.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
-    <a href='/img/2018/06/smplbth-three.gif'>
-        <img src='/img/2018/06/smplbth-three.gif' />
+    <a href='/img/2018/06/smplbth-three.bstill.png'>
+        <img src='/img/2018/06/smplbth-three.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
 </div>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        let $syntax = $("#syntax");
-        if ($syntax.length) {
-            $syntax.justifiedGallery({
-                rowHeight: 200
-            }).on('jg.complete', function() {
-                $syntax.lightGallery({
-                    selector: 'a',
-                    thumbnail: false
-                }); 
-            });
-        }                
-    });
-</script>
 
 <br/>
 
@@ -466,24 +450,26 @@ Here is a look at the application in action.
 
 <style>
 img {
-    transition: opacity 0.5s;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
 }
 
 img[src*=bstill] {
-	filter: blur(1.5rem);
+    -webkit-filter: blur(2px);
+	filter: blur(2px);
 }
 </style>
 
 <div id='action' class="gallery">
-    <a href='/img/2018/06/idle.gif'>
+    <a href='/img/2018/06/idle.bstill.png'>
         <img src='/img/2018/06/idle.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
-    <a href='/img/2018/06/countdown.gif'>
+    <a href='/img/2018/06/countdown.bstill.png'>
         <img src='/img/2018/06/countdown.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
-    <a href='/img/2018/06/presenting.gif'>
+    <a href='/img/2018/06/presenting.bstill.png'>
         <img src='/img/2018/06/presenting.bstill.png' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
@@ -495,22 +481,33 @@ img[src*=bstill] {
 
 <script type="text/javascript">
     $(document).ready(() => {
-        [].forEach.call(document.querySelectorAll('img[src*=bstill]'), img => {
-            const src = img.getAttribute('src');
-            img.setAttribute('src', src.replace('.bstill.png', '.gif'));
-        });        
+        const createGallery = selector => {
+            let $el = $(selector);
+            if ($el.length) {
+                $el.justifiedGallery({
+                    rowHeight: 200
+                }).on('jg.complete', () => {
+                    $el.lightGallery({
+                        selector: 'a',
+                        thumbnail: false
+                    }); 
+                });
+            }
+        };
 
-        let $action = $("#action");
-        if ($action.length) {
-            $action.justifiedGallery({
-                rowHeight: 200
-            }).on('jg.complete', function() {
-                $action.lightGallery({
-                    selector: 'a',
-                    thumbnail: false
-                }); 
+        const swapAttributes = (selector, attr) => {
+            [].forEach.call(document.querySelectorAll(selector), e => {
+                const href = e.getAttribute(attr);
+                e.setAttribute(attr, href.replace('.bstill.png', '.gif'));
             });
-        }                
+        };
+
+        createGallery('#syntax');
+        createGallery('#action');
+        swapAttributes('a[href*=bstill]', 'href');
+        swapAttributes('img[src*=bstill]', 'src');
+        createGallery('#syntax');
+        createGallery('#action');
     });
 </script>
 

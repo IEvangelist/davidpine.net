@@ -6,10 +6,19 @@
     <description>Recent content on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidpine.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Angular Http Tips For Success</title>
+      <link>https://davidpine.net/blog/angular-http-gotchas/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/angular-http-gotchas/</guid>
+      <description>Intro I love working with the Angular HttpClient. It is easy to use and was designed to work with RxJS. It is vastly different from the AngularJS implementation, if you&amp;rsquo;re curious I wrote about these differences here. However, there is one common issue that developers fall victim to. The issue really relates to TypeScript generics. I have also written about generics in TypeScript here. But in this post, we will reveal how the issue can easily be avoided.</description>
+    </item>
     
     <item>
       <title>ASP.NET Core &#43; Angular Photo Booth App</title>

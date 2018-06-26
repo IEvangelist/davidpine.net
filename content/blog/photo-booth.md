@@ -86,7 +86,7 @@ services.Configure<TwilioOptions>(
     Configuration.GetSection(nameof(TwilioOptions)));
 ```
 
-We have some unique services being added to our dependency injection (DI) service collection. Later, our controllers can ask for these interfaces and expect the corresponding implementations. Likewise, we map over some sections from our `appsettings.json` configuration to C# classes. These also become available to us later from the perspective of DI. We can ask for `IOptions<ImageProcessOptions>` for example. See <a href="{{< relref "asp-net-core-configuration.md" >}}">ASP.NET Core - Configuration Tips</a> for more details.
+We have some unique services being added to our dependency injection (DI) service collection. Later, our controllers can ask for these interfaces and expect the corresponding implementations. Likewise, we map over some sections from our `appsettings.json` configuration to C# classes. These also become available to us later from the perspective of DI. We can ask for `IOptions<ImageProcessOptions>` for example. See <a href="{{< relref "asp-net-core-configuration.md" >}}" target="_blank">ASP.NET Core - Configuration Tips</a> for more details.
 
 #### ASP.NET Core Web API
 
@@ -266,7 +266,7 @@ The __<span style="color:#dd0031;">Angular</span>__ application is where a lot o
 | `controlwizard` | This is the state machine of the overlay for the user workflow -- it toggles various templates into and out of view |
 | `numberpad` | A numeric entry markup, which outputs the user input |
 
-When application loads, we first hit the `api/image/options` endpoint -- getting our client settings from the server. See <a href="{{< relref "angular-2-http.md" >}}">Angular Http with RxJS Observables</a> for more details on the `HttpClient` from __<span style="color:#dd0031;">Angular</span>__. We then set our camera stream to the `video` element on our `CameraComponent`.
+When application loads, we first hit the `api/image/options` endpoint -- getting our client settings from the server. See <a href="{{< relref "angular-2-http.md" >}}" target="_blank">Angular Http with RxJS Observables</a> for more details on the `HttpClient` from __<span style="color:#dd0031;">Angular</span>__. We then set our camera stream to the `video` element on our `CameraComponent`.
 
 Snippet from `CameraComponent.ngAfterViewInit`.
 

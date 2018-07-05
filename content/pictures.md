@@ -140,6 +140,10 @@ date = "2018-04-18"
         <img src='/img/2017/04/giard.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
+    <a href='/img/2017/04/group-syntax.jpg'>
+        <img src='/img/2017/04/group-syntax.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
     <a href='/img/2017/04/hello-world.jpg'>
         <img src='/img/2017/04/hello-world.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
@@ -350,6 +354,14 @@ date = "2018-04-18"
     </a>
     <a href='/img/2017/04/summit.jpg'>
         <img src='/img/2017/04/summit.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/syntax-badge.jpg'>
+        <img src='/img/2017/04/syntax-badge.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/syntax-ts.JPG'>
+        <img src='/img/2017/04/syntax-ts.JPG' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2017/04/tech-panel.png'>

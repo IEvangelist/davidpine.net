@@ -23,6 +23,12 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### MkeJS -- TypeScript: Making JavaScript Tolerable
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/L7IY9vKO2Bw" frameborder="0" allowfullscreen></iframe>
+</div>
+
 ### #MVPBuzzChat CollabTalk
 
 <div class="iframe_container">

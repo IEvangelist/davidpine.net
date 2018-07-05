@@ -59,3 +59,11 @@ I then had an idea of what I wanted to do. Years later, I decided that I wanted 
 ## <i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn
 <a title="View David Pine's profile on LinkedIn" href="http://www.linkedin.com/in/dpine" target="_blank"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" alt="View David Pine's profile on LinkedIn">
 </a>
+
+## What people are saying
+
+> <p/> You are a beacon of light in a grumpy world of developers. Your excitement is infectious. I'm so blessed to know you!
+
+<br/>
+
+> <p/> So David Pine, you are about to embark on your first international speaking engagement.  Congratulations, good luck and know that wherever you go, all of us here will be wishing you well.  We know they are getting not just a speaker, but someone who represents the best of our developer community values here in the upper Midwest, someone who is eager to share what he knows with others, someone who is generous with his time and patient in his approach.  You represent the best of us because you are so invested in the success of others.  I couldn't think of a better person they could have asked to come and speak and certainly not one more deserving.  You will do an amazing job, and when you get back, we'll have a Spotted Cow, a Brat and some Chicago deep dish pizza waiting for you.

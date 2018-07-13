@@ -252,7 +252,7 @@ According to Wikipedia:
       
       <guid>https://davidpine.net/about/</guid>
       <description>Define yourself You may have noticed my tag, IEvangelist. If you see this as an interface it would look something like the following (I&amp;rsquo;d be more or less a placeholder interface, but I&amp;rsquo;d impose many other contracts).
-interface IEvangelist : IAcceptFailure, IAdapt, IAdvocate, IAssure, IContribute, ICritize, IEvaluate, IExceed, IGetBackUp, IGrow, IInspirable, IInspire, ILead, ILearn, ILeverage, IListen, IMentor, IMetaAF, IModerate, IMotivatable, IMotivate, INeverGiveUp, IPassionate, IProsper, IRemainPositive, IShare, ISucceed, IPerson { // An evangelist is .</description>
+interface IEvangelist : IAcceptFailure, IAdapt, IAdvocate, IAssure, IContribute, ICriticize, IEvaluate, IExceed, IGetBackUp, IGrow, IInspirable, IInspire, ILead, ILearn, ILeverage, IListen, IMentor, IMetaAF, IModerate, IMotivatable, IMotivate, INeverGiveUp, IPassionate, IProsper, IRemainPositive, IShare, ISucceed, IPerson { // An evangelist is .</description>
     </item>
     
   </channel>

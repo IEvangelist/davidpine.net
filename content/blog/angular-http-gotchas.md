@@ -54,7 +54,7 @@ export interface Details {
 
 ## Non-Working Example
 
-Imagine that we want to return another property from the server, so we add a `Date` property. Notice how our `interface` added this new property. Now we want to do some date logic and use some of the methods on a the `Date` instance -- this __will not work__!
+Imagine that we want to return another property from the server, so we add a `Date` property. Notice how our `interface` added this new property. Now we want to do some date logic and use some of the methods on the `Date` instance -- this __will not work__!
 
 ```typescript
 export interface Details {
@@ -88,7 +88,7 @@ Perhaps to your surprise, this __doesn't work__ either! The `Details` type param
 
 <p data-height="620" data-theme-id="dark" data-slug-hash="QxBogQ" data-default-tab="js" data-user="ievangelist" data-embed-version="2" data-pen-title="TypeScript - JSON.parse class with get property" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/ievangelist/pen/QxBogQ/">TypeScript - JSON.parse class with get property</a> by David Pine (<a href="https://codepen.io/ievangelist">@ievangelist</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
-If we add an `constructor` to our `class` and then pass in a `data: any` argument, we could easily perform an `Object.assign(this, data)`. This solves several issues
+If we add a `constructor` to our `class` and then pass in a `data: any` argument, we could easily perform an `Object.assign(this, data)`. This solves several issues
 
 > <p/> The `Object.assign()` method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
 > <cite><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank">MDN Web Docs</a></cite>
@@ -101,7 +101,7 @@ If we add an `constructor` to our `class` and then pass in a `data: any` argumen
 
 ## <span style="color: #f7df1e">JavaScript</span> to the rescue!
 
-What's to stop a consumer from trying to interact with the `details.date` property -- if you recall it is still typed as a `Date`. This is error prone and will cause issues -- if not immediately, certainly later on. Ideally, all objects that are intended to map over from JSON should be contain primitive types only.
+What's to stop a consumer from trying to interact with the `details.date` property -- if you recall it is still typed as a `Date`. This is error prone and will cause issues -- if not immediately, certainly later on. Ideally, all objects that are intended to map over from JSON should contain primitive types only.
 
 If you're set on using a `class`, you should use the __RxJS__ `map` operator.
 
@@ -136,11 +136,11 @@ This table details all the primitive types that will map over without a `constru
 | Primitive Types  | Description |
 |--:|:--|
 | `string` | Already a `string` anyways |
-| `number` | Coercion from `string` from `number` |
+| `number` | Coercion from `string` to `number` |
 | `boolean` | Coercion from `string` to `boolean` |
 | `array` | As long as all types are primitives also |
 | `tuple` | Follows same rules as `array` |
 
 # Conclusion
 
-While __<span style="color:#007acc;">TypeScript</span>__ and __<span style="color:#dd0031;">Angular</span>__ play nicely together, at the end of the day we're all battling __<span style="color: #f7df1e">JavaScript</span>__. As long as you're aware of how your tool, framework, or technology works and why it works a certain way -- you're doing great! Take this bit of knowledge and share it with the world. If it helps you, hopefully it will someone else too.  
+While __<span style="color:#007acc;">TypeScript</span>__ and __<span style="color:#dd0031;">Angular</span>__ play nicely together, at the end of the day we're all battling __<span style="color: #f7df1e">JavaScript</span>__. As long as you're aware of how your tool, framework, or technology works and why it works a certain way -- you're doing great! Take this bit of knowledge and share it with the world. If it helps you, hopefully it will help someone else too!

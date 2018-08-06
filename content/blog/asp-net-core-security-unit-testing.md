@@ -12,7 +12,7 @@ title = "ASP.NET Core Unit Testing For Security Attributes"
 type = "post"
 +++
 
-# Intro
+## Intro
 
 As a developer, I can say that developers are lazy - at least I know and acknowledge that I am. If I'm tasked with something even the slightest bit repetitious I'll script it out, or find a way to automate it. Likewise, if I fall into a habit of forgetting something important - I'll figure out a way to _not forget_. Especially when it comes to securing an application.
 

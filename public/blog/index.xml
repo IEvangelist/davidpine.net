@@ -6,10 +6,21 @@
     <description>Recent content in Blogs on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidpine.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WebAssembly</title>
+      <link>https://davidpine.net/blog/webassembly-interview/</link>
+      <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/webassembly-interview/</guid>
+      <description>I set out a while ago to try to interview various community leaders for their take on WebAssembly. If you&amp;rsquo;re unfamiliar with WebAssembly, here&amp;rsquo;s a definition for you.
+  WebAssembly is a binary instruction format for a stack-based virtual machine webassembly.org
+  That&amp;rsquo;s a lot to try to parse, right?! I was able to get an interview with Steve Sanderson, which I&amp;rsquo;m going to share in this post.</description>
+    </item>
     
     <item>
       <title>Angular Http Tips For Success</title>

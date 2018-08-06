@@ -13,7 +13,7 @@ type = "post"
 
 +++
 
-# Intro
+## Intro
 
 Monday, August 14<sup>th</sup> was an amazing day to be a `.NET` developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
 

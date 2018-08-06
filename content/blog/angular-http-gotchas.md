@@ -13,7 +13,7 @@ type = "post"
 
 +++
 
-# Intro
+## Intro
 
 I love working with the __<span style="color:#dd0031;">Angular</span>__ `HttpClient`. It is easy to use and was designed to work with __RxJS__. It is vastly different from the __AngularJS__ implementation, if you're curious I wrote about these differences <a href="{{< relref "angular-2-http.md" >}}" target="_blank">here</a>. However, there is one common issue that developers fall victim to. The issue really relates to __<span style="color:#007acc;">TypeScript</span>__ generics. I have also written about generics in __<span style="color:#007acc;">TypeScript</span>__ <a href="http://www.dotnetcurry.com/typescript/1439/typescript-generics" target="_blank">here</a>. But in this post, we will reveal how the issue can easily be avoided.
 
@@ -121,7 +121,7 @@ public getDetails(): Promise<Details[]> {
     return this.http
                .get<Details>(`${this.baseUrl}/api/details`)
                .map(response => {
-                   const data = JSON.parse(response.json()) as any[];
+                   const array = JSON.parse(response.json()) as any[];
                    const details = array.map(data => new Details(data));
                    return details;
                })

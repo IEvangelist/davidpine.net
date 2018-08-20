@@ -42,7 +42,7 @@ Part of the issue is that __<span style="color:#007acc;">TypeScript</span>__ is 
 
 ## Working Example
 
-An `interface` with primitive types will work just fine. The `JSON.parse` will give you an object and because of __<span style="color: #f7df1e">JavaScript</span>__ coercion, it works. __<span style="color:#007acc;">TypeScript</span>__ will treat it as this object and everything is perfect.
+An `interface` with primitive types will work just fine. The `JSON.parse` will give you an object and because of __<span style="color: #dfc12a">JavaScript</span>__ coercion, it works. __<span style="color:#007acc;">TypeScript</span>__ will treat it as this object and everything is perfect.
 
 ```typescript
 export interface Details {
@@ -99,7 +99,7 @@ If we add a `constructor` to our `class` and then pass in a `data: any` argument
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-## <span style="color: #f7df1e">JavaScript</span> to the rescue!
+## <span style="color: #dfc12a">JavaScript</span> to the rescue!
 
 What's to stop a consumer from trying to interact with the `details.date` property -- if you recall it is still typed as a `Date`. This is error prone and will cause issues -- if not immediately, certainly later on. Ideally, all objects that are intended to map over from JSON should contain primitive types only.
 
@@ -143,4 +143,4 @@ This table details all the primitive types that will map over without a `constru
 
 # Conclusion
 
-While __<span style="color:#007acc;">TypeScript</span>__ and __<span style="color:#dd0031;">Angular</span>__ play nicely together, at the end of the day we're all battling __<span style="color: #f7df1e">JavaScript</span>__. As long as you're aware of how your tool, framework, or technology works and why it works a certain way -- you're doing great! Take this bit of knowledge and share it with the world. If it helps you, hopefully it will help someone else too!
+While __<span style="color:#007acc;">TypeScript</span>__ and __<span style="color:#dd0031;">Angular</span>__ play nicely together, at the end of the day we're all battling __<span style="color: #dfc12a">JavaScript</span>__. As long as you're aware of how your tool, framework, or technology works and why it works a certain way -- you're doing great! Take this bit of knowledge and share it with the world. If it helps you, hopefully it will help someone else too!

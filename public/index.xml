@@ -6,10 +6,19 @@
     <description>Recent content on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidpine.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Writing a Blazor App</title>
+      <link>https://davidpine.net/blog/blazing-chuck/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/blazing-chuck/</guid>
+      <description>Every time a developer encounters a new technology it&amp;rsquo;s in our nature to explore it. This is the case with WebAssembly, and Microsoft&amp;rsquo;s vision of the world in Blazor. Blazor is single page application framework that sits atop of WebAssembly, but it&amp;rsquo;s still considered an experiment. I had the chance to interview Steve Sanderson about WebAssembly and Blazor &amp;ndash; I shared that post earlier this month. Now, I&amp;rsquo;d like to explore Blazor with you a bit more.</description>
+    </item>
     
     <item>
       <title>WebAssembly</title>

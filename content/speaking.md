@@ -1,7 +1,7 @@
 +++
 title = 'Speaking'
 description = 'A fairly complete listing of past and upcoming speaking engagements'
-images = ["/img/main/david.pine.jpg"]
+images = ["/img/main/me.png"]
 date = '2017-04-20'
 +++
 

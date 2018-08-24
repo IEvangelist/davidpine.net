@@ -1,7 +1,7 @@
 +++
 title = "Media"
 description = "Various media, podcasts, webcasts and publication appearances"
-images =  ["/img/2018/04/media.jpg"]
+images = ["/img/main/me.png"]
 date = "2018-04-12"
 +++
 
@@ -71,3 +71,17 @@ Sometimes, in my travels I get attention and end up with various points of media
 ### <a href="http://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes" target="_blank">ASP.NET Core Web API Attributes <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
 
 > <p> With __ASP.NET Core Web API__ there are several various attributes that instruct the framework where to expect data. These attributes are very powerful, allowing for aliasing and strong-typing; however, knowing which correspond to model binding and are best suited for each HTTP verb is vital. In this article we'll explore all of this and more.
+
+<br/>
+
+# Featured On Microsoft's Friday Five
+
+ 1. {{< url-link "Jul 27, 2018 " "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/27/friday-five-july-27/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Jul 20, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/20/friday-five-july-20/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Jun 15, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/06/15/how-to-use-azure-serverless-to-become-gdpr-compliant-and-more-on-the-friday-five/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Jun 1, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/06/01/friday-five-june-1st/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "May 25, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/05/25/friday-five-may-25th/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Apr 27, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/04/27/friday-five-april-27th/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Dec 8, 2017" "https://blogs.msdn.microsoft.com/mvpawardprogram/2017/12/08/friday-five-december-8th/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Sep 22, 2017" "https://blogs.msdn.microsoft.com/mvpawardprogram/2017/09/22/friday-five-september-22/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Aug 8, 2017" "https://blogs.msdn.microsoft.com/mvpawardprogram/2017/08/18/friday-five-august-18th/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>

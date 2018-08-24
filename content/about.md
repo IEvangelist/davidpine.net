@@ -1,7 +1,7 @@
 +++
 title = "Hi, I'm David"
 description = "Thank you for taking time to visit."
-images = ["/img/main/david.pine.jpg"]
+images = ["/img/main/me.png"]
 date = "2016-05-20"
 +++
 

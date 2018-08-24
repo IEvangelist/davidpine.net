@@ -1,7 +1,7 @@
 +++
 title = "Pictures"
 description = "Pictures from various speaking engagements"
-images =  ["/img/2018/04/media.jpg"]
+images = ["/img/main/me.png"]
 date = "2018-04-18"
 +++
 

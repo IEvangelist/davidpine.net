@@ -6,10 +6,19 @@
     <description>Recent content on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidpine.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DMP in 3: RxJS Debounce</title>
+      <link>https://davidpine.net/blog/dmp-in-three-debounce/</link>
+      <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/dmp-in-three-debounce/</guid>
+      <description>I recently decided to give creating videos a test drive. The problem with creating video content is the fact that it&amp;rsquo;s really time consuming to do, but the time investment can be worth the effort if you&amp;rsquo;re able to truly deliver some sort of value. Another problem we&amp;rsquo;re faced with in the technical community is that videos can be very lengthy. Enter DMP in 3, a video serious of 3 minute videos.</description>
+    </item>
     
     <item>
       <title>Writing a Blazor App</title>
@@ -64,7 +73,7 @@
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/pictures/</guid>
-      <description>A few pictures (  To open gallery )                                                                                                                                                                                            $(document).</description>
+      <description>A few pictures (  To open gallery )                                                                                                                                                                                                                                                $(document).</description>
     </item>
     
     <item>

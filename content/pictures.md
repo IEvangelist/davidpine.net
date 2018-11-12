@@ -64,6 +64,34 @@ date = "2018-04-18"
         <img src='/img/2017/04/ccc-intro.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
+    <a href='/img/2017/04/cccode-0.JPG'>
+        <img src='/img/2017/04/cccode-0.JPG' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/cccode-1.JPG'>
+        <img src='/img/2017/04/cccode-1.JPG' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/cccode-2.JPG'>
+        <img src='/img/2017/04/cccode-2.JPG' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/cccode-3.JPG'>
+        <img src='/img/2017/04/cccode-3.JPG' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/cccode-4.jpg'>
+        <img src='/img/2017/04/cccode-4.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/cccode-5.jpg'>
+        <img src='/img/2017/04/cccode-5.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/cccode-6.jpg'>
+        <img src='/img/2017/04/cccode-6.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
     <a href='/img/2017/04/ccc-typescript.jpg'>
         <img src='/img/2017/04/ccc-typescript.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
@@ -102,6 +130,26 @@ date = "2018-04-18"
     </a>
     <a href='/img/2017/04/dev-up-1.jpg'>
         <img src='/img/2017/04/dev-up-1.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/dev-up-18-0.jpg'>
+        <img src='/img/2017/04/dev-up-18-0.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/dev-up-18-1.jpg'>
+        <img src='/img/2017/04/dev-up-18-1.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/dev-up-18-2.jpg'>
+        <img src='/img/2017/04/dev-up-18-2.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/dev-up-18-3.jpg'>
+        <img src='/img/2017/04/dev-up-18-3.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/dev-up-18-4.JPG'>
+        <img src='/img/2017/04/dev-up-18-4.JPG' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2017/04/dope.jpg'>
@@ -200,12 +248,48 @@ date = "2018-04-18"
         <img src='/img/2017/04/media.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
+    <a href='/img/2017/04/meet-ii-0.jpg'>
+        <img src='/img/2017/04/meet-ii-0.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/meet-ii-1.jpg'>
+        <img src='/img/2017/04/meet-ii-1.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/meet-ii-2.jpg'>
+        <img src='/img/2017/04/meet-ii-2.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/meet-ii-3.jpg'>
+        <img src='/img/2017/04/meet-ii-3.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/meet-ii-5.jpg'>
+        <img src='/img/2017/04/meet-ii-5.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/meet-ii-6.jpg'>
+        <img src='/img/2017/04/meet-ii-6.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
     <a href='/img/2017/04/meet-the-meetups.jpg'>
         <img src='/img/2017/04/meet-the-meetups.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2017/04/meet-the-meetups-1.jpg'>
         <img src='/img/2017/04/meet-the-meetups-1.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/meet-the-meetups-2.jpg'>
+        <img src='/img/2017/04/meet-the-meetups-2.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/meet-the-meetups-3.jpg'>
+        <img src='/img/2017/04/meet-the-meetups-3.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/meet-the-meetups-4.jpg'>
+        <img src='/img/2017/04/meet-the-meetups-4.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2017/04/metea-conf.jpg'>
@@ -316,6 +400,14 @@ date = "2018-04-18"
         <img src='/img/2017/04/preach.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
+    <a href='/img/2017/04/ql-tech-1.jpg'>
+        <img src='/img/2017/04/ql-tech-1.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/ql-tech-2.jpg'>
+        <img src='/img/2017/04/ql-tech-2.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
     <a href='/img/2017/04/rule-breaker.jpg'>
         <img src='/img/2017/04/rule-breaker.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
@@ -366,6 +458,18 @@ date = "2018-04-18"
     </a>
     <a href='/img/2017/04/tech-panel.png'>
         <img src='/img/2017/04/tech-panel.png' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/that-conf.jpg'>
+        <img src='/img/2017/04/that-conf.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/that-conf-1.jpg'>
+        <img src='/img/2017/04/that-conf-1.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/that-conf-2.jpg'>
+        <img src='/img/2017/04/that-conf-2.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2017/04/troy-hunt.jpg'>

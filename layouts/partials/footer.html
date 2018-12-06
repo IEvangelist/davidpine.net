@@ -15,7 +15,7 @@
 
         <!-- If the value "default" is passed into the param then we will first
              load the standard js files associated with the theme -->
-        {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}            
+        {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
             <script src="/js/skel.min.js"></script>
             <script src="/js/util.js"></script>
             <script src="/js/main.js"></script>

@@ -11,7 +11,11 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Podcasts <i class="fa fa-podcast" aria-hidden="true"></i> Appearances
 
-### <a href="https://6figuredev.com/podcast/episode-038-developer-community-with-david-pine/" target="_blank">6 Figure Developer - Episode 38<i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+### <a href="https://soundcloud.com/esc-podcast/why-you-should-learn-typescript" target="_blank">Eat Sleep Code - Why You Should Learn TypeScript <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+
+> <p> On this episode, David Pine shares his experience with TypeScript. David talks about why TypeScript is a valuable tool for improving your experience with applications that normally are written using JavaScript. We discuss how to compile TypeScript, what are its strengths and how to get started.
+
+### <a href="https://6figuredev.com/podcast/episode-038-developer-community-with-david-pine/" target="_blank">6 Figure Developer - Episode 38 <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
 
 > <p> David Pine talks with John Callaway, Clayton Hunt and Jon Ash about his love for the Developer Community, programming languages like TypeScript and C#, speaking and blogging.
 

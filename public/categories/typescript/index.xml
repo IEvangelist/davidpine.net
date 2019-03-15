@@ -6,10 +6,19 @@
     <description>Recent content in TypeScript on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidpine.net/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Angular - The Color Guessing Game</title>
+      <link>https://davidpine.net/blog/angular-color-game/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/angular-color-game/</guid>
+      <description>The Story Behind The Game I have three sons. Lyric who is six and a half, Londyn who is four and half, and Lennyx who is two and half. As you might imagine, they seldom agree on things. For example when it&amp;rsquo;s family move night, &amp;ldquo;which movie we&amp;rsquo;ll watch?&amp;rdquo;, or &amp;ldquo;who gets to go first?&amp;rdquo; when playing a game. These important life decisions are often decided by playing the color guessing game.</description>
+    </item>
     
     <item>
       <title>DMP in 3: RxJS Debounce</title>

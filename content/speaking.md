@@ -16,8 +16,8 @@ that I love or on professional skills development is just one of the ways I give
     $(document).ready(() => {
         setTimeout(() => {
             $('[data-gist]').gist();
-            setTimeout(() => $('.gist a').attr('target', '_blank'), 333);
-        },
-        777);
+            setTimeout(() => $('.gist a').attr('target', '_blank'), 350);
+            },
+        1);
     });
 </script>

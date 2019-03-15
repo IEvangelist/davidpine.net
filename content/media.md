@@ -27,11 +27,21 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### Up & Running with Hugo
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/l0Yc9kDz7lU" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### MkeJS -- TypeScript: Making JavaScript Tolerable
 
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/L7IY9vKO2Bw" frameborder="0" allowfullscreen></iframe>
 </div>
+
+<hr/>
 
 ### #MVPBuzzChat CollabTalk
 
@@ -39,11 +49,15 @@ Sometimes, in my travels I get attention and end up with various points of media
     <iframe src="https://www.youtube.com/embed/UEajhQHBa3Y" frameborder="0" allowfullscreen></iframe>
 </div>
 
+<hr/>
+
 ### Serbia, National News
 
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/5jCy7oHbDaE" frameborder="0" allowfullscreen></iframe>
 </div>
+
+<hr/>
 
 ### AskTHAT | Episode 35
 
@@ -51,7 +65,10 @@ Sometimes, in my travels I get attention and end up with various points of media
     <iframe src="https://www.youtube.com/embed/MjS_lVg0G8E" frameborder="0" allowfullscreen></iframe>
 </div>
 
+<hr/>
+
 ### Microsoft's Channel 9 - Magic Mirror
+
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/VW7b0WU_UDM" frameborder="0" allowfullscreen></iframe>
 </div>
@@ -59,6 +76,10 @@ Sometimes, in my travels I get attention and end up with various points of media
 <hr/>
 
 # Publications <i class="fa fa-file-text-o" aria-hidden="true"></i> Articles
+
+### <a href="https://www.twilio.com/blog/video-chat-app-asp-net-core-angular-twilio" target="_blank">Build a Video Chat App with ASP.NET Core, Angular, and Twilio <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+
+> <p> This post will show you how to create a video chat application using the Twilio JavaScript SDK in your Angular single page application (SPA) and the Twilio SDK for C# and .NET in your ASP.NET Core server code. You’ll build the interactions required to create and join video chat rooms, and to publish and subscribe to participant audio and video tracks.
 
 ### <a href="https://www.infoq.com/articles/future-of-net-core" target="_blank">The Future of .NET Core <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
 

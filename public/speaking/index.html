@@ -64,7 +64,7 @@
 
 <meta itemprop="datePublished" content="2017-04-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-04-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="90">
+<meta itemprop="wordCount" content="128">
 
   <meta itemprop="image" content="https://davidpine.net/img/main/me.png">
 
@@ -308,15 +308,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
                     <li>
                         <a href="https://davidpine.net/blog/csharp-all-the-things/"><p>C# All The Things</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/dmp-in-three-debounce/"><p>DMP in 3: RxJS Debounce</p></a>
                     </li>
                 
             </ul>
@@ -352,11 +352,23 @@ that I love or on professional skills development is just one of the ways I give
 
 <script type='text/javascript'>
     $(document).ready(() => {
-        setTimeout(() => {
+        let attemptsRemaining = 5;
+        const getGist = () => {
             $('[data-gist]').gist();
-            setTimeout(() => $('.gist a').attr('target', '_blank'), 350);
-            },
-        1);
+            setTimeout(() => { 
+                const link = $('[data-gist] > a');
+                if (link && link.length && link[0].innerHTML === "View gist") {
+                    if (attemptsRemaining > 0) {
+                        getGist();
+                        attemptsRemaining--;
+                    }
+                } else {
+                    $('.gist a').attr('target', '_blank');
+                }
+             }, 350);
+        }
+
+        setTimeout(() => getGist(), 1);
     });
 </script>
 
@@ -497,6 +509,19 @@ that I love or on professional skills development is just one of the ways I give
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2019-03-21'>
+                            March 21, 2019</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
                         
                         
@@ -516,19 +541,6 @@ that I love or on professional skills development is just one of the ways I give
                         
                         <time class="published" datetime='2018-12-16'>
                             December 16, 2018</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/dmp-in-three-debounce/">DMP in 3: RxJS Debounce</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2018-11-11'>
-                            November 11, 2018</time>
                     </header>
                 </article>
             </li>
@@ -564,7 +576,7 @@ that I love or on professional skills development is just one of the ways I give
                 <article>
                     <header>
                         <a href="/categories/csharp/">CSharp</a>
-                        <span style="float:right;">10</span>
+                        <span style="float:right;">11</span>
                     </header>
                 </article>
             </li>
@@ -573,7 +585,7 @@ that I love or on professional skills development is just one of the ways I give
                 <article>
                     <header>
                         <a href="/categories/asp.net-core/">ASP.NET Core</a>
-                        <span style="float:right;">9</span>
+                        <span style="float:right;">10</span>
                     </header>
                 </article>
             </li>
@@ -834,6 +846,15 @@ that I love or on professional skills development is just one of the ways I give
                 <article>
                     <header>
                         <a href="/categories/self-branding/">Self-Branding</a>
+                        <span style="float:right;">1</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/slack/">Slack</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>

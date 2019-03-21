@@ -6,10 +6,21 @@
     <description>Recent content on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidpine.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ASP.NET Core - Slack Slash Commands</title>
+      <link>https://davidpine.net/blog/asp-net-core-slack/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/asp-net-core-slack/</guid>
+      <description>Background Most of us are all &amp;ldquo;slackers&amp;rdquo;, meaning we truly do spend a significant amount of time using  Slack.
+  Slack is a collaboration hub for work, no matter what work you do. It’s a place where conversations happen, decisions are made, and information is always at your fingertips. www.slack.com
+ It&amp;rsquo;s wildly popular in the Developer Community! In fact, almost to a fault&amp;hellip;people are constantly sharing their &amp;ldquo;slack fatigue&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>Angular - The Color Guessing Game</title>

@@ -14,10 +14,22 @@ that I love or on professional skills development is just one of the ways I give
 
 <script type='text/javascript'>
     $(document).ready(() => {
-        setTimeout(() => {
+        let attemptsRemaining = 5;
+        const getGist = () => {
             $('[data-gist]').gist();
-            setTimeout(() => $('.gist a').attr('target', '_blank'), 350);
-            },
-        1);
+            setTimeout(() => { 
+                const link = $('[data-gist] > a');
+                if (link && link.length && link[0].innerHTML === "View gist") {
+                    if (attemptsRemaining > 0) {
+                        getGist();
+                        attemptsRemaining--;
+                    }
+                } else {
+                    $('.gist a').attr('target', '_blank');
+                }
+             }, 350);
+        }
+
+        setTimeout(() => getGist(), 1);
     });
 </script>

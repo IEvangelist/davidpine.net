@@ -3581,3 +3581,8 @@ img.headshot {
 	flex: 50%;
 	padding: 6px;
 }
+
+.shadow {
+	box-shadow:0 0 12px #ccc;
+	border-radius: 6px;
+}

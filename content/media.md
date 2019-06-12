@@ -27,10 +27,19 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### SignalR: Above & Beyond Chat
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/i3RXbOY6-0I" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### Exploring C# 8
 
 <div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/ZtDHRPBU-lc" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/wTvisUbU9FU" frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <hr/>

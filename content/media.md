@@ -118,8 +118,9 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Featured On Microsoft's Friday Five
 
- 1. {{< url-link "Jan 18, 2019 " "https://blogs.msdn.microsoft.com/mvpawardprogram/2019/01/18/friday-five-january-18/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
- 1. {{< url-link "Jul 27, 2018 " "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/27/friday-five-july-27/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Jun 21, 2019" "https://techcommunity.microsoft.com/t5/Microsoft-MVP-Award-Program-Blog/Friday-Five-ASP-NET-CORE-Slack-Slash-Commands-Cloud-App-Security/ba-p/713990" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Jan 18, 2019" "https://blogs.msdn.microsoft.com/mvpawardprogram/2019/01/18/friday-five-january-18/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
+ 1. {{< url-link "Jul 27, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/27/friday-five-july-27/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
  1. {{< url-link "Jul 20, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/20/friday-five-july-20/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
  1. {{< url-link "Jun 15, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/06/15/how-to-use-azure-serverless-to-become-gdpr-compliant-and-more-on-the-friday-five/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>
  1. {{< url-link "Jun 1, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/06/01/friday-five-june-1st/" >}} <i class="fa fa-external-link" aria-hidden="true"></i>

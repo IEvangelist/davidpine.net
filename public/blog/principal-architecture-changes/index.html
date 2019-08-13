@@ -465,14 +465,11 @@ if (!doNotTrack) {
 <h1 id="overview">Overview</h1>
 
 <p>Like the title claims, if you&rsquo;re using <code>ASP.NET Core</code> and expecting the <code>Thread.CurrentPrincipal</code> or <code>ClaimsPrincipal.Current</code> to be populated you&rsquo;d be wrong. This is not the
-<code>IPrincipal</code> you&rsquo;re looking for. In this post we&rsquo;ll discuss what happened and what you need to do now. Additionally we&rsquo;ll cover all the peripheral benefits as a result of this
-change.</p>
+<code>IPrincipal</code> you&rsquo;re looking for. In this post we&rsquo;ll discuss what happened and what you need to do now. Additionally we&rsquo;ll cover all the peripheral benefits as a result of this change.</p>
 
 <h2 id="history">History</h2>
 
-<p>If you have ever done any <strong>.NET Framework</strong> development, you&rsquo;ve probably seen the <code>Thread</code> class. You&rsquo;re probably familiar with the
-<a href="https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal" target="_blank"><code>Thread.CurrentPrincipal</code></a> member. This member of the <code>Thread</code> class
-is defined as follows:</p>
+<p>If you have ever done any <strong>.NET Framework</strong> development, you&rsquo;ve probably seen the <code>Thread</code> class. You&rsquo;re probably familiar with the <a href="https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal" target="_blank"><code>Thread.CurrentPrincipal</code></a> member. This member of the <code>Thread</code> class is defined as follows:</p>
 
 <pre><code class="language-csharp">public static IPrincipal CurrentPrincipal
 {
@@ -504,11 +501,9 @@ is defined as follows:</p>
 <p><p/> Gets or sets the thread&rsquo;s current principal (for role-based security).</p>
 </blockquote>
 
-<p>Does anyone see the issue with this? Can you say, &ldquo;publically static mutable state, oh my&rdquo;?! You should be alarmed. This property was never a good idea and today it
-simply doesn&rsquo;t belong. <strong>ASP.NET Core</strong> is not responsible for assigning this. You might not agree with that decision, but it is final.</p>
+<p>Does anyone see the issue with this? Can you say, &ldquo;publically static mutable state, oh my&rdquo;?! You should be alarmed. This property was never a good idea and today it simply doesn&rsquo;t belong. <strong>ASP.NET Core</strong> is not responsible for assigning this. You might not agree with that decision, but it is final.</p>
 
-<p>Before diving into this, pop over to <a href="https://github.com/aspnet/Security/issues/322" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i>
-Microsoft.AspNetCore.Security &ndash; Issue 332</a> for more of the back story.</p>
+<p>Before diving into this, pop over to <a href="https://github.com/aspnet/Security/issues/322" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> Microsoft.AspNetCore.Security &ndash; Issue 332</a> for more of the back story.</p>
 
 <h2 id="thread-currentprincipal-today-in-asp-net-core">Thread.CurrentPrincipal Today in ASP.NET Core</h2>
 
@@ -519,34 +514,25 @@ Microsoft.AspNetCore.Security &ndash; Issue 332</a> for more of the back story.<
 <li><a href="https://github.com/aspnet/Security" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> <code>Microsoft.AspNetCore.Security</code></a></li>
 </ul>
 
-<p>If you opt-in to using this middleware and you provide a login page (or expose an external provider) you&rsquo;d end up creating an instance of a <code>ClaimsPrincipal</code> that represents
-an authenticated user. Subsequent requests to the web server would be handed the cookie that holds the user&rsquo;s claims. However the <code>Thread.CurrentPrincipal</code> would <strong>not</strong>
-actually reflect the <code>ClaimsPrincipal</code> object that was created as the result of the login. In fact,
-it would simply be an instance of the <code>GenericPrincipal</code> implementation. Likewise, walking up to the <code>ClaimsPrincipal.Current</code> property and asking it for the current claims
-principal in context wouldn&rsquo;t give you what you might expect either. Additionally, the
-<code>ClaimsPrincipal.Current</code> internally relies on the <code>Thread.CurrentPrincipal</code> for its value.</p>
+<p>If you opt-in to using this middleware and you provide a login page (or expose an external provider) you&rsquo;d end up creating an instance of a <code>ClaimsPrincipal</code> that represents an authenticated user. Subsequent requests to the web server would be handed the cookie that holds the user&rsquo;s claims. However the <code>Thread.CurrentPrincipal</code> would <strong>not</strong> actually reflect the <code>ClaimsPrincipal</code> object that was created as the result of the login. In fact, it would simply be an instance of the <code>GenericPrincipal</code> implementation. Likewise, walking up to the <code>ClaimsPrincipal.Current</code> property and asking it for the current claims principal in context wouldn&rsquo;t give you what you might expect either. Additionally, the <code>ClaimsPrincipal.Current</code> internally relies on the <code>Thread.CurrentPrincipal</code> for its value.</p>
 
 <pre><code class="language-csharp">public static ClaimsPrincipal Current
 {
     get
     {
-         return ClaimsPrincipal.s_principalSelector() ??
-                ClaimsPrincipal.SelectClaimsPrincipal();
+        return ClaimsPrincipal.s_principalSelector() ??
+               ClaimsPrincipal.SelectClaimsPrincipal();
     }
 }
 
 private static ClaimsPrincipal SelectClaimsPrincipal()
 {
-    return Thread.CurrentPrincipal as ClaimsPrincipal ?? 
+    return Thread.CurrentPrincipal as ClaimsPrincipal ??
            new ClaimsPrincipal(Thread.CurrentPrincipal);
 }
 </code></pre>
 
-<p>You might be asking yourself, &ldquo;how do I access this value then?&rdquo;. If you&rsquo;re in the context of a controller then you already have access to it via the
-<code>.User</code> property. Otherwise, the answer is &ldquo;dependency injection&rdquo;. Wherever you&rsquo;re in need of the identity for accessing claims, use <code>.cstor</code> injection
-and give yourself the <code>IPrincipal</code> you need. If you&rsquo;re in the context of an action you might be tempted to use the <code>[FromServices]</code> attribute to inject
-the <code>IPrincipal</code> instance, but remember that this actually comes from the current user - which is
-already accessible via the controller&rsquo;s <code>.User</code> property.</p>
+<p>You might be asking yourself, &ldquo;how do I access this value then?&rdquo;. If you&rsquo;re in the context of a controller then you already have access to it via the <code>.User</code> property. Otherwise, the answer is &ldquo;dependency injection&rdquo;. Wherever you&rsquo;re in need of the identity for accessing claims, use constructor (<code>.ctor</code>) injection and give yourself the <code>IPrincipal</code> you need. If you&rsquo;re in the context of an action you might be tempted to use the <code>[FromServices]</code> attribute to inject the <code>IPrincipal</code> instance, but remember that this actually comes from the current user - which is already accessible via the controller&rsquo;s <code>.User</code> property.</p>
 
 <h2 id="dependency-injection">Dependency Injection</h2>
 
@@ -564,10 +550,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 </code></pre>
 
-<p>You might have noticed that we explicitly register the <code>IHttpContextAccessor</code> and corresponding implementation. This is necessary as that service is not registered for
-us. With that in place we can now specify that any class asking for an <code>IPrincipal</code> will be given the <code>IHttpContextAccessor.HttpContext.User</code> as the implementation.
-This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the <code>ClaimsPrincipal</code>
-implementation of the <code>IPrincipal</code>.</p>
+<p>You might have noticed that we explicitly register the <code>IHttpContextAccessor</code> and corresponding implementation. This is necessary as that service is not registered for us. With that in place we can now specify that any class asking for an <code>IPrincipal</code> will be given the <code>IHttpContextAccessor.HttpContext.User</code> as the implementation. This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the <code>ClaimsPrincipal</code> implementation of the <code>IPrincipal</code>.</p>
 
 <h3 id="example">Example</h3>
 
@@ -578,10 +561,8 @@ public class SampleService : ISampleService
 {
     private readonly ClaimsPrincipal _principal;
 
-    public SampleService(IPrincipal principal)
-    {
+    public SampleService(IPrincipal principal) =&gt;
         _principal = principal as ClaimsPrincipal;
-    }
 
     public Task ConsumeAsync()
     {
@@ -595,11 +576,7 @@ public class SampleService : ISampleService
 
 <h3 id="but-why">But Why?</h3>
 
-<p>There are a lot of people who feel as though DI is overrated and that it is much easier to ask the <code>Thread.CurrentPrincipal</code> for its value. While that is easy, it is also
-risky&hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between
-the <code>Thread</code> and <code>ClaimsPrincipal</code> classes. Scott Hanselman blogged about a
-<a href="http://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx" target="_blank">similar issue</a>
-nearly thirteen years ago!</p>
+<p>There are a lot of people who feel as though DI is overrated and that it is much easier to ask the <code>Thread.CurrentPrincipal</code> for its value. While that is easy, it is also risky&hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between the <code>Thread</code> and <code>ClaimsPrincipal</code> classes. Scott Hanselman blogged about a <a href="http://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx" target="_blank">similar issue</a> nearly thirteen years ago!</p>
 
 <p>One of the first benefits that comes to mind from this is the fact that with DI the code is unit-testable. It is extremely easy to mock out an <code>IPrincipal</code> to use for unit
 testing. Additionally, this alleviates all of the concerns about synchronization and reliability. The <code>IPrincipal</code> you&rsquo;re given is the principal you&rsquo;d expect and it is fully

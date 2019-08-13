@@ -320,6 +320,10 @@ date = "2018-04-18"
         <img src='/img/2017/04/mke-js.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
+    <a href='/img/2017/04/mkejs-2019.jpg'>
+        <img src='/img/2017/04/mkejs-2019.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
     <a href='/img/2017/04/ms-classic.jpg'>
         <img src='/img/2017/04/ms-classic.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>

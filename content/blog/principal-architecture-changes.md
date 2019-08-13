@@ -123,7 +123,7 @@ public class SampleService : ISampleService
 }
 ```
 
-From the example above we can see how simple it is to use dependency injection. Simply define the `IPrincipal` as a `.cstor` parameter, store it in a field and consume it as needed.
+From the example above we can see how simple it is to use dependency injection. Simply define the `IPrincipal` as a `.ctor` parameter, store it in a field and consume it as needed.
 
 ### But Why?
 

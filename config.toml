@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "IEvangelist"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
-paginate = 5
+paginate = 7
 disqusShortname = "davidpine"
 googleAnalytics = "UA-78203613-1"
 
@@ -43,7 +43,6 @@ googleAnalytics = "UA-78203613-1"
 # This is optional, but it's suggested to use
 [params.intro]
     header    = "David Pine"
-
     paragraph = "Technical Evangelist, with a goal of changing the world - one line of code at a time <i class='fa fa-code' aria-hidden='true'></i>"
 
 # This will also appear on the sidebar.

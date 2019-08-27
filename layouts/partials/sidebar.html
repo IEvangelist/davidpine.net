@@ -20,6 +20,27 @@
         </header>
         {{ end }}
 
+        <div class="row">
+            <div class="column">
+                <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/davidpine">
+                    <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee">
+                    <span style="margin-left:5px">Buy me a coffee</span>
+                </a>
+            </div>
+            <div class="column">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_donations" />
+                    <input type="hidden" name="business" value="SL3B2ZGL6APL4" />
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <button type="submit" class="pay-button" style="text-transform: none; font-weight: 400">
+                        <input type="image" src="/img/paypal.svg" height="30px" border="0" id="img" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                        <span style="margin-left:5px; ">Support my blog</span>
+                    </button>
+                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+            </div>
+        </div>
+
         <div class='row'>
             <div class='column'>
                 <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">

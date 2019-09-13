@@ -244,6 +244,10 @@ date = "2018-04-18"
         <img src='/img/2017/04/maria-1.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
+    <a href='/img/2017/04/me-at-ms.jpg'>
+        <img src='/img/2017/04/me-at-ms.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
     <a href='/img/2017/04/media.jpg'>
         <img src='/img/2017/04/media.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
@@ -354,6 +358,38 @@ date = "2018-04-18"
     </a>
     <a href='/img/2017/04/mvp-summit.jpg'>
         <img src='/img/2017/04/mvp-summit.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/mvp-summit-2019-0.jpg'>
+        <img src='/img/2017/04/mvp-summit-2019-0.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/mvp-summit-2019-1.jpg'>
+        <img src='/img/2017/04/mvp-summit-2019-1.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/mvp-summit-2019-2.jpg'>
+        <img src='/img/2017/04/mvp-summit-2019-2.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/mvp-summit-2019-3.jpg'>
+        <img src='/img/2017/04/mvp-summit-2019-3.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/mvp-summit-2019-4.jpg'>
+        <img src='/img/2017/04/mvp-summit-2019-4.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/mvp-summit-2019-5.jpg'>
+        <img src='/img/2017/04/mvp-summit-2019-5.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/mvp-summit-2019-6.jpg'>
+        <img src='/img/2017/04/mvp-summit-2019-6.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/mvp-summit-2019-7.jpg'>
+        <img src='/img/2017/04/mvp-summit-2019-7.jpg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2017/04/nis-1.jpg'>
@@ -478,6 +514,14 @@ date = "2018-04-18"
     </a>
     <a href='/img/2017/04/troy-hunt.jpg'>
         <img src='/img/2017/04/troy-hunt.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/vs-launch-event-2019.jpg'>
+        <img src='/img/2017/04/vs-launch-event-2019.jpg' />
+        <div class='caption'><i class='fa fa-search icon'></i></div>
+    </a>
+    <a href='/img/2017/04/wi.net.ug.2019.jpeg'>
+        <img src='/img/2017/04/wi.net.ug.2019.jpeg' />
         <div class='caption'><i class='fa fa-search icon'></i></div>
     </a>
     <a href='/img/2017/04/wi.net-ug.jpg'>

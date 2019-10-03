@@ -2981,6 +2981,11 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+		-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.19),0 3px 6px rgba(0,0,0,0.23);
+		-ms-box-shadow: 0 3px 6px rgba(0,0,0,0.19),0 3px 6px rgba(0,0,0,0.23);
+		-o-box-shadow: 0 3px 6px rgba(0,0,0,0.19),0 3px 6px rgba(0,0,0,0.23);
+		box-shadow: 0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
 		-moz-justify-content: space-between;
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;

@@ -6,10 +6,19 @@
     <description>Recent content in .NET Core on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidpine.net/categories/.net-core/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building a GitHub profanity filter with .NET Core and Azure Functions</title>
+      <link>https://davidpine.net/blog/github-profanity-filter/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/github-profanity-filter/</guid>
+      <description>Intro With more than 40 million active users, GitHub is by far the largest source code hosting platform in the world. It&amp;rsquo;s an open source developers dream, and ecosystem and developer community unlike any other. And with all these users and such profound openness, there&amp;rsquo;s bound to be frustration from time-to-time. In this post we will explore an Azure Function written with ASP.NET Core 3.0 and C# 8.0. It has been designed to handle a GitHub webhook for issues and pull requests.</description>
+    </item>
     
     <item>
       <title>C# All The Things</title>

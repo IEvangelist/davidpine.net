@@ -18,7 +18,7 @@ Most of us are all "slackers", meaning we truly do spend a significant amount of
 
 > <p> Slack is a collaboration hub for work, no matter what work you do. It’s a place where conversations happen, decisions are made, and information is always at your fingertips. <cite><a href='https://www.slack.com' target='_blank'>www.slack.com</a></cite>
 
-It's wildly popular in the Developer Community! In fact, almost to a fault...people are constantly sharing their "slack fatigue". I am personally a part of roughly twenty slack workspace's. One of the really cool features of slack is the ability to integrate with the tool itself through the Slack API. Imagine a plugin playground where you're free to extend the capabilities of the slack ecosystem. Look to the <a href='https://api.slack.com/' target='_blank'><i class="fa fa-slack" aria-hidden="true"></i> Slack API</a>. 
+It's wildly popular in the Developer Community! In fact, almost to a fault...people are constantly sharing their "slack fatigue". I am personally a part of roughly twenty slack workspace's. One of the really cool features of slack is the ability to integrate with the tool itself through the Slack API. Imagine a plugin playground where you're free to extend the capabilities of the slack ecosystem. Look to the <a href='https://api.slack.com/' target='_blank'><i class="fa fa-slack" aria-hidden="true"></i> Slack API</a>.
 
 ## Slash Commands
 

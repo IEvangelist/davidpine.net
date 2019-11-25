@@ -50,7 +50,7 @@ fear, therefore -- I have overcome imposter syndrome. I wanted to share some of 
 
 ### Positivity
 
-If you want to see a blackhole, bear witness to how negitivity spreads through an office. A single person with a bad additude can "infect" others and really be a drain! Be the one
+If you want to see a blackhole, bear witness to how negativity spreads through an office. A single person with a bad attitude can "infect" others and really be a drain! Be the one
 who combats that, be the person who seeks out the positive aspects of every situation. I'm the guy who says "it could always be worse", because it literally could. I act as the voice
 of reason -- and pure myself into living as a positive influence on the team.
 
@@ -82,7 +82,6 @@ I sit on the technical committee for <a href="http://www.mkedotnet.com/">MKE DOT
 During his keynote (which was amazing) I shouted out several times to assist him with live coding / demostration errors. He referred to me as his "second compiler"!
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">When <a href="https://twitter.com/shanselman">@shanselman</a> is giving his keynote and calls you his second compiler - you take that as a compliment <a href="https://twitter.com/hashtag/mkedotnet?src=hash">#mkedotnet</a> <a href="https://twitter.com/dotnet">@dotnet</a> <a href="https://twitter.com/aspnet">@aspnet</a></p>&mdash; David Pine (@davidpine7) <a href="https://twitter.com/davidpine7/status/792480943416156161">October 29, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet" data-lang="en">
@@ -93,7 +92,7 @@ During his keynote (which was amazing) I shouted out several times to assist him
     <a href="https://twitter.com/davidpine7/status/792544455635132417">October 30, 2016</a>
 </blockquote>
 
-### Stackoverflow
+### Stack Overflow
 
 I set out at the beginning of the 2016 year with a goal to try to answer one SO question a day. Honestly, it is a lot more demanding than you might imagine -- but it's extremely 
 gratifying! I have literally learned more attempting to answer questions than I have had asking or reading others questions. I answered 
@@ -140,15 +139,14 @@ Yes, you read that correctly. That is me helping out the legand <a href="http://
 
 ## Summary
 
-These are miniscule things that really add up. Don't take it from me, you owe it to yourself to see what you're really made off. I believe in you already, if you made it through this 
-post you have already accomplished more than most of your peers today. There is so much more that I want to give back to the community that I know this is only the beginnging of 
+These are miniscule things that really add up. Don't take it from me, you owe it to yourself to see what you're really made off. I believe in you already, if you made it through this post you have already accomplished more than most of your peers today. There is so much more that I want to give back to the community that I know this is only the beginning of 
 something profound. I strive to do my best and I now know that it's enough!
 
  - Positivity, be the seeker of all things good and the voice of reason
  - Take action, give encouragement, compliments and praise
  - Be a mentor, there is nothing like teaching and you'll learn too
- - Fear not, never be afraid to ask "why", it might just solve the problem 
+ - Fear not, never be afraid to ask "why", it might just solve the problem
  - Community, get involved and give back
  - Inject yourself where you want to be
 
-These tips will help you overcome imposter syndrome -- it worked for me. Together we can kill "technical doubt"!!
+These tips will help you overcome imposter syndrome -- it worked for me. Together we can kill "technical doubt"!

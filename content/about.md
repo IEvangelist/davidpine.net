@@ -53,11 +53,11 @@ I then had an idea of what I wanted to do. Years later, I decided that I wanted 
 <a href="https://twitter.com/davidpine7?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="true" data-show-count="false">Follow @davidpine7</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## <i class="fa fa-stack-overflow" aria-hidden="true"></i> Stack Overflow
-<a href="http://stackoverflow.com/users/2410379/david-pine"><img title="profile for David Pine at Stack Overflow, Q&amp;A for professional and enthusiast programmers" src="http://stackoverflow.com/users/flair/2410379.png" alt="profile for David Pine at Stack Overflow, Q&amp;A for professional and enthusiast programmers" width="208" height="58" />
+<a href="https://stackoverflow.com/users/2410379/david-pine"><img title="profile for David Pine at Stack Overflow, Q&amp;A for professional and enthusiast programmers" src="https://stackoverflow.com/users/flair/2410379.png" alt="profile for David Pine at Stack Overflow, Q&amp;A for professional and enthusiast programmers" width="208" height="58" />
 </a>
 
 ## <i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn
-<a title="View David Pine's profile on LinkedIn" href="http://www.linkedin.com/in/dpine" target="_blank"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" alt="View David Pine's profile on LinkedIn">
+<a title="View David Pine's profile on LinkedIn" href="https://www.linkedin.com/in/dpine" target="_blank"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" alt="View David Pine's profile on LinkedIn">
 </a>
 
 ## What people are saying

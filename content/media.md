@@ -27,6 +27,14 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### SignalR - ASP.NET Community Standup
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/OUCN1i-ziLo" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### SignalR: Above & Beyond Chat
 
 <div class="iframe_container">

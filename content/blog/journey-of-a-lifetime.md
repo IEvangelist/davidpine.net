@@ -55,7 +55,7 @@ Sunday was traveling day and we were driving to Niš. The core group of speakers
 ### April 16, 2018
 #### The Humble Giant (Jovan Milic)
 
-When we arrived in Niš, we were greeted by several hosts. One of them was <a href="https://en.wikipedia.org/wiki/Jovan_Milic" target="_blank">Jovan Milic <i class="fa fa-wikipedia-w" aria-hidden="true"></i></a> and I'm referring to him from now on as the "humble giant". He is 21 years old and has already been nominated for the <a href="https://www.nobelprize.org/nobel_prizes/peace/" target="_blank">Nobel Peace Prize</a> four times! He was first nominated at the age of 15, making him the second youngest person in history to have been nominated. If you're ever looking for inspiration read his story, it will hopefully put things a little more into perspective. For me, I can relate very much to his story and appreciate all the things that he's done to earn his place in the world now. The next time you want to complain about the things you take for granted, remember his story and <a href="http://www.findraoul.tk/" target="_blank">support his cause</a>.
+When we arrived in Niš, we were greeted by several hosts. One of them was <a href="https://en.wikipedia.org/wiki/Jovan_Milic" target="_blank">Jovan Milic <i class="fa fa-wikipedia-w" aria-hidden="true"></i></a> and I'm referring to him from now on as the "humble giant". If you're ever looking for inspiration read his story, it will hopefully put things a little more into perspective. For me, I can relate very much to his story and appreciate all the things that he's done to earn his place in the world now. The next time you want to complain about the things you take for granted, remember his story and <a href="http://www.findraoul.tk/" target="_blank">support his cause</a>.
 
 ![Jovan Milic](/img/2018/04/jovan.jpg)
 
@@ -181,4 +181,4 @@ I was blessed to have made so many new friends on this journey. These people are
  - __Milica Nastasic__ <a href="https://www.linkedin.com/in/milicanastasic" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
    - Co-Founder, IT Konekt
  - __Jovan Milic__ <a href="https://www.linkedin.com/in/jovan-milic-68713973" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>, <a href="https://twitter.com/JMiliic" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-   - 4x Nobel Peace Prize Nominee, Founder of Find Raoul
+   - Founder of Find Raoul

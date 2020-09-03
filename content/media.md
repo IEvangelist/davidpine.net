@@ -27,6 +27,14 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### MADdotNET: Building The .NET Docs Show website
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/-THCDHKyqJM" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### Technology & Friends: .NET 5 Wave
 
 <div class="iframe_container">

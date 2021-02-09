@@ -27,6 +27,18 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### SignalR Crazy8s: The Refactoring | C#9 Features
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/ko5RoLU4WV0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+### Cosmos DB: Repository Pattern .NET Wrapper SDK
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/KenrBgNg8jk" frameborder="0" allowfullscreen></iframe>
+</div>
+
 ### Localize .NET apps with Azure AI ☁
 
 <div class="iframe_container">

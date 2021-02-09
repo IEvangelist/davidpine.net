@@ -33,11 +33,15 @@ Sometimes, in my travels I get attention and end up with various points of media
     <iframe src="https://www.youtube.com/embed/ko5RoLU4WV0" frameborder="0" allowfullscreen></iframe>
 </div>
 
+<hr/>
+
 ### Cosmos DB: Repository Pattern .NET Wrapper SDK
 
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/KenrBgNg8jk" frameborder="0" allowfullscreen></iframe>
 </div>
+
+<hr/>
 
 ### Localize .NET apps with Azure AI ☁
 

@@ -27,6 +27,14 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### Azure Cosmos DB Conf: Deep-dive into the repository-pattern .NET SDK
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/izdnmBrTweA" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### SignalR Crazy8s: The Refactoring | C#9 Features
 
 <div class="iframe_container">

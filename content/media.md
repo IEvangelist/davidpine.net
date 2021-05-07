@@ -25,6 +25,8 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 <hr/>
 
+# Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
+
 ### C# Language Highlights: Tuple Pattern Matching
 
 <div class="iframe_container">
@@ -40,8 +42,6 @@ Sometimes, in my travels I get attention and end up with various points of media
 </div>
 
 <hr/>
-
-# Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
 ### Azure Cosmos DB Conf: Deep-dive into the repository-pattern .NET SDK
 

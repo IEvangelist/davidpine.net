@@ -25,6 +25,22 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 <hr/>
 
+### C# Language Highlights: Tuple Pattern Matching
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/ZMkY51zGTkQ" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
+### C# Language Highlights: Property Pattern Matching
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/b-1V5LfzLyg" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
 ### Azure Cosmos DB Conf: Deep-dive into the repository-pattern .NET SDK

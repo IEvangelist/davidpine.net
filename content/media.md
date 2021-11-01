@@ -27,6 +27,38 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### C# Language Highlights: Deconstructing Non-tuple Types
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/JTQVbc-LI8s" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
+### C# Using SignalR in your Blazor applications
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/caE5VZD5XNk" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
+### C# Language Highlights: Positional Pattern Matching
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/tnepPn3Py8s" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
+### C# Language Highlights: Exhaustive Case Guards
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/v_xKLwTv3AI" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### C# Language Highlights: Tuple Pattern Matching
 
 <div class="iframe_container">

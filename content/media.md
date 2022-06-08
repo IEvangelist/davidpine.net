@@ -27,6 +27,14 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### Coffee & Open Source Conversation
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/6h_MNM0Tk2s" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### C# Language Highlights: Deconstructing Non-tuple Types
 
 <div class="iframe_container">

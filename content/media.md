@@ -35,6 +35,14 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 <hr/>
 
+### ASP.NET Community Standup - Blazorators: Blazor C# Source Generators
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/U8XriF2zxS0?list=PLdo4fOcmZ0oX-DBuRG4u58ZTAJgBAeQ-t" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### C# Language Highlights: Deconstructing Non-tuple Types
 
 <div class="iframe_container">

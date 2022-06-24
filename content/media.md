@@ -43,6 +43,14 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 <hr/>
 
+### dotNET Dev Show: GitHub Actions for .NET Devs w/ David Pine
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/WoIIMRYYlKc" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### C# Language Highlights: Deconstructing Non-tuple Types
 
 <div class="iframe_container">

@@ -13,14 +13,7 @@ I want share a bit of the writing process and experience, so that other's might 
 
 One thing I wasn't willing to negotiate on was when I was going to start writing the book. They wanted me to start sooner than I was able to, but I stood my ground, and for good reason. I really wanted to have an application written that could serve as the basis for the book. I wanted my book to show something a bit more impactful, and a complete feature-rich application. I told I'd write it in a month. Truth be told, like all production-ready applications, I've been working on it ever since.
 
-<a href="https://github.com/IEvangelist/learning-blazor">
+<a href='https://github.com/IEvangelist/learning-blazor' target='_blank'>
     <i class='fa fa-github'></i> GitHub Repository: Learning Blazor
 </a>
-
-<div id='gallery'>
-    <a href='/img/learning-blazor.png'>
-        <img src='/img/learning-blazor.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-</div>
 

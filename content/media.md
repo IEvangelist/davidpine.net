@@ -27,6 +27,14 @@ Sometimes, in my travels I get attention and end up with various points of media
 
 # Video <i class="fa fa-video-camera" aria-hidden="true"></i> Appearances
 
+### A Conversation With David Pine
+
+<div class="iframe_container">
+    <iframe src="https://www.youtube.com/embed/C2DIJCnXb5U" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ### Coffee & Open Source Conversation
 
 <div class="iframe_container">

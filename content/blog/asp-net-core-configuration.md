@@ -14,14 +14,14 @@ type = "post"
 
 Being a software developer, it's in our nature to configure various aspects of the applications that we write. With __ASP.NET Core__ configuring our applications is really straight forward. Luckily, there is a lot of really well written documentation surrounding this topic.
 
- - <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration" target="_blank"><i class="fa fa-file-text" aria-hidden="true"></i> &nbsp; ASP.NET Core - Configuration</a>
- - <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options" target="_blank"><i class="fa fa-file-text" aria-hidden="true"></i> &nbsp; ASP.NET Core - Options</a>
+ - {{< url-link "{{< i fa-file-text >}} &nbsp; ASP.NET Core - Configuration" "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration" >}}
+ - {{< url-link "{{< i fa-file-text >}} &nbsp; ASP.NET Core - Options" "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options" >}}
 
 However, there is still room for improvement. I've prepared a few tips that can enhance developer productivity by taking advantage of various C# features.
 
 ## C# Class < -- > JSON
 
-__ASP.NET Core__ configuration via the `IOptions<T>` and `IOptionsSnapshot<T>` have been around for a long time. Their usage is a first class citizen within __ASP.NET Core__ applications, and work to tie `appsettings.json` values to corresponding configuration <a href="https://en.wikipedia.org/wiki/Plain_old_CLR_object" target="_blank">POCO's</a>. As a refresher on configuration, there is a one-to-one relationship between a JSON object in the `appsettings.json` and the C# class that represents it.
+__ASP.NET Core__ configuration via the `IOptions<T>` and `IOptionsSnapshot<T>` have been around for a long time. Their usage is a first class citizen within __ASP.NET Core__ applications, and work to tie `appsettings.json` values to corresponding configuration {{< url-link "POCO's" "https://en.wikipedia.org/wiki/Plain_old_CLR_object" >}}. As a refresher on configuration, there is a one-to-one relationship between a JSON object in the `appsettings.json` and the C# class that represents it.
 
 ### `appsettings.json`
 
@@ -32,7 +32,7 @@ __ASP.NET Core__ configuration via the `IOptions<T>` and `IOptionsSnapshot<T>` h
         "isMulticast": true,
         "sources": [
             {
-                "url": "http://www.contoso.com/notificationHub",
+                "url": "https://www.contoso.com/notificationHub",
                 "key": "f7ea5e2b22bf907344f3a780caa0a166"
             }
         ]
@@ -66,8 +66,10 @@ public class NotificationSource
 
 If you looked at both the `appsettings.json` and the two C# classes, I'm hoping that you noticed something. I hope that you noticed that the JSON settings didn't fully provide a value for all the mapped properties in the `NotificationSettings` object. We have however, set these values as part of the object's `.ctor`. 
 
-> <p/> <cite><strong>ProTip</strong></cite>
+> <cite>**ProTip**</cite>
 > Use C# 6 Property Initializers to set default values. If the corresponding property exists in the JSON object mapping, it will be overwritten as to be expected; however, if omitted your default value is used.
+
+<br/><br/>
 
 Using property initializers, this is simplified as follows:
 
@@ -97,8 +99,10 @@ public void ConfigureServices(
 
 This should look very familiar.
 
-> <p/> <cite><strong>ProTip</strong></cite>
+> <cite>**ProTip**</cite>
 > Use C# 6 `nameof` operator to configure your C# class mapping. This alleviates the usage of magic strings and enforces a consistent naming convention.
+
+<br/><br/>
 
 The change is tiny, however; this is another great usage of the `nameof` operator. This assumes that the the section in the JSON file matches the name of the class object representing it. Additionally, it serves as a reason to keep the names matching.
 

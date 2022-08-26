@@ -133,8 +133,8 @@ Instead of the `.success` invocation with a corresponding `deferred.resolve` cal
 
 | Operator | Description |
 |---------:|:------------|
-| [`map`](http://reactivex.io/documentation/operators/map.html) | Transform the items emitted by an `Observable` by applying a function to each item |
-| [`subscribe`](http://reactivex.io/documentation/operators/subscribe.html) | The `Subscribe` operator is the glue that connects an observer to an `Observable` |
+| [`map`](https://reactivex.io/documentation/operators/map.html) | Transform the items emitted by an `Observable` by applying a function to each item |
+| [`subscribe`](https://reactivex.io/documentation/operators/subscribe.html) | The `Subscribe` operator is the glue that connects an observer to an `Observable` |
 
 Mapping is easy and we can leverage some of the `TypeScript` language features to cast the **JSON** blobs returned from our services as strongly typed objects. The `map` operator is actually
 synonymous with the `select` operator, so if you're more familiar with that terminology you can use it interchangeably.
@@ -161,7 +161,7 @@ we could apply a `.filter` that only takes action when a certain number of chara
 the values are actually different than they once were.   
 
 You could take advantage of `.buffer`, `.throttle`, `.interval`, `.window`, `.range`, etc... The list goes on and on, 
-and <a href="https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable" target="_blank">this is the source for most of what you can take advantage</a>.
+and {{< url-link "this is the source for most of what you can take advantage" "https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable" >}}.
 
 ### Let's Summarize
 
@@ -171,5 +171,5 @@ This mindset will make your life easier - trust me!
 
 **Further Reading**
 
- - <a href="https://angular.io/docs/ts/latest/api/http/index/Http-class.html" target="_blank">Angular2 for TypeScript, Http</a>
- - <a href="https://github.com/Reactive-Extensions/RxJS#why-RxJS" target="_blank">Why RxJS?</a>
+ - {{< url-link "Angular2 for TypeScript, Http" "https://angular.io/docs/ts/latest/api/http/index/Http-class.html" >}}
+ - {{< url-link "Why RxJS?" "https://github.com/Reactive-Extensions/RxJS#why-RxJS" >}}

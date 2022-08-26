@@ -12,15 +12,15 @@ title = "Perusing C# 7.1"
 type = "post"
 +++
 
-Earlier this year in March -- Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on <a href="/blog/exploring-csharp-seven" target="_blank">"Exploring C# 7" here</a>. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.
+Earlier this year in March -- Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on [Exploring C# 7]({{< relref "/blog/exploring-csharp-seven.md" >}}). In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.
 
 # Async Main <a target="_blank" href="https://github.com/dotnet/csharplang/issues/97"><i class="fa fa-external-link"></i></a>
 
 Since the release of C# 5, developers have either embraced the `async` and `await` keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you're not alone. Many others have been just as confused, but that's not to say that the language didn't make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with its implementation!
 
-Many developer advocates set forth on a journey of biblical proportions -- progressing through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates **Stephen Toub** and **Stephen Cleary** rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One <a href="https://msdn.microsoft.com/en-us/magazine/jj991977.aspx" target="_blank">best practice</a> is as follows:
+Many developer advocates set forth on a journey of biblical proportions -- progressing through mountains of nay-sayers, focusing on craftsmanship and technical evangelism. Among these advocates **Stephen Toub** and **Stephen Cleary** rose toward the top. Blogging and helping us along the way. With their help emerged rules and guidelines, a comprehensive set of best practices for using these language features. One {{< url-link "best practice" "https://msdn.microsoft.com/en-us/magazine/jj991977.aspx" >}} is as follows:
 
-> <p/> Instead of `Task.Result` or `.Task.Wait()`, use `await`
+> Instead of `Task.Result` or `.Task.Wait()`, use `await`
 
 Prior to C# 7.1 developers who wrote console applications were forced to deviate from this guideline. We were forced to use `.Result` or `.Wait()`. Consider the following:
 
@@ -36,7 +36,7 @@ public static void Main()
     // Consume the result...
 }
 ```
-With C# 7.1, we can leverage <a href="https://github.com/dotnet/csharplang/blob/master/proposals/async-main.md" target="_blank">"Async Main"</a>.
+With C# 7.1, we can leverage {{< url-link "Async Main" "https://github.com/dotnet/csharplang/blob/master/proposals/async-main.md" >}}.
 
 ```csharp
 public static async Task Main()
@@ -111,7 +111,7 @@ Not only can the type be inferred from the declaration but also the literal expr
 var number = isLucky ? 7 : default; // when 'isLucky' is false number is 0
 ```
 
-The great news is that this feature is for the entire type-system, not just `int's` <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>. You can now use the `default` keyword in all sorts of places. You can use it to check against a value, or to pass it as an argument.
+The great news is that this feature is for the entire type-system, not just `int's` {{< i fa-thumbs-o-up >}}. You can now use the `default` keyword in all sorts of places. You can use it to check against a value, or to pass it as an argument.
 
 ```csharp
 public int Sum(params int[] numbers)
@@ -132,7 +132,7 @@ if (sum == default)
 
 # Tuple Projection Initializers <a target="_blank" href="https://github.com/dotnet/csharplang/issues/415"><i class="fa fa-external-link"></i></a>
 
-I detailed the introduction of `tuples` in my <a href="/blog/exploring-csharp-seven" target="_blank">"Exploring C# 7"</a> post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 -- this is no longer a limitation.
+I detailed the introduction of `tuples` in my [Exploring C# 7]({{< relref "/blog/exploring-csharp-seven.md" >}}) post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 -- this is no longer a limitation.
 
 With `tuple` projection initializers our C# `tuple` literals are simplified and effectively DRY, as the redundancies of duplicating the field names are inferred.
 
@@ -187,7 +187,7 @@ public void Interact<TAnimal>(TAnimal animal)
 
 This was not actually possible, in fact it wouldn't even compile. Ignoring the scoping issue, as the `dog` variable is declared twice within the same scope -- we'd end up with the following compilation error:
 
-> <p/> An expression of type TAnimal cannot be handled by a pattern of Dog.
+> An expression of type TAnimal cannot be handled by a pattern of Dog.
 
 You could use the `as` operator:
 
@@ -201,7 +201,7 @@ if (dog != null)
 
 But that isn't really pattern-matching. The limitation that exists is due to explicit type conversions and open types; however, the design specification is changing as follows in the bold area:
 
-> <p/> Certain combinations of static type of the left-hand-side and the given type are considered incompatible and result in compile-time error. A value of static type `E` is said to be pattern compatible with the type `T` if there exists an identity conversion, an implicit reference conversion, a boxing conversion, an explicit reference conversion, or an unboxing conversion from `E` to `T`, <strong>or if either `E` or `T` is an open type.</strong> It is a compile-time error if an expression of type `E` is not pattern compatible with the type in a type pattern that it is matched with.
+> Certain combinations of static type of the left-hand-side and the given type are considered incompatible and result in compile-time error. A value of static type `E` is said to be pattern compatible with the type `T` if there exists an identity conversion, an implicit reference conversion, a boxing conversion, an explicit reference conversion, or an unboxing conversion from `E` to `T`, <strong>or if either `E` or `T` is an open type.</strong> It is a compile-time error if an expression of type `E` is not pattern compatible with the type in a type pattern that it is matched with.
 
 ## References
 

@@ -2,7 +2,7 @@ baseurl = "https://davidpine.net"
 languageCode = "en-us"
 title = "IEvangelist"
 preserveTaxonomyNames = true
-paginate = 7
+paginate = 10
 disqusShortname = "davidpine"
 googleAnalytics = "UA-78203613-1"
 

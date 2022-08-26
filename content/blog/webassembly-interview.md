@@ -14,8 +14,8 @@ type = "post"
 
 I set out a while ago to try to interview various community leaders for their take on WebAssembly. If you're unfamiliar with WebAssembly, here's a definition for you.
 
-> <p/> WebAssembly is a binary instruction format for a stack-based virtual machine
-> <cite><a href="https://webassembly.org/" target="_blank">webassembly.org</a></cite>
+> WebAssembly is a binary instruction format for a stack-based virtual machine
+> <cite>{{< url-link "webassembly.org" "https://webassembly.org/" >}}</cite>
 
 <br/>
 That's a lot to try to parse, right?! I was able to get an interview with Steve Sanderson, which I'm going to share in this post. Steve is a pretty amazing individual and I'm grateful to have been able to interview him.
@@ -24,9 +24,9 @@ That's a lot to try to parse, right?! I was able to get an interview with Steve 
     <img class="headshot" src="/img/2018/08/steve.jpg" />
 </a>
 
-Additionally, one of the other's that I reached out to was Scott Hanselman. Scott offered up something really special, rather than replying to the questions - he gave me an _unpublished interview_ (that has since been published) that he did with Steve Sanderson on his <a href="https://hanselminutes.com/642/blazor-brings-net-to-web-assembly-with-steve-sanderson" target="_blank">hanselminutes podcast</a>!
+Additionally, one of the other's that I reached out to was Scott Hanselman. Scott offered up something really special, rather than replying to the questions - he gave me an _unpublished interview_ (that has since been published) that he did with Steve Sanderson on his {{< url-link "hanselminutes podcast" "https://hanselminutes.com/642/blazor-brings-net-to-web-assembly-with-steve-sanderson" >}}!
 
-<hr />
+---
 
 ## Interview
 
@@ -40,7 +40,7 @@ So, here is the interview itself. Rather short and sweet - a meager six question
 While this question is rather broad, it was my hope to gauge the true overarching value of this web technology. I really like Steve's answer.
 
 > I hope that the future of web development includes giving developers a wider choice of languages and platforms.<br/>There's nothing wrong with JavaScript, but our industry would be healthier if multiple paradigms and specializations were better catered for.
-> <cite><a href="https://twitter.com/stevensanderson" target="_blank">Steve Sanderson</a></cite>
+> <cite>{{< url-link "Steve Sanderson" "https://twitter.com/stevensanderson" >}}</cite>
 
 <br/>
 This response is really powerful, he's absolutely right. We as developer's should have the choice of technology that will make us happy, but more importantly - we should have more options so that we are empowered to pick the right tool for the job.
@@ -55,7 +55,7 @@ Part of the motivation behind this question was to dig a little more. Blazor has
 I think Steve's response was rather generic and I still believe that this will become a full-blown product!
 
 > Because it _is_ an experiment, in the sense that it's not a committed product. We are putting significant effort into working out whether it's a product we should build.
-> <cite><a href="https://twitter.com/stevensanderson" target="_blank">Steve Sanderson</a></cite>
+> <cite>{{< url-link "Steve Sanderson" "https://twitter.com/stevensanderson" >}}</cite>
 
 <br/>
 I'll leave it to you, does this look like an "experiment"?
@@ -72,7 +72,7 @@ I'll leave it to you, does this look like an "experiment"?
 With this question I wanted to try to understand where web developers should be focusing their efforts. There is so many new things that come and go, kudos to Microsoft for taking that problem seriously and evaluating Blazor. Here is what Steve had to say about this.
 
 > I would be very surprised if JavaScript isn't involved in web development for as long as the web exists as an application platform. It may become analogous to Bash scripts: ubiquitous, can do everything in theory, and excellent for gluing together other technologies.
-> <cite><a href="https://twitter.com/stevensanderson" target="_blank">Steve Sanderson</a></cite>
+> <cite>{{< url-link "Steve Sanderson" "https://twitter.com/stevensanderson" >}}</cite>
 
 <br/>
 ### Question 4
@@ -82,7 +82,7 @@ With this question I wanted to try to understand where web developers should be 
 There are lots of web development technologies out there today, what makes blazor special - right?
 
 > Blazor is an attempt to move the SPA world forwards into an era where developers have more freedom to choose other languages and platforms.
-> <cite><a href="https://twitter.com/stevensanderson" target="_blank">Steve Sanderson</a></cite>
+> <cite>{{< url-link "Steve Sanderson" "https://twitter.com/stevensanderson" >}}</cite>
 
 <br/>
 There you have it, blazor is a SPA framework giving us the magic of C# in the browser.
@@ -97,7 +97,7 @@ There you have it, blazor is a SPA framework giving us the magic of C# in the br
 I love these kinds of questions, it gives us a look into potential shortcomings of things we've yet to invest much time in.
 
 > I'd like true multithreading, because lots of languages and platforms assume that exists. Fortunately it is on the spec roadmap.
-> <cite><a href="https://twitter.com/stevensanderson" target="_blank">Steve Sanderson</a></cite>
+> <cite>{{< url-link "Steve Sanderson" "https://twitter.com/stevensanderson" >}}</cite>
 
 <br/>
 ### Question 6
@@ -108,7 +108,7 @@ I love these kinds of questions, it gives us a look into potential shortcomings 
 There are indications of its performance being "near native" and some say that, but what does it really mean? Steve explains that pretty well.
 
 > I don't find it surprising or too good to be true. We have known for a long time that a high-level bytecode plus modern JIT allows performance close to plain machine code. WebAssembly is a JITing platform so it should perform similarly.
-> <cite><a href="https://twitter.com/stevensanderson" target="_blank">Steve Sanderson</a></cite>
+> <cite>{{< url-link "Steve Sanderson" "https://twitter.com/stevensanderson" >}}</cite>
 
 <br/>
 ## Conclusion

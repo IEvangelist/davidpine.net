@@ -7,20 +7,28 @@ date = "2017-02-05"
 
 # Life
 
-> <p/> Like an aggressive contagion seeking the next victim, negativity can plague an entire team's morale. Negativity is contagious!
+> Like an aggressive contagion seeking the next victim, negativity can plague an entire team's morale. Negativity is contagious!
+
+<br/><br/>
 
 # Optimism is a choice
 
-> <p/> Expect nothing, but be grateful for everything.
+> Expect nothing, but be grateful for everything.
+
+<br/><br/>
 
 # Programming
 
-> <p/> In programming there isn't a "right way" but there is always a "wrong way". There is however a "better way", until you run out of time.
+> In programming there isn't a "right way" but there is always a "wrong way". There is however a "better way", until you run out of time.
+
+<br/><br/>
 
 # Negotiations
 
-> <p/> Developers are actually negotiators! We negotiate more than we develop. We negotiate with the keyboard all day long, we negotiate with ourselves determining if we've taken the right
+> Developers are actually negotiators! We negotiate more than we develop. We negotiate with the keyboard all day long, we negotiate with ourselves determining if we've taken the right
 course of action. We negotiate with our peers, arguing our point of views. We negotiate with the stakeholders of the application and the end-users too.
+
+<br/><br/>
 
 # Motto
 

@@ -19,7 +19,9 @@ As I'm sure you're all aware by now, [Monday June 27<sup>th</sup>](https://blogs
 special day for those of you who were anticipating the release of  `.NET Core` and `ASP.NET Core`. While the "core" frameworks and runtimes are RTM, the
 tooling is actually still in preview. In fact, we're currently on _Tools Preview 2_. I wanted to focus this post entirely on one specific enhancement
 to **Visual Studio** solutions, enter the `global.json`.
-<hr/>
+
+---
+
 Let me paint a picture for you...you're developing an application. This application doesn't have all the source code in the world, so you take on some dependencies.
 Since we're not living in caves, we have packages -- this is common nomenclature for and the norm for any modern software development project.
 One of the aforementioned dependencies is a package that you just so happen to also work on and develop for. Imagine that you find a bug or want to make
@@ -39,12 +41,12 @@ For me, this typically involved the following steps:
 10. Continue with life
 
 What if I told you, that headache is all but gone and you will never have to go through those agonizing steps again! Say it ain't so 
-(queue <a href="https://youtu.be/ENXvZ9YRjbo" target="_blank">Weezer</a>).
+(queue {{< url-link "Weezer" "https://youtu.be/ENXvZ9YRjbo" >}}).
 
 ## Global.json
 
 The `global.json` file sits out at the solution directory-level and literally has one of the simplest `JSON` schemas you will ever see. The default templates
-generate the following (for the [full schema](http://json.schemastore.org/global)):
+generate the following (for the [full schema](https://json.schemastore.org/global)):
 
 ```javascript
 {
@@ -58,7 +60,7 @@ generate the following (for the [full schema](http://json.schemastore.org/global
 I always immediately delete the `sdk` property. If omitted the tooling simply assumes the latest **SDK** installed. Now, for all the fun! The `projects` 
 property is an array of strings. It's defined as the following:
 
-> <p/> A list of project folders relative to this file.
+> A list of project folders relative to this file.
 
 These folders are search locations for resolving dependencies, where projects take precedence over packages.
 
@@ -101,4 +103,4 @@ as it executes. Simply amazing!
 For more details, these are some additional links and points of reference.
 
 * [**Global.json Reference**](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/global-json)
-* [**Explanation of projects section in Global.json**](http://stackoverflow.com/a/34794054/2410379)
+* [**Explanation of projects section in Global.json**](https://stackoverflow.com/a/34794054/2410379)

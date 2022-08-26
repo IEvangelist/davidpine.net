@@ -15,19 +15,19 @@ type = "post"
 
 # First things First
 
-JavaScript is the world's third most common programming language today. JavaScript was created by <a href="https://twitter.com/BrendanEich" target="_blank">Brendan Eich</a> in about ten days. It might seem odd that the
+JavaScript is the world's third most common programming language today. JavaScript was created by {{< url-link "Brendan Eich" "https://twitter.com/BrendanEich" >}} in about ten days. It might seem odd that the
 previous two sentences not only exist, but go together...yet it is true! JavaScript runs seemingly everywhere and applications written in this
 language are only getting larger.
 
-> <p/> JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.
-> <cite><a href="https://twitter.com/ahejlsberg" target="_blank">Anders Hejlsberg</a></cite>
+> JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.
+> <cite>{{< url-link "Anders Hejlsberg" "https://twitter.com/ahejlsberg" >}}</cite>
 
 ## "The Good Parts"
 
-<a href="http://www.crockford.com/" target="_blank">Douglas Crockford</a> authored a book "JavaScript: The Good Parts", sadly it was a rather short book. If you're a JavaScript developer, knowing "the good parts"
+{{< url-link "Douglas Crockford" "https://www.crockford.com/" >}} authored a book "JavaScript: The Good Parts", sadly it was a rather short book. If you're a JavaScript developer, knowing "the good parts"
 is great - but knowing the limitations and shortcomings of a language is even more powerful. Sometimes it feels like JavaScript is a hammer and not every 
 problem we're trying to solve is a nail. NodeJs is a great example of this in my opinion -- because I'm a `.NET` developer, but I digress... If you want a good laugh watch 
-Gary Bernhardt's <a href="https://www.destroyallsoftware.com/talks/wat" target="_blank">WAT video</a>, go ahead -- I'll wait! In all seriousness, JavaScript
+Gary Bernhardt's {{< url-link "WAT video" "https://www.destroyallsoftware.com/talks/wat" >}}, go ahead -- I'll wait! In all seriousness, JavaScript
 is a great programming language for countless reasons, but it is easy to poke fun at.
 
 ### Mental Model
@@ -37,13 +37,13 @@ from the debate that I think will stick with me for a while.
 
 #### Learn it
 
-> <p/> You should learn the JavaScript programming language
+> You should learn the JavaScript programming language
 
 I already know JavaScript (but I really don't know JavaScript) -- I would never consider myself an expert or a guru! However, I write TypeScript nearly
 every single day that I develop. Some of the aforementioned names are among the very few who might be considered as such. I recall that when this part 
 of the conversation was encountered, we came up with an analogy.
 
-> <p/> Not all JavaScript developers are Tour de France champions (or contenders)
+> Not all JavaScript developers are Tour de France champions (or contenders)
 
 This was the reoccurring analogy and I agreed with it wholeheartedly. That is why I think that TypeScript is like "training wheels" for JavaScript developers.
 That is not at all a bad thing! Just look at what you can do with "training wheels".
@@ -61,7 +61,7 @@ confidence and security. Once your TypeScript is compiled to JavaScript, the tra
 # TypeScript
 
 I could never compete with the TypeScript site. They have a beautifully composed tutorial, handbook and rich set of documentation. If that is what 
-you're looking for - by all means {{< url-link "go check it out" "http://www.typescriptlang.org/docs/tutorial.html" >}}. If you'd like to hear more
+you're looking for - by all means {{< url-link "go check it out" "https://www.typescriptlang.org/docs/tutorial.html" >}}. If you'd like to hear more
 on my thoughts - keep reading.
 
 All valid JavaScript is also valid TypeScript, as TypeScript is a superset of JavaScript. TypeScript allows you as a developer to program in the 
@@ -73,11 +73,11 @@ and all the type notations are removed. The static type system is only applicabl
 I initially had some confusion about the various file extensions. It was obvious what `.ts` and `.js` files were, but what were these `.map` and `.d.ts` files?
 Ironically, `.map` files have been around since CoffeeScript and are nothing new. They map JavaScript files to their corresponding abstractions, in the case of
 TypeScript - they map `.ts` to `.js` files. The `.d.ts` files are known as type definitions. They define the public surface area or API if you will, of a given
-library. More detail <a href="http://stackoverflow.com/a/37063570/2410379" target="_blank">here <i class="fa fa-stack-overflow" aria-hidden="true"></i></a>.
+library. More detail {{< url-link "here {{< i fa-stack-overflow >}}" "https://stackoverflow.com/a/37063570/2410379" >}}.
 
 ## Enough Sales Pitch - Show me some code
 
-The {{< url-link "TypeScript playground" "http://www.typescriptlang.org/play/index.html" >}} is an amazing place, since it has a side-by-side of the input TypeScript and the resulting JavaScript.
+The {{< url-link "TypeScript playground" "https://www.typescriptlang.org/play/index.html" >}} is an amazing place, since it has a side-by-side of the input TypeScript and the resulting JavaScript.
 This is an excellent place to learn how TypeScript works and what it is capable of. I always find it interesting seeing how certain
 things are implemented. Take for example an `enum`. In most languages it's easy to take this for granted, the same is true with 
 TypeScript - but seeing how the resulting JavaScript is really something special.
@@ -151,4 +151,4 @@ TypeScript, there are other options out there. Pick your poison!!
 ### Resources
 
  - {{< url-link "IEvangelist - TypeScript" "https://github.com/IEvangelist/IEvangelist.TypeScript" >}}
- - {{< url-link "TypeScript Documentation" "http://www.typescriptlang.org/docs/tutorial.html" >}}
+ - {{< url-link "TypeScript Documentation" "https://www.typescriptlang.org/docs/tutorial.html" >}}

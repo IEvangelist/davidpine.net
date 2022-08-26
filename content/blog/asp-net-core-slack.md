@@ -14,11 +14,11 @@ type = "post"
 
 # Background
 
-Most of us are all "slackers", meaning we truly do spend a significant amount of time using <i class="fa fa-slack" aria-hidden="true"></i> Slack.
+Most of us are all "slackers", meaning we truly do spend a significant amount of time using {{< i fa-slack >}} Slack.
 
 > <p> Slack is a collaboration hub for work, no matter what work you do. It’s a place where conversations happen, decisions are made, and information is always at your fingertips. <cite><a href='https://www.slack.com' target='_blank'>www.slack.com</a></cite>
 
-It's wildly popular in the Developer Community! In fact, almost to a fault...people are constantly sharing their "slack fatigue". I am personally a part of roughly twenty slack workspace's. One of the really cool features of slack is the ability to integrate with the tool itself through the Slack API. Imagine a plugin playground where you're free to extend the capabilities of the slack ecosystem. Look to the <a href='https://api.slack.com/' target='_blank'><i class="fa fa-slack" aria-hidden="true"></i> Slack API</a>.
+It's wildly popular in the Developer Community! In fact, almost to a fault...people are constantly sharing their "slack fatigue". I am personally a part of roughly twenty slack workspace's. One of the really cool features of slack is the ability to integrate with the tool itself through the Slack API. Imagine a plugin playground where you're free to extend the capabilities of the slack ecosystem. Look to the <a href='https://api.slack.com/' target='_blank'>{{< i fa-slack >}} Slack API</a>.
 
 ## Slash Commands
 
@@ -36,7 +36,7 @@ We will need to add a few configurations, services, models and routes to satisfy
 
 ### Prerequisites
 
-The <a href='http://www.icndb.com/api/' target='_blank'>internet chuck norris database</a> is one of my goto APIs for demonstrations. It doesn't require an API key, nor anything else. However, several of the other bits of functionality require registering for the API.
+The <a href='https://www.icndb.com/api/' target='_blank'>internet chuck norris database</a> is one of my goto APIs for demonstrations. It doesn't require an API key, nor anything else. However, several of the other bits of functionality require registering for the API.
 
  - <a href='https://www.bitly.com' target='_blank'>__Bit.ly API__</a>: sign up and get your API key
  - <a href='https://openweathermap.org/api' target='_blank'>__Open Weather API__</a>: sign up and <a href='https://home.openweathermap.org/api_keys' target='_blank'>generate an API key</a>
@@ -49,10 +49,10 @@ setx BitlyOptions__ApiKey [Bit.ly API Key]
 setx OpenWeatherMapOptions__Key [Open Weather Key]
 ```
 
-> <p/> <cite><strong>ProTip</strong></cite>
+> <cite>**ProTip**</cite>
 You will need to restart __Visual Studio__ in order for the newly added environment variables to be available.
 
-<br/>
+<br/><br/>
 
 ### Slack API - Slash Command Request
 
@@ -154,7 +154,7 @@ namespace IEvangelist.Slack.SlashCommands.Models
 
 This is the shape of the object that slack's API returns for all slash commands.
 
-> <p/> <cite><strong>Disclaimer</strong></cite>
+> <cite>**Disclaimer**</cite>
 I attempted to verify the slack request, however; I couldn't get it working. See <a href='https://api.slack.com/docs/verifying-requests-from-slack' target=''>verifying requests from slack</a> for more details and <a href='https://github.com/IEvangelist/IEvangelist.Slack.SlashCommands/blob/master/IEvangelist.Slack.SlashCommands/Extensions/SlackCommandRequestExtensions.cs' target='_blank'>my attempt</a>
 
 <br/>
@@ -176,7 +176,7 @@ services.AddTransient<IJokeService, JokeService>();
 
 // Weather Service
 services.AddHttpClient<IWeatherService, WeatherService>(
-    client => client.BaseAddress = new Uri("http://api.openweathermap.org/data/2.5/weather"));
+    client => client.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/weather"));
 
 // URL Service
 services.AddHttpClient<IUrlService, UrlService>(
@@ -262,7 +262,7 @@ Some people have noticed that I named the app "I've Got Jokes", but it has a wea
 
 #### Shorten URL Command
 
-This is the `/shortenUrl [long url]` command. Given a URL it will shorten the URL using bit.ly API. Perhaps you're curious what long URL I shortened here, well this is <a href='http://bit.ly/2FmmgyC' target='_blank'>the bit.ly 🤣</a>.
+This is the `/shortenUrl [long url]` command. Given a URL it will shorten the URL using bit.ly API. Perhaps you're curious what long URL I shortened here, well this is <a href='https://bit.ly/2FmmgyC' target='_blank'>the bit.ly 🤣</a>.
 
 <img src='/img/2019/03/url.gif' alt='Shorten URL Command' class='shadow' />
 

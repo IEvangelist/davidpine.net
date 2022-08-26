@@ -25,7 +25,7 @@ We'll see how to orchestrate various technologies together, and take a look at *
 
 ## GitHub Webhooks
 
-I'm going to assume that you're unfamiliar with "webhooks". Think of a webhook as simply being an event. Like all other events, you can subscribe to them. Much like an event, when you subscribe you provide a handler or a callback. When the event occurs, it calls your handler. But with a webhook, you get a bit more control over how the event is communicated. GitHub offers <a href="https://developer.github.com/webhooks/#events" target="_blank">webhooks for many types of events</a>.
+I'm going to assume that you're unfamiliar with "webhooks". Think of a webhook as simply being an event. Like all other events, you can subscribe to them. Much like an event, when you subscribe you provide a handler or a callback. When the event occurs, it calls your handler. But with a webhook, you get a bit more control over how the event is communicated. GitHub offers {{< url-link "webhooks for many types of events" "https://developer.github.com/webhooks/#events" >}}.
 
 Open a GitHub repository that you're the owner of. From within the GitHub user interface navigate to **<i class="fa fa-cog"></i> Settings**, then select **Webhooks** from the left panel. Click the **Add webhook** button and explore the various options available to you for configuring a webhook.
 
@@ -485,7 +485,7 @@ If the text is profane, we apply the filter. Titles do not support markdown, as 
 
 ### GraphQL
 
-There are several default labels, none of which suited my needs. I needed to signify that an issue or pull request contained profane content -- the label I created was "profane content 🤬". The way that the app knows about this label is via its identifier, and we can retrieve that using the **GitHub GraphQL** <a href="https://developer.github.com/v4/explorer" target="_blank">explorer</a> and the following query.
+There are several default labels, none of which suited my needs. I needed to signify that an issue or pull request contained profane content -- the label I created was "profane content 🤬". The way that the app knows about this label is via its identifier, and we can retrieve that using the **GitHub GraphQL** {{< url-link "explorer" "https://developer.github.com/v4/explorer" >}} and the following query.
 
 ```js
 query {
@@ -502,17 +502,11 @@ query {
 }
 ```
 
-I really love how **GraphQL** allows the consumer to retrieve only the shape of the items its querying, this is really powerful. Executing this query returns my labels, their `name` and `id`. The label identifier is configured in our **Azure Function** as a environment variable. If you're looking for the **GitHub GraphQL SDK**, look no further -- this project relies on the <a href="https://www.nuget.org/packages/Octokit.GraphQL" target="_blank">Oktokit.GraphQL</a> package. It is a fluent API, which enables developers to author complex graph-based queries and mutations with ease. For details, see the <a href='https://github.com/IEvangelist/GitHub.ProfanityFilter' target='_blank'><i class='fa fa-github'></i> source code</a>.
+I really love how **GraphQL** allows the consumer to retrieve only the shape of the items its querying, this is really powerful. Executing this query returns my labels, their `name` and `id`. The label identifier is configured in our **Azure Function** as a environment variable. If you're looking for the **GitHub GraphQL SDK**, look no further -- this project relies on the {{< url-link "Oktokit.GraphQL" "https://www.nuget.org/packages/Octokit.GraphQL" >}} package. It is a fluent API, which enables developers to author complex graph-based queries and mutations with ease. For details, see the <a href='https://github.com/IEvangelist/GitHub.ProfanityFilter' target='_blank'><i class='fa fa-github'></i> source code</a>.
 
 ## Conclusion
 
-This article started with detailing the underlying sentiment of an open source ecosystem, and the potential for frustration and angst. And while it's not all rainbows and ponies, it's awesome when the community comes together. I received a pull request that added the "lint licker" word replacer implementation -- yes, inspired by this commercial! 
-
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/sf4VC-xNsP8" frameborder="0" allowfullscreen></iframe>
-</div>
-
-For your viewing pleasure, here is what the filter looks like in action.
+This article started with detailing the underlying sentiment of an open source ecosystem, and the potential for frustration and angst. And while it's not all rainbows and ponies, it's awesome when the community comes together. I received a pull request that added the "lint licker" word replacer implementation -- yes, inspired by this commercial! For your viewing pleasure, here is what the filter looks like in action.
 
 <video style="width: 100%; border: 1px solid black" poster="/img/2019/11/poster.png" controls>
   <source src="/img/2019/11/in-action.mp4" type="video/mp4">

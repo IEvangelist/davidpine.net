@@ -21,12 +21,12 @@ I've managed to put my first episode together, and I have so much more respect f
 
 In this first episode we cover a scenario where we're working a large set of data. We need to implement a filter feature for the end user. The issue is that when filtering a large data set, the user will experience performance implications as each char they input performing the filtering logic. To solve this we use the __RxJS__ `debounce` operator.
 
-### <i class="fa fa-video-camera" aria-hidden="true"></i> Video
+### {{< i fa-video-camera >}} Video
 
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/z-kYoR1cqSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <br/>
 
- - <a href="https://github.com/IEvangelist/dmp-in-three-debounce" target="_blank">GitHub <i class="fa fa-github" aria-hidden="true"></i> Source Code</a> 
- - <a href="https://dmp-in-three-debounce-bzdfzrsgmd.now.sh/" target="_blank">Example  <i class="fa fa-globe" aria-hidden="true"></i> Website</a>
+ - {{< url-link "GitHub {{< i fa-github >}} Source Code" "https://github.com/IEvangelist/dmp-in-three-debounce" >}} 
+ - {{< url-link "Example  {{< i fa-globe >}} Website" "https://dmp-in-three-debounce-bzdfzrsgmd.now.sh/" >}}

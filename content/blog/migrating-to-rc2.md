@@ -17,7 +17,7 @@ type = "post"
 
 On Monday, May 16<sup>th</sup> 2016 there was an amazing announcement from the **.NET Blog** team!
 
-> <p/>[Announcing .NET Core RC2 and .NET Core SDK Preview 1](https://blogs.msdn.microsoft.com/dotnet/2016/05/16/announcing-net-core-rc2/)
+>[Announcing .NET Core RC2 and .NET Core SDK Preview 1](https://blogs.msdn.microsoft.com/dotnet/2016/05/16/announcing-net-core-rc2/)
 
 This post will serve as a guide that walks you through the steps as I experienced them from migrating existing `ASP.NET Core RC1` applications to `ASP.NET Core RC2`.
 It is worth mentioning that I'm am targeting the `.NET 4.6` framework. So, I *do not* cover the `.netcoreapp` or `netstandard` TFMs (target framework monikers).
@@ -150,11 +150,11 @@ Simply follow [these instuctions](https://www.microsoft.com/net/core#windows). O
 
 You should the following checklist fully satisfied at this point.
 
-<i class="fa fa-check-square-o" aria-hidden="true"></i> **DNX**, **DNU** and **DNVM** completely removed / uninstalled<br>
-<i class="fa fa-check-square-o" aria-hidden="true"></i> **Visual Studio 2015 Update 2** installed<br>
-<i class="fa fa-check-square-o" aria-hidden="true"></i> **.NET Core CLI** installed
+{{< i fa-check-square-o >}} **DNX**, **DNU** and **DNVM** completely removed / uninstalled<br>
+{{< i fa-check-square-o >}} **Visual Studio 2015 Update 2** installed<br>
+{{< i fa-check-square-o >}} **.NET Core CLI** installed
 ***
-## Edit by Hand <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+## Edit by Hand {{< i fa-pencil-square-o >}}
 
 There were changes to **APIs** which required changes to implementation aspects of the source code. Additionally, `namespace` 
 changes such as (but not limited to) `Microsoft.AspNet.*` to `Microsoft.AspNetCore.*`. But the bulk of the work was really in the hand-editing
@@ -215,7 +215,7 @@ there was only one target, but with **RC2** they are differeniated.
 
 There has been a large reworking of the `project.json` file - detailed [here](https://github.com/aspnet/Announcements/issues/175). I will not be covering all 
 of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official 
-[`project.json schema`](http://json.schemastore.org/project-1.0.0-rc2).
+[`project.json schema`](https://json.schemastore.org/project-1.0.0-rc2).
 
 We will look at various sections of the `project.json` file changes. Let's start with replacing `compilationOptionsbuildOptions` with `buildOptions`, and notice that 
 we are adding much more options than before.
@@ -441,17 +441,17 @@ public class Program
 ## Breaking changes
 
 For a complete listing of all the announcements, please visit the official 
-[**ASP.NET <i class="fa fa-github-alt" aria-hidden="true"></i> Repo**](https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2) announcements issue.
+[**ASP.NET {{< i fa-github-alt >}} Repo**](https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2) announcements issue.
 
 ## Further reading
 
 The previous steps were really to get your environment in an **RC2** ready state, but there is so much more you can learn that has changed.
 I encourage bookmarking and reading the following articles as time permits.
 
-* [**Migrating from DNX to .NET Core CLI**](http://dotnet.github.io/docs/core-concepts/dnx-migration.html)
+* [**Migrating from DNX to .NET Core CLI**](https://dotnet.github.io/docs/core-concepts/dnx-migration.html)
 * [**Migrating from ASP.NET 5 RC1 to ASP.NET Core**](https://docs.asp.net/en/latest/migration/rc1-to-rc2.html)
 * [**The .NET Platform Standard**](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md)
-* [**Writing Libraries with Cross Platform Tools**](http://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html)
+* [**Writing Libraries with Cross Platform Tools**](https://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html)
 
 ## Conclusion
 

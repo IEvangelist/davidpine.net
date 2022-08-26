@@ -17,7 +17,7 @@ type = "post"
 
 Since we have all been actively celebrating the 20<sup>th</sup> anniversary of **Visual Studio**, it felt appropriate to post about **C# 7**!
 In this post we will explore the features that make **C# 7** so promising. I've put together a demonstration **C# 7** project, that is available 
-<a href="https://github.com/IEvangelist/IEvangelist.CSharp" target="_blank">here</a>.
+{{< url-link "here" "https://github.com/IEvangelist/IEvangelist.CSharp" >}}.
 
 This post contains examples and details on five of the nine new **C# 7** features.
 
@@ -42,7 +42,7 @@ specified pattern. We're able to leverage the "shape" from which we matched on a
 
 > <p> In computer science, dynamic dispatch is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time. 
 > It is commonly employed in, and considered a prime characteristic of, object-oriented programming (OOP) languages and systems.
-> <cite><a href="https://en.wikipedia.org/wiki/Dynamic_dispatch" target="_blank">Wiki - Dynamic Dispatch</a></cite>
+> <cite>{{< url-link "Wiki - Dynamic Dispatch" "https://en.wikipedia.org/wiki/Dynamic_dispatch" >}}</cite>
 
 Dynamic dispatch is nothing new to **C#**, and has been around forever. **C# 7** exposes this functionality via constant and type patterns.
 
@@ -352,11 +352,11 @@ comparison of the two, note the benefits of local functions as they compare to l
 
 |   | Lambda(s) | Local Function(s) | Details |
 |--:|:--|:--|:--|
-|Generics| <i class="fa fa-times red" aria-hidden="true"></i> | <i class="fa fa-check green" aria-hidden="true"></i> |Local functions allow for the use of generics|
-|Iterators| <i class="fa fa-times red" aria-hidden="true"></i> | <i class="fa fa-check green" aria-hidden="true"></i> |The `yield` keyword is valid within local functions|
-|Recursion| <i class="fa fa-times red" aria-hidden="true"></i> | <i class="fa fa-check green" aria-hidden="true"></i> |Local functions support recursion|
-|Allocatey| <i class="fa fa-check green" aria-hidden="true"></i> | <i class="fa fa-times red" aria-hidden="true"></i> |Delegates require an `object` allocation|
-|Potential Variable Lifting| <i class="fa fa-check green" aria-hidden="true"></i> | <i class="fa fa-times red" aria-hidden="true"></i> |Implicitly captured closure is non-existent|
+|Generics| {{< i fa-times red >}} | {{< i fa-check green >}} |Local functions allow for the use of generics|
+|Iterators| {{< i fa-times red >}} | {{< i fa-check green >}} |The `yield` keyword is valid within local functions|
+|Recursion| {{< i fa-times red >}} | {{< i fa-check green >}} |Local functions support recursion|
+|Allocatey| {{< i fa-check green >}} | {{< i fa-times red >}} |Delegates require an `object` allocation|
+|Potential Variable Lifting| {{< i fa-check green >}} | {{< i fa-times red >}} |Implicitly captured closure is non-existent|
 
 It is vital to understand that local functions are <strong>not</strong> a replacement for `Action<T[,T1...]>` or `Func<T[,T1...]>`. These delegate declarations are still
 needed as parameters to enable lambda expression arguments. If you see the **#notasugly** hashtag, this was coined by Mads Torgersen.
@@ -462,4 +462,4 @@ made sense to share it here - Enjoy!!
 
 **Further Reading**
 
- - <a href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" target="_blank">What's new in C# 7</a>
+ - {{< url-link "What's new in C# 7" "https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" >}}

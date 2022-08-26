@@ -18,7 +18,7 @@ As a developer, I can say that developers are lazy - at least I know and acknowl
 
 ## Security Soapbox
 
-We should take application security very seriously! With __ASP.NET Core__ there's a lot of <a href="https://docs.microsoft.com/en-us/aspnet/core/security/" target="_blank">existing documentation</a> for securing your application. This covers identity, authentication, authorization, data protection, HTTPS, safe storage, Azure key vault, anti-request forgery, open redirect attack, cross-site scripting, etc... the list goes on and on. All these things are important and as a developer you're ultimately accountable for writing secure code. 
+We should take application security very seriously! With __ASP.NET Core__ there's a lot of {{< url-link "existing documentation" "https://docs.microsoft.com/en-us/aspnet/core/security/" >}} for securing your application. This covers identity, authentication, authorization, data protection, HTTPS, safe storage, Azure key vault, anti-request forgery, open redirect attack, cross-site scripting, etc... the list goes on and on. All these things are important and as a developer you're ultimately accountable for writing secure code. 
 
 ## The Dilemma
 
@@ -96,7 +96,7 @@ public class ActionTests
     }
 ```
 
-Step two, is really the entry point of our core functionality for the test itself. We'll need a `Fact` test method. Yes, <a href="/blog/xunit-powered-by-roslyn" target="_blank">I'm a HUGE fan of __xUnit__</a> - they have done some amazing things! In this test method we will start by getting all the types that are a subclass of `Controller`.
+Step two, is really the entry point of our core functionality for the test itself. We'll need a `Fact` test method. Yes, {{< url-link "I'm a HUGE fan of __xUnit__" "/blog/xunit-powered-by-roslyn" >}} - they have done some amazing things! In this test method we will start by getting all the types that are a subclass of `Controller`.
 
 ```csharp
 [Fact]

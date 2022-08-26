@@ -14,24 +14,15 @@ type = "post"
 
 # Inspiration
 
-I recently returned from Charleston, South Carolina -- where I spoke at <a href="https://2018.syntaxcon.com/speaker/david-pine/" target="_blank">__<span style="color:#c2996c">Syntax</span><span style="color:#b5d8f2">Con</span>__</a>. The event was very professionally organized and gave me inspiration for <a href="https://www.creamcitycode.com/" target="_blank">__<span style="color:#ecd290">Cream</span> <span style="color:#f15322">City</span> <span style="color:#688b8b">Code</span>__</a>. In the main hall they had a _HALO_ by <a href="https://www.simplebooth.com/" target="_blank">Simple Booth</a>. It serves as a photo booth with a conference specific backdrop -- which is perfect for sharing the conference experience. I looked into purchasing one but was encouraged to simply write my own... so I did and this blog will detail that process.
+I recently returned from Charleston, South Carolina -- where I spoke at __<span style="color:#c2996c">Syntax</span><span style="color:#b5d8f2">Con</span>__. The event was very professionally organized and gave me inspiration for __<span style="color:#ecd290">Cream</span> <span style="color:#f15322">City</span> <span style="color:#688b8b">Code</span>__. In the main hall they had a _HALO_ by {{< url-link "Simple Booth" "https://www.simplebooth.com/" >}}. It serves as a photo booth with a conference specific backdrop -- which is perfect for sharing the conference experience. I looked into purchasing one but was encouraged to simply write my own... so I did and this blog will detail that process.
 
-Ultimately, the resulting social media share ends up looking something like these ( <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> To open gallery ). It generates an animated image (`*.gif`) from the series of photos taken.
+Ultimately, the resulting social media share ends up looking something like these ( {{< i fa-hand-pointer-o >}} To open gallery ). It generates an animated image (`*.gif`) from the series of photos taken.
 
-<div id='syntax' class="gallery">
-    <a href='/img/2018/06/smplbth-one.bstill.png'>
-        <img src='/img/2018/06/smplbth-one.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-    <a href='/img/2018/06/smplbth-two.bstill.png'>
-        <img src='/img/2018/06/smplbth-two.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-    <a href='/img/2018/06/smplbth-three.bstill.png'>
-        <img src='/img/2018/06/smplbth-three.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-</div>
+![](/img/2018/06/smplbth-one.bstill.gif)
+
+![](/img/2018/06/smplbth-two.bstill.gif)
+
+![](/img/2018/06/smplbth-three.bstill.gif)
 
 <br/>
 
@@ -48,16 +39,16 @@ That's pretty simple, right?! While the application is idle, we'll provide the l
 
 ## Technologies Used
 
-This application is built using the <a href="https://docs.microsoft.com/en-us/aspnet/core/spa/angular?view=aspnetcore-2.1&tabs=visual-studio" target="_blank">__<span style="color:#dd0031;">Angular</span>__ __ASP.NET Core__ SPA template</a>. Additionally, I'm leveraging the following:
+This application is built using the __<span style="color:#dd0031;">Angular</span>__ __ASP.NET Core__ SPA template. Additionally, I'm leveraging the following:
 
 | Technology | Purpose  |
 |--:|:--|
-| <a href="https://sixlabors.com/projects/imagesharp/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp; ImageSharp</a> | Convert several `.png` images into a single `.gif` |
-| <a href="https://azure.microsoft.com/en-us/services/storage/blobs/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp; Azure - Blob Storage</a> | Persist generated `.gif` image |
-| <a href="https://www.twilio.com/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp; Twilio</a> | Send SMS text message with URL of animated `.gif` image |
+| {{< url-link "{{< i fa-external-link-square >}} &nbsp; ImageSharp" "https://sixlabors.com/projects/imagesharp/" >}} | Convert several `.png` images into a single `.gif` |
+| {{< url-link "{{< i fa-external-link-square >}} &nbsp; Azure - Blob Storage" "https://azure.microsoft.com/en-us/services/storage/blobs/" >}} | Persist generated `.gif` image |
+| {{< url-link "{{< i fa-external-link-square >}} &nbsp; Twilio" "https://www.twilio.com/" >}} | Send SMS text message with URL of animated `.gif` image |
 
 The application is up on __GitHub__ here: <a href="https://github.com/IEvangelist/IEvangelist.PhotoBooth" target="_blank">
-    <i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; IEvangelist.PhotoBooth.
+    {{< i fa-github-square >}} &nbsp; IEvangelist.PhotoBooth.
 </a>
 
 ## Under The Hood
@@ -86,11 +77,11 @@ services.Configure<TwilioOptions>(
     Configuration.GetSection(nameof(TwilioOptions)));
 ```
 
-We have some unique services being added to our dependency injection (DI) service collection. Later, our controllers can ask for these interfaces and expect the corresponding implementations. Likewise, we map over some sections from our `appsettings.json` configuration to C# classes. These also become available to us later from the perspective of DI. We can ask for `IOptions<ImageProcessOptions>` for example. See <a href="{{< relref "asp-net-core-configuration.md" >}}" target="_blank">ASP.NET Core - Configuration Tips</a> for more details.
+We have some unique services being added to our dependency injection (DI) service collection. Later, our controllers can ask for these interfaces and expect the corresponding implementations. Likewise, we map over some sections from our `appsettings.json` configuration to C# classes. These also become available to us later from the perspective of DI. We can ask for `IOptions<ImageProcessOptions>` for example. See {{< url-link "ASP.NET Core - Configuration Tips" "{{< relref "asp-net-core-configuration.md" >}}" >}} for more details.
 
 #### ASP.NET Core Web API
 
-Our application has only one controller with a few actions on it. We have an endpoint that returns various configuration options to the client app, and then a more interesting `api/image/generate` endpoint. If you're eager to learn more, I published an article with details on <a href="http://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes" target="_blank">__ASP.NET Core__ Web API Attributes</a>.
+Our application has only one controller with a few actions on it. We have an endpoint that returns various configuration options to the client app, and then a more interesting `api/image/generate` endpoint. If you're eager to learn more, I published an article with details on {{< url-link "__ASP.NET Core__ Web API Attributes" "https://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes" >}}.
 
 ```csharp
 [Route("api/image")]
@@ -110,10 +101,10 @@ public class ImageController : Controller
 }
 ```
 
-> <p/> <cite><strong>ProTip</strong></cite>
+> <cite>**ProTip**</cite>
 > Keep your controllers dumb! It is best to delegate their logic to a service, and this simplifies testing.
 
-<br/>
+<br/><br/>
 
 We ask for the `IImageProcessorService` implementation on the `api/image/options` action. This endpoint simply returns JSON that represents our combined configuration options from some of the various options classes we mapped earlier on startup. These options have information for the client app about animation frame delay, intervals, the number of photos to take, image height and width, etc.
 
@@ -147,7 +138,7 @@ We get the phone number and a list of images -- the images are base64 encoded re
 
 #### Services
 
-First, we convert all the base64 image strings to `byte[]`. We load the first image from the `ImageSharp.Image.Load` method, then the remaining images are loaded and added as frames to the first image frames collection. The resulting image now has several frames and will be saved as a `.gif` file. It is then persisted using __<i class="fa fa-cloud-upload" aria-hidden="true"></i> &nbsp; Azure Blob Storage__, within our `IImageRepository` implementation. Finally, we create a link to our image and text the user the URL with `Twilio`.
+First, we convert all the base64 image strings to `byte[]`. We load the first image from the `ImageSharp.Image.Load` method, then the remaining images are loaded and added as frames to the first image frames collection. The resulting image now has several frames and will be saved as a `.gif` file. It is then persisted using __{{< i fa-cloud-upload >}} &nbsp; Azure Blob Storage__, within our `IImageRepository` implementation. Finally, we create a link to our image and text the user the URL with `Twilio`.
 
 Snippet from `ImageProcessorService.ProcessImageAsync`
 
@@ -266,7 +257,7 @@ The __<span style="color:#dd0031;">Angular</span>__ application is where a lot o
 | `controlwizard` | This is the state machine of the overlay for the user workflow -- it toggles various templates into and out of view |
 | `numberpad` | A numeric entry markup, which outputs the user input |
 
-When application loads, we first hit the `api/image/options` endpoint -- getting our client settings from the server. See <a href="{{< relref "angular-2-http.md" >}}" target="_blank">Angular Http with RxJS Observables</a> for more details on the `HttpClient` from __<span style="color:#dd0031;">Angular</span>__. We then set our camera stream to the `video` element on our `CameraComponent`.
+When application loads, we first hit the `api/image/options` endpoint -- getting our client settings from the server. See {{< url-link "Angular Http with RxJS Observables" "{{< relref "angular-2-http.md" >}}" >}} for more details on the `HttpClient` from __<span style="color:#dd0031;">Angular</span>__. We then set our camera stream to the `video` element on our `CameraComponent`.
 
 Snippet from `CameraComponent.ngAfterViewInit`.
 
@@ -387,7 +378,7 @@ public onTakePhoto(details: PhotoDetails): void {
 }
 ```
 
-I relied on an old blog post from David Walsh - <a href="https://davidwalsh.name/browser-camera" target="_blank">Camera and Video Control with HTML5</a>, it was really helpful! We ask the `canvas` for a `2d` context and then `.drawImage` on the `context` passing our `video` element. We then ask the `canvas` for `.toDataUrl` -- which returns our base64 string representation of the image. We'll put this in `localStorage` for now.
+I relied on an old blog post from David Walsh - {{< url-link "Camera and Video Control with HTML5" "https://davidwalsh.name/browser-camera" >}}, it was really helpful! We ask the `canvas` for a `2d` context and then `.drawImage` on the `context` passing our `video` element. We then ask the `canvas` for `.toDataUrl` -- which returns our base64 string representation of the image. We'll put this in `localStorage` for now.
 
 After the configured number of photos has been taken, we'll change the state of the application to `WizardState.PresentingPhotos`. Additionally, we grab all the images from `localStorage` storing them in an array.
 
@@ -517,8 +508,8 @@ img[src*=bstill] {
 
 In order to run this locally you'll need a few things setup first. After pulling the bits from __Microsoft's GitHub__ (never thought I get to say that), you need the following:
 
- - <a href="https://azure.microsoft.com/en-us/services/storage/blobs/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp; __Azure Blob Storage__</a> -- Account / ConnectionString
- - <a href="https://www.twilio.com/docs/sms/quickstart/csharp/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp;
+ - {{< url-link "{{< i fa-external-link-square >}} &nbsp; __Azure Blob Storage__" "https://azure.microsoft.com/en-us/services/storage/blobs/" >}} -- Account / ConnectionString
+ - <a href="https://www.twilio.com/docs/sms/quickstart/csharp/" target="_blank">{{< i fa-external-link-square >}} &nbsp;
 __Twilio__</a> -- Developer Account ID / AuthToken / From Phone Number
 
 

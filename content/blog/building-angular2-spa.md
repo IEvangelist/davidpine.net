@@ -14,21 +14,21 @@ type = "post"
 +++
 
 <h1>Overview</h1>
-The purpose of this post is to establish ourselves with a working environment geared towards development on <strong>ASP.NET Core 1.0</strong> through <strong>Visual Studio 2015</strong>. I will walk through creating an <strong>Angular2 Single Page Application</strong> with <strong>MVC 6</strong>, <strong>Web <abbr title="Application Programming Interface">API</abbr> 2</strong> and <strong>TypeScript</strong>. The sample application is available <a href="https://github.com/IEvangelist/MvcAngular2.git" target="_blank">here </a>on my github page.<!--more-->
+The purpose of this post is to establish ourselves with a working environment geared towards development on <strong>ASP.NET Core 1.0</strong> through <strong>Visual Studio 2015</strong>. I will walk through creating an <strong>Angular2 Single Page Application</strong> with <strong>MVC 6</strong>, <strong>Web <abbr title="Application Programming Interface">API</abbr> 2</strong> and <strong>TypeScript</strong>. The sample application is available {{< url-link "here " "https://github.com/IEvangelist/MvcAngular2.git" >}}on my github page.<!--more-->
 <h3>A quick nod of approval before we get started</h3>
 As a community of early adopters it is gratifying to see collaborations betwixt <strong>Microsoft</strong> and <strong>Google</strong>, finally "we can all get along".
 <ul>
-	<li><strong><a href="https://angular.io/" target="_blank">Angular2</a></strong> is built with <a href="http://www.typescriptlang.org/" target="_blank"><strong>TypeScript</strong></a></li>
-	<li><a href="https://www.visualstudio.com/" target="_blank"><strong>Visual Studio Code</strong> </a>is built on <strong><a href="https://www.chromium.org/Home" target="_blank">Chromium</a></strong>.</li>
+	<li><strong>{{< url-link "Angular2" "https://angular.io/" >}}</strong> is built with {{< url-link "<strong>TypeScript</strong>" "https://www.typescriptlang.org/" >}}</li>
+	<li>{{< url-link "<strong>Visual Studio Code</strong> " "https://www.visualstudio.com/" >}}is built on <strong>{{< url-link "Chromium" "https://www.chromium.org/Home" >}}</strong>.</li>
 </ul>
 These collaborations are exciting and certainly influential - my only hope is that we see more of these collaborations and other large industry leaders follow their example!
 
-<hr />
+---
 
 <h1>Prerequisites</h1>
 There are several things that you'll need before we dive into writing code. We should take a moment to familiarize ourselves with some of the new core concepts as well as ensuring that we have our <abbr title="Integrated Development Environment">IDE</abbr> correctly installed and configured.
 <h2>Install Visual Studio 2015</h2>
-<img class=" size-full wp-image-20 alignleft" style="background-color:#5c2d91;border:10px solid #5C2D91;border-radius:10px;" src="https://ievangelistblog.files.wordpress.com/2015/12/vs2015.png" alt="vs2015" width="105" height="105" />It all starts with your favorite <abbr title="Integrated Development Environment">IDE</abbr>, mine being <strong>VS</strong> (of course, if that wasn't obvious). You can download the community version of it <a href="https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx" target="_blank">here</a>.  The nice thing about the community version is that it is entirely free!  Once you have it installed you're ready to begin setting up your web solution. Finally, as a prerequisite you should at the very least be familiar with <strong>.NET MVC</strong>.
+<img class=" size-full wp-image-20 alignleft" style="background-color:#5c2d91;border:10px solid #5C2D91;border-radius:10px;" src="https://ievangelistblog.files.wordpress.com/2015/12/vs2015.png" alt="vs2015" width="105" height="105" />It all starts with your favorite <abbr title="Integrated Development Environment">IDE</abbr>, mine being <strong>VS</strong> (of course, if that wasn't obvious). You can download the community version of it {{< url-link "here" "https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx" >}}.  The nice thing about the community version is that it is entirely free!  Once you have it installed you're ready to begin setting up your web solution. Finally, as a prerequisite you should at the very least be familiar with <strong>.NET MVC</strong>.
 <h3>A few noteworthy mentions</h3>
 <h4><strong>project.json</strong></h4>
 The <code>project.json</code> is the replacement for the <code>*.csproj</code> file.  The main difference is the file format - you've probably been noticing the shift away from <strong>XML</strong> and the movement to the preferred <strong>JSON</strong> format as it is superior.
@@ -37,20 +37,20 @@ The <strong>wwwroot</strong> folder now acts as the directory in which your web 
 <h4><strong>npm</strong></h4>
 <img class=" size-thumbnail wp-image-26 alignleft" src="https://ievangelistblog.files.wordpress.com/2015/12/npm-logo.png?w=150" alt="npm-logo" width="150" height="58" />While <strong>Node.js</strong> and its corresponding package manager, namely "<strong>npm</strong>" are part of the install for <strong>Visual Studio 2015</strong> - it installs with <code>1.4.9</code> which is unfortunately an outdated version .  <strong>Angular2</strong> might play nicer with a later version of <strong>npm</strong>.
 <blockquote><strong>" Node.js'</strong> package ecosystem, <a>npm</a>, is the largest ecosystem of open source libraries in the world!</blockquote>
-Let's address this now, so that we do not run into issues once we start writing code. Install the latest version of <strong>Node.js</strong> <a href="https://nodejs.org/en/" target="_blank">here</a>. Once installed navigate to the following directory:
+Let's address this now, so that we do not run into issues once we start writing code. Install the latest version of <strong>Node.js</strong> {{< url-link "here" "https://nodejs.org/en/" >}}. Once installed navigate to the following directory:
 <pre>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Web Tools\External\</pre>
 Open the <code>npm.cmd</code> file in your favorite text editor (running as <em>Administrator</em>) and replace the contents of this file with the following:
 <pre><code>@"C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js" %*</code></pre>
 Now <strong>Visual Studio 2015</strong> will utilize the <strong>npm</strong> version that was installed from the aforementioned steps.
 
-<hr />
+---
 
 <h1>ASP.NET Core 1.0</h1>
-At this point you are probably wondering, "what is <strong>ASP.NET Core 1.0</strong> and what happened to <strong>ASP.NET 5</strong>?". These are both great questions, and to answer them ASP.NET 5 has been renamed more appropriately. Since it was completely rewritten from the ground up, why not rename and version it? For the remainder of this tutorial, if you happen to see reference to <strong>ASP.NET 5</strong> think of it as <strong>ASP.NET Core 1.0</strong> and use them interchangeably for now. But don't take my word for it, check out Scott Hanselman's post "<a href="http://www.hanselman.com/blog/ASPNET5IsDeadIntroducingASPNETCore10AndNETCore10.aspx" target="_blank">ASP.NET 5 is dead</a>".
+At this point you are probably wondering, "what is <strong>ASP.NET Core 1.0</strong> and what happened to <strong>ASP.NET 5</strong>?". These are both great questions, and to answer them ASP.NET 5 has been renamed more appropriately. Since it was completely rewritten from the ground up, why not rename and version it? For the remainder of this tutorial, if you happen to see reference to <strong>ASP.NET 5</strong> think of it as <strong>ASP.NET Core 1.0</strong> and use them interchangeably for now. But don't take my word for it, check out Scott Hanselman's post "{{< url-link "ASP.NET 5 is dead" "https://www.hanselman.com/blog/ASPNET5IsDeadIntroducingASPNETCore10AndNETCore10.aspx" >}}".
 <blockquote>" <strong>ASP.NET 5</strong> is a new open-source and cross-platform framework for building modern cloud-based Web applications using .NET.</blockquote>
 <h3>.NET 4.6.*</h3>
-With <a href="https://msdn.microsoft.com/en-us/library/ms171868(v=vs.110).aspx" target="_blank">.NET 4.6</a> you get <a href="https://msdn.microsoft.com/en-us/magazine/dn802602.aspx" target="_blank">C# 6</a>.  C# 6 is something that I have personally been looking forward to. I'm not sure I share the same level of excitement as I did with <strong>.NET 4.5</strong> and its <a href="https://msdn.microsoft.com/en-us/library/hh191443.aspx" target="_blank">asynchronous programming</a> model support, but excited nonetheless!  Additionally, we are now going to start harnessing <strong>ASP.NET Core 1.0</strong>.
-<blockquote>" <strong>ASP.NET 5</strong> applications are built/ran using the new <a class="reference internal" href="http://docs.asp.net/en/latest/dnx/overview.html" target="_blank">.NET Execution Environment (DNX)</a>, and every <strong>ASP.NET 5</strong> project is a <strong>DNX</strong> project.</blockquote>
+With {{< url-link ".NET 4.6" "https://msdn.microsoft.com/en-us/library/ms171868(v=vs.110).aspx" >}} you get {{< url-link "C# 6" "https://msdn.microsoft.com/en-us/magazine/dn802602.aspx" >}}.  C# 6 is something that I have personally been looking forward to. I'm not sure I share the same level of excitement as I did with <strong>.NET 4.5</strong> and its {{< url-link "asynchronous programming" "https://msdn.microsoft.com/en-us/library/hh191443.aspx" >}} model support, but excited nonetheless!  Additionally, we are now going to start harnessing <strong>ASP.NET Core 1.0</strong>.
+<blockquote>" <strong>ASP.NET 5</strong> applications are built/ran using the new <a class="reference internal" href="https://docs.asp.net/en/latest/dnx/overview.html" target="_blank">.NET Execution Environment (DNX)</a>, and every <strong>ASP.NET 5</strong> project is a <strong>DNX</strong> project.</blockquote>
 <h3>DN*</h3>
 <strong>DNX</strong> is an acronym that stands for <strong>.NET Execution Environment</strong>. It is basically just an <strong>SDK</strong> within the context of <strong>Visual Studio</strong>, but also acts as the runtime environment in which your <strong>ASP.NET Core 1.0</strong> applications execute.
 
@@ -59,9 +59,9 @@ Accompanying <strong>DNX</strong> is the <strong>DNU</strong> and <strong>DNVM</
 	<li>DNU, .NET Utility</li>
 	<li>DNVM, .NET Version Manager</li>
 </ul>
-For more details on these command line interfaces please visit <a href="https://docs.asp.net/en/latest/dnx/commands.html" target="_blank">here</a>.
+For more details on these command line interfaces please visit {{< url-link "here" "https://docs.asp.net/en/latest/dnx/commands.html" >}}.
 
-<hr />
+---
 
 <h1>Code</h1>
 We should be familiar enough with some of the core concepts such that we can finally begin by creating a new <strong>ASP.NET Core 1.0</strong> web application. From within <strong>Visual Studio 2015</strong>, select <code>File → New → Project</code>.  Then from within the New Project dialog navigate and select <code>Installed → Templates → Visual C# → Web → ASP.NET Web Application</code> - select "Ok".
@@ -131,11 +131,11 @@ Now let's get our <em>webroot</em> structure solidified, expand the <code>wwwroo
 
 <img class="alignnone size-full wp-image-352" src="https://ievangelistblog.files.wordpress.com/2016/01/wwwroot-structure.jpg" alt="wwwroot-structure.JPG" width="272" height="374" />
 
-Open the <code>project.json</code> file and let's paste in the following <strong>JSON</strong>. This will pull in the required dependencies we need for our starter application. The 'dependencies' are simply <a href="https://www.nuget.org/" target="_blank">NuGet</a> package references - be sure to paste everything defined below.
+Open the <code>project.json</code> file and let's paste in the following <strong>JSON</strong>. This will pull in the required dependencies we need for our starter application. The 'dependencies' are simply {{< url-link "NuGet" "https://www.nuget.org/" >}} package references - be sure to paste everything defined below.
 
 [gist]998ea37b948e26d9602f[/gist]
 
-If you're familiar with <a href="http://www.asp.net/aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana" target="_blank">OWIN</a> then the next steps will be very straightforward. Open the <code>Startup.cs</code> file., and let's paste in some more source and discuss its purpose.
+If you're familiar with {{< url-link "OWIN" "https://www.asp.net/aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana" >}} then the next steps will be very straightforward. Open the <code>Startup.cs</code> file., and let's paste in some more source and discuss its purpose.
 
 [gist]950cb27342a2f6bb93de[/gist]
 
@@ -261,7 +261,7 @@ Our <code>ApiComponent</code> gets injected with an instance of our <code>ApiSe
 
 [gist]1606dcd3c85423e51bc6[/gist]
 
-I'm simply ecstatic that there was a change to move away from the <code>Promise</code> model to the <code>Observable</code> model instead. Anytime I get to work with <a href="https://en.wikipedia.org/wiki/Reactive_programming" target="_blank">Reactive Programming</a> paradigm, I learn something new. <strong>Angular2's Http</strong> library is based on the observable programming model and relies on <strong>RxJS</strong>. I invite you to read how <strong>Angular2</strong> works with <code>observables</code> <a href="https://angular.io/docs/ts/latest/api/http/Http-class.html" target="_blank">here</a> but simply put, you subscribe to the <code>Observable</code> passing it the <code>observerOrNext</code> (and optionally <code>error</code> and <code>complete</code>) functions.
+I'm simply ecstatic that there was a change to move away from the <code>Promise</code> model to the <code>Observable</code> model instead. Anytime I get to work with {{< url-link "Reactive Programming" "https://en.wikipedia.org/wiki/Reactive_programming" >}} paradigm, I learn something new. <strong>Angular2's Http</strong> library is based on the observable programming model and relies on <strong>RxJS</strong>. I invite you to read how <strong>Angular2</strong> works with <code>observables</code> {{< url-link "here" "https://angular.io/docs/ts/latest/api/http/Http-class.html" >}} but simply put, you subscribe to the <code>Observable</code> passing it the <code>observerOrNext</code> (and optionally <code>error</code> and <code>complete</code>) functions.
 
 All we need now is a <strong>Web <abbr title="Application Programming Interface">API</abbr> 2</strong> controller that will serve up the <em>HttpGet</em> that <code>ApiService</code> expects at "api/random". Fortunately for us this has been dramatically simplified with <strong>ASP.NET Core 1.0</strong>. No more woes with <code>System.Web.Mvc</code> vs. <code>System.Web.Http</code>.
 <blockquote>" Now, you can create a single web application that handles the Web UI and data services without needing to reconcile differences in these programming frameworks.</blockquote>
@@ -269,10 +269,10 @@ All we need now is a <strong>Web <abbr title="Application Programming Interface"
 
 Notice that there is no <code>ApiController</code> inheritance, and both the <abbr title="Model View Controller">MVC</abbr> and Web <abbr title="Application Programming Interface">API</abbr> controllers are simply inheriting from <code>Controller</code>.
 
-<hr />
+---
 
 <h1>Conclusion</h1>
-You should be able to clone <a href="https://github.com/IEvangelist/MvcAngular2.git" target="_blank">the repository</a> locally, build it and play around. I encourage you to do so and hope that you find the sample source fun and the tutorial surrounding it useful. Today we discussed some of the capabilities of <strong>ASP.NET Core 1.0 (previously known as ASP.NET 5)</strong>, <strong>MVC 6</strong>, <strong>Web <abbr title="Application Programming Interface">API</abbr> 2</strong>, <strong>Angular2</strong> and <strong>TypeScript</strong>. I leave you with one question, "tomorrow, what will you do with it?".
+You should be able to clone {{< url-link "the repository" "https://github.com/IEvangelist/MvcAngular2.git" >}} locally, build it and play around. I encourage you to do so and hope that you find the sample source fun and the tutorial surrounding it useful. Today we discussed some of the capabilities of <strong>ASP.NET Core 1.0 (previously known as ASP.NET 5)</strong>, <strong>MVC 6</strong>, <strong>Web <abbr title="Application Programming Interface">API</abbr> 2</strong>, <strong>Angular2</strong> and <strong>TypeScript</strong>. I leave you with one question, "tomorrow, what will you do with it?".
 
 <img class="alignnone size-full wp-image-779" src="https://ievangelistblog.files.wordpress.com/2016/01/index.png" alt="index" width="1010" height="554" />
 
@@ -281,13 +281,13 @@ You should be able to clone <a href="https://github.com/IEvangelist/MvcAngular2.
 <img class="alignnone size-full wp-image-781" src="https://ievangelistblog.files.wordpress.com/2016/01/numbers.png" alt="numbers" width="1225" height="890" />
 <h2>References</h2>
 <ul>
-	<li><a href="https://angular.io/" target="_blank">https://angular.io/</a></li>
-	<li><a href="http://reactivex.io/" target="_blank">http://reactivex.io/</a></li>
-	<li><a href="http://docs.asp.net/en/latest/conceptual-overview/aspnet.html" target="_blank">http://docs.asp.net/en/latest/conceptual-overview/aspnet.html</a></li>
-	<li><a href="http://docs.asp.net/en/latest/dnx/overview.html" target="_blank">http://docs.asp.net/en/latest/dnx/overview.html</a></li>
-	<li><a href="http://weblogs.asp.net/scottgu/introducing-asp-net-5" target="_blank">http://weblogs.asp.net/scottgu/introducing-asp-net-5</a></li>
-	<li><a href="https://nodejs.org/en/" target="_blank">https://nodejs.org/en/</a></li>
-	<li><a href="https://en.wikipedia.org/wiki/Highlander_(film)" target="_blank">https://en.wikipedia.org/wiki/Highlander_(film)</a></li>
-	<li><a href="http://getglimpse.com/" target="_blank">http://getglimpse.com/</a></li>
-	<li><a href="https://github.com/angular/angular" target="_blank">https://github.com/angular/angular</a></li>
+	<li>{{< url-link "https://angular.io/" "https://angular.io/" >}}</li>
+	<li>{{< url-link "https://reactivex.io/" "https://reactivex.io/" >}}</li>
+	<li>{{< url-link "https://docs.asp.net/en/latest/conceptual-overview/aspnet.html" "https://docs.asp.net/en/latest/conceptual-overview/aspnet.html" >}}</li>
+	<li>{{< url-link "https://docs.asp.net/en/latest/dnx/overview.html" "https://docs.asp.net/en/latest/dnx/overview.html" >}}</li>
+	<li>{{< url-link "https://weblogs.asp.net/scottgu/introducing-asp-net-5" "https://weblogs.asp.net/scottgu/introducing-asp-net-5" >}}</li>
+	<li>{{< url-link "https://nodejs.org/en/" "https://nodejs.org/en/" >}}</li>
+	<li>{{< url-link "https://en.wikipedia.org/wiki/Highlander_(film)" "https://en.wikipedia.org/wiki/Highlander_(film)" >}}</li>
+	<li>{{< url-link "https://getglimpse.com/" "https://getglimpse.com/" >}}</li>
+	<li>{{< url-link "https://github.com/angular/angular" "https://github.com/angular/angular" >}}</li>
 </ul>

@@ -20,7 +20,7 @@ type = "post"
 At my day job, I wear many hats. I'm currently wearing the "upgrade our team's tooling" hat. <strong>I counted 99</strong> `*.xproj` and `project.json` based projects spanning four repositories that need to be updated to the revitalized `*.csproj` project format. With this the team can upgrade to the latest version of Visual Studio (finally upgrading to 2017 from 2015) and start taking advantage of the following:
 
  - Supported tooling, no longer on preview tooling bits
- - Allows us to <a href="blog/exploring-csharp-seven" target="_blank">explore C# 7</a> (and <a href="blog/csharp-seven-dot-one" target="_blank">peruse C# 7.1</a>) with production code
+ - Allows us to {{< url-link "explore C# 7" "blog/exploring-csharp-seven" >}} (and {{< url-link "peruse C# 7.1" "blog/csharp-seven-dot-one" >}}) with production code
  - Leverage the latest SDK and `.NET Core` CLI
  - Other obvious reasons
  - And so on...
@@ -39,22 +39,22 @@ Visual Studio 2017 will display the analyzers that are available within a projec
 
 ![Analyzers](/img/2017/11/analyzers.png)
 
-As you can see they have put a lot of thought and effort into this. There are tons of various rules,<a href="https://xunit.github.io/xunit.analyzers/rules/" target="_blank">here is a comprehensive listing of them all.</a>
+As you can see they have put a lot of thought and effort into this. There are tons of various rules,{{< url-link "here is a comprehensive listing of them all." "https://xunit.github.io/xunit.analyzers/rules/" >}}
 
-## <a href="https://github.com/xunit/xunit" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i> xUnit</a>
+## {{< url-link "{{< i fa-github-square >}} xUnit" "https://github.com/xunit/xunit" >}}
 
-I'm dating my <strong>xUnit</strong> efforts here a bit, but I've been a fan of <strong>xUnit</strong> for a long time now! Back in the days of "DNX", or as Scott Addie might ask <a href="https://twitter.com/Scott_Addie/status/928021703619379201" target="_blank">"DMX?"</a>. In a time when I was still on <a href="https://ievangelistblog.wordpress.com/" target="_blank"><i class="fa fa-wordpress" aria-hidden="true"></i> Wordpress</a>, before I was enlightened my Steve Hicks who says:
+I'm dating my <strong>xUnit</strong> efforts here a bit, but I've been a fan of <strong>xUnit</strong> for a long time now! Back in the days of "DNX", or as Scott Addie might ask {{< url-link "DMX?" "https://twitter.com/Scott_Addie/status/928021703619379201" >}}. In a time when I was still on {{< url-link "{{< i fa-wordpress >}} Wordpress" "https://ievangelistblog.wordpress.com/" >}}, before I was enlightened my Steve Hicks who says:
 
-> <p/> If you aren't putting out as many posts as BuzzFeed, you can probably just build your blog statically
-> <cite><a href="https://twitter.com/pepopowitz" target="_blank">Steve Hicks</a></cite>
+> If you aren't putting out as many posts as BuzzFeed, you can probably just build your blog statically
+> <cite>{{< url-link "Steve Hicks" "https://twitter.com/pepopowitz" >}}</cite>
 
-<a href="https://ievangelistblog.wordpress.com/2016/02/12/asp-net-core-1-0-unit-testing/" target="_blank">Here is a post</a> from February 2016 where I flexed some of the <strong>xUnit</strong> capabilities. Again, I've been a fan of <strong>xUnit</strong> for a long time now. It is incredibly 
+{{< url-link "Here is a post" "https://ievangelistblog.wordpress.com/2016/02/12/asp-net-core-1-0-unit-testing/" >}} from February 2016 where I flexed some of the <strong>xUnit</strong> capabilities. Again, I've been a fan of <strong>xUnit</strong> for a long time now. It is incredibly 
 
-## <a href="https://github.com/dotnet/roslyn" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i> Roslyn</a>
+## {{< url-link "{{< i fa-github-square >}} Roslyn" "https://github.com/dotnet/roslyn" >}}
 
 If you're unfamiliar with <strong>Roslyn</strong>, it is the `.NET` Compiler Platform.
 
-> <p/> Roslyn provides open-source C# and Visual Basic compilers with rich code analysis APIs. It enables building code analysis tools with the same APIs that are used by Visual Studio.
+> Roslyn provides open-source C# and Visual Basic compilers with rich code analysis APIs. It enables building code analysis tools with the same APIs that are used by Visual Studio.
 
 Visual Studio relies on <strong>Roslyn</strong> for lots of things. All of the aforementioned <strong>xUnit</strong> rules are defined as <strong>Roslyn</strong> analyzers. These analyzers are executed within Visual Studio, providing a great developer experience. They help you write better code.
 
@@ -90,9 +90,9 @@ When you call `Assert.Equal` and the expected argument is `null` -- it is flagge
 ![Use Null](/img/2017/11/use-null.png)
 </a>
 
-I also ran into two variations of the <a href="https://xunit.github.io/xunit.analyzers/rules/xUnit2013" target="_blank"><strong>xUnit:2013</strong> warning</a> which states the following:
+I also ran into two variations of the {{< url-link "<strong>xUnit:2013</strong> warning" "https://xunit.github.io/xunit.analyzers/rules/xUnit2013" >}} which states the following:
 
-> <p/> Do not use equality check to check for collection size
+> Do not use equality check to check for collection size
 
 In one scenario I had some unit test code similar to `Assert.Equal(0, values.Count);`, the analyzer instead suggested `Assert.Empty(values);`. This was my intent anyways, so of course I was happy to accept the recommended change.
 
@@ -107,5 +107,5 @@ Likewise I had an `Assert.Equal(1, values.Count);` and the analyzer suggested `A
 
 If you're curious about <strong>xUnit</strong> or <strong>Roslyn</strong>, please checkout the resources below:
 
-- <a href="https://github.com/xunit/xunit" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; xUnit -- GitHub.com</a>
-- <a href="https://xunit.github.io/xunit.analyzers/rules/" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; xUnit Analyzer Rules -- GitHub.io</a>
+- {{< url-link "{{< i fa-github-square >}} &nbsp; xUnit -- GitHub.com" "https://github.com/xunit/xunit" >}}
+- {{< url-link "{{< i fa-github-square >}} &nbsp; xUnit Analyzer Rules -- GitHub.io" "https://xunit.github.io/xunit.analyzers/rules/" >}}

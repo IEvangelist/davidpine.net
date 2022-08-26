@@ -20,7 +20,7 @@ tandem on an __ASP.NET Core__ application that I have been developing... I'm goi
 
 If you haven't had a chance to use [`ASP.NET Core`](https://www.asp.net/core) yet, you're missing out! As my friend [Scott Addie](https://scottaddie.com/) likes to say:
 
-> <p/>__ASP.NET Core__ is a cafeteria plan in which developers choose application dependencies _à la carte_. This is in stark contrast to __ASP.NET__ proper, where developers 
+>__ASP.NET Core__ is a cafeteria plan in which developers choose application dependencies _à la carte_. This is in stark contrast to __ASP.NET__ proper, where developers 
 > are provided a set meal (a bloated dependency chain) containing undesired items. Don't like broccoli with your steak? Maybe it's time to consider __ASP.NET Core__.
 > <cite>Scott Addie</cite>
 
@@ -32,19 +32,18 @@ Not all middleware is equal. Different middleware serves different purposes (obv
 given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In 
 fact, this is the case when using static file caching and response compression together.
 
-> <p/>The _order_ in which middleware is added matters and dictates the order of execution during a request.
+>The _order_ in which middleware is added matters and dictates the order of execution during a request.
 
 #### Installing Dependencies
 
-I wrote a tiny application and put it up on GitHub, check it out <a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target="_blank">here</a> if you want 
-to follow along. Now let's install the dependencies we'll need. For static file caching and response compression we need to add two `dependencies` to the project.
+I wrote a tiny application and put it up on GitHub, check it out {{< url-link "here" "https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" >}} if you want to follow along. Now let's install the dependencies we'll need. For static file caching and response compression we need to add two `dependencies` to the project.
 
 _Note:_ `Microsoft.AspNetCore.StaticFiles` will already have been installed if you started from a **Visual Studio** template.
 
 | Repository | Version | Nuget Package | Add / Use Extension Method(s) |
 |:-:|:--|:--|:--|
-| <a href="https://github.com/aspnet/StaticFiles" target="_blank" title="Static File Caching, GitHub Repo"><i class="fa fa-github-alt" aria-hidden="true"></i></a> | `1.1.0` | <a href="https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/" target="_blank">Static Files</a> | <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileExtensions.cs#L56-L68" target="_blank">`.UseStaticFiles`</a> |
-| <a href="https://github.com/aspnet/BasicMiddleware" target="_blank" title="Response Compression, GitHub Repo"><i class="fa fa-github-alt" aria-hidden="true"></i></a> | `1.0.0` | <a href="https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/" target="_blank">Response Compression</a> | <a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionServicesExtensions.cs#L38-L53" target="_blank">`.AddResponseCompression`</a> <a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionBuilderExtensions.cs#L20-L29" target="_blank">`.UseResponseCompression`</a> |
+| [{{< i fa-github-alt >}}](https://github.com/aspnet/StaticFiles)| `1.1.0` | {{< url-link "Static Files" "https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/" >}} | {{< url-link "UseStaticFiles" "https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileExtensions.cs#L56-L68" >}} |
+| [{{< i fa-github-alt >}}](https://github.com/aspnet/BasicMiddleware) | `1.0.0` | {{< url-link "Response Compression" "https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/" >}} | {{< url-link "AddResponseCompression" "https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionServicesExtensions.cs#L38-L53" >}} {{< url-link "UseResponseCompression" "https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionBuilderExtensions.cs#L20-L29" >}} |
 
 Follow these instructions, from within __Visual Studio__:
 
@@ -78,8 +77,8 @@ Several bits of the implementation details should jump out at you. First, we do 
 for this middleware, as such it doesn't exist. Second, we are providing a lambda expression to satisfy the `Action<ResponseCompressionOptions>` parameter. We also assign the 
 `.MimeTypes` property from the `ResponseCompressionMimeTypes.Defaults` we are targeting for compression.
 
-> <p/> If no compression providers are specified then `GZip` is used by default.
-> <cite><a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionProvider.cs#L22" target="_blank">ASP.NET Core Team - GitHub</a></cite>
+> If no compression providers are specified then `GZip` is used by default.
+> <cite>{{< url-link "ASP.NET Core Team - GitHub" "https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionProvider.cs#L22" >}}</cite>
 
 The `ResponseCompressionMimeTypes.cs` is defined as follows:
 ```csharp
@@ -132,12 +131,12 @@ When static file middleware occurs before response compression, it returns the f
 
  - Client requests `main.css`
  - Static file middleware determines it can fully satisfy said request
- - The `main.css` file is <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" target="_blank">sent</a> and the <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126" target="_blank">"next"</a> middleware in the pipeline is never executed
+ - The `main.css` file is {{< url-link "sent" "https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" >}} and the {{< url-link ""next"" "https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126" >}} middleware in the pipeline is never executed
 
 Now that we have these two pieces of middleware wired into out pipeline in the correct order, what else is left. There is one important thing that we forgot to do.
 While we do have static file middleware, we didn't know that "caching" is off by default. So we'll need to handle this with an instance of the the `StaticFileOptions`.
 
-> <p/>Keep your <i class="fa fa-eye" aria-hidden="true"></i><i class="fa fa-eye" aria-hidden="true"></i>'s open for extension method overloads. These are often clues that there are _options_ for providing customized configuration for the middleware you're wiring up.
+>Keep your {{< i fa-eye >}}{{< i fa-eye >}}'s open for extension method overloads. These are often clues that there are _options_ for providing customized configuration for the middleware you're wiring up.
 
 ```csharp
 public void Configure(IApplicationBuilder app,
@@ -162,8 +161,8 @@ pretty simple, hey?!
 ### Compression Awareness
 
 It's all the little things! The response compression middleware boasts deterministic compression, i.e.; if the 
-<a href="https://github.com/aspnet/KestrelHttpServer" target="_blank">`KestrelHttpServer`</a> is running behind the 
-<a href="https://www.iis.net/" target="_blank">__IIS__</a> reverse proxy then the middleware may or may not compress the response. The middleware determines the following:
+{{< url-link "`KestrelHttpServer`" "https://github.com/aspnet/KestrelHttpServer" >}} is running behind the 
+{{< url-link "__IIS__" "https://www.iis.net/" >}} reverse proxy then the middleware may or may not compress the response. The middleware determines the following:
 
  - If the request accepts compression
  - If the requested resource matches the configured MIME types
@@ -232,5 +231,5 @@ the __ASP.NET Core__ request pipeline middleware precedence.
 ### Source Code
 
  - <a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target="_blank">
-       <i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; IEvangelist.AspNetCore.Optimization
+       {{< i fa-github-square >}} &nbsp; IEvangelist.AspNetCore.Optimization
    </a>

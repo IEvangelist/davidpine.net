@@ -45,7 +45,7 @@ to myself, "I wonder if I could improve upon this", and that was my motivation!
 ## Open Source
 
 If you want to skip out from reading this post, you can checkout my project up on __GitHub__ &nbsp; 
-<a href="https://www.github.com/IEvangelist/Mirror" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; IEvangelist.Mirror</a>.
+{{< url-link "{{< i fa-github-square >}} &nbsp; IEvangelist.Mirror" "https://www.github.com/IEvangelist/Mirror" >}}.
 
 # Hardware
 
@@ -63,12 +63,12 @@ Below is a semi-comprehensive listing of all the materials and their correspondi
 
 |  Rough Cost | Hardware |
 |:--|:--|
-| $60  | <a href="https://www.microsoftstore.com/store/msusa/en_US/pdp/Raspberry-Pi-3-Bundle/productID.5068162700" target="_blank">Raspberry Pi 3 Bundle <i class="fa fa-external-link" aria-hidden="true"></i><a/> |
-| $130 | <a href="https://www.amazon.com/gp/product/B00IZBIMLK/ref=oh_aui_search_detailpage?ie=UTF8&psc=1" target="_blank">BenQ 27" HDMI LED Monitor <i class="fa fa-external-link" aria-hidden="true"></i><a/> |
-| $90  | <a href="http://www.tapplastics.com/product/plastics/cut_to_size_plastic/two_way_mirrored_acrylic/558" target="_blank">Custom-sized Two-way Mirrored Acrylic <i class="fa fa-external-link" aria-hidden="true"></i><a/> |
-| $40  | <a href="https://www.amazon.com/Microsoft-LifeCam-Cinema-720p-Webcam/dp/B009CPC6QA" target="_blank">Microsoft LifeCam <i class="fa fa-external-link" aria-hidden="true"></i><a/> |
-| $25  | <a href="https://www.amazon.com/gp/product/B00DEJXRAE/ref=oh_aui_search_detailpage?ie=UTF8&psc=1" target="_blank">Dell USB Wired Soundbar <i class="fa fa-external-link" aria-hidden="true"></i><a/> |  
-| $6   | <a href="https://www.amazon.com/gp/product/B000234UFG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1" target="_blank">Power Cord Splitter <i class="fa fa-external-link" aria-hidden="true"></i><a/> |
+| $60  | <a href="https://www.microsoftstore.com/store/msusa/en_US/pdp/Raspberry-Pi-3-Bundle/productID.5068162700" target="_blank">Raspberry Pi 3 Bundle {{< i fa-external-link >}}<a/> |
+| $130 | <a href="https://www.amazon.com/gp/product/B00IZBIMLK/ref=oh_aui_search_detailpage?ie=UTF8&psc=1" target="_blank">BenQ 27" HDMI LED Monitor {{< i fa-external-link >}}<a/> |
+| $90  | <a href="https://www.tapplastics.com/product/plastics/cut_to_size_plastic/two_way_mirrored_acrylic/558" target="_blank">Custom-sized Two-way Mirrored Acrylic {{< i fa-external-link >}}<a/> |
+| $40  | <a href="https://www.amazon.com/Microsoft-LifeCam-Cinema-720p-Webcam/dp/B009CPC6QA" target="_blank">Microsoft LifeCam {{< i fa-external-link >}}<a/> |
+| $25  | <a href="https://www.amazon.com/gp/product/B00DEJXRAE/ref=oh_aui_search_detailpage?ie=UTF8&psc=1" target="_blank">Dell USB Wired Soundbar {{< i fa-external-link >}}<a/> |  
+| $6   | <a href="https://www.amazon.com/gp/product/B000234UFG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1" target="_blank">Power Cord Splitter {{< i fa-external-link >}}<a/> |
 | $25  | Full HDMI Cable, USB Extension Cables |
 | $50  | Carpentry Materials |
 | $50  | Glenlivet 12 Year Old Scotch Whisky (not technically hardware) |
@@ -91,15 +91,15 @@ language today, __C#__.
 
 | Type | Name -- Link |
 |:--|:--|
-| <strong>OS</strong> | <a href="https://developer.microsoft.com/en-us/windows/iot/explore/iotcore" target="_blank">`Windows 10 IoT Core, "Build 10.0.14393"` <i class="fa fa-external-link" aria-hidden="true"></i></a> |
-| <strong>Platform</strong> | <a href="https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide" target="_blank">`Universal Windows Platform (UWP), "UAP 1.0"` <i class="fa fa-external-link" aria-hidden="true"></i></a> |
+| <strong>OS</strong> | {{< url-link "`Windows 10 IoT Core, "Build 10.0.14393"` {{< i fa-external-link >}}" "https://developer.microsoft.com/en-us/windows/iot/explore/iotcore" >}} |
+| <strong>Platform</strong> | {{< url-link "`Universal Windows Platform (UWP), "UAP 1.0"` {{< i fa-external-link >}}" "https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide" >}} |
 
 # Software
 
 When people throw around the acronym **IoT** it can mean a lot of different things. For this specific application, it is essential. Using the built-in _WIFI_ on the **Pi 3** we 
 can leverage the power of the internet to gather and share information.
 
-> <p/> Software is simply the movement and manipulation of data. But without context, said data is meaningless.
+> Software is simply the movement and manipulation of data. But without context, said data is meaningless.
 
 The magic mirror application strives to provide data that is all of the following:
 
@@ -120,7 +120,7 @@ by the **UWP** speech-synthesizer.  More on this later...
 
 ### Weather -- Forecast
 
-The current weather and forecast are retrieved every fifteen minutes from the free <a href="http://openweathermap.org/api" target="_blank">Open Weather API</a>. 
+The current weather and forecast are retrieved every fifteen minutes from the free {{< url-link "Open Weather API" "https://openweathermap.org/api" >}}. 
 The developer API key and zip code are configurable. Additionally the unit-of-measure is configurable, where you can specify `imperial` or `metric` as valid settings.
 
 ### Clock
@@ -139,8 +139,8 @@ Note: I opted to omit whether or not we're in ante or post meridiem as it is ass
 ### Event Calendar / Schedule
 
 My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to 
-<a href="https://github.com/IEvangelist/Mirror#fork-destination-box" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i> fork my repo</a> -- you would need to setup
-your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid `iCal` <a href="http://icalendar.org/" target="_blank">(*.ics) formatting</a>.
+{{< url-link "{{< i fa-code-fork >}} fork my repo" "https://github.com/IEvangelist/Mirror#fork-destination-box" >}} -- you would need to setup
+your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid `iCal` {{< url-link "(*.ics) formatting" "https://icalendar.org/" >}}.
 The events are truncated to fit on the page and ordered by the date of the event.
 
 ### Music Player
@@ -153,17 +153,17 @@ I simply placed several songs in the `Assets` directory as content and I can pla
 ### Voice Commands
 
 The **Universal Windows Platform** provides two very useful classes, the 
-<a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechrecognition.speechrecognizer.aspx" target="_blank">`SpeechRecognizer`</a> and the 
-<a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechsynthesis.speechsynthesizer.aspx" target="_blank">`SpeechSynthesizer`</a>. Leveraging this
+{{< url-link "`SpeechRecognizer`" "https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechrecognition.speechrecognizer.aspx" >}} and the 
+{{< url-link "`SpeechSynthesizer`" "https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechsynthesis.speechsynthesizer.aspx" >}}. Leveraging this
 I have built out the ability to talk to my magic mirror, I can ask it things like "what's the weather", "what's my schedule for Wednesday", or even tell it commands like "turn
 this up".
 
 ## Microsoft Cognitive Services
 
 Formally known was "Project Oxford", Microsoft Cognitive Services offers a ton of programming power and you can start using it today for **free**. Simply
-<a href="https://www.microsoft.com/cognitive-services/en-us/subscriptions" target="_blank">subscribe</a> and use your subscription key as the argument to the client `.ctor`.
+{{< url-link "subscribe" "https://www.microsoft.com/cognitive-services/en-us/subscriptions" >}} and use your subscription key as the argument to the client `.ctor`.
 The magic mirror makes use of the Emotion API, and corresponding `EmotionServiceClient` from the 
-<a href="https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/" target="_blank">`Microsoft.ProjectOxford.Emotion`</a> package.
+{{< url-link "`Microsoft.ProjectOxford.Emotion`" "https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/" >}} package.
 
 Consider the following:
 

@@ -24,11 +24,11 @@ custom logging implemented.
 
 ## Logging
 
-Luckily <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging" target="_blank">`ASP.NET Core Logging`</a> is simple to use and is a first-class 
+Luckily {{< url-link "`ASP.NET Core Logging`" "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging" >}} is simple to use and is a first-class 
 citizen within `ASP.NET Core`.
 
 In the **Logging** repository there is an extension method namely
-<a href="https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging/LoggingServiceCollectionExtensions.cs" target="_blank">`AddLogging`</a>, here is what it 
+{{< url-link "`AddLogging`" "https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging/LoggingServiceCollectionExtensions.cs" >}}, here is what it 
 looks like:
 
 ```csharp
@@ -73,10 +73,10 @@ public static void Main(string[] args)
 
 ||||
 |:-:|:-:|:-:|
-| <a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/EmptyWeb/Program.cs" target="_blank">Empty &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i></a> | <a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/StarterWeb/Program.cs" target="_blank">Starter Web &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i></a> | <a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/WebAPI/Program.cs" target="_blank">Web API &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i></a> |
+| {{< url-link "Empty &nbsp; {{< i fa-external-link >}}" "https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/EmptyWeb/Program.cs" >}} | {{< url-link "Starter Web &nbsp; {{< i fa-external-link >}}" "https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/StarterWeb/Program.cs" >}} | {{< url-link "Web API &nbsp; {{< i fa-external-link >}}" "https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/WebAPI/Program.cs" >}} |
 
 One thing that is concerning about a template like this is that the `IWebHost` is an `IDisposable`, so why then is this statement not wrapped in a `using` 
-<a href="https://github.com/IEvangelist/Templates/commit/37e78bd0dc33069901cc51924fe8a2740d1e141c" target="_blank">you ask</a>? The answer is that the `Run` extension method 
+{{< url-link "you ask" "https://github.com/IEvangelist/Templates/commit/37e78bd0dc33069901cc51924fe8a2740d1e141c" >}}? The answer is that the `Run` extension method 
 internally wraps itself in a `using`. If you were wondering where the `AddLogging` occurs, it is a result of invoking the `Build` function.
 
 ```yaml
@@ -92,7 +92,7 @@ The `ServiceDescriptor` class is an object that _describes_ a _service_, and thi
 descriptions of services. The `ServiceDescriptor` class exposes several static methods that allow its instantiation.
 
 The `ILoggerFactory` interface is registered as a 
-<a href="https://github.com/aspnet/DependencyInjection/blob/dev/src/Microsoft.Extensions.DependencyInjection.Abstractions/ServiceLifetime.cs#L14" target="_blank">`ServiceLifetime.Singleton`</a>
+{{< url-link "`ServiceLifetime.Singleton`" "https://github.com/aspnet/DependencyInjection/blob/dev/src/Microsoft.Extensions.DependencyInjection.Abstractions/ServiceLifetime.cs#L14" >}}
 and its implementation is mapped to the `LoggerFactory`. Likewise, the generic type `typeof(ILogger<>)` is mapped to `typeof(Logger<>)`. This is just one of the several key 
 "Framework-Provided Services" that are registered.
 
@@ -100,7 +100,7 @@ and its implementation is mapped to the `LoggerFactory`. Likewise, the generic t
 
 Now we know that the framework is providing all implementations of `ILogger<T>`, and resolving them as their `Logger<T>`. We also know that we could write our own implementation of 
 the `ILogger<T>` interface. Being that this is open-source 
-<a href="https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging.Abstractions/LoggerOfT.cs" target="_blank">we can look to their implementation</a> for inspiration.
+{{< url-link "we can look to their implementation" "https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging.Abstractions/LoggerOfT.cs" >}} for inspiration.
 
 ```csharp
 public class RequestDetailLogger<T> : ILogger<T>
@@ -176,7 +176,7 @@ public class RequestCategoryProvider : IRequestCategoryProvider
 ```
 
 If you're curious how to get the `IPrincipal` and `IPAddress` into this implementation (with DI) -
-<a href="http://davidpine.net/blog/principal-architecture-changes/" target="_blank">I discussed it here</a> briefly. It is pretty straight-forward. In the `Startup.ConfigureServices`
+{{< url-link "I discussed it here" "https://davidpine.net/blog/principal-architecture-changes/" >}} briefly. It is pretty straight-forward. In the `Startup.ConfigureServices`
 method do the following:
 
 ```csharp
@@ -223,5 +223,5 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
 # Further Reading
 
  - <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection" target="_blank">
-    <i class="fa fa-file-text-o" aria-hidden="true"></i> `ASP.NET Core - Dependency Injection`
+    {{< i fa-file-text-o >}} `ASP.NET Core - Dependency Injection`
    </a>

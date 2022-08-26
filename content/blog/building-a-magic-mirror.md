@@ -160,10 +160,7 @@ this up".
 
 ## Microsoft Cognitive Services
 
-Formally known was "Project Oxford", Microsoft Cognitive Services offers a ton of programming power and you can start using it today for **free**. Simply
-{{< url-link "subscribe" "https://www.microsoft.com/cognitive-services/en-us/subscriptions" >}} and use your subscription key as the argument to the client `.ctor`.
-The magic mirror makes use of the Emotion API, and corresponding `EmotionServiceClient` from the 
-{{< url-link "`Microsoft.ProjectOxford.Emotion`" "https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/" >}} package.
+Formally known was "Project Oxford", Microsoft Cognitive Services offers a ton of programming power and you can start using it today for **free**. Simply {{< url-link "subscribe" "https://www.microsoft.com/cognitive-services/en-us/subscriptions" >}} and use your subscription key as the argument to the client `.ctor`. The magic mirror makes use of the Emotion API, and corresponding `EmotionServiceClient` from the {{< url-link "`Microsoft.ProjectOxford.Emotion`" "https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/" >}} package.
 
 Consider the following:
 
@@ -199,64 +196,20 @@ async Task<IEnumerable<RawEmotion>> CaptureEmotionAsync()
 
 ![Set](/img/2016/12/set.png)
 
-The service returned a result. The result claims an **81.5%** level of confidence that I'm happy based on the given image, what do you think? What you don't see is that I'm actually taking a selfie 
-with {{< url-link "Jeremy Foster" "https://twitter.com/codefoster" >}} -- so, yeah -- I was pretty happy!
+The service returned a result. The result claims an **81.5%** level of confidence that I'm happy based on the given image, what do you think? What you don't see is that I'm taking a selfie with {{< url-link "Jeremy Foster" "https://twitter.com/codefoster" >}} -- so, yeah -- I was pretty happy!
 
 # Construction
 
-I would be lying if I tried taking credit for any of the construction. I'm slightly embarrassed to admit that I opted out of building it, as I lack the carpentry skills needed to do a decent job. Instead I asked a friend who just so happens to be awesome at carpentry. After persuading him with a bottle of single malt scotch whiskey, I had my magic mirror constructed and the results were amazing! Needless to say I was excited to try it out.
+I would be lying if I tried taking credit for any of the construction. I'm slightly embarrassed to admit that I opted out of building it, as I lack the carpentry skills needed to do a decent job. Instead, I asked a friend who just so happens to be awesome at carpentry. After persuading him with a bottle of single malt scotch whiskey, I had my magic mirror constructed and the results were amazing! Needless to say, I was excited to try it out.
 
-<div id="gallery">
-    <a href="/img/2016/12/con-1.jpg">
-        <img src="/img/2016/12/con-1.jpg" />
-        <div class="caption"><i class="fa fa-search icon"></i></div>
-    </a>
-    <a href="/img/2016/12/con-2.jpg">
-        <img src="/img/2016/12/con-2.jpg" />
-        <div class="caption"><i class="fa fa-search icon"></i></div>
-    </a>
-    <a href="/img/2016/12/con-3.jpg">
-        <img src="/img/2016/12/con-3.jpg" />
-        <div class="caption"><i class="fa fa-search icon"></i></div>
-    </a>
-    <a href="/img/2016/12/con-4.jpg">
-        <img src="/img/2016/12/con-4.jpg" />
-        <div class="caption"><i class="fa fa-search icon"></i></div>
-    </a>
-    <a href="/img/2016/12/con-5.jpg">
-        <img src="/img/2016/12/con-5.jpg" />
-        <div class="caption"><i class="fa fa-search icon"></i></div>
-    </a>
-    <a href="/img/2016/12/con-6.jpg">
-        <img src="/img/2016/12/con-6.jpg" />
-        <div class="caption"><i class="fa fa-search icon"></i></div>
-    </a>
-    <a href="/img/2016/12/magic mirror.jpg">
-        <img src="/img/2016/12/magic mirror.jpg" />
-        <div class="caption"><i class="fa fa-search icon"></i></div>
-    </a>
-    <a href="https://www.youtube.com/embed/KOTYW8EioBk">
-        <img src="https://img.youtube.com/vi/KOTYW8EioBk/hqdefault.jpg" />
-        <div class="caption"><i class="fa fa-youtube-play icon"></i></div>
-    </a>
-    <a href="https://www.youtube.com/embed/PWr1zRBO90o">
-        <img src="https://img.youtube.com/vi/PWr1zRBO90o/hqdefault.jpg" />
-        <div class="caption"><i class="fa fa-youtube-play icon"></i></div>
-    </a>
-</div>
+{{< magic-mirror-gallery 1 >}}
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        let $gallery = $("#gallery");
-        if ($gallery.length) {
-            $gallery.justifiedGallery({
-                rowHeight: 300
-            }).on('jg.complete', function() {
-                $gallery.lightGallery({
-                    selector: 'a',
-                    thumbnail: false
-                }); 
-            });
-        }                
-    });
-</script>
+---
+
+{{< youtube KOTYW8EioBk >}}
+
+<br/><br/>
+
+{{< youtube PWr1zRBO90o >}}
+
+<br/><br/>

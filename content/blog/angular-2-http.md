@@ -16,17 +16,17 @@ type = "post"
 If you have been following the development efforts of the **Angular2** project, you have witnessed certain highs and lows - but it has been a fun ride. The latest version is only a **Release Candidate** and the team
 is getting closer to the final release. I'm really looking forward to that! I wanted to take a moment to highlight (IMO) one of the key services of **Angular2**, the `http` service.
 
-In **AngularJs 1** the `ng.IHttpService` (aka, [`$http`](https://docs.angularjs.org/api/ng/service/$http)) was based on 
-[promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and deferrals. 
+In **AngularJs 1** the `ng.IHttpService` (aka, [`$http`](https://docs.angularjs.org/api/ng/service/$http)) was based on
+[promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and deferrals.
 In **Angular2** we now rely on **RxJS** and the observable pattern. In my opinion this is a huge win!
 If you're unfamiliar with _Reactive Extensions_ in general, I suggest starting [here](https://msdn.microsoft.com/en-us/data/gg577609.aspx).
 **RxJS** is the `JavaScript` implementation of _Reactive Extensions_.
-Let's take a moment to compare and contrast the two, and immerse ourselves in the wonderful world of **RxJS**. 
+Let's take a moment to compare and contrast the two, and immerse ourselves in the wonderful world of **RxJS**.
 Let me be clear upfront that I'm developing with `TypeScript`.
 
 ## Legacy Pattern
 
-As a developer you would have to use both the `ng.IHttpService` and the `ng.IQService` in combination to collaborate the deferral of the 
+As a developer you would have to use both the `ng.IHttpService` and the `ng.IQService` in combination to collaborate the deferral of the
 HTTP request and the promise that represented it. Consider the following:
 
 ```javascript
@@ -61,16 +61,16 @@ module ExampleModule {
 }
 ```
 
-In this example, we can easily see the interaction betwixt the `ng.IHttpService ($http)` and `ng.IQService ($q)` services. The `$q` variable exposes a `.defer<T>` function that returns a deferred object. 
+In this example, we can easily see the interaction betwixt the `ng.IHttpService ($http)` and `ng.IQService ($q)` services. The `$q` variable exposes a `.defer<T>` function that returns a deferred object.
 
 ### [Deferred API](https://docs.angularjs.org/api/ng/service/$q#the-deferred-api)
 
 | Function | Parameters | Description |
 |---------:|:------------|:-----------|
 | `resolve`| `(value: T)`  | Resolved yielding the materialized value of type `T` |
-| `reject` | `(reason: string)` | Rejected with the given reason | 
+| `reject` | `(reason: string)` | Rejected with the given reason |
 
-The deferred object instance is passed into the fluent API's of the `$http's` `.success` and `.error` functions accordingly. This pattern works great, but is very limiting and repetitive. 
+The deferred object instance is passed into the fluent API's of the `$http's` `.success` and `.error` functions accordingly. This pattern works great, but is very limiting and repetitive.
 You end up writing a lot of boilerplate code and that isn't very [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Let's look at how this is approached with **Angular2's** `http` service using the observable pattern from **RxJS**!
 
 ## New Pattern
@@ -95,7 +95,7 @@ import {Http} from "@angular/http";
     }
 }
 ```
-*I am hoping that you noticed how much cleaner this code is, as well as how much more readable!*
+_I am hoping that you noticed how much cleaner this code is, as well as how much more readable!_
 
 Now, I know what you're thinking...these cannot possibly be the same examples, but they are in fact doing the same thing. _Dependency Injection (DI)_ in **Angular2** is a lot less error prone (no more magic strings) and way easier than
 it was in **AngularJs 1**.
@@ -116,7 +116,9 @@ constructor(http: Http) {
    this.http = http;
 }
 ```
+
 Likewise, the following is true regarding public access modifiers.
+
 ```javascript
 // Simple .ctor()
 constructor(http: Http) { }
@@ -127,6 +129,7 @@ constructor(http: Http) {
    this.http = http;
 }
 ```
+
 ## Comparing the APIs
 
 Instead of the `.success` invocation with a corresponding `deferred.resolve` call, we now utilize the **RxJS** `.map` and `.subscribe` operators. Let's look at these below:
@@ -156,20 +159,21 @@ getFooBars(onNext: (fooBars: FooBar[]) => void) {
                    console.log("An error occurred when requesting api/foobar.", error));
 }
 ```
-Now imagine a scenario where a user is typing and you want to provide an autocomplete, you could use `.debounce` to pause for a brief moment prior to sending the request. Likewise,
-we could apply a `.filter` that only takes action when a certain number of characters have been entered. Finally, we might utilize `.distinctUntilChanged` to only execute the request once 
-the values are actually different than they once were.   
 
-You could take advantage of `.buffer`, `.throttle`, `.interval`, `.window`, `.range`, etc... The list goes on and on, 
+Now imagine a scenario where a user is typing and you want to provide an autocomplete, you could use `.debounce` to pause for a brief moment prior to sending the request. Likewise,
+we could apply a `.filter` that only takes action when a certain number of characters have been entered. Finally, we might utilize `.distinctUntilChanged` to only execute the request once
+the values are actually different than they once were.
+
+You could take advantage of `.buffer`, `.throttle`, `.interval`, `.window`, `.range`, etc... The list goes on and on,
 and {{< url-link "this is the source for most of what you can take advantage" "https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable" >}}.
 
 ### Let's Summarize
 
-**Angular2** has a new implementation of their `http` service that relies on **RxJS**. The *API* uses `observables` and the `observer` pattern to allow for a fluent experience that is rich and robust.
-Getting started is straight-forward and simple. Before too long you'll be taking advantage of the feature-full set of **Reactive Extensions** and thinking in terms of data streams. 
+**Angular2** has a new implementation of their `http` service that relies on **RxJS**. The _API_ uses `observables` and the `observer` pattern to allow for a fluent experience that is rich and robust.
+Getting started is straight-forward and simple. Before too long you'll be taking advantage of the feature-full set of **Reactive Extensions** and thinking in terms of data streams.
 This mindset will make your life easier - trust me!  
 
 **Further Reading**
 
- - {{< url-link "Angular2 for TypeScript, Http" "https://angular.io/docs/ts/latest/api/http/index/Http-class.html" >}}
- - {{< url-link "Why RxJS?" "https://github.com/Reactive-Extensions/RxJS#why-RxJS" >}}
+- {{< url-link "Angular2 for TypeScript, Http" "https://angular.io/docs/ts/latest/api/http/index/Http-class.html" >}}
+- {{< url-link "Why RxJS?" "https://github.com/Reactive-Extensions/RxJS#why-RxJS" >}}

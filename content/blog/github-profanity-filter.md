@@ -21,13 +21,13 @@ When the **Azure Function** is invoked, it will examine the body text and title 
 
 <span style='font-size: 4em'>👼 🐳 💝 </span>
 
-We'll see how to orchestrate various technologies together, and take a look at **GitHub webhooks**, **Azure Functions**, **C# 8.0**, **CosmosDB** and **GraphQL**. As always the complete <a href='https://github.com/IEvangelist/GitHub.ProfanityFilter' target='_blank'><i class='fa fa-github'></i> source code</a> is available for you're eager eyes 👀...enjoy!
+We'll see how to orchestrate various technologies together, and take a look at **GitHub webhooks**, **Azure Functions**, **C# 8.0**, **CosmosDB** and **GraphQL**. As always the complete {{< url-link "{{< i fa-github >}} source code" "https://github.com/IEvangelist/GitHub.ProfanityFilter" >}} is available for you're eager eyes 👀...enjoy!
 
 ## GitHub Webhooks
 
 I'm going to assume that you're unfamiliar with "webhooks". Think of a webhook as simply being an event. Like all other events, you can subscribe to them. Much like an event, when you subscribe you provide a handler or a callback. When the event occurs, it calls your handler. But with a webhook, you get a bit more control over how the event is communicated. GitHub offers {{< url-link "webhooks for many types of events" "https://developer.github.com/webhooks/#events" >}}.
 
-Open a GitHub repository that you're the owner of. From within the GitHub user interface navigate to **<i class="fa fa-cog"></i> Settings**, then select **Webhooks** from the left panel. Click the **Add webhook** button and explore the various options available to you for configuring a webhook.
+Open a GitHub repository that you're the owner of. From within the GitHub user interface navigate to **{{< i fa-cog >}} Settings**, then select **Webhooks** from the left panel. Click the **Add webhook** button and explore the various options available to you for configuring a webhook.
 
 | Setting | Details |
 |----------------:|-------------|
@@ -39,7 +39,7 @@ Open a GitHub repository that you're the owner of. From within the GitHub user i
 
 ### Securing webhooks
 
-GitHub has <a href='https://developer.github.com/webhooks/securing/' target='_blank'>an article</a> on securing webhooks, which is useful but unfortunately it's written for **Ruby**. Since we've written an ASP.NET Core with C# application, we'll take a look a closer look at how to do this.
+GitHub has {{< url-link "an article" "https://developer.github.com/webhooks/securing/" >}} on securing webhooks, which is useful but unfortunately it's written for **Ruby**. Since we've written an ASP.NET Core with C# application, we'll take a look a closer look at how to do this.
 
 ```csharp
 [FunctionName(nameof(ProcessWebhook))]
@@ -110,7 +110,7 @@ static bool IsSignatureValid(string a, string b)
 }
 ```
 
-The `IsPayloadSignatureValid` implementation leverages **C# 8 using declarations** and instantiates a `HMACSHA1` with the bytes from the configured webhook secret. The `HMACSHA1` is the C# representation of the "<a href='https://en.wikipedia.org/wiki/HMAC' target='_blank'>hash-based message authentication code (HMAC)</a>, for the <a href='https://en.wikipedia.org/wiki/SHA-1' target='_blank'>secure hash algorithm 1 (SHA1)</a>". It will allow us to compute the hash of the payload bytes, then we can use our computed hash and compare it to the signature in the header. If these two are a match -- we know that the request is valid. Otherwise, it may be malicious and we can simply disregard it.
+The `IsPayloadSignatureValid` implementation leverages **C# 8 using declarations** and instantiates a `HMACSHA1` with the bytes from the configured webhook secret. The `HMACSHA1` is the C# representation of the "{{< url-link "hash-based message authentication code (HMAC)" "https://en.wikipedia.org/wiki/HMAC" >}}, for the {{< url-link "secure hash algorithm 1 (SHA1)" "https://en.wikipedia.org/wiki/SHA-1" >}}". It will allow us to compute the hash of the payload bytes, then we can use our computed hash and compare it to the signature in the header. If these two are a match -- we know that the request is valid. Otherwise, it may be malicious and we can simply disregard it.
 
 You may have noticed that we also pulled out another header, this was the `X-GitHub-Event` header. It tells us which GitHub event was firing. We'll use that in our dispatcher to determine which shape our JSON payload is expected to be delivered in.
 
@@ -502,7 +502,7 @@ query {
 }
 ```
 
-I really love how **GraphQL** allows the consumer to retrieve only the shape of the items its querying, this is really powerful. Executing this query returns my labels, their `name` and `id`. The label identifier is configured in our **Azure Function** as a environment variable. If you're looking for the **GitHub GraphQL SDK**, look no further -- this project relies on the {{< url-link "Oktokit.GraphQL" "https://www.nuget.org/packages/Octokit.GraphQL" >}} package. It is a fluent API, which enables developers to author complex graph-based queries and mutations with ease. For details, see the <a href='https://github.com/IEvangelist/GitHub.ProfanityFilter' target='_blank'><i class='fa fa-github'></i> source code</a>.
+I really love how **GraphQL** allows the consumer to retrieve only the shape of the items its querying, this is really powerful. Executing this query returns my labels, their `name` and `id`. The label identifier is configured in our **Azure Function** as a environment variable. If you're looking for the **GitHub GraphQL SDK**, look no further -- this project relies on the {{< url-link "Oktokit.GraphQL" "https://www.nuget.org/packages/Octokit.GraphQL" >}} package. It is a fluent API, which enables developers to author complex graph-based queries and mutations with ease. For details, see the {{< url-link "{{< i fa-github >}} source code" "https://github.com/IEvangelist/GitHub.ProfanityFilter" >}}.
 
 ## Conclusion
 

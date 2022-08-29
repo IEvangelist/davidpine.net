@@ -14,7 +14,7 @@ type = "post"
 
 Earlier this year in March -- Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on [Exploring C# 7]({{< relref "/blog/exploring-csharp-seven.md" >}}). In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.
 
-# Async Main <a target="_blank" href="https://github.com/dotnet/csharplang/issues/97"><i class="fa fa-external-link"></i></a>
+# Async Main <a target="_blank" href="https://github.com/dotnet/csharplang/issues/97">{{< i fa-external-link >}}</a>
 
 Since the release of C# 5, developers have either embraced the `async` and `await` keywords or fumbled along the way feebly attempting to comprehend them. Fear not, you're not alone. Many others have been just as confused, but that's not to say that the language didn't make major strides towards simplifying your development efforts. In fact, I love asynchronous programming and C# makes me very happy with its implementation!
 
@@ -59,7 +59,7 @@ static Task<int> Main(string[] args) { }    // static int Main(string[] args) { 
 
 With this task-based approach the new entry points simply provide that "feels good" approach to development. 
 
-# `default` Expression <a target="_blank" href="https://github.com/dotnet/csharplang/issues/102"><i class="fa fa-external-link"></i></a>
+# `default` Expression <a target="_blank" href="https://github.com/dotnet/csharplang/issues/102">{{< i fa-external-link >}}</a>
 
 The `default` keyword has been around forever. It was used to tell the compiler give me the "default" value for the given type.
 
@@ -130,7 +130,7 @@ if (sum == default)
 }
 ```
 
-# Tuple Projection Initializers <a target="_blank" href="https://github.com/dotnet/csharplang/issues/415"><i class="fa fa-external-link"></i></a>
+# Tuple Projection Initializers <a target="_blank" href="https://github.com/dotnet/csharplang/issues/415">{{< i fa-external-link >}}</a>
 
 I detailed the introduction of `tuples` in my [Exploring C# 7]({{< relref "/blog/exploring-csharp-seven.md" >}}) post. Tuples are an amazing addition to the C# language and are extremely powerful. With its initial implementation however, there was something that was lacking. Tuple literals lacked the ability to infer names, now with C# 7.1 -- this is no longer a limitation.
 
@@ -154,7 +154,7 @@ ln = person.lastName;           // "Pine"
 dob = person.dateOfBirth;       // 7/7/1984
 ```
 
-# Pattern-matching with Generics <a target="_blank" href="https://github.com/dotnet/csharplang/issues/154"> <i class="fa fa-external-link"></i></a>
+# Pattern-matching with Generics <a target="_blank" href="https://github.com/dotnet/csharplang/issues/154"> {{< i fa-external-link >}}</a>
 
 With C# 7.0, pattern-matching was introduced -- I love talking about it and showing off what it can do! In my opinion it solves a lot of issues with type assertions and makes complex decision trees more legible and comprehensive. However, when it was introduced it didn't correctly support generics. With C# 7.1, that has changed.
 

@@ -46,8 +46,8 @@ public void ConfigureServices(IServicesCollection services)
 However, based on your needs - you may choose to not apply this filter. If you choose to not apply this filter you're left with three options.
 
  1. Apply an `AuthorizeAttribute` at the controller class level (cascades onto all the actions)
- 2. Apply an `AuthorizeAttribute` on each individual action method <i class="fa fa-meh-o"></i>
- 3. Not protect your API at all <i class="fa fa-frown-o"></i>
+ 2. Apply an `AuthorizeAttribute` on each individual action method {{< i fa-meh-o >}}
+ 3. Not protect your API at all {{< i fa-frown-o >}}
 
 ## Automation To The Rescue
 
@@ -59,7 +59,7 @@ Here was the thought process to write a unit test that could ensure that I'm not
  - Of all the loaded assemblies, get all the controller types
     - Of those controller types, get the ones that are missing the `AuthorizeAttribute`
     - Of the unauthorized controller types, get the `HttpMethodAttribute` methods
-    - If missing both the `AuthorizeAttribute` and `AllowAnonymousAttribute` - __fail__ <i class="fa fa-frown-o"></i>
+    - If missing both the `AuthorizeAttribute` and `AllowAnonymousAttribute` - __fail__ {{< i fa-frown-o >}}
 
 ### Codify
 

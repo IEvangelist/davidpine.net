@@ -39,7 +39,7 @@ That's pretty simple, right?! While the application is idle, we'll provide the l
 
 ## Technologies Used
 
-This application is built using the __<span style="color:#dd0031;">Angular</span>__ __ASP.NET Core__ SPA template. Additionally, I'm leveraging the following:
+This application is built using the __Angular__ __ASP.NET Core__ SPA template. Additionally, I'm leveraging the following:
 
 | Technology | Purpose  |
 |--:|:--|
@@ -80,7 +80,7 @@ We have some unique services being added to our dependency injection (DI) servic
 
 #### ASP.NET Core Web API
 
-Our application has only one controller with a few actions on it. We have an endpoint that returns various configuration options to the client app, and then a more interesting `api/image/generate` endpoint. If you're eager to learn more, I published an article with details on {{< url-link "__ASP.NET Core__ Web API Attributes" "https://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes" >}}.
+Our application has only one controller with a few actions on it. We have an endpoint that returns various configuration options to the client app, and then a more interesting `api/image/generate` endpoint. If you're eager to learn more, I published an article with details on {{< url-link "ASP.NET Core Web API Attributes" "https://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes" >}}.
 
 ```csharp
 [Route("api/image")]
@@ -246,17 +246,17 @@ public async Task SendTextAsync(string toPhoneNumber, string body)
 
 ## Angular
 
-The __<span style="color:#dd0031;">Angular</span>__ application is where a lot of the logic lives. It contains the user interactions and workflow. Since it's __<span style="color:#dd0031;">Angular</span>__ we'll look at some __<span style="color:#007acc;">TypeScript</span>__. We have an `image.service.ts` that makes HTTP calls out to our Web API. At the time of writing, we had the following components:
+The __Angular__ application is where a lot of the logic lives. It contains user interactions and workflow. Since it's __Angular__ we'll look at some __TypeScript__. We have an `image.service.ts` that makes HTTP calls out to our Web API. At the time of writing, we had the following components:
 
 | Component | Purpose  |
 |--:|:--|
-| `app` | Standard __<span style="color:#dd0031;">Angular</span>__ application entry point  |
+| `app` | Standard __Angular__ application entry point  |
 | `audio` | Encapsulates the ability to bind `src` audio files and invoke `async play()` functionality |
 | `camera` | Wraps the `<control-wizard>`, `<video>` and `<canvas>` elements, and orchestrates communications between them |
 | `controlwizard` | This is the state machine of the overlay for the user workflow -- it toggles various templates into and out of view |
 | `numberpad` | A numeric entry markup, which outputs the user input |
 
-When application loads, we first hit the `api/image/options` endpoint -- getting our client settings from the server. See {{< url-link "Angular Http with RxJS Observables" "{{< relref "angular-2-http.md" >}}" >}} for more details on the `HttpClient` from __<span style="color:#dd0031;">Angular</span>__. We then set our camera stream to the `video` element on our `CameraComponent`.
+When application loads, we first hit the `api/image/options` endpoint -- getting our client settings from the server. See {{< url-link "Angular Http with RxJS Observables" "{{< relref "angular-2-http.md" >}}" >}} for more details on the `HttpClient` from __Angular__. We then set our camera stream to the `video` element on our `CameraComponent`.
 
 Snippet from `CameraComponent.ngAfterViewInit`.
 
@@ -276,7 +276,7 @@ if (this.videoElement && this.videoElement.nativeElement) {
 }
 ```
 
-The `videoElement` is an `ElementRef` instance -- our component uses the __<span style="color:#dd0031;">Angular</span>__ `@ViewChild` decorator to instantiate our reference to the `<video>` element in our template. We assign the `.nativeElement` to our `video` instance which is an `HTMLVideoElement`. Finally, if our browser environment has the ability to `.getUserMedia` we'll ask for the video stream and assign it to our `video` instance. Next, let's explore what kicks things off.
+The `videoElement` is an `ElementRef` instance -- our component uses the __Angular__ `@ViewChild` decorator to instantiate our reference to the `<video>` element in our template. We assign the `.nativeElement` to our `video` instance which is an `HTMLVideoElement`. Finally, if our browser environment has the ability to `.getUserMedia` we'll ask for the video stream and assign it to our `video` instance. Next, let's explore what kicks things off.
 
 Snippet from `control-wizard.component.html`.
 

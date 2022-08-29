@@ -130,7 +130,7 @@ name of the day followed by the month and day number.
 
 **Example:**
 <pre>
-<code class="language-yaml"><span style="font-size: large">8:29</span> <sup>34</sup>
+<code class="language-yaml">8:29 <sup>34</sup>
 Wednesday, December 21<sup>st</sup>
 </code>
 </pre>

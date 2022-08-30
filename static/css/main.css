@@ -3863,14 +3863,17 @@ img.headshot {
 
 #main>article>header>div.meta>time:hover {
 	cursor: help;
+	transition: all 3s linear;
 }
 
 #main>article>header>div.meta>time:hover:before {
 	content: attr(data-hover);
 	cursor: help;
+	transition: all 3s linear;
 }
 
 #main>article>header>div.meta>time > span.underline {
 	text-decoration: underline;
 	color: black !important;
+	transition: all 3s linear;
 }

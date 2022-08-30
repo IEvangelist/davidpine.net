@@ -38,9 +38,7 @@ Software engineering can be boiled down to the manipulation and movement of data
 
 We've all heard of the "Tabs vs Spaces" argument, right -- it's somewhat like that but much worse.
 
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/cowtgmZuai0" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube cowtgmZuai0 >}}
 
 I believe that this is often the root of imposter syndrome, the fear of getting it wrong or being involved in some sort of conflict. I finally feel as though I no longer have this
 fear, therefore -- I have overcome imposter syndrome. I wanted to share some of the reasons that have led up to this monumental event.
@@ -51,8 +49,7 @@ If you want to see a blackhole, bear witness to how negativity spreads through a
 
 ### Take Action
 
-Personally, I have discovered that the more I compliment others the more I get complimented in return. The more I encourage others, the more I'm encouraged by them in return.
-The more you give, the more you get. Be humble and open-minded!
+Personally, I have discovered that the more I compliment others the more I get complimented in return. The more I encourage others, the more I'm encouraged by them in return. The more you give, the more you get. Be humble and open-minded!
 
 ### Mentor
 
@@ -68,9 +65,7 @@ If you have ever spent more than a few minutes with me, you will know that I'm a
 
 ### MKE DOT NET
 
-I sit on the technical committee for {{< url-link "MKE DOT NET" "https://www.mkedotnet.com/" >}}, a developer conference in the Milwaukee area. Recently I was fortunate enough to get
-{{< url-link "Scott Hanselman" "https://www.hanselman.com/" >}} to be our keynote speaker.
-During his keynote (which was amazing) I shouted out several times to assist him with live coding / demonstration errors. He referred to me as his "second compiler"!
+I sit on the technical committee for {{< url-link "MKE DOT NET" "https://www.mkedotnet.com/" >}}, a developer conference in the Milwaukee area. Recently I was fortunate enough to get {{< url-link "Scott Hanselman" "https://www.hanselman.com/" >}} to be our keynote speaker. During his keynote (which was amazing) I shouted out several times to assist him with live coding / demonstration errors. He referred to me as his "second compiler"!
 
 {{< tweet id="792480943416156161" user="davidpine7" >}}
 

@@ -17,9 +17,11 @@
             {{ $.Scratch.Set "dateType" .Date }}
         {{ end }}
 
-        <time class="published"
-            datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-            {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
+        <time class="published" data-hover='{{ ($.Scratch.Get "dateType").Format "January, 2006" }}'
+            datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'
+            data-initial='Written on'>
+            (<i class="fa fa-mouse-pointer"></i>)
+        </time>
         <span class="author">{{ .Params.author }}</span>
         {{ if .Site.Params.includeReadingTime }}
             <p>{{ .ReadingTime }} minute read</p>

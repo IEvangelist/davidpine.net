@@ -14,24 +14,15 @@ type = "post"
 
 # Inspiration
 
-I recently returned from Charleston, South Carolina -- where I spoke at <a href="https://2018.syntaxcon.com/speaker/david-pine/" target="_blank">__<span style="color:#c2996c">Syntax</span><span style="color:#b5d8f2">Con</span>__</a>. The event was very professionally organized and gave me inspiration for <a href="https://www.creamcitycode.com/" target="_blank">__<span style="color:#ecd290">Cream</span> <span style="color:#f15322">City</span> <span style="color:#688b8b">Code</span>__</a>. In the main hall they had a _HALO_ by <a href="https://www.simplebooth.com/" target="_blank">Simple Booth</a>. It serves as a photo booth with a conference specific backdrop -- which is perfect for sharing the conference experience. I looked into purchasing one but was encouraged to simply write my own... so I did and this blog will detail that process.
+I recently returned from Charleston, South Carolina -- where I spoke at __SyntaxCon__. The event was very professionally organized and gave me inspiration for __Cream City Code__. In the main hall, they had a _HALO_ by {{< url-link "Simple Booth" "https://www.simplebooth.com/" >}}. It serves as a photo booth with a conference-specific backdrop -- which is perfect for sharing the conference experience. I looked into purchasing one but was encouraged to simply write my own... so I did and this blog will detail that process.
 
-Ultimately, the resulting social media share ends up looking something like these ( <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> To open gallery ). It generates an animated image (`*.gif`) from the series of photos taken.
+Ultimately, the resulting social media share ends up looking something like these ( {{< i fa-hand-pointer-o >}} To open gallery ). It generates an animated image (`*.gif`) from the series of photos taken.
 
-<div id='syntax' class="gallery">
-    <a href='/img/2018/06/smplbth-one.bstill.png'>
-        <img src='/img/2018/06/smplbth-one.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-    <a href='/img/2018/06/smplbth-two.bstill.png'>
-        <img src='/img/2018/06/smplbth-two.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-    <a href='/img/2018/06/smplbth-three.bstill.png'>
-        <img src='/img/2018/06/smplbth-three.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-</div>
+![](/img/2018/06/smplbth-one.gif)
+
+![](/img/2018/06/smplbth-two.gif)
+
+![](/img/2018/06/smplbth-three.gif)
 
 <br/>
 
@@ -44,26 +35,25 @@ Here's what we want to do.
  3. We need to allow the user to send them to themselves for sharing
  4. We need to reset the state of the app after sharing is complete
 
-That's pretty simple, right?! While the application is idle, we'll provide the live camera view with some branding and a "start" button. Anyone walking by will more than likely see themselves and naturally become curious. The hope is that their curiosity will entice them enough to press the "start" button. Pressing the "start" button leads to more excitement as they're presented with a count down timer... 3, 2, 1... (Flash, Snap)! Their picture is taken, this continues a few more times. This ends up sparking a chain reaction where others take notice and join in. There are plenty of opportunities for "photo bombing"!
+That's pretty simple, right?! While the application is idle, we'll provide the live camera view with some branding and a "start" button. Anyone walking by will more than likely see themselves and naturally become curious. The hope is that their curiosity will entice them enough to press the "start" button. Pressing the "start" button leads to more excitement as they're presented with a countdown timer... 3, 2, 1... (Flash, Snap)! Their picture is taken, and this continues a few more times. This ends up sparking a chain reaction where others take notice and join in. There are plenty of opportunities for "photo bombing"!
 
 ## Technologies Used
 
-This application is built using the <a href="https://docs.microsoft.com/en-us/aspnet/core/spa/angular?view=aspnetcore-2.1&tabs=visual-studio" target="_blank">__<span style="color:#dd0031;">Angular</span>__ __ASP.NET Core__ SPA template</a>. Additionally, I'm leveraging the following:
+This application is built using the __Angular__ __ASP.NET Core__ SPA template. Additionally, I'm leveraging the following:
 
 | Technology | Purpose  |
 |--:|:--|
-| <a href="https://sixlabors.com/projects/imagesharp/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp; ImageSharp</a> | Convert several `.png` images into a single `.gif` |
-| <a href="https://azure.microsoft.com/en-us/services/storage/blobs/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp; Azure - Blob Storage</a> | Persist generated `.gif` image |
-| <a href="https://www.twilio.com/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp; Twilio</a> | Send SMS text message with URL of animated `.gif` image |
+| {{< url-link "{{< i fa-external-link-square >}} &nbsp; ImageSharp" "https://sixlabors.com/projects/imagesharp/" >}} | Convert several `.png` images into a single `.gif` |
+| {{< url-link "{{< i fa-external-link-square >}} &nbsp; Azure - Blob Storage" "https://azure.microsoft.com/en-us/services/storage/blobs/" >}} | Persist generated `.gif` image |
+| {{< url-link "{{< i fa-external-link-square >}} &nbsp; Twilio" "https://www.twilio.com/" >}} | Send SMS text message with URL of animated `.gif` image |
 
 The application is up on __GitHub__ here: <a href="https://github.com/IEvangelist/IEvangelist.PhotoBooth" target="_blank">
-    <i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; IEvangelist.PhotoBooth.
+    {{< i fa-github-square >}} &nbsp; IEvangelist.PhotoBooth.
 </a>
 
 ## Under The Hood
 
-Now the we've familiarized ourselves with what we need to do, let's take a look at how we can approach it. As I mentioned, this is an __ASP.NET Core__ application -- so we'll see a `Program.cs`, `Startup.cs` and a `Controllers` directory for our __ASP.NET Core Web API__. It is also an __<span style="color:#dd0031;">Angular</span>__ application. This too, has common conventions and things to look for, such as `components`, `services`, `modules`, `pipes`, etc.
-
+Now that we've familiarized ourselves with what we need to do, let's take a look at how we can approach it. As I mentioned, this is an __ASP.NET Core__ application -- so we'll see a `Program.cs`, `Startup.cs`, and a `Controllers` directory for our __ASP.NET Core Web API__. It is also an __Angular__ application. This too has common conventions and things to look for, such as `components`, `services`, `modules`, `pipes`, etc.
 
 ### First The C# Code
 
@@ -86,11 +76,11 @@ services.Configure<TwilioOptions>(
     Configuration.GetSection(nameof(TwilioOptions)));
 ```
 
-We have some unique services being added to our dependency injection (DI) service collection. Later, our controllers can ask for these interfaces and expect the corresponding implementations. Likewise, we map over some sections from our `appsettings.json` configuration to C# classes. These also become available to us later from the perspective of DI. We can ask for `IOptions<ImageProcessOptions>` for example. See <a href="{{< relref "asp-net-core-configuration.md" >}}" target="_blank">ASP.NET Core - Configuration Tips</a> for more details.
+We have some unique services being added to our dependency injection (DI) service collection. Later, our controllers can ask for these interfaces and expect the corresponding implementations. Likewise, we map over some sections from our `appsettings.json` configuration to C# classes. These also become available to us later from the perspective of DI. We can ask for `IOptions<ImageProcessOptions>` for example. See {{< url-link "ASP.NET Core - Configuration Tips" "{{< relref "asp-net-core-configuration.md" >}}" >}} for more details.
 
 #### ASP.NET Core Web API
 
-Our application has only one controller with a few actions on it. We have an endpoint that returns various configuration options to the client app, and then a more interesting `api/image/generate` endpoint. If you're eager to learn more, I published an article with details on <a href="http://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes" target="_blank">__ASP.NET Core__ Web API Attributes</a>.
+Our application has only one controller with a few actions on it. We have an endpoint that returns various configuration options to the client app, and then a more interesting `api/image/generate` endpoint. If you're eager to learn more, I published an article with details on {{< url-link "ASP.NET Core Web API Attributes" "https://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes" >}}.
 
 ```csharp
 [Route("api/image")]
@@ -110,10 +100,10 @@ public class ImageController : Controller
 }
 ```
 
-> <p/> <cite><strong>ProTip</strong></cite>
+> <cite>__ProTip__</cite>
 > Keep your controllers dumb! It is best to delegate their logic to a service, and this simplifies testing.
 
-<br/>
+<br/><br/>
 
 We ask for the `IImageProcessorService` implementation on the `api/image/options` action. This endpoint simply returns JSON that represents our combined configuration options from some of the various options classes we mapped earlier on startup. These options have information for the client app about animation frame delay, intervals, the number of photos to take, image height and width, etc.
 
@@ -147,7 +137,7 @@ We get the phone number and a list of images -- the images are base64 encoded re
 
 #### Services
 
-First, we convert all the base64 image strings to `byte[]`. We load the first image from the `ImageSharp.Image.Load` method, then the remaining images are loaded and added as frames to the first image frames collection. The resulting image now has several frames and will be saved as a `.gif` file. It is then persisted using __<i class="fa fa-cloud-upload" aria-hidden="true"></i> &nbsp; Azure Blob Storage__, within our `IImageRepository` implementation. Finally, we create a link to our image and text the user the URL with `Twilio`.
+First, we convert all the base64 image strings to `byte[]`. We load the first image from the `ImageSharp.Image.Load` method, then the remaining images are loaded and added as frames to the first image frames collection. The resulting image now has several frames and will be saved as a `.gif` file. It is then persisted using __{{< i fa-cloud-upload >}} &nbsp; Azure Blob Storage__, within our `IImageRepository` implementation. Finally, we create a link to our image and text the user the URL with `Twilio`.
 
 Snippet from `ImageProcessorService.ProcessImageAsync`
 
@@ -194,7 +184,7 @@ public async Task<ImagesPostResponse> ProcessImagesAsync(
 }
 ```
 
-Snippet from `ImageProcessorService.UploadImageAsync`, here we are naming (and saving) the file and encoding it with the `GifEncoder`. We then upload the image to our repository. 
+Snippet from `ImageProcessorService.UploadImageAsync`, here we are naming (and saving) the file and encoding it with the `GifEncoder`. We then upload the image to our repository.
 
 ```csharp
 private async Task UploadImageAsync(string id, Image<Rgba32> image)
@@ -223,10 +213,10 @@ public async Task UploadImageAsync(string id, string filePath)
 
 We `await` the `_initialization.Value` which represents the `async` operation to yield a container reference. It's an `AsyncLazy` that ensures the following:
 
- - Create cloud blob client
- - Create named `container` reference (if it doesn't already exist)
- - Set permissions on `container` for blob types as public access
- - Finally return the `container` instance
+- Create cloud blob client
+- Create named `container` reference (if it doesn't already exist)
+- Set permissions on `container` for blob types as public access
+- Finally return the `container` instance
 
 The `container` instance is then used to get a block blob reference, to which we can upload our local image file. We'll delete the local version when we've uploaded it to __Azure__.
 
@@ -256,17 +246,17 @@ public async Task SendTextAsync(string toPhoneNumber, string body)
 
 ## Angular
 
-The __<span style="color:#dd0031;">Angular</span>__ application is where a lot of the logic lives. It contains the user interactions and workflow. Since it's __<span style="color:#dd0031;">Angular</span>__ we'll look at some __<span style="color:#007acc;">TypeScript</span>__. We have an `image.service.ts` that makes HTTP calls out to our Web API. At the time of writing, we had the following components:
+The __Angular__ application is where a lot of the logic lives. It contains user interactions and workflow. Since it's __Angular__ we'll look at some __TypeScript__. We have an `image.service.ts` that makes HTTP calls out to our Web API. At the time of writing, we had the following components:
 
 | Component | Purpose  |
 |--:|:--|
-| `app` | Standard __<span style="color:#dd0031;">Angular</span>__ application entry point  |
+| `app` | Standard __Angular__ application entry point  |
 | `audio` | Encapsulates the ability to bind `src` audio files and invoke `async play()` functionality |
 | `camera` | Wraps the `<control-wizard>`, `<video>` and `<canvas>` elements, and orchestrates communications between them |
 | `controlwizard` | This is the state machine of the overlay for the user workflow -- it toggles various templates into and out of view |
 | `numberpad` | A numeric entry markup, which outputs the user input |
 
-When application loads, we first hit the `api/image/options` endpoint -- getting our client settings from the server. See <a href="{{< relref "angular-2-http.md" >}}" target="_blank">Angular Http with RxJS Observables</a> for more details on the `HttpClient` from __<span style="color:#dd0031;">Angular</span>__. We then set our camera stream to the `video` element on our `CameraComponent`.
+When application loads, we first hit the `api/image/options` endpoint -- getting our client settings from the server. See {{< url-link "Angular Http with RxJS Observables" "{{< relref "angular-2-http.md" >}}" >}} for more details on the `HttpClient` from __Angular__. We then set our camera stream to the `video` element on our `CameraComponent`.
 
 Snippet from `CameraComponent.ngAfterViewInit`.
 
@@ -286,7 +276,7 @@ if (this.videoElement && this.videoElement.nativeElement) {
 }
 ```
 
-The `videoElement` is an `ElementRef` instance -- our component uses the __<span style="color:#dd0031;">Angular</span>__ `@ViewChild` decorator to instantiate our reference to the `<video>` element in our template. We assign the `.nativeElement` to our `video` instance which is an `HTMLVideoElement`. Finally, if our browser environment has the ability to `.getUserMedia` we'll ask for the video stream and assign it to our `video` instance. Next, let's explore what kicks things off. 
+The `videoElement` is an `ElementRef` instance -- our component uses the __Angular__ `@ViewChild` decorator to instantiate our reference to the `<video>` element in our template. We assign the `.nativeElement` to our `video` instance which is an `HTMLVideoElement`. Finally, if our browser environment has the ability to `.getUserMedia` we'll ask for the video stream and assign it to our `video` instance. Next, let's explore what kicks things off.
 
 Snippet from `control-wizard.component.html`.
 
@@ -387,7 +377,7 @@ public onTakePhoto(details: PhotoDetails): void {
 }
 ```
 
-I relied on an old blog post from David Walsh - <a href="https://davidwalsh.name/browser-camera" target="_blank">Camera and Video Control with HTML5</a>, it was really helpful! We ask the `canvas` for a `2d` context and then `.drawImage` on the `context` passing our `video` element. We then ask the `canvas` for `.toDataUrl` -- which returns our base64 string representation of the image. We'll put this in `localStorage` for now.
+I relied on an old blog post from David Walsh - {{< url-link "Camera and Video Control with HTML5" "https://davidwalsh.name/browser-camera" >}}, it was really helpful! We ask the `canvas` for a `2d` context and then `.drawImage` on the `context` passing our `video` element. We then ask the `canvas` for `.toDataUrl` -- which returns our base64 string representation of the image. We'll put this in `localStorage` for now.
 
 After the configured number of photos has been taken, we'll change the state of the application to `WizardState.PresentingPhotos`. Additionally, we grab all the images from `localStorage` storing them in an array.
 
@@ -448,84 +438,21 @@ At this point, the user is presented with the sample animation. They could opt t
 
 Here is a look at the application in action.
 
-<style>
-img {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-}
+{{< photo-booth-gallery 1 >}}
 
-img[src*=bstill] {
-    -webkit-filter: blur(2px);
-	filter: blur(2px);
-}
-</style>
-
-<div id='action' class="gallery">
-    <a href='/img/2018/06/idle.bstill.png'>
-        <img src='/img/2018/06/idle.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-    <a href='/img/2018/06/countdown.bstill.png'>
-        <img src='/img/2018/06/countdown.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-    <a href='/img/2018/06/presenting.bstill.png'>
-        <img src='/img/2018/06/presenting.bstill.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-    <a href='/img/2018/06/send.png'>
-        <img src='/img/2018/06/send.png' />
-        <div class='caption'><i class='fa fa-search icon'></i></div>
-    </a>
-</div>
-
-<script type="text/javascript">
-    $(document).ready(() => {
-        const createGallery = selector => {
-            let $el = $(selector);
-            if ($el.length) {
-                $el.justifiedGallery({
-                    rowHeight: 200
-                }).on('jg.complete', () => {
-                    $el.lightGallery({
-                        selector: 'a',
-                        thumbnail: false
-                    }); 
-                });
-            }
-        };
-
-        const swapAttributes = (selector, attr) => {
-            [].forEach.call(document.querySelectorAll(selector), e => {
-                const href = e.getAttribute(attr);
-                e.setAttribute(attr, href.replace('.bstill.png', '.gif'));
-            });
-        };
-
-        createGallery('#syntax');
-        createGallery('#action');
-        swapAttributes('a[href*=bstill]', 'href');
-        swapAttributes('img[src*=bstill]', 'src');
-        createGallery('#syntax');
-        createGallery('#action');
-    });
-</script>
-
-<br/>
+<br/><br/>
 
 ## Requirements
 
-In order to run this locally you'll need a few things setup first. After pulling the bits from __Microsoft's GitHub__ (never thought I get to say that), you need the following:
+To run this locally you'll need a few things setup first. After pulling the bits from __Microsoft's GitHub__ (never thought I get to say that), you need the following:
 
- - <a href="https://azure.microsoft.com/en-us/services/storage/blobs/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp; __Azure Blob Storage__</a> -- Account / ConnectionString
- - <a href="https://www.twilio.com/docs/sms/quickstart/csharp/" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i> &nbsp;
-__Twilio__</a> -- Developer Account ID / AuthToken / From Phone Number
+- {{< i fa-external-link-square >}} &nbsp; __{{< url-link " Azure Blob Storage" "https://azure.microsoft.com/en-us/services/storage/blobs/" >}}__ -- Account / ConnectionString
+- {{< i fa-external-link-square >}} &nbsp; __{{< url-link " Twilio" "https://www.twilio.com/docs/sms/quickstart/csharp" >}}__ -- Developer Account ID / AuthToken / From Phone Number
 
+These values should be stored as environment variables with the following names:
 
- These values should be stored as environment variables with the following names:
-
-  - `photoboothconnection`
-  - `twilioaccountsid`
-  - `twilioauthtoken`
+- `photoboothconnection`
+- `twilioaccountsid`
+- `twilioauthtoken`
 
 Finally, feel free to toy around with the other configuration settings as you deem necessary.

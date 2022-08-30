@@ -12,22 +12,22 @@ title = "Writing a Blazor App"
 type = "post"
 +++
 
-Every time a developer encounters a new technology it's in our nature to explore it. This is the case with WebAssembly, and Microsoft's vision of the world in Blazor. Blazor is single page application framework that sits atop of WebAssembly, but it's still considered an experiment. I had the chance to interview Steve Sanderson about WebAssembly and Blazor -- I shared <a href="{{< relref "webassembly-interview.md" >}}" target="_blank">that post earlier this month</a>. Now, I'd like to explore Blazor with you a bit more.
+Every time a developer encounters a new technology it's in our nature to explore it. This is the case with WebAssembly, and Microsoft's vision of the world in Blazor. Blazor is single page application framework that sits atop of WebAssembly, but it's still considered an experiment. I had the chance to interview Steve Sanderson about WebAssembly and Blazor -- I shared {{< url-link "that post earlier this month" "{{< relref "webassembly-interview.md" >}}" >}}. Now, I'd like to explore Blazor with you a bit more.
 
 # Blazor
 
 There are plenty of resources for learning Blazor, here are two of my favorite:
 
- - <a href="https://blazor.net/" target="_blank">blazor.net</a>
- - <a href="https://learn-blazor.com/" target="_blank">learn-blazor.com</a>
+- {{< url-link "blazor.net" "https://blazor.net/" >}}
+- {{< url-link "learn-blazor.com" "https://learn-blazor.com/" >}}
 
 # A Practical Application
 
 Are you tired of the "TODO" application, I know I am?! I decided to go beyond the typical demonstration apps from the templates and the "TODO" apps that are so prevalent today - instead, we'll write an application that will hopefully put a smile on your face! I call it "Blazing Chuck"...
 
-I have been using <a href="http://www.icndb.com" target="_blank">The Internet Chuck Norris Database"</a> in my demos for as long as I can remember. Who doesn't love a good _nerdy_ joke? We will make some calls using the `HttpClient` to __GET__ a nerdy Chuck Norris based joke - like I said before, extremely practical application <i class="fa fa-smile-o" aria-hidden="true"></i>.
+I have been using {{< url-link "The Internet Chuck Norris Database" "https://www.icndb.com" >}} in my demos for as long as I can remember. Who doesn't love a good _nerdy_ joke? We will make some calls using the `HttpClient` to __GET__ a nerdy Chuck Norris based joke - like I said before, extremely practical application {{< i fa-smile-o >}}.
 
-If you'd rather have a look at the <i class="fa fa-github" aria-hidden="true"></i> GitHub project yourself, <a href="https://github.com/IEvangelist/IEvangelist.Blazing.Chuck" target="_blank">check it out here</a>. Please give me a <i class="fa fa-star" aria-hidden="true"></i> star, or <i class="fa fa-code-fork" aria-hidden="true"></i> fork it, or send along a pull request to help me make this example project even better.
+If you'd rather have a look at the {{< i fa-github >}} GitHub project yourself, {{< url-link "check it out here" "https://github.com/IEvangelist/IEvangelist.Blazing.Chuck" >}}. Please give me a {{< i fa-star >}} star, or {{< i fa-code-fork >}} fork it, or send along a pull request to help me make this example project even better.
 
 # Boring Parts
 
@@ -84,7 +84,7 @@ namespace IEvangelist.Blazing.Chuck
 
 ## `wwwroot/index.html`
 
-Let's take a look at this simple markup file. The `<head>` element doesn't contain anything special or unusual, let's checkout the `<body>`. We have a link to my <a href="https://github.com/IEvangelist/IEvangelist.Blazing.Chuck" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GitHub project</a>, which sits in the top right hand corner of the screen.
+Let's take a look at this simple markup file. The `<head>` element doesn't contain anything special or unusual, let's checkout the `<body>`. We have a link to my {{< i fa-github >}} {{< url-link "GitHub project" "https://github.com/IEvangelist/IEvangelist.Blazing.Chuck" >}}, which sits in the top right hand corner of the screen.
 
 ```html
 <!DOCTYPE html>
@@ -131,127 +131,24 @@ Then we have a familiar `<app>` element -- while it is a non-standard element it
 
 I've made mine more flashy and consistent with the rest of the application.
 
-> <p/> <cite><strong>ProTip</strong></cite>
+> <cite>__ProTip__</cite>
 > Your application is represented on the initial request, make the most of it!
+
+<br/><br/>
 
 Here is what my loading application looks like:
 
-<style>
-#content .grid h1 {
-    color: whitesmoke;
-}
-.grid {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-    display: grid;
-    width: 100%;
-    height: 350px;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-}
-.grid-content {
-    grid-template-areas: 
-        '. center center center .'
-        '. center center center .'
-        '. joke joke joke btn';
-}
-.loading {
-    margin: auto;
-}
-.grid-center {
-    padding-top: 50px;
-    grid-area: center;
-    align-content: center;
-}
-.spinner {
-    margin: 100px auto;
-    width: 100px;
-    height: 80px;
-    text-align: center;
-    font-size: 10px;
-}
+{{< example-loading-page 1 >}}
 
-.spinner > div {
-    background-color: azure !important;
-    height: 100%;
-    width: 12px;
-    display: inline-block;
-    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
-    animation: sk-stretchdelay 1.2s infinite ease-in-out;
-}
-
-.spinner .rect2 {
-    -webkit-animation-delay: -1.1s;
-    animation-delay: -1.1s;
-}
-
-.spinner .rect3 {
-    -webkit-animation-delay: -1.0s;
-    animation-delay: -1.0s;
-}
-
-.spinner .rect4 {
-    -webkit-animation-delay: -0.9s;
-    animation-delay: -0.9s;
-}
-
-.spinner .rect5 {
-    -webkit-animation-delay: -0.8s;
-    animation-delay: -0.8s;
-}
-
-@-webkit-keyframes sk-stretchdelay {
-    0%, 40%, 100% {
-        -webkit-transform: scaleY(0.4)
-    }
-
-    20% {
-        -webkit-transform: scaleY(1.0)
-    }
-}
-
-@keyframes sk-stretchdelay {
-    0%, 40%, 100% {
-        transform: scaleY(0.4);
-        -webkit-transform: scaleY(0.4);
-    }
-
-    20% {
-        transform: scaleY(1.0);
-        -webkit-transform: scaleY(1.0);
-    }
-}
-
-</style>
-
-<div class="grid">
-    <div class="grid-content">
-        <div class="grid-center">
-            <div class="loading">
-                <h1>Loading...</h1>
-                <h1>Please wait.</h1>
-                <div class="spinner">
-                    <div class="rect1"></div>
-                    <div class="rect2"></div>
-                    <div class="rect3"></div>
-                    <div class="rect4"></div>
-                    <div class="rect5"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<br/>
+<br/><br/>
 
 # Intriguing Parts
 
-### `Index.cshtml`
+### `Index.razor`
 
 This file is getting larger, and it's probably time that I break it into smaller components. I say that realizing that it is only 46 lines long, but still -- having mixed some __C#__ into some __HTML__ doesn't really feel right to me. Perhaps I'm a bit biased, but I'm arguably one of the __C#__ languages biggest fans. I've been conflicted about this for a while, and I've felt the same when I see templating markup in __Angular__ and even more so with __React's JSX__. Here it is, in its entirety.
 
-```
+```html
 @page "/"
 @inject HttpClient Http
 
@@ -276,8 +173,8 @@ This file is getting larger, and it's probably time that I break it into smaller
         Kick Chuck?!
     </button>
     <div class="thanks">
-        Special thanks to our friends at <a href="http://www.icndb.com/" target="_blank">ICNDB</a>
-        and <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit by Tobias Ahlin</a>!
+        Special thanks to our friends at <a href="http://www.icndb.com/" target="_blank">ICNDB</a> and
+        <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit by Tobias Ahlin</a>!
     </div>
     <div class="">
         <code>
@@ -303,7 +200,7 @@ This file is getting larger, and it's probably time that I break it into smaller
 }
 ```
 
-I want to break up this explanation a bit, we'll start with the directives. 
+I want to break up this explanation a bit, we'll start with the directives.
 
 ## Directives
 
@@ -317,7 +214,7 @@ Next, the `@inject` directive. This directive instructs our dependency injection
 
 ### `@functions`
 
-Functions can exist anywhere in the `*.cshtml` file, however it is most common and best practice to place them at the bottom of the file. These "functions" will serve as the __C#__ source code for the component. In our example we `override` the `Task` returning `OnInitAsync` method. This is one of several <a href="https://learn-blazor.com/pages/lifecycle-methods/" target="_blank">lifecycle methods</a>. We express our `override` as the invocation of the `GetJokeAsync` method. The `GetJokeAsync` method toggles the `_isLoading` flag, and makes an `async` call to the "Internet Chuck Norris Database" API. We use the `HttpClient` that has been injected into our component instance to call the `GetJsonAsync` function given the URL and type-parameter of our `Result` object. The `Result` object contains the __C#__ representation of the returned JSON result, which has the joke.
+Functions can exist anywhere in the `*.razor` file, however it is most common and best practice to place them at the bottom of the file. These "functions" will serve as the __C#__ source code for the component. In our example we `override` the `Task` returning `OnInitAsync` method. This is one of several {{< url-link "lifecycle methods" "https://learn-blazor.com/pages/lifecycle-methods/" >}}. We express our `override` as the invocation of the `GetJokeAsync` method. The `GetJokeAsync` method toggles the `_isLoading` flag, and makes an `async` call to the "Internet Chuck Norris Database" API. We use the `HttpClient` that has been injected into our component instance to call the `GetJsonAsync` function given the URL and type-parameter of our `Result` object. The `Result` object contains the __C#__ representation of the returned JSON result, which has the joke.
 
 # Markup
 
@@ -327,15 +224,15 @@ We bind to the `onclick` of our "Kick Chuck" `button` element. When this element
 
 This is where our `<script src="_framework/blazor.webassembly.js"></script>` comes in. There is a bit of framework magic that attaches event listeners, etc. This bit of __JavaScript__ manages event delegation, attaching, removing, as well as a slue of other various DOM relates interactions that tether our __.NET__ components to their __WebAssembly__ counterparts.
 
-For more details on how this is implemented, please have a look at the <a href="https://github.com/aspnet/Blazor/tree/master/src/Microsoft.AspNetCore.Blazor.Browser.JS/src" target="_blank">Microsoft.AspNetCore.Blazor.Browser.JS <i class="fa fa-github" aria-hidden="true"></i> project</a>.
+For more details on how this is implemented, please have a look at the {{< i fa-github >}} {{< url-link "Microsoft.AspNetCore.Blazor.Browser.JS project" "https://github.com/aspnet/Blazor/tree/master/src/Microsoft.AspNetCore.Blazor.Browser.JS/src" >}}.
 
 ### A Word On Interpreted Mode
 
-When developing your Blazor applications, you'll be using "interpreted mode". Interpreted mode will take your `*.dlls` on the client, and dynamically load then via the Mono Runtime. The Mono Runtime is compiled to WebAssembly, and represented by the `mono.wasm` file. This entire process, is actually really fast! 
+When developing your Blazor applications, you'll be using "interpreted mode". Interpreted mode will take your `*.dlls` on the client, and dynamically load then via the Mono Runtime. The Mono Runtime is compiled to WebAssembly, and represented by the `mono.wasm` file. This entire process, is actually really fast!
 
 ## Debugging C# In Chrome DevTools
 
-Debugging is only available within Chrome and is very limited. 
+Debugging is only available within Chrome and is very limited.
 
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/_mjCddc21Eo" frameborder="0" allowfullscreen></iframe>
@@ -345,8 +242,8 @@ Debugging is only available within Chrome and is very limited.
 
 # "Blazing Chuck!"
 
-Here it is, the moment you've been waiting for. Putting all the pieces together, and you have "Blazing Chuck". Go forth, and <a href="http://ievangelistblazingchuck.azurewebsites.net/" target="_blank">"kick chuck"</a>. Disclaimer, this actually doesn't work well (or at all) on mobile -- for best results explore on a desktop... more to come once I figure out the issue with that.
+Here it is, the moment you've been waiting for. Putting all the pieces together, and you have "Blazing Chuck". Go forth, and {{< url-link ""kick chuck"" "https://ievangelistblazingchuck.azurewebsites.net/" >}}. Disclaimer, this actually doesn't work well (or at all) on mobile -- for best results explore on a desktop... more to come once I figure out the issue with that.
 
 # Thanks
 
-Special thanks to our friends at <a href="http://www.icndb.com/" target="_blank">ICNDB</a> for their amazingly hilarious and free API. Also, <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit by Tobias Ahlin</a> for the simple HTML and CSS loading indicator!
+Special thanks to our friends at {{< url-link "ICNDB" "https://www.icndb.com/" >}} for their amazingly hilarious and free API. Also, {{< url-link "SpinKit by Tobias Ahlin" "https://tobiasahlin.com/spinkit/" >}} for the simple HTML and CSS loading indicator!

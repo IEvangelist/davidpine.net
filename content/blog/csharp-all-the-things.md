@@ -12,19 +12,19 @@ title = "C# All The Things"
 type = "post"
 +++
 
-> I'm proud to share that this post is part of the C# Advent Calendar and it's my second year contributing to it! I encourage you to check out all the others <a href="https://crosscuttingconcerns.com/The-Second-Annual-C-Advent" target="_blank">here</a>.
+> I'm proud to share that this post is part of the C# Advent Calendar and it's my second year contributing to it! I encourage you to check out all the others {{< url-link "here" "https://crosscuttingconcerns.com/The-Second-Annual-C-Advent" >}}.
 
 <br />
 
-# Developers Are Lazy!
+# Developers Are Lazy
 
-In the world of web development it is hard to escape certain tools that we are forced to rely on. As developers we're innately lazy and it is safe to say that perhaps we don't really care enough to look into other tooling options. Let's face it... you're lazy, and I'm lazy and that is all there is to it. __.NET Core__ offers <a href="https://aka.ms/global-tools" target="_blank">global tooling</a>, much like __NPM__ you can use these tools for various build automation tasks. It's worth exploring __.NET Core Global Tooling__ to see how it might enable us to be even more lazy!
+In the world of web development it is hard to escape certain tools that we are forced to rely on. As developers we're innately lazy and it is safe to say that perhaps we don't really care enough to look into other tooling options. Let's face it... you're lazy, and I'm lazy and that is all there is to it. __.NET Core__ offers {{< url-link "global tooling" "https://aka.ms/global-tools" >}}, much like __NPM__ you can use these tools for various build automation tasks. It's worth exploring __.NET Core Global Tooling__ to see how it might enable us to be even more lazy!
 
 In this post I will cover how I have utilized the __.NET Core Global Tooling__ feature to my advantage, and how you as a developer can easily consume it.
 
 ## Let's Use It Already
 
-I was recently working on a small and very simple web project. It served up some light-weight HTML, CSS and JavaScript. I thought to myself "it would be useful to minify these files", but in order to do so I would have relied on __NPM__ and I simply didn't want to. Instead, I wrote a __.NET Core Global Tool__. It's named <a href="https://github.com/IEvangelist/IEvangelist.DotNet.Miglifier" target="_blank">Miglifier"</a>, well because naming things is hard and it does two things..."minifies" and "uglifies" files, thus it "miglifies" them 😅. It is extremely simple to consume.
+I was recently working on a small and very simple web project. It served up some light-weight HTML, CSS and JavaScript. I thought to myself "it would be useful to minify these files", but in order to do so I would have relied on __NPM__ and I simply didn't want to. Instead, I wrote a __.NET Core Global Tool__. It's named {{< url-link "Miglifier" "https://github.com/IEvangelist/IEvangelist.DotNet.Miglifier" >}}, well because naming things is hard and it does two things..."minifies" and "uglifies" files, thus it "miglifies" them 😅. It is extremely simple to consume.
 
 From the `.NET CLI` execute the following command to install the latest version.
 
@@ -34,8 +34,10 @@ dotnet tool install --global dotnet-miglifier
 
 This will install "miglifier" globally. You can then use it by simply invoking the following command and passing in the `"wwwroot"` directory. The `"wwwroot"` directory argument instructs "miglifier" where to scan for files.
 
-> <p/> <cite><strong>ProTip</strong></cite>
-> You do not actually need to invoke `dotnet miglifier`, you can simply say `miglifier` and omit the `dotnet` from the command. 
+> <cite>__ProTip__</cite>
+> You do not actually need to invoke `dotnet miglifier`, you can simply say `miglifier` and omit the `dotnet` from the command.
+
+<br/><br/>
 
 Each file that is found will be "miglified" and then written back to disk.
 
@@ -55,11 +57,11 @@ Processing 1 Html file(s).
 Successfully miglified 3 files!
 ```
 
-It is limited in its functionality at this point. The ability to configure how the "miglifier" will operate is supported through a `miglify.json` file. It supports globing for input directories. It allows each type to have their own output directory. All the settings for the CSS, HTML and JavaScript files are serialized versions of their C# equivalent. As such, you can control it anyway you see fit...that is to say so long as it confines to the <a href="https://github.com/xoofx/NUglify" target="_blank">`NUglify`</a> package. By default, it simply works as an in-place minification of CSS, HTML and JavaScript files - for now (more to come soon)! This results in a `*.min.*` file of the corresponding file type. It maintains the same folder hierarchy and will leave files where they were. 
+It is limited in its functionality at this point. The ability to configure how the "miglifier" will operate is supported through a `miglify.json` file. It supports globing for input directories. It allows each type to have their own output directory. All the settings for the CSS, HTML and JavaScript files are serialized versions of their C# equivalent. As such, you can control it anyway you see fit...that is to say so long as it confines to the {{< url-link "`NUglify`" "https://github.com/xoofx/NUglify" >}} package. By default, it simply works as an in-place minification of CSS, HTML and JavaScript files - for now (more to come soon)! This results in a `*.min.*` file of the corresponding file type. It maintains the same folder hierarchy and will leave files where they were.
 
 ## Building the .NET Core Tool
 
-I relied heavily on the documentation from the official __Microsoft__ site on <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools-how-to-create" target="_blank">"How to Create a .NET Core Global Tool"</a>. I was thoroughly inspired by my good friend Andrew Lock and <a href="https://andrewlock.net/creating-a-net-core-global-cli-tool-for-squashing-images-with-the-tinypng-api/" target="_blank">his awesome post on the subject here</a>. We begin our process with a simple command line template from within the `File > New Project` menu option of __Visual Studio__. 
+I relied heavily on the documentation from the official __Microsoft__ site on {{< url-link "How to Create a .NET Core Global Tool" "https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools-how-to-create" >}}. I was thoroughly inspired by my good friend Andrew Lock and {{< url-link "his awesome post on the subject here" "https://andrewlock.net/creating-a-net-core-global-cli-tool-for-squashing-images-with-the-tinypng-api/" >}}. We begin our process with a simple command line template from within the `File > New Project` menu option of __Visual Studio__.
 
 Then we'll need to edit the `.csproj` file and manually set `<IsPackable>true</IsPackable>` and `<PackAsTool>true</PackAsTool>`. This enables your command line app to be treated as a __.NET Core Global Tool__. Note that we've given it a title, command line and assembly name - all for good measure.
 
@@ -74,9 +76,10 @@ Then we'll need to edit the `.csproj` file and manually set `<IsPackable>true</I
     <AssemblyName>dotnet-miglifier</AssemblyName>
 </PropertyGroup>
 ```
+
 # C# Bits 😎
 
-Make no mistake, this little command line application is packed full of some awesome __C#__ bits! It starts out as a McMaster command line utilitarian app - <a href="https://github.com/natemcmaster/CommandLineUtils" target="_blank">details here</a>. It is powered by the __.NET__ library for globing, <a href="https://github.com/kthompson/glob/" target="_blank">Glob</a> - this is what enables our config file to have input patterns like `"**/*.js"`. I wrote a few extension methods for mapping my __C#__ `MiglifySettings` class object to __JSON__. Let's start there... here is the settings class, it is rather simple.
+Make no mistake, this little command line application is packed full of some awesome __C#__ bits! It starts out as a McMaster command line utilitarian app - {{< url-link "details here" "https://github.com/natemcmaster/CommandLineUtils" >}}. It is powered by the __.NET__ library for globing, {{< url-link "Glob" "https://github.com/kthompson/glob/" >}} - this is what enables our config file to have input patterns like `"**/*.js"`. I wrote a few extension methods for mapping my __C#__ `MiglifySettings` class object to __JSON__. Let's start there... here is the settings class, it is rather simple.
 
 ```csharp
 public class MiglifySettings
@@ -139,14 +142,14 @@ static class JsonSettings
 }
 ```
 
-Now, in the spirit of __C#__ I'd like to share something rather special with you. Consider this my Christmas 🎁 to you as part of the __C# Advent Calendar__...deconstruction 😈! I posted about <a href="{{< ref "exploring-csharp-seven.md" >}}" target="_blank">__C# 7__ when it was first released</a> and while this is a __C# 7__ feature it is a little different. With the introduction of _tuples_ the language also gave us deconstruction of _tuples_.  In addition to deconstructing _tuples_ we can actually deconstruct anything that has a `public void Deconstruct([out T value])` method, where the `out` parameters serve as the ordinals to deconstructing a target tuple type. In other words, we can deconstruct non-tuple types into tuples. Let's explore this a bit more, shall we? 
+Now, in the spirit of __C#__ I'd like to share something rather special with you. Consider this my Christmas 🎁 to you as part of the __C# Advent Calendar__...deconstruction 😈! I posted about {{< url-link "__C# 7__ when it was first released" "{{< ref "exploring-csharp-seven.md" >}}" >}} and while this is a __C# 7__ feature it is a little different. With the introduction of _tuples_ the language also gave us deconstruction of _tuples_.  In addition to deconstructing _tuples_ we can actually deconstruct anything that has a `public void Deconstruct([out T value])` method, where the `out` parameters serve as the ordinals to deconstructing a target tuple type. In other words, we can deconstruct non-tuple types into tuples. Let's explore this a bit more, shall we?
 
 In the miglifier app we accept two arguments.
 
-  1. The `Path` argument is the root directory in which we'll scan for files 
+  1. The `Path` argument is the root directory in which we'll scan for files
   2. The `MiglifyJsonPath (optional)` argument is the path to the `miglify.json` file
 
-This configuration file is deserialized and passed into the `GetMiglifiedFiles` function. This uses glob patterns to search for all the target files to work on processing them along the way. Eventually it will return the results -- the results are of type `IEnumerable<MiglifyFile>`. We group the results and then convert them to a `Dictionary<MiglifyType, List<MiglifyFile>>` and `foreach` over our collection. Here is the beauty of it... we can deconstruct the `KeyValuePair<MiglifyType, List<MiglifyFile>>`! 
+This configuration file is deserialized and passed into the `GetMiglifiedFiles` function. This uses glob patterns to search for all the target files to work on processing them along the way. Eventually it will return the results -- the results are of type `IEnumerable<MiglifyFile>`. We group the results and then convert them to a `Dictionary<MiglifyType, List<MiglifyFile>>` and `foreach` over our collection. Here is the beauty of it... we can deconstruct the `KeyValuePair<MiglifyType, List<MiglifyFile>>`!
 
 ```csharp
 var settings = await LoadMiglifySettingsAsync(miglifyJson);
@@ -166,19 +169,7 @@ foreach (var (type, files) in results.GroupBy(f => f.Type)
 
 When I first learned about this, I was so excited to tweet about it!
 
-<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en">
-<p lang="en" dir="ltr">If you love <a href="https://twitter.com/hashtag/csharp?src=hash&amp;ref_src=twsrc%5Etfw">#csharp</a> and <a href="https://twitter.com/hashtag/tuples?src=hash&amp;ref_src=twsrc%5Etfw">#tuples</a> (pronounced &quot;two-pulls&quot;) and the power of deconstruction, allow me to share this little gem!
-<br>.
-<br>.
-<br>I love that I can now say, &quot;foreach (key, value) in dictionary)&quot; 🤘🏼... 
-<a href="https://twitter.com/hashtag/DeveloperCommunity?src=hash&amp;ref_src=twsrc%5Etfw">#DeveloperCommunity</a>
-<a href="https://twitter.com/dotnet?ref_src=twsrc%5Etfw">@dotnet</a>
-<a href="https://t.co/PEjtipvhRG">https://t.co/PEjtipvhRG</a>
-<a href="https://t.co/r7nDWDGeOZ">pic.twitter.com/r7nDWDGeOZ</a>
-</p>&mdash; David Pine (@davidpine7)
-<a href="https://twitter.com/davidpine7/status/1032709720505831425?ref_src=twsrc%5Etfw">August 23, 2018</a>
-</blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet id="1032709720505831425" user="davidpine7" >}}
 
 ## Credit 🙏🏼
 
@@ -193,19 +184,19 @@ I would like to call attention to the 3rd party dependencies that helped make th
 <PackageReference Include="NUglify" Version="1.5.12" />
 ```
 
-The <a href="https://github.com/centare/Centare.Extensions/wiki#Usage" target="_blank">__Centare.Extensions__</a> is an amazing package, with tons of great extension methods. There is one in particular that does the bulk of the work, that is the <a href="https://github.com/xoofx/NUglify" target="_blank">`NUglify`</a> package. There is an immense background to this project that is documented <a href="https://github.com/xoofx/NUglify/blob/master/doc/readme.md" target="_blank">here in their very detailed README.md</a>. Know that, without this package the "miglifier" would probably not exist for you today!
+The {{< url-link "__Centare.Extensions__" "https://github.com/centare/Centare.Extensions/wiki#Usage" >}} is an amazing package, with tons of great extension methods. There is one in particular that does the bulk of the work, that is the {{< url-link "`NUglify`" "https://github.com/xoofx/NUglify" >}} package. There is an immense background to this project that is documented {{< url-link "here in their very detailed README.md" "https://github.com/xoofx/NUglify/blob/master/doc/readme.md" >}}. Know that, without this package the "miglifier" would probably not exist for you today!
 
 # Badges 🤘🏼
 
-The __NuGet__ & __Azure DevOps__ badges are only part of the story, by all means please check out the project yourself <a href="https://github.com/IEvangelist/IEvangelist.DotNet.Miglifier" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> IEvangelist.DotNet.Miglifier</a>! I look forward to pull-requests, feature requests, or issues. Happy coding, friends...
+The __NuGet__ & __Azure DevOps__ badges are only part of the story, by all means please check out the project yourself {{< i fa-github >}} {{< url-link "IEvangelist.DotNet.Miglifier" "https://github.com/IEvangelist/IEvangelist.DotNet.Miglifier" >}}! I look forward to pull-requests, feature requests, or issues. Happy coding, friends...
 
 <img src="https://dev.azure.com/davidpine/IEvangelist.DotNet.Miglifier/_apis/build/status/IEvangelist.DotNet.Miglifier%20.NET%20Core-CI"
-     alt="Build status" 
+     alt="Build status"
      data-canonical-src="https://dev.azure.com/davidpine/IEvangelist.DotNet.Miglifier/_apis/build/status/IEvangelist.DotNet.Miglifier%20.NET%20Core-CI"
      style="max-width:100%;">
 <a href="https://www.nuget.org/packages/dotnet-miglifier/" rel="nofollow" target="_blank">
    <img src="https://img.shields.io/nuget/v/dotnet-miglifier.svg"
-        alt="NuGet version (dotnet-miglifier)" 
-        data-canonical-src="https://img.shields.io/nuget/v/dotnet-miglifier.svg?style=flat-square" 
+        alt="NuGet version (dotnet-miglifier)"
+        data-canonical-src="https://img.shields.io/nuget/v/dotnet-miglifier.svg?style=flat-square"
         style="max-width:100%;">
 </a>

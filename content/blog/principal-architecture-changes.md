@@ -20,7 +20,7 @@ Like the title claims, if you're using `ASP.NET Core` and expecting the `Thread.
 
 ## History
 
-If you have ever done any **.NET Framework** development, you've probably seen the `Thread` class. You're probably familiar with the <a href="https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal" target="_blank">`Thread.CurrentPrincipal`</a> member. This member of the `Thread` class is defined as follows:
+If you have ever done any **.NET Framework** development, you've probably seen the `Thread` class. You're probably familiar with the {{< url-link "`Thread.CurrentPrincipal`" "https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal" >}} member. This member of the `Thread` class is defined as follows:
 
 ```csharp
 public static IPrincipal CurrentPrincipal
@@ -49,18 +49,18 @@ public static IPrincipal CurrentPrincipal
 }
 ```
 
-> <p/> Gets or sets the thread's current principal (for role-based security).
+> Gets or sets the thread's current principal (for role-based security).
 
 Does anyone see the issue with this? Can you say, "publically static mutable state, oh my"?! You should be alarmed. This property was never a good idea and today it simply doesn't belong. **ASP.NET Core** is not responsible for assigning this. You might not agree with that decision, but it is final.
 
-Before diving into this, pop over to <a href="https://github.com/aspnet/Security/issues/322" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> Microsoft.AspNetCore.Security -- Issue 332</a> for more of the back story.
+Before diving into this, pop over to {{< url-link "{{< i fa-github-alt >}} Microsoft.AspNetCore.Security -- Issue 332" "https://github.com/aspnet/Security/issues/322" >}} for more of the back story.
 
 ## Thread.CurrentPrincipal Today in ASP.NET Core
 
 As part of the `ASP.NET Core` framework, the following middleware packages are provided:
 
- - <a href="https://github.com/aspnet/Identity" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> `Microsoft.AspNetCore.Identity`</a>
- - <a href="https://github.com/aspnet/Security" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> `Microsoft.AspNetCore.Security`</a>
+- {{< url-link "{{< i fa-github-alt >}} `Microsoft.AspNetCore.Identity`" "https://github.com/aspnet/Identity" >}}
+- {{< url-link "{{< i fa-github-alt >}} `Microsoft.AspNetCore.Security`" "https://github.com/aspnet/Security" >}}
 
 If you opt-in to using this middleware and you provide a login page (or expose an external provider) you'd end up creating an instance of a `ClaimsPrincipal` that represents an authenticated user. Subsequent requests to the web server would be handed the cookie that holds the user's claims. However the `Thread.CurrentPrincipal` would **not** actually reflect the `ClaimsPrincipal` object that was created as the result of the login. In fact, it would simply be an instance of the `GenericPrincipal` implementation. Likewise, walking up to the `ClaimsPrincipal.Current` property and asking it for the current claims principal in context wouldn't give you what you might expect either. Additionally, the `ClaimsPrincipal.Current` internally relies on the `Thread.CurrentPrincipal` for its value.
 
@@ -127,7 +127,7 @@ From the example above we can see how simple it is to use dependency injection. 
 
 ### But Why?
 
-There are a lot of people who feel as though DI is overrated and that it is much easier to ask the `Thread.CurrentPrincipal` for its value. While that is easy, it is also risky...think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between the `Thread` and `ClaimsPrincipal` classes. Scott Hanselman blogged about a <a href="http://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx" target="_blank">similar issue</a> nearly thirteen years ago!
+There are a lot of people who feel as though DI is overrated and that it is much easier to ask the `Thread.CurrentPrincipal` for its value. While that is easy, it is also risky...think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between the `Thread` and `ClaimsPrincipal` classes. Scott Hanselman blogged about a {{< url-link "similar issue" "https://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx" >}} nearly thirteen years ago!
 
 One of the first benefits that comes to mind from this is the fact that with DI the code is unit-testable. It is extremely easy to mock out an `IPrincipal` to use for unit
 testing. Additionally, this alleviates all of the concerns about synchronization and reliability. The `IPrincipal` you're given is the principal you'd expect and it is fully

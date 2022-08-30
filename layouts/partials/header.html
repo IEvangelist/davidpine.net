@@ -37,7 +37,6 @@
         {{ template "_internal/twitter_cards.html" . }}
         {{ template "_internal/opengraph.html" . }}
         {{ template "_internal/schema.html" . }}
-        {{ template "_internal/google_news.html" . }}
 
         <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
 
@@ -75,15 +74,10 @@
         {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
             {{ template "_internal/google_analytics.html" . }}
         {{ end }}
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
 
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         <!-- Wrapper -->

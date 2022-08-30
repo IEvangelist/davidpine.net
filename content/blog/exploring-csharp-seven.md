@@ -16,33 +16,33 @@ type = "post"
 # Intro
 
 Since we have all been actively celebrating the 20<sup>th</sup> anniversary of **Visual Studio**, it felt appropriate to post about **C# 7**!
-In this post we will explore the features that make **C# 7** so promising. I've put together a demonstration **C# 7** project, that is available 
-<a href="https://github.com/IEvangelist/IEvangelist.CSharp" target="_blank">here</a>.
+In this post we will explore the features that make **C# 7** so promising. I've put together a demonstration **C# 7** project, that is available
+{{< url-link "here" "https://github.com/IEvangelist/IEvangelist.CSharp" >}}.
 
 This post contains examples and details on five of the nine new **C# 7** features.
 
- - Pattern matching
- - `out` variables
- - Tuples
- - Local functions
- - `throw` expressions
+- Pattern matching
+- `out` variables
+- Tuples
+- Local functions
+- `throw` expressions
 
 These are the remaining features, that I **do not** cover in this post.
 
- - `ref` locals and returns
- - More expression-bodied members
- - Generalized `async` return types
- - Numeric literal syntax improvements
+- `ref` locals and returns
+- More expression-bodied members
+- Generalized `async` return types
+- Numeric literal syntax improvements
 
 ## Pattern Matching
 
-With **C# 7** we welcomed the concept of "patterns". This concept allows for the extraction of information when a variable is tested for a certain "shape" and matches a 
+With **C# 7** we welcomed the concept of "patterns". This concept allows for the extraction of information when a variable is tested for a certain "shape" and matches a
 specified pattern. We're able to leverage the "shape" from which we matched on as a declared variable in scope, consuming it as we deem necessary. This is referred to as
 "dynamic" (or "method") dispatch.
 
-> <p> In computer science, dynamic dispatch is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time. 
+> <p> In computer science, dynamic dispatch is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time.
 > It is commonly employed in, and considered a prime characteristic of, object-oriented programming (OOP) languages and systems.
-> <cite><a href="https://en.wikipedia.org/wiki/Dynamic_dispatch" target="_blank">Wiki - Dynamic Dispatch</a></cite>
+> <cite>{{< url-link "Wiki - Dynamic Dispatch" "https://en.wikipedia.org/wiki/Dynamic_dispatch" >}}</cite>
 
 Dynamic dispatch is nothing new to **C#**, and has been around forever. **C# 7** exposes this functionality via constant and type patterns.
 
@@ -64,7 +64,7 @@ public void IsExpression(object obj)
 
 ### Type Patterns
 
-Look closely at this syntax. This is where we start mixing metaphors. Prior to **C# 7** we could use the "is" expression to do simple type assertions 
+Look closely at this syntax. This is where we start mixing metaphors. Prior to **C# 7** we could use the "is" expression to do simple type assertions
 `obj is [type]`. Additionally, we all know how to declare a variable `int i`. This new syntax merges these concepts together and is more compound and
 expressive.
 
@@ -84,6 +84,7 @@ public void IsExpression(object obj)
     // This is in fact by design, more on that out the "out variable" section 
 }
 ```
+
 > <p> The "switch statement" has been generalized
 
 The `when` keyword has also been extended, now it not only applies to the `catch` statement but also the `case` labels within a `switch` statement.
@@ -157,7 +158,7 @@ static void OutputShapes(IEnumerable<Shape> shapes)
 As you can see, we are able to more easily reason about the specific `shape` in context. For example, with each iteration of our collection we `switch`
 on the `shape`. If the `shape` is an instance of the `Circle` subclass, we'll execute the `case` label "Circle" and we get the instance declared as
 its type in the variable `c`. Likewise, if the `shape` is a `Rectangle` and that rectangle `s` just so happens to also be a square `when (s.IsSquare)`
-evaluates to `true` - we will then execute the square `case` label. If the `shape` is an instance of a `Rectangle` but not a square, we execute the 
+evaluates to `true` - we will then execute the square `case` label. If the `shape` is an instance of a `Rectangle` but not a square, we execute the
 "Rectangle" `case` label. Notice we still have `default` fall-thru. Finally, we can also have a "null" `case` label.  
 
 ## `out` variables
@@ -205,7 +206,7 @@ more expressively:
 public int ToInt32(string input) => int.TryParse(input, out var result) ? result : result;
 ```
 
-A few things you might notice. First, this is now a single line as we can express this with the lambda operator. We leverage the ternary operator as 
+A few things you might notice. First, this is now a single line as we can express this with the lambda operator. We leverage the ternary operator as
 well. Additionally, we can use the `var` keyword for our declaration. And since the `result` variable is in scope we can use it as both return cases.
 If unable to be parsed, it is in fact a `default(int)` anyways.
 
@@ -245,8 +246,8 @@ void ValueTuple()
 }
 ```
 
-You might notice that the syntactic sugar is pouring over this new feature. This is referred to as a "tuple literal". We dropped the entire `new` keyword 
-usage, as well as specifying the types. They are all inferred and in fact known, IntelliSense proves this immediately. But we still have the issue of 
+You might notice that the syntactic sugar is pouring over this new feature. This is referred to as a "tuple literal". We dropped the entire `new` keyword
+usage, as well as specifying the types. They are all inferred and in fact known, IntelliSense proves this immediately. But we still have the issue of
 these tuples not being very API friendly. Let's explore how we can give them custom names.
 
 ```csharp
@@ -335,14 +336,14 @@ void DeconstructNonTuple()
 
 #### Comparing Anonymous `object` vs. `ValueTuple`
 
-At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas 
+At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
 a `ValueTuple` is a `struct` - value type. Also, you can only return an anonymous object from a method as an `object` which isn't very API friendly.
-Within a fluent `LINQ` chained method anonymous objects are great and will still be normal for projection. 
+Within a fluent `LINQ` chained method anonymous objects are great and will still be normal for projection.
 
 ## Local Functions
 
 At first glance, local functions seem a bit odd. I've heard people say, "this method is starting to look like a class". At first,
-I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick 
+I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick
 comparison of the two, note the benefits of local functions as they compare to lambdas.
 
 <style>
@@ -352,11 +353,11 @@ comparison of the two, note the benefits of local functions as they compare to l
 
 |   | Lambda(s) | Local Function(s) | Details |
 |--:|:--|:--|:--|
-|Generics| <i class="fa fa-times red" aria-hidden="true"></i> | <i class="fa fa-check green" aria-hidden="true"></i> |Local functions allow for the use of generics|
-|Iterators| <i class="fa fa-times red" aria-hidden="true"></i> | <i class="fa fa-check green" aria-hidden="true"></i> |The `yield` keyword is valid within local functions|
-|Recursion| <i class="fa fa-times red" aria-hidden="true"></i> | <i class="fa fa-check green" aria-hidden="true"></i> |Local functions support recursion|
-|Allocatey| <i class="fa fa-check green" aria-hidden="true"></i> | <i class="fa fa-times red" aria-hidden="true"></i> |Delegates require an `object` allocation|
-|Potential Variable Lifting| <i class="fa fa-check green" aria-hidden="true"></i> | <i class="fa fa-times red" aria-hidden="true"></i> |Implicitly captured closure is non-existent|
+|Generics| {{< i fa-times red >}} | {{< i fa-check green >}} |Local functions allow for the use of generics|
+|Iterators| {{< i fa-times red >}} | {{< i fa-check green >}} |The `yield` keyword is valid within local functions|
+|Recursion| {{< i fa-times red >}} | {{< i fa-check green >}} |Local functions support recursion|
+|Allocatey| {{< i fa-check green >}} | {{< i fa-times red >}} |Delegates require an `object` allocation|
+|Potential Variable Lifting| {{< i fa-check green >}} | {{< i fa-times red >}} |Implicitly captured closure is non-existent|
 
 It is vital to understand that local functions are <strong>not</strong> a replacement for `Action<T[,T1...]>` or `Func<T[,T1...]>`. These delegate declarations are still
 needed as parameters to enable lambda expression arguments. If you see the **#notasugly** hashtag, this was coined by Mads Torgersen.
@@ -391,7 +392,7 @@ public static IEnumerable<TResult> Select<T, TResult>(this IEnumerable<T> source
 }
 ```
 
-Since this method is written as an iterator, the validation is skipped until it's iterated. With **C# 7** we can use local function to get both 
+Since this method is written as an iterator, the validation is skipped until it's iterated. With **C# 7** we can use local function to get both
 "fail-fast" validation and the iterator together.
 
 ```csharp
@@ -451,9 +452,9 @@ class ModernService : IService
 
 If the given `provider` argument is `null` we'll coalesce over to the `throw` expression.
 
-# From C# 6 to C# 7, then and now!
+# From C# 6 to C# 7, then and now
 
-I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it 
+I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
 made sense to share it here - Enjoy!!
 
 <div class="iframe_container">
@@ -462,4 +463,4 @@ made sense to share it here - Enjoy!!
 
 **Further Reading**
 
- - <a href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" target="_blank">What's new in C# 7</a>
+- {{< url-link "What's new in C# 7" "https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" >}}

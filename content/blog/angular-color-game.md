@@ -17,11 +17,11 @@ type = "post"
 
 I have three sons. Lyric who is six and a half, Londyn who is four and half, and Lennyx who is two and half. As you might imagine, they seldom agree on things. For example when it's family move night, "which movie we'll watch?", or "who gets to go first?" when playing a game. These _important life decisions_ are often decided by playing the _color guessing game_. My wife or I will choose a color at random and have the boys guess a color until someone guesses the correct color. Whoever guesses correctly is the __winner__ and they get to choose the movie or go first, etc. You get the point!
 
-In this post we'll discuss how to create an __Angular__ application using the CLI, Material Design and Animations. As a spoiler alert, that application is <a href='http://bit.ly/kids-color-game' target='_blank'>hosted here</a> and the source code is up on <a href='https://github.com/IEvangelist/color-game' target='_blank'><i class='fa fa-github'></i> GitHub here</a>.
+In this post we'll discuss how to create an __Angular__ application using the CLI, Material Design and Animations. As a spoiler alert, that application is {{< url-link "hosted here" "https://bit.ly/kids-color-game" >}} and the source code is up on {{< i fa-github >}} {{< url-link "GitHub here" "https://github.com/IEvangelist/color-game" >}}.
 
 ## Angular CLI
 
-I've been an __Angular__ developer for a long time now, and I'll admit it took me a bit to get used to the <a href='https://cli.angular.io/' target='_blank'>__Angular CLI__</a>. But once I got over my need to hand-code all the boilerplate, I'm never looking back! The command line interface simplifies so many aspects of __Angular__ development by allowing the developer to focus on the application logic. The CLI handles everything from creating a new project to generating modules, components, pipes, services, classes, interfaces, enums, directives, guards, etc...<i class="fa fa-smile-o"></i> it also tests, lints and serves up your app for local debugging! Let's get started, shall we?!
+I've been an __Angular__ developer for a long time now, and I'll admit it took me a bit to get used to the __{{< url-link "Angular CLI" "https://cli.angular.io/" >}}__. But once I got over my need to hand-code all the boilerplate, I'm never looking back! The command line interface simplifies so many aspects of __Angular__ development by allowing the developer to focus on the application logic. The CLI handles everything from creating a new project to generating modules, components, pipes, services, classes, interfaces, enums, directives, guards, etc...{{< i fa-smile-o >}} it also tests, lints and serves up your app for local debugging! Let's get started, shall we?!
 
 ```javascript
 npm install -g @angular/cli
@@ -29,10 +29,10 @@ npm install -g @angular/cli
 
 This installs the CLI globally, and we're ready to begin. Executing the following command will generate a new project named `color-game` and navigate into the newly created project directory. It also specifies a few preferences:
 
- - __SCSS__ for styling
- - Skips `.spec.ts` test files
- - Doesn't include routing, we won't need it
- - Minimal scaffolding, etc
+- __SCSS__ for styling
+- Skips `.spec.ts` test files
+- Doesn't include routing, we won't need it
+- Minimal scaffolding, etc
 
 ```javascript
 ng n color-game --minimal=true --S=true --routing=false --style=scss
@@ -81,11 +81,12 @@ I am a fan of the material design principles and the ease of use. Let's add angu
 npm install @angular/material
 ```
 
-> <p/> <cite><strong>ProTip</strong></cite>
+> <cite>__ProTip__</cite>
 > If you get an notifications about vulnerabilities address them immediately!<br/>
 > Simply, execute `npm audit fix`
 
-<br/>
+<br/><br/>
+
 Now, open up the `style.scss` file and let's add an `import` statement at the top and a bit of simple CSS.
 
 ```css
@@ -100,7 +101,7 @@ body {
 }
 ```
 
-This will effectively set the material theme to the "pink bluegrey" variation, which is personally my favorite. For more details on material - check out their <a href='https://material.io/develop/web/docs/getting-started/' target='_blank'>site here</a>. Let's set the background color using the newly added theme classes. Copy this HTML in the the `index.html`.
+This will effectively set the material theme to the "pink bluegrey" variation, which is personally my favorite. For more details on material - check out their {{< url-link "site here" "https://material.io/develop/web/docs/getting-started/" >}}. Let's set the background color using the newly added theme classes. Copy this HTML in the the `index.html`.
 
 ```html
 <!doctype html>
@@ -280,7 +281,7 @@ export class AppModule { }
 
 ## Animations
 
-I love making subtle animations, they can enrich the user's experience...but they can also ruin it just as easily. You must approach the use of animations as you do other UX related considerations, such as accessability. Furthermore animations can be challenging to implement, luckily angular has a story for that too - check out <a href='https://angular.io/guide/animations' target='_blank'>angular animations</a>.
+I love making subtle animations, they can enrich the user's experience...but they can also ruin it just as easily. You must approach the use of animations as you do other UX related considerations, such as accessability. Furthermore animations can be challenging to implement, luckily angular has a story for that too - check out {{< url-link "angular animations" "https://angular.io/guide/animations" >}}.
 
 In the `color-block.component.ts` we're going to add some animations.
 
@@ -463,6 +464,6 @@ export class GameEngineService {
 }
 ```
 
-The `game-engine.service` has the possible states that the app can exhibit and each state represents a different way in the application. For example, when there are less that two players we enter the `'usersRequired'` state. This updates the `instructions.component` appropriately, and disables certain controls, etc. Likewise, when we have enough players - the instructions change to "instruct" the players on what to do next.
+The `game-engine.service` has the possible states that the app can exhibit and each state represents a different way in the application. For example, when there are less than two players we enter the `'usersRequired'` state. This updates the `instructions.component` appropriately, and disables certain controls, etc. Likewise, when we have enough players - the instructions change to "instruct" the players on what to do next.
 
-For more details, I encourage you to dig into the source code that is publicly available up on <a href='https://github.com/IEvangelist/color-game' target='_blank'><i class='fa fa-github'></i> GitHub here</a>. Also, the application is <a href='http://bit.ly/kids-color-game' target='_blank'>hosted here</a>. This game isn't styled for mobile devices, because ... well that would have taken more time than I had over the weekend to do. I hope you enjoy it and that it helps solves some of the simple little decision making quarrels parents experience! 
+For more details, I encourage you to dig into the source code that is publicly available up on {{< i fa-github >}} {{< url-link "GitHub here" "https://github.com/IEvangelist/color-game" >}}. Also, the application is {{< url-link "hosted here" "https://bit.ly/kids-color-game" >}}. This game isn't styled for mobile devices, because ... well that would have taken more time than I had over the weekend to do. I hope you enjoy it and that it helps solves some of the simple little decision-making quarrels parents experience!

@@ -18,7 +18,7 @@ As a developer, I can say that developers are lazy - at least I know and acknowl
 
 ## Security Soapbox
 
-We should take application security very seriously! With __ASP.NET Core__ there's a lot of <a href="https://docs.microsoft.com/en-us/aspnet/core/security/" target="_blank">existing documentation</a> for securing your application. This covers identity, authentication, authorization, data protection, HTTPS, safe storage, Azure key vault, anti-request forgery, open redirect attack, cross-site scripting, etc... the list goes on and on. All these things are important and as a developer you're ultimately accountable for writing secure code. 
+We should take application security very seriously! With __ASP.NET Core__ there's a lot of {{< url-link "existing documentation" "https://docs.microsoft.com/en-us/aspnet/core/security/" >}} for securing your application. This covers identity, authentication, authorization, data protection, HTTPS, safe storage, Azure key vault, anti-request forgery, open redirect attack, cross-site scripting, etc... the list goes on and on. All these things are important and as a developer you're ultimately accountable for writing secure code.
 
 ## The Dilemma
 
@@ -46,8 +46,8 @@ public void ConfigureServices(IServicesCollection services)
 However, based on your needs - you may choose to not apply this filter. If you choose to not apply this filter you're left with three options.
 
  1. Apply an `AuthorizeAttribute` at the controller class level (cascades onto all the actions)
- 2. Apply an `AuthorizeAttribute` on each individual action method <i class="fa fa-meh-o"></i>
- 3. Not protect your API at all <i class="fa fa-frown-o"></i>
+ 2. Apply an `AuthorizeAttribute` on each individual action method {{< i fa-meh-o >}}
+ 3. Not protect your API at all {{< i fa-frown-o >}}
 
 ## Automation To The Rescue
 
@@ -55,15 +55,15 @@ Some of our __ASP.NET Core Web APIs__ were protected by the filter, some by cont
 
 Here was the thought process to write a unit test that could ensure that I'm not forgetful.
 
- - Load all assemblies into the current `AppDomain`
- - Of all the loaded assemblies, get all the controller types
-    - Of those controller types, get the ones that are missing the `AuthorizeAttribute`
-    - Of the unauthorized controller types, get the `HttpMethodAttribute` methods
-    - If missing both the `AuthorizeAttribute` and `AllowAnonymousAttribute` - __fail__ <i class="fa fa-frown-o"></i>
+- Load all assemblies into the current `AppDomain`
+- Of all the loaded assemblies, get all the controller types
+  - Of those controller types, get the ones that are missing the `AuthorizeAttribute`
+  - Of the unauthorized controller types, get the `HttpMethodAttribute` methods
+  - If missing both the `AuthorizeAttribute` and `AllowAnonymousAttribute` - __fail__ {{< i fa-frown-o >}}
 
 ### Codify
 
-So, our step one is to load all assemblies into the current `AppDomain`. This makes some assumptions. It assumes that our test project will have a reference to the __ASP.NET Core Web API__ project, so that its `.dll` will be available to us for loading (in our `bin` directory). We will also assume the root namespace we're looking for, we should know this anyway as we follow naming conventions and we're the owner of the corresponding project. 
+So, our step one is to load all assemblies into the current `AppDomain`. This makes some assumptions. It assumes that our test project will have a reference to the __ASP.NET Core Web API__ project, so that its `.dll` will be available to us for loading (in our `bin` directory). We will also assume the root namespace we're looking for, we should know this anyway as we follow naming conventions and we're the owner of the corresponding project.
 
 ```csharp
 public class ActionTests
@@ -96,7 +96,7 @@ public class ActionTests
     }
 ```
 
-Step two, is really the entry point of our core functionality for the test itself. We'll need a `Fact` test method. Yes, <a href="/blog/xunit-powered-by-roslyn" target="_blank">I'm a HUGE fan of __xUnit__</a> - they have done some amazing things! In this test method we will start by getting all the types that are a subclass of `Controller`.
+Step two, is really the entry point of our core functionality for the test itself. We'll need a `Fact` test method. Yes, {{< url-link "I'm a HUGE fan of __xUnit__" "/blog/xunit-powered-by-roslyn" >}} - they have done some amazing things! In this test method we will start by getting all the types that are a subclass of `Controller`.
 
 ```csharp
 [Fact]
@@ -166,9 +166,9 @@ foreach (var controller in unauthorizedControllers)
 
 We can add a few additional sanity checks along the way - with the caveat that this is not your typical "unit test". For example we could add the following:
 
-  - Assert that we do in fact load assemblies
-  - Assert that count of all the controllers is greater than the unauthorized controllers
-  - Assert that we find our "white-listed" controller
+- Assert that we do in fact load assemblies
+- Assert that count of all the controllers is greater than the unauthorized controllers
+- Assert that we find our "white-listed" controller
 
 ### Putting It All Together
 

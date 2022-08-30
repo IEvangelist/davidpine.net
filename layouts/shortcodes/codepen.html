@@ -1,0 +1,31 @@
+{{ $user    := "ievangelist" }}
+{{ $height  := 550 }}
+{{ $tab     := "js,result" }}{{/* html|css|js|result */}}
+
+<div
+    data-slug-hash='{{ .Get "id" }}'
+    data-user='{{ or (.Get "user") $user }}'
+    data-height='{{ or (.Get "height") $height }}'
+    data-default-tab='{{ or (.Get "tab") $tab }}'
+    class='codepen'>
+</div>
+<script>
+    window.codepenBits = (function (d, s, id) {
+        var js, 
+            fjs = d.getElementsByTagName(s)[0],
+            t = window.cpb || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://static.codepen.io/assets/embed/ei.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+
+            return t;
+    }(document, "script", "cp"));
+</script>
+<br/>

@@ -20,7 +20,7 @@
         <time class="published" data-hover='{{ ($.Scratch.Get "dateType").Format "January, 2006" }}'
             datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'
             data-initial='Written on'>
-            (<i class="fa fa-mouse-pointer"></i>)
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
         </time>
         <span class="author">{{ .Params.author }}</span>
         {{ if .Site.Params.includeReadingTime }}

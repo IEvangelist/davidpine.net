@@ -3869,3 +3869,8 @@ img.headshot {
 	content: attr(data-hover);
 	cursor: help;
 }
+
+#main>article>header>div.meta>time > span.underline {
+	text-decoration: underline;
+	color: black !important;
+}

@@ -8,7 +8,7 @@ featured = "map.jpg"
 featuredalt = ""
 featuredpath = "date"
 linktitle = ""
-title = "Angular Http Tips For Success"
+title = "Angular HTTP Tips For Success"
 type = "post"
 
 +++
@@ -36,7 +36,7 @@ public getDetails(id: number): Promise<Details> {
 }
 ```
 
-Most of the time we'd pass in an `interface` as the type parameter. Often this _seems_ to work as the `interface` is a simple property bag of primitive types. The issue is that if the `interface` defines non-primitive types like a `Date` or a `Function` -- these will not be available at runtime. Likewise, if you pass in a `class` with `get` or `set` properties -- these too __will not work__! The specific problem is that the underlying implementation from __Angular__ doesn't instantiate your object. Instead, it simply casts it as the given type. Ultimately, __Angular__ is performing a {{< url-link "`JSON.parse`" "https://github.com/angular/angular/blob/master/packages/common/http/src/xhr.ts#L186-L189" >}} on the body of the response.
+Most of the time we'd pass in an `interface` as the type parameter. Often this _seems_ to work as the `interface` is a simple property bag of primitive types. The issue is that if the `interface` defines non-primitive types like a `Date` or a `Function` -- these will not be available at runtime. Likewise, if you pass in a `class` with `get` or `set` properties -- these too __will not work__! The specific problem is that the underlying implementation from __Angular__ doesn't instantiate your object. Instead, it simply casts it as the given type. Ultimately, __Angular__ is performing a `{{< url-link "JSON.parse" "https://github.com/angular/angular/blob/master/packages/common/http/src/xhr.ts#L186-L189" >}}` on the body of the response.
 
 Part of the issue is that __TypeScript__ is blissfully unaware that __Angular__ will not instantiate the object and treats the return as a `Promise<Details>`. As such flow analysis, statement completion, and all the other amazing features that the __TypeScript__ language services provide to your development environment work. But this is misleading because you'll encounter runtime errors -- this is the issue that __TypeScript__ aims to solve!
 
@@ -99,7 +99,7 @@ If we add a `constructor` to our `class` and then pass in a `data: any` argument
 
 ## JavaScript to the rescue
 
-What's to stop a consumer from trying to interact with the `details.date` property -- if you recall it is still typed as a `Date`. This is error prone and will cause issues -- if not immediately, certainly later on. Ideally, all objects that are intended to map over from JSON should contain primitive types only.
+What's to stop a consumer from trying to interact with the `details.date` property -- if you recall it is still typed as a `Date`. This is error-prone and will cause issues -- if not immediately, certainly later on. Ideally, all objects that are intended to map over from JSON should contain primitive types only.
 
 If you're set on using a `class`, you should use the __RxJS__ `map` operator.
 
@@ -131,14 +131,14 @@ public getDetails(): Promise<Details[]> {
 
 This table details all the primitive types that will map over without a `constructor` or any other intervention.
 
-| Primitive Types  | Description |
-|--:|:--|
-| `string` | Already a `string` anyways |
-| `number` | Coercion from `string` to `number` |
-| `boolean` | Coercion from `string` to `boolean` |
-| `array` | As long as all types are primitives also |
-| `tuple` | Follows same rules as `array` |
+| Primitive Types | Description                              |
+|----------------:|:-----------------------------------------|
+| `string`        | Already a `string` anyways               |
+| `number`        | Coercion from `string` to `number`       |
+| `boolean`       | Coercion from `string` to `boolean`      |
+| `array`         | As long as all types are primitives also |
+| `tuple`         | Follows same rules as `array`            |
 
 # Conclusion
 
-While __TypeScript__ and __Angular__ play nicely together, at the end of the day we're all battling __JavaScript__. As long as you're aware of how your tool, framework, or technology works and why it works a certain way -- you're doing great! Take this bit of knowledge and share it with the world. If it helps you, hopefully it will help someone else too!
+While __TypeScript__ and __Angular__ play nicely together, at the end of the day we're all battling __JavaScript__. As long as you're aware of how your tool, framework, or technology works and why it works a certain way -- you're doing great! Take this bit of knowledge and share it with the world. If it helps you, hopefully, it will help someone else too!

@@ -14,8 +14,8 @@ type = "post"
 
 Being a software developer, it's in our nature to configure various aspects of the applications that we write. With __ASP.NET Core__ configuring our applications is really straight forward. Luckily, there is a lot of really well written documentation surrounding this topic.
 
- - {{< url-link "{{< i fa-file-text >}} &nbsp; ASP.NET Core - Configuration" "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration" >}}
- - {{< url-link "{{< i fa-file-text >}} &nbsp; ASP.NET Core - Options" "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options" >}}
+- {{< i fa-file-text >}} {{< url-link "ASP.NET Core - Configuration" "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration" >}}
+- {{< i fa-file-text >}} {{< url-link "ASP.NET Core - Options" "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options" >}}
 
 However, there is still room for improvement. I've prepared a few tips that can enhance developer productivity by taking advantage of various C# features.
 
@@ -64,9 +64,9 @@ public class NotificationSource
 }
 ```
 
-If you looked at both the `appsettings.json` and the two C# classes, I'm hoping that you noticed something. I hope that you noticed that the JSON settings didn't fully provide a value for all the mapped properties in the `NotificationSettings` object. We have however, set these values as part of the object's `.ctor`. 
+If you looked at both the `appsettings.json` and the two C# classes, I'm hoping that you noticed something. I hope that you noticed that the JSON settings didn't fully provide a value for all the mapped properties in the `NotificationSettings` object. We have however, set these values as part of the object's `.ctor`.
 
-> <cite>**ProTip**</cite>
+> <cite>__ProTip__</cite>
 > Use C# 6 Property Initializers to set default values. If the corresponding property exists in the JSON object mapping, it will be overwritten as to be expected; however, if omitted your default value is used.
 
 <br/><br/>
@@ -99,7 +99,7 @@ public void ConfigureServices(
 
 This should look very familiar.
 
-> <cite>**ProTip**</cite>
+> <cite>__ProTip__</cite>
 > Use C# 6 `nameof` operator to configure your C# class mapping. This alleviates the usage of magic strings and enforces a consistent naming convention.
 
 <br/><br/>
@@ -118,4 +118,3 @@ public void ConfigureServices(
 ## Conclusion
 
 I have provided a few simple tips for __ASP.NET Core__ configuration leveraging a few C# 6 features. They are nothing earth-shattering, but they are practical and very useful. I often see developers _not_ taking advantage of simple features like these when they are available. These two features alone in an __ASP.NET Core__ configuration could simplify refactoring and stream-line readability -- that's enough reason for me, I hope it is for you too!
-

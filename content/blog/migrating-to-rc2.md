@@ -24,8 +24,8 @@ It is worth mentioning that I'm am targeting the `.NET 4.6` framework. So, I *do
 
 ## Tooling
 
-The **RC2** release brings the `.NET Core CLI` to the forefront, and with that all the other command line tooling that 
-you've grown accustomed to should be stricken from your environment, i.e.; `DNX`, `DNU`, and `DNVM`. Let's start with the 
+The **RC2** release brings the `.NET Core CLI` to the forefront, and with that all the other command line tooling that
+you've grown accustomed to should be stricken from your environment, i.e.; `DNX`, `DNU`, and `DNVM`. Let's start with the
 removal of all these utilities.
 
 ### Removing DNVM
@@ -33,20 +33,26 @@ removal of all these utilities.
 Believe it or not, you might have a dated version of the **DNVM CLI** and in order to invoke the `uninstall` you might have to first
 perform an `update-self` command. Doing so will ensure that you have the latest version, which will contain the `uninstall` command.
 From a `cmd` window *running as admininistrator*, execute the following:
+
 ```
 dnvm update-self
 ```
+
 Then execute the following:
+
 ```
 dnvm uninstall
 ```
+
 #### Verification
 
 From a new `cmd` window, the `dnvm` command should result in the following:
+
 ```
 λ dnvm
 'dnvm' is not recognized as an internal or external command, operable program or batch file.
 ```
+
 ### Removing DNX & DNU
 
 From a `cmd` line window, execute `dnx` - you should see something similar to this as output:
@@ -100,8 +106,9 @@ Commands:
 
 Use "dnu [command] --help" for more information about a command.
 ```
-The `DNX` and `DNU` command line tools are simply `exe's` in your `%USERPROFILE%\.dnx` and `%USERPROFILE%\.dnx\bin` directories. Navigate to your `%USERPROFILE%` 
-directory from windows explorer and delete the `.dnx` directory entirely. Once you have successfully deleted this directory you 
+
+The `DNX` and `DNU` command line tools are simply `exe's` in your `%USERPROFILE%\.dnx` and `%USERPROFILE%\.dnx\bin` directories. Navigate to your `%USERPROFILE%`
+directory from windows explorer and delete the `.dnx` directory entirely. Once you have successfully deleted this directory you
 should be able to execute the `dnx` and `dnu` commands again from a `cmd` window and the system should complain that they are not
 recognized.
 
@@ -113,10 +120,12 @@ From a new `cmd` window, the `dnx` and `dnu` commands should result in the follo
 λ dnx
 'dnx' is not recognized as an internal or external command, operable program or batch file.
 ```
+
 ```
 λ dnu
 'dnu' is not recognized as an internal or external command, operable program or batch file.
 ```
+
 ### Environment Variables
 
 Unfortunately, the `PATH` environment variable is not cleaned up and this needs to be done manually.
@@ -154,15 +163,17 @@ You should the following checklist fully satisfied at this point.
 {{< i fa-check-square-o >}} **Visual Studio 2015 Update 2** installed<br>
 {{< i fa-check-square-o >}} **.NET Core CLI** installed
 ***
+
 ## Edit by Hand {{< i fa-pencil-square-o >}}
 
-There were changes to **APIs** which required changes to implementation aspects of the source code. Additionally, `namespace` 
+There were changes to **APIs** which required changes to implementation aspects of the source code. Additionally, `namespace`
 changes such as (but not limited to) `Microsoft.AspNet.*` to `Microsoft.AspNetCore.*`. But the bulk of the work was really in the hand-editing
 of `.sln`, `global.json`, `.xproj`, `project.json`, etc. files. Let's look at what changed.
 
 ### The `.sln` file
 
 Change the **VisualStudioVersion** from `14.0.24720.0` to `14.0.25123.0`.
+
 ```
 VisualStudioVersion = 14.0.25123.0
 ```
@@ -170,6 +181,7 @@ VisualStudioVersion = 14.0.25123.0
 ### The `global.json` file
 
 Change the **version** from `1.0.0-rc1-update1` to `1.0.0-preview1-002702`.
+
 ```json
 {
   "projects": [ "src", "test" ],
@@ -181,31 +193,42 @@ Change the **version** from `1.0.0-rc1-update1` to `1.0.0-preview1-002702`.
 
 ### The `.xproj` file
 
-The `.xproj` files are a little more involved, there are a few items that are required to be changed. In **RC1** we had proprerties that 
+The `.xproj` files are a little more involved, there are a few items that are required to be changed. In **RC1** we had proprerties that
 were specific to **DNX**, now we replace these with **DOTNET**.
-#### RC1 
+
+#### RC1
+
 ```
 <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" 
         Condition="'$(VSToolsPath)' != ''" />
 ```
+
 #### RC2
+
 ```
 <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" 
         Condition="'$(VSToolsPath)' != ''" />
 ```
-Additionally, we need to change the targets. This one requires that you know the type of project you're editing, for example *"class library"* vs. *"web site"*. In **RC1** 
+
+Additionally, we need to change the targets. This one requires that you know the type of project you're editing, for example *"class library"* vs. *"web site"*. In **RC1**
 there was only one target, but with **RC2** they are differeniated.
-#### RC1 
+
+#### RC1
+
 ```
 <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" 
         Condition="'$(VSToolsPath)' != ''" />
 ```
+
 #### RC2 (class library)
+
 ```
 <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" 
         Condition="'$(VSToolsPath)' != ''" />
 ```
+
 #### RC2 (web)
+
 ```
 <Import Project="$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets" 
         Condition="'$(VSToolsPath)' != ''" />
@@ -213,22 +236,26 @@ there was only one target, but with **RC2** they are differeniated.
 
 ### The `project.json` file
 
-There has been a large reworking of the `project.json` file - detailed [here](https://github.com/aspnet/Announcements/issues/175). I will not be covering all 
-of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official 
+There has been a large reworking of the `project.json` file - detailed [here](https://github.com/aspnet/Announcements/issues/175). I will not be covering all
+of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official
 [`project.json schema`](https://json.schemastore.org/project-1.0.0-rc2).
 
-We will look at various sections of the `project.json` file changes. Let's start with replacing `compilationOptionsbuildOptions` with `buildOptions`, and notice that 
+We will look at various sections of the `project.json` file changes. Let's start with replacing `compilationOptionsbuildOptions` with `buildOptions`, and notice that
 we are adding much more options than before.
+
 #### RC1
+
 ```json
 "compilationOptions": {
   "emitEntryPoint": true,
   "warningsAsErrors": true
 },
 ```
+
 #### RC2
+
 ```json
-"buildOptions": {		
+"buildOptions": {  
   "emitEntryPoint": true,
   "warningsAsErrors": true,
   "preserveCompilationContext": true,
@@ -238,7 +265,9 @@ we are adding much more options than before.
   }
 },
 ```
+
 Additionally, we have `publishOptions` that we can utilize - consider the following:
+
 ```json
 "publishOptions": {
   "include": [
@@ -248,17 +277,22 @@ Additionally, we have `publishOptions` that we can utilize - consider the follow
   ]
 },
 ```
+
 Finally, we have to be a little more specific with how we want the server to handle garbage collection.
+
 ```json
 "runtimeOptions": {
   "gcServer": true, // Yes, please perform garbage collection
   "gcConcurrent": true // Yes, please do so concurrently...
 },
 ```
+
 ### The `web.config` file
 
 Now, **IIS** is a little smarter and is starting to recognize **ASP.NET Core** a little more.
+
 #### RC1
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
@@ -271,7 +305,9 @@ Now, **IIS** is a little smarter and is starting to recognize **ASP.NET Core** a
   </system.webServer>
 </configuration>
 ```
+
 #### RC2
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
@@ -288,8 +324,9 @@ Now, **IIS** is a little smarter and is starting to recognize **ASP.NET Core** a
 
 ### The `hosting.json` file
 
-With the release of **RC2**, the `project.json` schema removed the `webroot` property. Now in order to specify the websites' static content directory we need to 
+With the release of **RC2**, the `project.json` schema removed the `webroot` property. Now in order to specify the websites' static content directory we need to
 create a `hosting.json` file. This file should look like this.
+
 ```json
 {
   "webroot": "wwwroot"
@@ -298,10 +335,11 @@ create a `hosting.json` file. This file should look like this.
 
 ### The `appsettings.json` file
 
-This was a minor change, but if you forgot to change this - then you'll end up with a runtime exception. The `Logging:LogLevel:Default` should now be 
+This was a minor change, but if you forgot to change this - then you'll end up with a runtime exception. The `Logging:LogLevel:Default` should now be
 `Debug` as `Verbose` was removed altogether.
 
 #### RC1
+
 ```json
 "Logging": {
       "IncludeScopes": false,
@@ -311,7 +349,9 @@ This was a minor change, but if you forgot to change this - then you'll end up w
         "Microsoft": "Information"
       }
 ```
+
 #### RC2
+
 ```json
 "Logging": {
       "IncludeScopes": false,
@@ -327,12 +367,15 @@ This was a minor change, but if you forgot to change this - then you'll end up w
 The `environmentVariables` changed, such that the key name for the environment is no longer referred to as "Hosting:Environment".
 
 #### RC1
+
 ```json
 "environmentVariables": {
   "Hosting:Environment": "Development" // < -- Change "Hosting:Environment"
 }
 ```
+
 #### RC2
+
 ```json
 "environmentVariables": {
   "ASPNETCORE_ENVIRONMENT": "Development" // < -- To "ASPNETCORE_ENVIRONMENT"
@@ -342,11 +385,15 @@ The `environmentVariables` changed, such that the key name for the environment i
 ### The `*.cs` files
 
 Some of these were very simple to fix. After updating your `project.json` with the latest **RC2** versions - some changes are as simple as a `namespace` change (but others are more involed).
+
 #### RC1
+
 ```csharp
 using Microsoft.AspNet.*;
 ```
+
 #### RC2
+
 ```csharp
 using Microsoft.AspNetCore.*;
 ```
@@ -355,7 +402,9 @@ using Microsoft.AspNetCore.*;
 
 There was an attempt to unify some of the APIs as it pertains to consistency. As such, I had to make the following changes to my projects.
 The `IApplicationBuilder.Use*` pattern now takes a new `*Options` instance rather than an `Action<*Options>`, providing more control to the consumer.
+
 #### RC1
+
 ```csharp
 app.UseCookieAuthentication(options =>
 {
@@ -367,7 +416,9 @@ app.UseCookieAuthentication(options =>
     options.AccessDeniedPath = "/account/forbidden";
 });
 ```
+
 #### RC2
+
 ```csharp
 app.UseCookieAuthentication(new CookieAuthenticationOptions
 {
@@ -379,6 +430,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
     AccessDeniedPath = "/account/forbidden",
 });
 ```
+
 The service locator pattern (or should I say "anti-pattern") is slowing being removed from the framework. As such, if you were relying on the `CallContextServiceLocator.Locator.ServiceProvider`
 you can no longer do so with the **RC2** release.
 
@@ -386,12 +438,15 @@ Wherever you were using the `IApplication` interface, you should be able to inst
 
 ### Controllers as Services
 
-In **RC1**, there was a nice little feature that allowed for any `Type` to exist in a list of plausible controller/services - meaning that you could basically register external controllers as 
+In **RC1**, there was a nice little feature that allowed for any `Type` to exist in a list of plausible controller/services - meaning that you could basically register external controllers as
 valid API and View entry points into your hosting application. You simply needed to add the types via the following:
+
 ```csharp
 IMvcBuilder.AddControllersAsServices(params Type[] types);
 ```
+
 This method signature changed with **RC2** and it no longer accepts any arguments. In order to retain this functionality, you must first add the desired external assemblies as an `AssemblyPart`.
+
 ```csharp
 foreach (var assembly in GetExternalAssemblies())
 {
@@ -404,6 +459,7 @@ builder.AddControllersAsServices();
 ### The Startup `.ctor`
 
 One little change, you're now required to explicitly set the base path and you can do so with the following.
+
 ```csharp
 public Startup(IHostingEnvironment env)
 {
@@ -416,9 +472,11 @@ public Startup(IHostingEnvironment env)
     // Omitted for brevity...
 }
 ```
+
 ### The `Program.cs` file
 
 Yes, we are now a console application...so we'll need this for our entry point.
+
 ```csharp
 public class Program
 {
@@ -440,7 +498,7 @@ public class Program
 
 ## Breaking changes
 
-For a complete listing of all the announcements, please visit the official 
+For a complete listing of all the announcements, please visit the official
 [**ASP.NET {{< i fa-github-alt >}} Repo**](https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2) announcements issue.
 
 ## Further reading

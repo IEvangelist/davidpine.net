@@ -29,10 +29,10 @@ All of these questions have already been answered, you just have to know where t
 
 Here are all the recent announcements, feel free to spend some time checking them out -- be sure to come back.
 
- - {{< url-link "The ASP.NET team is proud to announce general availability of ASP.NET Core 2.0." "https://blogs.msdn.microsoft.com/webdev/2017/08/14/announcing-asp-net-core-2-0/" >}}
- - {{< url-link ".NET Core 2.0 is available today August 14, as a final release" "https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-core-2-0/" >}}
- - {{< url-link "The .NET Standard 2.0 specification is now complete" "https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/" >}}
- - {{< url-link "Visual Studio 17 version 15.3" "https://blogs.msdn.microsoft.com/visualstudio/2017/08/14/visual-studio-2017-version-15-3-released/" >}}
+- {{< url-link "The ASP.NET team is proud to announce general availability of ASP.NET Core 2.0." "https://blogs.msdn.microsoft.com/webdev/2017/08/14/announcing-asp-net-core-2-0/" >}}
+- {{< url-link ".NET Core 2.0 is available today August 14, as a final release" "https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-core-2-0/" >}}
+- {{< url-link "The .NET Standard 2.0 specification is now complete" "https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/" >}}
+- {{< url-link "Visual Studio 17 version 15.3" "https://blogs.msdn.microsoft.com/visualstudio/2017/08/14/visual-studio-2017-version-15-3-released/" >}}
 
 Let's start by answering all these common questions.
 
@@ -48,9 +48,9 @@ Often, the `.NET Standard` is mistaken for a runtime. Consider the name `.NET St
 > `.NET Standard` isn't a runtime, it's a version interface - a list of methods you can use under many different "`.NETs`".
 > <cite>{{< url-link "Scott Hanselman" "https://www.hanselman.com/blog/ExploringRefitAnAutomaticTypesafeRESTLibraryForNETStandard.aspx" >}}</cite>
 
-As true with all standards (or specifications), implementations can either be compliant or non-compliant. At this point in time there are four `.NET` implementations that are `.NET Standard 2` compliant. They are as follows, `.NET Core`, `.NET Framework`, `Mono` and `Xamarin`. Below is a more comprehensive listing of all the `.NET` platforms and their corresponding standard that they implement.     
+As true with all standards (or specifications), implementations can either be compliant or non-compliant. At this point in time there are four `.NET` implementations that are `.NET Standard 2` compliant. They are as follows, `.NET Core`, `.NET Framework`, `Mono` and `Xamarin`. Below is a more comprehensive listing of all the `.NET` platforms and their corresponding standard that they implement.
 
-### The .NET Standard Version Table {{< url-link "{{< i fa-external-link >}}" "https://github.com/dotnet/standard/blob/master/docs/versions.md#net-standard-versions" >}}
+### The {{< i fa-external-link >}} {{< url-link ".NET Standard Version Table " "https://dotnet.microsoft.com/platform/dotnet-standard#versions" >}}
 
 | .NET Standard                |  [1.0] | [1.1] |   [1.2] |  [1.3] |   [1.4] |   [1.5]  | [1.6]   |    [2.0] |
 |:-----------------------------|:-------|:------|:--------|:-------|:--------|:---------|:--------|:---------|
@@ -73,8 +73,6 @@ As true with all standards (or specifications), implementations can either be co
 [1.5]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.5.md
 [1.6]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.6.md
 [2.0]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md
-
-Additionally, {{< url-link "here is an interactive table." "https://immo.landwerth.net/netstandard-versions/#" >}}
 
 For example, we can see the `.NET Framework 4.5` is an implementation of `.NET Standard 1.1`. This means that if you're to author a `.NET Standard` class library and you target `1.1` of the standard, it can run on `.NET Core 1.0`, `.NET Framework 4.5`, `Mono 4.6`, etc... you get the point now I'm sure.
 
@@ -121,6 +119,6 @@ The `.NET` ecosystem is rapidly evolving! With open source and cross-platform be
 
 ### Resources
 
- - {{< url-link "`.NET Standard - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/standard/net-standard" >}}
- - {{< url-link "`.NET Core - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/core/" >}}
- - {{< url-link "`.NET Framework - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/framework/" >}}
+- {{< url-link "`.NET Standard - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/standard/net-standard" >}}
+- {{< url-link "`.NET Core - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/core/" >}}
+- {{< url-link "`.NET Framework - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/framework/" >}}

@@ -53,15 +53,15 @@ Of course none of this would be possible without our strong community. I'm proud
 
 Being that the entire team cannot always be in the same place at the same time - it is vital to leverage tools that allow everyone on the team to work together. This will serve as a simple listing of some of things that we have used along the way.
 
- - {{< url-link "PaperCall.io - {{< i fa-paper-plane >}}" "https://www.papercall.io/mkedotnet2017" >}} for CFP and speaker selection process
- - {{< url-link "Eventbrite - {{< i fa-calendar >}}" "https://www.eventbrite.com/e/mke-dot-net-2017-tickets-32702277392" >}} for event ticketing/sales
- - {{< url-link "Google Docs/Sheets/Forms - {{< i fa-google >}}" "https://google.com" >}} for internal documentation
- - {{< url-link "Stickies.io - {{< i fa-sticky-note >}}" "https://stickies.io/" >}} for organizing schedule
- - {{< url-link "Trello Boards - {{< i fa-trello >}}" "https://trello.com" >}} for organizing ideas
- - {{< url-link "Zoom.us - {{< i fa-video-camera >}}" "https://zoom.us/" >}} for video conferencing
- - {{< url-link "Adobe Illustrator - {{< i fa-pencil-square >}}" "https://www.adobe.com/products/illustrator.html" >}} designing logos, creating illustrations and icons
- - {{< url-link "Adobe Photoshop - {{< i fa-picture-o >}}" "https://www.adobe.com/products/photoshop.html" >}} art directing photos, creating images, correcting color
- - {{< url-link "Twitter - {{< i fa-twitter-square >}}" "https://twitter.com/mkedotnet" >}} for social networking
+- {{< url-link "PaperCall.io - {{< i fa-paper-plane >}}" "https://www.papercall.io/mkedotnet2017" >}} for CFP and speaker selection process
+- {{< url-link "Eventbrite - {{< i fa-calendar >}}" "https://www.eventbrite.com/e/mke-dot-net-2017-tickets-32702277392" >}} for event ticketing/sales
+- {{< url-link "Google Docs/Sheets/Forms - {{< i fa-google >}}" "https://google.com" >}} for internal documentation
+- {{< url-link "Stickies.io - {{< i fa-sticky-note >}}" "https://stickies.io/" >}} for organizing schedule
+- {{< url-link "Trello Boards - {{< i fa-trello >}}" "https://trello.com" >}} for organizing ideas
+- {{< url-link "Zoom.us - {{< i fa-video-camera >}}" "https://zoom.us/" >}} for video conferencing
+- {{< url-link "Adobe Illustrator - {{< i fa-pencil-square >}}" "https://www.adobe.com/products/illustrator.html" >}} designing logos, creating illustrations and icons
+- {{< url-link "Adobe Photoshop - {{< i fa-picture-o >}}" "https://www.adobe.com/products/photoshop.html" >}} art directing photos, creating images, correcting color
+- {{< url-link "Twitter - {{< i fa-twitter-square >}}" "https://twitter.com/mkedotnet" >}} for social networking
 
 A word on the website, we use for source control {{< url-link "GitHub - {{< i fa-github-square >}}" "https://github.com/" >}} and it is actually a static website. It uses {{< url-link "`HarpJs`" "https://harpjs.com/" >}} which sits atop {{< url-link "`NodeJs`" "https://nodejs.org/en/" >}}. Updates are seamless and fast with {{< url-link "Visual Studio Code - {{< i fa-file-code-o >}}" "https://code.visualstudio.com/" >}}.
 

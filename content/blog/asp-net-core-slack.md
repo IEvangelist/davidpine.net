@@ -16,13 +16,16 @@ type = "post"
 
 Most of us are all "slackers", meaning we truly do spend a significant amount of time using {{< i fa-slack >}} Slack.
 
-> <p> Slack is a collaboration hub for work, no matter what work you do. It’s a place where conversations happen, decisions are made, and information is always at your fingertips. <cite>{{< url-link "www.slack.com" "https://www.slack.com" >}}</cite>
+> Slack is a collaboration hub for work, no matter what work you do. It’s a place where conversations happen, decisions are made, and information is always at your fingertips.
+> <cite>{{< url-link "www.slack.com" "https://www.slack.com" >}}</cite>
 
-It's wildly popular in the Developer Community! In fact, almost to a fault...people are constantly sharing their "slack fatigue". I am personally a part of roughly twenty slack workspace's. One of the really cool features of slack is the ability to integrate with the tool itself through the Slack API. Imagine a plugin playground where you're free to extend the capabilities of the slack ecosystem. Look to the {{< url-link "{{< i fa-slack >}} Slack API" "https://api.slack.com/" >}}.
+<br/><br/>
+
+It's wildly popular in the Developer Community! In fact, almost to a fault...people are constantly sharing their "slack fatigue". I am personally a part of roughly twenty slack workspaces. One of the really cool features of slack is the ability to integrate with the tool itself through the Slack API. Imagine a plugin playground where you're free to extend the capabilities of the slack ecosystem. Look to the {{< i fa-slack >}} {{< url-link "Slack API" "https://api.slack.com/" >}}.
 
 ## Slash Commands
 
-A slack "slash command" is a command that slack enables when typing a leading `/` into the chat message input. It displays an autocomplete (or pseudo Intellisense) with the available slash commands that exist in the current workspace. You add slash commands to workspace's that you're a member of via the settings. We'll cover that in more detail a bit later, let's focus on building the application now that we have an understanding of the integration capabilities.
+A slack "slash command" is a command that slack enables when typing a leading `/` into the chat message input. It displays an autocomplete (or pseudo Intellisense) with the available slash commands that exist in the current workspace. You add slash commands to a workspace that you're a member of via the settings. We'll cover that in more detail a bit later, let's focus on building the application now that we have an understanding of the integration capabilities.
 
 ## ASP.NET Core Web API
 
@@ -38,8 +41,8 @@ We will need to add a few configurations, services, models and routes to satisfy
 
 The {{< url-link "internet chuck norris database" "https://www.icndb.com/api/" >}} is one of my goto APIs for demonstrations. It doesn't require an API key, nor anything else. However, several of the other bits of functionality require registering for the API.
 
-- {{< url-link "__Bit.ly API__" "https://www.bitly.com" >}}: sign up and get your API key
-- {{< url-link "__Open Weather API__" "https://openweathermap.org/api" >}}: sign up and {{< url-link "generate an API key" "https://home.openweathermap.org/api_keys" >}}
+- __{{< url-link "Bit.ly API" "https://www.bitly.com" >}}__: sign up and get your API key
+- __{{< url-link "Open Weather API" "https://openweathermap.org/api" >}}__: sign up and {{< url-link "generate an API key" "https://home.openweathermap.org/api_keys" >}}
 
 With these various API keys, we'll need to add a few environment variables. From the command line, execute the following commands.
 
@@ -155,9 +158,9 @@ namespace IEvangelist.Slack.SlashCommands.Models
 This is the shape of the object that slack's API returns for all slash commands.
 
 > <cite>__Disclaimer__</cite>
-I attempted to verify the slack request, however; I couldn't get it working. See {{< url-link "my attempt" "<https://api.slack.com/docs/verifying-requests-from-slack>' target=''>verifying requests from slack</a> for more details and <a href='<https://github.com/IEvangelist/IEvangelist.Slack.SlashCommands/blob/master/IEvangelist.Slack.SlashCommands/Extensions/SlackCommandRequestExtensions.cs>" >}}
+> I attempted to verify the slack request, however; I couldn't get it working. See {{< url-link "my attempt" "https://api.slack.com/docs/verifying-requests-from-slack" >}} verifying requests from slack for more details and [`SlackCommandRequestExtensions`](https://github.com/IEvangelist/IEvangelist.Slack.SlashCommands/blob/master/IEvangelist.Slack.SlashCommands/Extensions/SlackCommandRequestExtensions.cs).
 
-<br/>
+<br/><br/>
 
 ### 😨 HttpClient
 
@@ -185,7 +188,7 @@ services.AddHttpClient<IUrlService, UrlService>(
 
 #### Example Service
 
-This is the implementation of the `IJokeService` which demonstrates how simple the consumption of the `HttpClient` is and how to easily call out to an external API. This pattern is essentially repeated in the implementations of the `IUrlService` and the `IWeatherService`, but they're obviously calling out to different APIs with different parameters and mapping to the appropriate response type.
+This is the implementation of the `IJokeService` which demonstrates how simple the consumption of the `HttpClient` is and how to easily call out to an external API. This pattern is essentially repeated in the implementations of the `IUrlService` and the `IWeatherService`, but they're calling out to different APIs with different parameters and mapping to the appropriate response type.
 
 ```cs
 using System.Collections.Generic;
@@ -268,7 +271,7 @@ This is the `/shortenUrl [long url]` command. Given a URL it will shorten the UR
 
 ## Conclusion
 
-To recap we simply put together an __ASP.NET Core__ Web API application that was published up to Azure as an App Service. The endpoints are configured as we integrate with the slack API, and ta-da...magic. All of this source code is up on {{< url-link "{{< i fa-github >}} GitHub" "https://github.com/ievangelist/IEvangelist.Slack.SlashCommands" >}}. As always, feel free to star, fork and send me a pull request!
+To recap we simply put together an __ASP.NET Core__ Web API application that was published up to Azure as an App Service. The endpoints are configured as we integrate with the slack API, and ta-da...magic. All of this source code is up on {{< i fa-github >}} {{< url-link "GitHub" "https://github.com/ievangelist/IEvangelist.Slack.SlashCommands" >}}. As always, feel free to star, fork and send me a pull request!
 
 ### Additional Resources
 

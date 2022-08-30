@@ -36,6 +36,7 @@ public static void Main()
     // Consume the result...
 }
 ```
+
 With C# 7.1, we can leverage {{< url-link "Async Main" "https://github.com/dotnet/csharplang/blob/master/proposals/async-main.md" >}}.
 
 ```csharp
@@ -57,7 +58,7 @@ static Task Main(string[] args) { }         // static void Main(string[] args) {
 static Task<int> Main(string[] args) { }    // static int Main(string[] args) { }
 ```
 
-With this task-based approach the new entry points simply provide that "feels good" approach to development. 
+With this task-based approach the new entry points simply provide that "feels good" approach to development.
 
 # `default` Expression <a target="_blank" href="https://github.com/dotnet/csharplang/issues/102">{{< i fa-external-link >}}</a>
 
@@ -205,5 +206,5 @@ But that isn't really pattern-matching. The limitation that exists is due to exp
 
 ## References
 
- - <a target="_blank" href="https://github.com/dotnet/roslyn">Roslyn, The .NET Compiler Platform</a>
- - <a target="_blank" href="https://github.com/dotnet/csharplang">C# Language Design</a>
+- <a target="_blank" href="https://github.com/dotnet/roslyn">Roslyn, The .NET Compiler Platform</a>
+- <a target="_blank" href="https://github.com/dotnet/csharplang">C# Language Design</a>

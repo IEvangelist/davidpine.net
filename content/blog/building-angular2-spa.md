@@ -18,8 +18,8 @@ The purpose of this post is to establish ourselves with a working environment g
 <h3>A quick nod of approval before we get started</h3>
 As a community of early adopters it is gratifying to see collaborations betwixt <strong>Microsoft</strong> and <strong>Google</strong>, finally "we can all get along".
 <ul>
-	<li><strong>{{< url-link "Angular2" "https://angular.io/" >}}</strong> is built with {{< url-link "<strong>TypeScript</strong>" "https://www.typescriptlang.org/" >}}</li>
-	<li>{{< url-link "<strong>Visual Studio Code</strong> " "https://www.visualstudio.com/" >}}is built on <strong>{{< url-link "Chromium" "https://www.chromium.org/Home" >}}</strong>.</li>
+ <li><strong>{{< url-link "Angular2" "https://angular.io/" >}}</strong> is built with {{< url-link "<strong>TypeScript</strong>" "https://www.typescriptlang.org/" >}}</li>
+ <li>{{< url-link "<strong>Visual Studio Code</strong> " "https://www.visualstudio.com/" >}}is built on <strong>{{< url-link "Chromium" "https://www.chromium.org/Home" >}}</strong>.</li>
 </ul>
 These collaborations are exciting and certainly influential - my only hope is that we see more of these collaborations and other large industry leaders follow their example!
 
@@ -56,8 +56,8 @@ With {{< url-link ".NET 4.6" "https://msdn.microsoft.com/en-us/library/ms171868(
 
 Accompanying <strong>DNX</strong> is the <strong>DNU</strong> and <strong>DNVM</strong> CLI's.
 <ul>
-	<li>DNU, .NET Utility</li>
-	<li>DNVM, .NET Version Manager</li>
+ <li>DNU, .NET Utility</li>
+ <li>DNVM, .NET Version Manager</li>
 </ul>
 For more details on these command line interfaces please visit {{< url-link "here" "https://docs.asp.net/en/latest/dnx/commands.html" >}}.
 
@@ -281,13 +281,13 @@ You should be able to clone {{< url-link "the repository" "https://github.com/IE
 <img class="alignnone size-full wp-image-781" src="https://ievangelistblog.files.wordpress.com/2016/01/numbers.png" alt="numbers" width="1225" height="890" />
 <h2>References</h2>
 <ul>
-	<li>{{< url-link "https://angular.io/" "https://angular.io/" >}}</li>
-	<li>{{< url-link "https://reactivex.io/" "https://reactivex.io/" >}}</li>
-	<li>{{< url-link "https://docs.asp.net/en/latest/conceptual-overview/aspnet.html" "https://docs.asp.net/en/latest/conceptual-overview/aspnet.html" >}}</li>
-	<li>{{< url-link "https://docs.asp.net/en/latest/dnx/overview.html" "https://docs.asp.net/en/latest/dnx/overview.html" >}}</li>
-	<li>{{< url-link "https://weblogs.asp.net/scottgu/introducing-asp-net-5" "https://weblogs.asp.net/scottgu/introducing-asp-net-5" >}}</li>
-	<li>{{< url-link "https://nodejs.org/en/" "https://nodejs.org/en/" >}}</li>
-	<li>{{< url-link "https://en.wikipedia.org/wiki/Highlander_(film)" "https://en.wikipedia.org/wiki/Highlander_(film)" >}}</li>
-	<li>{{< url-link "https://getglimpse.com/" "https://getglimpse.com/" >}}</li>
-	<li>{{< url-link "https://github.com/angular/angular" "https://github.com/angular/angular" >}}</li>
+ <li>{{< url-link "https://angular.io/" "https://angular.io/" >}}</li>
+ <li>{{< url-link "https://reactivex.io/" "https://reactivex.io/" >}}</li>
+ <li>{{< url-link "https://docs.asp.net/en/latest/conceptual-overview/aspnet.html" "https://docs.asp.net/en/latest/conceptual-overview/aspnet.html" >}}</li>
+ <li>{{< url-link "https://docs.asp.net/en/latest/dnx/overview.html" "https://docs.asp.net/en/latest/dnx/overview.html" >}}</li>
+ <li>{{< url-link "https://weblogs.asp.net/scottgu/introducing-asp-net-5" "https://weblogs.asp.net/scottgu/introducing-asp-net-5" >}}</li>
+ <li>{{< url-link "https://nodejs.org/en/" "https://nodejs.org/en/" >}}</li>
+ <li>{{< url-link "https://en.wikipedia.org/wiki/Highlander_(film)" "https://en.wikipedia.org/wiki/Highlander_(film)" >}}</li>
+ <li>{{< url-link "https://getglimpse.com/" "https://getglimpse.com/" >}}</li>
+ <li>{{< url-link "https://github.com/angular/angular" "https://github.com/angular/angular" >}}</li>
 </ul>

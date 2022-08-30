@@ -1,43 +1,51 @@
 +++
 title = "Hi, I'm David"
-description = "Thank you for taking time to visit."
+description = "Thank you for taking the time to visit."
 images = ["/img/main/me.png"]
 date = "2016-05-20"
 +++
 
 # Define yourself
 
-You may have noticed my tag, **IEvangelist**. If you see this as an interface it would look something like the following (I'd be more or less a placeholder interface, but I'd impose many other contracts).
+You may have noticed my [{{< i fa-github >}} GitHub tag, **IEvangelist**](https://github.com/IEvangelist). If you see this as an interface it would look something like the following (I'd be more or less a placeholder interface, but I'd impose many other contracts).
 
 ```csharp
-interface IEvangelist : IAcceptFailure,
-                        IAdapt,
-                        IAdvocate,
-                        IAssure,
-                        IContribute,
-                        ICriticize,
-                        IEvaluate,
-                        IExceed,
-                        IGetBackUp,
-                        IGrow,
-                        IInspirable,
-                        IInspire,
-                        ILead,
-                        ILearn,
-                        ILeverage,
-                        IListen,
-                        IMentor,
-                        IMetaAF,
-                        IModerate,
-                        IMotivatable,
-                        IMotivate,
-                        INeverGiveUp,
-                        IPassionate,
-                        IProsper,
-                        IRemainPositive,
-                        IShare,
-                        ISucceed,
-                        IPerson
+public interface IEvangelist :
+    IAcceptFailure,
+    IAdapt,
+    IAdopt,
+    IAdvocate,
+    IAssure,
+    ICelebrateOthers,
+    IChallenge,
+    ICollaborate,
+    IContribute,
+    ICriticize,
+    IEvaluate,
+    IExceed,
+    IFollow,
+    IGetBackUp,
+    IGrow,
+    IHelp,
+    IInspirable,
+    IInspire,
+    ILead,
+    ILearn,
+    ILeverage,
+    IListen,
+    IMentor,
+    IMetaAF,
+    IModerate,
+    IMotivatable,
+    IMotivate,
+    INeverGiveUp,
+    IPassionate,
+    IPerson<TSelf>,
+    IProsper,
+    IPursueDiversifiedThought,
+    IRemainPositive,
+    IShare,
+    ISucceed
 {
     // An evangelist is...well, write your own implementation 🤓
 }

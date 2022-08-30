@@ -15,41 +15,25 @@ type = "post"
 
 # Inspiration
 
-I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators...some might say, 
-"I'm standing on the shoulders of giants". They would probably we right, and I'm okay with that. Earlier this year, I stumbled upon a tweet about someone how created a 
-magic mirror...this is the root of my inspiration.
+I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators...some might say, "I'm standing on the shoulders of giants". They would probably we right, and I'm okay with that. Earlier this year, I stumbled upon a tweet about someone how created a magic mirror...this is the root of my inspiration.
 
-<blockquote class="twitter-tweet" data-lang="en">
-    <p lang="en" dir="ltr">
-        Yup, it is official -- I want a mirror like this one! 
-        <a href="https://t.co/MVcM1nca7A">https://t.co/MVcM1nca7A</a>
-    </p>
-    &mdash; David Pine (@davidpine7) 
-    <a href="https://twitter.com/davidpine7/status/695318303326265345">
-        February 4, 2016
-    </a>
-</blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet id="695318303326265345" user="davidpine7" >}}
 
-Before continuing on, allow me to explain what a magic mirror is. A magic mirror is simply a two-way mirror with a monitor positioned behind it that projects through the
-mirror. The monitor displays the application. The application is running on a small computer, in most cases a **Raspberry Pi**.
+Before continuing on, allow me to explain what a magic mirror is. A magic mirror is simply a two-way mirror with a monitor positioned behind it that projects through the mirror. The monitor displays the application. The application is running on a small computer, in most cases a **Raspberry Pi**.
 
-<a href="https://www.raspberrypi.org/" target="_blank">
-    ![Raspberry Pi](/img/2016/12/pi-logo.png)
-</a>
+[![Raspberry Pi](/img/2016/12/pi-logo.png)](https://www.raspberrypi.org)
 
-I noticed that a lot of the magic mirror's had greeting messages such as "you look handsome" or "good morning sexy" and other curiously intuitive sayings. 
-I thought "wow" this really is a smart mirror, much to my surprise these were all just static messages (or only dynamic when accounting for the time of day). I was thinking
-to myself, "I wonder if I could improve upon this", and that was my motivation!
+I noticed that a lot of the magic mirrors had greeting messages such as "you look handsome" or "good morning sexy" and other curiously intuitive sayings.
+I thought "wow" this really is a smart mirror, much to my surprise these were all just static messages (or only dynamic when accounting for the time of day). I was thinking to myself, "I wonder if I could improve upon this", and that was my motivation!
 
 ## Open Source
 
-If you want to skip out from reading this post, you can checkout my project up on __GitHub__ &nbsp; 
-{{< url-link "{{< i fa-github-square >}} &nbsp; IEvangelist.Mirror" "https://www.github.com/IEvangelist/Mirror" >}}.
+If you want to skip out from reading this post, you can checkout my project up on **GitHub** &nbsp;
+{{< i fa-github-square >}} {{< url-link "IEvangelist.Mirror" "https://www.github.com/IEvangelist/Mirror" >}}.
 
 # Hardware
 
-I was excited when __Microsoft__ started selling the __Raspberry Pi 3, Model B__ - I ordered one immediately.
+I was excited when **Microsoft** started selling the **Raspberry Pi 3, Model B** - I ordered one immediately.
 
 ![Raspberry Pi 3](/img/2016/12/pi3.gif)
 
@@ -78,8 +62,8 @@ Considering the total investment is still under $500 bucks, that's not too bad!
 
 # OS -- Platform
 
-One of my favorite parts about developing the magic mirror was the fact that I could do so from the comfort of __Visual Studio__ using the worlds most powerful programming 
-language today, __C#__.
+One of my favorite parts about developing the magic mirror was the fact that I could do so from the comfort of **Visual Studio** using the worlds most powerful programming
+language today, **C#**.
 
 <a href="https://www.visualstudio.com/" target="_blank">
     <img src="/img/2016/12/vs.png" alt="Visual Studio" style="max-width: 175px;" />
@@ -96,17 +80,17 @@ language today, __C#__.
 
 # Software
 
-When people throw around the acronym **IoT** it can mean a lot of different things. For this specific application, it is essential. Using the built-in _WIFI_ on the **Pi 3** we 
+When people throw around the acronym **IoT** it can mean a lot of different things. For this specific application, it is essential. Using the built-in _WIFI_ on the **Pi 3** we
 can leverage the power of the internet to gather and share information.
 
 > Software is simply the movement and manipulation of data. But without context, said data is meaningless.
 
 The magic mirror application strives to provide data that is all of the following:
 
- - Relevant
- - Practical
- - Convenient
- - Timely
+- Relevant
+- Practical
+- Convenient
+- Timely
 
  Below is the user-interface layout. Let's have a look at the various components that our application is built on.
 
@@ -114,13 +98,13 @@ The magic mirror application strives to provide data that is all of the followin
 
 ## Components
 
-From the layout above, it is clear to visualize the key components of the application. Most of these components implement the 
-`IContextSynthesizer` interface. These implementations are indicators that each component is capable of handling voice commands, and providing a message that is consumable 
+From the layout above, it is clear to visualize the key components of the application. Most of these components implement the
+`IContextSynthesizer` interface. These implementations are indicators that each component is capable of handling voice commands, and providing a message that is consumable
 by the **UWP** speech-synthesizer.  More on this later...
 
 ### Weather -- Forecast
 
-The current weather and forecast are retrieved every fifteen minutes from the free {{< url-link "Open Weather API" "https://openweathermap.org/api" >}}. 
+The current weather and forecast are retrieved every fifteen minutes from the free {{< url-link "Open Weather API" "https://openweathermap.org/api" >}}.
 The developer API key and zip code are configurable. Additionally the unit-of-measure is configurable, where you can specify `imperial` or `metric` as valid settings.
 
 ### Clock
@@ -138,22 +122,22 @@ Note: I opted to omit whether or not we're in ante or post meridiem as it is ass
 
 ### Event Calendar / Schedule
 
-My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to 
-{{< url-link "{{< i fa-code-fork >}} fork my repo" "https://github.com/IEvangelist/Mirror#fork-destination-box" >}} -- you would need to setup
+My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to
+{{< i fa-code-fork >}} {{< url-link "fork my repo" "https://github.com/IEvangelist/Mirror#fork-destination-box" >}} -- you would need to setup
 your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid `iCal` {{< url-link "(*.ics) formatting" "https://icalendar.org/" >}}.
 The events are truncated to fit on the page and ordered by the date of the event.
 
 ### Music Player
 
-Imagine you have the magic mirror mounted in your bathroom, or bedroom...it would be nice to say, "play a song", or "play Deftones" for example and music starts playing. That is 
+Imagine you have the magic mirror mounted in your bathroom, or bedroom...it would be nice to say, "play a song", or "play Deftones" for example and music starts playing. That is
 the idea behind the music player component. The current implementation of the music player is limited. I spent a few long nights trying to figure out how to use the built-in **Bluetooth**
 on the **Pi 3**, while **UWP** does have some support it is limited. I was able to pair but not stream songs from my **iPod** for example, which was really frustrating. For the meantime
 I simply placed several songs in the `Assets` directory as content and I can play these resources. Ideally, I will use a web-based service like Spotify or Pandora.
 
 ### Voice Commands
 
-The **Universal Windows Platform** provides two very useful classes, the 
-{{< url-link "`SpeechRecognizer`" "https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechrecognition.speechrecognizer.aspx" >}} and the 
+The **Universal Windows Platform** provides two very useful classes, the
+{{< url-link "`SpeechRecognizer`" "https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechrecognition.speechrecognizer.aspx" >}} and the
 {{< url-link "`SpeechSynthesizer`" "https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.speechsynthesis.speechsynthesizer.aspx" >}}. Leveraging this
 I have built out the ability to talk to my magic mirror, I can ask it things like "what's the weather", "what's my schedule for Wednesday", or even tell it commands like "turn
 this up".
@@ -187,10 +171,10 @@ async Task<IEnumerable<RawEmotion>> CaptureEmotionAsync()
 }
 ```
 
- - First our `_photoService` asynchronously creates a photo file
- - From the `ImageEncodingProperties` class, we create a bitmap encoding property set
- - Our `_mediaManager` captures a photo, storing it in the photo file with the specified encoding
- - Finally we invoke the `_emotionClient` passing it the stream from the persisted photo
+- First our `_photoService` asynchronously creates a photo file
+- From the `ImageEncodingProperties` class, we create a bitmap encoding property set
+- Our `_mediaManager` captures a photo, storing it in the photo file with the specified encoding
+- Finally we invoke the `_emotionClient` passing it the stream from the persisted photo
 
  The `result` object contains a `Scores` class that looks like the following (from my mugshot):  
 

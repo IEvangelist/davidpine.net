@@ -18,7 +18,7 @@ As a developer, I can say that developers are lazy - at least I know and acknowl
 
 ## Security Soapbox
 
-We should take application security very seriously! With __ASP.NET Core__ there's a lot of {{< url-link "existing documentation" "https://docs.microsoft.com/en-us/aspnet/core/security/" >}} for securing your application. This covers identity, authentication, authorization, data protection, HTTPS, safe storage, Azure key vault, anti-request forgery, open redirect attack, cross-site scripting, etc... the list goes on and on. All these things are important and as a developer you're ultimately accountable for writing secure code. 
+We should take application security very seriously! With __ASP.NET Core__ there's a lot of {{< url-link "existing documentation" "https://docs.microsoft.com/en-us/aspnet/core/security/" >}} for securing your application. This covers identity, authentication, authorization, data protection, HTTPS, safe storage, Azure key vault, anti-request forgery, open redirect attack, cross-site scripting, etc... the list goes on and on. All these things are important and as a developer you're ultimately accountable for writing secure code.
 
 ## The Dilemma
 
@@ -55,15 +55,15 @@ Some of our __ASP.NET Core Web APIs__ were protected by the filter, some by cont
 
 Here was the thought process to write a unit test that could ensure that I'm not forgetful.
 
- - Load all assemblies into the current `AppDomain`
- - Of all the loaded assemblies, get all the controller types
-    - Of those controller types, get the ones that are missing the `AuthorizeAttribute`
-    - Of the unauthorized controller types, get the `HttpMethodAttribute` methods
-    - If missing both the `AuthorizeAttribute` and `AllowAnonymousAttribute` - __fail__ {{< i fa-frown-o >}}
+- Load all assemblies into the current `AppDomain`
+- Of all the loaded assemblies, get all the controller types
+  - Of those controller types, get the ones that are missing the `AuthorizeAttribute`
+  - Of the unauthorized controller types, get the `HttpMethodAttribute` methods
+  - If missing both the `AuthorizeAttribute` and `AllowAnonymousAttribute` - __fail__ {{< i fa-frown-o >}}
 
 ### Codify
 
-So, our step one is to load all assemblies into the current `AppDomain`. This makes some assumptions. It assumes that our test project will have a reference to the __ASP.NET Core Web API__ project, so that its `.dll` will be available to us for loading (in our `bin` directory). We will also assume the root namespace we're looking for, we should know this anyway as we follow naming conventions and we're the owner of the corresponding project. 
+So, our step one is to load all assemblies into the current `AppDomain`. This makes some assumptions. It assumes that our test project will have a reference to the __ASP.NET Core Web API__ project, so that its `.dll` will be available to us for loading (in our `bin` directory). We will also assume the root namespace we're looking for, we should know this anyway as we follow naming conventions and we're the owner of the corresponding project.
 
 ```csharp
 public class ActionTests
@@ -166,9 +166,9 @@ foreach (var controller in unauthorizedControllers)
 
 We can add a few additional sanity checks along the way - with the caveat that this is not your typical "unit test". For example we could add the following:
 
-  - Assert that we do in fact load assemblies
-  - Assert that count of all the controllers is greater than the unauthorized controllers
-  - Assert that we find our "white-listed" controller
+- Assert that we do in fact load assemblies
+- Assert that count of all the controllers is greater than the unauthorized controllers
+- Assert that we find our "white-listed" controller
 
 ### Putting It All Together
 

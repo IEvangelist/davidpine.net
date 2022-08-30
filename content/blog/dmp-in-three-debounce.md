@@ -23,10 +23,8 @@ In this first episode we cover a scenario where we're working a large set of dat
 
 ### {{< i fa-video-camera >}} Video
 
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/z-kYoR1cqSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<br/>
+{{< youtube z-kYoR1cqSM >}}
 
- - {{< url-link "GitHub {{< i fa-github >}} Source Code" "https://github.com/IEvangelist/dmp-in-three-debounce" >}} 
- - {{< url-link "Example  {{< i fa-globe >}} Website" "https://dmp-in-three-debounce-bzdfzrsgmd.now.sh/" >}}
+<br/><br/>
+
+- {{< i fa-github >}} {{< url-link "GitHub Source Code" "https://github.com/IEvangelist/dmp-in-three-debounce" >}}

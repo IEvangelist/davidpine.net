@@ -20,9 +20,7 @@ I set out a while ago to try to interview various community leaders for their ta
 <br/>
 That's a lot to try to parse, right?! I was able to get an interview with Steve Sanderson, which I'm going to share in this post. Steve is a pretty amazing individual and I'm grateful to have been able to interview him.
 
-<a href="https://twitter.com/stevensanderson" target="_blank">
-    <img class="headshot" src="/img/2018/08/steve.jpg" />
-</a>
+[![Steve Sanderson](/img/2018/08/steve.jpg)](https://twitter.com/stevensanderson)
 
 Additionally, one of the other's that I reached out to was Scott Hanselman. Scott offered up something really special, rather than replying to the questions - he gave me an _unpublished interview_ (that has since been published) that he did with Steve Sanderson on his {{< url-link "hanselminutes podcast" "https://hanselminutes.com/642/blazor-brings-net-to-web-assembly-with-steve-sanderson" >}}!
 

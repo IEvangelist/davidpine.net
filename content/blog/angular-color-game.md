@@ -17,7 +17,7 @@ type = "post"
 
 I have three sons. Lyric who is six and a half, Londyn who is four and half, and Lennyx who is two and half. As you might imagine, they seldom agree on things. For example when it's family move night, "which movie we'll watch?", or "who gets to go first?" when playing a game. These _important life decisions_ are often decided by playing the _color guessing game_. My wife or I will choose a color at random and have the boys guess a color until someone guesses the correct color. Whoever guesses correctly is the __winner__ and they get to choose the movie or go first, etc. You get the point!
 
-In this post we'll discuss how to create an __Angular__ application using the CLI, Material Design and Animations. As a spoiler alert, that application is {{< url-link "hosted here" "https://bit.ly/kids-color-game" >}} and the source code is up on {{< url-link "{{< i fa-github >}} GitHub here" "https://github.com/IEvangelist/color-game" >}}.
+In this post we'll discuss how to create an __Angular__ application using the CLI, Material Design and Animations. As a spoiler alert, that application is {{< url-link "hosted here" "https://bit.ly/kids-color-game" >}} and the source code is up on {{< i fa-github >}} {{< url-link "GitHub here" "https://github.com/IEvangelist/color-game" >}}.
 
 ## Angular CLI
 
@@ -464,6 +464,6 @@ export class GameEngineService {
 }
 ```
 
-The `game-engine.service` has the possible states that the app can exhibit and each state represents a different way in the application. For example, when there are less that two players we enter the `'usersRequired'` state. This updates the `instructions.component` appropriately, and disables certain controls, etc. Likewise, when we have enough players - the instructions change to "instruct" the players on what to do next.
+The `game-engine.service` has the possible states that the app can exhibit and each state represents a different way in the application. For example, when there are less than two players we enter the `'usersRequired'` state. This updates the `instructions.component` appropriately, and disables certain controls, etc. Likewise, when we have enough players - the instructions change to "instruct" the players on what to do next.
 
-For more details, I encourage you to dig into the source code that is publicly available up on {{< url-link "{{< i fa-github >}} GitHub here" "https://github.com/IEvangelist/color-game" >}}. Also, the application is {{< url-link "hosted here" "https://bit.ly/kids-color-game" >}}. This game isn't styled for mobile devices, because ... well that would have taken more time than I had over the weekend to do. I hope you enjoy it and that it helps solves some of the simple little decision making quarrels parents experience!
+For more details, I encourage you to dig into the source code that is publicly available up on {{< i fa-github >}} {{< url-link "GitHub here" "https://github.com/IEvangelist/color-game" >}}. Also, the application is {{< url-link "hosted here" "https://bit.ly/kids-color-game" >}}. This game isn't styled for mobile devices, because ... well that would have taken more time than I had over the weekend to do. I hope you enjoy it and that it helps solves some of the simple little decision-making quarrels parents experience!

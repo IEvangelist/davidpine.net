@@ -15,13 +15,13 @@ type = "post"
 
 # Intro
 
-With more than [40 million active users](https://github.com/search?q=type:user&type=Users), GitHub is by far the largest source code hosting platform in the world. It's an open source developers dream, and ecosystem and developer community unlike any other. And with all these users and such profound openness, there's bound to be frustration from time-to-time. In this post we will explore an **Azure Function** written with **ASP.NET Core 3.0** and **C# 8.0**. It has been designed to handle a **GitHub webhook** for issues and pull requests. In other words, we are able to target a specific GitHub repository and listen for new issues or pull requests - as they occur, our **Azure Function** is called.
+With more than [40 million active users](https://github.com/search?q=type:user&type=Users), GitHub is by far the largest source code hosting platform in the world. It's an open source developers dream, and ecosystem and developer community unlike any other. And with all these users and such profound openness, there's bound to be frustration from time to time. In this post we will explore an **Azure Function** written with **ASP.NET Core 3.0** and **C# 8.0**. It has been designed to handle a **GitHub webhook** for issues and pull requests. In other words, we are able to target a specific GitHub repository and listen for new issues or pull requests - as they occur, our **Azure Function** is called.
 
 When the **Azure Function** is invoked, it will examine the body text and title text of the issue or pull request. If either contain profanity, it replaces the profanity with less offensive content -- such as:
 
 <span style='font-size: 4em'>👼 🐳 💝 </span>
 
-We'll see how to orchestrate various technologies together, and take a look at **GitHub webhooks**, **Azure Functions**, **C# 8.0**, **CosmosDB** and **GraphQL**. As always the complete {{< url-link "{{< i fa-github >}} source code" "https://github.com/IEvangelist/GitHub.ProfanityFilter" >}} is available for you're eager eyes 👀...enjoy!
+We'll see how to orchestrate various technologies together, and take a look at **GitHub webhooks**, **Azure Functions**, **C# 8.0**, **CosmosDB** and **GraphQL**. As always the complete {{< i fa-github >}} {{< url-link "source code" "https://github.com/IEvangelist/GitHub.ProfanityFilter" >}} is available for you're eager eyes 👀...enjoy!
 
 ## GitHub Webhooks
 
@@ -170,10 +170,7 @@ public class IssueHandler
 
 You may have noticed the `.ctor` logic is expressed as a tuple assignment. When I discovered this was possible, I questioned it - what do you think? Leave your comments on the tweet below.
 
-<blockquote class="twitter-tweet" data-theme="light">
-<p lang="en" dir="ltr">Attn: <a href="https://twitter.com/hashtag/CSharp?src=hash&amp;ref_src=twsrc%5Etfw">#CSharp</a> developers, do you think that using tuples in a constructor to assign fields in a single line is a blessing or a curse? I&#39;m torn, we can express our constructors - with many parameters and assign them in a single line but should we?<a href="https://twitter.com/dotnet?ref_src=twsrc%5Etfw">@dotnet</a> <a href="https://twitter.com/hashtag/DeveloperCommunity?src=hash&amp;ref_src=twsrc%5Etfw">#DeveloperCommunity</a> <a href="https://t.co/SFAiRGJwz0">pic.twitter.com/SFAiRGJwz0</a></p>&mdash; David Pine (@davidpine7) <a href="https://twitter.com/davidpine7/status/1169418926217973760?ref_src=twsrc%5Etfw">September 5, 2019</a>
-</blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet id="1169418926217973760" user="davidpine7" >}}
 
 Now, back to the handling of issues. What's that look like?
 
@@ -502,14 +499,12 @@ query {
 }
 ```
 
-I really love how **GraphQL** allows the consumer to retrieve only the shape of the items its querying, this is really powerful. Executing this query returns my labels, their `name` and `id`. The label identifier is configured in our **Azure Function** as a environment variable. If you're looking for the **GitHub GraphQL SDK**, look no further -- this project relies on the {{< url-link "Oktokit.GraphQL" "https://www.nuget.org/packages/Octokit.GraphQL" >}} package. It is a fluent API, which enables developers to author complex graph-based queries and mutations with ease. For details, see the {{< url-link "{{< i fa-github >}} source code" "https://github.com/IEvangelist/GitHub.ProfanityFilter" >}}.
+I really love how **GraphQL** allows the consumer to retrieve only the shape of the items it's querying, this is really powerful. Executing this query returns my labels, their `name` and `id`. The label identifier is configured in our **Azure **Function** as an environment variable. If you're looking for the **GitHub GraphQL SDK**, look no further -- this project relies on the {{< url-link "Oktokit.GraphQL" "https://www.nuget.org/packages/Octokit.GraphQL" >}} package. It is a fluent API, which enables developers to author complex graph-based queries and mutations with ease. For details, see the {{< i fa-github >}} {{< url-link "source code" "https://github.com/IEvangelist/GitHub.ProfanityFilter" >}}.
 
 ## Conclusion
 
 This article started with detailing the underlying sentiment of an open source ecosystem, and the potential for frustration and angst. And while it's not all rainbows and ponies, it's awesome when the community comes together. I received a pull request that added the "lint licker" word replacer implementation -- yes, inspired by this commercial! For your viewing pleasure, here is what the filter looks like in action.
 
-<video style="width: 100%; border: 1px solid black" poster="/img/2019/11/poster.png" controls>
-  <source src="/img/2019/11/in-action.mp4" type="video/mp4">
-</video>
+{{< video poster="/img/2019/11/poster.png" src="/img/2019/11/in-action.mp4" >}}
 
 As you can see, the profanity filter works 🤘.

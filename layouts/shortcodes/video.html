@@ -1,0 +1,5 @@
+{{ $type := "video/mp4" }}
+
+<video style="width: 100%; border: 1px solid black" poster='{{ .Get "poster" }}' controls>
+  <source src='{{ .Get "src" }}' type='{{ .Get "type" }}'>
+</video>

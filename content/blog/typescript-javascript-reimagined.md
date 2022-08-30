@@ -25,14 +25,14 @@ language are only getting larger.
 ## "The Good Parts"
 
 {{< url-link "Douglas Crockford" "https://www.crockford.com/" >}} authored a book "JavaScript: The Good Parts", sadly it was a rather short book. If you're a JavaScript developer, knowing "the good parts"
-is great - but knowing the limitations and shortcomings of a language is even more powerful. Sometimes it feels like JavaScript is a hammer and not every 
-problem we're trying to solve is a nail. NodeJs is a great example of this in my opinion -- because I'm a `.NET` developer, but I digress... If you want a good laugh watch 
+is great - but knowing the limitations and shortcomings of a language is even more powerful. Sometimes it feels like JavaScript is a hammer and not every
+problem we're trying to solve is a nail. NodeJs is a great example of this in my opinion -- because I'm a `.NET` developer, but I digress... If you want a good laugh watch
 Gary Bernhardt's {{< url-link "WAT video" "https://www.destroyallsoftware.com/talks/wat" >}}, go ahead -- I'll wait! In all seriousness, JavaScript
 is a great programming language for countless reasons, but it is easy to poke fun at.
 
 ### Mental Model
 
-I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. There are several key takeaways 
+I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. There are several key takeaways
 from the debate that I think will stick with me for a while.
 
 #### Learn it
@@ -40,7 +40,7 @@ from the debate that I think will stick with me for a while.
 > You should learn the JavaScript programming language
 
 I already know JavaScript (but I really don't know JavaScript) -- I would never consider myself an expert or a guru! However, I write TypeScript nearly
-every single day that I develop. Some of the aforementioned names are among the very few who might be considered as such. I recall that when this part 
+every single day that I develop. Some of the aforementioned names are among the very few who might be considered as such. I recall that when this part
 of the conversation was encountered, we came up with an analogy.
 
 > Not all JavaScript developers are Tour de France champions (or contenders)
@@ -54,17 +54,17 @@ That is not at all a bad thing! Just look at what you can do with "training whee
     "0u$" "" ""
     "date" >}}
 
-Seriously though, with that fact that __we are not compilers__ and we cannot predict certain behaviors that occur in the "wild west" of JavaScript -- __we should 
+Seriously though, with that fact that __we are not compilers__ and we cannot predict certain behaviors that occur in the "wild west" of JavaScript -- __we should
 rely on tooling to help__. It is simply a pragmatic approach to developing with a true sense of reliability and consistency. Training wheels provide you with the
 confidence and security. Once your TypeScript is compiled to JavaScript, the training wheels are removed and your code is ready to brave the new world!
 
 # TypeScript
 
-I could never compete with the TypeScript site. They have a beautifully composed tutorial, handbook and rich set of documentation. If that is what 
+I could never compete with the TypeScript site. They have a beautifully composed tutorial, handbook and rich set of documentation. If that is what
 you're looking for - by all means {{< url-link "go check it out" "https://www.typescriptlang.org/docs/tutorial.html" >}}. If you'd like to hear more
 on my thoughts - keep reading.
 
-All valid JavaScript is also valid TypeScript, as TypeScript is a superset of JavaScript. TypeScript allows you as a developer to program in the 
+All valid JavaScript is also valid TypeScript, as TypeScript is a superset of JavaScript. TypeScript allows you as a developer to program in the
 latest version of the ECMAScript standard, while still being about to target all the way back to ES3. Upon compilation, your code is pure JavaScript
 and all the type notations are removed. The static type system is only applicable when working with TypeScript related files.
 
@@ -79,7 +79,7 @@ library. More detail {{< url-link "here {{< i fa-stack-overflow >}}" "https://st
 
 The {{< url-link "TypeScript playground" "https://www.typescriptlang.org/play/index.html" >}} is an amazing place, since it has a side-by-side of the input TypeScript and the resulting JavaScript.
 This is an excellent place to learn how TypeScript works and what it is capable of. I always find it interesting seeing how certain
-things are implemented. Take for example an `enum`. In most languages it's easy to take this for granted, the same is true with 
+things are implemented. Take for example an `enum`. In most languages it's easy to take this for granted, the same is true with
 TypeScript - but seeing how the resulting JavaScript is really something special.
 
 ```typescript
@@ -94,7 +94,7 @@ export enum DayOfWeek {
 }
 ```
 
-This seems like a very clean declaration of an `enum`, right?! We know that `DayOfWeek.Monday` would have a value of `1`, and 
+This seems like a very clean declaration of an `enum`, right?! We know that `DayOfWeek.Monday` would have a value of `1`, and
 `DayOfWeek.Friday` would then be `5` for example. But let's have a look at the JavaScript output.
 
 ```javascript
@@ -137,18 +137,18 @@ export type Readonly<T> = {
 }
 ```
 
-The type alias of `Readonly` takes on an generic of type `T`, furthermore it defines that all the members of type `T` are accessible 
+The type alias of `Readonly` takes on an generic of type `T`, furthermore it defines that all the members of type `T` are accessible
 as `readonly` members. This leverages the `keyof` operator in which `P` is accessible so long as it is a member of `T` (key of `T`).
 So, now we can return a `Readonly<MutableDataBag<T>>` from our API and rest assured knowing that TypeScript prevents it's members from
 being written to.
 
 # Conclusion
 
-This is literally just the tip of the iceberg (or even less). TypeScript has truly made JavaScript tolerable. 
-TypeScript answers so many questions and addresses so many concerns that it's hard to justify not using...if you're not using 
-TypeScript, there are other options out there. Pick your poison!! 
+This is literally just the tip of the iceberg (or even less). TypeScript has truly made JavaScript tolerable.
+TypeScript answers so many questions and addresses so many concerns that it's hard to justify not using...if you're not using
+TypeScript, there are other options out there. Pick your poison!!
 
 ### Resources
 
- - {{< url-link "IEvangelist - TypeScript" "https://github.com/IEvangelist/IEvangelist.TypeScript" >}}
- - {{< url-link "TypeScript Documentation" "https://www.typescriptlang.org/docs/tutorial.html" >}}
+- {{< url-link "IEvangelist - TypeScript" "https://github.com/IEvangelist/IEvangelist.TypeScript" >}}
+- {{< url-link "TypeScript Documentation" "https://www.typescriptlang.org/docs/tutorial.html" >}}

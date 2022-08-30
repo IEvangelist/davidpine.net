@@ -19,7 +19,7 @@ Welcome to the 17th day of the {{< url-link "C# Advent Calendar" "https://crossc
 I'm honored to blog about my favorite programming language, C#. There is an often forgotten truth about the history of C#, one truth that I like talking about. While C# is a really "cool" language with awesome features it was actually named "Cool" in the beginning!
 
 > In January 1999, _Anders Hejlsberg_ formed a team to build a new language at the time called Cool, which stood for "C-like Object Oriented Language". Microsoft had considered keeping the name "Cool" as the final name of the language, but chose not to do so for trademark reasons.
-<cite>{{< url-link "Wiki - C#" "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" >}}</cite>
+<cite>{{< url-link "Wiki - C#" "<https://en.wikipedia.org/wiki/C_Sharp_(programming_language>)" >}}</cite>
 
 Likewise, the name C# somewhat implies an increment of C++. Imagine, the `++` being stacked on-top of each other -- you'd have something resembling the `#` symbol, clever no?! Unfortunately, my career didn't start with such a cool language. I learned _Java_ in college and started my career with _Visual Basic_. I am now grateful to develop in C# professionally and for fun!
 
@@ -50,11 +50,11 @@ I believe that Microsoft has done an amazing job at not only updating their docu
 
 It is more natural for JavaScript to have an online tutorial than C#, but Microsoft made this happen regardless. They have an awesome series of {{< url-link ""quick starts"" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/index" >}} that serve as tutorials. They introduced an in-browser REPL (Read-Eval-Print Loop) for C#, and it is amazing. Here is a listing of a few of them:
 
- - {{< url-link "Hello C#" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/hello-world" >}}
- - {{< url-link "Numbers in C#" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/numbers-in-csharp" >}}
- - {{< url-link "Branches and loops" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/branches-and-loops" >}}
- - {{< url-link "Collections in C#" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/list-collection" >}}
- - {{< url-link "Introduction to classes" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/introduction-to-classes" >}}
+- {{< url-link "Hello C#" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/hello-world" >}}
+- {{< url-link "Numbers in C#" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/numbers-in-csharp" >}}
+- {{< url-link "Branches and loops" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/branches-and-loops" >}}
+- {{< url-link "Collections in C#" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/list-collection" >}}
+- {{< url-link "Introduction to classes" "https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/introduction-to-classes" >}}
 
  Once you're developing you can always rely on the {{< url-link "C# Guide" "https://docs.microsoft.com/en-us/dotnet/csharp/" >}} as well. Finally, the documentation site boasts {{< url-link "Samples and Tutorials" "https://docs.microsoft.com/en-us/dotnet/samples-and-tutorials/" >}} for a more in depth look.
 
@@ -89,7 +89,7 @@ public static class ConcurrentExtensions
 
 This results in the following compiler error:
 
-> Error CS0165	Use of unassigned local variable 'result' IEvangelist.Csharp.Seven
+> Error CS0165 Use of unassigned local variable 'result' IEvangelist.Csharp.Seven
 
 As you can see this does not currently work in C#, but I assumed it would. Let's break it down and figure out why. First, let's remove the single line expression and make it non-ternary.
 

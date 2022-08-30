@@ -59,8 +59,8 @@ Before diving into this, pop over to {{< url-link "{{< i fa-github-alt >}} Micro
 
 As part of the `ASP.NET Core` framework, the following middleware packages are provided:
 
- - {{< url-link "{{< i fa-github-alt >}} `Microsoft.AspNetCore.Identity`" "https://github.com/aspnet/Identity" >}}
- - {{< url-link "{{< i fa-github-alt >}} `Microsoft.AspNetCore.Security`" "https://github.com/aspnet/Security" >}}
+- {{< url-link "{{< i fa-github-alt >}} `Microsoft.AspNetCore.Identity`" "https://github.com/aspnet/Identity" >}}
+- {{< url-link "{{< i fa-github-alt >}} `Microsoft.AspNetCore.Security`" "https://github.com/aspnet/Security" >}}
 
 If you opt-in to using this middleware and you provide a login page (or expose an external provider) you'd end up creating an instance of a `ClaimsPrincipal` that represents an authenticated user. Subsequent requests to the web server would be handed the cookie that holds the user's claims. However the `Thread.CurrentPrincipal` would **not** actually reflect the `ClaimsPrincipal` object that was created as the result of the login. In fact, it would simply be an instance of the `GenericPrincipal` implementation. Likewise, walking up to the `ClaimsPrincipal.Current` property and asking it for the current claims principal in context wouldn't give you what you might expect either. Additionally, the `ClaimsPrincipal.Current` internally relies on the `Thread.CurrentPrincipal` for its value.
 

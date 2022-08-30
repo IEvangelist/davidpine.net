@@ -40,7 +40,7 @@ For me, this typically involved the following steps:
  9. Return to original project, update package reference
 10. Continue with life
 
-What if I told you, that headache is all but gone and you will never have to go through those agonizing steps again! Say it ain't so 
+What if I told you, that headache is all but gone and you will never have to go through those agonizing steps again! Say it ain't so
 (queue {{< url-link "Weezer" "https://youtu.be/ENXvZ9YRjbo" >}}).
 
 ## Global.json
@@ -57,7 +57,7 @@ generate the following (for the [full schema](https://json.schemastore.org/globa
 }
 ```
 
-I always immediately delete the `sdk` property. If omitted the tooling simply assumes the latest **SDK** installed. Now, for all the fun! The `projects` 
+I always immediately delete the `sdk` property. If omitted the tooling simply assumes the latest **SDK** installed. Now, for all the fun! The `projects`
 property is an array of strings. It's defined as the following:
 
 > A list of project folders relative to this file.
@@ -66,7 +66,7 @@ These folders are search locations for resolving dependencies, where projects ta
 
 ### Projects over Packages
 
-Assume you're developing in a project, namely `IEvangelist.NetCore.App` and it takes a dependency on `IEvangelist.NetCore.ClassLib` and `IEvangelist.NetCore.Services`. These 
+Assume you're developing in a project, namely `IEvangelist.NetCore.App` and it takes a dependency on `IEvangelist.NetCore.ClassLib` and `IEvangelist.NetCore.Services`. These
 dependencies are packages (outside the solution) and you can use the `global.json/projects` array to your advantage. Using our imaginations, let us find a need
 to source-step into `IEvangelist.NetCore.ClassLib`. Let us also imagine that this project is in a neighboring folder outside our solution, perhaps the same repo,
 we can now use a relative path like so:

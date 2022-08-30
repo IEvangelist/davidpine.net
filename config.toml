@@ -42,7 +42,7 @@ googleAnalytics = "UA-78203613-1"
 # This is optional, but it's suggested to use
 [params.intro]
     header    = "David Pine"
-    paragraph = "Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time"
+    paragraph = "Changing the world — one line of code at a time"
 
 # This will also appear on the sidebar.
 # A width of less than 100px is recommended

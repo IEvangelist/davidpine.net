@@ -14,18 +14,19 @@ type = "post"
 
 # Intro
 
-I am returning home from a long trip in Serbia for {{< url-link "__IT Konekt__" "https://itkonekt.com/en/" >}}. This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of __IT Konekt__. This was my first time ever leaving the United States of America and I didn't know what to expect. I was really nervous but equally excited. This was more of a journey of epic proportions than it was a conference trip.
+I am returning home from a long trip in Serbia for __{{< url-link "IT Konekt" "https://itkonekt.com/en/" >}}__. This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of __IT Konekt__. This was my first time ever leaving the United States of America and I didn't know what to expect. I was really nervous but equally excited. This was more of a journey of epic proportions than it was a conference trip.
 
-I want to publicly thank {{< url-link "Maria Naggaga {{< i fa-twitter >}}" "https://twitter.com/LadyNaggaga" >}} of Microsoft for referring {{< url-link "Milica Radovic {{< i fa-twitter >}}" "https://twitter.com/Milica_Radovic_" >}} and {{< url-link "Milica Nastasic {{< i fa-linkedin-square >}}" "https://www.linkedin.com/in/milicanastasic" >}} to me. They were looking for someone from the U.S. to speak about C# and Maria suggested me. This is the such an honor and I couldn't have been more excited to represent the U.S. and C# for my first international speaking engagement.
+I want to publicly thank {{< i fa-twitter >}} {{< url-link "Maria Naggaga" "https://twitter.com/LadyNaggaga" >}} of Microsoft for referring {{< i fa-twitter >}} {{< url-link "Milica Radovic" "https://twitter.com/Milica_Radovic_" >}} and {{< i fa-linkedin-square >}} {{< url-link "Milica Nastasic" "https://www.linkedin.com/in/milicanastasic" >}} to me. They were looking for someone from the U.S. to speak about C# and Maria suggested me. This is the such an honor and I couldn't have been more excited to represent the U.S. and C# for my first international speaking engagement.
 
 ## Belgrade
+
 ### April 13, 2018
 
-Our journey began in Belgrade – the capitol city of Serbia. I arrived on the same flight into Belgrade as {{< url-link "Jonathan LeBlanc {{< i fa-twitter >}}" "https://twitter.com/jcleblanc" >}} of Box. In true movie fashion, our driver was waiting for us holding our names at the arrival gate of the airport. This was a warm welcome and made me feel special. After a 35 minute Car:Go (European Uber) drive we arrived at our hotel and while I didn't get much sleep on the plane, I had energy from both the adrenaline and excitement. Just as soon as I was settling into my room, it was time to part for the first of seemingly countless speaker dinners. We were hungry and ready to immerse ourselves in the Serbian culture. We had a traditional Serbian dinner after a celebratory shot (or three) of {{< url-link "rakija {{< i fa-wikipedia-w >}}" "https://en.wikipedia.org/wiki/Rakia" >}} - "serbian fruit brandy". Now, if you're like me you probably didn't know what rakija was... _warning_ it is very strong! They fed us like kings and queens, we were treated like royalty! 
+Our journey began in Belgrade – the capitol city of Serbia. I arrived on the same flight into Belgrade as {{< i fa-twitter >}} {{< url-link "Jonathan LeBlanc" "https://twitter.com/jcleblanc" >}} of Box. In true movie fashion, our driver was waiting for us holding our names at the arrival gate of the airport. This was a warm welcome and made me feel special. After a 35 minute Car:Go (European Uber) drive we arrived at our hotel and while I didn't get much sleep on the plane, I had energy from both the adrenaline and excitement. Just as soon as I was settling into my room, it was time to part for the first of seemingly countless speaker dinners. We were hungry and ready to immerse ourselves in the Serbian culture. We had a traditional Serbian dinner after a celebratory shot (or three) of {{< i fa-wikipedia-w >}} {{< url-link "rakija" "https://en.wikipedia.org/wiki/Rakia" >}} - "serbian fruit brandy". Now, if you're like me you probably didn't know what rakija was... _warning_ it is very strong! They fed us like kings and queens, we were treated like royalty!
 
 ![Breaking Bread](/img/2018/04/breaking-bread.jpg)
 
-{{< url-link "Harry Roberts {{< i fa-twitter >}}" "https://twitter.com/csswizardry" >}} sat to my right - he was a blast. He and I shared a lot of common thoughts about the developer community. I really enjoyed his company. I asked him if he was on _Twitter_ so that I could follow him - {{< i fa-smile-o >}} yeah 58k+ followers. The food was great. The people of Serbia know how to do meat, I might get myself banned from the United States for saying this but it is true, "Serbia has the best bacon in the world!" After a long night, I returned to my hotel where I immediately fell asleep.
+{{< i fa-twitter >}} {{< url-link "Harry Roberts" "https://twitter.com/csswizardry" >}} sat to my right - he was a blast. He and I shared a lot of common thoughts about the developer community. I really enjoyed his company. I asked him if he was on _Twitter_ so that I could follow him - {{< i fa-smile-o >}} yeah 58k+ followers. The food was great. The people of Serbia know how to do meat, I might get myself banned from the United States for saying this but it is true, "Serbia has the best bacon in the world!" After a long night, I returned to my hotel where I immediately fell asleep.
 
 ### April 14, 2018
 
@@ -52,10 +53,12 @@ Sunday was traveling day and we were driving to Niš. The core group of speakers
 ![The Van](/img/2018/04/the-van.jpg)
 
 ## Niš
+
 ### April 16, 2018
+
 #### The Humble Giant (Jovan Milic)
 
-When we arrived in Niš, we were greeted by several hosts. One of them was {{< url-link "Jovan Milic {{< i fa-wikipedia-w >}}" "https://en.wikipedia.org/wiki/Jovan_Milic" >}} and I'm referring to him from now on as the "humble giant". If you're ever looking for inspiration read his story, it will hopefully put things a little more into perspective. For me, I can relate very much to his story and appreciate all the things that he's done to earn his place in the world now. The next time you want to complain about the things you take for granted, remember his story and {{< url-link "support his cause" "https://www.findraoul.tk/" >}}.
+When we arrived in Niš, we were greeted by several hosts. One of them was {{< i fa-wikipedia-w >}} {{< url-link "Jovan Milic" "https://en.wikipedia.org/wiki/Jovan_Milic" >}} and I'm referring to him from now on as the "humble giant". If you're ever looking for inspiration read his story, it will hopefully put things a little more into perspective. For me, I can relate very much to his story and appreciate all the things that he's done to earn his place in the world now. The next time you want to complain about the things you take for granted, remember his story and {{< url-link "support his cause" "https://www.findraoul.tk/" >}}.
 
 ![Jovan Milic](/img/2018/04/jovan.jpg)
 
@@ -63,6 +66,8 @@ There are several life lessons that I live by - this is one of them.
 
 > Expect nothing, but be grateful for everything.
 > <cite>David Pine</cite>
+
+<br/><br/>
 
 Jovan and the other hosts treated us like celebrities. We had a walking tour of the Niš fortress and city center. After arming ourselves with some umbrellas we were ready to take on the light rain. My umbrella just so happened to be pink. I'm not sure the color of my umbrella is relevant for this story, but I felt inclined to share it. After strolling around the fortress and then making our way back towards the city center - we needed some caffeine. We enjoyed turkish coffee and dark beer, because why not both?! I recall this evening very well, this is the night that Håkon told us about the time he built a balsawood raft with a group of volunteers. The raft weighed over 20 tons, and the intended purpose was to set course from South America (Peru) and sail to Easter Island. Why, you might ask - as both Jon's and I did...we were intrigued, why on earth would anyone want to do this? Simply to prove a point that it could be done. It would prove that Easter Island could have been inhabited by the people of South America. This voyage took place in 2015-2016 and was the spot light of world-wide news, for more details checkout the {{< url-link "official website" "https://kontiki2.com/" >}} and {{< url-link "the story from Håkon himself here" "https://www.wiumlie.no/img/2015/kontiki2.html" >}}.
 
@@ -78,39 +83,15 @@ Again we enjoyed a traditional Serbian dinner. There was more rakija and as luck
 
 Conference Day! The stage was set. The crowds were drawing near, anticipation was building. News crews, wait...news crews? Yes, we were actually interviewed and made it on the Serbian national news - several times. This was yet another first for me. The media was interested about our take on the IT community in Serbia. They were curious about how the developers of Serbia rank up against the rest of the world. That is a hard question to answer, but one thing was consistent with all of our responses - we believe that any developer can change the world! When you take talent, an idea and hunger to build something incredible there is no limit to what you can achieve.
 
-<div class="box alt">
-   <div class="row uniform">
-      <div class="6u">
-         <span class="image fit">
-            <img src="/img/2018/04/media-1.jpg" alt="Jon G.">
-         </span>
-      </div>
-      <div class="6u">
-         <span class="image fit">
-            <img src="/img/2018/04/media-2.jpg" alt="Me">
-         </span>
-      </div>
-   </div>
-    <div class="row uniform">
-      <div class="6u">
-         <span class="image fit">
-            <img src="/img/2018/04/media-3.jpg" alt="Jonathan">
-         </span>
-      </div>
-      <div class="6u">
-         <span class="image fit">
-            <img src="/img/2018/04/media-4.jpg" alt="Håkon">
-         </span>
-      </div>
-   </div>
-</div>
+{{< four-images 1 >}}
 
-The conference talks were all really well received. The developer community seemed eager to ask questions after sessions. As a speaker, this is what makes it all worth while - the gratifying moment when you know that you've been able to help someone and that you've delivered value. After the conference we spent more time walking around Niš, this is when I learned that Håkon brought a drone. We took turns flying it and taking pictures of the scenery.
+The conference talks were all really well received. The developer community seemed eager to ask questions after sessions. As a speaker, this is what makes it all worthwhile - the gratifying moment when you know that you've been able to help someone and that you've delivered value. After the conference we spent more time walking around Niš, this is when I learned that Håkon brought a drone. We took turns flying it and taking pictures of the scenery.
 
 ## Novi Sad
+
 ### April 18, 2018
 
-Wednesday was another traveling day. Our jumbo van trip was scheduled to take roughly four hours. But before we left, we were asked to be part of a ceremony with the President of municipalities, the mayor of Niš. The press was there to capture the moment. It was incredible sharing ideas for shared working spaces and encouraging hackathons. Our hosts served as translators, communicating our ambitions and guidance. The mayor was so pleased that he presented Håkon with a special honor - a medallion of Constantine the Great. 
+Wednesday was another traveling day. Our jumbo van trip was scheduled to take roughly four hours. But before we left, we were asked to be part of a ceremony with the President of municipalities, the mayor of Niš. The press was there to capture the moment. It was incredible sharing ideas for shared working spaces and encouraging hackathons. Our hosts served as translators, communicating our ambitions and guidance. The mayor was so pleased that he presented Håkon with a special honor - a medallion of Constantine the Great.
 
 > IT experts are visiting the municipalities of Crvena Krst.
 
@@ -118,13 +99,14 @@ Wednesday was another traveling day. Our jumbo van trip was scheduled to take ro
     <iframe src="https://www.youtube.com/embed/5jCy7oHbDaE" frameborder="0" allowfullscreen></iframe>
 </div>
 
-Shortly after the ceremony we drove to Novi Sad. We arrived without a hitch, settling into our hotels. Followed by a city tour, which proved to be a spectacular site. Dinner was at the {{< url-link "Terasa" "https://www.terasa.rs/" >}}. This sits right on the Danube river and at the foot of the Novi Sad fortress. Håkon was able to capture some amazing footage with his drone...the view was beautifully stunning.
+Shortly after the ceremony, we drove to Novi Sad. We arrived without a hitch, settling into our hotels. Followed by a city tour, which proved to be a spectacular site. Dinner was at the {{< url-link "Terasa" "https://www.terasa.rs/" >}}. This sits right on the Danube river and at the foot of the Novi Sad fortress. Håkon was able to capture some amazing footage with his drone...the view was beautifully stunning.
 
 <div class="iframe_container">
     <iframe src="https://www.youtube.com/embed/rC4pvMA8Qsk" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## Sremski Karlovci & Danube River
+
 ### April 19, 2018
 
 The 19th was a really relaxing day, we had a walking tour, lunch on the Danube river, followed by a wine tasting at the {{< url-link "Museum of Beekeeping and Wine Cellar Zivanovic" "https://www.muzejzivanovic.com/" >}}. Again, Håkon let his drone capture some of the essence and scenery. This video starts well beyond the town center, working its way back towards where we had lunch on the river. Yes, that establishment in the distance is where Håkon is navigating his drone recording this clip. I am seriously trying to convince my wife to let me purchase one of these drones. If you want to buy it for yourself {{< url-link "here is the link" "https://www.amazon.com/Mavic-Platinum-Quadcopter-Camera-Batteries/dp/B07871KXMP" >}}.
@@ -154,7 +136,7 @@ The final conference day! I was up first and immediately following my talk, I ne
    </div>
 </div>
 
-I was excited to be returning home. I know that I was missed by Lyric, Londyn, Lennyx (my three sons) and Jen (wife). I'm thankful to have had a safe trip and shared so many awesome experiences. For those interested in the conference itself, I'll be posting videos and more photos as they are released. For my talk, see below. 
+I was excited to be returning home. I know that I was missed by Lyric, Londyn, Lennyx (my three sons) and Jen (wife). I'm thankful to have had a safe trip and shared so many awesome experiences. For those interested in the conference itself, I'll be posting videos and more photos as they are released. For my talk, see below.
 
 ### What's new in C# (The Talk)
 
@@ -170,15 +152,15 @@ Here is the link for my talk, {{< url-link "What's new in C#" "https://github.co
 
 I was blessed to have made so many new friends on this journey. These people are inspiring, you should follow them as they are true leaders!
 
- - __Jon Galloway__ {{< url-link "{{< i fa-linkedin-square >}}" "https://www.linkedin.com/in/jongalloway/" >}}, {{< url-link "{{< i fa-twitter >}}" "https://twitter.com/jongalloway" >}}, {{< url-link "{{< i fa-github >}}" "https://github.com/jongalloway" >}}, {{< url-link "{{< i fa-link >}}" "https://weblogs.asp.net/jongalloway" >}}
-   - Executive Director {{< url-link ".NET Foundation" "https://dotnetfoundation.org/" >}}, ASP.NET MVC 3/4/5 Author
- - __Jonathan LeBlanc__ {{< url-link "{{< i fa-linkedin-square >}}" "https://www.linkedin.com/in/jcleblanc/" >}}, {{< url-link "{{< i fa-twitter >}}" "https://twitter.com/jcleblanc" >}}, {{< url-link "{{< i fa-github >}}" "https://github.com/jcleblanc" >}}, {{< url-link "{{< i fa-link >}}" "https://www.jcleblanc.com/" >}}
-   - Director of Developer Advocacy {{< url-link "Box" "https://www.box.com/" >}}, Emmy Award Winner, O'Reilly Author
- - __Håkon Wium Lie__ {{< url-link "{{< i fa-linkedin-square >}}" "https://www.linkedin.com/in/howcome/" >}}, {{< url-link "{{< i fa-twitter >}}" "https://twitter.com/wiumlie" >}}, {{< url-link "{{< i fa-link >}}" "https://www.wiumlie.no/en" >}}
-   - Creator of CSS, former CTO of Opera, Kontiki Adventurer
- - __Milica Radovic__ {{< url-link "{{< i fa-linkedin-square >}}" "https://www.linkedin.com/in/milicaradovic/" >}}, {{< url-link "{{< i fa-twitter >}}" "https://twitter.com/Milica_Radovic_" >}}
-   - Founder, IT Konekt 
- - __Milica Nastasic__ {{< url-link "{{< i fa-linkedin-square >}}" "https://www.linkedin.com/in/milicanastasic" >}}
-   - Co-Founder, IT Konekt
- - __Jovan Milic__ {{< url-link "{{< i fa-linkedin-square >}}" "https://www.linkedin.com/in/jovan-milic-68713973" >}}, {{< url-link "{{< i fa-twitter >}}" "https://twitter.com/JMiliic" >}}
-   - Founder of Find Raoul
+- __Jon Galloway__ {{< i fa-linkedin-square >}} {{< url-link "LinkedIn" "https://www.linkedin.com/in/jongalloway/" >}}, {{< i fa-twitter >}} {{< url-link "Twitter" "https://twitter.com/jongalloway" >}}, {{< i fa-github >}} {{< url-link "GitHub" "https://github.com/jongalloway" >}}, {{< i fa-link >}} {{< url-link "Blog" "https://weblogs.asp.net/jongalloway" >}}
+  - Executive Director {{< url-link ".NET Foundation" "https://dotnetfoundation.org/" >}}, ASP.NET MVC 3/4/5 Author
+- __Jonathan LeBlanc__ {{< i fa-linkedin-square  >}} {{< url-link "LinkedIn" "https://www.linkedin.com/in/jcleblanc/" >}}, {{< i fa-twitter >}} {{< url-link "Twitter" "https://twitter.com/jcleblanc" >}}, {{< i fa-github >}} {{< url-link "GitHub" "https://github.com/jcleblanc" >}}, {{< i fa-link >}} {{< url-link "Website" "https://www.jcleblanc.com/" >}}
+  - Director of Developer Advocacy {{< url-link "Box" "https://www.box.com/" >}}, Emmy Award Winner, O'Reilly Author
+- __Håkon Wium Lie__ {{< i fa-linkedin-square  >}} {{< url-link "LinkedIn" "https://www.linkedin.com/in/howcome/" >}}, {{< i fa-twitter >}} {{< url-link "Twitter" "https://twitter.com/wiumlie" >}}, {{< i fa-link >}} {{< url-link "Website" "https://www.wiumlie.no/en" >}}
+  - Creator of CSS, former CTO of Opera, Kontiki Adventurer
+- __Milica Radovic__ {{< i fa-linkedin-square  >}} {{< url-link "LinkedIn" "https://www.linkedin.com/in/milicaradovic/" >}}, {{< i fa-twitter >}} {{< url-link "Twitter" "https://twitter.com/Milica_Radovic_" >}}
+  - Founder, IT Konekt
+- __Milica Nastasic__ {{< i fa-linkedin-square  >}} {{< url-link "LinkedIn" "https://www.linkedin.com/in/milicanastasic" >}}
+  - Co-Founder, IT Konekt
+- __Jovan Milic__ {{< i fa-linkedin-square  >}} {{< url-link "LinkedIn" "https://www.linkedin.com/in/jovan-milic-68713973" >}}, {{< i fa-twitter >}} {{< url-link "Twitter" "https://twitter.com/JMiliic" >}}
+  - Founder of Find Raoul

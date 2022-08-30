@@ -95,6 +95,7 @@ import {Http} from "@angular/http";
     }
 }
 ```
+
 _I am hoping that you noticed how much cleaner this code is, as well as how much more readable!_
 
 Now, I know what you're thinking...these cannot possibly be the same examples, but they are in fact doing the same thing. _Dependency Injection (DI)_ in **Angular2** is a lot less error prone (no more magic strings) and way easier than

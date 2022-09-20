@@ -1,0 +1,8 @@
+{{ $editor    := "true" }}
+{{ $result    := "true" }}
+{{ $errorList := "true" }}
+{{ $height    := "600px" }}
+
+<iframe width="100%" height='{{ or (.Get "height") $height }}'
+    src='https://blazorrepl.telerik.com/repl/embed/{{ .Get "id" }}?editor={{ or (.Get "editor") $editor }}&result={{ or (.Get "result") $result }}&errorList={{ or (.Get "errorList") $errorList }}'>
+</iframe>

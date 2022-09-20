@@ -3877,3 +3877,15 @@ img.headshot {
 	color: black !important;
 	transition: all 3s linear;
 }
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.no-padding {
+	padding: 0 !important;
+}

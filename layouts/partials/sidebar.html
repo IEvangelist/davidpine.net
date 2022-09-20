@@ -19,7 +19,7 @@
             <p>
                 {{ .paragraph | safeHTML }}
                 <span class="responsive-float">
-                    <a href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
                         Follow @davidpine7
                     </a>
                 </span>
@@ -48,9 +48,10 @@
 
         <hr />
 
-        <section>
-            <a href="https://bit.ly/learning-blazor" target="_blank" rel="nofollow">
-                <img src="/img/main/thumb-book-cover.png" width="300px" />
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
             </a>
         </section>
 
@@ -60,12 +61,12 @@
             <div class='column'>
                 <a target="_blank" rel="noopener"
                     href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
-                    <img src="/img/main/gde-22.png" width="220px" />
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
                 <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp.png" width="195px" />
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>

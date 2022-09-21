@@ -3889,3 +3889,8 @@ img.headshot {
 .no-padding {
 	padding: 0 !important;
 }
+
+a.darken:hover {
+	transition: all 1s;
+	filter: brightness(90%) !important;
+  }

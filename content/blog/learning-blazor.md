@@ -18,7 +18,7 @@ Sometime in June 2021, I set out on a journey to write a book in the middle of a
 
 Web development has been a dominating feature of the software industry for over 20 years and is likely to remain so for many years to come. Industry giants continue to invest heavily in expanding web technology's power and flexibility, enabling an increasing range of advanced browser-based software. While native mobile apps and augmented reality / virtual reality apps find their place for consumer software, the web is overwhelmingly the default UI for business apps. If you could bet on only one application platform, you should bet on the web.
 
-During those same 20 years, .NET (first released in 2002) has held its place as Microsoft's premiere developer toolset. Like the web, .NET continues to gain strength. It was reinvented as cloud-first, cross-platform, and fully open source in 2016 and today is used by about 30% of all professional software developers.footnote:["Most Popular Technologies," 2022 Stack Overflow Developer Survey, accessed August 18, 2022, [.keep-together]#https://oreil.ly/7UTEc.#] C# has always been considered one of the most productive languages, at the forefront of rich developer tooling with precise code completions and a top debugging experience, and now ASP.NET Core is one of the fastest server-side web technologies.footnote:["Web Framework Benchmarks: Round 21, July 19, 2022," TechEmpower, https://oreil.ly/EBawf.]
+During those same 20 years, .NET (first released in 2002) has held its place as Microsoft's premiere developer toolset. Like the web, .NET continues to gain strength. It was reinvented as cloud-first, cross-platform, and fully open source in 2016 and today is used by about 30% of all professional software developers[^1] C# has always been considered one of the most productive languages, at the forefront of rich developer tooling with precise code completions and a top debugging experience, and now ASP.NET Core is one of the fastest server-side web technologies[^2].
 
 The goal of Blazor is to unlock the full power of .NET for browser-based UI applications. It's the .NET team's best effort to create the most productive and natural way to create single-page application&ndash;type apps. This includes Blazor's component-based programming model, which takes the best aspects of many modern UI frameworks and unifies them into something natural for .NET with its strong typing. Beyond that, it means connecting with the rest of the .NET ecosystem, with its industry-leading IDEs and first-class features for debugging, testing, and hot reload. Blazor's biggest innovation might be its flexible execution models, running server-side with UI streaming to browsers over a websocket, directly inside the browser on WebAssembly, or as native code in mobile and desktop apps.
 
@@ -35,6 +35,9 @@ My biggest motivation when creating the first release of Blazor with Dan Roth an
 *Bristol, UK*
 {{< line-break >}}
 *August 2022*
+
+[^1]: [Most Popular Technologies, 2022 Stack Overflow Developer Survey, accessed August 18, 2022](https://survey.stackoverflow.co/2022/#most-popular-technologies-language-prof)
+[^2]: [Web Framework Benchmarks: Round 21, July 19, 2022, TechEmpower](https://www.techempower.com/benchmarks/#section=data-r21&hw=ph&test=plaintext)
 
 ## Developer community praise
 

@@ -14,6 +14,10 @@ type = "post"
 
 Sometime in June 2021, I set out on a journey to write a book in the middle of a global pandemic. I had no idea what I was doing (all things considered, I still don't know what I'm doing). But I do know that I truly enjoy helping others. I hope you enjoy the book as much as I enjoyed writing it.
 
+## Amazon Preview
+
+{{< lb-amazon-preview >}}
+
 ## Foreword by Steve Sanderson
 
 Web development has been a dominating feature of the software industry for over 20 years and is likely to remain so for many years to come. Industry giants continue to invest heavily in expanding web technology's power and flexibility, enabling an increasing range of advanced browser-based software. While native mobile apps and augmented reality / virtual reality apps find their place for consumer software, the web is overwhelmingly the default UI for business apps. If you could bet on only one application platform, you should bet on the web.
@@ -78,3 +82,8 @@ There are so many gems in here that you are guaranteed to learn something regard
 Click the cover below 👇🏽. It's a link to the book on Amazon. 😊
 
 {{< clickable-image href="https://www.amazon.com/gp/product/1098113241" src="/img/main/full-book-cover.png" alt="Visit Amazon.com for the Learning Blazor: Build Single-Page Apps with WebAssembly and C# by David Pine book." >}}
+
+| Media type              | Site                                               |
+|-------------------------|----------------------------------------------------|
+| **📖 Paperback (Print)** | [**Check it out on {{< i fa-amazon >}} Amazon to pre-order today.**](https://www.amazon.com/Learning-Blazor-Build-Single-Page-WebAssembly-dp-1098113241/dp/1098113241)    |
+| **💻 eBook (Kindle)**  | [**Buy it now on {{< i fa-amazon >}} Amazon Kindle devices.**](https://www.amazon.com/dp-B0BGJS7JBP/dp/B0BGJS7JBP) |

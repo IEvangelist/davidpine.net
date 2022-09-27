@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Caching on IEvangelist</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Caching on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://davidpine.net/categories/caching/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/caching/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ASP.NET Core Response Optimization</title>
       <link>https://davidpine.net/blog/asp-net-core-optimization/</link>
@@ -18,7 +14,8 @@
       
       <guid>https://davidpine.net/blog/asp-net-core-optimization/</guid>
       <description>Intro If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in tandem on an ASP.NET Core application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.
-If you haven&amp;rsquo;t had a chance to use ASP.NET Core yet, you&amp;rsquo;re missing out! As my friend Scott Addie likes to say:</description>
+If you haven&amp;rsquo;t had a chance to use ASP.NET Core yet, you&amp;rsquo;re missing out! As my friend Scott Addie likes to say:
+ASP.NET Core is a cafeteria plan in which developers choose application dependencies à la carte.</description>
     </item>
     
   </channel>

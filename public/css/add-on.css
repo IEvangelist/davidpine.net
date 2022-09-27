@@ -43,17 +43,7 @@ pre {
 
 #intro p,
 #intro .icons a {
-    /* Theoretically for IE 8 & 9 (more valid) */
-    /* ...but not required as filter works too */
-    /* should come BEFORE filter */
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-
-    /* This works in IE 8 & 9 too */
-    /* ... but also 5, 6, 7 */
-    filter: alpha(opacity=60);
-
-    /* Modern Browsers */
-    opacity: 0.6;
+    color: #999;
 }
 
     #sidebar #recent-posts ul.posts time,

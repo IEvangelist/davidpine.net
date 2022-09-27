@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.102.1" />
         
 
 
@@ -33,28 +33,16 @@
         <meta property="og:title" content="Overriding ASP.NET Core Framework-Provided Services" />
 <meta property="og:description" content="You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://davidpine.net/blog/overriding-default-di/" />
-
-<meta property="og:image" content="https://davidpine.net/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" />
-<meta property="article:published_time" content="2017-02-14T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-02-14T00:00:00&#43;00:00"/>
-
-        
-<meta itemprop="name" content="Overriding ASP.NET Core Framework-Provided Services">
-<meta itemprop="description" content="You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes">
+<meta property="og:url" content="https://davidpine.net/blog/overriding-default-di/" /><meta property="og:image" content="https://davidpine.net/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-02-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-02-14T00:00:00+00:00" />
 
 
-<meta itemprop="datePublished" content="2017-02-14T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-02-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="813">
-
-  <meta itemprop="image" content="https://davidpine.net/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg">
-
-
-
+        <meta itemprop="name" content="Overriding ASP.NET Core Framework-Provided Services">
+<meta itemprop="description" content="You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes"><meta itemprop="datePublished" content="2017-02-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-02-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="822"><meta itemprop="image" content="https://davidpine.net/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg">
 <meta itemprop="keywords" content="" />
-
-        
 
         
 
@@ -90,17 +78,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
         
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
-
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         
@@ -295,15 +276,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
             </ul>
@@ -381,9 +362,11 @@ if (!doNotTrack) {
             
         
 
-        <time class="published"
-            datetime='2017-02-14'>
-            February 14, 2017</time>
+        <time class="published" data-hover='February, 2017'
+            datetime='2017-02-14'
+            data-initial='Written on'>
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
+        </time>
         <span class="author">David Pine</span>
         
             <p>4 minute read</p>
@@ -454,234 +437,264 @@ if (!doNotTrack) {
         
 
         <a href="https://davidpine.net/blog/overriding-default-di/" class="image featured">
-            <img src="/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" alt="" />
+            <img src="/img/2017/022017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" alt="" />
         </a>
     
 
 
     <div id="content">
-        
-
-<h1 id="overview">Overview</h1>
-
+        <h1 id="overview">Overview</h1>
 <p>In <strong>.NET</strong> it&rsquo;s really easy to create your own interfaces and implementations. Likewise, it&rsquo;s seemingly effortless to register them for dependency injection. But it is not always
 obvious how to override existing implementations.  Let&rsquo;s discuss various aspects of &ldquo;dependency injection&rdquo; and how you can override the &ldquo;framework-provided services&rdquo;.</p>
-
 <p>As an example, let&rsquo;s take a recent story on our product backlog for building a security audit of login attempts.  The story involved the capture of attempted usernames along
 with their corresponding IP addresses.  This would allow system administrators to monitor for potential attackers. This would require our <strong>ASP.NET Core</strong> application to have
 custom logging implemented.</p>
-
 <h2 id="logging">Logging</h2>
+<p>Luckily 
 
-<p>Luckily <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging" target="_blank"><code>ASP.NET Core Logging</code></a> is simple to use and is a first-class
+    
+        
+    
+
+    <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging" target='_blank'>`ASP.NET Core Logging`</a>
+
+ is simple to use and is a first-class
 citizen within <code>ASP.NET Core</code>.</p>
-
 <p>In the <strong>Logging</strong> repository there is an extension method namely
-<a href="https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging/LoggingServiceCollectionExtensions.cs" target="_blank"><code>AddLogging</code></a>, here is what it
+
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging/LoggingServiceCollectionExtensions.cs" target='_blank'>`AddLogging`</a>
+
+, here is what it
 looks like:</p>
-
-<pre><code class="language-csharp">public static IServiceCollection AddLogging(this IServiceCollection services)
-{
-    if (services == null)
-    {
-        throw new ArgumentNullException(nameof(services));
-    }
-
-    services.TryAdd(ServiceDescriptor.Singleton&lt;ILoggerFactory, LoggerFactory&gt;());
-    services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger&lt;&gt;), typeof(Logger&lt;&gt;)));
-
-    return services;
-}
-</code></pre>
-
-<p>As you can see, it is rather simple. It adds two <code>ServiceDescriptor</code> instances to the <code>IServiceCollection</code>, effectively registering the given service type to the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> IServiceCollection AddLogging(<span style="color:#66d9ef">this</span> IServiceCollection services)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (services == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(services));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    services.TryAdd(ServiceDescriptor.Singleton&lt;ILoggerFactory, LoggerFactory&gt;());
+</span></span><span style="display:flex;"><span>    services.TryAdd(ServiceDescriptor.Singleton(<span style="color:#66d9ef">typeof</span>(ILogger&lt;&gt;), <span style="color:#66d9ef">typeof</span>(Logger&lt;&gt;)));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> services;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As you can see, it is rather simple. It adds two <code>ServiceDescriptor</code> instances to the <code>IServiceCollection</code>, effectively registering the given service type to the
 corresponding implementation type.</p>
-
 <h4 id="following-the-rabbit-down-the-hole">Following the rabbit down the hole</h4>
-
 <p>When you create a new <code>ASP.NET Core</code> project from <strong>Visual Studio</strong>, all the templates follow the same pattern. They have the <code>Program.cs</code> file with a <code>Main</code> method that looks
 very similar to this:</p>
-
-<pre><code class="language-csharp">public static void Main(string[] args)
-{
-    var host = new WebHostBuilder()
-        .UseKestrel()
-        .UseContentRoot(Directory.GetCurrentDirectory())
-        .UseIISIntegration()
-        .UseStartup&lt;Startup&gt;()
-        .UseApplicationInsights()
-        .Build();
-
-    host.Run();
-}
-</code></pre>
-
-<h6 id="templates-program-cs">Templates <code>Program.cs</code></h6>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> host = <span style="color:#66d9ef">new</span> WebHostBuilder()
+</span></span><span style="display:flex;"><span>        .UseKestrel()
+</span></span><span style="display:flex;"><span>        .UseContentRoot(Directory.GetCurrentDirectory())
+</span></span><span style="display:flex;"><span>        .UseIISIntegration()
+</span></span><span style="display:flex;"><span>        .UseStartup&lt;Startup&gt;()
+</span></span><span style="display:flex;"><span>        .UseApplicationInsights()
+</span></span><span style="display:flex;"><span>        .Build();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    host.Run();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h6 id="templates-programcs">Templates <code>Program.cs</code></h6>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center"><a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/EmptyWeb/Program.cs" target="_blank">Empty &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
-<td align="center"><a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/StarterWeb/Program.cs" target="_blank">Starter Web &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
-<td align="center"><a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/WebAPI/Program.cs" target="_blank">Web API &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+<td style="text-align:center">
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/EmptyWeb/Program.cs" target='_blank'>Empty &amp;nbsp; {{&lt; i fa-external-link &gt;}}</a>
+
+</td>
+<td style="text-align:center">
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/StarterWeb/Program.cs" target='_blank'>Starter Web &amp;nbsp; {{&lt; i fa-external-link &gt;}}</a>
+
+</td>
+<td style="text-align:center">
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/Templates/blob/dev/src/BaseTemplates/WebAPI/Program.cs" target='_blank'>Web API &amp;nbsp; {{&lt; i fa-external-link &gt;}}</a>
+
+</td>
 </tr>
 </tbody>
 </table>
-
 <p>One thing that is concerning about a template like this is that the <code>IWebHost</code> is an <code>IDisposable</code>, so why then is this statement not wrapped in a <code>using</code>
-<a href="https://github.com/IEvangelist/Templates/commit/37e78bd0dc33069901cc51924fe8a2740d1e141c" target="_blank">you ask</a>? The answer is that the <code>Run</code> extension method
+
+
+    
+        
+    
+
+    <a href="https://github.com/IEvangelist/Templates/commit/37e78bd0dc33069901cc51924fe8a2740d1e141c" target='_blank'>you ask</a>
+
+? The answer is that the <code>Run</code> extension method
 internally wraps itself in a <code>using</code>. If you were wondering where the <code>AddLogging</code> occurs, it is a result of invoking the <code>Build</code> function.</p>
-
-<pre><code class="language-yaml">[ Microsoft.AspNetCore.Hosting.WebHostBuilder ] 
-    public IWebHost Build() ...
-        private IServiceCollection BuildCommonServices() ...
-            creates services then invokes services.AddLogging()
-</code></pre>
-
-<h3 id="a-few-words-on-the-service-descriptor">A few words on the Service Descriptor</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[ <span style="color:#ae81ff">Microsoft.AspNetCore.Hosting.WebHostBuilder ] </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">public IWebHost Build() ...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">private IServiceCollection BuildCommonServices() ...</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">creates services then invokes services.AddLogging()</span>
+</span></span></code></pre></div><h3 id="a-few-words-on-the-service-descriptor">A few words on the Service Descriptor</h3>
 <p>The <code>ServiceDescriptor</code> class is an object that <em>describes</em> a <em>service</em>, and this is used by dependency injection. In other words, instances of the <code>ServiceDescriptor</code> are
 descriptions of services. The <code>ServiceDescriptor</code> class exposes several static methods that allow its instantiation.</p>
-
 <p>The <code>ILoggerFactory</code> interface is registered as a
-<a href="https://github.com/aspnet/DependencyInjection/blob/dev/src/Microsoft.Extensions.DependencyInjection.Abstractions/ServiceLifetime.cs#L14" target="_blank"><code>ServiceLifetime.Singleton</code></a>
+
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/DependencyInjection/blob/dev/src/Microsoft.Extensions.DependencyInjection.Abstractions/ServiceLifetime.cs#L14" target='_blank'>`ServiceLifetime.Singleton`</a>
+
+
 and its implementation is mapped to the <code>LoggerFactory</code>. Likewise, the generic type <code>typeof(ILogger&lt;&gt;)</code> is mapped to <code>typeof(Logger&lt;&gt;)</code>. This is just one of the several key
 &ldquo;Framework-Provided Services&rdquo; that are registered.</p>
-
 <h2 id="putting-it-together">Putting it together</h2>
-
 <p>Now we know that the framework is providing all implementations of <code>ILogger&lt;T&gt;</code>, and resolving them as their <code>Logger&lt;T&gt;</code>. We also know that we could write our own implementation of
 the <code>ILogger&lt;T&gt;</code> interface. Being that this is open-source
-<a href="https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging.Abstractions/LoggerOfT.cs" target="_blank">we can look to their implementation</a> for inspiration.</p>
 
-<pre><code class="language-csharp">public class RequestDetailLogger&lt;T&gt; : ILogger&lt;T&gt;
-{
-    private readonly ILogger _logger;
 
-    public RequestDetailLogger(ILoggerFactory factory,
-                               IRequestCategoryProvider requestCategoryProvider)
-    {
-        if (factory == null)
-        {
-            throw new ArgumentNullException(nameof(factory));
-        }
-        if (requestCategoryProvider == null)
-        {
-            throw new ArgumentNullException(nameof(requestCategoryProvider));
-        }
+    
+        
+    
 
-        var category = requestDetailCategoryProvider.CreateCategory&lt;T&gt;();
-        _logger = factory.CreateLogger(category);
-    }
+    <a href="https://github.com/aspnet/Logging/blob/dev/src/Microsoft.Extensions.Logging.Abstractions/LoggerOfT.cs" target='_blank'>we can look to their implementation</a>
 
-    IDisposable ILogger.BeginScope&lt;TState&gt;(TState state)
-        =&gt; _logger.BeginScope(state);
+ for inspiration.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RequestDetailLogger</span>&lt;T&gt; : ILogger&lt;T&gt;
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> ILogger _logger;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> RequestDetailLogger(ILoggerFactory factory,
+</span></span><span style="display:flex;"><span>                               IRequestCategoryProvider requestCategoryProvider)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (factory == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(factory));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (requestCategoryProvider == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(requestCategoryProvider));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> category = requestDetailCategoryProvider.CreateCategory&lt;T&gt;();
+</span></span><span style="display:flex;"><span>        _logger = factory.CreateLogger(category);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    IDisposable ILogger.BeginScope&lt;TState&gt;(TState state)
+</span></span><span style="display:flex;"><span>        =&gt; _logger.BeginScope(state);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> ILogger.IsEnabled(LogLevel logLevel)
+</span></span><span style="display:flex;"><span>        =&gt; _logger.IsEnabled(logLevel);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> ILogger.Log&lt;TState&gt;(LogLevel logLevel, 
+</span></span><span style="display:flex;"><span>                             EventId eventId, 
+</span></span><span style="display:flex;"><span>                             TState state, 
+</span></span><span style="display:flex;"><span>                             Exception exception, 
+</span></span><span style="display:flex;"><span>                             Func&lt;TState, Exception, <span style="color:#66d9ef">string</span>&gt; formatter)
+</span></span><span style="display:flex;"><span>        =&gt; _logger.Log(logLevel, eventId, state, exception, formatter);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>IRequestCategoryProvider</code> is defined and implemented as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> static Microsoft.Extensions.Logging.Abstractions.Internal.TypeNameHelper;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IRequestCategoryProvider</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> CreateCategory&lt;T&gt;();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RequestCategoryProvider</span> : IRequestCategoryProvider
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IPrincipal _principal;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IPAddress _ipAddress;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> RequestCategoryProvider(IPrincipal principal,
+</span></span><span style="display:flex;"><span>                                   IPAddress ipAddress)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        _principal = principal;
+</span></span><span style="display:flex;"><span>        _ipAddress = ipAddress;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> CreateCategory&lt;T&gt;()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> typeDisplayName = GetTypeDisplayName(<span style="color:#66d9ef">typeof</span>(T));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (_principal == <span style="color:#66d9ef">null</span> || _ipAddress == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> typeDisplayName;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> username = _principal?.Identity?.Name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">$&#34;User: {username}, IP: {_ipAddress} {typeDisplayName}&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;re curious how to get the <code>IPrincipal</code> and <code>IPAddress</code> into this implementation (with DI) -
 
-    bool ILogger.IsEnabled(LogLevel logLevel)
-        =&gt; _logger.IsEnabled(logLevel);
 
-    void ILogger.Log&lt;TState&gt;(LogLevel logLevel, 
-                             EventId eventId, 
-                             TState state, 
-                             Exception exception, 
-                             Func&lt;TState, Exception, string&gt; formatter)
-        =&gt; _logger.Log(logLevel, eventId, state, exception, formatter);
-}
-</code></pre>
+    
+        
+    
 
-<p>The <code>IRequestCategoryProvider</code> is defined and implemented as follows:</p>
+    <a href="https://davidpine.net/blog/principal-architecture-changes/" target='_blank'>I discussed it here</a>
 
-<pre><code class="language-csharp">using static Microsoft.Extensions.Logging.Abstractions.Internal.TypeNameHelper;
-
-public interface IRequestCategoryProvider
-{
-    string CreateCategory&lt;T&gt;();
-}
-
-public class RequestCategoryProvider : IRequestCategoryProvider
-{
-    private readonly IPrincipal _principal;
-    private readonly IPAddress _ipAddress;
-
-    public RequestCategoryProvider(IPrincipal principal,
-                                   IPAddress ipAddress)
-    {
-        _principal = principal;
-        _ipAddress = ipAddress;
-    }
-
-    public string CreateCategory&lt;T&gt;()
-    {
-        var typeDisplayName = GetTypeDisplayName(typeof(T));
-
-        if (_principal == null || _ipAddress == null)
-        {
-            return typeDisplayName;
-        }
-
-        var username = _principal?.Identity?.Name;
-        return $&quot;User: {username}, IP: {_ipAddress} {typeDisplayName}&quot;;
-    }
-}
-</code></pre>
-
-<p>If you&rsquo;re curious how to get the <code>IPrincipal</code> and <code>IPAddress</code> into this implementation (with DI) -
-<a href="http://davidpine.net/blog/principal-architecture-changes/" target="_blank">I discussed it here</a> briefly. It is pretty straight-forward. In the <code>Startup.ConfigureServices</code>
+ briefly. It is pretty straight-forward. In the <code>Startup.ConfigureServices</code>
 method do the following:</p>
-
-<pre><code class="language-csharp">public void ConfigureServices(IServiceCollection services)
-{
-    // ... omitted for brevity
-
-    services.AddTransient&lt;IRequestCategoryProvider, RequestCategoryProvider&gt;();
-    services.AddTransient&lt;IHttpContextAccessor, HttpContextAccessor&gt;();
-    services.AddTransient&lt;IPrincipal&gt;(
-        provider =&gt; provider.GetService&lt;IHttpContextAccessor&gt;()
-                           ?.HttpContext
-                           ?.User);
-    services.AddTransient&lt;IPAddress&gt;(
-        provider =&gt; provider.GetService&lt;IHttpContextAccessor&gt;()
-                           ?.HttpContext
-                           ?.Connection
-                           ?.RemoteIpAddress);
-}
-</code></pre>
-
-<p>Finally, we can
-<a href="https://github.com/aspnet/DependencyInjection/blob/dev/src/Microsoft.Extensions.DependencyInjection.Abstractions/Extensions/ServiceCollectionDescriptorExtensions.cs"
-   target="_blank"><code>Replace</code></a> the implementations for the <code>ILogger&lt;T&gt;</code> by using the following:</p>
-
-<pre><code class="language-csharp">public void ConfigureServices(IServiceCollection services)
-{
-    // ... omitted for brevity
-    services.Replace(ServiceDescriptor.Transient(typeof(ILogger&lt;&gt;), 
-                                                 typeof(RequestDetailLogger&lt;&gt;)));
-}
-</code></pre>
-
-<p>Notice that we replace the framework-provided service as a <code>ServiceLifetime.Transient</code>. Opposed to the default <code>ServiceLifetime.Singleton</code>. This is more or less an extra
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ... omitted for brevity</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    services.AddTransient&lt;IRequestCategoryProvider, RequestCategoryProvider&gt;();
+</span></span><span style="display:flex;"><span>    services.AddTransient&lt;IHttpContextAccessor, HttpContextAccessor&gt;();
+</span></span><span style="display:flex;"><span>    services.AddTransient&lt;IPrincipal&gt;(
+</span></span><span style="display:flex;"><span>        provider =&gt; provider.GetService&lt;IHttpContextAccessor&gt;()
+</span></span><span style="display:flex;"><span>                           ?.HttpContext
+</span></span><span style="display:flex;"><span>                           ?.User);
+</span></span><span style="display:flex;"><span>    services.AddTransient&lt;IPAddress&gt;(
+</span></span><span style="display:flex;"><span>        provider =&gt; provider.GetService&lt;IHttpContextAccessor&gt;()
+</span></span><span style="display:flex;"><span>                           ?.HttpContext
+</span></span><span style="display:flex;"><span>                           ?.Connection
+</span></span><span style="display:flex;"><span>                           ?.RemoteIpAddress);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Finally, we can
+<!-- raw HTML omitted --><code>Replace</code><!-- raw HTML omitted --> the implementations for the <code>ILogger&lt;T&gt;</code> by using the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ... omitted for brevity</span>
+</span></span><span style="display:flex;"><span>    services.Replace(ServiceDescriptor.Transient(<span style="color:#66d9ef">typeof</span>(ILogger&lt;&gt;), 
+</span></span><span style="display:flex;"><span>                                                 <span style="color:#66d9ef">typeof</span>(RequestDetailLogger&lt;&gt;)));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Notice that we replace the framework-provided service as a <code>ServiceLifetime.Transient</code>. Opposed to the default <code>ServiceLifetime.Singleton</code>. This is more or less an extra
 precaution. We know that with each request we get the <code>HttpContext</code> from the <code>IHttpContextAccessor</code>, and from this we have the <code>User</code>. This is what is passed to each
 <code>ILogger&lt;T&gt;</code>.</p>
-
 <h1 id="conclusion">Conclusion</h1>
-
 <p>This approach is valid for overriding any of the various framework-provided service implementations. It is simply a matter of knowing the correct <code>ServiceLifetime</code> for your
 specific needs. Likewise, it is a good idea to leverage the open-source libraries of the framework for inspiration. With this you can take finite control of your web-stack.</p>
-
 <h1 id="further-reading">Further Reading</h1>
-
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection" target="_blank">
-<i class="fa fa-file-text-o" aria-hidden="true"></i> <code>ASP.NET Core - Dependency Injection</code>
-</a></li>
+<li>
+<!-- raw HTML omitted -->
+</li>
 </ul>
 
     </div>
@@ -728,7 +741,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
         <article class="post">
             <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -765,19 +778,57 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
         
         <header>
             <h2>David Pine</h2>
-            <p>Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time</p>
+            <p>
+                🤓 Changing the world — one line of code at a time.
+                <span class="responsive-float">
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                        Follow @davidpine7
+                    </a>
+                </span>
+                <script>
+                    window.twitter = (function (d, s, id) {
+                    var js,
+                        fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+                </script>
+            </p>
         </header>
         
 
+        <hr />
+
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
+            </a>
+        </section>
+
+        <hr />
+
         <div class='row'>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp-v.png" width="160px" />
+                <a target="_blank" rel="noopener"
+                    href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://google-developers.appspot.com/community/experts/directory/profile/profile-david_pine">
-                    <img src="/img/main/gde.png" width="210px" />
+                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>
@@ -885,6 +936,32 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-15'>
+                            September 15, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-08'>
+                            September 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
                         
                         
@@ -895,38 +972,16 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                 </article>
             </li>
             
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-21'>
-                            March 21, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-14'>
-                            March 14, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
 
             
             <li>
                 <ul class="actions">
-                    <li><a href= /blog/  class="button">View
-                            more posts</a></li>
+                    <li>
+                        <a href= /blog/ 
+                            class="button">
+                            View more posts
+                        </a>
+                    </li>
                 </ul>
             </li>
             
@@ -952,7 +1007,7 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">12</span>
+                        <span style="float:right;">14</span>
                     </header>
                 </article>
             </li>
@@ -1023,6 +1078,33 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
             <li>
                 <article>
                     <header>
+                        <a href="/categories/wasm/">wasm</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/webassembly/">webassembly</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/blazor/">blazor</a>
+                        <span style="float:right;">3</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/http/">http</a>
                         <span style="float:right;">2</span>
                     </header>
@@ -1042,24 +1124,6 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                 <article>
                     <header>
                         <a href="/categories/tooling/">tooling</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/wasm/">wasm</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/webassembly/">webassembly</a>
                         <span style="float:right;">2</span>
                     </header>
                 </article>
@@ -1096,15 +1160,6 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
                 <article>
                     <header>
                         <a href="/categories/azure-functions/">azure-functions</a>
-                        <span style="float:right;">1</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/blazor/">blazor</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1372,7 +1427,8 @@ specific needs. Likewise, it is a good idea to leverage the open-source librarie
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        </p>
     </section>
 
 </section>

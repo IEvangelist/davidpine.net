@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.102.1" />
         
 
 
@@ -33,28 +33,16 @@
         <meta property="og:title" content="ASP.NET Core Response Optimization" />
 <meta property="og:description" content="Static File Caching &amp; Compression" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://davidpine.net/blog/asp-net-core-optimization/" />
-
-<meta property="og:image" content="https://davidpine.net/img/2016/12/speedy.jpg" />
-<meta property="article:published_time" content="2016-12-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2016-12-12T00:00:00&#43;00:00"/>
-
-        
-<meta itemprop="name" content="ASP.NET Core Response Optimization">
-<meta itemprop="description" content="Static File Caching &amp; Compression">
+<meta property="og:url" content="https://davidpine.net/blog/asp-net-core-optimization/" /><meta property="og:image" content="https://davidpine.net/img/2016/12/speedy.jpg" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-12-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-12-12T00:00:00+00:00" />
 
 
-<meta itemprop="datePublished" content="2016-12-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-12-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1170">
-
-  <meta itemprop="image" content="https://davidpine.net/img/2016/12/speedy.jpg">
-
-
-
+        <meta itemprop="name" content="ASP.NET Core Response Optimization">
+<meta itemprop="description" content="Static File Caching &amp; Compression"><meta itemprop="datePublished" content="2016-12-12T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-12-12T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1168"><meta itemprop="image" content="https://davidpine.net/img/2016/12/speedy.jpg">
 <meta itemprop="keywords" content="" />
-
-        
 
         
 
@@ -90,17 +78,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
         
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
-
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         
@@ -295,15 +276,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
             </ul>
@@ -381,9 +362,11 @@ if (!doNotTrack) {
             
         
 
-        <time class="published"
-            datetime='2016-12-12'>
-            December 12, 2016</time>
+        <time class="published" data-hover='December, 2016'
+            datetime='2016-12-12'
+            data-initial='Written on'>
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
+        </time>
         <span class="author">David Pine</span>
         
             <p>6 minute read</p>
@@ -460,259 +443,267 @@ if (!doNotTrack) {
 
 
     <div id="content">
-        
-
-<h2 id="intro">Intro</h2>
-
+        <h2 id="intro">Intro</h2>
 <p>If you&rsquo;re a web developer, chances are you&rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in
 tandem on an <strong>ASP.NET Core</strong> application that I have been developing&hellip; I&rsquo;m going to share what I have learned.</p>
-
 <p>If you haven&rsquo;t had a chance to use <a href="https://www.asp.net/core"><code>ASP.NET Core</code></a> yet, you&rsquo;re missing out! As my friend <a href="https://scottaddie.com/">Scott Addie</a> likes to say:</p>
-
 <blockquote>
-<p><p/><strong>ASP.NET Core</strong> is a cafeteria plan in which developers choose application dependencies <em>à la carte</em>. This is in stark contrast to <strong>ASP.NET</strong> proper, where developers
+<p><strong>ASP.NET Core</strong> is a cafeteria plan in which developers choose application dependencies <em>à la carte</em>. This is in stark contrast to <strong>ASP.NET</strong> proper, where developers
 are provided a set meal (a bloated dependency chain) containing undesired items. Don&rsquo;t like broccoli with your steak? Maybe it&rsquo;s time to consider <strong>ASP.NET Core</strong>.
-<cite>Scott Addie</cite></p>
+<!-- raw HTML omitted -->Scott Addie<!-- raw HTML omitted --></p>
 </blockquote>
-
 <p>In other words, all dependencies are pluggable middleware. This provides ultimate control as you have to explicitly <em>opt-in</em> for the middleware you desire.</p>
-
 <h3 id="know-thy-middleware">Know thy Middleware</h3>
-
 <p>Not all middleware is equal. Different middleware serves different purposes (obviously). Try to think of each middleware as its own standalone feature-set. Not all middleware is
 given a chance to execute on a given request. Certain middleware might send a web response and early exit. This can prevent other middleware in the pipeline from executing at all. In
 fact, this is the case when using static file caching and response compression together.</p>
-
 <blockquote>
-<p><p/>The <em>order</em> in which middleware is added matters and dictates the order of execution during a request.</p>
+<p>The <em>order</em> in which middleware is added matters and dictates the order of execution during a request.</p>
 </blockquote>
-
 <h4 id="installing-dependencies">Installing Dependencies</h4>
+<p>I wrote a tiny application and put it up on GitHub, check it out 
 
-<p>I wrote a tiny application and put it up on GitHub, check it out <a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target="_blank">here</a> if you want
-to follow along. Now let&rsquo;s install the dependencies we&rsquo;ll need. For static file caching and response compression we need to add two <code>dependencies</code> to the project.</p>
+    
+        
+    
 
+    <a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target='_blank'>here</a>
+
+ if you want to follow along. Now let&rsquo;s install the dependencies we&rsquo;ll need. For static file caching and response compression we need to add two <code>dependencies</code> to the project.</p>
 <p><em>Note:</em> <code>Microsoft.AspNetCore.StaticFiles</code> will already have been installed if you started from a <strong>Visual Studio</strong> template.</p>
-
 <table>
 <thead>
 <tr>
-<th align="center">Repository</th>
-<th align="left">Version</th>
-<th align="left">Nuget Package</th>
-<th align="left">Add / Use Extension Method(s)</th>
+<th style="text-align:center">Repository</th>
+<th style="text-align:left">Version</th>
+<th style="text-align:left">Nuget Package</th>
+<th style="text-align:left">Add / Use Extension Method(s)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center"><a href="https://github.com/aspnet/StaticFiles" target="_blank" title="Static File Caching, GitHub Repo"><i class="fa fa-github-alt" aria-hidden="true"></i></a></td>
-<td align="left"><code>1.1.0</code></td>
-<td align="left"><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/" target="_blank">Static Files</a></td>
-<td align="left"><a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileExtensions.cs#L56-L68" target="_blank"><code>.UseStaticFiles</code></a></td>
-</tr>
+<td style="text-align:center"><a href="https://github.com/aspnet/StaticFiles"><i class="fa fa-github-alt" aria-hidden="true"></i></a></td>
+<td style="text-align:left"><code>1.1.0</code></td>
+<td style="text-align:left">
 
+    
+        
+    
+
+    <a href="https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/" target='_blank'>Static Files</a>
+
+</td>
+<td style="text-align:left">
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileExtensions.cs#L56-L68" target='_blank'>UseStaticFiles</a>
+
+</td>
+</tr>
 <tr>
-<td align="center"><a href="https://github.com/aspnet/BasicMiddleware" target="_blank" title="Response Compression, GitHub Repo"><i class="fa fa-github-alt" aria-hidden="true"></i></a></td>
-<td align="left"><code>1.0.0</code></td>
-<td align="left"><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/" target="_blank">Response Compression</a></td>
-<td align="left"><a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionServicesExtensions.cs#L38-L53" target="_blank"><code>.AddResponseCompression</code></a> <a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionBuilderExtensions.cs#L20-L29" target="_blank"><code>.UseResponseCompression</code></a></td>
+<td style="text-align:center"><a href="https://github.com/aspnet/BasicMiddleware"><i class="fa fa-github-alt" aria-hidden="true"></i></a></td>
+<td style="text-align:left"><code>1.0.0</code></td>
+<td style="text-align:left">
+
+    
+        
+    
+
+    <a href="https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/" target='_blank'>Response Compression</a>
+
+</td>
+<td style="text-align:left">
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionServicesExtensions.cs#L38-L53" target='_blank'>AddResponseCompression</a>
+
+ 
+ 
+     
+         
+     
+ 
+     <a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionBuilderExtensions.cs#L20-L29" target='_blank'>UseResponseCompression</a>
+ 
+</td>
 </tr>
 </tbody>
 </table>
-
 <p>Follow these instructions, from within <strong>Visual Studio</strong>:</p>
-
-<pre><code class="language-yaml">Tools ➪
-    NuGet Package Manager ➪
-        Manage NuGet Packages for Solution... ➪ 
-            Browse ➪
-                Search ➪
-                    [ Install ]
-</code></pre>
-
-<h3 id="configuring-startup">Configuring Startup</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">Tools ➪</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">NuGet Package Manager ➪</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">Manage NuGet Packages for Solution... ➪ </span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">Browse ➪</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">Search ➪</span>
+</span></span><span style="display:flex;"><span>                    [ <span style="color:#ae81ff">Install ]</span>
+</span></span></code></pre></div><h3 id="configuring-startup">Configuring Startup</h3>
 <p>There are two common nomenclatures that exist for wiring up middleware in your startup classes, the <code>.Add*</code> and <code>.Use*</code> extension methods. The <code>.Add*</code> calls are intended to add
 services to the <code>IServiceCollection</code> instance, ensuring that they are ready for <em>usage</em>. The <code>.Use*</code> calls specify that you want to use the middleware and makes the assumption
 that any services required by <strong>DI</strong> will have already been <em>added</em> with the corresponding <code>.Add*</code> call.</p>
-
 <p>Now let&rsquo;s &ldquo;add&rdquo; response compression in the <code>.ConfigureServices</code> call of our <code>Startup.cs</code>.</p>
-
-<pre><code class="language-csharp">public void ConfigureServices(IServiceCollection services)
-{    
-    services.AddMvc();
-    services.AddResponseCompression(
-        options =&gt; 
-            options.MimeTypes = ResponseCompressionMimeTypes.Defaults);
-}
-</code></pre>
-
-<p>Several bits of the implementation details should jump out at you. First, we do not need to call an <code>.AddStaticFiles</code> extension method because there are no services required
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+</span></span><span style="display:flex;"><span>{    
+</span></span><span style="display:flex;"><span>    services.AddMvc();
+</span></span><span style="display:flex;"><span>    services.AddResponseCompression(
+</span></span><span style="display:flex;"><span>        options =&gt; 
+</span></span><span style="display:flex;"><span>            options.MimeTypes = ResponseCompressionMimeTypes.Defaults);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Several bits of the implementation details should jump out at you. First, we do not need to call an <code>.AddStaticFiles</code> extension method because there are no services required
 for this middleware, as such it doesn&rsquo;t exist. Second, we are providing a lambda expression to satisfy the <code>Action&lt;ResponseCompressionOptions&gt;</code> parameter. We also assign the
 <code>.MimeTypes</code> property from the <code>ResponseCompressionMimeTypes.Defaults</code> we are targeting for compression.</p>
-
 <blockquote>
-<p><p/> If no compression providers are specified then <code>GZip</code> is used by default.
-<cite><a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionProvider.cs#L22" target="_blank">ASP.NET Core Team - GitHub</a></cite></p>
+<p>If no compression providers are specified then <code>GZip</code> is used by default.
+<!-- raw HTML omitted -->
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/BasicMiddleware/blob/dev/src/Microsoft.AspNetCore.ResponseCompression/ResponseCompressionProvider.cs#L22" target='_blank'>ASP.NET Core Team - GitHub</a>
+
+<!-- raw HTML omitted --></p>
 </blockquote>
-
 <p>The <code>ResponseCompressionMimeTypes.cs</code> is defined as follows:</p>
-
-<pre><code class="language-csharp">using System.Collections.Generic;
-using System.Linq;
-using static Microsoft.AspNetCore.ResponseCompression.ResponseCompressionDefaults;
-
-namespace IEvangelist.AspNetCore.Optimization
-{
-    public static class ResponseCompressionMimeTypes
-    {
-        public static IEnumerable&lt;string&gt; Defaults
-            =&gt; MimeTypes.Concat(new[]
-                                {
-                                    &quot;image/svg+xml&quot;,
-                                    &quot;application/font-woff2&quot;
-                                });
-    }
-}
-</code></pre>
-
-<p>There are several types defined by default in <strong>ASP.NET Core</strong> class <code>ResponseCompressionDefaults.MimeTypes</code>, we are simply expanding that to include &ldquo;SVG&rdquo; images and the &ldquo;Woff2&rdquo; fonts.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Linq;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> static Microsoft.AspNetCore.ResponseCompression.ResponseCompressionDefaults;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> IEvangelist.AspNetCore.Optimization
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResponseCompressionMimeTypes</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> IEnumerable&lt;<span style="color:#66d9ef">string</span>&gt; Defaults
+</span></span><span style="display:flex;"><span>            =&gt; MimeTypes.Concat(<span style="color:#66d9ef">new</span>[]
+</span></span><span style="display:flex;"><span>                                {
+</span></span><span style="display:flex;"><span>                                    <span style="color:#e6db74">&#34;image/svg+xml&#34;</span>,
+</span></span><span style="display:flex;"><span>                                    <span style="color:#e6db74">&#34;application/font-woff2&#34;</span>
+</span></span><span style="display:flex;"><span>                                });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>There are several types defined by default in <strong>ASP.NET Core</strong> class <code>ResponseCompressionDefaults.MimeTypes</code>, we are simply expanding that to include &ldquo;SVG&rdquo; images and the &ldquo;Woff2&rdquo; fonts.</p>
 <h3 id="order-exemplified">Order Exemplified</h3>
-
 <p>Consider the following:</p>
-
-<pre><code class="language-csharp">public void Configure(IApplicationBuilder app,
-                      IHostingEnvironment env,
-                      ILoggerFactory loggerFactory)
-{
-    app.UseStaticFiles()          // Adds the static middleware to the request pipeline
-       .UseResponseCompression(); // Adds the response compression to the request pipeline
-}
-</code></pre>
-
-<p>The snippet above will absolutely work for serving static files, but it will not compress or cache anything. Note the differences below:</p>
-
-<pre><code class="language-csharp">public void Configure(IApplicationBuilder app,
-                      IHostingEnvironment env,
-                      ILoggerFactory loggerFactory)
-{
-    app.UseResponseCompression()  // Adds the response compression to the request pipeline
-       .UseStaticFiles();         // Adds the static middleware to the request pipeline       
-}
-</code></pre>
-
-<p>The <em>order</em> in which the middleware was invoked in the pipeline changed, as such the order in which the middleware is executed on a request is also changed.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app,
+</span></span><span style="display:flex;"><span>                      IHostingEnvironment env,
+</span></span><span style="display:flex;"><span>                      ILoggerFactory loggerFactory)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    app.UseStaticFiles()          <span style="color:#75715e">// Adds the static middleware to the request pipeline</span>
+</span></span><span style="display:flex;"><span>       .UseResponseCompression(); <span style="color:#75715e">// Adds the response compression to the request pipeline</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The snippet above will absolutely work for serving static files, but it will not compress or cache anything. Note the differences below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app,
+</span></span><span style="display:flex;"><span>                      IHostingEnvironment env,
+</span></span><span style="display:flex;"><span>                      ILoggerFactory loggerFactory)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    app.UseResponseCompression()  <span style="color:#75715e">// Adds the response compression to the request pipeline</span>
+</span></span><span style="display:flex;"><span>       .UseStaticFiles();         <span style="color:#75715e">// Adds the static middleware to the request pipeline       </span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <em>order</em> in which the middleware was invoked in the pipeline changed, as such the order in which the middleware is executed on a request is also changed.
 When static file middleware occurs before response compression, it returns the file as a response before compression has a chance to execute.</p>
-
 <ul>
 <li>Client requests <code>main.css</code></li>
 <li>Static file middleware determines it can fully satisfy said request</li>
-<li>The <code>main.css</code> file is <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" target="_blank">sent</a> and the <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L126" target="_blank">&ldquo;next&rdquo;</a> middleware in the pipeline is never executed</li>
-</ul>
+<li>The <code>main.css</code> file is 
 
+    
+        
+    
+
+    <a href="https://github.com/aspnet/StaticFiles/blob/dev/src/Microsoft.AspNetCore.StaticFiles/StaticFileMiddleware.cs#L109" target='_blank'>sent</a>
+
+ and the 
+
+ middleware in the pipeline is never executed</li>
+</ul>
 <p>Now that we have these two pieces of middleware wired into out pipeline in the correct order, what else is left. There is one important thing that we forgot to do.
 While we do have static file middleware, we didn&rsquo;t know that &ldquo;caching&rdquo; is off by default. So we&rsquo;ll need to handle this with an instance of the the <code>StaticFileOptions</code>.</p>
-
 <blockquote>
-<p><p/>Keep your <i class="fa fa-eye" aria-hidden="true"></i><i class="fa fa-eye" aria-hidden="true"></i>&rsquo;s open for extension method overloads. These are often clues that there are <em>options</em> for providing customized configuration for the middleware you&rsquo;re wiring up.</p>
+<p>Keep your <i class="fa fa-eye" aria-hidden="true"></i><i class="fa fa-eye" aria-hidden="true"></i>&rsquo;s open for extension method overloads. These are often clues that there are <em>options</em> for providing customized configuration for the middleware you&rsquo;re wiring up.</p>
 </blockquote>
-
-<pre><code class="language-csharp">public void Configure(IApplicationBuilder app,
-                      IHostingEnvironment env,
-                      ILoggerFactory loggerFactory)
-{
-    app.UseResponseCompression()
-       .UseStaticFiles(
-           new StaticFileOptions
-           {
-               OnPrepareResponse =
-                   _ =&gt; _.Context.Response.Headers[HeaderNames.CacheControl] = 
-                        &quot;public,max-age=604800&quot; // A week in seconds
-           })
-       .UseMvc(routes =&gt; routes.MapRoute(&quot;default&quot;, &quot;{controller=Home}/{action=Index}/{id?}&quot;));
-}
-</code></pre>
-
-<p>The instance of the <code>StaticFileOptions</code> object has a public property namely &ldquo;OnPrepareResponse&rdquo; of type <code>Action&lt;StaticFileResponseContext&gt;</code>. So we can again specify a lambda
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app,
+</span></span><span style="display:flex;"><span>                      IHostingEnvironment env,
+</span></span><span style="display:flex;"><span>                      ILoggerFactory loggerFactory)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    app.UseResponseCompression()
+</span></span><span style="display:flex;"><span>       .UseStaticFiles(
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">new</span> StaticFileOptions
+</span></span><span style="display:flex;"><span>           {
+</span></span><span style="display:flex;"><span>               OnPrepareResponse =
+</span></span><span style="display:flex;"><span>                   _ =&gt; _.Context.Response.Headers[HeaderNames.CacheControl] = 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;public,max-age=604800&#34;</span> <span style="color:#75715e">// A week in seconds</span>
+</span></span><span style="display:flex;"><span>           })
+</span></span><span style="display:flex;"><span>       .UseMvc(routes =&gt; routes.MapRoute(<span style="color:#e6db74">&#34;default&#34;</span>, <span style="color:#e6db74">&#34;{controller=Home}/{action=Index}/{id?}&#34;</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The instance of the <code>StaticFileOptions</code> object has a public property namely &ldquo;OnPrepareResponse&rdquo; of type <code>Action&lt;StaticFileResponseContext&gt;</code>. So we can again specify a lambda
 expression. This expression can be used to delegate the preparation of the response. Notice we&rsquo;re simply setting the <code>Cache-Control</code> header to a &ldquo;max-age&rdquo; of a week. That was
 pretty simple, hey?!</p>
-
 <h3 id="compression-awareness">Compression Awareness</h3>
-
 <p>It&rsquo;s all the little things! The response compression middleware boasts deterministic compression, i.e.; if the
-<a href="https://github.com/aspnet/KestrelHttpServer" target="_blank"><code>KestrelHttpServer</code></a> is running behind the
-<a href="https://www.iis.net/" target="_blank"><strong>IIS</strong></a> reverse proxy then the middleware may or may not compress the response. The middleware determines the following:</p>
 
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/KestrelHttpServer" target='_blank'>`KestrelHttpServer`</a>
+
+ is running behind the
+
+
+    
+        
+    
+
+    <a href="https://www.iis.net/" target='_blank'>__IIS__</a>
+
+ reverse proxy then the middleware may or may not compress the response. The middleware determines the following:</p>
 <ul>
 <li>If the request accepts compression</li>
 <li>If the requested resource matches the configured MIME types</li>
 <li>Whether or not the response needs to be compressed</li>
 </ul>
-
 <h3 id="results">Results</h3>
-
 <p>Let&rsquo;s spend some time examining the results of our response optimization efforts.</p>
-
 <h4 id="before">Before</h4>
-
-<p><img src="/img/2016/12/before.png" alt="Before" /></p>
-
-<h5 id="total-s">Total(s)</h5>
-
-<pre><code class="language-yaml">13 Requests | 549 KB transferred | ... | ... 
-</code></pre>
-
-<p><strong>banner1.svg Response Headers</strong></p>
-
-<pre><code class="language-yaml">HTTP/1.1 200 OK
-Content-Length: 9679
-Content-Type: image/svg+xml
-Accept-Ranges: bytes
-ETag: &quot;1d1ce31e3bd09cf&quot;
-</code></pre>
-
-<h4 id="after">After</h4>
-
-<p><img src="/img/2016/12/after.png" alt="After" /></p>
-
-<h5 id="total-s-1">Total(s)</h5>
-
-<pre><code class="language-yaml">13 Requests | 175 KB transferred | ... | ... 
-</code></pre>
-
-<p>The total payload for all 13 requests is a total of 3.137 times smaller (a meager 31.9% of the original size). The larger the application, the more dramatic and valuable
+<p><img src="/img/2016/12/before.png" alt="Before"></p>
+<h5 id="totals">Total(s)</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">13</span> <span style="color:#ae81ff">Requests | 549 KB transferred | ... | ... </span>
+</span></span></code></pre></div><p><strong>banner1.svg Response Headers</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">HTTP/1.1 200 OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Content-Length</span>: <span style="color:#ae81ff">9679</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Content-Type</span>: <span style="color:#ae81ff">image/svg+xml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Accept-Ranges</span>: <span style="color:#ae81ff">bytes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ETag</span>: <span style="color:#e6db74">&#34;1d1ce31e3bd09cf&#34;</span>
+</span></span></code></pre></div><h4 id="after">After</h4>
+<p><img src="/img/2016/12/after.png" alt="After"></p>
+<h5 id="totals-1">Total(s)</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">13</span> <span style="color:#ae81ff">Requests | 175 KB transferred | ... | ... </span>
+</span></span></code></pre></div><p>The total payload for all 13 requests is a total of 3.137 times smaller (a meager 31.9% of the original size). The larger the application, the more dramatic and valuable
 this becomes! Consider an <strong>Angular2</strong> application (or other SPA framework based application), which has tons of <strong>JavaScript</strong> files to download &ndash; 5 MB turns into ~1.5 MB.</p>
-
 <p><strong>banner1.svg Response Headers</strong></p>
-
-<pre><code class="language-yaml">HTTP/1.1 200 OK
-Content-Type: image/svg+xml
-Server: Kestrel
-Cache-Control: public,max-age=604800
-Transfer-Encoding: chunked
-Content-Encoding: gzip
-Accept-Ranges: bytes
-ETag: &quot;1d1ce31e3bd09cf&quot;
-</code></pre>
-
-<h4 id="subsequent-cached-requests">Subsequent (Cached) Requests</h4>
-
-<p><img src="/img/2016/12/cached.png" alt="Cached" /></p>
-
-<h3 id="let-s-summarize">Let&rsquo;s Summarize</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">HTTP/1.1 200 OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Content-Type</span>: <span style="color:#ae81ff">image/svg+xml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Server</span>: <span style="color:#ae81ff">Kestrel</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Cache-Control</span>: <span style="color:#ae81ff">public,max-age=604800</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Transfer-Encoding</span>: <span style="color:#ae81ff">chunked</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Content-Encoding</span>: <span style="color:#ae81ff">gzip</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Accept-Ranges</span>: <span style="color:#ae81ff">bytes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ETag</span>: <span style="color:#e6db74">&#34;1d1ce31e3bd09cf&#34;</span>
+</span></span></code></pre></div><h4 id="subsequent-cached-requests">Subsequent (Cached) Requests</h4>
+<p><img src="/img/2016/12/cached.png" alt="Cached"></p>
+<h3 id="lets-summarize">Let&rsquo;s Summarize</h3>
 <p>We learned some of the basics about <strong>ASP.NET Core</strong> middleware. Together we implemented a response optimization strategy that included deterministic response compression, as well
 as static file caching. We learned some of the common patterns and naming conventions for integrating with <strong>ASP.NET Core</strong> middleware. Finally, we have a good understanding of
 the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
-
 <h3 id="source-code">Source Code</h3>
-
 <ul>
-<li><a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization" target="_blank">
-   <i class="fa fa-github-square" aria-hidden="true"></i> &nbsp; IEvangelist.AspNetCore.Optimization
-</a></li>
+<li><i class="fa fa-github-square" aria-hidden="true"></i> <a href="https://github.com/IEvangelist/IEvangelist.AspNetCore.Optimization">IEvangelist.AspNetCore.Optimization</a></li>
 </ul>
 
     </div>
@@ -762,7 +753,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
         <article class="post">
             <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -799,19 +790,57 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
         
         <header>
             <h2>David Pine</h2>
-            <p>Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time</p>
+            <p>
+                🤓 Changing the world — one line of code at a time.
+                <span class="responsive-float">
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                        Follow @davidpine7
+                    </a>
+                </span>
+                <script>
+                    window.twitter = (function (d, s, id) {
+                    var js,
+                        fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+                </script>
+            </p>
         </header>
         
 
+        <hr />
+
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
+            </a>
+        </section>
+
+        <hr />
+
         <div class='row'>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp-v.png" width="160px" />
+                <a target="_blank" rel="noopener"
+                    href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://google-developers.appspot.com/community/experts/directory/profile/profile-david_pine">
-                    <img src="/img/main/gde.png" width="210px" />
+                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>
@@ -919,6 +948,32 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-15'>
+                            September 15, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-08'>
+                            September 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
                         
                         
@@ -929,38 +984,16 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                 </article>
             </li>
             
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-21'>
-                            March 21, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-14'>
-                            March 14, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
 
             
             <li>
                 <ul class="actions">
-                    <li><a href= /blog/  class="button">View
-                            more posts</a></li>
+                    <li>
+                        <a href= /blog/ 
+                            class="button">
+                            View more posts
+                        </a>
+                    </li>
                 </ul>
             </li>
             
@@ -986,7 +1019,7 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">12</span>
+                        <span style="float:right;">14</span>
                     </header>
                 </article>
             </li>
@@ -1057,6 +1090,33 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
             <li>
                 <article>
                     <header>
+                        <a href="/categories/wasm/">wasm</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/webassembly/">webassembly</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/blazor/">blazor</a>
+                        <span style="float:right;">3</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/http/">http</a>
                         <span style="float:right;">2</span>
                     </header>
@@ -1076,24 +1136,6 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                 <article>
                     <header>
                         <a href="/categories/tooling/">tooling</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/wasm/">wasm</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/webassembly/">webassembly</a>
                         <span style="float:right;">2</span>
                     </header>
                 </article>
@@ -1130,15 +1172,6 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
                 <article>
                     <header>
                         <a href="/categories/azure-functions/">azure-functions</a>
-                        <span style="float:right;">1</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/blazor/">blazor</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1406,7 +1439,8 @@ the <strong>ASP.NET Core</strong> request pipeline middleware precedence.</p>
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        </p>
     </section>
 
 </section>

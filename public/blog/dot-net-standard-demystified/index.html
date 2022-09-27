@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.102.1" />
         
 
 
@@ -33,28 +33,16 @@
         <meta property="og:title" content="Demystifying .NET Standard" />
 <meta property="og:description" content="Clearing up the confusion" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://davidpine.net/blog/dot-net-standard-demystified/" />
-
-<meta property="og:image" content="https://davidpine.net/img/2017/08/confused.jpg" />
-<meta property="article:published_time" content="2017-08-16T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-08-16T00:00:00&#43;00:00"/>
-
-        
-<meta itemprop="name" content="Demystifying .NET Standard">
-<meta itemprop="description" content="Clearing up the confusion">
+<meta property="og:url" content="https://davidpine.net/blog/dot-net-standard-demystified/" /><meta property="og:image" content="https://davidpine.net/img/2017/08/confused.jpg" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-08-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-08-16T00:00:00+00:00" />
 
 
-<meta itemprop="datePublished" content="2017-08-16T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-08-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1029">
-
-  <meta itemprop="image" content="https://davidpine.net/img/2017/08/confused.jpg">
-
-
-
+        <meta itemprop="name" content="Demystifying .NET Standard">
+<meta itemprop="description" content="Clearing up the confusion"><meta itemprop="datePublished" content="2017-08-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-08-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1036"><meta itemprop="image" content="https://davidpine.net/img/2017/08/confused.jpg">
 <meta itemprop="keywords" content="" />
-
-        
 
         
 
@@ -90,17 +78,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
         
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
-
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         
@@ -295,15 +276,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
             </ul>
@@ -381,9 +362,11 @@ if (!doNotTrack) {
             
         
 
-        <time class="published"
-            datetime='2017-08-16'>
-            August 16, 2017</time>
+        <time class="published" data-hover='August, 2017'
+            datetime='2017-08-16'
+            data-initial='Written on'>
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
+        </time>
         <span class="author">David Pine</span>
         
             <p>5 minute read</p>
@@ -460,248 +443,322 @@ if (!doNotTrack) {
 
 
     <div id="content">
-        
-
-<h2 id="intro">Intro</h2>
-
-<p>Monday, August 14<sup>th</sup> was an amazing day to be a <code>.NET</code> developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.</p>
-
+        <h2 id="intro">Intro</h2>
+<p>Monday, August 14<!-- raw HTML omitted -->th<!-- raw HTML omitted --> was an amazing day to be a <code>.NET</code> developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.</p>
 <blockquote>
-<p><p/> What is this <code>.NET Standard</code> thing?
-<p/> What does it mean to target <code>.NET Standard</code> versus <code>.NET Core</code>, or even the <code>.NET Framework</code>?
-<p/> As a developer, what <code>.NET</code> should I target and why?
-<p/> Are Portable Class Libraries (PCLs) dead?
-<cite>Developer Community</cite></p>
+<p>What is this <code>.NET Standard</code> thing?
+What does it mean to target <code>.NET Standard</code> versus <code>.NET Core</code>, or even the <code>.NET Framework</code>?
+As a developer, what <code>.NET</code> should I target and why?
+Are Portable Class Libraries (PCLs) dead?
+<!-- raw HTML omitted -->Developer Community<!-- raw HTML omitted --></p>
 </blockquote>
-
 <p>All of these questions have already been answered, you just have to know where to look. In this post I will provide some invaluable resources and educate those of you who are still confused.</p>
-
 <h2 id="announcements">Announcements</h2>
-
 <p>Here are all the recent announcements, feel free to spend some time checking them out &ndash; be sure to come back.</p>
-
 <ul>
-<li><a href="https://blogs.msdn.microsoft.com/webdev/2017/08/14/announcing-asp-net-core-2-0/" target="_blank">The ASP.NET team is proud to announce general availability of ASP.NET Core 2.0.</a></li>
-<li><a href="https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-core-2-0/" target="_blank">.NET Core 2.0 is available today August 14, as a final release</a></li>
-<li><a href="https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/" target="_blank">The .NET Standard 2.0 specification is now complete</a></li>
-<li><a href="https://blogs.msdn.microsoft.com/visualstudio/2017/08/14/visual-studio-2017-version-15-3-released/" target="_blank">Visual Studio 17 version 15.3</a></li>
+<li>
+
+    
+        
+    
+
+    <a href="https://blogs.msdn.microsoft.com/webdev/2017/08/14/announcing-asp-net-core-2-0/" target='_blank'>The ASP.NET team is proud to announce general availability of ASP.NET Core 2.0.</a>
+
+</li>
+<li>
+
+    
+        
+    
+
+    <a href="https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-core-2-0/" target='_blank'>.NET Core 2.0 is available today August 14, as a final release</a>
+
+</li>
+<li>
+
+    
+        
+    
+
+    <a href="https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/" target='_blank'>The .NET Standard 2.0 specification is now complete</a>
+
+</li>
+<li>
+
+    
+        
+    
+
+    <a href="https://blogs.msdn.microsoft.com/visualstudio/2017/08/14/visual-studio-2017-version-15-3-released/" target='_blank'>Visual Studio 17 version 15.3</a>
+
+</li>
 </ul>
-
 <p>Let&rsquo;s start by answering all these common questions.</p>
+<h2 id="hahahugoshortcode-s4-hbhb">
 
-<h2 id="a-href-https-docs-microsoft-com-en-us-dotnet-standard-net-standard-target-blank-net-standard-i-class-fa-fa-external-link-aria-hidden-true-i-a"><a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard/" target="_blank"><code>.NET Standard</code> <i class="fa fa-external-link" aria-hidden="true"></i></a></h2>
+    
+        
+    
 
-<p>If the name <a href="https://github.com/terrajobst" target="_blank"><em>Immo Landwerth</em></a> doesn&rsquo;t ring a bell, perhaps <a href="https://twitter.com/terrajobst" target="_blank">@terrajobst</a> will? Regardless of whether you&rsquo;ve heard of him before &ndash; you&rsquo;d be wise to remember him now. He is a program manager for Microsoft and has a huge part in the <code>.NET</code> ecosystem as a whole. Immo has a <code>.NET Standard</code> video series on <i class="fa fa-lg fa-youtube" aria-hidden="true"></i> and if you do not have time to read this post, by all means <a href="https://www.youtube.com/playlist?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY" target="_blank">watch his videos</a>.</p>
+    <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard/" target='_blank'>`.NET Standard` {{&lt; i fa-external-link &gt;}}</a>
 
+</h2>
+<p>If the name 
+
+    
+        
+    
+
+    <a href="https://github.com/terrajobst" target='_blank'>_Immo Landwerth_</a>
+
+ doesn&rsquo;t ring a bell, perhaps 
+
+    
+        
+    
+
+    <a href="https://twitter.com/terrajobst" target='_blank'>@terrajobst</a>
+
+ will? Regardless of whether you&rsquo;ve heard of him before &ndash; you&rsquo;d be wise to remember him now. He is a program manager for Microsoft and has a huge part in the <code>.NET</code> ecosystem as a whole. Immo has a <code>.NET Standard</code> video series on <i class="fa fa-lg" aria-hidden="true"></i> and if you do not have time to read this post, by all means 
+
+    
+        
+    
+
+    <a href="https://www.youtube.com/playlist?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY" target='_blank'>watch his videos</a>
+
+.</p>
 <blockquote>
-<p><p/> <code>.NET Standard</code> is a specification. It represents a set of APIs that all <code>.NET</code> platforms have to implement.
-<cite><a href="https://youtu.be/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&t=191" target="_blank">Immo Landwerth</a></cite></p>
-</blockquote>
+<p><code>.NET Standard</code> is a specification. It represents a set of APIs that all <code>.NET</code> platforms have to implement.
+<!-- raw HTML omitted -->
 
+    
+        
+    
+
+    <a href="https://youtu.be/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;t=191" target='_blank'>Immo Landwerth</a>
+
+<!-- raw HTML omitted --></p>
+</blockquote>
 <p>Often, the <code>.NET Standard</code> is mistaken for a runtime. Consider the name <code>.NET Standard</code> at face value, it has the word &ldquo;standard&rdquo; in it&hellip;because it is not a framework or a core runtime.</p>
-
 <blockquote>
-<p><p/> <code>.NET Standard</code> isn&rsquo;t a runtime, it&rsquo;s a version interface - a list of methods you can use under many different &ldquo;<code>.NETs</code>&rdquo;.
-<cite><a href="https://www.hanselman.com/blog/ExploringRefitAnAutomaticTypesafeRESTLibraryForNETStandard.aspx" target="_blank">Scott Hanselman</a></cite></p>
+<p><code>.NET Standard</code> isn&rsquo;t a runtime, it&rsquo;s a version interface - a list of methods you can use under many different &ldquo;<code>.NETs</code>&rdquo;.
+<!-- raw HTML omitted -->
+
+    
+        
+    
+
+    <a href="https://www.hanselman.com/blog/ExploringRefitAnAutomaticTypesafeRESTLibraryForNETStandard.aspx" target='_blank'>Scott Hanselman</a>
+
+<!-- raw HTML omitted --></p>
 </blockquote>
-
 <p>As true with all standards (or specifications), implementations can either be compliant or non-compliant. At this point in time there are four <code>.NET</code> implementations that are <code>.NET Standard 2</code> compliant. They are as follows, <code>.NET Core</code>, <code>.NET Framework</code>, <code>Mono</code> and <code>Xamarin</code>. Below is a more comprehensive listing of all the <code>.NET</code> platforms and their corresponding standard that they implement.</p>
-
-<h3 id="the-net-standard-version-table-a-href-https-github-com-dotnet-standard-blob-master-docs-versions-md-net-standard-versions-target-blank-i-class-fa-fa-external-link-aria-hidden-true-i-a">The .NET Standard Version Table <a href="https://github.com/dotnet/standard/blob/master/docs/versions.md#net-standard-versions" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-
+<h3 id="the-hahahugoshortcode-s11-hbhb-hahahugoshortcode-s12-hbhb">The <i class="fa fa-external-link" aria-hidden="true"></i> 
+ 
+     
+         
+     
+ 
+     <a href="https://dotnet.microsoft.com/platform/dotnet-standard#versions" target='_blank'>.NET Standard Version Table </a>
+ 
+</h3>
 <table>
 <thead>
 <tr>
-<th align="left">.NET Standard</th>
-<th align="left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.0.md">1.0</a></th>
-<th align="left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md">1.1</a></th>
-<th align="left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.2.md">1.2</a></th>
-<th align="left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.3.md">1.3</a></th>
-<th align="left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.4.md">1.4</a></th>
-<th align="left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.5.md">1.5</a></th>
-<th align="left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.6.md">1.6</a></th>
-<th align="left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md">2.0</a></th>
+<th style="text-align:left">.NET Standard</th>
+<th style="text-align:left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.0.md">1.0</a></th>
+<th style="text-align:left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md">1.1</a></th>
+<th style="text-align:left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.2.md">1.2</a></th>
+<th style="text-align:left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.3.md">1.3</a></th>
+<th style="text-align:left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.4.md">1.4</a></th>
+<th style="text-align:left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.5.md">1.5</a></th>
+<th style="text-align:left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.6.md">1.6</a></th>
+<th style="text-align:left"><a href="https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md">2.0</a></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="left"><code>.NET Core</code></td>
-<td align="left">1.0</td>
-<td align="left">1.0</td>
-<td align="left">1.0</td>
-<td align="left">1.0</td>
-<td align="left">1.0</td>
-<td align="left">1.0</td>
-<td align="left">1.0</td>
-<td align="left">2.0</td>
+<td style="text-align:left"><code>.NET Core</code></td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">2.0</td>
 </tr>
-
 <tr>
-<td align="left"><code>.NET Framework</code></td>
-<td align="left">4.5</td>
-<td align="left">4.5</td>
-<td align="left">4.5.1</td>
-<td align="left">4.6</td>
-<td align="left">4.6.1</td>
-<td align="left">4.6.1</td>
-<td align="left">4.6.1</td>
-<td align="left">4.6.1</td>
+<td style="text-align:left"><code>.NET Framework</code></td>
+<td style="text-align:left">4.5</td>
+<td style="text-align:left">4.5</td>
+<td style="text-align:left">4.5.1</td>
+<td style="text-align:left">4.6</td>
+<td style="text-align:left">4.6.1</td>
+<td style="text-align:left">4.6.1</td>
+<td style="text-align:left">4.6.1</td>
+<td style="text-align:left">4.6.1</td>
 </tr>
-
 <tr>
-<td align="left"><code>Mono</code></td>
-<td align="left">4.6</td>
-<td align="left">4.6</td>
-<td align="left">4.6</td>
-<td align="left">4.6</td>
-<td align="left">4.6</td>
-<td align="left">4.6</td>
-<td align="left">4.6</td>
-<td align="left">5.4</td>
+<td style="text-align:left"><code>Mono</code></td>
+<td style="text-align:left">4.6</td>
+<td style="text-align:left">4.6</td>
+<td style="text-align:left">4.6</td>
+<td style="text-align:left">4.6</td>
+<td style="text-align:left">4.6</td>
+<td style="text-align:left">4.6</td>
+<td style="text-align:left">4.6</td>
+<td style="text-align:left">5.4</td>
 </tr>
-
 <tr>
-<td align="left"><code>Xamarin.iOS</code></td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.14</td>
+<td style="text-align:left"><code>Xamarin.iOS</code></td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.14</td>
 </tr>
-
 <tr>
-<td align="left"><code>Xamarin.Mac</code></td>
-<td align="left">3.0</td>
-<td align="left">3.0</td>
-<td align="left">3.0</td>
-<td align="left">3.0</td>
-<td align="left">3.0</td>
-<td align="left">3.0</td>
-<td align="left">3.0</td>
-<td align="left">3.8</td>
+<td style="text-align:left"><code>Xamarin.Mac</code></td>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">3.0</td>
+<td style="text-align:left">3.8</td>
 </tr>
-
 <tr>
-<td align="left"><code>Xamarin.Android</code></td>
-<td align="left">7.0</td>
-<td align="left">7.0</td>
-<td align="left">7.0</td>
-<td align="left">7.0</td>
-<td align="left">7.0</td>
-<td align="left">7.0</td>
-<td align="left">7.0</td>
-<td align="left">7.5</td>
+<td style="text-align:left"><code>Xamarin.Android</code></td>
+<td style="text-align:left">7.0</td>
+<td style="text-align:left">7.0</td>
+<td style="text-align:left">7.0</td>
+<td style="text-align:left">7.0</td>
+<td style="text-align:left">7.0</td>
+<td style="text-align:left">7.0</td>
+<td style="text-align:left">7.0</td>
+<td style="text-align:left">7.5</td>
 </tr>
-
 <tr>
-<td align="left"><code>Universal Windows Platform</code></td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">10.0</td>
-<td align="left">vNext</td>
-<td align="left">vNext</td>
-<td align="left">vNext</td>
+<td style="text-align:left"><code>Universal Windows Platform</code></td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">vNext</td>
+<td style="text-align:left">vNext</td>
+<td style="text-align:left">vNext</td>
 </tr>
-
 <tr>
-<td align="left"><code>Windows</code></td>
-<td align="left">8.0</td>
-<td align="left">8.0</td>
-<td align="left">8.1</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td style="text-align:left"><code>Windows</code></td>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">8.1</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
-
 <tr>
-<td align="left"><code>Windows Phone</code></td>
-<td align="left">8.1</td>
-<td align="left">8.1</td>
-<td align="left">8.1</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td style="text-align:left"><code>Windows Phone</code></td>
+<td style="text-align:left">8.1</td>
+<td style="text-align:left">8.1</td>
+<td style="text-align:left">8.1</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
-
 <tr>
-<td align="left"><code>Windows Phone Silverlight</code></td>
-<td align="left">8.0</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td style="text-align:left"><code>Windows Phone Silverlight</code></td>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-
-<p>Additionally, <a href="http://immo.landwerth.net/netstandard-versions/#" target="_blank">here is an interactive table.</a></p>
-
 <p>For example, we can see the <code>.NET Framework 4.5</code> is an implementation of <code>.NET Standard 1.1</code>. This means that if you&rsquo;re to author a <code>.NET Standard</code> class library and you target <code>1.1</code> of the standard, it can run on <code>.NET Core 1.0</code>, <code>.NET Framework 4.5</code>, <code>Mono 4.6</code>, etc&hellip; you get the point now I&rsquo;m sure.</p>
-
 <h4 id="the-trade-off">The Trade-off</h4>
-
 <p>There is a bit of a trade-off though that you should consider. With every version of the <code>.NET Standard</code> there is an inverse relationship to the number of implementations. The higher the version of the <code>.NET Standard</code>, the more APIs you have access to. However, there are fewer implementations that exist for higher versions of the <code>.NET Standard</code>.</p>
-
 <p>It is typically advised that you target the lowest version of the standard that you can get away with. This allows your code to run in more places, as there are more implementations of lower versioned standards. Portable Class Libraries (or PCLs) have been replaced by the <code>.NET Standard</code>. If you&rsquo;re like me, you probably want the latest and greatest &ndash; the fullest set of APIs&hellip;and that is ok. As long as you control the environment in which it&rsquo;s consumed, great!</p>
-
 <h3 id="net-api-explorer"><code>.NET</code> API Explorer</h3>
+<p>Microsoft has been hard at work, and their documentation teams have been putting together some incredibly useful ways to consume documentation. As a developer, I typically rely on <strong>StackOverflow</strong> as a source of truth &ndash; however, I have been finding myself spending more time on the official documentation sites. A big <i class="fa fa-lg" aria-hidden="true"></i> to the team for making the <code>.NET</code> docs so much better than before. They even have a <code>.NET</code> API Explorer. This is immensely powerful &ndash; in a matter of seconds I can quickly explore APIs and determine if something is lacking.</p>
+<!-- raw HTML omitted -->
+<h2 id="hahahugoshortcode-s14-hbhb">
 
-<p>Microsoft has been hard at work, and their documentation teams have been putting together some incredibly useful ways to consume documentation. As a developer, I typically rely on <strong>StackOverflow</strong> as a source of truth &ndash; however, I have been finding myself spending more time on the official documentation sites. A big <i class="fa fa-lg fa-thumbs-o-up" aria-hidden="true"></i> to the team for making the <code>.NET</code> docs so much better than before. They even have a <code>.NET</code> API Explorer. This is immensely powerful &ndash; in a matter of seconds I can quickly explore APIs and determine if something is lacking.</p>
+    
+        
+    
 
-<p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=netstandard-2.0" target="_blank">
-    <img src="/img/2017/08/dot-net-standard-api-explorer.png" alt=".NET Standard API Explorer" />
-</a></p>
+    <a href="https://docs.microsoft.com/en-us/dotnet/core/" target='_blank'>`.NET Core` {{&lt; i fa-external-link &gt;}}</a>
 
-<h2 id="a-href-https-docs-microsoft-com-en-us-dotnet-core-target-blank-net-core-i-class-fa-fa-external-link-aria-hidden-true-i-a"><a href="https://docs.microsoft.com/en-us/dotnet/core/" target="_blank"><code>.NET Core</code> <i class="fa fa-external-link" aria-hidden="true"></i></a></h2>
-
+</h2>
 <blockquote>
-<p><p/> <code>.NET Core</code> is a general purpose development platform maintained by Microsoft and the <code>.NET</code> community on GitHub. It is cross-platform, supporting Windows, macOS and Linux, and can be used in device, cloud, and embedded/IoT scenarios.</p>
+<p><code>.NET Core</code> is a general purpose development platform maintained by Microsoft and the <code>.NET</code> community on GitHub. It is cross-platform, supporting Windows, macOS and Linux, and can be used in device, cloud, and embedded/IoT scenarios.</p>
 </blockquote>
-
 <p>The obvious advantages are that <code>.NET Core</code> is cross-platform and open source. Unlike <code>.NET Framework</code> that is neither of those two things.</p>
+<h2 id="hahahugoshortcode-s15-hbhb">
 
-<h2 id="a-href-https-docs-microsoft-com-en-us-dotnet-framework-target-blank-net-framework-i-class-fa-fa-external-link-aria-hidden-true-i-a"><a href="https://docs.microsoft.com/en-us/dotnet/framework/" target="_blank"><code>.NET Framework</code> <i class="fa fa-external-link" aria-hidden="true"></i></a></h2>
+    
+        
+    
 
+    <a href="https://docs.microsoft.com/en-us/dotnet/framework/" target='_blank'>`.NET Framework` {{&lt; i fa-external-link &gt;}}</a>
+
+</h2>
 <p>If you have been a <code>.NET</code> developer for more than a few years, then you should already be familiar with the <code>.NET Framework</code>. This is what you have been developing on and targeting forever. However, with the introduction of <code>.NET Standard</code> and <code>.NET Core</code>, that is likely to change. You no longer have to limit your OS or platform to Windows.</p>
-
 <h2 id="net-foundation"><code>.NET Foundation</code></h2>
-
 <p>With all the <code>.NET</code> terms flying around the web, it felt appropriate to throw another one at you.</p>
-
 <blockquote>
-<p><p/> The <code>.NET Foundation</code> is an independent organization to foster open development and collaboration around the <code>.NET</code> ecosystem. It serves as a forum for community and commercial developers alike to broaden and strengthen the future of the <code>.NET</code> ecosystem by promoting openness and community participation to encourage innovation.
-<cite>www.dotnetfoundation.org</cite></p>
+<p>The <code>.NET Foundation</code> is an independent organization to foster open development and collaboration around the <code>.NET</code> ecosystem. It serves as a forum for community and commercial developers alike to broaden and strengthen the future of the <code>.NET</code> ecosystem by promoting openness and community participation to encourage innovation.
+<!-- raw HTML omitted --><a href="https://www.dotnetfoundation.org">www.dotnetfoundation.org</a><!-- raw HTML omitted --></p>
 </blockquote>
-
 <p>Be sure to visit their site and get involved!</p>
-
-<p><a href="https://dotnetfoundation.org/" target="_blank">
-    <img src="/img/2017/08/dot-net-fondation.png" alt=".NET Foundation" />
-</a></p>
-
+<!-- raw HTML omitted -->
 <h2 id="conclusion">Conclusion</h2>
-
 <p>The <code>.NET</code> ecosystem is rapidly evolving! With open source and cross-platform being two key priorities, you&rsquo;re in good hands. When developing for <code>.NET</code> be familiar with what version of the <code>.NET Standard</code> suits your needs &ndash; and target accordingly.</p>
-
 <h3 id="resources">Resources</h3>
-
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard" target="_blank"><code>.NET Standard - Microsoft Docs</code></a></li>
-<li><a href="https://docs.microsoft.com/en-us/dotnet/core/" target="_blank"><code>.NET Core - Microsoft Docs</code></a></li>
-<li><a href="https://docs.microsoft.com/en-us/dotnet/framework/" target="_blank"><code>.NET Framework - Microsoft Docs</code></a></li>
+<li>
+
+    
+        
+    
+
+    <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard" target='_blank'>`.NET Standard - Microsoft Docs`</a>
+
+</li>
+<li>
+
+    
+        
+    
+
+    <a href="https://docs.microsoft.com/en-us/dotnet/core/" target='_blank'>`.NET Core - Microsoft Docs`</a>
+
+</li>
+<li>
+
+    
+        
+    
+
+    <a href="https://docs.microsoft.com/en-us/dotnet/framework/" target='_blank'>`.NET Framework - Microsoft Docs`</a>
+
+</li>
 </ul>
 
     </div>
@@ -748,7 +805,7 @@ if (!doNotTrack) {
         <article class="post">
             <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -785,19 +842,57 @@ if (!doNotTrack) {
         
         <header>
             <h2>David Pine</h2>
-            <p>Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time</p>
+            <p>
+                🤓 Changing the world — one line of code at a time.
+                <span class="responsive-float">
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                        Follow @davidpine7
+                    </a>
+                </span>
+                <script>
+                    window.twitter = (function (d, s, id) {
+                    var js,
+                        fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+                </script>
+            </p>
         </header>
         
 
+        <hr />
+
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
+            </a>
+        </section>
+
+        <hr />
+
         <div class='row'>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp-v.png" width="160px" />
+                <a target="_blank" rel="noopener"
+                    href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://google-developers.appspot.com/community/experts/directory/profile/profile-david_pine">
-                    <img src="/img/main/gde.png" width="210px" />
+                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>
@@ -905,6 +1000,32 @@ if (!doNotTrack) {
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-15'>
+                            September 15, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-08'>
+                            September 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
                         
                         
@@ -915,38 +1036,16 @@ if (!doNotTrack) {
                 </article>
             </li>
             
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-21'>
-                            March 21, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-14'>
-                            March 14, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
 
             
             <li>
                 <ul class="actions">
-                    <li><a href= /blog/  class="button">View
-                            more posts</a></li>
+                    <li>
+                        <a href= /blog/ 
+                            class="button">
+                            View more posts
+                        </a>
+                    </li>
                 </ul>
             </li>
             
@@ -972,7 +1071,7 @@ if (!doNotTrack) {
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">12</span>
+                        <span style="float:right;">14</span>
                     </header>
                 </article>
             </li>
@@ -1043,6 +1142,33 @@ if (!doNotTrack) {
             <li>
                 <article>
                     <header>
+                        <a href="/categories/wasm/">wasm</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/webassembly/">webassembly</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/blazor/">blazor</a>
+                        <span style="float:right;">3</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/http/">http</a>
                         <span style="float:right;">2</span>
                     </header>
@@ -1062,24 +1188,6 @@ if (!doNotTrack) {
                 <article>
                     <header>
                         <a href="/categories/tooling/">tooling</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/wasm/">wasm</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/webassembly/">webassembly</a>
                         <span style="float:right;">2</span>
                     </header>
                 </article>
@@ -1116,15 +1224,6 @@ if (!doNotTrack) {
                 <article>
                     <header>
                         <a href="/categories/azure-functions/">azure-functions</a>
-                        <span style="float:right;">1</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/blazor/">blazor</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1392,7 +1491,8 @@ if (!doNotTrack) {
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        </p>
     </section>
 
 </section>

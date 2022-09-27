@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.102.1" />
         
 
 
@@ -33,28 +33,16 @@
         <meta property="og:title" content="Angular2 Http with RxJS Observables" />
 <meta property="og:description" content="Subscribing has never been so easy" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://davidpine.net/blog/angular-2-http/" />
-
-<meta property="og:image" content="https://davidpine.net/img/2016/08/observables.png" />
-<meta property="article:published_time" content="2016-08-31T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2016-08-31T00:00:00&#43;00:00"/>
-
-        
-<meta itemprop="name" content="Angular2 Http with RxJS Observables">
-<meta itemprop="description" content="Subscribing has never been so easy">
+<meta property="og:url" content="https://davidpine.net/blog/angular-2-http/" /><meta property="og:image" content="https://davidpine.net/img/2016/08/observables.png" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-08-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-08-31T00:00:00+00:00" />
 
 
-<meta itemprop="datePublished" content="2016-08-31T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-08-31T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1018">
-
-  <meta itemprop="image" content="https://davidpine.net/img/2016/08/observables.png">
-
-
-
+        <meta itemprop="name" content="Angular2 Http with RxJS Observables">
+<meta itemprop="description" content="Subscribing has never been so easy"><meta itemprop="datePublished" content="2016-08-31T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-08-31T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1019"><meta itemprop="image" content="https://davidpine.net/img/2016/08/observables.png">
 <meta itemprop="keywords" content="" />
-
-        
 
         
 
@@ -90,17 +78,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
         
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
-
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         
@@ -295,15 +276,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
             </ul>
@@ -381,9 +362,11 @@ if (!doNotTrack) {
             
         
 
-        <time class="published"
-            datetime='2016-08-31'>
-            August 31, 2016</time>
+        <time class="published" data-hover='August, 2016'
+            datetime='2016-08-31'
+            data-initial='Written on'>
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
+        </time>
         <span class="author">David Pine</span>
         
             <p>5 minute read</p>
@@ -460,11 +443,8 @@ if (!doNotTrack) {
 
 
     <div id="content">
-        
-
-<p>If you have been following the development efforts of the <strong>Angular2</strong> project, you have witnessed certain highs and lows - but it has been a fun ride. The latest version is only a <strong>Release Candidate</strong> and the team
+        <p>If you have been following the development efforts of the <strong>Angular2</strong> project, you have witnessed certain highs and lows - but it has been a fun ride. The latest version is only a <strong>Release Candidate</strong> and the team
 is getting closer to the final release. I&rsquo;m really looking forward to that! I wanted to take a moment to highlight (IMO) one of the key services of <strong>Angular2</strong>, the <code>http</code> service.</p>
-
 <p>In <strong>AngularJs 1</strong> the <code>ng.IHttpService</code> (aka, <a href="https://docs.angularjs.org/api/ng/service/$http"><code>$http</code></a>) was based on
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">promises</a> and deferrals.
 In <strong>Angular2</strong> we now rely on <strong>RxJS</strong> and the observable pattern. In my opinion this is a huge win!
@@ -472,192 +452,177 @@ If you&rsquo;re unfamiliar with <em>Reactive Extensions</em> in general, I sugge
 <strong>RxJS</strong> is the <code>JavaScript</code> implementation of <em>Reactive Extensions</em>.
 Let&rsquo;s take a moment to compare and contrast the two, and immerse ourselves in the wonderful world of <strong>RxJS</strong>.
 Let me be clear upfront that I&rsquo;m developing with <code>TypeScript</code>.</p>
-
 <h2 id="legacy-pattern">Legacy Pattern</h2>
-
 <p>As a developer you would have to use both the <code>ng.IHttpService</code> and the <code>ng.IQService</code> in combination to collaborate the deferral of the
 HTTP request and the promise that represented it. Consider the following:</p>
-
-<pre><code class="language-javascript">module ExampleModule {
-    export class ExampleService implements IExampleService {
-        static $inject = [&quot;$http&quot;, &quot;$q&quot;];
-
-        private $http: ng.IHttpService;
-        private $q: ng.IQService;
-
-        constructor($http: ng.IHttpService, 
-                    $q: ng.IQService) {
-            this.$http = $http;
-            this.$q = $q;
-        }
-        
-        public getFooBars(): ng.IPromise&lt;FooBar[]&gt; {
-          var deferred = this.$q.defer&lt;FooBar[]&gt;();
-          this.$http
-              .get(&quot;api/foobar&quot;)
-              .success((data) =&gt; {
-                  deferred.resolve(data);
-              })
-              .error((error) =&gt; {
-                  console.log(&quot;An error occurred when requesting api/foobar.&quot;, error);
-                  deferred.reject(error);
-              });
-
-          return deferred.promise;
-        }
-    }
-}
-</code></pre>
-
-<p>In this example, we can easily see the interaction betwixt the <code>ng.IHttpService ($http)</code> and <code>ng.IQService ($q)</code> services. The <code>$q</code> variable exposes a <code>.defer&lt;T&gt;</code> function that returns a deferred object.</p>
-
-<h3 id="deferred-api-https-docs-angularjs-org-api-ng-service-q-the-deferred-api"><a href="https://docs.angularjs.org/api/ng/service/$q#the-deferred-api">Deferred API</a></h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">module</span> <span style="color:#a6e22e">ExampleModule</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExampleService</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">IExampleService</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">$inject</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;$http&#34;</span>, <span style="color:#e6db74">&#34;$q&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">$http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ng</span>.<span style="color:#a6e22e">IHttpService</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">$q</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ng</span>.<span style="color:#a6e22e">IQService</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">$http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ng</span>.<span style="color:#a6e22e">IHttpService</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">$q</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ng</span>.<span style="color:#a6e22e">IQService</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$http</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$q</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$q</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">getFooBars</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">ng</span>.<span style="color:#a6e22e">IPromise</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">FooBar</span>[]<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">deferred</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$q</span>.<span style="color:#a6e22e">defer</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">FooBar</span>[]<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$http</span>
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;api/foobar&#34;</span>)
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">success</span>((<span style="color:#a6e22e">data</span>) =&gt; {
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">deferred</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>              })
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">error</span>((<span style="color:#a6e22e">error</span>) =&gt; {
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;An error occurred when requesting api/foobar.&#34;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">deferred</span>.<span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>              });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">deferred</span>.<span style="color:#a6e22e">promise</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, we can easily see the interaction betwixt the <code>ng.IHttpService ($http)</code> and <code>ng.IQService ($q)</code> services. The <code>$q</code> variable exposes a <code>.defer&lt;T&gt;</code> function that returns a deferred object.</p>
+<h3 id="deferred-apihttpsdocsangularjsorgapingserviceqthe-deferred-api"><a href="https://docs.angularjs.org/api/ng/service/$q#the-deferred-api">Deferred API</a></h3>
 <table>
 <thead>
 <tr>
-<th align="right">Function</th>
-<th align="left">Parameters</th>
-<th align="left">Description</th>
+<th style="text-align:right">Function</th>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="right"><code>resolve</code></td>
-<td align="left"><code>(value: T)</code></td>
-<td align="left">Resolved yielding the materialized value of type <code>T</code></td>
+<td style="text-align:right"><code>resolve</code></td>
+<td style="text-align:left"><code>(value: T)</code></td>
+<td style="text-align:left">Resolved yielding the materialized value of type <code>T</code></td>
 </tr>
-
 <tr>
-<td align="right"><code>reject</code></td>
-<td align="left"><code>(reason: string)</code></td>
-<td align="left">Rejected with the given reason</td>
+<td style="text-align:right"><code>reject</code></td>
+<td style="text-align:left"><code>(reason: string)</code></td>
+<td style="text-align:left">Rejected with the given reason</td>
 </tr>
 </tbody>
 </table>
-
 <p>The deferred object instance is passed into the fluent API&rsquo;s of the <code>$http's</code> <code>.success</code> and <code>.error</code> functions accordingly. This pattern works great, but is very limiting and repetitive.
 You end up writing a lot of boilerplate code and that isn&rsquo;t very <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>. Let&rsquo;s look at how this is approached with <strong>Angular2&rsquo;s</strong> <code>http</code> service using the observable pattern from <strong>RxJS</strong>!</p>
-
 <h2 id="new-pattern">New Pattern</h2>
-
 <p>To be fair, let&rsquo;s implement the same functionality and public surface-area such that our example services are equivalent.</p>
-
-<pre><code class="language-javascript">import {Observable} from &quot;RxJS/Rx&quot;;
-import {Injectable} from &quot;@angular/core&quot;;
-import {Http} from &quot;@angular/http&quot;;
-
-@Injectable() export class ExampleService {
-    constructor(private http: Http) { }
-
-    getFooBars(onNext: (fooBars: FooBar[]) =&gt; void) {
-        this.http
-            .get(&quot;api/foobar&quot;)
-            .map(response =&gt; response.json() as FooBar[])
-            .subscribe(onNext,
-                       error =&gt; 
-                       console.log(&quot;An error occurred when requesting api/foobar.&quot;, error));
-    }
-}
-</code></pre>
-
-<p><em>I am hoping that you noticed how much cleaner this code is, as well as how much more readable!</em></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">Observable</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;RxJS/Rx&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">Injectable</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@angular/core&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">Http</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@angular/http&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">Injectable</span>() <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExampleService</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Http</span>) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getFooBars</span>(<span style="color:#a6e22e">onNext</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">fooBars</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">FooBar</span>[]) =&gt; <span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">http</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;api/foobar&#34;</span>)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">response</span> =&gt; <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>() <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">FooBar</span>[])
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">subscribe</span>(<span style="color:#a6e22e">onNext</span>,
+</span></span><span style="display:flex;"><span>                       <span style="color:#a6e22e">error</span> =&gt; 
+</span></span><span style="display:flex;"><span>                       <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;An error occurred when requesting api/foobar.&#34;</span>, <span style="color:#a6e22e">error</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><em>I am hoping that you noticed how much cleaner this code is, as well as how much more readable!</em></p>
 <p>Now, I know what you&rsquo;re thinking&hellip;these cannot possibly be the same examples, but they are in fact doing the same thing. <em>Dependency Injection (DI)</em> in <strong>Angular2</strong> is a lot less error prone (no more magic strings) and way easier than
 it was in <strong>AngularJs 1</strong>.
 Simply do what you&rsquo;d expect from any other common constructor-based DI framework, ensure that your desired <code>Http</code> type is registered as a provider to the system. This happens by way of the <code>HTTP_PROVIDERS</code> defined in our <code>boot.js</code> file.
 More on that in another post. With modern <code>TypeScript</code> we can define properties and fields, and their corresponding access modifiers right from within our constructors.</p>
-
 <h4 id="syntax-tip">Syntax Tip</h4>
-
 <p>This exemplifies the comparisons in syntax between a simple constructor and the more verbose constructor.</p>
-
-<pre><code class="language-javascript">// Simple .ctor()
-constructor(private http: Http) { }
-
-// Is equivalent to...
-private http: Http;
-constructor(http: Http) {
-   this.http = http;
-}
-</code></pre>
-
-<p>Likewise, the following is true regarding public access modifiers.</p>
-
-<pre><code class="language-javascript">// Simple .ctor()
-constructor(http: Http) { }
-
-// Is equivalent to...
-http: Http; // When the access modifier is omitted it's defaulted to public
-constructor(http: Http) {
-   this.http = http;
-}
-</code></pre>
-
-<h2 id="comparing-the-apis">Comparing the APIs</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Simple .ctor()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Http</span>) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Is equivalent to...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Http</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Http</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Likewise, the following is true regarding public access modifiers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Simple .ctor()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Http</span>) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Is equivalent to...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Http</span>; <span style="color:#75715e">// When the access modifier is omitted it&#39;s defaulted to public
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">http</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Http</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="comparing-the-apis">Comparing the APIs</h2>
 <p>Instead of the <code>.success</code> invocation with a corresponding <code>deferred.resolve</code> call, we now utilize the <strong>RxJS</strong> <code>.map</code> and <code>.subscribe</code> operators. Let&rsquo;s look at these below:</p>
-
 <table>
 <thead>
 <tr>
-<th align="right">Operator</th>
-<th align="left">Description</th>
+<th style="text-align:right">Operator</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="right"><a href="http://reactivex.io/documentation/operators/map.html"><code>map</code></a></td>
-<td align="left">Transform the items emitted by an <code>Observable</code> by applying a function to each item</td>
+<td style="text-align:right"><a href="https://reactivex.io/documentation/operators/map.html"><code>map</code></a></td>
+<td style="text-align:left">Transform the items emitted by an <code>Observable</code> by applying a function to each item</td>
 </tr>
-
 <tr>
-<td align="right"><a href="http://reactivex.io/documentation/operators/subscribe.html"><code>subscribe</code></a></td>
-<td align="left">The <code>Subscribe</code> operator is the glue that connects an observer to an <code>Observable</code></td>
+<td style="text-align:right"><a href="https://reactivex.io/documentation/operators/subscribe.html"><code>subscribe</code></a></td>
+<td style="text-align:left">The <code>Subscribe</code> operator is the glue that connects an observer to an <code>Observable</code></td>
 </tr>
 </tbody>
 </table>
-
 <p>Mapping is easy and we can leverage some of the <code>TypeScript</code> language features to cast the <strong>JSON</strong> blobs returned from our services as strongly typed objects. The <code>map</code> operator is actually
 synonymous with the <code>select</code> operator, so if you&rsquo;re more familiar with that terminology you can use it interchangeably.</p>
-
 <h3 id="advantages">Advantages</h3>
-
 <p>Now that we have an understanding of how <strong>RxJS</strong> compares to the legacy pattern, we can take advantage of all the various benefits. Imagine with me that we have a need to implement retry logic,
 this would have been challenging with the legacy pattern but with the new pattern it&rsquo;s as simple as saying <code>.retry</code>. Consider the following:</p>
-
-<pre><code class="language-javascript">// If this call fails, we'll try it again with the same payload two times
-getFooBars(onNext: (fooBars: FooBar[]) =&gt; void) {
-    this.http
-        .get(&quot;api/foobar&quot;)
-        .map(response =&gt; &lt;FooBar[]&gt;response.json())
-        .retry(2)
-        .subscribe(onNext,
-                   error =&gt; 
-                   console.log(&quot;An error occurred when requesting api/foobar.&quot;, error));
-}
-</code></pre>
-
-<p>Now imagine a scenario where a user is typing and you want to provide an autocomplete, you could use <code>.debounce</code> to pause for a brief moment prior to sending the request. Likewise,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// If this call fails, we&#39;ll try it again with the same payload two times
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">getFooBars</span>(<span style="color:#a6e22e">onNext</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">fooBars</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">FooBar</span>[]) =&gt; <span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">http</span>
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;api/foobar&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">response</span> =&gt; <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">FooBar</span>[]<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>())
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">retry</span>(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">subscribe</span>(<span style="color:#a6e22e">onNext</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">error</span> =&gt; 
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;An error occurred when requesting api/foobar.&#34;</span>, <span style="color:#a6e22e">error</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now imagine a scenario where a user is typing and you want to provide an autocomplete, you could use <code>.debounce</code> to pause for a brief moment prior to sending the request. Likewise,
 we could apply a <code>.filter</code> that only takes action when a certain number of characters have been entered. Finally, we might utilize <code>.distinctUntilChanged</code> to only execute the request once
 the values are actually different than they once were.</p>
-
 <p>You could take advantage of <code>.buffer</code>, <code>.throttle</code>, <code>.interval</code>, <code>.window</code>, <code>.range</code>, etc&hellip; The list goes on and on,
-and <a href="https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable" target="_blank">this is the source for most of what you can take advantage</a>.</p>
+and 
 
-<h3 id="let-s-summarize">Let&rsquo;s Summarize</h3>
+    
+        
+    
 
+    <a href="https://github.com/Reactive-Extensions/RxJS/tree/master/src/core/linq/observable" target='_blank'>this is the source for most of what you can take advantage</a>
+
+.</p>
+<h3 id="lets-summarize">Let&rsquo;s Summarize</h3>
 <p><strong>Angular2</strong> has a new implementation of their <code>http</code> service that relies on <strong>RxJS</strong>. The <em>API</em> uses <code>observables</code> and the <code>observer</code> pattern to allow for a fluent experience that is rich and robust.
 Getting started is straight-forward and simple. Before too long you&rsquo;ll be taking advantage of the feature-full set of <strong>Reactive Extensions</strong> and thinking in terms of data streams.
 This mindset will make your life easier - trust me!</p>
-
 <p><strong>Further Reading</strong></p>
-
 <ul>
-<li><a href="https://angular.io/docs/ts/latest/api/http/index/Http-class.html" target="_blank">Angular2 for TypeScript, Http</a></li>
-<li><a href="https://github.com/Reactive-Extensions/RxJS#why-RxJS" target="_blank">Why RxJS?</a></li>
+<li>
+
+    
+        
+    
+
+    <a href="https://angular.io/docs/ts/latest/api/http/index/Http-class.html" target='_blank'>Angular2 for TypeScript, Http</a>
+
+</li>
+<li>
+
+    
+        
+    
+
+    <a href="https://github.com/Reactive-Extensions/RxJS#why-RxJS" target='_blank'>Why RxJS?</a>
+
+</li>
 </ul>
 
     </div>
@@ -707,7 +672,7 @@ This mindset will make your life easier - trust me!</p>
         <article class="post">
             <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -744,19 +709,57 @@ This mindset will make your life easier - trust me!</p>
         
         <header>
             <h2>David Pine</h2>
-            <p>Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time</p>
+            <p>
+                🤓 Changing the world — one line of code at a time.
+                <span class="responsive-float">
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                        Follow @davidpine7
+                    </a>
+                </span>
+                <script>
+                    window.twitter = (function (d, s, id) {
+                    var js,
+                        fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+                </script>
+            </p>
         </header>
         
 
+        <hr />
+
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
+            </a>
+        </section>
+
+        <hr />
+
         <div class='row'>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp-v.png" width="160px" />
+                <a target="_blank" rel="noopener"
+                    href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://google-developers.appspot.com/community/experts/directory/profile/profile-david_pine">
-                    <img src="/img/main/gde.png" width="210px" />
+                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>
@@ -864,6 +867,32 @@ This mindset will make your life easier - trust me!</p>
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-15'>
+                            September 15, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-08'>
+                            September 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
                         
                         
@@ -874,38 +903,16 @@ This mindset will make your life easier - trust me!</p>
                 </article>
             </li>
             
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-21'>
-                            March 21, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-14'>
-                            March 14, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
 
             
             <li>
                 <ul class="actions">
-                    <li><a href= /blog/  class="button">View
-                            more posts</a></li>
+                    <li>
+                        <a href= /blog/ 
+                            class="button">
+                            View more posts
+                        </a>
+                    </li>
                 </ul>
             </li>
             
@@ -931,7 +938,7 @@ This mindset will make your life easier - trust me!</p>
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">12</span>
+                        <span style="float:right;">14</span>
                     </header>
                 </article>
             </li>
@@ -1002,6 +1009,33 @@ This mindset will make your life easier - trust me!</p>
             <li>
                 <article>
                     <header>
+                        <a href="/categories/wasm/">wasm</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/webassembly/">webassembly</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/blazor/">blazor</a>
+                        <span style="float:right;">3</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/http/">http</a>
                         <span style="float:right;">2</span>
                     </header>
@@ -1021,24 +1055,6 @@ This mindset will make your life easier - trust me!</p>
                 <article>
                     <header>
                         <a href="/categories/tooling/">tooling</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/wasm/">wasm</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/webassembly/">webassembly</a>
                         <span style="float:right;">2</span>
                     </header>
                 </article>
@@ -1075,15 +1091,6 @@ This mindset will make your life easier - trust me!</p>
                 <article>
                     <header>
                         <a href="/categories/azure-functions/">azure-functions</a>
-                        <span style="float:right;">1</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/blazor/">blazor</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1351,7 +1358,8 @@ This mindset will make your life easier - trust me!</p>
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        </p>
     </section>
 
 </section>

@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.102.1" />
         
 
 
@@ -33,28 +33,16 @@
         <meta property="og:title" content="What happened to my Thread.CurrentPrincipal" />
 <meta property="og:description" content="This is not the IPrincipal you are looking for..." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://davidpine.net/blog/principal-architecture-changes/" />
-
-<meta property="og:image" content="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png" />
-<meta property="article:published_time" content="2017-01-27T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-01-27T00:00:00&#43;00:00"/>
-
-        
-<meta itemprop="name" content="What happened to my Thread.CurrentPrincipal">
-<meta itemprop="description" content="This is not the IPrincipal you are looking for...">
+<meta property="og:url" content="https://davidpine.net/blog/principal-architecture-changes/" /><meta property="og:image" content="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-01-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-01-27T00:00:00+00:00" />
 
 
-<meta itemprop="datePublished" content="2017-01-27T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-01-27T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="838">
-
-  <meta itemprop="image" content="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png">
-
-
-
+        <meta itemprop="name" content="What happened to my Thread.CurrentPrincipal">
+<meta itemprop="description" content="This is not the IPrincipal you are looking for..."><meta itemprop="datePublished" content="2017-01-27T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-01-27T00:00:00+00:00" />
+<meta itemprop="wordCount" content="850"><meta itemprop="image" content="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png">
 <meta itemprop="keywords" content="" />
-
-        
 
         
 
@@ -90,17 +78,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
         
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
-
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         
@@ -295,15 +276,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
             </ul>
@@ -381,9 +362,11 @@ if (!doNotTrack) {
             
         
 
-        <time class="published"
-            datetime='2017-01-27'>
-            January 27, 2017</time>
+        <time class="published" data-hover='January, 2017'
+            datetime='2017-01-27'
+            data-initial='Written on'>
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
+        </time>
         <span class="author">David Pine</span>
         
             <p>4 minute read</p>
@@ -460,124 +443,135 @@ if (!doNotTrack) {
 
 
     <div id="content">
-        
-
-<h1 id="overview">Overview</h1>
-
+        <h1 id="overview">Overview</h1>
 <p>Like the title claims, if you&rsquo;re using <code>ASP.NET Core</code> and expecting the <code>Thread.CurrentPrincipal</code> or <code>ClaimsPrincipal.Current</code> to be populated you&rsquo;d be wrong. This is not the
 <code>IPrincipal</code> you&rsquo;re looking for. In this post we&rsquo;ll discuss what happened and what you need to do now. Additionally we&rsquo;ll cover all the peripheral benefits as a result of this change.</p>
-
 <h2 id="history">History</h2>
+<p>If you have ever done any <strong>.NET Framework</strong> development, you&rsquo;ve probably seen the <code>Thread</code> class. You&rsquo;re probably familiar with the 
 
-<p>If you have ever done any <strong>.NET Framework</strong> development, you&rsquo;ve probably seen the <code>Thread</code> class. You&rsquo;re probably familiar with the <a href="https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal" target="_blank"><code>Thread.CurrentPrincipal</code></a> member. This member of the <code>Thread</code> class is defined as follows:</p>
+    
+        
+    
 
-<pre><code class="language-csharp">public static IPrincipal CurrentPrincipal
-{
-    [System.Security.SecuritySafeCritical]  // auto-generated
-    get
-    {
-        lock (CurrentThread)
-        {
-            var principal = (IPrincipal)CallContext.Principal;
-            if (principal == null)
-            {
-                principal = GetDomain().GetThreadPrincipal();
-                CallContext.Principal = principal;
-            }
-            return principal;
-        }
-    }
+    <a href="https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal" target='_blank'>`Thread.CurrentPrincipal`</a>
 
-    [System.Security.SecuritySafeCritical]  // auto-generated
-    [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlPrincipal)]
-    set
-    {
-        CallContext.Principal = value;
-    }
-}
-</code></pre>
-
-<blockquote>
-<p><p/> Gets or sets the thread&rsquo;s current principal (for role-based security).</p>
+ member. This member of the <code>Thread</code> class is defined as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> IPrincipal CurrentPrincipal
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">    [System.Security.SecuritySafeCritical]</span>  <span style="color:#75715e">// auto-generated</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">get</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">lock</span> (CurrentThread)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> principal = (IPrincipal)CallContext.Principal;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (principal == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                principal = GetDomain().GetThreadPrincipal();
+</span></span><span style="display:flex;"><span>                CallContext.Principal = principal;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> principal;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">    [System.Security.SecuritySafeCritical]</span>  <span style="color:#75715e">// auto-generated</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">    [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlPrincipal)]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        CallContext.Principal = <span style="color:#66d9ef">value</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>Gets or sets the thread&rsquo;s current principal (for role-based security).</p>
 </blockquote>
-
 <p>Does anyone see the issue with this? Can you say, &ldquo;publically static mutable state, oh my&rdquo;?! You should be alarmed. This property was never a good idea and today it simply doesn&rsquo;t belong. <strong>ASP.NET Core</strong> is not responsible for assigning this. You might not agree with that decision, but it is final.</p>
+<p>Before diving into this, pop over to 
 
-<p>Before diving into this, pop over to <a href="https://github.com/aspnet/Security/issues/322" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> Microsoft.AspNetCore.Security &ndash; Issue 332</a> for more of the back story.</p>
+    
+        
+    
 
-<h2 id="thread-currentprincipal-today-in-asp-net-core">Thread.CurrentPrincipal Today in ASP.NET Core</h2>
+    <a href="https://github.com/aspnet/Security/issues/322" target='_blank'>{{&lt; i fa-github-alt &gt;}} Microsoft.AspNetCore.Security -- Issue 332</a>
 
+ for more of the back story.</p>
+<h2 id="threadcurrentprincipal-today-in-aspnet-core">Thread.CurrentPrincipal Today in ASP.NET Core</h2>
 <p>As part of the <code>ASP.NET Core</code> framework, the following middleware packages are provided:</p>
-
 <ul>
-<li><a href="https://github.com/aspnet/Identity" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> <code>Microsoft.AspNetCore.Identity</code></a></li>
-<li><a href="https://github.com/aspnet/Security" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> <code>Microsoft.AspNetCore.Security</code></a></li>
+<li>
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/Identity" target='_blank'>{{&lt; i fa-github-alt &gt;}} `Microsoft.AspNetCore.Identity`</a>
+
+</li>
+<li>
+
+    
+        
+    
+
+    <a href="https://github.com/aspnet/Security" target='_blank'>{{&lt; i fa-github-alt &gt;}} `Microsoft.AspNetCore.Security`</a>
+
+</li>
 </ul>
-
 <p>If you opt-in to using this middleware and you provide a login page (or expose an external provider) you&rsquo;d end up creating an instance of a <code>ClaimsPrincipal</code> that represents an authenticated user. Subsequent requests to the web server would be handed the cookie that holds the user&rsquo;s claims. However the <code>Thread.CurrentPrincipal</code> would <strong>not</strong> actually reflect the <code>ClaimsPrincipal</code> object that was created as the result of the login. In fact, it would simply be an instance of the <code>GenericPrincipal</code> implementation. Likewise, walking up to the <code>ClaimsPrincipal.Current</code> property and asking it for the current claims principal in context wouldn&rsquo;t give you what you might expect either. Additionally, the <code>ClaimsPrincipal.Current</code> internally relies on the <code>Thread.CurrentPrincipal</code> for its value.</p>
-
-<pre><code class="language-csharp">public static ClaimsPrincipal Current
-{
-    get
-    {
-        return ClaimsPrincipal.s_principalSelector() ??
-               ClaimsPrincipal.SelectClaimsPrincipal();
-    }
-}
-
-private static ClaimsPrincipal SelectClaimsPrincipal()
-{
-    return Thread.CurrentPrincipal as ClaimsPrincipal ??
-           new ClaimsPrincipal(Thread.CurrentPrincipal);
-}
-</code></pre>
-
-<p>You might be asking yourself, &ldquo;how do I access this value then?&rdquo;. If you&rsquo;re in the context of a controller then you already have access to it via the <code>.User</code> property. Otherwise, the answer is &ldquo;dependency injection&rdquo;. Wherever you&rsquo;re in need of the identity for accessing claims, use constructor (<code>.ctor</code>) injection and give yourself the <code>IPrincipal</code> you need. If you&rsquo;re in the context of an action you might be tempted to use the <code>[FromServices]</code> attribute to inject the <code>IPrincipal</code> instance, but remember that this actually comes from the current user - which is already accessible via the controller&rsquo;s <code>.User</code> property.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ClaimsPrincipal Current
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">get</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ClaimsPrincipal.s_principalSelector() ??
+</span></span><span style="display:flex;"><span>               ClaimsPrincipal.SelectClaimsPrincipal();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> ClaimsPrincipal SelectClaimsPrincipal()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Thread.CurrentPrincipal <span style="color:#66d9ef">as</span> ClaimsPrincipal ??
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">new</span> ClaimsPrincipal(Thread.CurrentPrincipal);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You might be asking yourself, &ldquo;how do I access this value then?&rdquo;. If you&rsquo;re in the context of a controller then you already have access to it via the <code>.User</code> property. Otherwise, the answer is &ldquo;dependency injection&rdquo;. Wherever you&rsquo;re in need of the identity for accessing claims, use constructor (<code>.ctor</code>) injection and give yourself the <code>IPrincipal</code> you need. If you&rsquo;re in the context of an action you might be tempted to use the <code>[FromServices]</code> attribute to inject the <code>IPrincipal</code> instance, but remember that this actually comes from the current user - which is already accessible via the controller&rsquo;s <code>.User</code> property.</p>
 <h2 id="dependency-injection">Dependency Injection</h2>
-
 <p><strong>ASP.NET Core</strong> made dependency injection (DI) a first class citizen, and it is so easy to use. The <code>Startup.cs</code> by convention has a <code>ConfigureServices</code> method where you&rsquo;ll
 register the dependencies. In the case of <code>ASP.NET Core</code> you&rsquo;ll need to do the following:</p>
-
-<pre><code class="language-csharp">// This method gets called by the runtime. Use this method to add services to the container.
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddSingleton&lt;IHttpContextAccessor, HttpContextAccessor&gt;();
-    services.AddTransient&lt;IPrincipal&gt;(
-        provider =&gt; provider.GetService&lt;IHttpContextAccessor&gt;().HttpContext.User);
-
-    // ...
-}
-</code></pre>
-
-<p>You might have noticed that we explicitly register the <code>IHttpContextAccessor</code> and corresponding implementation. This is necessary as that service is not registered for us. With that in place we can now specify that any class asking for an <code>IPrincipal</code> will be given the <code>IHttpContextAccessor.HttpContext.User</code> as the implementation. This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the <code>ClaimsPrincipal</code> implementation of the <code>IPrincipal</code>.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    services.AddSingleton&lt;IHttpContextAccessor, HttpContextAccessor&gt;();
+</span></span><span style="display:flex;"><span>    services.AddTransient&lt;IPrincipal&gt;(
+</span></span><span style="display:flex;"><span>        provider =&gt; provider.GetService&lt;IHttpContextAccessor&gt;().HttpContext.User);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You might have noticed that we explicitly register the <code>IHttpContextAccessor</code> and corresponding implementation. This is necessary as that service is not registered for us. With that in place we can now specify that any class asking for an <code>IPrincipal</code> will be given the <code>IHttpContextAccessor.HttpContext.User</code> as the implementation. This is exactly what we needed. The exact same pattern is true for class libraries that want to leverage identity-based claim values from the <code>ClaimsPrincipal</code> implementation of the <code>IPrincipal</code>.</p>
 <h3 id="example">Example</h3>
-
-<pre><code class="language-csharp">using System.Security.Claims;
-using System.Security.Principal;
-
-public class SampleService : ISampleService
-{
-    private readonly ClaimsPrincipal _principal;
-
-    public SampleService(IPrincipal principal) =&gt;
-        _principal = principal as ClaimsPrincipal;
-
-    public Task ConsumeAsync()
-    {
-        var dobClaim = _principal?.FindFirst(ClaimTypes.DateOfBirth);
-        // Take some action ...
-    }
-}
-</code></pre>
-
-<p>From the example above we can see how simple it is to use dependency injection. Simply define the <code>IPrincipal</code> as a <code>.ctor</code> parameter, store it in a field and consume it as needed.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Security.Claims;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Security.Principal;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleService</span> : ISampleService
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> ClaimsPrincipal _principal;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> SampleService(IPrincipal principal) =&gt;
+</span></span><span style="display:flex;"><span>        _principal = principal <span style="color:#66d9ef">as</span> ClaimsPrincipal;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Task ConsumeAsync()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> dobClaim = _principal?.FindFirst(ClaimTypes.DateOfBirth);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Take some action ...</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>From the example above we can see how simple it is to use dependency injection. Simply define the <code>IPrincipal</code> as a <code>.ctor</code> parameter, store it in a field and consume it as needed.</p>
 <h3 id="but-why">But Why?</h3>
+<p>There are a lot of people who feel as though DI is overrated and that it is much easier to ask the <code>Thread.CurrentPrincipal</code> for its value. While that is easy, it is also risky&hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between the <code>Thread</code> and <code>ClaimsPrincipal</code> classes. Scott Hanselman blogged about a 
 
-<p>There are a lot of people who feel as though DI is overrated and that it is much easier to ask the <code>Thread.CurrentPrincipal</code> for its value. While that is easy, it is also risky&hellip;think about it. Since it is mutable anyone (even 3rd party libraries) can set it. Additionally, you avoid concerns about trying to synchronize static state between the <code>Thread</code> and <code>ClaimsPrincipal</code> classes. Scott Hanselman blogged about a <a href="http://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx" target="_blank">similar issue</a> nearly thirteen years ago!</p>
+    
+        
+    
 
+    <a href="https://www.hanselman.com/blog/SystemThreadingThreadCurrentPrincipalVsSystemWebHttpContextCurrentUserOrWhyFormsAuthenticationCanBeSubtle.aspx" target='_blank'>similar issue</a>
+
+ nearly thirteen years ago!</p>
 <p>One of the first benefits that comes to mind from this is the fact that with DI the code is unit-testable. It is extremely easy to mock out an <code>IPrincipal</code> to use for unit
 testing. Additionally, this alleviates all of the concerns about synchronization and reliability. The <code>IPrincipal</code> you&rsquo;re given is the principal you&rsquo;d expect and it is fully
 populated accordingly.</p>
@@ -626,7 +620,7 @@ populated accordingly.</p>
         <article class="post">
             <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -663,19 +657,57 @@ populated accordingly.</p>
         
         <header>
             <h2>David Pine</h2>
-            <p>Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time</p>
+            <p>
+                🤓 Changing the world — one line of code at a time.
+                <span class="responsive-float">
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                        Follow @davidpine7
+                    </a>
+                </span>
+                <script>
+                    window.twitter = (function (d, s, id) {
+                    var js,
+                        fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+                </script>
+            </p>
         </header>
         
 
+        <hr />
+
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
+            </a>
+        </section>
+
+        <hr />
+
         <div class='row'>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp-v.png" width="160px" />
+                <a target="_blank" rel="noopener"
+                    href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://google-developers.appspot.com/community/experts/directory/profile/profile-david_pine">
-                    <img src="/img/main/gde.png" width="210px" />
+                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>
@@ -783,6 +815,32 @@ populated accordingly.</p>
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-15'>
+                            September 15, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-08'>
+                            September 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
                         
                         
@@ -793,38 +851,16 @@ populated accordingly.</p>
                 </article>
             </li>
             
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-21'>
-                            March 21, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-14'>
-                            March 14, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
 
             
             <li>
                 <ul class="actions">
-                    <li><a href= /blog/  class="button">View
-                            more posts</a></li>
+                    <li>
+                        <a href= /blog/ 
+                            class="button">
+                            View more posts
+                        </a>
+                    </li>
                 </ul>
             </li>
             
@@ -850,7 +886,7 @@ populated accordingly.</p>
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">12</span>
+                        <span style="float:right;">14</span>
                     </header>
                 </article>
             </li>
@@ -921,6 +957,33 @@ populated accordingly.</p>
             <li>
                 <article>
                     <header>
+                        <a href="/categories/wasm/">wasm</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/webassembly/">webassembly</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/blazor/">blazor</a>
+                        <span style="float:right;">3</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/http/">http</a>
                         <span style="float:right;">2</span>
                     </header>
@@ -940,24 +1003,6 @@ populated accordingly.</p>
                 <article>
                     <header>
                         <a href="/categories/tooling/">tooling</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/wasm/">wasm</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/webassembly/">webassembly</a>
                         <span style="float:right;">2</span>
                     </header>
                 </article>
@@ -994,15 +1039,6 @@ populated accordingly.</p>
                 <article>
                     <header>
                         <a href="/categories/azure-functions/">azure-functions</a>
-                        <span style="float:right;">1</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/blazor/">blazor</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1270,7 +1306,8 @@ populated accordingly.</p>
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        </p>
     </section>
 
 </section>

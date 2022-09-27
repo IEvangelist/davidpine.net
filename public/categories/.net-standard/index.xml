@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>.NET Standard on IEvangelist</title>
@@ -6,11 +6,7 @@
     <description>Recent content in .NET Standard on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Aug 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://davidpine.net/categories/.net-standard/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 16 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/.net-standard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Demystifying .NET Standard</title>
       <link>https://davidpine.net/blog/dot-net-standard-demystified/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://davidpine.net/blog/dot-net-standard-demystified/</guid>
       <description>Intro Monday, August 14th was an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
-  What is this .NET Standard thing?  What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework?  As a developer, what .NET should I target and why?  Are Portable Class Libraries (PCLs) dead?</description>
+What is this .NET Standard thing? What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework? As a developer, what .NET should I target and why? Are Portable Class Libraries (PCLs) dead? Developer Community</description>
     </item>
     
   </channel>

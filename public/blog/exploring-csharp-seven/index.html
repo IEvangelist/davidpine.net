@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.102.1" />
         
 
 
@@ -33,28 +33,16 @@
         <meta property="og:title" content="Exploring C# 7" />
 <meta property="og:description" content="Expressiveness Redefined &amp; #notasugly" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://davidpine.net/blog/exploring-csharp-seven/" />
-
-<meta property="og:image" content="https://davidpine.net/img/2017/03/exploration.png" />
-<meta property="article:published_time" content="2017-03-26T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-03-26T00:00:00&#43;00:00"/>
-
-        
-<meta itemprop="name" content="Exploring C# 7">
-<meta itemprop="description" content="Expressiveness Redefined &amp; #notasugly">
+<meta property="og:url" content="https://davidpine.net/blog/exploring-csharp-seven/" /><meta property="og:image" content="https://davidpine.net/img/2017/03/exploration.png" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-03-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-26T00:00:00+00:00" />
 
 
-<meta itemprop="datePublished" content="2017-03-26T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-03-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2373">
-
-  <meta itemprop="image" content="https://davidpine.net/img/2017/03/exploration.png">
-
-
-
+        <meta itemprop="name" content="Exploring C# 7">
+<meta itemprop="description" content="Expressiveness Redefined &amp; #notasugly"><meta itemprop="datePublished" content="2017-03-26T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-03-26T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2307"><meta itemprop="image" content="https://davidpine.net/img/2017/03/exploration.png">
 <meta itemprop="keywords" content="" />
-
-        
 
         
 
@@ -90,17 +78,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
         
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
-
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         
@@ -295,15 +276,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
             </ul>
@@ -381,12 +362,14 @@ if (!doNotTrack) {
             
         
 
-        <time class="published"
-            datetime='2017-03-26'>
-            March 26, 2017</time>
+        <time class="published" data-hover='March, 2017'
+            datetime='2017-03-26'
+            data-initial='Written on'>
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
+        </time>
         <span class="author">David Pine</span>
         
-            <p>12 minute read</p>
+            <p>11 minute read</p>
         
         
     </div>
@@ -460,16 +443,19 @@ if (!doNotTrack) {
 
 
     <div id="content">
-        
-
-<h1 id="intro">Intro</h1>
-
-<p>Since we have all been actively celebrating the 20<sup>th</sup> anniversary of <strong>Visual Studio</strong>, it felt appropriate to post about <strong>C# 7</strong>!
+        <h1 id="intro">Intro</h1>
+<p>Since we have all been actively celebrating the 20<!-- raw HTML omitted -->th<!-- raw HTML omitted --> anniversary of <strong>Visual Studio</strong>, it felt appropriate to post about <strong>C# 7</strong>!
 In this post we will explore the features that make <strong>C# 7</strong> so promising. I&rsquo;ve put together a demonstration <strong>C# 7</strong> project, that is available
-<a href="https://github.com/IEvangelist/IEvangelist.CSharp" target="_blank">here</a>.</p>
 
+
+    
+        
+    
+
+    <a href="https://github.com/IEvangelist/IEvangelist.CSharp" target='_blank'>here</a>
+
+.</p>
 <p>This post contains examples and details on five of the nine new <strong>C# 7</strong> features.</p>
-
 <ul>
 <li>Pattern matching</li>
 <li><code>out</code> variables</li>
@@ -477,476 +463,387 @@ In this post we will explore the features that make <strong>C# 7</strong> so pro
 <li>Local functions</li>
 <li><code>throw</code> expressions</li>
 </ul>
-
 <p>These are the remaining features, that I <strong>do not</strong> cover in this post.</p>
-
 <ul>
 <li><code>ref</code> locals and returns</li>
 <li>More expression-bodied members</li>
 <li>Generalized <code>async</code> return types</li>
 <li>Numeric literal syntax improvements</li>
 </ul>
-
 <h2 id="pattern-matching">Pattern Matching</h2>
-
 <p>With <strong>C# 7</strong> we welcomed the concept of &ldquo;patterns&rdquo;. This concept allows for the extraction of information when a variable is tested for a certain &ldquo;shape&rdquo; and matches a
 specified pattern. We&rsquo;re able to leverage the &ldquo;shape&rdquo; from which we matched on as a declared variable in scope, consuming it as we deem necessary. This is referred to as
 &ldquo;dynamic&rdquo; (or &ldquo;method&rdquo;) dispatch.</p>
-
 <blockquote>
-<p><p> In computer science, dynamic dispatch is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time.
-It is commonly employed in, and considered a prime characteristic of, object-oriented programming (OOP) languages and systems.
-<cite><a href="https://en.wikipedia.org/wiki/Dynamic_dispatch" target="_blank">Wiki - Dynamic Dispatch</a></cite></p>
+<!-- raw HTML omitted -->
 </blockquote>
-
 <p>Dynamic dispatch is nothing new to <strong>C#</strong>, and has been around forever. <strong>C# 7</strong> exposes this functionality via constant and type patterns.</p>
-
 <h3 id="constant-patterns">Constant Patterns</h3>
-
 <p>Constant pattern <code>null</code>, similar to <code>(obj == null)</code>.</p>
-
 <blockquote>
-<p><p> The &ldquo;is expression&rdquo; has been expanded</p>
+<!-- raw HTML omitted -->
 </blockquote>
-
-<pre><code class="language-csharp">public void IsExpression(object obj)
-{
-    if (obj is null) // Constant pattern &quot;obj is null&quot;
-    {
-        return;
-    }
-}
-</code></pre>
-
-<h3 id="type-patterns">Type Patterns</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> IsExpression(<span style="color:#66d9ef">object</span> obj)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (obj <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>) <span style="color:#75715e">// Constant pattern &#34;obj is null&#34;</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="type-patterns">Type Patterns</h3>
 <p>Look closely at this syntax. This is where we start mixing metaphors. Prior to <strong>C# 7</strong> we could use the &ldquo;is&rdquo; expression to do simple type assertions
 <code>obj is [type]</code>. Additionally, we all know how to declare a variable <code>int i</code>. This new syntax merges these concepts together and is more compound and
 expressive.</p>
-
-<pre><code class="language-csharp">public void IsExpression(object obj)
-{
-    // (obj is int i)
-    // &quot;obj is int&quot;     // type assertion &quot;typically evaluates type compatibility at run time&quot;
-    //        &quot;int i&quot;   // declaration
-
-    if (obj is int i) // Type pattern &quot;obj is int i&quot;
-    {
-        // We can then use the &quot;i&quot; (integer) variable 
-    }
-
-    // Note, the variable &quot;i&quot; is also available in this scope.
-    // This is in fact by design, more on that out the &quot;out variable&quot; section 
-}
-</code></pre>
-
-<blockquote>
-<p><p> The &ldquo;switch statement&rdquo; has been generalized</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> IsExpression(<span style="color:#66d9ef">object</span> obj)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// (obj is int i)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// &#34;obj is int&#34;     // type assertion &#34;typically evaluates type compatibility at run time&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//        &#34;int i&#34;   // declaration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (obj <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">int</span> i) <span style="color:#75715e">// Type pattern &#34;obj is int i&#34;</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// We can then use the &#34;i&#34; (integer) variable </span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Note, the variable &#34;i&#34; is also available in this scope.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// This is in fact by design, more on that out the &#34;out variable&#34; section </span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<!-- raw HTML omitted -->
 </blockquote>
-
 <p>The <code>when</code> keyword has also been extended, now it not only applies to the <code>catch</code> statement but also the <code>case</code> labels within a <code>switch</code> statement.
 Consider the following classes:</p>
-
-<pre><code class="language-csharp">class Shape
-{
-    protected internal double Height { get; }
-
-    protected internal double Length { get; }
-
-    protected Shape(double height, double length)
-    {
-        Height = height;
-        Length = length;
-    }
-}
-
-class Circle : Shape
-{
-    internal double Radius =&gt; Height / 2;
-
-    internal double Diameter =&gt; Radius * 2;
-
-    internal double Circumference =&gt; 2 * Math.PI * Radius;
-
-    internal Circle(double height, double length) 
-        : base(height, length) { }
-}
-
-class Rectangle : Shape
-{
-    internal bool IsSquare =&gt; Height == Length;
-
-    internal Rectangle(double height, double length) 
-        : base(height, length) { }
-}
-</code></pre>
-
-<p>Now imagine that we have a collection of these <code>Shape</code> objects, and we want to print out their various details - we could use &ldquo;pattern matching&rdquo; as such:</p>
-
-<pre><code class="language-csharp">static void OutputShapes(IEnumerable&lt;Shape&gt; shapes)
-{
-    foreach (var shape in shapes)
-    {
-        // Previously, this was not permitted. Case labels had to be concrete
-        // such as enums, numerics, bools, strings, etc.
-        switch (shape)
-        {
-            case Circle c:
-                WriteLine($&quot;circle with circumference {c.Circumference}&quot;);
-                break;
-            case Rectangle s when (s.IsSquare):
-                WriteLine($&quot;{s.Length} x {s.Height} square&quot;);
-                break;
-            case Rectangle r:
-                WriteLine($&quot;{r.Length} x {r.Height} rectangle&quot;);
-                break;
-            default:
-                WriteLine(&quot;This is not a shape that we're familiar with...&quot;);
-                break;
-            case null:
-                throw new ArgumentNullException(nameof(shape));
-        }
-    }
-}
-</code></pre>
-
-<p>As you can see, we are able to more easily reason about the specific <code>shape</code> in context. For example, with each iteration of our collection we <code>switch</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Shape</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">double</span> Height { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">double</span> Length { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> Shape(<span style="color:#66d9ef">double</span> height, <span style="color:#66d9ef">double</span> length)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Height = height;
+</span></span><span style="display:flex;"><span>        Length = length;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circle</span> : Shape
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">double</span> Radius =&gt; Height / <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">double</span> Diameter =&gt; Radius * <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">double</span> Circumference =&gt; <span style="color:#ae81ff">2</span> * Math.PI * Radius;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">internal</span> Circle(<span style="color:#66d9ef">double</span> height, <span style="color:#66d9ef">double</span> length) 
+</span></span><span style="display:flex;"><span>        : <span style="color:#66d9ef">base</span>(height, length) { }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Rectangle</span> : Shape
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">bool</span> IsSquare =&gt; Height == Length;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">internal</span> Rectangle(<span style="color:#66d9ef">double</span> height, <span style="color:#66d9ef">double</span> length) 
+</span></span><span style="display:flex;"><span>        : <span style="color:#66d9ef">base</span>(height, length) { }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now imagine that we have a collection of these <code>Shape</code> objects, and we want to print out their various details - we could use &ldquo;pattern matching&rdquo; as such:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> OutputShapes(IEnumerable&lt;Shape&gt; shapes)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> shape <span style="color:#66d9ef">in</span> shapes)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Previously, this was not permitted. Case labels had to be concrete</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// such as enums, numerics, bools, strings, etc.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (shape)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> Circle c:
+</span></span><span style="display:flex;"><span>                WriteLine(<span style="color:#e6db74">$&#34;circle with circumference {c.Circumference}&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> Rectangle s when (s.IsSquare):
+</span></span><span style="display:flex;"><span>                WriteLine(<span style="color:#e6db74">$&#34;{s.Length} x {s.Height} square&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> Rectangle r:
+</span></span><span style="display:flex;"><span>                WriteLine(<span style="color:#e6db74">$&#34;{r.Length} x {r.Height} rectangle&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>                WriteLine(<span style="color:#e6db74">&#34;This is not a shape that we&#39;re familiar with...&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">null</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(shape));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As you can see, we are able to more easily reason about the specific <code>shape</code> in context. For example, with each iteration of our collection we <code>switch</code>
 on the <code>shape</code>. If the <code>shape</code> is an instance of the <code>Circle</code> subclass, we&rsquo;ll execute the <code>case</code> label &ldquo;Circle&rdquo; and we get the instance declared as
 its type in the variable <code>c</code>. Likewise, if the <code>shape</code> is a <code>Rectangle</code> and that rectangle <code>s</code> just so happens to also be a square <code>when (s.IsSquare)</code>
 evaluates to <code>true</code> - we will then execute the square <code>case</code> label. If the <code>shape</code> is an instance of a <code>Rectangle</code> but not a square, we execute the
 &ldquo;Rectangle&rdquo; <code>case</code> label. Notice we still have <code>default</code> fall-thru. Finally, we can also have a &ldquo;null&rdquo; <code>case</code> label.</p>
-
 <h2 id="out-variables"><code>out</code> variables</h2>
-
 <p><code>.NET</code> developers are more than familiar with the <code>Try*</code> pattern, but as a refresher this is what it looks like. Imagine we are trying to parse
 a <code>System.String</code> input value as a <code>System.Int32</code>. Imagine that the consumer doesn&rsquo;t really care if it is parsed, they&rsquo;re fine with a <code>default(int)</code>
 if it fails.</p>
-
-<pre><code class="language-csharp">public int ToInt32(string input)
-{
-    int result;
-    if (int.TryParse(input, out result))
-    {
-        return result;
-    }
-
-    return default(int);
-}
-</code></pre>
-
-<p>Let&rsquo;s quickly recap this. First, we declare a variable namely <code>result</code>. We then invoke the <code>int.TryParse</code> which returns a <code>bool</code> whether or not the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ToInt32(<span style="color:#66d9ef">string</span> input)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> result;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">int</span>.TryParse(input, <span style="color:#66d9ef">out</span> result))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">default</span>(<span style="color:#66d9ef">int</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Let&rsquo;s quickly recap this. First, we declare a variable namely <code>result</code>. We then invoke the <code>int.TryParse</code> which returns a <code>bool</code> whether or not the
 parse was successful. If <code>true</code> then the declare <code>result</code> variable is not equal to the parsed <code>int</code> value. If the <code>input</code> was <code>&quot;12&quot;</code>, then <code>result</code> would be <code>12</code>. If the <code>input</code>
 was <code>&quot;Pickles&quot;</code>, then the return from the invocation to the <code>ToInt32</code> would be <code>0</code> as <code>int.TryParse</code> would return <code>false</code>.</p>
-
 <p>Now with <strong>C# 7</strong> we can declare our <code>out</code> variable inline as follows:</p>
-
-<pre><code class="language-csharp">public int ToInt32(string input)
-{
-    // Note: the declaration is inline with the out keyword
-    if (int.TryParse(input, out int result))
-    {
-        return result;
-    }
-
-    return default(int);
-}
-</code></pre>
-
-<p>The scope of the <code>result</code> variable is identical to the previous example, as it actually &ldquo;leaks&rdquo; out to the <code>if</code> statement. We can re-write this even
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ToInt32(<span style="color:#66d9ef">string</span> input)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Note: the declaration is inline with the out keyword</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">int</span>.TryParse(input, <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">int</span> result))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">default</span>(<span style="color:#66d9ef">int</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The scope of the <code>result</code> variable is identical to the previous example, as it actually &ldquo;leaks&rdquo; out to the <code>if</code> statement. We can re-write this even
 more expressively:</p>
-
-<pre><code class="language-csharp">public int ToInt32(string input) =&gt; int.TryParse(input, out var result) ? result : result;
-</code></pre>
-
-<p>A few things you might notice. First, this is now a single line as we can express this with the lambda operator. We leverage the ternary operator as
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ToInt32(<span style="color:#66d9ef">string</span> input) =&gt; <span style="color:#66d9ef">int</span>.TryParse(input, <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">var</span> result) ? result : result;
+</span></span></code></pre></div><p>A few things you might notice. First, this is now a single line as we can express this with the lambda operator. We leverage the ternary operator as
 well. Additionally, we can use the <code>var</code> keyword for our declaration. And since the <code>result</code> variable is in scope we can use it as both return cases.
 If unable to be parsed, it is in fact a <code>default(int)</code> anyways.</p>
-
 <h2 id="tuples">Tuples</h2>
-
 <p>Most developers are familiar with <code>System.Tuple&lt;T[,T1...]&gt;</code>. This <code>class</code> has served us well all the while it has been around.
 One of the advantages is that it exposes <code>readonly</code> fields - from the values that it is instantiated with. This
 was also great for equality comparisons and even using the tuple as a dictionary key.</p>
-
 <p>In <strong>C# 7</strong> we have a new syntax for expressing tuples. Enter the <code>ValueTuple</code>, and as the name implies - this is a <code>struct</code> instead of a <code>class</code>. There
 are obvious performance gains from using a light-weight value-type over the allocation of a <code>class</code>.</p>
-
-<pre><code class="language-csharp">void LegacyTuple()
-{
-    var letters = new Tuple&lt;char, char&gt;('a', 'b');
-    
-    // Values were accessible via these Item* fields.
-    var a = letters.Item1;
-    var b = letters.Item2;
-}
-</code></pre>
-
-<p>This wasn&rsquo;t overly exciting from an API perspective, as the field names do not really imply anything about their intention.</p>
-
-<pre><code class="language-csharp">void ValueTuple()
-{
-    var letters = ('a', 'b');
-    var a = letters.Item1;
-    var b = letters.Item2;
-
-    // Note: ToTuple extension method
-    var systemTuple = letters.ToTuple();
-    var c = systemTuple.Item1;
-    var d = systemTuple.Item2;
-}
-</code></pre>
-
-<p>You might notice that the syntactic sugar is pouring over this new feature. This is referred to as a &ldquo;tuple literal&rdquo;. We dropped the entire <code>new</code> keyword
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> LegacyTuple()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> letters = <span style="color:#66d9ef">new</span> Tuple&lt;<span style="color:#66d9ef">char</span>, <span style="color:#66d9ef">char</span>&gt;(<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Values were accessible via these Item* fields.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> a = letters.Item1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> b = letters.Item2;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This wasn&rsquo;t overly exciting from an API perspective, as the field names do not really imply anything about their intention.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> ValueTuple()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> letters = (<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> a = letters.Item1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> b = letters.Item2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Note: ToTuple extension method</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> systemTuple = letters.ToTuple();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> c = systemTuple.Item1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> d = systemTuple.Item2;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You might notice that the syntactic sugar is pouring over this new feature. This is referred to as a &ldquo;tuple literal&rdquo;. We dropped the entire <code>new</code> keyword
 usage, as well as specifying the types. They are all inferred and in fact known, IntelliSense proves this immediately. But we still have the issue of
 these tuples not being very API friendly. Let&rsquo;s explore how we can give them custom names.</p>
-
-<pre><code class="language-csharp">void MoreValueTuples()
-{
-    var lessonDetails = 
-        (Subject: &quot;C# Language Semantics&quot;, Category: Categories.Programming, Level: 300);
-
-    // Note: IntelliSense now hides Item1, Item2 and Item3
-    // Instead we are provided with the following:
-
-    var subject = lessonDetails.Subject;    // string
-    var category = lessonDetails.Category;  // Categories [enum]
-    var level = lessonDetails.Level;        // int
-}
-</code></pre>
-
-<h3 id="deconstruction">Deconstruction</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> MoreValueTuples()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> lessonDetails = 
+</span></span><span style="display:flex;"><span>        (Subject: <span style="color:#e6db74">&#34;C# Language Semantics&#34;</span>, Category: Categories.Programming, Level: <span style="color:#ae81ff">300</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Note: IntelliSense now hides Item1, Item2 and Item3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Instead we are provided with the following:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> subject = lessonDetails.Subject;    <span style="color:#75715e">// string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> category = lessonDetails.Category;  <span style="color:#75715e">// Categories [enum]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> level = lessonDetails.Level;        <span style="color:#75715e">// int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="deconstruction">Deconstruction</h3>
 <p>Now that we see how we can instantiate a <code>ValueTuple</code>, let&rsquo;s take a look at how we can declare one for usage.</p>
-
-<pre><code class="language-csharp">void DeconstructionExamples()
-{
-    var lessonDetails = 
-        (Subject: &quot;C# Language Semantics&quot;, Category: Categories.Programming, Level: 300);
-    
-    // We can deconstruct in three various ways
-    // First, the fully qualified type
-    (string subject, Categories category, int level) = lessonDetails;
-    
-    // Next using the var keyword per named declaration
-    (var subject, var category, var level) = lessonDetails;
-
-    // Finally, omitting any type declaration and using var wholeheartedly
-    var (subject, category, level) = lessonDetails;
-}
-</code></pre>
-
-<p>There are often questions about how deconstruction is implemented, and whether or not it is ordinal based. For the <code>ValueTuple</code> it is in fact
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> DeconstructionExamples()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> lessonDetails = 
+</span></span><span style="display:flex;"><span>        (Subject: <span style="color:#e6db74">&#34;C# Language Semantics&#34;</span>, Category: Categories.Programming, Level: <span style="color:#ae81ff">300</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// We can deconstruct in three various ways</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// First, the fully qualified type</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">string</span> subject, Categories category, <span style="color:#66d9ef">int</span> level) = lessonDetails;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Next using the var keyword per named declaration</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">var</span> subject, <span style="color:#66d9ef">var</span> category, <span style="color:#66d9ef">var</span> level) = lessonDetails;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Finally, omitting any type declaration and using var wholeheartedly</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> (subject, category, level) = lessonDetails;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>There are often questions about how deconstruction is implemented, and whether or not it is ordinal based. For the <code>ValueTuple</code> it is in fact
 ordinal based. However, note that deconstruction is not actually limited to tuples. With <strong>C# 7</strong> any <code>object</code> that defines a <code>public void Deconstruct</code>
 method can be deconstructed. Consider the following:</p>
-
-<pre><code class="language-csharp">class Person
-{
-    private readonly (string First, string Middle, string Last) _name;
-
-    private readonly DateTime DateOfBirth _dateOfBirth;
-
-    public Person((string f, string m, string l) name, DateTime dob)
-    {
-        _name = name;
-        _dateOfBirth = dob;
-    }
-
-    public void Deconstruct(out double age, 
-                            out string firstName,
-                            out string middleName, 
-                            out string lastName)
-    {
-        age = (DateTime.Now - _dateOfBirth).TotalYears;
-        firstName = _name.First;
-        middleName = _name.Middle;
-        lastName = _name.Last;
-    }
-}
-</code></pre>
-
-<p>Now that the <code>Person</code> is defined with this <code>Deconstruct</code> method, we can deconstruct it following the same ordinal based semantics.</p>
-
-<pre><code class="language-csharp">void DeconstructNonTuple()
-{
-    var person = new Person((&quot;David&quot;, &quot;Michael&quot;, &quot;Pine&quot;), new DateTime(1984, 7, 7));
-
-    (int age, string first, string middle, string last) = person;
-
-    // Note: to partially deconstruct you can ignore a specific ordinal by using the _
-    // This does not actually naming the ordinal variable, but truly ignoring it.
-
-    var (_, _, _, _) = person;          // Ignore all, not very useful
-    var (_, firstName, _, _) = person;  // Cherry-pick first name
-}
-</code></pre>
-
-<h4 id="comparing-anonymous-object-vs-valuetuple">Comparing Anonymous <code>object</code> vs. <code>ValueTuple</code></h4>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> (<span style="color:#66d9ef">string</span> First, <span style="color:#66d9ef">string</span> Middle, <span style="color:#66d9ef">string</span> Last) _name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> DateTime DateOfBirth _dateOfBirth;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Person((<span style="color:#66d9ef">string</span> f, <span style="color:#66d9ef">string</span> m, <span style="color:#66d9ef">string</span> l) name, DateTime dob)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        _name = name;
+</span></span><span style="display:flex;"><span>        _dateOfBirth = dob;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Deconstruct(<span style="color:#66d9ef">out</span> <span style="color:#66d9ef">double</span> age, 
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">string</span> firstName,
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">string</span> middleName, 
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">string</span> lastName)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        age = (DateTime.Now - _dateOfBirth).TotalYears;
+</span></span><span style="display:flex;"><span>        firstName = _name.First;
+</span></span><span style="display:flex;"><span>        middleName = _name.Middle;
+</span></span><span style="display:flex;"><span>        lastName = _name.Last;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now that the <code>Person</code> is defined with this <code>Deconstruct</code> method, we can deconstruct it following the same ordinal based semantics.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> DeconstructNonTuple()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> person = <span style="color:#66d9ef">new</span> Person((<span style="color:#e6db74">&#34;David&#34;</span>, <span style="color:#e6db74">&#34;Michael&#34;</span>, <span style="color:#e6db74">&#34;Pine&#34;</span>), <span style="color:#66d9ef">new</span> DateTime(<span style="color:#ae81ff">1984</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">7</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">int</span> age, <span style="color:#66d9ef">string</span> first, <span style="color:#66d9ef">string</span> middle, <span style="color:#66d9ef">string</span> last) = person;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Note: to partially deconstruct you can ignore a specific ordinal by using the _</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// This does not actually naming the ordinal variable, but truly ignoring it.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> (_, _, _, _) = person;          <span style="color:#75715e">// Ignore all, not very useful</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> (_, firstName, _, _) = person;  <span style="color:#75715e">// Cherry-pick first name</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="comparing-anonymous-object-vs-valuetuple">Comparing Anonymous <code>object</code> vs. <code>ValueTuple</code></h4>
 <p>At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
 a <code>ValueTuple</code> is a <code>struct</code> - value type. Also, you can only return an anonymous object from a method as an <code>object</code> which isn&rsquo;t very API friendly.
 Within a fluent <code>LINQ</code> chained method anonymous objects are great and will still be normal for projection.</p>
-
 <h2 id="local-functions">Local Functions</h2>
-
 <p>At first glance, local functions seem a bit odd. I&rsquo;ve heard people say, &ldquo;this method is starting to look like a class&rdquo;. At first,
 I was one of these people too. Once you get used to the idea and see the benefits it really does make sense. Here is a quick
 comparison of the two, note the benefits of local functions as they compare to lambdas.</p>
-
-<style>
-    .red { color: red; }
-    .green { color: green; }
-</style>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <table>
 <thead>
 <tr>
-<th align="right"></th>
-<th align="left">Lambda(s)</th>
-<th align="left">Local Function(s)</th>
-<th align="left">Details</th>
+<th style="text-align:right"></th>
+<th style="text-align:left">Lambda(s)</th>
+<th style="text-align:left">Local Function(s)</th>
+<th style="text-align:left">Details</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="right">Generics</td>
-<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
-<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
-<td align="left">Local functions allow for the use of generics</td>
+<td style="text-align:right">Generics</td>
+<td style="text-align:left"><i class="fa fa-times" aria-hidden="true"></i></td>
+<td style="text-align:left"><i class="fa fa-check" aria-hidden="true"></i></td>
+<td style="text-align:left">Local functions allow for the use of generics</td>
 </tr>
-
 <tr>
-<td align="right">Iterators</td>
-<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
-<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
-<td align="left">The <code>yield</code> keyword is valid within local functions</td>
+<td style="text-align:right">Iterators</td>
+<td style="text-align:left"><i class="fa fa-times" aria-hidden="true"></i></td>
+<td style="text-align:left"><i class="fa fa-check" aria-hidden="true"></i></td>
+<td style="text-align:left">The <code>yield</code> keyword is valid within local functions</td>
 </tr>
-
 <tr>
-<td align="right">Recursion</td>
-<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
-<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
-<td align="left">Local functions support recursion</td>
+<td style="text-align:right">Recursion</td>
+<td style="text-align:left"><i class="fa fa-times" aria-hidden="true"></i></td>
+<td style="text-align:left"><i class="fa fa-check" aria-hidden="true"></i></td>
+<td style="text-align:left">Local functions support recursion</td>
 </tr>
-
 <tr>
-<td align="right">Allocatey</td>
-<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
-<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
-<td align="left">Delegates require an <code>object</code> allocation</td>
+<td style="text-align:right">Allocatey</td>
+<td style="text-align:left"><i class="fa fa-check" aria-hidden="true"></i></td>
+<td style="text-align:left"><i class="fa fa-times" aria-hidden="true"></i></td>
+<td style="text-align:left">Delegates require an <code>object</code> allocation</td>
 </tr>
-
 <tr>
-<td align="right">Potential Variable Lifting</td>
-<td align="left"><i class="fa fa-check green" aria-hidden="true"></i></td>
-<td align="left"><i class="fa fa-times red" aria-hidden="true"></i></td>
-<td align="left">Implicitly captured closure is non-existent</td>
+<td style="text-align:right">Potential Variable Lifting</td>
+<td style="text-align:left"><i class="fa fa-check" aria-hidden="true"></i></td>
+<td style="text-align:left"><i class="fa fa-times" aria-hidden="true"></i></td>
+<td style="text-align:left">Implicitly captured closure is non-existent</td>
 </tr>
 </tbody>
 </table>
-
-<p>It is vital to understand that local functions are <strong>not</strong> a replacement for <code>Action&lt;T[,T1...]&gt;</code> or <code>Func&lt;T[,T1...]&gt;</code>. These delegate declarations are still
+<p>It is vital to understand that local functions are <!-- raw HTML omitted -->not<!-- raw HTML omitted --> a replacement for <code>Action&lt;T[,T1...]&gt;</code> or <code>Func&lt;T[,T1...]&gt;</code>. These delegate declarations are still
 needed as parameters to enable lambda expression arguments. If you see the <strong>#notasugly</strong> hashtag, this was coined by Mads Torgersen.</p>
-
 <h3 id="more-efficient">More efficient</h3>
-
 <p>When using local functions, there is no <code>object</code> created - unlike delegates that require an object for it to be used. Likewise, local functions
 help to alleviate another issue with lambdas in that they do not need to implicitly capture a variable longer than it is potentially needed.
 In <strong>C#</strong> lambdas capture values by reference, meaning that garbage collection may not be able to correctly clean up code that is &ldquo;allocatey&rdquo;.</p>
-
 <h4 id="declaration">Declaration</h4>
-
 <p>With local functions, the declaration of the local function can actually occur after the <code>return</code> statement - as long as it is within the method body
 in which it is consumed. If you&rsquo;re familiar with some of the implementations of the <code>LINQ</code> extension methods on <code>IEnumerable&lt;T&gt;</code>, you would know a lot
 of the methods are defined with argument validation followed by the instantiation of &ldquo;Iterator&rdquo; classes, where these classes do the actual work.</p>
-
 <p>Because of deferred execution, iterators do not actually execute validation logic until they are iterated - for example invoking <code>.ToList()</code>, <code>.ToArray()</code>,
 or simply using them in a <code>foreach</code> statement. Ideally, we would like our iterators to &ldquo;fail-fast&rdquo; in the event of being given invalid arguments. Let&rsquo;s
 imagine that the <code>.Select</code> extension method was implemented as follows:</p>
-
-<pre><code class="language-csharp">public static IEnumerable&lt;TResult&gt; Select&lt;T, TResult&gt;(this IEnumerable&lt;T&gt; source, 
-                                                           Func&lt;T, TResult&gt; selector)
-{
-    if (source == null) throw new ArgumentNullException(nameof(source));
-    if (selector == null) throw new ArgumentNullException(nameof(selector));
-
-    foreach (var item in source)
-    {
-        yield return selector(item);
-    }
-}
-</code></pre>
-
-<p>Since this method is written as an iterator, the validation is skipped until it&rsquo;s iterated. With <strong>C# 7</strong> we can use local function to get both
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> IEnumerable&lt;TResult&gt; Select&lt;T, TResult&gt;(<span style="color:#66d9ef">this</span> IEnumerable&lt;T&gt; source, 
+</span></span><span style="display:flex;"><span>                                                           Func&lt;T, TResult&gt; selector)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (source == <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(source));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (selector == <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(selector));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> item <span style="color:#66d9ef">in</span> source)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> selector(item);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Since this method is written as an iterator, the validation is skipped until it&rsquo;s iterated. With <strong>C# 7</strong> we can use local function to get both
 &ldquo;fail-fast&rdquo; validation and the iterator together.</p>
-
-<pre><code class="language-csharp">public static IEnumerable&lt;TResult&gt; Select&lt;T, TResult&gt;(this IEnumerable&lt;T&gt; source, 
-                                                           Func&lt;T, TResult&gt; selector)
-{
-    if (source == null) throw new ArgumentNullException(nameof(source));
-    if (selector == null) throw new ArgumentNullException(nameof(selector));
-
-    return iterator();
-
-    IEnumerable&lt;TResult&gt; iterator()
-    {
-        foreach (var item in source)
-        {
-            yield return selector(item);
-        }
-    }
-}
-</code></pre>
-
-<h1 id="throw-expressions"><code>throw</code> expressions</h1>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> IEnumerable&lt;TResult&gt; Select&lt;T, TResult&gt;(<span style="color:#66d9ef">this</span> IEnumerable&lt;T&gt; source, 
+</span></span><span style="display:flex;"><span>                                                           Func&lt;T, TResult&gt; selector)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (source == <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(source));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (selector == <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(selector));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> iterator();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    IEnumerable&lt;TResult&gt; iterator()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> item <span style="color:#66d9ef">in</span> source)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> selector(item);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="throw-expressions"><code>throw</code> expressions</h1>
 <p>Leveraging some pre-existing <strong>C#</strong> functionality - <code>null</code> coalescing, we can now <code>throw</code> when a value is evaluated as <code>null</code>. A common validation
 mechanism is to <code>throw</code> if an argument is <code>null</code>. Consider the following:</p>
-
-<pre><code class="language-csharp">class LegacyService : IService
-{
-    private readonly IContextProvider _provider;
-
-    public LegacyService(IContextProvider provider)
-    {
-        if (provider == null)
-        {
-            throw new ArgumentNullException(nameof(provider));
-        }
-
-        _provider = provider;
-    }
-}
-</code></pre>
-
-<p>With <strong>C# 7</strong> we can simplify this with the <code>throw</code> expression.</p>
-
-<pre><code class="language-csharp">class ModernService : IService
-{
-    private readonly IContextProvider _provider;
-
-    public ModernService(IContextProvider provider)
-    {
-        _provider = provider ?? throw new ArgumentNullException(nameof(provider));
-    }
-}
-</code></pre>
-
-<p>If the given <code>provider</code> argument is <code>null</code> we&rsquo;ll coalesce over to the <code>throw</code> expression.</p>
-
-<h1 id="from-c-6-to-c-7-then-and-now">From C# 6 to C# 7, then and now!</h1>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LegacyService</span> : IService
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IContextProvider _provider;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> LegacyService(IContextProvider provider)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (provider == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(provider));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        _provider = provider;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With <strong>C# 7</strong> we can simplify this with the <code>throw</code> expression.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ModernService</span> : IService
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IContextProvider _provider;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ModernService(IContextProvider provider)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        _provider = provider ?? <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(provider));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If the given <code>provider</code> argument is <code>null</code> we&rsquo;ll coalesce over to the <code>throw</code> expression.</p>
+<h1 id="from-c-6-to-c-7-then-and-now">From C# 6 to C# 7, then and now</h1>
 <p>I have a presentation that I have been fortunate enough to give at some regional conferences. One of these occasions was recorded, and I felt it
 made sense to share it here - Enjoy!!</p>
-
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/kFpXRooGo0c" frameborder="0" allowfullscreen></iframe>
-</div>
-
+<!-- raw HTML omitted -->
 <p><strong>Further Reading</strong></p>
-
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" target="_blank">What&rsquo;s new in C# 7</a></li>
+<li>
+
+    
+        
+    
+
+    <a href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" target='_blank'>What&#39;s new in C# 7</a>
+
+</li>
 </ul>
 
     </div>
@@ -993,7 +890,7 @@ made sense to share it here - Enjoy!!</p>
         <article class="post">
             <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -1030,19 +927,57 @@ made sense to share it here - Enjoy!!</p>
         
         <header>
             <h2>David Pine</h2>
-            <p>Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time</p>
+            <p>
+                🤓 Changing the world — one line of code at a time.
+                <span class="responsive-float">
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                        Follow @davidpine7
+                    </a>
+                </span>
+                <script>
+                    window.twitter = (function (d, s, id) {
+                    var js,
+                        fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+                </script>
+            </p>
         </header>
         
 
+        <hr />
+
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
+            </a>
+        </section>
+
+        <hr />
+
         <div class='row'>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp-v.png" width="160px" />
+                <a target="_blank" rel="noopener"
+                    href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://google-developers.appspot.com/community/experts/directory/profile/profile-david_pine">
-                    <img src="/img/main/gde.png" width="210px" />
+                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>
@@ -1150,6 +1085,32 @@ made sense to share it here - Enjoy!!</p>
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-15'>
+                            September 15, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-08'>
+                            September 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
                         
                         
@@ -1160,38 +1121,16 @@ made sense to share it here - Enjoy!!</p>
                 </article>
             </li>
             
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-21'>
-                            March 21, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-14'>
-                            March 14, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
 
             
             <li>
                 <ul class="actions">
-                    <li><a href= /blog/  class="button">View
-                            more posts</a></li>
+                    <li>
+                        <a href= /blog/ 
+                            class="button">
+                            View more posts
+                        </a>
+                    </li>
                 </ul>
             </li>
             
@@ -1217,7 +1156,7 @@ made sense to share it here - Enjoy!!</p>
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">12</span>
+                        <span style="float:right;">14</span>
                     </header>
                 </article>
             </li>
@@ -1288,6 +1227,33 @@ made sense to share it here - Enjoy!!</p>
             <li>
                 <article>
                     <header>
+                        <a href="/categories/wasm/">wasm</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/webassembly/">webassembly</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/blazor/">blazor</a>
+                        <span style="float:right;">3</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/http/">http</a>
                         <span style="float:right;">2</span>
                     </header>
@@ -1307,24 +1273,6 @@ made sense to share it here - Enjoy!!</p>
                 <article>
                     <header>
                         <a href="/categories/tooling/">tooling</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/wasm/">wasm</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/webassembly/">webassembly</a>
                         <span style="float:right;">2</span>
                     </header>
                 </article>
@@ -1361,15 +1309,6 @@ made sense to share it here - Enjoy!!</p>
                 <article>
                     <header>
                         <a href="/categories/azure-functions/">azure-functions</a>
-                        <span style="float:right;">1</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/blazor/">blazor</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1637,7 +1576,8 @@ made sense to share it here - Enjoy!!</p>
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        </p>
     </section>
 
 </section>

@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.102.1" />
         
 
 
@@ -33,28 +33,16 @@
         <meta property="og:title" content="TypeScript - JavaScript Reimagined" />
 <meta property="og:description" content="&#34;Making JavaScript tolerable&#34;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://davidpine.net/blog/typescript-javascript-reimagined/" />
-
-<meta property="og:image" content="https://davidpine.net/img/2017/05/type-writer.jpg" />
-<meta property="article:published_time" content="2017-05-02T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-02T00:00:00&#43;00:00"/>
-
-        
-<meta itemprop="name" content="TypeScript - JavaScript Reimagined">
-<meta itemprop="description" content="&#34;Making JavaScript tolerable&#34;">
+<meta property="og:url" content="https://davidpine.net/blog/typescript-javascript-reimagined/" /><meta property="og:image" content="https://davidpine.net/img/2017/05/type-writer.jpg" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-05-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-02T00:00:00+00:00" />
 
 
-<meta itemprop="datePublished" content="2017-05-02T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1122">
-
-  <meta itemprop="image" content="https://davidpine.net/img/2017/05/type-writer.jpg">
-
-
-
+        <meta itemprop="name" content="TypeScript - JavaScript Reimagined">
+<meta itemprop="description" content="&#34;Making JavaScript tolerable&#34;"><meta itemprop="datePublished" content="2017-05-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-05-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1127"><meta itemprop="image" content="https://davidpine.net/img/2017/05/type-writer.jpg">
 <meta itemprop="keywords" content="" />
-
-        
 
         
 
@@ -90,17 +78,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
         
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
-
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         
@@ -295,15 +276,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
             </ul>
@@ -381,9 +362,11 @@ if (!doNotTrack) {
             
         
 
-        <time class="published"
-            datetime='2017-05-02'>
-            May 2, 2017</time>
+        <time class="published" data-hover='May, 2017'
+            datetime='2017-05-02'
+            data-initial='Written on'>
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
+        </time>
         <span class="author">David Pine</span>
         
             <p>6 minute read</p>
@@ -460,49 +443,67 @@ if (!doNotTrack) {
 
 
     <div id="content">
+        <h1 id="first-things-first">First things First</h1>
+<p>JavaScript is the world&rsquo;s third most common programming language today. JavaScript was created by 
+
+    
         
+    
 
-<h1 id="first-things-first">First things First</h1>
+    <a href="https://twitter.com/BrendanEich" target='_blank'>Brendan Eich</a>
 
-<p>JavaScript is the world&rsquo;s third most common programming language today. JavaScript was created by <a href="https://twitter.com/BrendanEich" target="_blank">Brendan Eich</a> in about ten days. It might seem odd that the
+ in about ten days. It might seem odd that the
 previous two sentences not only exist, but go together&hellip;yet it is true! JavaScript runs seemingly everywhere and applications written in this
 language are only getting larger.</p>
-
 <blockquote>
-<p><p/> JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.
-<cite><a href="https://twitter.com/ahejlsberg" target="_blank">Anders Hejlsberg</a></cite></p>
+<p>JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.
+<!-- raw HTML omitted -->
+
+    
+        
+    
+
+    <a href="https://twitter.com/ahejlsberg" target='_blank'>Anders Hejlsberg</a>
+
+<!-- raw HTML omitted --></p>
 </blockquote>
-
 <h2 id="the-good-parts">&ldquo;The Good Parts&rdquo;</h2>
+<p>
 
-<p><a href="http://www.crockford.com/" target="_blank">Douglas Crockford</a> authored a book &ldquo;JavaScript: The Good Parts&rdquo;, sadly it was a rather short book. If you&rsquo;re a JavaScript developer, knowing &ldquo;the good parts&rdquo;
+    
+        
+    
+
+    <a href="https://www.crockford.com/" target='_blank'>Douglas Crockford</a>
+
+ authored a book &ldquo;JavaScript: The Good Parts&rdquo;, sadly it was a rather short book. If you&rsquo;re a JavaScript developer, knowing &ldquo;the good parts&rdquo;
 is great - but knowing the limitations and shortcomings of a language is even more powerful. Sometimes it feels like JavaScript is a hammer and not every
 problem we&rsquo;re trying to solve is a nail. NodeJs is a great example of this in my opinion &ndash; because I&rsquo;m a <code>.NET</code> developer, but I digress&hellip; If you want a good laugh watch
-Gary Bernhardt&rsquo;s <a href="https://www.destroyallsoftware.com/talks/wat" target="_blank">WAT video</a>, go ahead &ndash; I&rsquo;ll wait! In all seriousness, JavaScript
+Gary Bernhardt&rsquo;s 
+
+    
+        
+    
+
+    <a href="https://www.destroyallsoftware.com/talks/wat" target='_blank'>WAT video</a>
+
+, go ahead &ndash; I&rsquo;ll wait! In all seriousness, JavaScript
 is a great programming language for countless reasons, but it is easy to poke fun at.</p>
-
 <h3 id="mental-model">Mental Model</h3>
-
 <p>I met a fellow technical public speaker who is a well respected JavaScript developer. He was arguing his hatred for TypeScript. There are several key takeaways
 from the debate that I think will stick with me for a while.</p>
-
 <h4 id="learn-it">Learn it</h4>
-
 <blockquote>
-<p><p/> You should learn the JavaScript programming language</p>
+<p>You should learn the JavaScript programming language</p>
 </blockquote>
-
 <p>I already know JavaScript (but I really don&rsquo;t know JavaScript) &ndash; I would never consider myself an expert or a guru! However, I write TypeScript nearly
 every single day that I develop. Some of the aforementioned names are among the very few who might be considered as such. I recall that when this part
 of the conversation was encountered, we came up with an analogy.</p>
-
 <blockquote>
-<p><p/> Not all JavaScript developers are Tour de France champions (or contenders)</p>
+<p>Not all JavaScript developers are Tour de France champions (or contenders)</p>
 </blockquote>
-
 <p>This was the reoccurring analogy and I agreed with it wholeheartedly. That is why I think that TypeScript is like &ldquo;training wheels&rdquo; for JavaScript developers.
 That is not at all a bad thing! Just look at what you can do with &ldquo;training wheels&rdquo;.</p>
-
 
 
 
@@ -596,13 +597,10 @@ That is not at all a bad thing! Just look at what you can do with &ldquo;trainin
     </div>
 
 
-
 <p>Seriously though, with that fact that <strong>we are not compilers</strong> and we cannot predict certain behaviors that occur in the &ldquo;wild west&rdquo; of JavaScript &ndash; <strong>we should
 rely on tooling to help</strong>. It is simply a pragmatic approach to developing with a true sense of reliability and consistency. Training wheels provide you with the
 confidence and security. Once your TypeScript is compiled to JavaScript, the training wheels are removed and your code is ready to brave the new world!</p>
-
 <h1 id="typescript">TypeScript</h1>
-
 <p>I could never compete with the TypeScript site. They have a beautifully composed tutorial, handbook and rich set of documentation. If that is what
 you&rsquo;re looking for - by all means 
 
@@ -610,101 +608,86 @@ you&rsquo;re looking for - by all means
         
     
 
-    <a href="http://www.typescriptlang.org/docs/tutorial.html" target='_blank'>go check it out</a>
+    <a href="https://www.typescriptlang.org/docs/tutorial.html" target='_blank'>go check it out</a>
 
 . If you&rsquo;d like to hear more
 on my thoughts - keep reading.</p>
-
 <p>All valid JavaScript is also valid TypeScript, as TypeScript is a superset of JavaScript. TypeScript allows you as a developer to program in the
 latest version of the ECMAScript standard, while still being about to target all the way back to ES3. Upon compilation, your code is pure JavaScript
 and all the type notations are removed. The static type system is only applicable when working with TypeScript related files.</p>
-
 <h2 id="extensions-explained">Extensions Explained</h2>
-
 <p>I initially had some confusion about the various file extensions. It was obvious what <code>.ts</code> and <code>.js</code> files were, but what were these <code>.map</code> and <code>.d.ts</code> files?
 Ironically, <code>.map</code> files have been around since CoffeeScript and are nothing new. They map JavaScript files to their corresponding abstractions, in the case of
 TypeScript - they map <code>.ts</code> to <code>.js</code> files. The <code>.d.ts</code> files are known as type definitions. They define the public surface area or API if you will, of a given
-library. More detail <a href="http://stackoverflow.com/a/37063570/2410379" target="_blank">here <i class="fa fa-stack-overflow" aria-hidden="true"></i></a>.</p>
+library. More detail 
 
-<h2 id="enough-sales-pitch-show-me-some-code">Enough Sales Pitch - Show me some code</h2>
+    
+        
+    
 
+    <a href="https://stackoverflow.com/a/37063570/2410379" target='_blank'>here {{&lt; i fa-stack-overflow &gt;}}</a>
+
+.</p>
+<h2 id="enough-sales-pitch---show-me-some-code">Enough Sales Pitch - Show me some code</h2>
 <p>The 
 
     
         
     
 
-    <a href="http://www.typescriptlang.org/play/index.html" target='_blank'>TypeScript playground</a>
+    <a href="https://www.typescriptlang.org/play/index.html" target='_blank'>TypeScript playground</a>
 
  is an amazing place, since it has a side-by-side of the input TypeScript and the resulting JavaScript.
 This is an excellent place to learn how TypeScript works and what it is capable of. I always find it interesting seeing how certain
 things are implemented. Take for example an <code>enum</code>. In most languages it&rsquo;s easy to take this for granted, the same is true with
 TypeScript - but seeing how the resulting JavaScript is really something special.</p>
-
-<pre><code class="language-typescript">export enum DayOfWeek {
-    Sunday,
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday
-}
-</code></pre>
-
-<p>This seems like a very clean declaration of an <code>enum</code>, right?! We know that <code>DayOfWeek.Monday</code> would have a value of <code>1</code>, and
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">DayOfWeek</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Sunday</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Monday</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Tuesday</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Wednesday</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Thursday</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Friday</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Saturday</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This seems like a very clean declaration of an <code>enum</code>, right?! We know that <code>DayOfWeek.Monday</code> would have a value of <code>1</code>, and
 <code>DayOfWeek.Friday</code> would then be <code>5</code> for example. But let&rsquo;s have a look at the JavaScript output.</p>
-
-<pre><code class="language-javascript">var DayOfWeek;
-(function (DayOfWeek) {
-    DayOfWeek[DayOfWeek[&quot;Sunday&quot;] = 0] = &quot;Sunday&quot;;
-    DayOfWeek[DayOfWeek[&quot;Monday&quot;] = 1] = &quot;Monday&quot;;
-    DayOfWeek[DayOfWeek[&quot;Tuesday&quot;] = 2] = &quot;Tuesday&quot;;
-    DayOfWeek[DayOfWeek[&quot;Wednesday&quot;] = 3] = &quot;Wednesday&quot;;
-    DayOfWeek[DayOfWeek[&quot;Thursday&quot;] = 4] = &quot;Thursday&quot;;
-    DayOfWeek[DayOfWeek[&quot;Friday&quot;] = 5] = &quot;Friday&quot;;
-    DayOfWeek[DayOfWeek[&quot;Saturday&quot;] = 6] = &quot;Saturday&quot;;
-})(DayOfWeek || (DayOfWeek = {}));
-</code></pre>
-
-<p>If you look at this look enough, you&rsquo;ll see that it&rsquo;s a rather simple solution. It is essentially a reverse map, where properties
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">DayOfWeek</span>;
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">DayOfWeek</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#e6db74">&#34;Sunday&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sunday&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#e6db74">&#34;Monday&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Monday&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#e6db74">&#34;Tuesday&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tuesday&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#e6db74">&#34;Wednesday&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Wednesday&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#e6db74">&#34;Thursday&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Thursday&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#e6db74">&#34;Friday&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Friday&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#a6e22e">DayOfWeek</span>[<span style="color:#e6db74">&#34;Saturday&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Saturday&#34;</span>;
+</span></span><span style="display:flex;"><span>})(<span style="color:#a6e22e">DayOfWeek</span> <span style="color:#f92672">||</span> (<span style="color:#a6e22e">DayOfWeek</span> <span style="color:#f92672">=</span> {}));
+</span></span></code></pre></div><p>If you look at this look enough, you&rsquo;ll see that it&rsquo;s a rather simple solution. It is essentially a reverse map, where properties
 are assigned to from their indexes. On the <code>DayOfWeek</code> instance, we declare and assign property <code>Sunday</code> equal to <code>0</code>. Likewise,
 we declare and assign property <code>0</code> equal to the value <code>Sunday</code>, etc&hellip;</p>
-
-<h3 id="type-aliases-generics-and-mapped-types">Type Aliases, Generics and  Mapped Types</h3>
-
+<h3 id="type-aliases-generics-and--mapped-types">Type Aliases, Generics and  Mapped Types</h3>
 <p>I recently learned about the <code>keyof</code> operator in TypeScript, and wow is it powerful! Let&rsquo;s consider the following mutable object.</p>
-
-<pre><code class="language-typescript">export class MutableDataBag&lt;T&gt; {
-    public data: T;
-    public name: string;
-
-    constructor(private id: number) { }
-}
-</code></pre>
-
-<p>This is a rather simple object. It defines several members that are <code>public</code> and assignable, namely the <code>data</code> and <code>name</code> members.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MutableDataBag</span>&lt;<span style="color:#f92672">T</span>&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">T</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">number</span>) { }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is a rather simple object. It defines several members that are <code>public</code> and assignable, namely the <code>data</code> and <code>name</code> members.
 Imagine that we decide that we actually expose this structure from an API - but we want it to be immutable, i.e.; <code>readonly</code>. Enter
 &ldquo;mapped types&rdquo;.</p>
-
-<pre><code class="language-typescript">export type Readonly&lt;T&gt; = {
-    readonly [P in keyof T]: T[P];
-}
-</code></pre>
-
-<p>The type alias of <code>Readonly</code> takes on an generic of type <code>T</code>, furthermore it defines that all the members of type <code>T</code> are accessible
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Readonly</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">readonly</span> [<span style="color:#a6e22e">P</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">T</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span>[<span style="color:#a6e22e">P</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The type alias of <code>Readonly</code> takes on an generic of type <code>T</code>, furthermore it defines that all the members of type <code>T</code> are accessible
 as <code>readonly</code> members. This leverages the <code>keyof</code> operator in which <code>P</code> is accessible so long as it is a member of <code>T</code> (key of <code>T</code>).
 So, now we can return a <code>Readonly&lt;MutableDataBag&lt;T&gt;&gt;</code> from our API and rest assured knowing that TypeScript prevents it&rsquo;s members from
 being written to.</p>
-
 <h1 id="conclusion">Conclusion</h1>
-
 <p>This is literally just the tip of the iceberg (or even less). TypeScript has truly made JavaScript tolerable.
 TypeScript answers so many questions and addresses so many concerns that it&rsquo;s hard to justify not using&hellip;if you&rsquo;re not using
 TypeScript, there are other options out there. Pick your poison!!</p>
-
 <h3 id="resources">Resources</h3>
-
 <ul>
 <li>
 
@@ -721,7 +704,7 @@ TypeScript, there are other options out there. Pick your poison!!</p>
         
     
 
-    <a href="http://www.typescriptlang.org/docs/tutorial.html" target='_blank'>TypeScript Documentation</a>
+    <a href="https://www.typescriptlang.org/docs/tutorial.html" target='_blank'>TypeScript Documentation</a>
 
 </li>
 </ul>
@@ -767,7 +750,7 @@ TypeScript, there are other options out there. Pick your poison!!</p>
         <article class="post">
             <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -804,19 +787,57 @@ TypeScript, there are other options out there. Pick your poison!!</p>
         
         <header>
             <h2>David Pine</h2>
-            <p>Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time</p>
+            <p>
+                🤓 Changing the world — one line of code at a time.
+                <span class="responsive-float">
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                        Follow @davidpine7
+                    </a>
+                </span>
+                <script>
+                    window.twitter = (function (d, s, id) {
+                    var js,
+                        fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+                </script>
+            </p>
         </header>
         
 
+        <hr />
+
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
+            </a>
+        </section>
+
+        <hr />
+
         <div class='row'>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp-v.png" width="160px" />
+                <a target="_blank" rel="noopener"
+                    href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://google-developers.appspot.com/community/experts/directory/profile/profile-david_pine">
-                    <img src="/img/main/gde.png" width="210px" />
+                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>
@@ -924,6 +945,32 @@ TypeScript, there are other options out there. Pick your poison!!</p>
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-15'>
+                            September 15, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-08'>
+                            September 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
                         
                         
@@ -934,38 +981,16 @@ TypeScript, there are other options out there. Pick your poison!!</p>
                 </article>
             </li>
             
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-21'>
-                            March 21, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-14'>
-                            March 14, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
 
             
             <li>
                 <ul class="actions">
-                    <li><a href= /blog/  class="button">View
-                            more posts</a></li>
+                    <li>
+                        <a href= /blog/ 
+                            class="button">
+                            View more posts
+                        </a>
+                    </li>
                 </ul>
             </li>
             
@@ -991,7 +1016,7 @@ TypeScript, there are other options out there. Pick your poison!!</p>
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">12</span>
+                        <span style="float:right;">14</span>
                     </header>
                 </article>
             </li>
@@ -1062,6 +1087,33 @@ TypeScript, there are other options out there. Pick your poison!!</p>
             <li>
                 <article>
                     <header>
+                        <a href="/categories/wasm/">wasm</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/webassembly/">webassembly</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/blazor/">blazor</a>
+                        <span style="float:right;">3</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/http/">http</a>
                         <span style="float:right;">2</span>
                     </header>
@@ -1081,24 +1133,6 @@ TypeScript, there are other options out there. Pick your poison!!</p>
                 <article>
                     <header>
                         <a href="/categories/tooling/">tooling</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/wasm/">wasm</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/webassembly/">webassembly</a>
                         <span style="float:right;">2</span>
                     </header>
                 </article>
@@ -1135,15 +1169,6 @@ TypeScript, there are other options out there. Pick your poison!!</p>
                 <article>
                     <header>
                         <a href="/categories/azure-functions/">azure-functions</a>
-                        <span style="float:right;">1</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/blazor/">blazor</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1411,7 +1436,8 @@ TypeScript, there are other options out there. Pick your poison!!</p>
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        </p>
     </section>
 
 </section>

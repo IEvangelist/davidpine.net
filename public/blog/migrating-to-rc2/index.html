@@ -12,7 +12,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.102.1" />
         
 
 
@@ -33,28 +33,16 @@
         <meta property="og:title" content="ASP.NET Core RC2 (Migration Guide)" />
 <meta property="og:description" content="Migrating from RC1 to RC2" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://davidpine.net/blog/migrating-to-rc2/" />
-
-<meta property="og:image" content="https://davidpine.net/img/2016/05/migrating.jpg" />
-<meta property="article:published_time" content="2016-05-20T22:40:31-05:00"/>
-<meta property="article:modified_time" content="2016-05-20T22:40:31-05:00"/>
-
-        
-<meta itemprop="name" content="ASP.NET Core RC2 (Migration Guide)">
-<meta itemprop="description" content="Migrating from RC1 to RC2">
+<meta property="og:url" content="https://davidpine.net/blog/migrating-to-rc2/" /><meta property="og:image" content="https://davidpine.net/img/2016/05/migrating.jpg" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-05-20T22:40:31-05:00" />
+<meta property="article:modified_time" content="2016-05-20T22:40:31-05:00" />
 
 
-<meta itemprop="datePublished" content="2016-05-20T22:40:31-05:00" />
+        <meta itemprop="name" content="ASP.NET Core RC2 (Migration Guide)">
+<meta itemprop="description" content="Migrating from RC1 to RC2"><meta itemprop="datePublished" content="2016-05-20T22:40:31-05:00" />
 <meta itemprop="dateModified" content="2016-05-20T22:40:31-05:00" />
-<meta itemprop="wordCount" content="1846">
-
-  <meta itemprop="image" content="https://davidpine.net/img/2016/05/migrating.jpg">
-
-
-
+<meta itemprop="wordCount" content="1846"><meta itemprop="image" content="https://davidpine.net/img/2016/05/migrating.jpg">
 <meta itemprop="keywords" content="" />
-
-        
 
         
 
@@ -90,17 +78,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
         
-    
-        <link rel="stylesheet" href="/css/justifiedGallery.min.css">
-        <link rel="stylesheet" href="/css/lightgallery.min.css">
     </head>
     <body>
-
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/jquery.justifiedGallery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom">
         </script>
 
         
@@ -295,15 +276,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/asp-net-core-slack/"><p>ASP.NET Core - Slack Slash Commands</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/angular-color-game/"><p>Angular - The Color Guessing Game</p></a>
                     </li>
                 
             </ul>
@@ -381,9 +362,11 @@ if (!doNotTrack) {
             
         
 
-        <time class="published"
-            datetime='2016-05-20'>
-            May 20, 2016</time>
+        <time class="published" data-hover='May, 2016'
+            datetime='2016-05-20'
+            data-initial='Written on'>
+            <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
+        </time>
         <span class="author">David Pine</span>
         
             <p>9 minute read</p>
@@ -460,479 +443,318 @@ if (!doNotTrack) {
 
 
     <div id="content">
-        
-
-<h1 id="introduction">Introduction</h1>
-
-<p>On Monday, May 16<sup>th</sup> 2016 there was an amazing announcement from the <strong>.NET Blog</strong> team!</p>
-
+        <h1 id="introduction">Introduction</h1>
+<p>On Monday, May 16<!-- raw HTML omitted -->th<!-- raw HTML omitted --> 2016 there was an amazing announcement from the <strong>.NET Blog</strong> team!</p>
 <blockquote>
-<p><p/><a href="https://blogs.msdn.microsoft.com/dotnet/2016/05/16/announcing-net-core-rc2/">Announcing .NET Core RC2 and .NET Core SDK Preview 1</a></p>
+<p><a href="https://blogs.msdn.microsoft.com/dotnet/2016/05/16/announcing-net-core-rc2/">Announcing .NET Core RC2 and .NET Core SDK Preview 1</a></p>
 </blockquote>
-
 <p>This post will serve as a guide that walks you through the steps as I experienced them from migrating existing <code>ASP.NET Core RC1</code> applications to <code>ASP.NET Core RC2</code>.
 It is worth mentioning that I&rsquo;m am targeting the <code>.NET 4.6</code> framework. So, I <em>do not</em> cover the <code>.netcoreapp</code> or <code>netstandard</code> TFMs (target framework monikers).</p>
-
 <h2 id="tooling">Tooling</h2>
-
 <p>The <strong>RC2</strong> release brings the <code>.NET Core CLI</code> to the forefront, and with that all the other command line tooling that
 you&rsquo;ve grown accustomed to should be stricken from your environment, i.e.; <code>DNX</code>, <code>DNU</code>, and <code>DNVM</code>. Let&rsquo;s start with the
 removal of all these utilities.</p>
-
 <h3 id="removing-dnvm">Removing DNVM</h3>
-
 <p>Believe it or not, you might have a dated version of the <strong>DNVM CLI</strong> and in order to invoke the <code>uninstall</code> you might have to first
 perform an <code>update-self</code> command. Doing so will ensure that you have the latest version, which will contain the <code>uninstall</code> command.
 From a <code>cmd</code> window <em>running as admininistrator</em>, execute the following:</p>
-
-<pre><code>dnvm update-self
-</code></pre>
-
-<p>Then execute the following:</p>
-
-<pre><code>dnvm uninstall
-</code></pre>
-
-<h4 id="verification">Verification</h4>
-
+<pre tabindex="0"><code>dnvm update-self
+</code></pre><p>Then execute the following:</p>
+<pre tabindex="0"><code>dnvm uninstall
+</code></pre><h4 id="verification">Verification</h4>
 <p>From a new <code>cmd</code> window, the <code>dnvm</code> command should result in the following:</p>
-
-<pre><code>λ dnvm
-'dnvm' is not recognized as an internal or external command, operable program or batch file.
-</code></pre>
-
-<h3 id="removing-dnx-dnu">Removing DNX &amp; DNU</h3>
-
+<pre tabindex="0"><code>λ dnvm
+&#39;dnvm&#39; is not recognized as an internal or external command, operable program or batch file.
+</code></pre><h3 id="removing-dnx--dnu">Removing DNX &amp; DNU</h3>
 <p>From a <code>cmd</code> line window, execute <code>dnx</code> - you should see something similar to this as output:</p>
-
-<pre><code class="language-yaml">λ dnx
-Microsoft .NET Execution environment Clr-x86-1.0.0-rc1-16231
-
-Usage: dnx [options]
-
-Options:
-  --project|-p &lt;PATH&gt;              Path to the project.json file or the application folder. Defaults to the current folder if not provided.
-  --appbase &lt;PATH&gt;                 Application base directory path
-  --lib &lt;LIB_PATHS&gt;                Paths used for library look-up
-  --debug                          Waits for the debugger to attach before beginning execution.
-  --bootstrapper-debug             Waits for the debugger to attach before bootstrapping runtime.
-  --framework &lt;FRAMEWORK_ID&gt;       Set the framework version to use when running (i.e. dnx451, dnx452, dnx46, ...)
-  -?|-h|--help                     Show help information
-  --version                        Show version information
-  --watch                          Watch file changes
-  --packages &lt;PACKAGE_DIR&gt;         Directory containing packages
-  --configuration &lt;CONFIGURATION&gt;  The configuration to run under
-  --port &lt;PORT&gt;                    The port to the compilation server
-</code></pre>
-
-<p>Likewise enter <code>dnu</code> in the same <code>cmd</code> window, expecting the following output:</p>
-
-<pre><code class="language-yaml">λ dnu
-Microsoft .NET Development Utility Clr-x86-1.0.0-rc1-16231
-
-Usage: dnu [options] [command]
-
-Options:
-  -v|--verbose  Show verbose output
-  -?|-h|--help  Show help information
-  --version     Show version information
-
-Commands:
-  build             Produce assemblies for the project in given directory
-  clear-http-cache  Clears the package cache.
-  commands          Commands related to managing application commands (install, uninstall)
-  feeds             Commands related to managing package feeds currently in use
-  install           Install the given dependency
-  list              Print the dependencies of a given project
-  pack              Build NuGet packages for the project in given directory
-  packages          Commands related to managing local and remote packages folders
-  publish           Publish application for deployment
-  restore           Restore packages
-  wrap              Wrap a csproj/assembly into a project.json, which can be referenced by project.json files
-
-Use &quot;dnu [command] --help&quot; for more information about a command.
-</code></pre>
-
-<p>The <code>DNX</code> and <code>DNU</code> command line tools are simply <code>exe's</code> in your <code>%USERPROFILE%\.dnx</code> and <code>%USERPROFILE%\.dnx\bin</code> directories. Navigate to your <code>%USERPROFILE%</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">λ dnx</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">Microsoft .NET Execution environment Clr-x86-1.0.0-rc1-16231</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Usage</span>: <span style="color:#ae81ff">dnx [options]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Options</span>:
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">project|-p &lt;PATH&gt;              Path to the project.json file or the application folder. Defaults to the current folder if not provided.</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">appbase &lt;PATH&gt;                 Application base directory path</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">lib &lt;LIB_PATHS&gt;                Paths used for library look-up</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">debug                          Waits for the debugger to attach before beginning execution.</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">bootstrapper-debug             Waits for the debugger to attach before bootstrapping runtime.</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">framework &lt;FRAMEWORK_ID&gt;       Set the framework version to use when running (i.e. dnx451, dnx452, dnx46, ...)</span>
+</span></span><span style="display:flex;"><span>  -?<span style="color:#ae81ff">|-h|--help                     Show help information</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">version                        Show version information</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">watch                          Watch file changes</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">packages &lt;PACKAGE_DIR&gt;         Directory containing packages</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">configuration &lt;CONFIGURATION&gt;  The configuration to run under</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">port &lt;PORT&gt;                    The port to the compilation server</span>
+</span></span></code></pre></div><p>Likewise enter <code>dnu</code> in the same <code>cmd</code> window, expecting the following output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">λ dnu</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">Microsoft .NET Development Utility Clr-x86-1.0.0-rc1-16231</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Usage</span>: <span style="color:#ae81ff">dnu [options] [command]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Options</span>:
+</span></span><span style="display:flex;"><span>  -<span style="color:#ae81ff">v|--verbose  Show verbose output</span>
+</span></span><span style="display:flex;"><span>  -?<span style="color:#ae81ff">|-h|--help  Show help information</span>
+</span></span><span style="display:flex;"><span>  --<span style="color:#ae81ff">version     Show version information</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Commands</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">build             Produce assemblies for the project in given directory</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">clear-http-cache  Clears the package cache.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">commands          Commands related to managing application commands (install, uninstall)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">feeds             Commands related to managing package feeds currently in use</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">install           Install the given dependency</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">list              Print the dependencies of a given project</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">pack              Build NuGet packages for the project in given directory</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">packages          Commands related to managing local and remote packages folders</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">publish           Publish application for deployment</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">restore           Restore packages</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">wrap              Wrap a csproj/assembly into a project.json, which can be referenced by project.json files</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">Use &#34;dnu [command] --help&#34; for more information about a command.</span>
+</span></span></code></pre></div><p>The <code>DNX</code> and <code>DNU</code> command line tools are simply <code>exe's</code> in your <code>%USERPROFILE%\.dnx</code> and <code>%USERPROFILE%\.dnx\bin</code> directories. Navigate to your <code>%USERPROFILE%</code>
 directory from windows explorer and delete the <code>.dnx</code> directory entirely. Once you have successfully deleted this directory you
 should be able to execute the <code>dnx</code> and <code>dnu</code> commands again from a <code>cmd</code> window and the system should complain that they are not
 recognized.</p>
-
 <h4 id="verification-1">Verification</h4>
-
 <p>From a new <code>cmd</code> window, the <code>dnx</code> and <code>dnu</code> commands should result in the following:</p>
-
-<pre><code>λ dnx
-'dnx' is not recognized as an internal or external command, operable program or batch file.
-</code></pre>
-
-<pre><code>λ dnu
-'dnu' is not recognized as an internal or external command, operable program or batch file.
-</code></pre>
-
-<h3 id="environment-variables">Environment Variables</h3>
-
+<pre tabindex="0"><code>λ dnx
+&#39;dnx&#39; is not recognized as an internal or external command, operable program or batch file.
+</code></pre><pre tabindex="0"><code>λ dnu
+&#39;dnu&#39; is not recognized as an internal or external command, operable program or batch file.
+</code></pre><h3 id="environment-variables">Environment Variables</h3>
 <p>Unfortunately, the <code>PATH</code> environment variable is not cleaned up and this needs to be done manually.</p>
-
-<p>Press the <kbd>Windows</kbd> key, then begin typing &ldquo;environment&rdquo;, then select either of the two top options returned:</p>
-
-<p><img src="/img/2016/05/win-search.png" alt="Windows Search" /></p>
-
+<p>Press the <!-- raw HTML omitted -->Windows<!-- raw HTML omitted --> key, then begin typing &ldquo;environment&rdquo;, then select either of the two top options returned:</p>
+<p><img src="/img/2016/05/win-search.png" alt="Windows Search"></p>
 <p>You are then presented the &ldquo;system properties&rdquo; dialog, select <strong>Environment Variables</strong>.</p>
-
-<p><img src="/img/2016/05/sys-props.png" alt="System Properties" /></p>
-
-<p>We will need to ensure that both <code>PATH</code> variables are cleaned up, including your <code>%USERPROFILE%</code> and the <code>System</code> variables. Let&rsquo;s <kbd>Edit</kbd> both of them.</p>
-
-<p><img src="/img/2016/05/env-vars.png" alt="Environment Variables" /></p>
-
+<p><img src="/img/2016/05/sys-props.png" alt="System Properties"></p>
+<p>We will need to ensure that both <code>PATH</code> variables are cleaned up, including your <code>%USERPROFILE%</code> and the <code>System</code> variables. Let&rsquo;s <!-- raw HTML omitted -->Edit<!-- raw HTML omitted --> both of them.</p>
+<p><img src="/img/2016/05/env-vars.png" alt="Environment Variables"></p>
 <p>From the <strong>Edit Variables</strong> dialog, remove any and all of the following:</p>
-
-<pre><code>C:\Users\[ your global identifier ]\.dnx\bin;
+<pre tabindex="0"><code>C:\Users\[ your global identifier ]\.dnx\bin;
 C:\Users\[ your global identifier ]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-update1\bin;
-</code></pre>
-
-<p><img src="/img/2016/05/edit-vars.png" alt="Edit User Variables" /></p>
-
+</code></pre><p><img src="/img/2016/05/edit-vars.png" alt="Edit User Variables"></p>
 <h3 id="net-core-cli">.NET Core CLI</h3>
-
 <p>Simply follow <a href="https://www.microsoft.com/net/core#windows">these instuctions</a>. Once you&rsquo;re able to &ldquo;Run the app&rdquo; from the new <strong>CLI</strong> you&rsquo;re good to go.</p>
-
 <h4 id="review">Review</h4>
-
 <p>You should the following checklist fully satisfied at this point.</p>
-
-<p><i class="fa fa-check-square-o" aria-hidden="true"></i> <strong>DNX</strong>, <strong>DNU</strong> and <strong>DNVM</strong> completely removed / uninstalled<br>
-<i class="fa fa-check-square-o" aria-hidden="true"></i> <strong>Visual Studio 2015 Update 2</strong> installed<br>
+<p><i class="fa fa-check-square-o" aria-hidden="true"></i> <strong>DNX</strong>, <strong>DNU</strong> and <strong>DNVM</strong> completely removed / uninstalled<!-- raw HTML omitted -->
+<i class="fa fa-check-square-o" aria-hidden="true"></i> <strong>Visual Studio 2015 Update 2</strong> installed<!-- raw HTML omitted -->
 <i class="fa fa-check-square-o" aria-hidden="true"></i> <strong>.NET Core CLI</strong> installed</p>
-
-<hr />
-
-<h2 id="edit-by-hand-i-class-fa-fa-pencil-square-o-aria-hidden-true-i">Edit by Hand <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h2>
-
+<hr>
+<h2 id="edit-by-hand-hahahugoshortcode-s3-hbhb">Edit by Hand <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h2>
 <p>There were changes to <strong>APIs</strong> which required changes to implementation aspects of the source code. Additionally, <code>namespace</code>
 changes such as (but not limited to) <code>Microsoft.AspNet.*</code> to <code>Microsoft.AspNetCore.*</code>. But the bulk of the work was really in the hand-editing
 of <code>.sln</code>, <code>global.json</code>, <code>.xproj</code>, <code>project.json</code>, etc. files. Let&rsquo;s look at what changed.</p>
-
 <h3 id="the-sln-file">The <code>.sln</code> file</h3>
-
 <p>Change the <strong>VisualStudioVersion</strong> from <code>14.0.24720.0</code> to <code>14.0.25123.0</code>.</p>
-
-<pre><code>VisualStudioVersion = 14.0.25123.0
-</code></pre>
-
-<h3 id="the-global-json-file">The <code>global.json</code> file</h3>
-
+<pre tabindex="0"><code>VisualStudioVersion = 14.0.25123.0
+</code></pre><h3 id="the-globaljson-file">The <code>global.json</code> file</h3>
 <p>Change the <strong>version</strong> from <code>1.0.0-rc1-update1</code> to <code>1.0.0-preview1-002702</code>.</p>
-
-<pre><code class="language-json">{
-  &quot;projects&quot;: [ &quot;src&quot;, &quot;test&quot; ],
-  &quot;sdk&quot;: {
-    &quot;version&quot;: &quot;1.0.0-preview1-002702&quot;
-  }
-}
-</code></pre>
-
-<h3 id="the-xproj-file">The <code>.xproj</code> file</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;projects&#34;</span>: [ <span style="color:#e6db74">&#34;src&#34;</span>, <span style="color:#e6db74">&#34;test&#34;</span> ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;sdk&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0.0-preview1-002702&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="the-xproj-file">The <code>.xproj</code> file</h3>
 <p>The <code>.xproj</code> files are a little more involved, there are a few items that are required to be changed. In <strong>RC1</strong> we had proprerties that
 were specific to <strong>DNX</strong>, now we replace these with <strong>DOTNET</strong>.</p>
-
 <h4 id="rc1">RC1</h4>
-
-<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DNX\Microsoft.DNX.Props&quot; 
-        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
-</code></pre>
-
-<h4 id="rc2">RC2</h4>
-
-<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.Props&quot; 
-        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
-</code></pre>
-
-<p>Additionally, we need to change the targets. This one requires that you know the type of project you&rsquo;re editing, for example <em>&ldquo;class library&rdquo;</em> vs. <em>&ldquo;web site&rdquo;</em>. In <strong>RC1</strong>
+<pre tabindex="0"><code>&lt;Import Project=&#34;$(VSToolsPath)\DNX\Microsoft.DNX.Props&#34; 
+        Condition=&#34;&#39;$(VSToolsPath)&#39; != &#39;&#39;&#34; /&gt;
+</code></pre><h4 id="rc2">RC2</h4>
+<pre tabindex="0"><code>&lt;Import Project=&#34;$(VSToolsPath)\DotNet\Microsoft.DotNet.Props&#34; 
+        Condition=&#34;&#39;$(VSToolsPath)&#39; != &#39;&#39;&#34; /&gt;
+</code></pre><p>Additionally, we need to change the targets. This one requires that you know the type of project you&rsquo;re editing, for example <em>&ldquo;class library&rdquo;</em> vs. <em>&ldquo;web site&rdquo;</em>. In <strong>RC1</strong>
 there was only one target, but with <strong>RC2</strong> they are differeniated.</p>
-
 <h4 id="rc1-1">RC1</h4>
-
-<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DNX\Microsoft.DNX.targets&quot; 
-        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
-</code></pre>
-
-<h4 id="rc2-class-library">RC2 (class library)</h4>
-
-<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet\Microsoft.DotNet.targets&quot; 
-        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
-</code></pre>
-
-<h4 id="rc2-web">RC2 (web)</h4>
-
-<pre><code>&lt;Import Project=&quot;$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets&quot; 
-        Condition=&quot;'$(VSToolsPath)' != ''&quot; /&gt;
-</code></pre>
-
-<h3 id="the-project-json-file">The <code>project.json</code> file</h3>
-
+<pre tabindex="0"><code>&lt;Import Project=&#34;$(VSToolsPath)\DNX\Microsoft.DNX.targets&#34; 
+        Condition=&#34;&#39;$(VSToolsPath)&#39; != &#39;&#39;&#34; /&gt;
+</code></pre><h4 id="rc2-class-library">RC2 (class library)</h4>
+<pre tabindex="0"><code>&lt;Import Project=&#34;$(VSToolsPath)\DotNet\Microsoft.DotNet.targets&#34; 
+        Condition=&#34;&#39;$(VSToolsPath)&#39; != &#39;&#39;&#34; /&gt;
+</code></pre><h4 id="rc2-web">RC2 (web)</h4>
+<pre tabindex="0"><code>&lt;Import Project=&#34;$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets&#34; 
+        Condition=&#34;&#39;$(VSToolsPath)&#39; != &#39;&#39;&#34; /&gt;
+</code></pre><h3 id="the-projectjson-file">The <code>project.json</code> file</h3>
 <p>There has been a large reworking of the <code>project.json</code> file - detailed <a href="https://github.com/aspnet/Announcements/issues/175">here</a>. I will not be covering all
 of the changes here, but I do intend calling attention to some of the observations I have made and changes that were most pertinent. Here is the link for the official
-<a href="http://json.schemastore.org/project-1.0.0-rc2"><code>project.json schema</code></a>.</p>
-
+<a href="https://json.schemastore.org/project-1.0.0-rc2"><code>project.json schema</code></a>.</p>
 <p>We will look at various sections of the <code>project.json</code> file changes. Let&rsquo;s start with replacing <code>compilationOptionsbuildOptions</code> with <code>buildOptions</code>, and notice that
 we are adding much more options than before.</p>
-
 <h4 id="rc1-2">RC1</h4>
-
-<pre><code class="language-json">&quot;compilationOptions&quot;: {
-  &quot;emitEntryPoint&quot;: true,
-  &quot;warningsAsErrors&quot;: true
-},
-</code></pre>
-
-<h4 id="rc2-1">RC2</h4>
-
-<pre><code class="language-json">&quot;buildOptions&quot;: {       
-  &quot;emitEntryPoint&quot;: true,
-  &quot;warningsAsErrors&quot;: true,
-  &quot;preserveCompilationContext&quot;: true,
-  &quot;embed&quot;: &quot;Views/**&quot;, // Instead of &quot;.:resource&quot;: &quot;Views/**&quot;,
-  &quot;compile&quot;: {
-    &quot;exclude&quot;: [ &quot;wwwroot&quot;, &quot;node_modules&quot; ] // Now here, instead of &quot;.:exclude&quot;
-  }
-},
-</code></pre>
-
-<p>Additionally, we have <code>publishOptions</code> that we can utilize - consider the following:</p>
-
-<pre><code class="language-json">&quot;publishOptions&quot;: {
-  &quot;include&quot;: [
-    &quot;wwwroot&quot;,
-    &quot;appsettings.json&quot;,
-    &quot;web.config&quot;
-  ]
-},
-</code></pre>
-
-<p>Finally, we have to be a little more specific with how we want the server to handle garbage collection.</p>
-
-<pre><code class="language-json">&quot;runtimeOptions&quot;: {
-  &quot;gcServer&quot;: true, // Yes, please perform garbage collection
-  &quot;gcConcurrent&quot;: true // Yes, please do so concurrently...
-},
-</code></pre>
-
-<h3 id="the-web-config-file">The <code>web.config</code> file</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;compilationOptions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;emitEntryPoint&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;warningsAsErrors&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><h4 id="rc2-1">RC2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;buildOptions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {  
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;emitEntryPoint&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;warningsAsErrors&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;preserveCompilationContext&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;embed&#34;</span>: <span style="color:#e6db74">&#34;Views/**&#34;</span>, <span style="color:#75715e">// Instead of &#34;.:resource&#34;: &#34;Views/**&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">&#34;compile&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;exclude&#34;</span>: [ <span style="color:#e6db74">&#34;wwwroot&#34;</span>, <span style="color:#e6db74">&#34;node_modules&#34;</span> ] <span style="color:#75715e">// Now here, instead of &#34;.:exclude&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><p>Additionally, we have <code>publishOptions</code> that we can utilize - consider the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;publishOptions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;include&#34;</span>: [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;wwwroot&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;appsettings.json&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;web.config&#34;</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><p>Finally, we have to be a little more specific with how we want the server to handle garbage collection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;runtimeOptions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;gcServer&#34;</span>: <span style="color:#66d9ef">true</span>, <span style="color:#75715e">// Yes, please perform garbage collection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">&#34;gcConcurrent&#34;</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e">// Yes, please do so concurrently...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><h3 id="the-webconfig-file">The <code>web.config</code> file</h3>
 <p>Now, <strong>IIS</strong> is a little smarter and is starting to recognize <strong>ASP.NET Core</strong> a little more.</p>
-
 <h4 id="rc1-3">RC1</h4>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;configuration&gt;
-  &lt;system.webServer&gt;
-    &lt;handlers&gt;
-      &lt;add name=&quot;httpPlatformHandler&quot; path=&quot;*&quot; verb=&quot;*&quot; modules=&quot;httpPlatformHandler&quot; 
-           resourceType=&quot;Unspecified&quot;/&gt;
-    &lt;/handlers&gt;
-    &lt;httpPlatform processPath=&quot;%DNX_PATH%&quot; arguments=&quot;%DNX_ARGS%&quot; stdoutLogEnabled=&quot;false&quot; /&gt;
-  &lt;/system.webServer&gt;
-&lt;/configuration&gt;
-</code></pre>
-
-<h4 id="rc2-2">RC2</h4>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;configuration&gt;
-  &lt;system.webServer&gt;
-    &lt;handlers&gt;
-      &lt;add name=&quot;aspNetCore&quot; path=&quot;*&quot; verb=&quot;*&quot; modules=&quot;AspNetCoreModule&quot; 
-           resourceType=&quot;Unspecified&quot; /&gt;
-    &lt;/handlers&gt;
-    &lt;aspNetCore processPath=&quot;%LAUNCHER_PATH%&quot; arguments=&quot;%LAUNCHER_ARGS%&quot; 
-                forwardWindowsAuthToken=&quot;false&quot; stdoutLogEnabled=&quot;false&quot; /&gt;
-  &lt;/system.webServer&gt;
-&lt;/configuration&gt;
-</code></pre>
-
-<h3 id="the-hosting-json-file">The <code>hosting.json</code> file</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;system.webServer&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;handlers&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;add</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;httpPlatformHandler&#34;</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;*&#34;</span> <span style="color:#a6e22e">verb=</span><span style="color:#e6db74">&#34;*&#34;</span> <span style="color:#a6e22e">modules=</span><span style="color:#e6db74">&#34;httpPlatformHandler&#34;</span> 
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">resourceType=</span><span style="color:#e6db74">&#34;Unspecified&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/handlers&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;httpPlatform</span> <span style="color:#a6e22e">processPath=</span><span style="color:#e6db74">&#34;%DNX_PATH%&#34;</span> <span style="color:#a6e22e">arguments=</span><span style="color:#e6db74">&#34;%DNX_ARGS%&#34;</span> <span style="color:#a6e22e">stdoutLogEnabled=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/system.webServer&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div><h4 id="rc2-2">RC2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;system.webServer&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;handlers&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;add</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;aspNetCore&#34;</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;*&#34;</span> <span style="color:#a6e22e">verb=</span><span style="color:#e6db74">&#34;*&#34;</span> <span style="color:#a6e22e">modules=</span><span style="color:#e6db74">&#34;AspNetCoreModule&#34;</span> 
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">resourceType=</span><span style="color:#e6db74">&#34;Unspecified&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/handlers&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;aspNetCore</span> <span style="color:#a6e22e">processPath=</span><span style="color:#e6db74">&#34;%LAUNCHER_PATH%&#34;</span> <span style="color:#a6e22e">arguments=</span><span style="color:#e6db74">&#34;%LAUNCHER_ARGS%&#34;</span> 
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">forwardWindowsAuthToken=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">stdoutLogEnabled=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/system.webServer&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div><h3 id="the-hostingjson-file">The <code>hosting.json</code> file</h3>
 <p>With the release of <strong>RC2</strong>, the <code>project.json</code> schema removed the <code>webroot</code> property. Now in order to specify the websites&rsquo; static content directory we need to
 create a <code>hosting.json</code> file. This file should look like this.</p>
-
-<pre><code class="language-json">{
-  &quot;webroot&quot;: &quot;wwwroot&quot;
-}
-</code></pre>
-
-<h3 id="the-appsettings-json-file">The <code>appsettings.json</code> file</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;webroot&#34;</span>: <span style="color:#e6db74">&#34;wwwroot&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="the-appsettingsjson-file">The <code>appsettings.json</code> file</h3>
 <p>This was a minor change, but if you forgot to change this - then you&rsquo;ll end up with a runtime exception. The <code>Logging:LogLevel:Default</code> should now be
 <code>Debug</code> as <code>Verbose</code> was removed altogether.</p>
-
 <h4 id="rc1-4">RC1</h4>
-
-<pre><code class="language-json">&quot;Logging&quot;: {
-      &quot;IncludeScopes&quot;: false,
-      &quot;LogLevel&quot;: {
-        &quot;Default&quot;: &quot;Verbose&quot;, // &lt; -- Change &quot;Verbose&quot;
-        &quot;System&quot;: &quot;Information&quot;,
-        &quot;Microsoft&quot;: &quot;Information&quot;
-      }
-</code></pre>
-
-<h4 id="rc2-3">RC2</h4>
-
-<pre><code class="language-json">&quot;Logging&quot;: {
-      &quot;IncludeScopes&quot;: false,
-      &quot;LogLevel&quot;: {
-        &quot;Default&quot;: &quot;Debug&quot;, // &lt; --- To &quot;Debug&quot;
-        &quot;System&quot;: &quot;Information&quot;,
-        &quot;Microsoft&quot;: &quot;Information&quot;
-      }
-</code></pre>
-
-<h3 id="the-launchsettings-json-file">The <code>launchSettings.json</code> file</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;Logging&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;IncludeScopes&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;LogLevel&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Default&#34;</span>: <span style="color:#e6db74">&#34;Verbose&#34;</span>, <span style="color:#75715e">// &lt; -- Change &#34;Verbose&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">&#34;System&#34;</span>: <span style="color:#e6db74">&#34;Information&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Microsoft&#34;</span>: <span style="color:#e6db74">&#34;Information&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span></code></pre></div><h4 id="rc2-3">RC2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;Logging&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;IncludeScopes&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;LogLevel&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Default&#34;</span>: <span style="color:#e6db74">&#34;Debug&#34;</span>, <span style="color:#75715e">// &lt; --- To &#34;Debug&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">&#34;System&#34;</span>: <span style="color:#e6db74">&#34;Information&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Microsoft&#34;</span>: <span style="color:#e6db74">&#34;Information&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span></code></pre></div><h3 id="the-launchsettingsjson-file">The <code>launchSettings.json</code> file</h3>
 <p>The <code>environmentVariables</code> changed, such that the key name for the environment is no longer referred to as &ldquo;Hosting:Environment&rdquo;.</p>
-
 <h4 id="rc1-5">RC1</h4>
-
-<pre><code class="language-json">&quot;environmentVariables&quot;: {
-  &quot;Hosting:Environment&quot;: &quot;Development&quot; // &lt; -- Change &quot;Hosting:Environment&quot;
-}
-</code></pre>
-
-<h4 id="rc2-4">RC2</h4>
-
-<pre><code class="language-json">&quot;environmentVariables&quot;: {
-  &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot; // &lt; -- To &quot;ASPNETCORE_ENVIRONMENT&quot;
-}
-</code></pre>
-
-<h3 id="the-cs-files">The <code>*.cs</code> files</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;environmentVariables&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Hosting:Environment&#34;</span>: <span style="color:#e6db74">&#34;Development&#34;</span> <span style="color:#75715e">// &lt; -- Change &#34;Hosting:Environment&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h4 id="rc2-4">RC2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;environmentVariables&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ASPNETCORE_ENVIRONMENT&#34;</span>: <span style="color:#e6db74">&#34;Development&#34;</span> <span style="color:#75715e">// &lt; -- To &#34;ASPNETCORE_ENVIRONMENT&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="the-cs-files">The <code>*.cs</code> files</h3>
 <p>Some of these were very simple to fix. After updating your <code>project.json</code> with the latest <strong>RC2</strong> versions - some changes are as simple as a <code>namespace</code> change (but others are more involed).</p>
-
 <h4 id="rc1-6">RC1</h4>
-
-<pre><code class="language-csharp">using Microsoft.AspNet.*;
-</code></pre>
-
-<h4 id="rc2-5">RC2</h4>
-
-<pre><code class="language-csharp">using Microsoft.AspNetCore.*;
-</code></pre>
-
-<h3 id="api-changes">API changes</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Microsoft.AspNet.*;
+</span></span></code></pre></div><h4 id="rc2-5">RC2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Microsoft.AspNetCore.*;
+</span></span></code></pre></div><h3 id="api-changes">API changes</h3>
 <p>There was an attempt to unify some of the APIs as it pertains to consistency. As such, I had to make the following changes to my projects.
 The <code>IApplicationBuilder.Use*</code> pattern now takes a new <code>*Options</code> instance rather than an <code>Action&lt;*Options&gt;</code>, providing more control to the consumer.</p>
-
 <h4 id="rc1-7">RC1</h4>
-
-<pre><code class="language-csharp">app.UseCookieAuthentication(options =&gt;
-{
-    options.AuthenticationScheme = &quot;AspNetCookie&quot;;
-    options.AutomaticAuthenticate = true;
-    options.AutomaticChallenge = true;
-    options.LoginPath = &quot;/account/login&quot;;
-    options.LogoutPath = &quot;/account/logout&quot;;
-    options.AccessDeniedPath = &quot;/account/forbidden&quot;;
-});
-</code></pre>
-
-<h4 id="rc2-6">RC2</h4>
-
-<pre><code class="language-csharp">app.UseCookieAuthentication(new CookieAuthenticationOptions
-{
-    AuthenticationScheme = AuthenticationScheme.JciCookie,
-    AutomaticAuthenticate = true,
-    AutomaticChallenge = true,
-    LoginPath = &quot;/account/login&quot;,
-    LogoutPath = &quot;/account/logout&quot;,
-    AccessDeniedPath = &quot;/account/forbidden&quot;,
-});
-</code></pre>
-
-<p>The service locator pattern (or should I say &ldquo;anti-pattern&rdquo;) is slowing being removed from the framework. As such, if you were relying on the <code>CallContextServiceLocator.Locator.ServiceProvider</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>app.UseCookieAuthentication(options =&gt;
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    options.AuthenticationScheme = <span style="color:#e6db74">&#34;AspNetCookie&#34;</span>;
+</span></span><span style="display:flex;"><span>    options.AutomaticAuthenticate = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    options.AutomaticChallenge = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    options.LoginPath = <span style="color:#e6db74">&#34;/account/login&#34;</span>;
+</span></span><span style="display:flex;"><span>    options.LogoutPath = <span style="color:#e6db74">&#34;/account/logout&#34;</span>;
+</span></span><span style="display:flex;"><span>    options.AccessDeniedPath = <span style="color:#e6db74">&#34;/account/forbidden&#34;</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h4 id="rc2-6">RC2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>app.UseCookieAuthentication(<span style="color:#66d9ef">new</span> CookieAuthenticationOptions
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    AuthenticationScheme = AuthenticationScheme.JciCookie,
+</span></span><span style="display:flex;"><span>    AutomaticAuthenticate = <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    AutomaticChallenge = <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    LoginPath = <span style="color:#e6db74">&#34;/account/login&#34;</span>,
+</span></span><span style="display:flex;"><span>    LogoutPath = <span style="color:#e6db74">&#34;/account/logout&#34;</span>,
+</span></span><span style="display:flex;"><span>    AccessDeniedPath = <span style="color:#e6db74">&#34;/account/forbidden&#34;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>The service locator pattern (or should I say &ldquo;anti-pattern&rdquo;) is slowing being removed from the framework. As such, if you were relying on the <code>CallContextServiceLocator.Locator.ServiceProvider</code>
 you can no longer do so with the <strong>RC2</strong> release.</p>
-
 <p>Wherever you were using the <code>IApplication</code> interface, you should be able to instead use the <code>IWebHost</code> interface.</p>
-
 <h3 id="controllers-as-services">Controllers as Services</h3>
-
 <p>In <strong>RC1</strong>, there was a nice little feature that allowed for any <code>Type</code> to exist in a list of plausible controller/services - meaning that you could basically register external controllers as
 valid API and View entry points into your hosting application. You simply needed to add the types via the following:</p>
-
-<pre><code class="language-csharp">IMvcBuilder.AddControllersAsServices(params Type[] types);
-</code></pre>
-
-<p>This method signature changed with <strong>RC2</strong> and it no longer accepts any arguments. In order to retain this functionality, you must first add the desired external assemblies as an <code>AssemblyPart</code>.</p>
-
-<pre><code class="language-csharp">foreach (var assembly in GetExternalAssemblies())
-{
-    builder.PartManager.ApplicationParts.Add(new AssemblyPart(assembly));    
-}
-
-builder.AddControllersAsServices();
-</code></pre>
-
-<h3 id="the-startup-ctor">The Startup <code>.ctor</code></h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>IMvcBuilder.AddControllersAsServices(<span style="color:#66d9ef">params</span> Type[] types);
+</span></span></code></pre></div><p>This method signature changed with <strong>RC2</strong> and it no longer accepts any arguments. In order to retain this functionality, you must first add the desired external assemblies as an <code>AssemblyPart</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> assembly <span style="color:#66d9ef">in</span> GetExternalAssemblies())
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    builder.PartManager.ApplicationParts.Add(<span style="color:#66d9ef">new</span> AssemblyPart(assembly));    
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>builder.AddControllersAsServices();
+</span></span></code></pre></div><h3 id="the-startup-ctor">The Startup <code>.ctor</code></h3>
 <p>One little change, you&rsquo;re now required to explicitly set the base path and you can do so with the following.</p>
-
-<pre><code class="language-csharp">public Startup(IHostingEnvironment env)
-{
-    var builder =
-        new ConfigurationBuilder()
-            .SetBasePath(env.ContentRootPath) // Explicity set base from the content root path
-            .AddJsonFile(&quot;appsettings.json&quot;, true)
-            .AddJsonFile($&quot;appsettings.{env.EnvironmentName}.json&quot;, true)
-            .AddEnvironmentVariables();
-    // Omitted for brevity...
-}
-</code></pre>
-
-<h3 id="the-program-cs-file">The <code>Program.cs</code> file</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Startup(IHostingEnvironment env)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> builder =
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> ConfigurationBuilder()
+</span></span><span style="display:flex;"><span>            .SetBasePath(env.ContentRootPath) <span style="color:#75715e">// Explicity set base from the content root path</span>
+</span></span><span style="display:flex;"><span>            .AddJsonFile(<span style="color:#e6db74">&#34;appsettings.json&#34;</span>, <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>            .AddJsonFile(<span style="color:#e6db74">$&#34;appsettings.{env.EnvironmentName}.json&#34;</span>, <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>            .AddEnvironmentVariables();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Omitted for brevity...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="the-programcs-file">The <code>Program.cs</code> file</h3>
 <p>Yes, we are now a console application&hellip;so we&rsquo;ll need this for our entry point.</p>
-
-<pre><code class="language-csharp">public class Program
-{
-    public static void Main(string[] arguments)
-    {
-        using (var host = 
-            new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup&lt;Startup&gt;()
-                .Build();)
-        {
-            host.Run();
-        }
-    }
-}
-</code></pre>
-
-<h2 id="breaking-changes">Breaking changes</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] arguments)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> host = 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> WebHostBuilder()
+</span></span><span style="display:flex;"><span>                .UseKestrel()
+</span></span><span style="display:flex;"><span>                .UseContentRoot(Directory.GetCurrentDirectory())
+</span></span><span style="display:flex;"><span>                .UseIISIntegration()
+</span></span><span style="display:flex;"><span>                .UseStartup&lt;Startup&gt;()
+</span></span><span style="display:flex;"><span>                .Build();)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            host.Run();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="breaking-changes">Breaking changes</h2>
 <p>For a complete listing of all the announcements, please visit the official
 <a href="https://github.com/aspnet/Announcements/issues?q=is%3Aopen+is%3Aissue+milestone%3A1.0.0-rc2"><strong>ASP.NET <i class="fa fa-github-alt" aria-hidden="true"></i> Repo</strong></a> announcements issue.</p>
-
 <h2 id="further-reading">Further reading</h2>
-
 <p>The previous steps were really to get your environment in an <strong>RC2</strong> ready state, but there is so much more you can learn that has changed.
 I encourage bookmarking and reading the following articles as time permits.</p>
-
 <ul>
-<li><a href="http://dotnet.github.io/docs/core-concepts/dnx-migration.html"><strong>Migrating from DNX to .NET Core CLI</strong></a></li>
+<li><a href="https://dotnet.github.io/docs/core-concepts/dnx-migration.html"><strong>Migrating from DNX to .NET Core CLI</strong></a></li>
 <li><a href="https://docs.asp.net/en/latest/migration/rc1-to-rc2.html"><strong>Migrating from ASP.NET 5 RC1 to ASP.NET Core</strong></a></li>
 <li><a href="https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md"><strong>The .NET Platform Standard</strong></a></li>
-<li><a href="http://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html"><strong>Writing Libraries with Cross Platform Tools</strong></a></li>
+<li><a href="https://dotnet.github.io/docs/core-concepts/libraries/libraries-with-cli.html"><strong>Writing Libraries with Cross Platform Tools</strong></a></li>
 </ul>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>There, that really wasn&rsquo;t too bad - was it? I&rsquo;m certain that I didn&rsquo;t cover everything and that I probably missed something. I hope that this was helpful, please feel free to share this!</p>
 
     </div>
@@ -973,7 +795,7 @@ I encourage bookmarking and reading the following articles as time permits.</p>
         <article class="post">
             <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -1010,19 +832,57 @@ I encourage bookmarking and reading the following articles as time permits.</p>
         
         <header>
             <h2>David Pine</h2>
-            <p>Content Developer @ Microsoft, with a goal of changing the world - one line of code at a time</p>
+            <p>
+                🤓 Changing the world — one line of code at a time.
+                <span class="responsive-float">
+                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
+                        Follow @davidpine7
+                    </a>
+                </span>
+                <script>
+                    window.twitter = (function (d, s, id) {
+                    var js,
+                        fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+                </script>
+            </p>
         </header>
         
 
+        <hr />
+
+        <section class='row justify-content-center'>
+            <a href="https://bit.ly/learning-blazor" target="_blank" 
+                rel="nofollow" class='d-flex no-padding'>
+                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
+            </a>
+        </section>
+
+        <hr />
+
         <div class='row'>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp-v.png" width="160px" />
+                <a target="_blank" rel="noopener"
+                    href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
+                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
-                <a target="_blank" rel="noopener" href="https://google-developers.appspot.com/community/experts/directory/profile/profile-david_pine">
-                    <img src="/img/main/gde.png" width="210px" />
+                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
+                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
                 </a>
             </div>
         </div>
@@ -1130,6 +990,32 @@ I encourage bookmarking and reading the following articles as time permits.</p>
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-15'>
+                            September 15, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-09-08'>
+                            September 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
                         
                         
@@ -1140,38 +1026,16 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                 </article>
             </li>
             
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/asp-net-core-slack/">ASP.NET Core - Slack Slash Commands</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-21'>
-                            March 21, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/angular-color-game/">Angular - The Color Guessing Game</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-03-14'>
-                            March 14, 2019</time>
-                    </header>
-                </article>
-            </li>
-            
 
             
             <li>
                 <ul class="actions">
-                    <li><a href= /blog/  class="button">View
-                            more posts</a></li>
+                    <li>
+                        <a href= /blog/ 
+                            class="button">
+                            View more posts
+                        </a>
+                    </li>
                 </ul>
             </li>
             
@@ -1197,7 +1061,7 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">12</span>
+                        <span style="float:right;">14</span>
                     </header>
                 </article>
             </li>
@@ -1268,6 +1132,33 @@ I encourage bookmarking and reading the following articles as time permits.</p>
             <li>
                 <article>
                     <header>
+                        <a href="/categories/wasm/">wasm</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/webassembly/">webassembly</a>
+                        <span style="float:right;">4</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/blazor/">blazor</a>
+                        <span style="float:right;">3</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/http/">http</a>
                         <span style="float:right;">2</span>
                     </header>
@@ -1287,24 +1178,6 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                 <article>
                     <header>
                         <a href="/categories/tooling/">tooling</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/wasm/">wasm</a>
-                        <span style="float:right;">2</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/webassembly/">webassembly</a>
                         <span style="float:right;">2</span>
                     </header>
                 </article>
@@ -1341,15 +1214,6 @@ I encourage bookmarking and reading the following articles as time permits.</p>
                 <article>
                     <header>
                         <a href="/categories/azure-functions/">azure-functions</a>
-                        <span style="float:right;">1</span>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/blazor/">blazor</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1617,7 +1481,8 @@ I encourage bookmarking and reading the following articles as time permits.</p>
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        </p>
     </section>
 
 </section>

@@ -1,1 +1,0 @@
-xcopy "C:\Users\dapine\Hugo\Sites\davidpine.com\public" "C:\Users\dapine\Hugo\Sites\ievangelist.github.io" /y /e /f

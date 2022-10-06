@@ -8,3 +8,8 @@ date = "2018-04-18"
 # A few pictures ( {{< i fa-play >}} To open gallery )
 
 {{< gallery 1 >}}
+
+<!--
+  • Embed Google Photos Album •
+    https://www.publicalbum.org/blog/embedding-google-photos-albums
+-->

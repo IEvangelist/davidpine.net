@@ -1,11 +1,11 @@
 +++
-title = "Hi, I'm David"
+title = "Hi, I'm David 👋🏽"
 description = "Thank you for taking the time to visit."
 images = ["/img/main/me.png"]
 date = "2016-05-20"
 +++
 
-# Define yourself
+# {{< i fa-pencil >}} Define yourself
 
 You may have noticed my [{{< i fa-github >}} GitHub tag, **IEvangelist**](https://github.com/IEvangelist). If you see this as an interface it would look something like the following (I'd be more or less a placeholder interface, but I'd impose many other contracts).
 
@@ -53,15 +53,15 @@ public interface IEvangelist :
 
 ---
 
-It all started with my middle school ambition - I wanted to learn how those cool FPS games worked. I loved Wolfenstein, Quake, Doom, Duke Nukem, Half-Life, etc...and I just wanted to learn how they ticked, take a look under the hood. I taught myself how to use {{< url-link "QuArK (Quake Army Knife)" "https://quark.sourceforge.net/" >}} and {{< url-link "Valve Hammer" "https://developer.valvesoftware.com/wiki/Valve_Hammer_Editor" >}}, harnessing my passions for art and three-dimensional space. I found myself building elaborate architectures, painstakingly applying textures, dissecting the best placement for a light source that will cast desirable shadows - drawing attention to focal points, etc. I loved building these maps more than I loved playing them. Rendering thousands of polygons and entities down into a single {{< url-link "binary space partition (.bsp)" "https://en.wikipedia.org/wiki/Binary_space_partitioning" >}}, something about that was gratifying.
+It all started with my middle school ambition - I wanted to learn how those cool FPS games worked. I loved Wolfenstein, Quake, Doom, Duke Nukem, Half-Life, etc...and I just wanted to learn how they ticked, and take a look under the hood. I taught myself how to use {{< url-link "QuArK (Quake Army Knife)" "https://quark.sourceforge.net/" >}} and {{< url-link "Valve Hammer" "https://developer.valvesoftware.com/wiki/Valve_Hammer_Editor" >}}, harnessing my passions for art and three-dimensional space. I found myself building elaborate architectures, painstakingly applying textures, dissecting the best placement for a light source that will cast desirable shadows - drawing attention to focal points, etc. I loved building these maps more than I loved playing them. Rendering thousands of polygons and entities down into a single {{< url-link "binary space partition (.bsp)" "https://en.wikipedia.org/wiki/Binary_space_partitioning" >}}, something about that was gratifying.
 
-I then had an idea of what I wanted to do. Years later, I decided that I wanted to be a software engineer and that is what I set out to become. I like to think of myself as being a charismatic, results-driven software engineer with proficiency in adaptability and problem solving. Experienced in .NET frameworks, team software engineering and agile development methodologies.
+I then had an idea of what I wanted to do. Years later, I decided that I wanted to be a software engineer and that is what I set out to become. I like to think of myself as a charismatic, results-driven software engineer with proficiency in adaptability and problem-solving. Experienced in .NET frameworks, team software engineering, and agile development methodologies.
 
 {{< gist IEvangelist 38ce34de856dda43803bc48df32cefec >}}
 
 ---
 
-## {{< i fa-twitter-square >}} Twitter
+## {{< i fa-twitter >}} Twitter
 
 {{< twitter davidpine7 >}}
 
@@ -78,6 +78,10 @@ I then had an idea of what I wanted to do. Years later, I decided that I wanted 
 [![LinkedIn profile](https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png)](https://www.linkedin.com/in/dpine)
 
 ---
+
+## {{< i fa-certificate>}} Credly
+
+{{< credly-badges 1 >}}
 
 ## What people are saying
 

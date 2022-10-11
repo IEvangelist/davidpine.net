@@ -3856,29 +3856,35 @@ img.headshot {
 
 }
 
+#main>article>header>div.meta>time>span:before,
 #main>article>header>div.meta>time:before {
 	content: attr(data-initial);
 	transition: all 3s linear;
 }
 
-#main>article>header>div.meta>time:hover {
+
+#main>article>header>div.meta>time>span:hover,
+#main>article>header>div.meta>time>:hover {
 	cursor: help;
 	transition: all 3s linear;
 }
 
-#main>article>header>div.meta>time > :not(.normalize):hover:before {
+#main>article>header>div.meta>time>span:hover:before,
+#main>article>header>div.meta>time>:hover:before {
 	content: attr(data-hover);
 	cursor: help;
 	transition: all 3s linear;
 }
 
-#main>article>header>div.meta>time > span.underline {
+#main>article>header>div.meta>time>span.underline,
+#main>article>header>div.meta>time.underline {
 	text-decoration: underline;
 	color: black !important;
 	transition: all 3s linear;
 }
 
-#main > article > header > div.meta > time > span.normalize {
+#main>article>header>div.meta>time>span.normalize,
+#main>article>header>div.meta>time.normalize {
 	color: black !important;
 	cursor: default !important;
 }
@@ -3898,4 +3904,4 @@ img.headshot {
 a.darken:hover {
 	transition: all 1s;
 	filter: brightness(90%) !important;
-  }
+}

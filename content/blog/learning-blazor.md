@@ -85,5 +85,8 @@ Click the cover below 👇🏽. It's a link to the book on Amazon. 😊
 
 | Media type              | Site                                               |
 |-------------------------|----------------------------------------------------|
-| **📖 Paperback (Print)** | [**Check it out on {{< i fa-amazon >}} Amazon to pre-order today.**](https://www.amazon.com/Learning-Blazor-Build-Single-Page-WebAssembly-dp-1098113241/dp/1098113241)    |
-| **💻 eBook (Kindle)**  | [**Buy it now on {{< i fa-amazon >}} Amazon Kindle devices.**](https://www.amazon.com/dp-B0BGJS7JBP/dp/B0BGJS7JBP) |
+| [**📖 Paperback (Print)**][paperback] | [**Check it out on {{< i fa-amazon >}} Amazon to pre-order today.**][paperback]    |
+| [**💻 eBook (Kindle)**][kindle]  | [**Buy it now on {{< i fa-amazon >}} Amazon Kindle devices.**][kindle] |
+
+[paperback]: https://www.amazon.com/Learning-Blazor-Build-Single-Page-WebAssembly-dp-1098113241/dp/1098113241
+[kindle]: https://www.amazon.com/dp-B0BGJS7JBP/dp/B0BGJS7JBP

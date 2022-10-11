@@ -17,21 +17,25 @@
             {{ $.Scratch.Set "dateType" .Date }}
         {{ end }}
 
+        <!-- Variables for Dates to be COMPARED -->
         {{ $date := now.Year }}
         {{ $lastmod := .Lastmod.Format (.Site.Params.dateFormat | default "2006") }}
-
-        <!-- Variables for Dates to be COMPARED -->
-        {{ $date_for_comparison := now.Year }}
-        {{ $lastmod_for_comparison := .Lastmod.Format (.Site.Params.dateFormat | default "2006") }}
-
-        {{ $min := math.Min $lastmod_for_comparison $date_for_comparison }}
-        {{ $max := math.Max $lastmod_for_comparison $date_for_comparison }}
-
+        {{ $min := math.Min $lastmod $date }}
+        {{ $max := math.Max $lastmod $date }}
         {{ $difference := sub $max $min }}
 
-        <!-- three full years -->
+        <!-- Three full years -->
         {{ $tolerance := 3 }}
         {{ $var := sub $difference $tolerance }}
+
+        <div style="display: none;"
+            data-date='{{ $date }}'
+            data-lastmod='{{ $lastmod }}'
+            data-min='{{ $min }}'
+            data-max='{{ $max }}'
+            data-difference='{{ $difference }}'
+            data-var='{{ $var }}'>
+        </div>
 
         {{ if gt $difference $tolerance }}
         <time class="published" data-hover='{{ ($.Scratch.Get "dateType").Format "2006" }}'

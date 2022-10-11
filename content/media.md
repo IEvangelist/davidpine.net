@@ -31,6 +31,10 @@ This page is a collection of podcasts, webcasts, news and other various publicat
 
 ## Video {{< i fa-video-camera >}} Appearances
 
+### Blazorators: C# Source Generators for Blazor
+
+{{< youtube RGPS0y2pl2k >}}
+
 ### A Conversation With David Pine
 
 {{< youtube C2DIJCnXb5U >}}

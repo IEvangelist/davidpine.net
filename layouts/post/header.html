@@ -17,11 +17,36 @@
             {{ $.Scratch.Set "dateType" .Date }}
         {{ end }}
 
-        <time class="published" data-hover='{{ ($.Scratch.Get "dateType").Format "January, 2006" }}'
-            datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'
-            data-initial='Written on'>
+        {{ $date := now.Year }}
+        {{ $lastmod := .Lastmod.Format (.Site.Params.dateFormat | default "2006") }}
+
+        <!-- Variables for Dates to be COMPARED -->
+        {{ $date_for_comparison := now.Year }}
+        {{ $lastmod_for_comparison := .Lastmod.Format (.Site.Params.dateFormat | default "2006") }}
+
+        {{ $min := math.Min $lastmod_for_comparison $date_for_comparison }}
+        {{ $max := math.Max $lastmod_for_comparison $date_for_comparison }}
+
+        {{ $difference := sub $max $min }}
+
+        <!-- a full year -->
+        {{ $tolerance := 3 }}
+        {{ $var := sub $difference $tolerance }}
+
+        {{ if gt $difference $tolerance }}
+        <time class="published" data-hover='{{ ($.Scratch.Get "dateType").Format "2006" }}'
+            datetime='{{ ($.Scratch.Get "dateType").Format "2006" }}'
+            data-initial='Written in' data-extras='{{ $difference }}'>
             <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
         </time>
+        {{ else }}
+        <time class="published" data-extras='{{ $difference }}'>
+            <span class="underline">
+                {{ ($.Scratch.Get "dateType").Format "January, 2006" }}
+            </span>
+        </time>
+        {{ end }}
+
         <span class="author">{{ .Params.author }}</span>
         {{ if .Site.Params.includeReadingTime }}
             <p>{{ .ReadingTime }} minute read</p>

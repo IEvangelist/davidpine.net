@@ -3866,7 +3866,7 @@ img.headshot {
 	transition: all 3s linear;
 }
 
-#main>article>header>div.meta>time:hover:before {
+#main>article>header>div.meta>time > :not(.normalize):hover:before {
 	content: attr(data-hover);
 	cursor: help;
 	transition: all 3s linear;
@@ -3876,6 +3876,11 @@ img.headshot {
 	text-decoration: underline;
 	color: black !important;
 	transition: all 3s linear;
+}
+
+#main > article > header > div.meta > time > span.normalize {
+	color: black !important;
+	cursor: default !important;
 }
 
 .d-flex {

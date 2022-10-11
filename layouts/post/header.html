@@ -41,7 +41,7 @@
         </time>
         {{ else }}
         <time class="published" data-extras='{{ $difference }}'>
-            <span class="underline">
+            <span class="normalize">
                 {{ ($.Scratch.Get "dateType").Format "January, 2006" }}
             </span>
         </time>

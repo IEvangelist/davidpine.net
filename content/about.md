@@ -83,6 +83,10 @@ I then had an idea of what I wanted to do. Years later, I decided that I wanted 
 
 {{< credly-badges 1 >}}
 
+## {{< i fa-trophy >}} Holopin
+
+{{< holopin 1 >}}
+
 ## What people are saying
 
 > You are a beacon of light in a grumpy world of developers. Your excitement is infectious. I'm so blessed to know you!

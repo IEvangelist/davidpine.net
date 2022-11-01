@@ -1,7 +1,7 @@
 +++
 author = "David Pine"
 categories = ["WebAssembly", "WASM", "Blazor", "CSharp"]
-date = "2022-09-15"
+date = "2022-09-16"
 description = "Build Single-Page Apps with WebAssembly and C#"
 images = ["/img/2022/09/learning-blazor-featured.png"]
 featured = "learning-blazor-featured.png"

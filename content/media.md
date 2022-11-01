@@ -23,7 +23,7 @@ This page is a collection of podcasts, webcasts, news and other various publicat
 
 <br/><br/>
 
-<hr/>
+### [Developer On Fire - Episode 305](http://developeronfire.com/podcast/episode-305-david-pine-positive-brand) {{< i fa-external-link-square >}}
 
 > David Pine talks with Dave Rael about building a brand for software developers, being a source of positivity, and the importance of mentors.
 
@@ -199,19 +199,19 @@ This page is a collection of podcasts, webcasts, news and other various publicat
 
 <br/><br/>
 
-### <a href="https://www.infoq.com/articles/future-of-net-core" target="_blank">The Future of .NET Core <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+### [TypeScript – A Tour of Generics](http://www.dotnetcurry.com/typescript/1439/typescript-generics) {{< i fa-external-link-square >}}
 
 > TypeScript is an amazing innovation with how we as developers write JavaScript applications. TypeScript boasts its language services as a first-class citizen. These language services empower your favorite integrated development environment with advanced statement completion, refactoring, type-checking, compilation and even flow analysis.
 
 <br/><br/>
 
-> <p> TypeScript is an amazing innovation with how we as developers write JavaScript applications. TypeScript boasts its language services as a first-class citizen. These language services empower your favorite integrated development environment with advanced statement completion, refactoring, type-checking, compilation and even flow analysis.
+### [C#: Favorite Features through the Years](http://www.dotnetcurry.com/csharp/1411/csharp-favorite-features) {{< i fa-external-link-square >}}
 
 > Each newer version of C# is packed full of powerful and impactful features. In this tutorial I walk through the various versions of C# and share my favorite features from each release. Anytime I get the chance to write about C#, I'm eager to do so. This time was no `System.Exception`!
 
 <br/><br/>
 
-### <a href="http://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes" target="_blank">ASP.NET Core Web API Attributes <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+### [ASP.NET Core Web API Attributes](http://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes) {{< i fa-external-link-square >}}
 
 > With __ASP.NET Core Web API__ there are several various attributes that instruct the framework where to expect data. These attributes are very powerful, allowing for aliasing and strong-typing; however, knowing which correspond to model binding and are best suited for each HTTP verb is vital. In this article we'll explore all of this and more.
 

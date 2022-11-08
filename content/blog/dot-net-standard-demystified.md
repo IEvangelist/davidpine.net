@@ -36,7 +36,7 @@ Here are all the recent announcements, feel free to spend some time checking the
 
 Let's start by answering all these common questions.
 
-## {{< url-link "`.NET Standard` {{< i fa-external-link >}}" "https://docs.microsoft.com/en-us/dotnet/standard/net-standard/" >}}
+## `{{< url-link ".NET Standard" "https://docs.microsoft.com/en-us/dotnet/standard/net-standard/" >}} {{< i fa-external-link >}}`
 
 If the name {{< url-link "_Immo Landwerth_" "https://github.com/terrajobst" >}} doesn't ring a bell, perhaps {{< url-link "@terrajobst" "https://twitter.com/terrajobst" >}} will? Regardless of whether you've heard of him before -- you'd be wise to remember him now. He is a program manager for Microsoft and has a huge part in the `.NET` ecosystem as a whole. Immo has a `.NET Standard` video series on {{< i fa-lg fa-youtube >}} and if you do not have time to read this post, by all means {{< url-link "watch his videos" "https://www.youtube.com/playlist?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY" >}}.
 
@@ -90,13 +90,13 @@ Microsoft has been hard at work, and their documentation teams have been putting
     ![.NET Standard API Explorer](/img/2017/08/dot-net-standard-api-explorer.png)
 </a>
 
-## {{< url-link "`.NET Core` {{< i fa-external-link >}}" "https://docs.microsoft.com/en-us/dotnet/core/" >}}
+## `{{< url-link ".NET Core" "https://docs.microsoft.com/en-us/dotnet/core/" >}} {{< i fa-external-link >}}`
 
 > `.NET Core` is a general purpose development platform maintained by Microsoft and the `.NET` community on GitHub. It is cross-platform, supporting Windows, macOS and Linux, and can be used in device, cloud, and embedded/IoT scenarios.
 
 The obvious advantages are that `.NET Core` is cross-platform and open source. Unlike `.NET Framework` that is neither of those two things.
 
-## {{< url-link "`.NET Framework` {{< i fa-external-link >}}" "https://docs.microsoft.com/en-us/dotnet/framework/" >}}
+## `{{< url-link ".NET Framework" "https://docs.microsoft.com/en-us/dotnet/framework/" >}} {{< i fa-external-link >}}`
 
 If you have been a `.NET` developer for more than a few years, then you should already be familiar with the `.NET Framework`. This is what you have been developing on and targeting forever. However, with the introduction of `.NET Standard` and `.NET Core`, that is likely to change. You no longer have to limit your OS or platform to Windows.
 
@@ -107,11 +107,7 @@ With all the `.NET` terms flying around the web, it felt appropriate to throw an
 > The `.NET Foundation` is an independent organization to foster open development and collaboration around the `.NET` ecosystem. It serves as a forum for community and commercial developers alike to broaden and strengthen the future of the `.NET` ecosystem by promoting openness and community participation to encourage innovation.
 <cite>www.dotnetfoundation.org</cite>
 
-Be sure to visit their site and get involved!
-
-<a href="https://dotnetfoundation.org/" target="_blank">
-    ![.NET Foundation](/img/2017/08/dot-net-fondation.png)
-</a>
+Be sure to visit their [site and get involved](https://dotnetfoundation.org)!
 
 ## Conclusion
 
@@ -119,6 +115,6 @@ The `.NET` ecosystem is rapidly evolving! With open source and cross-platform be
 
 ### Resources
 
-- {{< url-link "`.NET Standard - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/standard/net-standard" >}}
-- {{< url-link "`.NET Core - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/core/" >}}
-- {{< url-link "`.NET Framework - Microsoft Docs`" "https://docs.microsoft.com/en-us/dotnet/framework/" >}}
+- {{< url-link ".NET Standard - Microsoft Docs" "https://docs.microsoft.com/dotnet/standard/net-standard" >}}
+- {{< url-link ".NET Core - Microsoft Docs" "https://docs.microsoft.com/dotnet/core" >}}
+- {{< url-link ".NET Framework - Microsoft Docs" "https://docs.microsoft.com/dotnet/framework" >}}

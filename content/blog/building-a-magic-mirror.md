@@ -109,16 +109,15 @@ The developer API key and zip code are configurable. Additionally the unit-of-me
 
 ### Clock
 
-The clock is extremely simple. It is literally just the current date and time. It updates every second, formatting to the hour, minute and second -- additionally displaying the
-name of the day followed by the month and day number.
+The clock is extremely simple. It is just the current date and time. It updates every second, formatting to the hour, minute, and second -- additionally displaying the name of the day followed by the month and day number.
 
 **Example:**
-<pre>
-<code class="language-yaml">8:29 <sup>34</sup>
-Wednesday, December 21<sup>st</sup>
-</code>
-</pre>
+
+{{< mirror-example-output >}}
+
+{{< note >}}
 Note: I opted to omit whether or not we're in ante or post meridiem as it is assumed the user would know if it's morning or in the afternoon.
+{{< /note >}}
 
 ### Event Calendar / Schedule
 

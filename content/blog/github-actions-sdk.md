@@ -276,7 +276,7 @@ You'll need to install the [GitHub Actions: Core .NET SDK](https://www.nuget.org
 Either add the package reference to your project file:
 
 ```xml
-<PackageReference Include="GitHub.Actions.Core" Version="1.0.0" />
+<PackageReference Include="GitHub.Actions.Core" Version="0.0.1" />
 ```
 
 Or use the [`dotnet add package`](https://learn.) .NET CLI command:

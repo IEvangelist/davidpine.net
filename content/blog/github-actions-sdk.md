@@ -13,6 +13,10 @@ type = "post"
 
 +++
 
+{{< tip title="📢 ATTENTION" >}}
+This post is part of the C# advent calendar 2022, for other articles in this collection see [C# Advent Calendar 2022](https://csadvent.christmas). This is the third time I've written for the calendar, past entries include [2017: C# Special Edition](/blog/csharp-special-edition) and [2018: C# All The Things](blog/csharp-all-the-things). 🙏🏽
+{{< /tip>}}
+
 # GitHub Actions: Core .NET SDK
 
 SDKs are great, but why do we need one for GitHub Actions? The short answer is, you don't! You can write a GitHub Action in .NET without using one. I've written about this already, if you're interested see the [Tutorial: Create a GitHub Action with .NET](https://learn.microsoft.com/dotnet/devops/create-dotnet-github-action). There are a few ways in which you can write a GitHub Action. You can do so using JavaScript, Docker, or as a composite action. One of the easiest ways was to use JavaScript, as the GitHub team maintains an open-source SDK (or [`actions/toolkit`](https://github.com/actions/toolkit)) written in TypeScript. Their toolkit is comprised of a set of packages to make creating actions easier.

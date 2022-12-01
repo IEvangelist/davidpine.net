@@ -6,13 +6,13 @@ description = "Build Single-Page Apps with WebAssembly and C#"
 images = ["/img/2022/09/learning-blazor-featured.png"]
 featured = "learning-blazor-featured.png"
 featuredalt = "The Learning Blazor title book cover"
-featuredpath = "date"
+featuredpath = "img/2022/09"
 linktitle = ""
 title = "Learning Blazor"
 type = "post"
 +++
 
-Sometime in June 2021, I set out on a journey to write a book in the middle of a global pandemic. I had no idea what I was doing (all things considered, I still don't know what I'm doing). But I do know that I truly enjoy helping others. I hope you enjoy the book as much as I enjoyed writing it.
+In June 2021, I set out on a journey to write a book in the middle of a global pandemic. I had no idea what I was doing (all things considered, I still don't know what I'm doing). But I do know that I truly enjoy helping others. I hope you enjoy the book as much as I enjoyed writing it.
 
 ## Amazon Preview
 
@@ -34,11 +34,11 @@ My biggest motivation when creating the first release of Blazor with Dan Roth an
 
 ***Steve Sanderson***
 {{< line-break >}}
-*Software Engineer/Architect at Microsoft, original Blazor creator*
+_Software Engineer/Architect at Microsoft, original Blazor creator_
 {{< line-break >}}
-*Bristol, UK*
+_Bristol, UK_
 {{< line-break >}}
-*August 2022*
+_August 2022_
 
 [^1]: [Most Popular Technologies, 2022 Stack Overflow Developer Survey, accessed August 18, 2022](https://survey.stackoverflow.co/2022/#most-popular-technologies-language-prof)
 [^2]: [Web Framework Benchmarks: Round 21, July 19, 2022, TechEmpower](https://www.techempower.com/benchmarks/#section=data-r21&hw=ph&test=plaintext)

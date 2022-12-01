@@ -6,7 +6,7 @@ description = "Windows 10 IoT Core, UWP, C#, Raspberry Pi 3"
 featured = "mirror.jpg"
 images = ["/img/2016/12/mirror.jpg"]
 featuredalt = ""
-featuredpath = "date"
+featuredpath = "img/2016/12"
 linktitle = ""
 title = "Building a Magic Mirror"
 type = "post"
@@ -105,7 +105,7 @@ by the **UWP** speech-synthesizer.  More on this later...
 ### Weather -- Forecast
 
 The current weather and forecast are retrieved every fifteen minutes from the free {{< url-link "Open Weather API" "https://openweathermap.org/api" >}}.
-The developer API key and zip code are configurable. Additionally the unit-of-measure is configurable, where you can specify `imperial` or `metric` as valid settings.
+The developer API key and zip code are configurable. Additionally, the unit-of-measure is configurable, where you can specify `imperial` or `metric` as valid settings.
 
 ### Clock
 
@@ -116,22 +116,17 @@ The clock is extremely simple. It is just the current date and time. It updates 
 {{< mirror-example-output >}}
 
 {{< note >}}
-Note: I opted to omit whether or not we're in ante or post meridiem as it is assumed the user would know if it's morning or in the afternoon.
+I opted to omit whether or not we're in ante or post meridiem as it is assumed the user would know if it's morning or in the afternoon.
 {{< /note >}}
 
 ### Event Calendar / Schedule
 
-My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to
-{{< i fa-code-fork >}} {{< url-link "fork my repo" "https://github.com/IEvangelist/Mirror#fork-destination-box" >}} -- you would need to setup
-your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid `iCal` {{< url-link "(*.ics) formatting" "https://icalendar.org/" >}}.
+My magic mirror is configured to display an aggregation of two calendars. This is entirely configurable, so if you were to {{< i fa-code-fork >}} {{< url-link "fork my repo" "https://github.com/IEvangelist/Mirror#fork-destination-box" >}} -- you would need to setup your desired endpoints. The only requirement is that the URL is an accessible endpoint that returns valid `iCal` {{< url-link "(*.ics) formatting" "https://icalendar.org/" >}}.
 The events are truncated to fit on the page and ordered by the date of the event.
 
 ### Music Player
 
-Imagine you have the magic mirror mounted in your bathroom, or bedroom...it would be nice to say, "play a song", or "play Deftones" for example and music starts playing. That is
-the idea behind the music player component. The current implementation of the music player is limited. I spent a few long nights trying to figure out how to use the built-in **Bluetooth**
-on the **Pi 3**, while **UWP** does have some support it is limited. I was able to pair but not stream songs from my **iPod** for example, which was really frustrating. For the meantime
-I simply placed several songs in the `Assets` directory as content and I can play these resources. Ideally, I will use a web-based service like Spotify or Pandora.
+Imagine you have the magic mirror mounted in your bathroom, or bedroom...it would be nice to say, "play a song", or "play Deftones" for example and music starts playing. That is the idea behind the music player component. The current implementation of the music player is limited. I spent a few long nights trying to figure out how to use the built-in **Bluetooth** on the **Pi 3**, while **UWP** does have some support it is limited. I was able to pair but not stream songs from my **iPod** for example, which was really frustrating. For the meantime, I simply placed several songs in the `Assets` directory as content and I can play these resources. Ideally, I will use a web-based service like Spotify or Pandora.
 
 ### Voice Commands
 
@@ -143,7 +138,7 @@ this up".
 
 ## Microsoft Cognitive Services
 
-Formally known was "Project Oxford", Microsoft Cognitive Services offers a ton of programming power and you can start using it today for **free**. Simply {{< url-link "subscribe" "https://www.microsoft.com/cognitive-services/en-us/subscriptions" >}} and use your subscription key as the argument to the client `.ctor`. The magic mirror makes use of the Emotion API, and corresponding `EmotionServiceClient` from the {{< url-link "`Microsoft.ProjectOxford.Emotion`" "https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/" >}} package.
+Formally known as "Project Oxford", Microsoft Cognitive Services offers a ton of programming power and you can start using it today for **free**. Simply {{< url-link "subscribe" "https://www.microsoft.com/cognitive-services/en-us/subscriptions" >}} and use your subscription key as the argument to the client `.ctor`. The magic mirror makes use of the Emotion API, and corresponding `EmotionServiceClient` from the {{< url-link "`Microsoft.ProjectOxford.Emotion`" "https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/" >}} package.
 
 Consider the following:
 

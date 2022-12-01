@@ -1,5 +1,9 @@
 <div class="admonition note">
-    <div class="title">{{ .Get "title" | default "Note" }}</div>
-    <div class="content">{{ printf "%s" .Inner | markdownify }}</div>
+    <div class="title" style="color: {{ .Get "color" | default "red" }} !important">
+        <b>{{ .Get "title" | default " NOTE" | markdownify }}</b>
+    </div>
+    <div class="content">
+        {{ printf "%s" .Inner | markdownify }}
+    </div>
 </div>
 <br />

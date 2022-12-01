@@ -6,7 +6,7 @@ description = "C# Source Generator for JavaScript Interop in Blazor"
 images = ["/img/2022/09/blazorators.png"]
 featured = "blazorators.png"
 featuredalt = "The Blazorators logo"
-featuredpath = "date"
+featuredpath = "img/2022/09"
 linktitle = "Blazorators: A C# Source Generator for JavaScript Interop in Blazor"
 title = "Blazorators"
 type = "post"
@@ -14,7 +14,7 @@ type = "post"
 
 # Blazorators
 
-All of this code relies on the output of [one of my side projects named `blazorators`](https://github.com/IEvangelist/blazorators). While writing [my O'Reilly "Learning Blazor: Build Single-Page Apps with WebAssembly and C#" book](../learning-blazor), I discovered an impactful way to use both TypeScript type declarations from common JavaScript APIs and C# source generators to generate the JavaScript interop code. This is covered in chapter seven, so I don't want to spoil it too much, but rather entice you to want to [read the book](../learning-blazor). I've been using this approach in my Blazor apps for a while now and I'm excited to share it with you. Let's get started!
+_Blazorators_ is a C# source generator that creates fully functioning Blazor JavaScript interop code, targeting either the `IJSInProcessRuntime` or `IJSRuntime` types. All of this code relies on the output of [one of my side projects named `blazorators`](https://github.com/IEvangelist/blazorators). While writing [my O'Reilly "Learning Blazor: Build Single-Page Apps with WebAssembly and C#" book](../learning-blazor), I discovered an impactful way to use both TypeScript type declarations from common JavaScript APIs and C# source generators to generate the JavaScript interop code. This is covered in chapter seven, so I don't want to spoil it too much, but rather entice you to want to [read the book](../learning-blazor). I've been using this approach in my Blazor apps for a while now and I'm excited to share it with you. Let's get started!
 
 Check out my new [{{< i "fa-twitter" >}} Twitter account (@blazorbits)](twitter.com/@blazorbits) for Blazor tips and tricks! Below you'll see the Progress Telerik REPL (Read Evaluate Print Loop) for Blazor, select the **Preview** tab and watch the Blazor WebAssembly app perform a .NET restore and builds the app. Once the app loads, select a Natural voice from the voice selection control if it is available to you. If it's not available to you, that's not a big deal either. Select the **Speak** button and the app will speak the text you entered in the **Text-to-speech** control. You can also select the **Stop** button to stop the speech.
 
@@ -25,10 +25,10 @@ Check out my new [{{< i "fa-twitter" >}} Twitter account (@blazorbits)](twitter.
 when you create your own REPL session you're free to consume public NuGet packages, this app uses the [`Blazor.SpeechSynthesis.WebAssembly`](https://www.nuget.org/packages/Blazor.SpeechSynthesis.WebAssembly) NuGet package 📦.
 Explore the **Code** tab thoroughly and look through the app's source code. You'll see that this app does the following:
 
-- *_Main.razor*: The app's main page, that showing a loading indicator and immediately navigates to the **/speak** route.
-- *TextToSpeech.razor*: The page that renders the **Text-to-speech** text input element and the [browser-native speech synthesis](https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis) control buttons.
-- *TextToSpeech.razor.cs*: The page's code-behind that contains the `TextToSpeech` component's logic.
-- *Startup.cs*: The app's startup class that configures services, calling a source-generated dependency injection specific extension method named `AddSpeechServices.
+- __Main.razor_: The app's main page, that showing a loading indicator and immediately navigates to the **/speak** route.
+- _TextToSpeech.razor_: The page that renders the **Text-to-speech** text input element and the [browser-native speech synthesis](https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis) control buttons.
+- _TextToSpeech.razor.cs_: The page's code-behind that contains the `TextToSpeech` component's logic.
+- _Startup.cs_: The app's startup class that configures services, calling a source-generated dependency injection specific extension method named `AddSpeechServices.
 
 Notice the `SpeechSynthesisVoice[]`, `SpeechSynthesisUtterance`, and `ISpeechSynthesisService` types. These are all from the `Blazor.SpeechSynthesis.WebAssembly` NuGet package 📦. The `SpeechSynthesisVoice[]` type is an array of `SpeechSynthesisVoice` objects that represent the available voices on the user's device. The `SpeechSynthesisUtterance` type is a class that represents the text to be spoken and the voice to be used. The `ISpeechSynthesisService` type is an interface that defines the `GetVoicesAsync` and an in-process `Speak` method that is synchronous.
 
@@ -38,7 +38,7 @@ There is also a way to listen for changes in the browser-native `window.speechSy
 
 ## What's next?
 
-This project was originally written as part of a Microsoft hackathon. It's been refined, but is still a brute-force effort and could stand to be optimized. As such I'm working to reimplement the parsing approach. It currently makes an HTTP request to a raw Github link with the *lib.dom.d.ts* file with all of the DOM type declarations in it. The file is itself, generated, and is over 18 thousand lines of code. It uses `Regex` expressions to parse on-demand single hierarchical type dependency graphs as `readonly record struct` values. These values were modeled as  
+This project was originally written as part of a Microsoft hackathon. It's been refined, but is still a brute-force effort and could stand to be optimized. As such I'm working to reimplement the parsing approach. It currently makes an HTTP request to a raw Github link with the _lib.dom.d.ts_ file with all of the DOM type declarations in it. The file is itself, generated, and is over 18 thousand lines of code. It uses `Regex` expressions to parse on-demand single hierarchical type dependency graphs as `readonly record struct` values. These values were modeled as  
 
 ## Patent pending, not... ☹️
 
@@ -76,3 +76,9 @@ I think this package has a lot of potential. It makes the bridge between JS and 
 ## Additional resources
 
 {{< youtube U8XriF2zxS0 >}}
+
+&nbsp;
+
+{{< youtube RGPS0y2pl2k >}}
+
+&nbsp;

@@ -1,4 +1,7 @@
-<div class="admonition note">
-    <div class="title">{{ .Get "title" | default "Tip" }}</div>
+<div class="admonition tip">
+    <div class="title">
+        <b>{{ .Get "title" | default "💡 TIP" }}</b>
+    </div>
     <div class="content">{{ printf "%s" .Inner | markdownify }}</div>
 </div>
+<br />

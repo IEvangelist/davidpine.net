@@ -1815,6 +1815,7 @@ pre code {
 	line-height: 1.75em;
 	padding: 1em 1.5em;
 	overflow-x: auto;
+	font-size: 1em;
 }
 
 hr {
@@ -3900,4 +3901,16 @@ img.headshot {
 a.darken:hover {
 	transition: all 1s;
 	filter: brightness(90%) !important;
+}
+
+.admonition.note {
+	background: lightyellow;
+	border: #3c3b3b 1px solid;
+	padding: 2rem;
+}
+
+.admonition.tip {
+	background: lightcyan;
+	border: #3c3b3b 1px solid;
+	padding: 2rem;
 }

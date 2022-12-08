@@ -1,9 +1,9 @@
-<blockquote>
-    <p>{{ .Inner }}</p>
+<blockquote style="background-color: aliceblue; padding: 1.25rem; padding-left: 2rem;">
+    <p>{{ .Inner | markdownify }}</p>
     <cite>
         <a href='https://twitter.com/{{ .Get "twitter" }}' target="_blank"> 
             <i class="fa fa-twitter" aria-hidden="true"></i> {{ .Get "from" }}
         </a>
     </cite>
 </blockquote>
-<br/><br/>
+<br/>

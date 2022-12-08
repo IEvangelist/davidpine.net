@@ -3905,12 +3905,12 @@ a.darken:hover {
 
 .admonition.note {
 	background: lightyellow;
-	border: #3c3b3b 1px solid;
+	border: #3c3b3b45 1px dashed;
 	padding: 2rem;
 }
 
 .admonition.tip {
 	background: lightcyan;
-	border: #3c3b3b 1px solid;
+	border: #3c3b3b45 1px dashed;
 	padding: 2rem;
 }

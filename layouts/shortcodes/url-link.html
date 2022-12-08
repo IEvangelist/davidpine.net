@@ -6,5 +6,5 @@
         {{ $.Scratch.Set "target" "_blank" }}
     {{ end }}
 
-    <a href="{{ .Get 1 }}" target='{{ $.Scratch.Get "target"}}'>{{ .Get 0 }}</a>
+    <a href="{{ .Get 1 }}" target='{{ $.Scratch.Get "target"}}'>{{ .Get 0 | markdownify }}</a>
 {{ end }}

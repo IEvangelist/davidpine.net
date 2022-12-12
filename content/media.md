@@ -11,6 +11,10 @@ This page is a collection of podcasts, webcasts, news and other various publicat
 
 ## Podcasts {{< i fa-podcast >}} Appearances
 
+### [David Pine: NET Content Development - Episode 223](https://bit.ly/davidpine-azuredevops-podcast) {{< i fa-external-link-square >}}
+
+> Jeffrey Palermo interviews David Pine, to learn about his role as a content developer for the .NET team. They discuss whether the age of JavaScript SPA frameworks is over, and what the future of .NET looks like. They dive into GitHub Actions and the .NET SDK David's been working on. They talk about Orleans and sample code, and so much more.
+
 ### [Eat Sleep Code - Why You Should Learn TypeScript](https://soundcloud.com/esc-podcast/why-you-should-learn-typescript) {{< i fa-external-link-square >}}
 
 > On this episode, David Pine shares his experience with TypeScript. David talks about why TypeScript is a valuable tool for improving your experience with applications that normally are written using JavaScript. We discuss how to compile TypeScript, what are its strengths and how to get started.
@@ -34,6 +38,8 @@ This page is a collection of podcasts, webcasts, news and other various publicat
 ### Blazorators: C# Source Generators for Blazor
 
 {{< youtube RGPS0y2pl2k >}}
+
+---
 
 ### A Conversation With David Pine
 

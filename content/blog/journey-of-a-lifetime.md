@@ -22,17 +22,17 @@ I want to publicly thank {{< i fa-twitter >}} {{< url-link "Maria Naggaga" "http
 
 ### April 13, 2018
 
-Our journey began in Belgrade – the capitol city of Serbia. I arrived on the same flight into Belgrade as {{< i fa-twitter >}} {{< url-link "Jonathan LeBlanc" "https://twitter.com/jcleblanc" >}} of Box. In true movie fashion, our driver was waiting for us holding our names at the arrival gate of the airport. This was a warm welcome and made me feel special. After a 35 minute Car:Go (European Uber) drive we arrived at our hotel and while I didn't get much sleep on the plane, I had energy from both the adrenaline and excitement. Just as soon as I was settling into my room, it was time to part for the first of seemingly countless speaker dinners. We were hungry and ready to immerse ourselves in the Serbian culture. We had a traditional Serbian dinner after a celebratory shot (or three) of {{< i fa-wikipedia-w >}} {{< url-link "rakija" "https://en.wikipedia.org/wiki/Rakia" >}} - "serbian fruit brandy". Now, if you're like me you probably didn't know what rakija was... _warning_ it is very strong! They fed us like kings and queens, we were treated like royalty!
+Our journey began in Belgrade – the capital city of Serbia. I arrived on the same flight into Belgrade as {{< i fa-twitter >}} {{< url-link "Jonathan LeBlanc" "https://twitter.com/jcleblanc" >}} of Box. In true movie fashion, our driver was waiting for us holding our names at the arrival gate of the airport. This was a warm welcome and made me feel special. After a 35-minute Car:Go (European Uber) drive we arrived at our hotel and while I didn't get much sleep on the plane, I had energy from both the adrenaline and excitement. Just as soon as I was settling into my room, it was time to part for the first of seemingly countless speaker dinners. We were hungry and ready to immerse ourselves in the Serbian culture. We had a traditional Serbian dinner after a celebratory shot (or three) of {{< i fa-wikipedia-w >}} {{< url-link "rakija" "https://en.wikipedia.org/wiki/Rakia" >}} - "Serbian fruit brandy". Now, if you're like me you probably didn't know what rakija was... _warning_ it is very strong! They fed us like kings and queens, we were treated like royalty!
 
 ![Breaking Bread](/img/2018/04/breaking-bread.jpg)
 
-{{< i fa-twitter >}} {{< url-link "Harry Roberts" "https://twitter.com/csswizardry" >}} sat to my right - he was a blast. He and I shared a lot of common thoughts about the developer community. I really enjoyed his company. I asked him if he was on _Twitter_ so that I could follow him - {{< i fa-smile-o >}} yeah 58k+ followers. The food was great. The people of Serbia know how to do meat, I might get myself banned from the United States for saying this but it is true, "Serbia has the best bacon in the world!" After a long night, I returned to my hotel where I immediately fell asleep.
+{{< i fa-twitter >}} {{< url-link "Harry Roberts" "https://twitter.com/csswizardry" >}} sat to my right - he was a blast. He and I shared a lot of common thoughts about the developer community. I enjoyed his company. I asked him if he was on _Twitter_ so that I could follow him - {{< i fa-smile-o >}} yeah 58k+ followers. The food was great. The people of Serbia know how to do meat, I might get myself banned from the United States for saying this but it is true, "Serbia has the best bacon in the world!" After a long night, I returned to my hotel where I immediately fell asleep.
 
 ### April 14, 2018
 
-I woke up at 8 AM, I then decided I would rest my eyes a little longer (suffering from jetlag) I opened them again around 11 AM. My talk was at 4, so I had plenty of time. It was conference day, I was prepared and looking forward to giving my talk. I believe that presenting on C# was an excellent choice – it is a universal language. The attendees really enjoyed it and were thoroughly engaged. The only time people had their phones out were for taking pictures of me or the slides. I was asked to take pictures with several attendees both before and after my talk. This was the first time this has ever happened to me and it made my day!
+I woke up at 8 AM, I then decided I would rest my eyes a little longer (suffering from jetlag) I opened them again around 11 AM. My talk was at 4, so I had plenty of time. It was conference day, I was prepared and looking forward to giving my talk. I believe that presenting on C# was an excellent choice – it is a universal language. The attendees really enjoyed it and were thoroughly engaged. The only time people had their phones out was for taking pictures of me or the slides. I was asked to take pictures with several attendees both before and after my talk. This was the first time this has ever happened to me and it made my day!
 
-In addition to a great conference, Jonathan LeBlanc and I took a casual stroll through Belgrade. We ended up walking over 14 miles and visited the Belgrade fortress. Along the way we were asked to help someone lift an A/C unit up a shaky ladder onto a roof within a closed market.
+In addition to a great conference, Jonathan LeBlanc and I took a casual stroll through Belgrade. We ended up walking over 14 miles and visited the Belgrade fortress. Along the way, we were asked to help someone lift an A/C unit up a shaky ladder onto a roof within a closed market.
 
 {{< img-fit
     "4u" "market.jpg" "Market"
@@ -69,9 +69,9 @@ There are several life lessons that I live by - this is one of them.
 
 <br/><br/>
 
-Jovan and the other hosts treated us like celebrities. We had a walking tour of the Niš fortress and city center. After arming ourselves with some umbrellas we were ready to take on the light rain. My umbrella just so happened to be pink. I'm not sure the color of my umbrella is relevant for this story, but I felt inclined to share it. After strolling around the fortress and then making our way back towards the city center - we needed some caffeine. We enjoyed turkish coffee and dark beer, because why not both?! I recall this evening very well, this is the night that Håkon told us about the time he built a balsawood raft with a group of volunteers. The raft weighed over 20 tons, and the intended purpose was to set course from South America (Peru) and sail to Easter Island. Why, you might ask - as both Jon's and I did...we were intrigued, why on earth would anyone want to do this? Simply to prove a point that it could be done. It would prove that Easter Island could have been inhabited by the people of South America. This voyage took place in 2015-2016 and was the spot light of world-wide news, for more details checkout the {{< url-link "official website" "https://kontiki2.com/" >}} and {{< url-link "the story from Håkon himself here" "https://www.wiumlie.no/img/2015/kontiki2.html" >}}.
+Jovan and the other hosts treated us like celebrities. We had a walking tour of the Niš fortress and city center. After arming ourselves with some umbrellas we were ready to take on the light rain. My umbrella just so happened to be pink. I'm not sure the color of my umbrella is relevant for this story, but I felt inclined to share it. After strolling around the fortress and then making our way back towards the city center - we needed some caffeine. We enjoyed turkish coffee and dark beer, because why not both?! I recall this evening very well, this is the night that Håkon told us about the time he built a balsawood raft with a group of volunteers. The raft weighed over 20 tons, and the intended purpose was to set course from South America (Peru) and sail to Easter Island. Why, you might ask - as both Jon's and I did...we were intrigued, why on earth would anyone want to do this? Simply to prove a point that it could be done. It would prove that Easter Island could have been inhabited by the people of South America. This voyage took place in 2015-2016 and was the spotlight of world-wide news, for more details checkout the {{< url-link "official website" "https://kontiki2.com/" >}} and {{< url-link "the story from Håkon himself here" "https://www.wiumlie.no/img/2015/kontiki2.html" >}}.
 
-Again we enjoyed a traditional Serbian dinner. There was more rakija and as luck would have it, traditional Serbian music was played/performed live...with the livlihood from the rakija there was dancing and singing, and all around celebration. Such a joyous time!
+Again we enjoyed a traditional Serbian dinner. There was more rakija and as luck would have it, traditional Serbian music was played/performed live...with the livelihood from the rakija there was dancing and singing, and all-around celebration. Such a joyous time!
 
 {{< img-fit
     "4u" "singing.jpg" "Singing"
@@ -95,46 +95,27 @@ Wednesday was another traveling day. Our jumbo van trip was scheduled to take ro
 
 > IT experts are visiting the municipalities of Crvena Krst.
 
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/5jCy7oHbDaE" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube 5jCy7oHbDaE >}}
 
 Shortly after the ceremony, we drove to Novi Sad. We arrived without a hitch, settling into our hotels. Followed by a city tour, which proved to be a spectacular site. Dinner was at the {{< url-link "Terasa" "https://www.terasa.rs/" >}}. This sits right on the Danube river and at the foot of the Novi Sad fortress. Håkon was able to capture some amazing footage with his drone...the view was beautifully stunning.
 
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/rC4pvMA8Qsk" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube rC4pvMA8Qsk >}}
 
 ## Sremski Karlovci & Danube River
 
 ### April 19, 2018
 
-The 19th was a really relaxing day, we had a walking tour, lunch on the Danube river, followed by a wine tasting at the {{< url-link "Museum of Beekeeping and Wine Cellar Zivanovic" "https://www.muzejzivanovic.com/" >}}. Again, Håkon let his drone capture some of the essence and scenery. This video starts well beyond the town center, working its way back towards where we had lunch on the river. Yes, that establishment in the distance is where Håkon is navigating his drone recording this clip. I am seriously trying to convince my wife to let me purchase one of these drones. If you want to buy it for yourself {{< url-link "here is the link" "https://www.amazon.com/Mavic-Platinum-Quadcopter-Camera-Batteries/dp/B07871KXMP" >}}.
+The 19th was a really relaxing day, we had a walking tour, lunch on the Danube river, followed by a wine tasting at the {{< url-link "Museum of Beekeeping and Wine Cellar Zivanovic" "https://www.muzejzivanovic.com/" >}}. Again, Håkon let his drone capture some of the essence and scenery. This video starts well beyond the town center, working its way back toward where we had lunch on the river. Yes, that establishment in the distance is where Håkon is navigating his drone recording this clip. I am seriously trying to convince my wife to let me purchase one of these drones. If you want to buy it for yourself {{< url-link "here is the link" "https://www.amazon.com/Mavic-Platinum-Quadcopter-Camera-Batteries/dp/B07871KXMP" >}}.
 
-<div class="iframe_container">
-    <iframe src="https://www.youtube.com/embed/h6qwzQ65Fh8" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube h6qwzQ65Fh8 >}}
 
-This footage is amazing, video quality up to 4k if you're into that sort of thing...
+This footage is amazing, with video quality up to 4k if you're into that sort of thing... 😏
 
 ### April 20, 2018
 
 The final conference day! I was up first and immediately following my talk, I needed to catch a cab back to Belgrade to catch my flight back home. I was sent home with a parting gift from the founders. I love the thoughtfulness, and it is so true that it's better than a notebook and a pen.
 
-<div class="box alt">
-   <div class="row uniform">
-      <div class="5u">
-         <span class="image fit">
-            <img src="/img/2018/04/gift.jpg" alt="Gift">
-         </span>
-      </div>
-      <div class="7u">
-         <span class="image fit">
-            <img src="/img/2018/04/gift-2.jpg" alt="Note">
-         </span>
-      </div>
-   </div>
-</div>
+{{< gifts-from-organizers >}}
 
 I was excited to be returning home. I know that I was missed by Lyric, Londyn, Lennyx (my three sons) and Jen (wife). I'm thankful to have had a safe trip and shared so many awesome experiences. For those interested in the conference itself, I'll be posting videos and more photos as they are released. For my talk, see below.
 

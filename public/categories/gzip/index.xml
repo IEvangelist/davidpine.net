@@ -15,7 +15,7 @@
       <guid>https://davidpine.net/blog/asp-net-core-optimization/</guid>
       <description>Intro If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in tandem on an ASP.NET Core application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.
 If you haven&amp;rsquo;t had a chance to use ASP.NET Core yet, you&amp;rsquo;re missing out! As my friend Scott Addie likes to say:
-ASP.NET Core is a cafeteria plan in which developers choose application dependencies à la carte.</description>
+ ASP.</description>
     </item>
     
   </channel>

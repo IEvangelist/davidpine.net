@@ -13,8 +13,8 @@
       <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/dot-net-standard-demystified/</guid>
-      <description>Intro Monday, August 14th was an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
-What is this .NET Standard thing? What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework? As a developer, what .NET should I target and why? Are Portable Class Libraries (PCLs) dead? Developer Community</description>
+      <description>Intro Monday, August 14thwas an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
+ What is this .NET Standard thing? What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework? As a developer, what .NET should I target and why? Are Portable Class Libraries (PCLs) dead? Developer Community All of these questions have already been answered, you just have to know where to look.</description>
     </item>
     
   </channel>

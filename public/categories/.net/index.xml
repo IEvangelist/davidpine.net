@@ -6,7 +6,26 @@
     <description>Recent content in .NET on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A conversation with ChatGPT </title>
+      <link>https://davidpine.net/blog/dotnet-dependency-injection/</link>
+      <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/dotnet-dependency-injection/</guid>
+      <description>❗ IMPORTANT  This post was generated using ChatGPT. I prompted the AI with a few leading questions and formatted the responses as the body text of this post. For more information, see the ChatGPT.   A conversation with ChatGPT about .NET Dependency Injection What is dependency injection and why is it important?
+  David Pine     Dependency injection is a software design pattern that allows a programmer to remove hard-coded dependencies and make them configurable.</description>
+    </item>
+    
+    <item>
+      <title>Hello from the GitHub Actions: Core .NET SDK</title>
+      <link>https://davidpine.net/blog/github-actions-sdk/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/github-actions-sdk/</guid>
+      <description>📢 ATTENTION  This post is part of the C# advent calendar 2022, for other articles in this collection see C# Advent Calendar 2022. This is the third time I&amp;rsquo;ve written for the calendar, past entries include 2017: C# Special Edition and 2018: C# All The Things. 🙏🏽  GitHub Actions: Core .NET SDK SDKs are great, but why do we need one for GitHub Actions? The short answer is, you don&amp;rsquo;t!</description>
+    </item>
+    
     <item>
       <title>C# Special Edition</title>
       <link>https://davidpine.net/blog/csharp-special-edition/</link>
@@ -23,8 +42,8 @@ In the Beginning I&amp;rsquo;m honored to blog about my favorite programming lan
       <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/dot-net-standard-demystified/</guid>
-      <description>Intro Monday, August 14th was an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
-What is this .NET Standard thing? What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework? As a developer, what .NET should I target and why? Are Portable Class Libraries (PCLs) dead? Developer Community</description>
+      <description>Intro Monday, August 14thwas an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
+ What is this .NET Standard thing? What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework? As a developer, what .NET should I target and why? Are Portable Class Libraries (PCLs) dead? Developer Community All of these questions have already been answered, you just have to know where to look.</description>
     </item>
     
     <item>
@@ -34,7 +53,7 @@ What is this .NET Standard thing? What does it mean to target .NET Standard vers
       
       <guid>https://davidpine.net/blog/csharp-seven-dot-one/</guid>
       <description>Earlier this year in March &amp;ndash; Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on Exploring C# 7. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.
-Async Main Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
+Async Main  Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
     </item>
     
     <item>
@@ -43,9 +62,9 @@ Async Main Since the release of C# 5, developers have either embraced the async 
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/exploring-csharp-seven/</guid>
-      <description>Intro Since we have all been actively celebrating the 20th anniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here .
+      <description>Intro Since we have all been actively celebrating the 20thanniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here .
 This post contains examples and details on five of the nine new C# 7 features.
-Pattern matching out variables Tuples Local functions throw expressions These are the remaining features, that I do not cover in this post.</description>
+ Pattern matching out variables Tuples Local functions throw expressions  These are the remaining features, that I do not cover in this post.</description>
     </item>
     
   </channel>

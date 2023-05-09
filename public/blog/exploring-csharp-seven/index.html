@@ -1,36 +1,37 @@
 <!DOCTYPE HTML>
 
 <html>
-    <head>
-        <link rel="icon" href="/img/main/favicon.png" type="image/png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        
-            
-                <title>Exploring C# 7</title>
-            
-        
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.102.1" />
-        
+<head>
+    <link rel="icon" href="/img/main/favicon.png" type="image/png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    
+    <title>Exploring C# 7</title>
+    
+    
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Hugo 0.98.0" />
+    
 
 
-        
-            <meta name="author" content="David Pine">
-        
-        
-            <meta name="description" content="Expressiveness Redefined &amp; #notasugly">
-        
+    
+    <meta name="author" content="David Pine">
+    
+    
+    <meta name="description" content="Expressiveness Redefined &amp; #notasugly">
+    
 
-        <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://davidpine.net/img/2017/03/exploration.png"/>
 
 <meta name="twitter:title" content="Exploring C# 7"/>
 <meta name="twitter:description" content="Expressiveness Redefined &amp; #notasugly"/>
 <meta name="twitter:site" content="@davidpine7"/>
 
-        <meta property="og:title" content="Exploring C# 7" />
+    <meta property="og:title" content="Exploring C# 7" />
 <meta property="og:description" content="Expressiveness Redefined &amp; #notasugly" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://davidpine.net/blog/exploring-csharp-seven/" /><meta property="og:image" content="https://davidpine.net/img/2017/03/exploration.png" /><meta property="article:section" content="blog" />
@@ -38,34 +39,34 @@
 <meta property="article:modified_time" content="2017-03-26T00:00:00+00:00" />
 
 
-        <meta itemprop="name" content="Exploring C# 7">
+    <meta itemprop="name" content="Exploring C# 7">
 <meta itemprop="description" content="Expressiveness Redefined &amp; #notasugly"><meta itemprop="datePublished" content="2017-03-26T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-03-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2307"><meta itemprop="image" content="https://davidpine.net/img/2017/03/exploration.png">
+<meta itemprop="wordCount" content="2305"><meta itemprop="image" content="https://davidpine.net/img/2017/03/exploration.png">
 <meta itemprop="keywords" content="" />
 
-        
+    
 
-        
-        
-            
-        
-        
-        
-        
-            <link rel="stylesheet" href="/css/google-font.css" />
-            <link rel="stylesheet" href="/css/font-awesome.min.css" />
-            <link rel="stylesheet" href="/css/main.css" />
-            <link rel="stylesheet" href="/css/add-on.css" />
-            <link rel="stylesheet" href="/css/tomorrow-night.css">
-        
+    
+    
+    
+    
 
-        
+    
+    
+    <link rel="stylesheet" href="/css/google-font.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/add-on.css" />
+    <link rel="stylesheet" href="/css/github-dark.css">
+    
 
-        
-        
-        
-            
+    
+
+    
+    
+    
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -78,15 +79,16 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-        
-    </head>
-    <body>
-        <script src="/js/jquery.min.js"></script>
-        </script>
+    
+</head>
 
-        
-        <div id="wrapper">
+<body>
+    <a rel="me" href="https://dotnet.social/@davidpine"></a>
+    <script src="/js/jquery.min.js"></script>
+    </script>
 
+    
+    <div id="wrapper">
     
     
 <header id="header">
@@ -276,15 +278,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/dotnet-dependency-injection/"><p>A conversation with ChatGPT </p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/github-actions-sdk/"><p>Hello from the GitHub Actions: Core .NET SDK</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
                     </li>
                 
             </ul>
@@ -362,11 +364,34 @@ if (!doNotTrack) {
             
         
 
-        <time class="published" data-hover='March, 2017'
-            datetime='2017-03-26'
-            data-initial='Written on'>
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <div style="display: none;"
+            data-date='2023'
+            data-lastmod='2017'
+            data-min='2017'
+            data-max='2023'
+            data-difference='6'
+            data-var='3'>
+        </div>
+
+        
+        <time class="published" data-hover='2017'
+            datetime='2017'
+            data-initial='Written in' data-extras='6'>
             <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
         </time>
+        
+
         <span class="author">David Pine</span>
         
             <p>11 minute read</p>
@@ -428,9 +453,6 @@ if (!doNotTrack) {
 
 
 
-    
-    
-        
     
 
 
@@ -673,14 +695,14 @@ ordinal based. However, note that deconstruction is not actually limited to tupl
 method can be deconstructed. Consider the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> (<span style="color:#66d9ef">string</span> First, <span style="color:#66d9ef">string</span> Middle, <span style="color:#66d9ef">string</span> Last) _name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> (<span style="color:#66d9ef">string</span> First, <span style="color:#66d9ef">string</span> Middle, <span style="color:#66d9ef">string</span> Last) <span style="color:#ae81ff">_</span>name;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> DateTime DateOfBirth _dateOfBirth;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> DateTime DateOfBirth <span style="color:#ae81ff">_d</span>ateOfBirth;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Person((<span style="color:#66d9ef">string</span> f, <span style="color:#66d9ef">string</span> m, <span style="color:#66d9ef">string</span> l) name, DateTime dob)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        _name = name;
-</span></span><span style="display:flex;"><span>        _dateOfBirth = dob;
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">_</span>name = name;
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">_d</span>ateOfBirth = dob;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Deconstruct(<span style="color:#66d9ef">out</span> <span style="color:#66d9ef">double</span> age, 
@@ -688,10 +710,10 @@ method can be deconstructed. Consider the following:</p>
 </span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">string</span> middleName, 
 </span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">string</span> lastName)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        age = (DateTime.Now - _dateOfBirth).TotalYears;
-</span></span><span style="display:flex;"><span>        firstName = _name.First;
-</span></span><span style="display:flex;"><span>        middleName = _name.Middle;
-</span></span><span style="display:flex;"><span>        lastName = _name.Last;
+</span></span><span style="display:flex;"><span>        age = (DateTime.Now - <span style="color:#ae81ff">_d</span>ateOfBirth).TotalYears;
+</span></span><span style="display:flex;"><span>        firstName = <span style="color:#ae81ff">_</span>name.First;
+</span></span><span style="display:flex;"><span>        middleName = <span style="color:#ae81ff">_</span>name.Middle;
+</span></span><span style="display:flex;"><span>        lastName = <span style="color:#ae81ff">_</span>name.Last;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Now that the <code>Person</code> is defined with this <code>Deconstruct</code> method, we can deconstruct it following the same ordinal based semantics.</p>
@@ -704,8 +726,8 @@ method can be deconstructed. Consider the following:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Note: to partially deconstruct you can ignore a specific ordinal by using the _</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// This does not actually naming the ordinal variable, but truly ignoring it.</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> (_, _, _, _) = person;          <span style="color:#75715e">// Ignore all, not very useful</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> (_, firstName, _, _) = person;  <span style="color:#75715e">// Cherry-pick first name</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> (<span style="color:#ae81ff">_</span>, <span style="color:#ae81ff">_</span>, <span style="color:#ae81ff">_</span>, <span style="color:#ae81ff">_</span>) = person;          <span style="color:#75715e">// Ignore all, not very useful</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> (<span style="color:#ae81ff">_</span>, firstName, <span style="color:#ae81ff">_</span>, <span style="color:#ae81ff">_</span>) = person;  <span style="color:#75715e">// Cherry-pick first name</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="comparing-anonymous-object-vs-valuetuple">Comparing Anonymous <code>object</code> vs. <code>ValueTuple</code></h4>
 <p>At first glance tuples look almost like anonymous objects. They are in fact very different. An anonymous object is actually a reference type whereas
@@ -806,7 +828,7 @@ imagine that the <code>.Select</code> extension method was implemented as follow
 mechanism is to <code>throw</code> if an argument is <code>null</code>. Consider the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LegacyService</span> : IService
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IContextProvider _provider;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IContextProvider <span style="color:#ae81ff">_</span>provider;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> LegacyService(IContextProvider provider)
 </span></span><span style="display:flex;"><span>    {
@@ -815,17 +837,17 @@ mechanism is to <code>throw</code> if an argument is <code>null</code>. Consider
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(provider));
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        _provider = provider;
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">_</span>provider = provider;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>With <strong>C# 7</strong> we can simplify this with the <code>throw</code> expression.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ModernService</span> : IService
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IContextProvider _provider;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IContextProvider <span style="color:#ae81ff">_</span>provider;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ModernService(IContextProvider provider)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        _provider = provider ?? <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(provider));
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">_</span>provider = provider ?? <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentNullException(nameof(provider));
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>If the given <code>provider</code> argument is <code>null</code> we&rsquo;ll coalesce over to the <code>throw</code> expression.</p>
@@ -841,7 +863,7 @@ made sense to share it here - Enjoy!!</p>
         
     
 
-    <a href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" target='_blank'>What&#39;s new in C# 7</a>
+    <a href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp-7" target='_blank'>What&rsquo;s new in C# 7</a>
 
 </li>
 </ul>
@@ -972,7 +994,7 @@ made sense to share it here - Enjoy!!</p>
             <div class='column'>
                 <a target="_blank" rel="noopener"
                     href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
-                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
+                    <img src="/img/main/gde-23.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
@@ -1085,38 +1107,38 @@ made sense to share it here - Enjoy!!</p>
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/dotnet-dependency-injection/">A conversation with ChatGPT </a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-12-08'>
+                            December 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/github-actions-sdk/">Hello from the GitHub Actions: Core .NET SDK</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-11-30'>
+                            November 30, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
                         
                         
                         
-                        <time class="published" datetime='2022-09-15'>
-                            September 15, 2022</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2022-09-08'>
-                            September 8, 2022</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-11-23'>
-                            November 23, 2019</time>
+                        <time class="published" datetime='2022-09-16'>
+                            September 16, 2022</time>
                     </header>
                 </article>
             </li>
@@ -1156,7 +1178,7 @@ made sense to share it here - Enjoy!!</p>
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">14</span>
+                        <span style="float:right;">16</span>
                     </header>
                 </article>
             </li>
@@ -1182,8 +1204,8 @@ made sense to share it here - Enjoy!!</p>
             <li>
                 <article>
                     <header>
-                        <a href="/categories/angular/">angular</a>
-                        <span style="float:right;">5</span>
+                        <a href="/categories/.net/">.net</a>
+                        <span style="float:right;">6</span>
                     </header>
                 </article>
             </li>
@@ -1192,7 +1214,7 @@ made sense to share it here - Enjoy!!</p>
                 <article>
                     <header>
                         <a href="/categories/typescript/">typescript</a>
-                        <span style="float:right;">5</span>
+                        <span style="float:right;">6</span>
                     </header>
                 </article>
             </li>
@@ -1200,8 +1222,8 @@ made sense to share it here - Enjoy!!</p>
             <li>
                 <article>
                     <header>
-                        <a href="/categories/.net/">.net</a>
-                        <span style="float:right;">4</span>
+                        <a href="/categories/angular/">angular</a>
+                        <span style="float:right;">5</span>
                     </header>
                 </article>
             </li>
@@ -1326,6 +1348,15 @@ made sense to share it here - Enjoy!!</p>
             <li>
                 <article>
                     <header>
+                        <a href="/categories/chatgpt/">chatgpt</a>
+                        <span style="float:right;">1</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/compression/">compression</a>
                         <span style="float:right;">1</span>
                     </header>
@@ -1354,6 +1385,15 @@ made sense to share it here - Enjoy!!</p>
                 <article>
                     <header>
                         <a href="/categories/fear/">fear</a>
+                        <span style="float:right;">1</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/github/">github</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1408,6 +1448,15 @@ made sense to share it here - Enjoy!!</p>
                 <article>
                     <header>
                         <a href="/categories/mke-dot-net/">mke-dot-net</a>
+                        <span style="float:right;">1</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/openai/">openai</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1576,7 +1625,7 @@ made sense to share it here - Enjoy!!</p>
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        <p class="copyright">&copy; IEvangelist 2016-2023. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
         </p>
     </section>
 
@@ -1596,13 +1645,13 @@ made sense to share it here - Enjoy!!</p>
             <script src="/js/util.js"></script>
             <script src="/js/main.js"></script>
             <script src="/js/backToTop.js"></script>
-            <script src="/js/highlight.pack.js"></script>
+            <script src="/js/highlight.min.js"></script>
         
 
         
 
             
-            <script>hljs.initHighlightingOnLoad();</script>
+            <script>hljs.highlightAll();</script>
             
     </body>
 </html>

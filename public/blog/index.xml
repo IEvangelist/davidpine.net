@@ -6,15 +6,34 @@
     <description>Recent content in Blogs on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A conversation with ChatGPT </title>
+      <link>https://davidpine.net/blog/dotnet-dependency-injection/</link>
+      <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/dotnet-dependency-injection/</guid>
+      <description>❗ IMPORTANT  This post was generated using ChatGPT. I prompted the AI with a few leading questions and formatted the responses as the body text of this post. For more information, see the ChatGPT.   A conversation with ChatGPT about .NET Dependency Injection What is dependency injection and why is it important?
+  David Pine     Dependency injection is a software design pattern that allows a programmer to remove hard-coded dependencies and make them configurable.</description>
+    </item>
+    
+    <item>
+      <title>Hello from the GitHub Actions: Core .NET SDK</title>
+      <link>https://davidpine.net/blog/github-actions-sdk/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/github-actions-sdk/</guid>
+      <description>📢 ATTENTION  This post is part of the C# advent calendar 2022, for other articles in this collection see C# Advent Calendar 2022. This is the third time I&amp;rsquo;ve written for the calendar, past entries include 2017: C# Special Edition and 2018: C# All The Things. 🙏🏽  GitHub Actions: Core .NET SDK SDKs are great, but why do we need one for GitHub Actions? The short answer is, you don&amp;rsquo;t!</description>
+    </item>
+    
     <item>
       <title>Learning Blazor</title>
       <link>https://davidpine.net/blog/learning-blazor/</link>
-      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/learning-blazor/</guid>
-      <description>Sometime in June 2021, I set out on a journey to write a book in the middle of a global pandemic. I had no idea what I was doing (all things considered, I still don&amp;rsquo;t know what I&amp;rsquo;m doing). But I do know that I truly enjoy helping others. I hope you enjoy the book as much as I enjoyed writing it.
-Amazon Preview Foreword by Steve Sanderson Web development has been a dominating feature of the software industry for over 20 years and is likely to remain so for many years to come.</description>
+      <description>In June 2021, I set out on a journey to write a book in the middle of a global pandemic. I had no idea what I was doing (all things considered, I still don&amp;rsquo;t know what I&amp;rsquo;m doing). But I do know that I truly enjoy helping others. I hope you enjoy the book as much as I enjoyed writing it.
+Amazon Preview  Foreword by Steve Sanderson Web development has been a dominating feature of the software industry for over 20 years and is likely to remain so for many years to come.</description>
     </item>
     
     <item>
@@ -23,7 +42,7 @@ Amazon Preview Foreword by Steve Sanderson Web development has been a dominating
       <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/blazorators/</guid>
-      <description>Blazorators All of this code relies on the output of one of my side projects named blazorators. While writing my O&amp;rsquo;Reilly &amp;ldquo;Learning Blazor: Build Single-Page Apps with WebAssembly and C#&amp;rdquo; book, I discovered an impactful way to use both TypeScript type declarations from common JavaScript APIs and C# source generators to generate the JavaScript interop code. This is covered in chapter seven, so I don&amp;rsquo;t want to spoil it too much, but rather entice you to want to read the book.</description>
+      <description>Blazorators Blazorators is a C# source generator that creates fully functioning Blazor JavaScript interop code, targeting either the IJSInProcessRuntime or IJSRuntime types. All of this code relies on the output of one of my side projects named blazorators. While writing my O&amp;rsquo;Reilly &amp;ldquo;Learning Blazor: Build Single-Page Apps with WebAssembly and C#&amp;rdquo; book, I discovered an impactful way to use both TypeScript type declarations from common JavaScript APIs and C# source generators to generate the JavaScript interop code.</description>
     </item>
     
     <item>
@@ -41,8 +60,8 @@ Amazon Preview Foreword by Steve Sanderson Web development has been a dominating
       <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/asp-net-core-slack/</guid>
-      <description>Background Most of us are all &amp;ldquo;slackers&amp;rdquo;, meaning we truly do spend a significant amount of time using Slack.
-Slack is a collaboration hub for work, no matter what work you do. It’s a place where conversations happen, decisions are made, and information is always at your fingertips. www.slack.com It&amp;rsquo;s wildly popular in the Developer Community! In fact, almost to a fault&amp;hellip;people are constantly sharing their &amp;ldquo;slack fatigue&amp;rdquo;. I am personally a part of roughly twenty slack workspaces.</description>
+      <description>Background Most of us are all &amp;ldquo;slackers&amp;rdquo;, meaning we truly do spend a significant amount of time using  Slack.
+ Slack is a collaboration hub for work, no matter what work you do. It’s a place where conversations happen, decisions are made, and information is always at your fingertips. www.slack.com  It&amp;rsquo;s wildly popular in the Developer Community! In fact, almost to a fault&amp;hellip;people are constantly sharing their &amp;ldquo;slack fatigue&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -61,7 +80,7 @@ Slack is a collaboration hub for work, no matter what work you do. It’s a plac
       
       <guid>https://davidpine.net/blog/csharp-all-the-things/</guid>
       <description>I&amp;rsquo;m proud to share that this post is part of the C# Advent Calendar and it&amp;rsquo;s my second year contributing to it! I encourage you to check out all the others here .
-Developers Are Lazy In the world of web development it is hard to escape certain tools that we are forced to rely on. As developers we&amp;rsquo;re innately lazy and it is safe to say that perhaps we don&amp;rsquo;t really care enough to look into other tooling options.</description>
+ Developers Are Lazy In the world of web development it is hard to escape certain tools that we are forced to rely on. As developers we&amp;rsquo;re innately lazy and it is safe to say that perhaps we don&amp;rsquo;t really care enough to look into other tooling options.</description>
     </item>
     
     <item>
@@ -89,7 +108,8 @@ Developers Are Lazy In the world of web development it is hard to escape certain
       
       <guid>https://davidpine.net/blog/webassembly-interview/</guid>
       <description>I set out a while ago to try to interview various community leaders for their take on WebAssembly. If you&amp;rsquo;re unfamiliar with WebAssembly, here&amp;rsquo;s a definition for you.
-WebAssembly is a binary instruction format for a stack-based virtual machine webassembly.org Additionally, one of the other&amp;rsquo;s that I reached out to was Scott Hanselman. Scott offered up something really special, rather than replying to the questions - he gave me an unpublished interview (that has since been published) that he did with Steve Sanderson on his hanselminutes podcast !</description>
+ WebAssembly is a binary instruction format for a stack-based virtual machine webassembly.org  
+Additionally, one of the other&amp;rsquo;s that I reached out to was Scott Hanselman. Scott offered up something really special, rather than replying to the questions - he gave me an unpublished interview (that has since been published) that he did with Steve Sanderson on his hanselminutes podcast !</description>
     </item>
     
     <item>
@@ -116,7 +136,7 @@ WebAssembly is a binary instruction format for a stack-based virtual machine web
       <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/journey-of-a-lifetime/</guid>
-      <description>Intro I am returning home from a long trip in Serbia for IT Konekt . This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of IT Konekt. This was my first time ever leaving the United States of America and I didn&amp;rsquo;t know what to expect.</description>
+      <description>Intro I am returning home from a long trip in Serbia for  IT Konekt . This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of IT Konekt. This was my first time ever leaving the United States of America and I didn&amp;rsquo;t know what to expect.</description>
     </item>
     
     <item>
@@ -135,7 +155,7 @@ WebAssembly is a binary instruction format for a stack-based virtual machine web
       
       <guid>https://davidpine.net/blog/asp-net-core-configuration/</guid>
       <description>Being a software developer, it&amp;rsquo;s in our nature to configure various aspects of the applications that we write. With ASP.NET Core configuring our applications is really straight forward. Luckily, there is a lot of really well written documentation surrounding this topic.
-ASP.NET Core - Configuration ASP.NET Core - Options However, there is still room for improvement. I&amp;rsquo;ve prepared a few tips that can enhance developer productivity by taking advantage of various C# features.</description>
+  ASP.NET Core - Configuration   ASP.NET Core - Options   However, there is still room for improvement. I&amp;rsquo;ve prepared a few tips that can enhance developer productivity by taking advantage of various C# features.</description>
     </item>
     
     <item>
@@ -154,8 +174,8 @@ In the Beginning I&amp;rsquo;m honored to blog about my favorite programming lan
       <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/xunit-powered-by-roslyn/</guid>
-      <description>Intro At my day job, I wear many hats. I&amp;rsquo;m currently wearing the &amp;ldquo;upgrade our team&amp;rsquo;s tooling&amp;rdquo; hat. I counted 99 *.xproj and project.json based projects spanning four repositories that need to be updated to the revitalized *.csproj project format. With this the team can upgrade to the latest version of Visual Studio (finally upgrading to 2017 from 2015) and start taking advantage of the following:
-Supported tooling, no longer on preview tooling bits Allows us to explore C# 7 (and peruse C# 7.</description>
+      <description>Intro At my day job, I wear many hats. I&amp;rsquo;m currently wearing the &amp;ldquo;upgrade our team&amp;rsquo;s tooling&amp;rdquo; hat. I counted 99*.xproj and project.json based projects spanning four repositories that need to be updated to the revitalized *.csproj project format. With this the team can upgrade to the latest version of Visual Studio (finally upgrading to 2017 from 2015) and start taking advantage of the following:
+ Supported tooling, no longer on preview tooling bits Allows us to explore C# 7 (and peruse C# 7.</description>
     </item>
     
     <item>
@@ -164,8 +184,8 @@ Supported tooling, no longer on preview tooling bits Allows us to explore C# 7 (
       <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/dot-net-standard-demystified/</guid>
-      <description>Intro Monday, August 14th was an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
-What is this .NET Standard thing? What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework? As a developer, what .NET should I target and why? Are Portable Class Libraries (PCLs) dead? Developer Community</description>
+      <description>Intro Monday, August 14thwas an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
+ What is this .NET Standard thing? What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework? As a developer, what .NET should I target and why? Are Portable Class Libraries (PCLs) dead? Developer Community All of these questions have already been answered, you just have to know where to look.</description>
     </item>
     
     <item>
@@ -175,7 +195,7 @@ What is this .NET Standard thing? What does it mean to target .NET Standard vers
       
       <guid>https://davidpine.net/blog/csharp-seven-dot-one/</guid>
       <description>Earlier this year in March &amp;ndash; Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on Exploring C# 7. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.
-Async Main Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
+Async Main  Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
     </item>
     
     <item>
@@ -194,7 +214,7 @@ Async Main Since the release of C# 5, developers have either embraced the async 
       
       <guid>https://davidpine.net/blog/typescript-javascript-reimagined/</guid>
       <description>First things First JavaScript is the world&amp;rsquo;s third most common programming language today. JavaScript was created by Brendan Eich in about ten days. It might seem odd that the previous two sentences not only exist, but go together&amp;hellip;yet it is true! JavaScript runs seemingly everywhere and applications written in this language are only getting larger.
-JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.</description>
+ JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.</description>
     </item>
     
     <item>
@@ -203,9 +223,9 @@ JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/exploring-csharp-seven/</guid>
-      <description>Intro Since we have all been actively celebrating the 20th anniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here .
+      <description>Intro Since we have all been actively celebrating the 20thanniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here .
 This post contains examples and details on five of the nine new C# 7 features.
-Pattern matching out variables Tuples Local functions throw expressions These are the remaining features, that I do not cover in this post.</description>
+ Pattern matching out variables Tuples Local functions throw expressions  These are the remaining features, that I do not cover in this post.</description>
     </item>
     
     <item>
@@ -245,7 +265,7 @@ History If you have ever done any .NET Framework development, you&amp;rsquo;ve p
       <guid>https://davidpine.net/blog/asp-net-core-optimization/</guid>
       <description>Intro If you&amp;rsquo;re a web developer, chances are you&amp;rsquo;re familiar with optimization strategies such as static file caching and response compression. I recently implemented these two concepts in tandem on an ASP.NET Core application that I have been developing&amp;hellip; I&amp;rsquo;m going to share what I have learned.
 If you haven&amp;rsquo;t had a chance to use ASP.NET Core yet, you&amp;rsquo;re missing out! As my friend Scott Addie likes to say:
-ASP.NET Core is a cafeteria plan in which developers choose application dependencies à la carte.</description>
+ ASP.</description>
     </item>
     
     <item>
@@ -256,7 +276,7 @@ ASP.NET Core is a cafeteria plan in which developers choose application dependen
       <guid>https://davidpine.net/blog/imposter-syndrome/</guid>
       <description>What is &amp;ldquo;impostor syndrome&amp;rdquo; you ask?
 According to Wikipedia :
-Impostor syndrome (also known as impostor phenomenon or fraud syndrome) is a term coined in 1978 by clinical psychologists Dr. Pauline R. Clance and Suzanne A. Imes referring to high-achieving individuals marked by an inability to internalize their accomplishments and a persistent fear of being exposed as a &amp;ldquo;fraud&amp;rdquo;. Despite external evidence of their competence, those exhibiting the syndrome remain convinced that they are frauds and do not deserve the success they have achieved.</description>
+ Impostor syndrome (also known as impostor phenomenon or fraud syndrome) is a term coined in 1978 by clinical psychologists Dr. Pauline R. Clance and Suzanne A. Imes referring to high-achieving individuals marked by an inability to internalize their accomplishments and a persistent fear of being exposed as a &amp;ldquo;fraud&amp;rdquo;. Despite external evidence of their competence, those exhibiting the syndrome remain convinced that they are frauds and do not deserve the success they have achieved.</description>
     </item>
     
     <item>
@@ -283,9 +303,9 @@ Impostor syndrome (also known as impostor phenomenon or fraud syndrome) is a ter
       <pubDate>Fri, 20 May 2016 22:40:31 -0500</pubDate>
       
       <guid>https://davidpine.net/blog/migrating-to-rc2/</guid>
-      <description>Introduction On Monday, May 16th 2016 there was an amazing announcement from the .NET Blog team!
-Announcing .NET Core RC2 and .NET Core SDK Preview 1
-This post will serve as a guide that walks you through the steps as I experienced them from migrating existing ASP.NET Core RC1 applications to ASP.NET Core RC2. It is worth mentioning that I&amp;rsquo;m am targeting the .NET 4.6 framework. So, I do not cover the .</description>
+      <description>Introduction On Monday, May 16th2016 there was an amazing announcement from the .NET Blog team!
+ Announcing .NET Core RC2 and .NET Core SDK Preview 1
+ This post will serve as a guide that walks you through the steps as I experienced them from migrating existing ASP.NET Core RC1 applications to ASP.NET Core RC2. It is worth mentioning that I&amp;rsquo;m am targeting the .NET 4.6 framework. So, I do not cover the .</description>
     </item>
     
   </channel>

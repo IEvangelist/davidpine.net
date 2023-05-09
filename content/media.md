@@ -9,31 +9,19 @@ date = "2018-04-12"
 
 This page is a collection of podcasts, webcasts, news and other various publications that I've been a part of. Enjoy!
 
-## Podcasts {{< i fa-podcast >}} Appearances
+## Video {{< i fa-video-camera >}} Appearances
 
-### [David Pine: NET Content Development - Episode 223](https://bit.ly/davidpine-azuredevops-podcast) {{< i fa-external-link-square >}}
+### C# Source Generators for Blazor
 
-> Jeffrey Palermo interviews David Pine, to learn about his role as a content developer for the .NET team. They discuss whether the age of JavaScript SPA frameworks is over, and what the future of .NET looks like. They dive into GitHub Actions and the .NET SDK David's been working on. They talk about Orleans and sample code, and so much more.
-
-### [Eat Sleep Code - Why You Should Learn TypeScript](https://soundcloud.com/esc-podcast/why-you-should-learn-typescript) {{< i fa-external-link-square >}}
-
-> On this episode, David Pine shares his experience with TypeScript. David talks about why TypeScript is a valuable tool for improving your experience with applications that normally are written using JavaScript. We discuss how to compile TypeScript, what are its strengths and how to get started.
-
-<br/><br/>
-
-### [6 Figure Developer - Episode 38](https://6figuredev.com/podcast/episode-038-developer-community-with-david-pine) {{< i fa-external-link-square >}}
-
-> David Pine talks with John Callaway, Clayton Hunt and Jon Ash about his love for the Developer Community, programming languages like TypeScript and C#, speaking and blogging.
-
-<br/><br/>
-
-### [Developer On Fire - Episode 305](http://developeronfire.com/podcast/episode-305-david-pine-positive-brand) {{< i fa-external-link-square >}}
-
-> David Pine talks with Dave Rael about building a brand for software developers, being a source of positivity, and the importance of mentors.
+{{< youtube pR6fMsZPw3g >}}
 
 ---
 
-## Video {{< i fa-video-camera >}} Appearances
+### Exploring the Azure AI OpenAI .NET SDK
+
+{{< youtube Bh1lUglDOq4 >}}
+
+---
 
 ### Blazorators: C# Source Generators for Blazor
 
@@ -191,6 +179,30 @@ This page is a collection of podcasts, webcasts, news and other various publicat
 
 ---
 
+## Podcasts {{< i fa-podcast >}} Appearances
+
+### [David Pine: NET Content Development - Episode 223](https://bit.ly/davidpine-azuredevops-podcast) {{< i fa-external-link-square >}}
+
+> Jeffrey Palermo interviews David Pine, to learn about his role as a content developer for the .NET team. They discuss whether the age of JavaScript SPA frameworks is over, and what the future of .NET looks like. They dive into GitHub Actions and the .NET SDK David's been working on. They talk about Orleans and sample code, and so much more.
+
+### [Eat Sleep Code - Why You Should Learn TypeScript](https://soundcloud.com/esc-podcast/why-you-should-learn-typescript) {{< i fa-external-link-square >}}
+
+> On this episode, David Pine shares his experience with TypeScript. David talks about why TypeScript is a valuable tool for improving your experience with applications that normally are written using JavaScript. We discuss how to compile TypeScript, what are its strengths and how to get started.
+
+<br/><br/>
+
+### [6 Figure Developer - Episode 38](https://6figuredev.com/podcast/episode-038-developer-community-with-david-pine) {{< i fa-external-link-square >}}
+
+> David Pine talks with John Callaway, Clayton Hunt and Jon Ash about his love for the Developer Community, programming languages like TypeScript and C#, speaking and blogging.
+
+<br/><br/>
+
+### [Developer On Fire - Episode 305](http://developeronfire.com/podcast/episode-305-david-pine-positive-brand) {{< i fa-external-link-square >}}
+
+> David Pine talks with Dave Rael about building a brand for software developers, being a source of positivity, and the importance of mentors.
+
+---
+
 ## Publications {{< i fa-file-text-o >}} Articles
 
 ### [Build a Video Chat App with ASP.NET Core, Angular, and Twilio](https://www.twilio.com/blog/video-chat-app-asp-net-core-angular-twilio) {{< i fa-external-link-square >}}
@@ -225,14 +237,16 @@ This page is a collection of podcasts, webcasts, news and other various publicat
 
 # Featured On Microsoft's Friday Five
 
- 1. {{< url-link "Jun 21, 2019" "https://techcommunity.microsoft.com/t5/Microsoft-MVP-Award-Program-Blog/Friday-Five-ASP-NET-CORE-Slack-Slash-Commands-Cloud-App-Security/ba-p/713990" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Jan 18, 2019" "https://blogs.msdn.microsoft.com/mvpawardprogram/2019/01/18/friday-five-january-18/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Jul 27, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/27/friday-five-july-27/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Jul 20, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/20/friday-five-july-20/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Jun 15, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/06/15/how-to-use-azure-serverless-to-become-gdpr-compliant-and-more-on-the-friday-five/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Jun 1, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/06/01/friday-five-june-1st/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "May 25, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/05/25/friday-five-may-25th/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Apr 27, 2018" "https://blogs.msdn.microsoft.com/mvpawardprogram/2018/04/27/friday-five-april-27th/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Dec 8, 2017" "https://blogs.msdn.microsoft.com/mvpawardprogram/2017/12/08/friday-five-december-8th/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Sep 22, 2017" "https://blogs.msdn.microsoft.com/mvpawardprogram/2017/09/22/friday-five-september-22/" >}} {{< i fa-external-link-square >}}
- 1. {{< url-link "Aug 8, 2017" "https://blogs.msdn.microsoft.com/mvpawardprogram/2017/08/18/friday-five-august-18th/" >}} {{< i fa-external-link-square >}}
+| Date | Link |
+| --- | --- |
+| Jun 21, 2019 | [Friday Five: ASP.NET CORE Slack Slash Commands, Cloud App Security](https://techcommunity.microsoft.com/t5/Microsoft-MVP-Award-Program-Blog/Friday-Five-ASP-NET-CORE-Slack-Slash-Commands-Cloud-App-Security/ba-p/713990) |
+| Jan 18, 2019 | [Friday Five: January 18](https://blogs.msdn.microsoft.com/mvpawardprogram/2019/01/18/friday-five-january-18/) |
+| Jul 27, 2018 | [Friday Five: July 27](https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/27/friday-five-july-27/) |
+| Jul 20, 2018 | [Friday Five: July 20](https://blogs.msdn.microsoft.com/mvpawardprogram/2018/07/20/friday-five-july-20/) |
+| Jun 15, 2018 | [How to use Azure Serverless to become GDPR compliant and more on the Friday Five](https://blogs.msdn.microsoft.com/mvpawardprogram/2018/06/15/how-to-use-azure-serverless-to-become-gdpr-compliant-and-more-on-the-friday-five/) |
+| Jun 1, 2018 | [Friday Five - June 1st](https://blogs.msdn.microsoft.com/mvpawardprogram/2018/06/01/friday-five-june-1st/) |
+| May 25, 2018 | [Friday Five - May 25th](https://blogs.msdn.microsoft.com/mvpawardprogram/2018/05/25/friday-five-may-25th/) |
+| Apr 27, 2018 | [Friday Five - April 27th](https://blogs.msdn.microsoft.com/mvpawardprogram/2018/04/27/friday-five-april-27th/) |
+| Dec 8, 2017 | [Friday Five - December 8th](https://blogs.msdn.microsoft.com/mvpawardprogram/2017/12/08/friday-five-december-8th/) |
+| Sep 22, 2017 | [Friday Five - September 22](https://blogs.msdn.microsoft.com/mvpawardprogram/2017/09/22/friday-five-september-22/) |
+| Aug 8, 2017 | [Friday Five - August 18th](https://blogs.msdn.microsoft.com/mvpawardprogram/2017/08/18/friday-five-august-18th/) |

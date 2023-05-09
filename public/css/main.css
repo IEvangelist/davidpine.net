@@ -1815,6 +1815,7 @@ pre code {
 	line-height: 1.75em;
 	padding: 1em 1.5em;
 	overflow-x: auto;
+	font-size: 1em;
 }
 
 hr {
@@ -3856,12 +3857,16 @@ img.headshot {
 
 }
 
+#main>article>header>div.meta>time {
+	color: black !important;
+}
+
 #main>article>header>div.meta>time:before {
 	content: attr(data-initial);
 	transition: all 3s linear;
 }
 
-#main>article>header>div.meta>time:hover {
+#main>article>header>div.meta>time:not(>span.normalize):hover {
 	cursor: help;
 	transition: all 3s linear;
 }
@@ -3872,10 +3877,13 @@ img.headshot {
 	transition: all 3s linear;
 }
 
-#main>article>header>div.meta>time > span.underline {
+#main>article>header>div.meta>time.underline {
 	text-decoration: underline;
-	color: black !important;
 	transition: all 3s linear;
+}
+
+#main>article>header>div.meta>time.normalize {
+	cursor: default !important;
 }
 
 .d-flex {
@@ -3893,4 +3901,16 @@ img.headshot {
 a.darken:hover {
 	transition: all 1s;
 	filter: brightness(90%) !important;
-  }
+}
+
+.admonition.note {
+	background: lightyellow;
+	border: #3c3b3b45 1px dashed;
+	padding: 2rem;
+}
+
+.admonition.tip {
+	background: lightcyan;
+	border: #3c3b3b45 1px dashed;
+	padding: 2rem;
+}

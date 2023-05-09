@@ -23,8 +23,8 @@ In the Beginning I&amp;rsquo;m honored to blog about my favorite programming lan
       <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/xunit-powered-by-roslyn/</guid>
-      <description>Intro At my day job, I wear many hats. I&amp;rsquo;m currently wearing the &amp;ldquo;upgrade our team&amp;rsquo;s tooling&amp;rdquo; hat. I counted 99 *.xproj and project.json based projects spanning four repositories that need to be updated to the revitalized *.csproj project format. With this the team can upgrade to the latest version of Visual Studio (finally upgrading to 2017 from 2015) and start taking advantage of the following:
-Supported tooling, no longer on preview tooling bits Allows us to explore C# 7 (and peruse C# 7.</description>
+      <description>Intro At my day job, I wear many hats. I&amp;rsquo;m currently wearing the &amp;ldquo;upgrade our team&amp;rsquo;s tooling&amp;rdquo; hat. I counted 99*.xproj and project.json based projects spanning four repositories that need to be updated to the revitalized *.csproj project format. With this the team can upgrade to the latest version of Visual Studio (finally upgrading to 2017 from 2015) and start taking advantage of the following:
+ Supported tooling, no longer on preview tooling bits Allows us to explore C# 7 (and peruse C# 7.</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@ Supported tooling, no longer on preview tooling bits Allows us to explore C# 7 (
       
       <guid>https://davidpine.net/blog/csharp-seven-dot-one/</guid>
       <description>Earlier this year in March &amp;ndash; Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on Exploring C# 7. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.
-Async Main Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
+Async Main  Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
     </item>
     
     <item>
@@ -43,9 +43,9 @@ Async Main Since the release of C# 5, developers have either embraced the async 
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidpine.net/blog/exploring-csharp-seven/</guid>
-      <description>Intro Since we have all been actively celebrating the 20th anniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here .
+      <description>Intro Since we have all been actively celebrating the 20thanniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here .
 This post contains examples and details on five of the nine new C# 7 features.
-Pattern matching out variables Tuples Local functions throw expressions These are the remaining features, that I do not cover in this post.</description>
+ Pattern matching out variables Tuples Local functions throw expressions  These are the remaining features, that I do not cover in this post.</description>
     </item>
     
   </channel>

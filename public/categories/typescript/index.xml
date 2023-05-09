@@ -6,7 +6,16 @@
     <description>Recent content in TypeScript on IEvangelist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello from the GitHub Actions: Core .NET SDK</title>
+      <link>https://davidpine.net/blog/github-actions-sdk/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidpine.net/blog/github-actions-sdk/</guid>
+      <description>📢 ATTENTION  This post is part of the C# advent calendar 2022, for other articles in this collection see C# Advent Calendar 2022. This is the third time I&amp;rsquo;ve written for the calendar, past entries include 2017: C# Special Edition and 2018: C# All The Things. 🙏🏽  GitHub Actions: Core .NET SDK SDKs are great, but why do we need one for GitHub Actions? The short answer is, you don&amp;rsquo;t!</description>
+    </item>
+    
     <item>
       <title>Angular - The Color Guessing Game</title>
       <link>https://davidpine.net/blog/angular-color-game/</link>
@@ -41,7 +50,7 @@
       
       <guid>https://davidpine.net/blog/typescript-javascript-reimagined/</guid>
       <description>First things First JavaScript is the world&amp;rsquo;s third most common programming language today. JavaScript was created by Brendan Eich in about ten days. It might seem odd that the previous two sentences not only exist, but go together&amp;hellip;yet it is true! JavaScript runs seemingly everywhere and applications written in this language are only getting larger.
-JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.</description>
+ JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.</description>
     </item>
     
     <item>

@@ -1,36 +1,37 @@
 <!DOCTYPE HTML>
 
 <html>
-    <head>
-        <link rel="icon" href="/img/main/favicon.png" type="image/png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        
-            
-                <title>What happened to my Thread.CurrentPrincipal</title>
-            
-        
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.102.1" />
-        
+<head>
+    <link rel="icon" href="/img/main/favicon.png" type="image/png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    
+    <title>What happened to my Thread.CurrentPrincipal</title>
+    
+    
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Hugo 0.98.0" />
+    
 
 
-        
-            <meta name="author" content="David Pine">
-        
-        
-            <meta name="description" content="This is not the IPrincipal you are looking for...">
-        
+    
+    <meta name="author" content="David Pine">
+    
+    
+    <meta name="description" content="This is not the IPrincipal you are looking for...">
+    
 
-        <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png"/>
 
 <meta name="twitter:title" content="What happened to my Thread.CurrentPrincipal"/>
 <meta name="twitter:description" content="This is not the IPrincipal you are looking for..."/>
 <meta name="twitter:site" content="@davidpine7"/>
 
-        <meta property="og:title" content="What happened to my Thread.CurrentPrincipal" />
+    <meta property="og:title" content="What happened to my Thread.CurrentPrincipal" />
 <meta property="og:description" content="This is not the IPrincipal you are looking for..." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://davidpine.net/blog/principal-architecture-changes/" /><meta property="og:image" content="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png" /><meta property="article:section" content="blog" />
@@ -38,34 +39,34 @@
 <meta property="article:modified_time" content="2017-01-27T00:00:00+00:00" />
 
 
-        <meta itemprop="name" content="What happened to my Thread.CurrentPrincipal">
+    <meta itemprop="name" content="What happened to my Thread.CurrentPrincipal">
 <meta itemprop="description" content="This is not the IPrincipal you are looking for..."><meta itemprop="datePublished" content="2017-01-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-01-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="850"><meta itemprop="image" content="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png">
+<meta itemprop="wordCount" content="838"><meta itemprop="image" content="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png">
 <meta itemprop="keywords" content="" />
 
-        
+    
 
-        
-        
-            
-        
-        
-        
-        
-            <link rel="stylesheet" href="/css/google-font.css" />
-            <link rel="stylesheet" href="/css/font-awesome.min.css" />
-            <link rel="stylesheet" href="/css/main.css" />
-            <link rel="stylesheet" href="/css/add-on.css" />
-            <link rel="stylesheet" href="/css/tomorrow-night.css">
-        
+    
+    
+    
+    
 
-        
+    
+    
+    <link rel="stylesheet" href="/css/google-font.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/add-on.css" />
+    <link rel="stylesheet" href="/css/github-dark.css">
+    
 
-        
-        
-        
-            
+    
+
+    
+    
+    
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -78,15 +79,16 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-        
-    </head>
-    <body>
-        <script src="/js/jquery.min.js"></script>
-        </script>
+    
+</head>
 
-        
-        <div id="wrapper">
+<body>
+    <a rel="me" href="https://dotnet.social/@davidpine"></a>
+    <script src="/js/jquery.min.js"></script>
+    </script>
 
+    
+    <div id="wrapper">
     
     
 <header id="header">
@@ -276,15 +278,15 @@ if (!doNotTrack) {
 
                 
                     <li>
+                        <a href="https://davidpine.net/blog/dotnet-dependency-injection/"><p>A conversation with ChatGPT </p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://davidpine.net/blog/github-actions-sdk/"><p>Hello from the GitHub Actions: Core .NET SDK</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://davidpine.net/blog/learning-blazor/"><p>Learning Blazor</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/blazorators/"><p>Blazorators</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://davidpine.net/blog/github-profanity-filter/"><p>Building a GitHub profanity filter with .NET Core and Azure Functions</p></a>
                     </li>
                 
             </ul>
@@ -362,11 +364,34 @@ if (!doNotTrack) {
             
         
 
-        <time class="published" data-hover='January, 2017'
-            datetime='2017-01-27'
-            data-initial='Written on'>
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <div style="display: none;"
+            data-date='2023'
+            data-lastmod='2017'
+            data-min='2017'
+            data-max='2023'
+            data-difference='6'
+            data-var='3'>
+        </div>
+
+        
+        <time class="published" data-hover='2017'
+            datetime='2017'
+            data-initial='Written in' data-extras='6'>
             <span class="underline">(<i class="fa fa-mouse-pointer"></i>?</span>)
         </time>
+        
+
         <span class="author">David Pine</span>
         
             <p>4 minute read</p>
@@ -429,9 +454,6 @@ if (!doNotTrack) {
 
 
     
-    
-        
-    
 
 
         
@@ -447,15 +469,15 @@ if (!doNotTrack) {
 <p>Like the title claims, if you&rsquo;re using <code>ASP.NET Core</code> and expecting the <code>Thread.CurrentPrincipal</code> or <code>ClaimsPrincipal.Current</code> to be populated you&rsquo;d be wrong. This is not the
 <code>IPrincipal</code> you&rsquo;re looking for. In this post we&rsquo;ll discuss what happened and what you need to do now. Additionally we&rsquo;ll cover all the peripheral benefits as a result of this change.</p>
 <h2 id="history">History</h2>
-<p>If you have ever done any <strong>.NET Framework</strong> development, you&rsquo;ve probably seen the <code>Thread</code> class. You&rsquo;re probably familiar with the 
+<p>If you have ever done any <strong>.NET Framework</strong> development, you&rsquo;ve probably seen the <code>Thread</code> class. You&rsquo;re probably familiar with the <code>
 
     
         
     
 
-    <a href="https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal" target='_blank'>`Thread.CurrentPrincipal`</a>
+    <a href="https://msdn.microsoft.com/en-us/library/system.threading.thread.currentprincipal" target='_blank'>Thread.CurrentPrincipal</a>
 
- member. This member of the <code>Thread</code> class is defined as follows:</p>
+</code> member. This member of the <code>Thread</code> class is defined as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> IPrincipal CurrentPrincipal
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">    [System.Security.SecuritySafeCritical]</span>  <span style="color:#75715e">// auto-generated</span>
@@ -483,37 +505,37 @@ if (!doNotTrack) {
 </span></span></code></pre></div><blockquote>
 <p>Gets or sets the thread&rsquo;s current principal (for role-based security).</p>
 </blockquote>
-<p>Does anyone see the issue with this? Can you say, &ldquo;publically static mutable state, oh my&rdquo;?! You should be alarmed. This property was never a good idea and today it simply doesn&rsquo;t belong. <strong>ASP.NET Core</strong> is not responsible for assigning this. You might not agree with that decision, but it is final.</p>
-<p>Before diving into this, pop over to 
+<p>Does anyone see the issue with this? Can you say, &ldquo;publicly static mutable state, oh my&rdquo;?! You should be alarmed. This property was never a good idea and today it simply doesn&rsquo;t belong. <strong>ASP.NET Core</strong> is not responsible for assigning this. You might not agree with that decision, but it is final.</p>
+<p>Before diving into this, pop over to <i class="fa fa-github-alt" aria-hidden="true"></i> 
 
     
         
     
 
-    <a href="https://github.com/aspnet/Security/issues/322" target='_blank'>{{&lt; i fa-github-alt &gt;}} Microsoft.AspNetCore.Security -- Issue 332</a>
+    <a href="https://github.com/aspnet/Security/issues/322" target='_blank'>Microsoft.AspNetCore.Security &ndash; Issue 332</a>
 
  for more of the back story.</p>
 <h2 id="threadcurrentprincipal-today-in-aspnet-core">Thread.CurrentPrincipal Today in ASP.NET Core</h2>
 <p>As part of the <code>ASP.NET Core</code> framework, the following middleware packages are provided:</p>
 <ul>
-<li>
+<li><i class="fa fa-github-alt" aria-hidden="true"></i> <code>
 
     
         
     
 
-    <a href="https://github.com/aspnet/Identity" target='_blank'>{{&lt; i fa-github-alt &gt;}} `Microsoft.AspNetCore.Identity`</a>
+    <a href="https://github.com/aspnet/Identity" target='_blank'>Microsoft.AspNetCore.Identity</a>
 
-</li>
-<li>
+</code></li>
+<li><i class="fa fa-github-alt" aria-hidden="true"></i> <code>
 
     
         
     
 
-    <a href="https://github.com/aspnet/Security" target='_blank'>{{&lt; i fa-github-alt &gt;}} `Microsoft.AspNetCore.Security`</a>
+    <a href="https://github.com/aspnet/Security" target='_blank'>Microsoft.AspNetCore.Security</a>
 
-</li>
+</code></li>
 </ul>
 <p>If you opt-in to using this middleware and you provide a login page (or expose an external provider) you&rsquo;d end up creating an instance of a <code>ClaimsPrincipal</code> that represents an authenticated user. Subsequent requests to the web server would be handed the cookie that holds the user&rsquo;s claims. However the <code>Thread.CurrentPrincipal</code> would <strong>not</strong> actually reflect the <code>ClaimsPrincipal</code> object that was created as the result of the login. In fact, it would simply be an instance of the <code>GenericPrincipal</code> implementation. Likewise, walking up to the <code>ClaimsPrincipal.Current</code> property and asking it for the current claims principal in context wouldn&rsquo;t give you what you might expect either. Additionally, the <code>ClaimsPrincipal.Current</code> internally relies on the <code>Thread.CurrentPrincipal</code> for its value.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ClaimsPrincipal Current
@@ -550,14 +572,14 @@ register the dependencies. In the case of <code>ASP.NET Core</code> you&rsquo;ll
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleService</span> : ISampleService
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> ClaimsPrincipal _principal;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> ClaimsPrincipal <span style="color:#ae81ff">_</span>principal;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> SampleService(IPrincipal principal) =&gt;
-</span></span><span style="display:flex;"><span>        _principal = principal <span style="color:#66d9ef">as</span> ClaimsPrincipal;
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">_</span>principal = principal <span style="color:#66d9ef">as</span> ClaimsPrincipal;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Task ConsumeAsync()
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> dobClaim = _principal?.FindFirst(ClaimTypes.DateOfBirth);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> dobClaim = <span style="color:#ae81ff">_</span>principal?.FindFirst(ClaimTypes.DateOfBirth);
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Take some action ...</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -702,7 +724,7 @@ populated accordingly.</p>
             <div class='column'>
                 <a target="_blank" rel="noopener"
                     href="https://developers.google.com/community/experts/directory/profile/profile-david-pine">
-                    <img src="/img/main/gde-22.png" style="max-width: 104%;" />
+                    <img src="/img/main/gde-23.png" style="max-width: 104%;" />
                 </a>
             </div>
             <div class='column'>
@@ -815,38 +837,38 @@ populated accordingly.</p>
             <li>
                 <article>
                     <header>
+                        <h3><a href="https://davidpine.net/blog/dotnet-dependency-injection/">A conversation with ChatGPT </a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-12-08'>
+                            December 8, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <h3><a href="https://davidpine.net/blog/github-actions-sdk/">Hello from the GitHub Actions: Core .NET SDK</a></h3>
+                        
+                        
+                        
+                        <time class="published" datetime='2022-11-30'>
+                            November 30, 2022</time>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <h3><a href="https://davidpine.net/blog/learning-blazor/">Learning Blazor</a></h3>
                         
                         
                         
-                        <time class="published" datetime='2022-09-15'>
-                            September 15, 2022</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/blazorators/">Blazorators</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2022-09-08'>
-                            September 8, 2022</time>
-                    </header>
-                </article>
-            </li>
-            
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="https://davidpine.net/blog/github-profanity-filter/">Building a GitHub profanity filter with .NET Core and Azure Functions</a></h3>
-                        
-                        
-                        
-                        <time class="published" datetime='2019-11-23'>
-                            November 23, 2019</time>
+                        <time class="published" datetime='2022-09-16'>
+                            September 16, 2022</time>
                     </header>
                 </article>
             </li>
@@ -886,7 +908,7 @@ populated accordingly.</p>
                 <article>
                     <header>
                         <a href="/categories/csharp/">csharp</a>
-                        <span style="float:right;">14</span>
+                        <span style="float:right;">16</span>
                     </header>
                 </article>
             </li>
@@ -912,8 +934,8 @@ populated accordingly.</p>
             <li>
                 <article>
                     <header>
-                        <a href="/categories/angular/">angular</a>
-                        <span style="float:right;">5</span>
+                        <a href="/categories/.net/">.net</a>
+                        <span style="float:right;">6</span>
                     </header>
                 </article>
             </li>
@@ -922,7 +944,7 @@ populated accordingly.</p>
                 <article>
                     <header>
                         <a href="/categories/typescript/">typescript</a>
-                        <span style="float:right;">5</span>
+                        <span style="float:right;">6</span>
                     </header>
                 </article>
             </li>
@@ -930,8 +952,8 @@ populated accordingly.</p>
             <li>
                 <article>
                     <header>
-                        <a href="/categories/.net/">.net</a>
-                        <span style="float:right;">4</span>
+                        <a href="/categories/angular/">angular</a>
+                        <span style="float:right;">5</span>
                     </header>
                 </article>
             </li>
@@ -1056,6 +1078,15 @@ populated accordingly.</p>
             <li>
                 <article>
                     <header>
+                        <a href="/categories/chatgpt/">chatgpt</a>
+                        <span style="float:right;">1</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
                         <a href="/categories/compression/">compression</a>
                         <span style="float:right;">1</span>
                     </header>
@@ -1084,6 +1115,15 @@ populated accordingly.</p>
                 <article>
                     <header>
                         <a href="/categories/fear/">fear</a>
+                        <span style="float:right;">1</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/github/">github</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1138,6 +1178,15 @@ populated accordingly.</p>
                 <article>
                     <header>
                         <a href="/categories/mke-dot-net/">mke-dot-net</a>
+                        <span style="float:right;">1</span>
+                    </header>
+                </article>
+            </li>
+            
+            <li>
+                <article>
+                    <header>
+                        <a href="/categories/openai/">openai</a>
                         <span style="float:right;">1</span>
                     </header>
                 </article>
@@ -1306,7 +1355,7 @@ populated accordingly.</p>
             
         </ul>
 
-        <p class="copyright">&copy; IEvangelist 2016. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+        <p class="copyright">&copy; IEvangelist 2016-2023. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
         </p>
     </section>
 
@@ -1326,13 +1375,13 @@ populated accordingly.</p>
             <script src="/js/util.js"></script>
             <script src="/js/main.js"></script>
             <script src="/js/backToTop.js"></script>
-            <script src="/js/highlight.pack.js"></script>
+            <script src="/js/highlight.min.js"></script>
         
 
         
 
             
-            <script>hljs.initHighlightingOnLoad();</script>
+            <script>hljs.highlightAll();</script>
             
     </body>
 </html>

@@ -213,6 +213,7 @@ blockquote p {
 .share-btn.stumbleupon { background: #EB4823; }
 .share-btn.reddit      { background: #ff5700; }
 .share-btn.email       { background: #444444; }
+.share-btn.github      { background: #000000; color: rgb(250, 251, 252); }
 
 .share-btn.twitter:hover     { background: #4c9ad6 }
 .share-btn.google-plus:hover { background: #c64333; }
@@ -221,6 +222,13 @@ blockquote p {
 .share-btn.stumbleupon:hover { background: #d3401f; }
 .share-btn.reddit:hover      { background: #e54e00; }
 .share-btn.email:hover       { background: #363636; }
+.share-btn.github:hover      { background: #22272E; color: rgb(243, 244, 245) !important; }
+
+.share-btn.share-btn.github:hover > i {
+    font-size: 1.33333333em;
+    line-height: .75em;
+    vertical-align: -15%;
+}
 
 /* Share Menu */
 body.is-share-visible #wrapper {

@@ -13,12 +13,22 @@ type = "post"
 
 +++
 
+{{< note title="❗ IMPORTANT" >}}
+The featured image was generated using [bing.com/create powered by DALL·E](https://www.bing.com/create).
+{{< /note >}}
+
 # Exploring .NET streaming API scenarios
 
 If you're a .NET developer, chances are you're already familiar with the `IAsyncEnumerable<T>` interface. This interface was introduced in .NET Core 3.0 and is used to asynchronously iterate over a collection of data. This is a great way to stream data from a server to a client. In this post, you'll learn how to:
 
 - Expose an ASP.NET Core Minimal API endpoint that returns `IAsyncEnumerable<T>`.
 - Consume the same `IAsyncEnumerable<T>` from an ASP.NET Core Blazor WebAssembly app.
+
+In this post, you'll explore a scenario inspired by ChatGPT's user experience that streams UI updates to the client from the server in real-time.
+
+**TL;DR;**
+
+If you'd rather just see the code, you can see it on the [{{< i fa-github >}} GitHub repository `https://github.com/IEvangelist/blazor-azure-openai` {{< i fa-external-link >}}](https://github.com/IEvangelist/blazor-azure-openai).
 
 ## Server
 
@@ -553,6 +563,8 @@ Since these convenience based-methods are not yet available at the time of writi
   - If the request is successful, then we can start processing the response as a stream
 
 The real magic is mapping the `stream` to the `JsonSerializer.DeserializeAsyncEnumerable<TokenizedResponse>(stream, options)` call, which is asynchronously enumerating the `TokenizedResponse` instances as they are received in real-time. The `handler` is invoked and the UI updates as if the response is being written live into the browser.
+
+The client app demonstrates several other really interesting aspects of client-side app development with .NET, I encourage you to check out the source code to see how it all works.
 
 ## In conclusion
 

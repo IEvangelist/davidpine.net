@@ -564,6 +564,193 @@ Since these convenience based-methods are not yet available at the time of writi
 
 The real magic is mapping the `stream` to the `JsonSerializer.DeserializeAsyncEnumerable<TokenizedResponse>(stream, options)` call, which is asynchronously enumerating the `TokenizedResponse` instances as they are received in real-time. The `handler` is invoked and the UI updates as if the response is being written live into the browser.
 
+### Example HTTP request and streaming response
+
+If I prompt the app with the following HTTP POST request:
+
+```http
+POST /api/openai/chat HTTP/1.1
+HOST: localhost:7184
+Content-Type: application/json; charset=utf-8
+
+{ "prompt": "State your name and purpose." }
+```
+
+One possible response from the AI is streamed back to the client as follows:
+
+```json
+[
+    {
+        "content": null
+    },
+    {
+        "content": "My"
+    },
+    {
+        "content": " name"
+    },
+    {
+        "content": " is"
+    },
+    {
+        "content": " **"
+    },
+    {
+        "content": "Bl"
+    },
+    {
+        "content": "azor"
+    },
+    {
+        "content": " Cl"
+    },
+    {
+        "content": "ippy"
+    },
+    {
+        "content": "**"
+    },
+    {
+        "content": " and"
+    },
+    {
+        "content": " my"
+    },
+    {
+        "content": " purpose"
+    },
+    {
+        "content": " is"
+    },
+    {
+        "content": " to"
+    },
+    {
+        "content": " assist"
+    },
+    {
+        "content": " developers"
+    },
+    {
+        "content": " in"
+    },
+    {
+        "content": " writing"
+    },
+    {
+        "content": " code"
+    },
+    {
+        "content": " more"
+    },
+    {
+        "content": " efficiently"
+    },
+    {
+        "content": "."
+    },
+    {
+        "content": " I"
+    },
+    {
+        "content": "'m"
+    },
+    {
+        "content": " here"
+    },
+    {
+        "content": " to"
+    },
+    {
+        "content": " help"
+    },
+    {
+        "content": " you"
+    },
+    {
+        "content": " with"
+    },
+    {
+        "content": " code"
+    },
+    {
+        "content": "-related"
+    },
+    {
+        "content": " tasks"
+    },
+    {
+        "content": ","
+    },
+    {
+        "content": " answer"
+    },
+    {
+        "content": " questions"
+    },
+    {
+        "content": ","
+    },
+    {
+        "content": " and"
+    },
+    {
+        "content": " provide"
+    },
+    {
+        "content": " guidance"
+    },
+    {
+        "content": " where"
+    },
+    {
+        "content": " needed"
+    },
+    {
+        "content": "."
+    },
+    {
+        "content": " Let"
+    },
+    {
+        "content": " me"
+    },
+    {
+        "content": " know"
+    },
+    {
+        "content": " how"
+    },
+    {
+        "content": " I"
+    },
+    {
+        "content": " can"
+    },
+    {
+        "content": " be"
+    },
+    {
+        "content": " of"
+    },
+    {
+        "content": " assistance"
+    },
+    {
+        "content": "!"
+    },
+    {
+        "content": null
+    }
+]
+```
+
+Each `{ "content": "<value>" }` object is a `TokenizedResponse` instance, and the `content` property was generated. The `null` values are the AI's way of indicating the start and end of the stream response. This entire response is streamed into the user's browser in real-time, and the UI is updated as the response is received.
+
+**Here's this specific example as rendered on the UI:**
+
+![Here's this specific example as rendered on the UI](/img/2023/06/example.png "Here's this specific example as rendered on the UI")
+
 The client app demonstrates several other really interesting aspects of client-side app development with .NET, I encourage you to check out the source code to see how it all works.
 
 ## In conclusion

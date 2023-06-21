@@ -74,6 +74,16 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
     {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
     {{ template "_internal/google_analytics.html" . }}
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8EQQ9318R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S8EQQ9318R');
+    </script>
+
     {{ end }}
 </head>
 

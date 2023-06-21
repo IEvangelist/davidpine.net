@@ -1,6 +1,6 @@
 baseurl = "https://davidpine.net"
 languageCode = "en-us"
-title = "IEvangelist"
+title = "David Pine"
 preserveTaxonomyNames = true
 paginate = 10
 disqusShortname = "davidpine"

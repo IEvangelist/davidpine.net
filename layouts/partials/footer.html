@@ -19,7 +19,7 @@
         {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
             <script src="/js/skel.min.js"></script>
             <script src="/js/util.js"></script>
-            <script src="/js/main.js?{{$version.latest}}"></script>
+            <script src="/js/main.min.js?{{$version.latest}}"></script>
             <script src="/js/backToTop.js"></script>
             <script src="/js/highlight.min.js?{{$version.latest}}"></script>
         {{ end }}

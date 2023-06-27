@@ -3914,3 +3914,7 @@ a.darken:hover {
 	border: #3c3b3b45 1px dashed;
 	padding: 2rem;
 }
+
+.p-2 {
+	padding: 2rem;
+}

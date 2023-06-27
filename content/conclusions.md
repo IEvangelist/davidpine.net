@@ -1,7 +1,7 @@
 +++
 title = "Conclusions"
 description = "Sometimes situations result in an epiphany."
-images = ["/img/main/me.png"]
+images = ["/img/main/me-1.png"]
 date = "2017-02-05"
 +++
 

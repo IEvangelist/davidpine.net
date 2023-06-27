@@ -4,15 +4,21 @@
     <!-- Intro -->
     <section id="intro">
         {{ $pic := .Site.Params.intro.pic }}
-        {{ with $pic.src }}
+        {{ with $pic.src1 }}
         {{ if $pic.circle }}
-        <img src="{{ . | relURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
-        {{ else if $pic.imperfect }}
-        <a href='{{"/" | relURL}}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
-        {{ else }}
-        <img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
-        {{ end }}
-        {{ end }}
+        <section class='p-2 justify-content-center'>
+            <img src="{{ $pic.src1 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
+            <img src="{{ $pic.src2 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" style="display: none;" />
+            <img src="{{ $pic.src3 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" style="display: none;" />
+            <img src="{{ $pic.src4 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" style="display: none;" />
+            <img src="{{ $pic.src5 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" style="display: none;" />
+            {{ else if $pic.imperfect }}
+            <a href='{{"/" | relURL}}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
+            {{ else }}
+            <img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
+            {{ end }}
+            {{ end }}
+        </section>
         {{ with .Site.Params.intro }}
         <header>
             <h2>{{ .header }}</h2>

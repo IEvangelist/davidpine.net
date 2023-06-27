@@ -1,7 +1,7 @@
 +++
 title = "Media"
 description = "Various media, podcasts, webcasts and publication appearances"
-images = ["/img/main/me.png"]
+images = ["/img/main/me-1.png"]
 date = "2018-04-12"
 +++
 

@@ -17,11 +17,16 @@
              load the standard js files associated with the theme -->
         {{ $version := .Site.Params.version }}
         {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-            <script src="/js/skel.min.js"></script>
-            <script src="/js/util.js"></script>
-            <script src="/js/main.min.js?{{$version.latest}}"></script>
-            <script src="/js/backToTop.js"></script>
+            <script src="/js/skel.min.js?{{$version.latest}}"></script>
+            {{ $util := resources.Get "/js/util.js" | minify | fingerprint }}
+            <script src={{ $util.RelPermalink }} integrity={{ $util.Data.Integrity }}></script>
+
+            {{ $backToTop := resources.Get "/js/backToTop.js" | minify | fingerprint }}
+            <script src={{ $backToTop.RelPermalink }} integrity={{ $backToTop.Data.Integrity }}></script>
             <script src="/js/highlight.min.js?{{$version.latest}}"></script>
+
+            {{ $main := resources.Get "js/main.js" | minify | fingerprint }}
+            <script src={{ $main.RelPermalink }} integrity={{ $main.Data.Integrity }}></script>
         {{ end }}
 
         {{ if ne ($.Scratch.Get "jsFiles") false }}
@@ -33,7 +38,11 @@
         {{ end }}
 
             <!-- This is called by default since this theme uses highlight.js -->
-            <script>hljs.highlightAll();</script>
+            <script>
+                document.addEventListener('DOMContentLoaded', (event) => {
+                    hljs.highlightAll();
+                });
+            </script>
             <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
     </body>
 </html>

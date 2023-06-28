@@ -71,20 +71,6 @@
       visibleClass: "is-share-visible",
     });
 
-    // Menu.
-    /*$menu
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right',
-					target: $body,
-					visibleClass: 'is-menu-visible'
-				});*/
-
     // Search (header).
     var $search = $("#search"),
       $search_input = $search.find("input");
@@ -148,6 +134,10 @@
 
     img.not(":first").hide();
     setInterval(cycleImages, carouselInterval);
+
+    if (hljs) {
+      hljs.highlightAll();
+    }
   });
 })(jQuery);
 

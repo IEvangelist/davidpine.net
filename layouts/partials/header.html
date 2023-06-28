@@ -42,8 +42,8 @@
     <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
 
     <!-- Keeping the deprecated param, minifiedFilesCSS, for now. The new param
-             that replaces this is customCSS. Utilizing a scratch variable cssFiles
-             to keep the deprecated param. -->
+         that replaces this is customCSS. Utilizing a scratch variable cssFiles
+         to keep the deprecated param. -->
     {{ if isset .Site.Params "minifiedFilesCSS" }}
     {{ $.Scratch.Set "cssFiles" .Site.Params.minifiedFilesCSS }}
     {{ else if isset .Site.Params "customCSS" }}
@@ -55,11 +55,15 @@
     <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
     {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-    <link rel="stylesheet" href="/css/google-font.css" />
+    {{ $addon := resources.Get "css/add-on.css" | minify | fingerprint }}
+    <link rel="stylesheet" href={{ $addon.RelPermalink }} integrity={{ $addon.Data.Integrity }} />
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/add-on.css" />
-    <link rel="stylesheet" href="/css/github-dark.css">
+    {{ $githubdark := resources.Get "css/github-dark.css" | minify | fingerprint }}
+    <link rel="stylesheet" href={{ $githubdark.RelPermalink }} integrity={{ $githubdark.Data.Integrity }} />
+    {{ $googlefont := resources.Get "css/google-font.css" | minify | fingerprint }}
+    <link rel="stylesheet" href={{ $googlefont.RelPermalink }} integrity={{ $googlefont.Data.Integrity }} />
+    {{ $main := resources.Get "css/main.css" | minify | fingerprint }}
+    <link rel="stylesheet" href={{ $main.RelPermalink }} integrity={{ $main.Data.Integrity }} />
     {{ end }}
 
     {{ if ne ($.Scratch.Get "cssFiles") false }}
@@ -89,7 +93,8 @@
 
 <body>
     <a rel="me" href="https://dotnet.social/@davidpine"></a>
-    <script src="/js/jquery.min.js"></script>
+    {{ $jquery := resources.Get "js/jquery.min.js" | fingerprint }}
+    <script src={{ $jquery.RelPermalink }} integrity={{ $jquery.Data.Integrity }}></script>
     </script>
 
     <!-- Wrapper -->

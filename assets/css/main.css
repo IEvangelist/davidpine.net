@@ -2365,6 +2365,7 @@ input[type="radio"]+label:before {
 
 .image.featured img {
 	width: 100%;
+	border: solid 1px rgb(160, 160, 160);
 }
 
 @media screen and (max-width: 736px) {

@@ -18,15 +18,15 @@
         {{ $version := .Site.Params.version }}
         {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
             <script src="/js/skel.min.js?{{$version.latest}}"></script>
-            {{ $util := resources.Get "/js/util.js" | minify | fingerprint }}
-            <script src={{ $util.RelPermalink }} integrity={{ $util.Data.Integrity }}></script>
+            {{ $util := resources.Get "/js/util.js" | minify }}
+            <script src={{ $util.RelPermalink }}></script>
 
-            {{ $backToTop := resources.Get "/js/backToTop.js" | minify | fingerprint }}
-            <script src={{ $backToTop.RelPermalink }} integrity={{ $backToTop.Data.Integrity }}></script>
+            {{ $backToTop := resources.Get "/js/backToTop.js" | minify }}
+            <script src={{ $backToTop.RelPermalink }}></script>
             <script src="/js/highlight.min.js?{{$version.latest}}"></script>
 
-            {{ $main := resources.Get "js/main.js" | minify | fingerprint }}
-            <script src={{ $main.RelPermalink }} integrity={{ $main.Data.Integrity }}></script>
+            {{ $main := resources.Get "js/main.js" | minify }}
+            <script src={{ $main.RelPermalink }}></script>
         {{ end }}
 
         {{ if ne ($.Scratch.Get "jsFiles") false }}

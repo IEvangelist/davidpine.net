@@ -55,15 +55,15 @@
     <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
     {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-    {{ $addon := resources.Get "css/add-on.css" | minify | fingerprint }}
-    <link rel="stylesheet" href={{ $addon.RelPermalink }} integrity={{ $addon.Data.Integrity }} />
+    {{ $addon := resources.Get "css/add-on.css" | minify }}
+    <link rel="stylesheet" href={{ $addon.RelPermalink }} />
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
-    {{ $githubdark := resources.Get "css/github-dark.css" | minify | fingerprint }}
-    <link rel="stylesheet" href={{ $githubdark.RelPermalink }} integrity={{ $githubdark.Data.Integrity }} />
-    {{ $googlefont := resources.Get "css/google-font.css" | minify | fingerprint }}
-    <link rel="stylesheet" href={{ $googlefont.RelPermalink }} integrity={{ $googlefont.Data.Integrity }} />
-    {{ $main := resources.Get "css/main.css" | minify | fingerprint }}
-    <link rel="stylesheet" href={{ $main.RelPermalink }} integrity={{ $main.Data.Integrity }} />
+    {{ $githubdark := resources.Get "css/github-dark.css" | minify }}
+    <link rel="stylesheet" href={{ $githubdark.RelPermalink }} />
+    {{ $googlefont := resources.Get "css/google-font.css" | minify }}
+    <link rel="stylesheet" href={{ $googlefont.RelPermalink }} />
+    {{ $main := resources.Get "css/main.css" | minify }}
+    <link rel="stylesheet" href={{ $main.RelPermalink }} />
     {{ end }}
 
     {{ if ne ($.Scratch.Get "cssFiles") false }}

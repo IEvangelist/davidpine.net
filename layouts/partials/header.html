@@ -93,9 +93,7 @@
 
 <body>
     <a rel="me" href="https://dotnet.social/@davidpine"></a>
-    {{ $jquery := resources.Get "js/jquery.min.js" | fingerprint }}
-    <script src={{ $jquery.RelPermalink }} integrity={{ $jquery.Data.Integrity }}></script>
-    </script>
+    <script src="js/jquery.min.js"></script>
 
     <!-- Wrapper -->
     <div id="wrapper">

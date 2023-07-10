@@ -80,10 +80,9 @@
         <hr />
 
         <ul class="icons">
-            {{ if .OutputFormats.Get "RSS" }}
-            <li><a href="{{ with .OutputFormats.Get " RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"
-                    target="_blank" title="RSS" class="fa-lg fa-rss"></a></li>
-            {{ end }}
+            <li><a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"
+                    target="_blank" title="RSS" class="fa-lg fa-rss"></a>
+            </li>
             {{ if .Site.Params.socialAppearAtTop }}
             {{ partial "social" . }}
             {{ end }}
@@ -185,10 +184,9 @@
     <!-- Footer -->
     <section id="footer">
         <ul class="icons">
-            {{ if .OutputFormats.Get "RSS" }}
-            <li><a href="{{ with .OutputFormats.Get " RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"
-                    target="_blank" title="RSS" class="fa fa-rss"></a></li>
-            {{ end }}
+            <li><a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"
+                    target="_blank" title="RSS" class="fa fa-rss"></a>
+            </li>
             {{ if .Site.Params.socialAppearAtBottom }}
             {{ partial "social" . }}
             {{ end }}

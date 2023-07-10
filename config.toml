@@ -45,7 +45,7 @@ googleAnalytics = "UA-78203613-1"
     paragraph = "🤓 Changing the world — one line of code at a time."
 
 [params.version]
-    latest = "1.7.0"
+    latest = "1.7.1"
 
 # This will also appear on the sidebar.
 # A width of less than 100px is recommended

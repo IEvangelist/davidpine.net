@@ -767,7 +767,7 @@ The app has several other major features that I'm proud of, and I hope you'll en
 
 Feel free to share this Tweet, as it was a bit of an inspiration to finish this post...I hope you enjoyed it.
 
-{< tweet user="IEvangelist" id="1668970304553582592" >}}
+{{< tweet user="IEvangelist" id="1668970304553582592" >}}
 
 The major takeaways from this post are:
 

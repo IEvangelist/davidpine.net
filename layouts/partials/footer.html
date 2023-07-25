@@ -26,7 +26,8 @@
             <script src="/js/highlight.min.js?{{$version.latest}}"></script>
 
             {{ $main := resources.Get "js/main.js" | minify }}
-            <script src={{ $main.RelPermalink }}></script>
+            <!-- Add the version.latest as a query string to the $main.RelPermalink -->
+            <script src={{ $main.RelPermalink }}?{{$version.latest}}></script>
         {{ end }}
 
         {{ if ne ($.Scratch.Get "jsFiles") false }}

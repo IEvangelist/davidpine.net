@@ -129,6 +129,9 @@
       img.eq(index).fadeOut(150, function () {
         index = (index + 1) % images.length;
         img.eq(index).fadeIn(150);
+
+        // Ensure that all other images are hidden
+        img.not(img.eq(index)).hide();
       });
     }
 
@@ -138,6 +141,35 @@
     if (hljs) {
       hljs.highlightAll();
     }
+
+    // After 1 second, update the headings with the table counts
+    setTimeout(function () {
+      if (document.URL.includes("speaking")) {
+        const updateTableHeadingWithTableCount = (headerSelector, tableSelector) => {
+          // Get the table row counts
+          const table = document.querySelector(tableSelector);
+          const rows = table.querySelectorAll("tr").length;
+
+          // Update the corresponding header
+          const header = document.querySelector(headerSelector);
+          if (rows > 0) {
+            header.innerHTML += ` (${rows})`;
+          }
+          header.style.color = "#3c3b3b";
+          header.title = header.innerText;
+        };
+
+        updateTableHeadingWithTableCount(
+          "#file-speaking-md-readme > article > h2:nth-child(1)",
+          "#file-speaking-md-readme > article > table:nth-child(2) > tbody"
+        );
+
+        updateTableHeadingWithTableCount(
+          "#file-speaking-md-readme > article > h2:nth-child(3)",
+          "#file-speaking-md-readme > article > table:nth-child(4) > tbody"
+        );
+      }
+    }, 1000);
   });
 })(jQuery);
 

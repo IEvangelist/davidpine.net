@@ -85,10 +85,6 @@ I then had an idea of what I wanted to do. Years later, I decided that I wanted 
 
 ---
 
-## {{< i fa-certificate>}} Credly
-
-{{< credly-badges 1 >}}
-
 ## {{< i fa-trophy >}} Holopin
 
 {{< holopin 1 >}}

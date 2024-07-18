@@ -54,7 +54,9 @@ The community is excited about this project, and I'm excited to see what you bui
 
 {{< tweet user="KStrubeG" id="1503140307537440783" >}}
 
+<!--
 {{< tweet user="MrPeterLMorris" id="1509073185379127296" >}}
+-->
 
 {{< tweet user="Scott_Addie" id="1507350467524841474" >}}
 

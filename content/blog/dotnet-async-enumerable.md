@@ -389,7 +389,7 @@ internal sealed partial class JavaScriptModule
 }
 ```
 
-The class is marked as `partial`, as well as the `ScrollIntoView` method. There is a source generator that provides the bridge between the C# and JavaScript code. This is the same idea that I've written about with my side-project named {{< i fa-bolt >}} [**Blazorators**]({{< ref "/blazorators.md" >}} "Blazorators") 🤓!
+The class is marked as `partial`, as well as the `ScrollIntoView` method. There is a source generator that provides the bridge between the C# and JavaScript code. This is the same idea that I've written about with my side-project named {{< i fa-bolt >}} [**Blazorators**]({{< ref "blazorators.md" >}} "Blazorators") 🤓!
 
 The corresponding JavaScript code is defined in the _site.js_ file:
 

@@ -9,6 +9,17 @@ date = "2018-04-12"
 
 This page is a collection of podcasts, webcasts, news and other various publications that I've been a part of. Enjoy!
 
+## On .NET Live — {{< i fa-play-circle >}} Live Stream
+
+I'm one of several co-hosts that run the [official **On .NET Live** stream](https://dotnet.microsoft.com/en-us/live/on-dotnet-live). We air weekly on Mondays from 11:00 AM US Central Time to noon. We're live on:
+
+- **[.NET — YouTube](https://www.youtube.com/@dotnet)**
+- **[Visual Studio — Twitch.tv](https://www.twitch.tv/visualstudio)**
+- **[.NET — X (Twitter)](https://x.com/dotnet)**
+- **[.NET — Facebook](https://www.facebook.com/dotnet)**
+
+For a complete playlist of on-demand episodes, check out the [On .NET Live playlist](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oV2fcY7wsQHx4RNWXEDKgm4).
+
 ## Video {{< i fa-video-camera >}} Appearances
 
 ### C# Source Generators for Blazor
@@ -204,6 +215,14 @@ This page is a collection of podcasts, webcasts, news and other various publicat
 ---
 
 ## Publications {{< i fa-file-text-o >}} Articles
+
+### [David Pine on the official .NET DevBlog](https://devblogs.microsoft.com/dotnet/author/dapine/) {{< i fa-external-link-square >}}
+
+> I have written more than a half dozen articles on the official .NET DevBlog. These articles cover a wide range of topics from Blazor, to C#, to Azure AI, Native AOT, containerized .NET apps, publishing to GitHub Actions, and more.
+
+### [David Pine on Twilio Blog](https://www.twilio.com/blog/authors/author.dpine) {{< i fa-external-link-square >}}
+
+> I've written nine full tutorials, most of these were focusing on Twilio Video Chat, ASP.NET Core SignalR, and Twilio SMS. These articles are a great resource for learning how to build real-time applications with Twilio and ASP.NET Core.
 
 ### [Build a Video Chat App with ASP.NET Core, Angular, and Twilio](https://www.twilio.com/blog/video-chat-app-asp-net-core-angular-twilio) {{< i fa-external-link-square >}}
 

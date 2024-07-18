@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
-    <title>Identity on IEvangelist</title>
-    <link>https://davidpine.net/categories/identity/</link>
-    <description>Recent content in Identity on IEvangelist</description>
+    <title>Identity on David Pine</title>
+    <link>http://localhost:1313/categories/identity/</link>
+    <description>Recent content in Identity on David Pine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/identity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/identity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What happened to my Thread.CurrentPrincipal</title>
-      <link>https://davidpine.net/blog/principal-architecture-changes/</link>
+      <link>http://localhost:1313/blog/principal-architecture-changes/</link>
       <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/principal-architecture-changes/</guid>
+      <guid>http://localhost:1313/blog/principal-architecture-changes/</guid>
       <description>Overview Like the title claims, if you&amp;rsquo;re using ASP.NET Core and expecting the Thread.CurrentPrincipal or ClaimsPrincipal.Current to be populated you&amp;rsquo;d be wrong. This is not the IPrincipal you&amp;rsquo;re looking for. In this post we&amp;rsquo;ll discuss what happened and what you need to do now. Additionally we&amp;rsquo;ll cover all the peripheral benefits as a result of this change.
 History If you have ever done any .NET Framework development, you&amp;rsquo;ve probably seen the Thread class.</description>
+      <media:content url="http://localhost:1313/img/2017/01/not-what-you-are-looking-for.png" medium="image" />
+      <dc:creator>David Pine</dc:creator>
     </item>
     
   </channel>

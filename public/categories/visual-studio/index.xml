@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
-    <title>Visual Studio on IEvangelist</title>
-    <link>https://davidpine.net/categories/visual-studio/</link>
-    <description>Recent content in Visual Studio on IEvangelist</description>
+    <title>Visual Studio on David Pine</title>
+    <link>http://localhost:1313/categories/visual-studio/</link>
+    <description>Recent content in Visual Studio on David Pine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/visual-studio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/visual-studio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C# Special Edition</title>
-      <link>https://davidpine.net/blog/csharp-special-edition/</link>
+      <link>http://localhost:1313/blog/csharp-special-edition/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/csharp-special-edition/</guid>
+      <guid>http://localhost:1313/blog/csharp-special-edition/</guid>
       <description>Welcome to the 17th day of the C# Advent Calendar . I&amp;rsquo;d like to take a moment to thank my fellow bloggers who are sharing their passion of C# with everyone following the C# Advent Calendar. Please, share this and their posts - help us all make C# even more widely adopted than it is today.
 In the Beginning I&amp;rsquo;m honored to blog about my favorite programming language, C#. There is an often forgotten truth about the history of C#, one truth that I like talking about.</description>
+      <media:content url="http://localhost:1313/img/2017/12/keyboard.jpg" medium="image" />
+      <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>xUnit Roslyn Analyzers</title>
-      <link>https://davidpine.net/blog/xunit-powered-by-roslyn/</link>
+      <link>http://localhost:1313/blog/xunit-powered-by-roslyn/</link>
       <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/xunit-powered-by-roslyn/</guid>
-      <description>Intro At my day job, I wear many hats. I&amp;rsquo;m currently wearing the &amp;ldquo;upgrade our team&amp;rsquo;s tooling&amp;rdquo; hat. I counted 99*.xproj and project.json based projects spanning four repositories that need to be updated to the revitalized *.csproj project format. With this the team can upgrade to the latest version of Visual Studio (finally upgrading to 2017 from 2015) and start taking advantage of the following:
- Supported tooling, no longer on preview tooling bits Allows us to explore C# 7 (and peruse C# 7.</description>
+      <guid>http://localhost:1313/blog/xunit-powered-by-roslyn/</guid>
+      <description>Intro At my day job, I wear many hats. I&amp;rsquo;m currently wearing the &amp;ldquo;upgrade our team&amp;rsquo;s tooling&amp;rdquo; hat. I counted 99 *.xproj and project.json based projects spanning four repositories that need to be updated to the revitalized *.csproj project format. With this the team can upgrade to the latest version of Visual Studio (finally upgrading to 2017 from 2015) and start taking advantage of the following:
+Supported tooling, no longer on preview tooling bits Allows us to explore C# 7 (and peruse C# 7.</description>
+      <media:content url="http://localhost:1313/img/2017/11/scope.jpeg" medium="image" />
+      <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>Perusing C# 7.1</title>
-      <link>https://davidpine.net/blog/csharp-seven-dot-one/</link>
+      <link>http://localhost:1313/blog/csharp-seven-dot-one/</link>
       <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/csharp-seven-dot-one/</guid>
+      <guid>http://localhost:1313/blog/csharp-seven-dot-one/</guid>
       <description>Earlier this year in March &amp;ndash; Visual Studio 2017 was released. With this the world was given C# 7, checkout my post on Exploring C# 7. In this post we will peruse C# 7.1, the first incremental release while C# 8 is being fleshed out.
-Async Main  Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
+Async Main Since the release of C# 5, developers have either embraced the async and await keywords or fumbled along the way feebly attempting to comprehend them.</description>
+      <media:content url="http://localhost:1313/img/2017/07/peruse.jpg" medium="image" />
+      <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>Exploring C# 7</title>
-      <link>https://davidpine.net/blog/exploring-csharp-seven/</link>
+      <link>http://localhost:1313/blog/exploring-csharp-seven/</link>
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/exploring-csharp-seven/</guid>
-      <description>Intro Since we have all been actively celebrating the 20thanniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here .
+      <guid>http://localhost:1313/blog/exploring-csharp-seven/</guid>
+      <description>Intro Since we have all been actively celebrating the 20th anniversary of Visual Studio, it felt appropriate to post about C# 7! In this post we will explore the features that make C# 7 so promising. I&amp;rsquo;ve put together a demonstration C# 7 project, that is available here .
 This post contains examples and details on five of the nine new C# 7 features.
- Pattern matching out variables Tuples Local functions throw expressions  These are the remaining features, that I do not cover in this post.</description>
+Pattern matching out variables Tuples Local functions throw expressions These are the remaining features, that I do not cover in this post.</description>
+      <media:content url="http://localhost:1313/img/2017/03/exploration.png" medium="image" />
+      <dc:creator>David Pine</dc:creator>
     </item>
     
   </channel>

@@ -22,6 +22,18 @@ For a complete playlist of on-demand episodes, check out the [On .NET Live playl
 
 ## Video {{< i fa-video-camera >}} Appearances
 
+### Let's Learn .NET - Write your first code using C\#
+
+{{< youtube KRb7T1LZZj0 >}}
+
+---
+
+### Let's Learn .NET - Git & GitHub
+
+{{< youtube PDDAUtX6E7c >}}
+
+---
+
 ### C# Source Generators for Blazor
 
 {{< youtube pR6fMsZPw3g >}}
@@ -250,7 +262,7 @@ For a complete playlist of on-demand episodes, check out the [On .NET Live playl
 
 ### [ASP.NET Core Web API Attributes](http://www.dotnetcurry.com/aspnet/1390/aspnet-core-web-api-attributes) {{< i fa-external-link-square >}}
 
-> With __ASP.NET Core Web API__ there are several various attributes that instruct the framework where to expect data. These attributes are very powerful, allowing for aliasing and strong-typing; however, knowing which correspond to model binding and are best suited for each HTTP verb is vital. In this article we'll explore all of this and more.
+> With **ASP.NET Core Web API** there are several various attributes that instruct the framework where to expect data. These attributes are very powerful, allowing for aliasing and strong-typing; however, knowing which correspond to model binding and are best suited for each HTTP verb is vital. In this article we'll explore all of this and more.
 
 <br/><br/>
 

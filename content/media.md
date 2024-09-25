@@ -22,6 +22,12 @@ For a complete playlist of on-demand episodes, check out the [On .NET Live playl
 
 ## Video {{< i fa-video-camera >}} Appearances
 
+### Introduction to Azure Key Vault and .NET Aspire
+
+{{< youtube 1K5riRctUIg >}}
+
+---
+
 ### Let's Learn .NET - Write your first code using C\#
 
 {{< youtube KRb7T1LZZj0 >}}

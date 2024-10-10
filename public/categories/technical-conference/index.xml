@@ -2,30 +2,30 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>Technical Conference on David Pine</title>
-    <link>http://localhost:1313/categories/technical-conference/</link>
+    <link>https://davidpine.net/categories/technical-conference/</link>
     <description>Recent content in Technical Conference on David Pine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/technical-conference/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/technical-conference/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Journey of a Lifetime</title>
-      <link>http://localhost:1313/blog/journey-of-a-lifetime/</link>
+      <link>https://davidpine.net/blog/journey-of-a-lifetime/</link>
       <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/journey-of-a-lifetime/</guid>
+      <guid>https://davidpine.net/blog/journey-of-a-lifetime/</guid>
       <description>Intro I am returning home from a long trip in Serbia for IT Konekt . This was literally a trip of a lifetime and I could not be more grateful for such an amazing opportunity. Serbia has such an incredible culture and powerful history. I have been overwhelmed by the care and attention to detail from the organizers of IT Konekt. This was my first time ever leaving the United States of America and I didn&amp;rsquo;t know what to expect.</description>
-      <media:content url="http://localhost:1313/img/2018/04/drinks.jpg" medium="image" />
+      <media:content url="https://davidpine.net/img/2018/04/drinks.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>How to organize an amazing technical conference</title>
-      <link>http://localhost:1313/blog/how-to-organize-an-amazing-tech-conf/</link>
+      <link>https://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</link>
       <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/how-to-organize-an-amazing-tech-conf/</guid>
+      <guid>https://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</guid>
       <description>Story Time This is my third year organizing MKE DOT NET , so I&amp;rsquo;ve been accumulating plenty of interesting stories. Last year I was fortunate enough to have convinced Scott Hanselman to be our keynote speaker. Yes, &amp;ldquo;the Scott Hanselman &amp;rdquo; - arguably the worlds most influential person in the tech industry. I was his ride to and from the airport and the conversations we had actually led to several key changes.</description>
-      <media:content url="http://localhost:1313/img/2017/06/organize.jpeg" medium="image" />
+      <media:content url="https://davidpine.net/img/2017/06/organize.jpeg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     

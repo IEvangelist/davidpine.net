@@ -2,20 +2,20 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>Dependency Injection on David Pine</title>
-    <link>http://localhost:1313/categories/dependency-injection/</link>
+    <link>https://davidpine.net/categories/dependency-injection/</link>
     <description>Recent content in Dependency Injection on David Pine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Overriding ASP.NET Core Framework-Provided Services</title>
-      <link>http://localhost:1313/blog/overriding-default-di/</link>
+      <link>https://davidpine.net/blog/overriding-default-di/</link>
       <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/overriding-default-di/</guid>
+      <guid>https://davidpine.net/blog/overriding-default-di/</guid>
       <description>Overview In .NET it&amp;rsquo;s really easy to create your own interfaces and implementations. Likewise, it&amp;rsquo;s seemingly effortless to register them for dependency injection. But it is not always obvious how to override existing implementations. Let&amp;rsquo;s discuss various aspects of &amp;ldquo;dependency injection&amp;rdquo; and how you can override the &amp;ldquo;framework-provided services&amp;rdquo;.
 As an example, let&amp;rsquo;s take a recent story on our product backlog for building a security audit of login attempts. The story involved the capture of attempted usernames along with their corresponding IP addresses.</description>
-      <media:content url="http://localhost:1313/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" medium="image" />
+      <media:content url="https://davidpine.net/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     

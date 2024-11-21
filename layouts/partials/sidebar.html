@@ -1,199 +1,211 @@
 <!-- Sidebar -->
 <section id="sidebar">
 
-    <!-- Intro -->
-    <section id="intro">
-        {{ $pic := .Site.Params.intro.pic }}
-        {{ with $pic.src1 }}
-        {{ if $pic.circle }}
-        <section class='p-2 justify-content-center'>
-            <img src="{{ $pic.src1 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
-            <img src="{{ $pic.src2 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" style="display: none;" />
-            <img src="{{ $pic.src3 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" style="display: none;" />
-            <img src="{{ $pic.src4 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" style="display: none;" />
-            <img src="{{ $pic.src5 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}" alt="{{ $pic.alt }}" style="display: none;" />
-            {{ else if $pic.imperfect }}
-            <a href='{{"/" | relURL}}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
-            {{ else }}
-            <img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
-            {{ end }}
-            {{ end }}
-        </section>
-        {{ with .Site.Params.intro }}
-        <header>
-            <h2>{{ .header }}</h2>
-            <p>
-                {{ .paragraph | safeHTML }}
-                <span class="responsive-float">
-                    <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-size='large' data-show-count='false'>
-                        Follow @davidpine7
-                    </a>
-                </span>
-                <script>
-                    window.twitter = (function (d, s, id) {
-                    var js,
-                        fjs = d.getElementsByTagName(s)[0],
-                        t = window.twttr || {};
-                    if (d.getElementById(id)) return t;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "https://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
+  <!-- Intro -->
+  <section id="intro">
+    {{ $pic := .Site.Params.intro.pic }}
+    {{ with $pic.src1 }}
+    {{ if $pic.circle }}
+    <section class='p-2 justify-content-center'>
+      <img src="{{ $pic.src1 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}"
+        alt="{{ $pic.alt }}" />
+      <img src="{{ $pic.src2 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}"
+        alt="{{ $pic.alt }}" style="display: none;" />
+      <img src="{{ $pic.src3 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}"
+        alt="{{ $pic.alt }}" style="display: none;" />
+      <img src="{{ $pic.src4 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}"
+        alt="{{ $pic.alt }}" style="display: none;" />
+      <img src="{{ $pic.src5 | relURL }}" class="intro-circle fade-swap d-flex" width="{{ $pic.width }}"
+        alt="{{ $pic.alt }}" style="display: none;" />
+      {{ else if $pic.imperfect }}
+      <a href='{{"/" | relURL}}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
+      {{ else }}
+      <img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
+      {{ end }}
+      {{ end }}
+    </section>
+    {{ with .Site.Params.intro }}
+    <header>
+      <h2>{{ .header }}</h2>
+      <p>
+        {{ .paragraph | safeHTML }}
+        <span class="responsive-float">
+          <a id='davidpine7' href='https://twitter.com/davidpine7?ref_src=twsrc%5Etfw' class='twitter-follow-button'
+            data-size='large' data-show-count='false'>
+            Follow @davidpine7
+          </a>
+        </span>
+        <script>
+          window.twitter = (function (d, s, id) {
+            var js,
+              fjs = d.getElementsByTagName(s)[0],
+              t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
 
-                    t._e = [];
-                    t.ready = function (f) {
-                        t._e.push(f);
-                    };
+            t._e = [];
+            t.ready = function (f) {
+              t._e.push(f);
+            };
 
-                    return t;
-                }(document, "script", "twitter-wjs"));
-                </script>
-            </p>
-        </header>
-        {{ end }}
+            return t;
+          }(document, "script", "twitter-wjs"));
+        </script>
+      </p>
+    </header>
+    {{ end }}
 
-        <hr />
+    <hr />
 
-        <section class='row justify-content-center'>
-            <a href="https://bit.ly/learning-blazor" target="_blank" 
-                rel="nofollow" class='d-flex no-padding'>
-                <img src="/img/main/thumb-book-cover.png" style="max-width: 100%;" />
-            </a>
-        </section>
+    <div class='row'>
+      <div class='column'>
+        <a target="_blank" rel="noopener nofollow" class='d-flex no-padding justify-content-center'
+          href="https://dometrain.com/course/from-zero-to-hero-configuration-and-options-in-dotnet?ref=david-pine">
+          <img src="/img/main/dometrain-blue-text.png" style="max-width: 75%;" />
+        </a>
+      </div>
+    </div>
 
-        <hr />
+    <hr />
 
-        <div class='row'>
-            <div class='column'>
-                <a target="_blank" rel="noopener"
-                    href="https://developers.google.com/profile/u/davidpine">
-                    <img src="/img/main/gde-24.png" style="max-width: 104%;" />
-                </a>
-            </div>
-            <div class='column'>
-                <a target="_blank" rel="noopener" href="https://mvp.microsoft.com/en-us/publicprofile/5002736">
-                    <img src="/img/main/mvp.png" style="max-width: 92%;" />
-                </a>
-            </div>
-        </div>
-
-        <hr />
-
-        <ul class="icons">
-            <li><a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"
-                    target="_blank" title="RSS" class="fa-lg fa-rss"></a>
-            </li>
-            {{ if .Site.Params.socialAppearAtTop }}
-            {{ partial "social" . }}
-            {{ end }}
-        </ul>
+    <section class='row justify-content-center'>
+      <a href="https://bit.ly/learning-blazor" target="_blank" rel="nofollow noopener"
+        class='d-flex no-padding justify-content-center'>
+        <img src="/img/main/thumb-book-cover.png" style="max-width: 95%;" />
+      </a>
     </section>
 
-    <!-- Posts List -->
-    <section id="recent-posts">
-        <ul class="posts">
-            <header>
-                <h3>Recent Posts</h3>
-            </header>
+    <hr />
+
+    <div class='row'>
+      <div class='column'>
+        <a target="_blank" rel="noopener nofollow" class='d-flex no-padding justify-content-center'
+          href="https://developers.google.com/profile/u/davidpine">
+          <img src="/img/main/gde-24.png" style="max-width: 75%;" />
+        </a>
+      </div>
+    </div>
+
+    <hr />
+
+    <ul class="icons">
+      <li><a href="{{ with .OutputFormats.Get " RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"
+          target="_blank" title="RSS" class="fa-lg fa-rss"></a>
+      </li>
+      {{ if .Site.Params.socialAppearAtTop }}
+      {{ partial "social" . }}
+      {{ end }}
+    </ul>
+  </section>
+
+  <!-- Posts List -->
+  <section id="recent-posts">
+    <ul class="posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      {{ if .Site.Params.orderByPublishDate }}
+      {{ $.Scratch.Set "recentPosts" .Site.Pages.ByPublishDate.Reverse }}
+      {{ else }}
+      {{ $.Scratch.Set "recentPosts" .Site.Pages }}
+      {{ end }}
+
+      {{ with .Site.Params.postAmount.sidebar }}
+      {{ $.Scratch.Set "postLimit" . }}
+      {{ else }}
+      {{ $.Scratch.Set "postLimit" 5 }}
+      {{ end }}
+
+      {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
+      <li>
+        <article>
+          <header>
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
             {{ if .Site.Params.orderByPublishDate }}
-            {{ $.Scratch.Set "recentPosts" .Site.Pages.ByPublishDate.Reverse }}
+            {{ $.Scratch.Set "dateType" .PublishDate }}
             {{ else }}
-            {{ $.Scratch.Set "recentPosts" .Site.Pages }}
+            {{ $.Scratch.Set "dateType" .Date }}
             {{ end }}
+            <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
+              {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
+          </header>
+        </article>
+      </li>
+      {{ end }}
 
-            {{ with .Site.Params.postAmount.sidebar }}
-            {{ $.Scratch.Set "postLimit" . }}
-            {{ else }}
-            {{ $.Scratch.Set "postLimit" 5 }}
-            {{ end }}
-
-            {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
-            <li>
-                <article>
-                    <header>
-                        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                        {{ if .Site.Params.orderByPublishDate }}
-                        {{ $.Scratch.Set "dateType" .PublishDate }}
-                        {{ else }}
-                        {{ $.Scratch.Set "dateType" .Date }}
-                        {{ end }}
-                        <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                            {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
-                    </header>
-                </article>
-            </li>
-            {{ end }}
-
-            {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-            <li>
-                <ul class="actions">
-                    <li>
-                        <a href={{ with .Site.Params.viewMorePostLink }} {{ . }} {{ else }} "/post/" {{ end }}
-                            class="button">
-                            View more posts
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            {{ end }}
-        </ul>
-    </section>
-
-    <!-- This if statement only applies if someone goes to the /categories url -->
-    <!-- Otherwise this section is shown for all other links -->
-    {{ if ne ($.Scratch.Get "showCategories") false }}
-    <!-- Categories List -->
-    <section id="categories">
-        <ul class="posts">
-            <header>
-                <h3><a href="/categories/">Categories</a></h3>
-            </header>
-
-            {{ if .Site.Params.categoriesByCount }}
-            {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
-            {{ else }}
-            {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
-            {{ end }}
-
-            {{ range $key, $value := $.Scratch.Get "categories" }}
-            <li>
-                <article>
-                    <header>
-                        <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
-                        <span style="float:right;">{{ $value.Count }}</span>
-                    </header>
-                </article>
-            </li>
-            {{ end }}
-        </ul>
-    </section>
-    {{ end }}
-
-    <!-- About -->
-    {{ with .Site.Params.intro.about }}
-    <section class="blurb">
-        <h2>About</h2>
-        <p>{{ . }}</p>
-
+      {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+      <li>
         <ul class="actions">
-            <li><a href="/about/" class="button">Learn More</a></li>
+          <li>
+            <a href={{ with .Site.Params.viewMorePostLink }} {{ . }} {{ else }} "/post/" {{ end }} class="button">
+              View more posts
+            </a>
+          </li>
         </ul>
-    </section>
-    {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
 
-    <!-- Footer -->
-    <section id="footer">
-        <ul class="icons">
-            <li><a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"
-                    target="_blank" title="RSS" class="fa fa-rss"></a>
-            </li>
-            {{ if .Site.Params.socialAppearAtBottom }}
-            {{ partial "social" . }}
-            {{ end }}
-        </ul>
+  <!-- This if statement only applies if someone goes to the /categories url -->
+  <!-- Otherwise this section is shown for all other links -->
+  {{ if ne ($.Scratch.Get "showCategories") false }}
+  <!-- Categories List -->
+  <section id="categories">
+    <ul class="posts">
+      <header>
+        <h3><a href="/categories/">Categories</a></h3>
+      </header>
 
-        <p class="copyright">&copy; {{ .Site.Title }} 2016-{{ now.Year }}. Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
-        </p>
-    </section>
+      {{ if .Site.Params.categoriesByCount }}
+      {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
+      {{ else }}
+      {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
+      {{ end }}
+
+      {{ range $key, $value := $.Scratch.Get "categories" }}
+      <li>
+        <article>
+          <header>
+            <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+            <span style="float:right;">{{ $value.Count }}</span>
+          </header>
+        </article>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  <!-- About -->
+  {{ with .Site.Params.intro.about }}
+  <section class="blurb">
+    <h2>About</h2>
+    <p>{{ . }}</p>
+
+    <ul class="actions">
+      <li><a href="/about/" class="button">Learn More</a></li>
+    </ul>
+  </section>
+  {{ end }}
+
+  <!-- Footer -->
+  <section id="footer">
+    <ul class="icons">
+      <li><a href="{{ with .OutputFormats.Get " RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"
+          target="_blank" title="RSS" class="fa fa-rss"></a>
+      </li>
+      {{ if .Site.Params.socialAppearAtBottom }}
+      {{ partial "social" . }}
+      {{ end }}
+    </ul>
+
+    <p class="copyright">&copy; {{ .Site.Title }} 2016-{{ now.Year }}. Powered by <a href="//gohugo.io"
+        target="_blank">Hugo</a>
+    </p>
+  </section>
 
 </section>

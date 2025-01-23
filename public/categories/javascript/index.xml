@@ -2,20 +2,20 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>JavaScript on David Pine</title>
-    <link>https://davidpine.net/categories/javascript/</link>
+    <link>http://localhost:1313/categories/javascript/</link>
     <description>Recent content in JavaScript on David Pine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TypeScript - JavaScript Reimagined</title>
-      <link>https://davidpine.net/blog/typescript-javascript-reimagined/</link>
+      <link>http://localhost:1313/blog/typescript-javascript-reimagined/</link>
       <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/typescript-javascript-reimagined/</guid>
+      <guid>http://localhost:1313/blog/typescript-javascript-reimagined/</guid>
       <description>First things First JavaScript is the world&amp;rsquo;s third most common programming language today. JavaScript was created by Brendan Eich in about ten days. It might seem odd that the previous two sentences not only exist, but go together&amp;hellip;yet it is true! JavaScript runs seemingly everywhere and applications written in this language are only getting larger.
 JavaScript was perhaps intended for 100, maybe up to 1,000 lines of code and now with regularity people are building 100,000 line apps, if not 1,000,000 line apps.</description>
-      <media:content url="https://davidpine.net/img/2017/05/type-writer.jpg" medium="image" />
+      <media:content url="http://localhost:1313/img/2017/05/type-writer.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     

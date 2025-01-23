@@ -2,52 +2,52 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>RxJS on David Pine</title>
-    <link>https://davidpine.net/categories/rxjs/</link>
+    <link>http://localhost:1313/categories/rxjs/</link>
     <description>Recent content in RxJS on David Pine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/rxjs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/rxjs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular - The Color Guessing Game</title>
-      <link>https://davidpine.net/blog/angular-color-game/</link>
+      <link>http://localhost:1313/blog/angular-color-game/</link>
       <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/angular-color-game/</guid>
+      <guid>http://localhost:1313/blog/angular-color-game/</guid>
       <description>The Story Behind The Game I have three sons. Lyric who is six and a half, Londyn who is four and half, and Lennyx who is two and half. As you might imagine, they seldom agree on things. For example when it&amp;rsquo;s family move night, &amp;ldquo;which movie we&amp;rsquo;ll watch?&amp;rdquo;, or &amp;ldquo;who gets to go first?&amp;rdquo; when playing a game. These important life decisions are often decided by playing the color guessing game.</description>
-      <media:content url="https://davidpine.net/img/2019/03/colors.jpg" medium="image" />
+      <media:content url="http://localhost:1313/img/2019/03/colors.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>DMP in 3: RxJS Debounce</title>
-      <link>https://davidpine.net/blog/dmp-in-three-debounce/</link>
+      <link>http://localhost:1313/blog/dmp-in-three-debounce/</link>
       <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/dmp-in-three-debounce/</guid>
+      <guid>http://localhost:1313/blog/dmp-in-three-debounce/</guid>
       <description>I recently decided to give creating videos a test drive. The problem with creating video content is the fact that it&amp;rsquo;s really time consuming to do, but the time investment can be worth the effort if you&amp;rsquo;re able to truly deliver some sort of value. Another problem we&amp;rsquo;re faced with in the technical community is that videos can be very lengthy. Enter DMP in 3, a video series of 3 minute videos.</description>
-      <media:content url="https://davidpine.net/img/2018/11/bounce.jpg" medium="image" />
+      <media:content url="http://localhost:1313/img/2018/11/bounce.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>Angular HTTP Tips For Success</title>
-      <link>https://davidpine.net/blog/angular-http-gotchas/</link>
+      <link>http://localhost:1313/blog/angular-http-gotchas/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/angular-http-gotchas/</guid>
+      <guid>http://localhost:1313/blog/angular-http-gotchas/</guid>
       <description>Intro I love working with the Angular HttpClient. It is easy to use and was designed to work with RxJS. It is vastly different from the AngularJS implementation, if you&amp;rsquo;re curious I wrote about these differences . However, there is one common issue that developers fall victim to. The issue really relates to TypeScript generics. I have also written about generics in TypeScript here . But in this post, we will reveal how the issue can easily be avoided.</description>
-      <media:content url="https://davidpine.net/img/2018/06/map.jpg" medium="image" />
+      <media:content url="http://localhost:1313/img/2018/06/map.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>Angular2 Http with RxJS Observables</title>
-      <link>https://davidpine.net/blog/angular-2-http/</link>
+      <link>http://localhost:1313/blog/angular-2-http/</link>
       <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/angular-2-http/</guid>
+      <guid>http://localhost:1313/blog/angular-2-http/</guid>
       <description>If you have been following the development efforts of the Angular2 project, you have witnessed certain highs and lows - but it has been a fun ride. The latest version is only a Release Candidate and the team is getting closer to the final release. I&amp;rsquo;m really looking forward to that! I wanted to take a moment to highlight (IMO) one of the key services of Angular2, the http service.</description>
-      <media:content url="https://davidpine.net/img/2016/08/observables.png" medium="image" />
+      <media:content url="http://localhost:1313/img/2016/08/observables.png" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     

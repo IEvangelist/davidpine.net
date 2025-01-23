@@ -2,246 +2,246 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://davidpine.net/categories/.net/</loc>
+    <loc>http://localhost:1313/categories/.net/</loc>
     <lastmod>2023-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2023-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2023-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/csharp/</loc>
+    <loc>http://localhost:1313/categories/csharp/</loc>
     <lastmod>2023-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2023-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/dotnet-async-enumerable/</loc>
+    <loc>http://localhost:1313/blog/dotnet-async-enumerable/</loc>
     <lastmod>2023-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/json/</loc>
+    <loc>http://localhost:1313/categories/json/</loc>
     <lastmod>2023-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/dotnet-dependency-injection/</loc>
+    <loc>http://localhost:1313/blog/dotnet-dependency-injection/</loc>
     <lastmod>2022-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/chatgpt/</loc>
+    <loc>http://localhost:1313/categories/chatgpt/</loc>
     <lastmod>2022-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/openai/</loc>
+    <loc>http://localhost:1313/categories/openai/</loc>
     <lastmod>2022-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/github/</loc>
+    <loc>http://localhost:1313/categories/github/</loc>
     <lastmod>2022-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/github-actions-sdk/</loc>
+    <loc>http://localhost:1313/blog/github-actions-sdk/</loc>
     <lastmod>2022-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/typescript/</loc>
+    <loc>http://localhost:1313/categories/typescript/</loc>
     <lastmod>2022-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/blazor/</loc>
+    <loc>http://localhost:1313/categories/blazor/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/learning-blazor/</loc>
+    <loc>http://localhost:1313/blog/learning-blazor/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/wasm/</loc>
+    <loc>http://localhost:1313/categories/wasm/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/webassembly/</loc>
+    <loc>http://localhost:1313/categories/webassembly/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/blazorators/</loc>
+    <loc>http://localhost:1313/blog/blazorators/</loc>
     <lastmod>2022-09-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/.net-core/</loc>
+    <loc>http://localhost:1313/categories/.net-core/</loc>
     <lastmod>2019-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/azure-functions/</loc>
+    <loc>http://localhost:1313/categories/azure-functions/</loc>
     <lastmod>2019-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/github-profanity-filter/</loc>
+    <loc>http://localhost:1313/blog/github-profanity-filter/</loc>
     <lastmod>2019-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/asp.net-core/</loc>
+    <loc>http://localhost:1313/categories/asp.net-core/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/asp-net-core-slack/</loc>
+    <loc>http://localhost:1313/blog/asp-net-core-slack/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/slack/</loc>
+    <loc>http://localhost:1313/categories/slack/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/angular/</loc>
+    <loc>http://localhost:1313/categories/angular/</loc>
     <lastmod>2019-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/angular-color-game/</loc>
+    <loc>http://localhost:1313/blog/angular-color-game/</loc>
     <lastmod>2019-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/rxjs/</loc>
+    <loc>http://localhost:1313/categories/rxjs/</loc>
     <lastmod>2019-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/csharp-all-the-things/</loc>
+    <loc>http://localhost:1313/blog/csharp-all-the-things/</loc>
     <lastmod>2018-12-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/tooling/</loc>
+    <loc>http://localhost:1313/categories/tooling/</loc>
     <lastmod>2018-12-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/dmp-in-three-debounce/</loc>
+    <loc>http://localhost:1313/blog/dmp-in-three-debounce/</loc>
     <lastmod>2018-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/blazing-chuck/</loc>
+    <loc>http://localhost:1313/blog/blazing-chuck/</loc>
     <lastmod>2018-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/web/</loc>
+    <loc>http://localhost:1313/categories/web/</loc>
     <lastmod>2018-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/webassembly-interview/</loc>
+    <loc>http://localhost:1313/blog/webassembly-interview/</loc>
     <lastmod>2018-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/angular-http-gotchas/</loc>
+    <loc>http://localhost:1313/blog/angular-http-gotchas/</loc>
     <lastmod>2018-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/http/</loc>
+    <loc>http://localhost:1313/categories/http/</loc>
     <lastmod>2018-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/photo-booth/</loc>
+    <loc>http://localhost:1313/blog/photo-booth/</loc>
     <lastmod>2018-06-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/azure/</loc>
+    <loc>http://localhost:1313/categories/azure/</loc>
     <lastmod>2018-06-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/twilio/</loc>
+    <loc>http://localhost:1313/categories/twilio/</loc>
     <lastmod>2018-06-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/journey-of-a-lifetime/</loc>
+    <loc>http://localhost:1313/blog/journey-of-a-lifetime/</loc>
     <lastmod>2018-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/technical-conference/</loc>
+    <loc>http://localhost:1313/categories/technical-conference/</loc>
     <lastmod>2018-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/pictures/</loc>
+    <loc>http://localhost:1313/pictures/</loc>
     <lastmod>2018-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/media/</loc>
+    <loc>http://localhost:1313/media/</loc>
     <lastmod>2018-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/asp-net-core-security-unit-testing/</loc>
+    <loc>http://localhost:1313/blog/asp-net-core-security-unit-testing/</loc>
     <lastmod>2018-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/xunit/</loc>
+    <loc>http://localhost:1313/categories/xunit/</loc>
     <lastmod>2018-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/asp-net-core-configuration/</loc>
+    <loc>http://localhost:1313/blog/asp-net-core-configuration/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/configuration/</loc>
+    <loc>http://localhost:1313/categories/configuration/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/csharp-special-edition/</loc>
+    <loc>http://localhost:1313/blog/csharp-special-edition/</loc>
     <lastmod>2017-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/visual-studio/</loc>
+    <loc>http://localhost:1313/categories/visual-studio/</loc>
     <lastmod>2017-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/roslyn/</loc>
+    <loc>http://localhost:1313/categories/roslyn/</loc>
     <lastmod>2017-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/xunit-powered-by-roslyn/</loc>
+    <loc>http://localhost:1313/blog/xunit-powered-by-roslyn/</loc>
     <lastmod>2017-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/.net-standard/</loc>
+    <loc>http://localhost:1313/categories/.net-standard/</loc>
     <lastmod>2017-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/dot-net-standard-demystified/</loc>
+    <loc>http://localhost:1313/blog/dot-net-standard-demystified/</loc>
     <lastmod>2017-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/csharp-seven-dot-one/</loc>
+    <loc>http://localhost:1313/blog/csharp-seven-dot-one/</loc>
     <lastmod>2017-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/how-to-organize-an-amazing-tech-conf/</loc>
+    <loc>http://localhost:1313/blog/how-to-organize-an-amazing-tech-conf/</loc>
     <lastmod>2017-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/mke-dot-net/</loc>
+    <loc>http://localhost:1313/categories/mke-dot-net/</loc>
     <lastmod>2017-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/javascript/</loc>
+    <loc>http://localhost:1313/categories/javascript/</loc>
     <lastmod>2017-05-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/typescript-javascript-reimagined/</loc>
+    <loc>http://localhost:1313/blog/typescript-javascript-reimagined/</loc>
     <lastmod>2017-05-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/speaking/</loc>
+    <loc>http://localhost:1313/speaking/</loc>
     <lastmod>2017-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/exploring-csharp-seven/</loc>
+    <loc>http://localhost:1313/blog/exploring-csharp-seven/</loc>
     <lastmod>2017-03-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/dependency-injection/</loc>
+    <loc>http://localhost:1313/categories/dependency-injection/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/overriding-default-di/</loc>
+    <loc>http://localhost:1313/blog/overriding-default-di/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/conclusions/</loc>
+    <loc>http://localhost:1313/conclusions/</loc>
     <lastmod>2017-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/identity/</loc>
+    <loc>http://localhost:1313/categories/identity/</loc>
     <lastmod>2017-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/principal-architecture-changes/</loc>
+    <loc>http://localhost:1313/blog/principal-architecture-changes/</loc>
     <lastmod>2017-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/building-a-magic-mirror/</loc>
+    <loc>http://localhost:1313/blog/building-a-magic-mirror/</loc>
     <lastmod>2016-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/iot/</loc>
+    <loc>http://localhost:1313/categories/iot/</loc>
     <lastmod>2016-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/raspberry-pi/</loc>
+    <loc>http://localhost:1313/categories/raspberry-pi/</loc>
     <lastmod>2016-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/uwp/</loc>
+    <loc>http://localhost:1313/categories/uwp/</loc>
     <lastmod>2016-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/asp-net-core-optimization/</loc>
+    <loc>http://localhost:1313/blog/asp-net-core-optimization/</loc>
     <lastmod>2016-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/caching/</loc>
+    <loc>http://localhost:1313/categories/caching/</loc>
     <lastmod>2016-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/compression/</loc>
+    <loc>http://localhost:1313/categories/compression/</loc>
     <lastmod>2016-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/gzip/</loc>
+    <loc>http://localhost:1313/categories/gzip/</loc>
     <lastmod>2016-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/fear/</loc>
+    <loc>http://localhost:1313/categories/fear/</loc>
     <lastmod>2016-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/imposter-syndrome/</loc>
+    <loc>http://localhost:1313/blog/imposter-syndrome/</loc>
     <lastmod>2016-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/self-branding/</loc>
+    <loc>http://localhost:1313/categories/self-branding/</loc>
     <lastmod>2016-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/categories/technical-doubt/</loc>
+    <loc>http://localhost:1313/categories/technical-doubt/</loc>
     <lastmod>2016-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/angular-2-http/</loc>
+    <loc>http://localhost:1313/blog/angular-2-http/</loc>
     <lastmod>2016-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/the-global-json/</loc>
+    <loc>http://localhost:1313/blog/the-global-json/</loc>
     <lastmod>2016-07-18T22:40:31-05:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/blog/migrating-to-rc2/</loc>
+    <loc>http://localhost:1313/blog/migrating-to-rc2/</loc>
     <lastmod>2016-05-20T22:40:31-05:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2016-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidpine.net/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

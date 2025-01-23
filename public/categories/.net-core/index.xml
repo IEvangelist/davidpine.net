@@ -2,102 +2,102 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>.NET Core on David Pine</title>
-    <link>https://davidpine.net/categories/.net-core/</link>
+    <link>http://localhost:1313/categories/.net-core/</link>
     <description>Recent content in .NET Core on David Pine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://davidpine.net/categories/.net-core/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/.net-core/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a GitHub profanity filter with .NET Core and Azure Functions</title>
-      <link>https://davidpine.net/blog/github-profanity-filter/</link>
+      <link>http://localhost:1313/blog/github-profanity-filter/</link>
       <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/github-profanity-filter/</guid>
+      <guid>http://localhost:1313/blog/github-profanity-filter/</guid>
       <description>Intro With more than 40 million active users, GitHub is by far the largest source code hosting platform in the world. It&amp;rsquo;s an open source developers dream, and ecosystem and developer community unlike any other. And with all these users and such profound openness, there&amp;rsquo;s bound to be frustration from time to time. In this post we will explore an Azure Function written with ASP.NET Core 3.0 and C# 8.0. It has been designed to handle a GitHub webhook for issues and pull requests.</description>
-      <media:content url="https://davidpine.net/img/2019/11/profanity-filter.png" medium="image" />
+      <media:content url="http://localhost:1313/img/2019/11/profanity-filter.png" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>C# All The Things</title>
-      <link>https://davidpine.net/blog/csharp-all-the-things/</link>
+      <link>http://localhost:1313/blog/csharp-all-the-things/</link>
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/csharp-all-the-things/</guid>
+      <guid>http://localhost:1313/blog/csharp-all-the-things/</guid>
       <description>I&amp;rsquo;m proud to share that this post is part of the C# Advent Calendar and it&amp;rsquo;s my second year contributing to it! I encourage you to check out all the others here .
 Developers Are Lazy In the world of web development it is hard to escape certain tools that we are forced to rely on. As developers we&amp;rsquo;re innately lazy and it is safe to say that perhaps we don&amp;rsquo;t really care enough to look into other tooling options.</description>
-      <media:content url="https://davidpine.net/img/2018/12/csharp-advent.png" medium="image" />
+      <media:content url="http://localhost:1313/img/2018/12/csharp-advent.png" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>Demystifying .NET Standard</title>
-      <link>https://davidpine.net/blog/dot-net-standard-demystified/</link>
+      <link>http://localhost:1313/blog/dot-net-standard-demystified/</link>
       <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/dot-net-standard-demystified/</guid>
+      <guid>http://localhost:1313/blog/dot-net-standard-demystified/</guid>
       <description>Intro Monday, August 14th was an amazing day to be a .NET developer! As the world celebrates another triumphant series of announcements from Microsoft, there is still confusion amongst the masses.
 What is this .NET Standard thing? What does it mean to target .NET Standard versus .NET Core, or even the .NET Framework? As a developer, what .NET should I target and why? Are Portable Class Libraries (PCLs) dead? Developer Community</description>
-      <media:content url="https://davidpine.net/img/2017/08/confused.jpg" medium="image" />
+      <media:content url="http://localhost:1313/img/2017/08/confused.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>Overriding ASP.NET Core Framework-Provided Services</title>
-      <link>https://davidpine.net/blog/overriding-default-di/</link>
+      <link>http://localhost:1313/blog/overriding-default-di/</link>
       <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/overriding-default-di/</guid>
+      <guid>http://localhost:1313/blog/overriding-default-di/</guid>
       <description>Overview In .NET it&amp;rsquo;s really easy to create your own interfaces and implementations. Likewise, it&amp;rsquo;s seemingly effortless to register them for dependency injection. But it is not always obvious how to override existing implementations. Let&amp;rsquo;s discuss various aspects of &amp;ldquo;dependency injection&amp;rdquo; and how you can override the &amp;ldquo;framework-provided services&amp;rdquo;.
 As an example, let&amp;rsquo;s take a recent story on our product backlog for building a security audit of login attempts. The story involved the capture of attempted usernames along with their corresponding IP addresses.</description>
-      <media:content url="https://davidpine.net/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" medium="image" />
+      <media:content url="http://localhost:1313/img/2017/02/red-or-blue-pill-matrix-neo-morpheus.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>What happened to my Thread.CurrentPrincipal</title>
-      <link>https://davidpine.net/blog/principal-architecture-changes/</link>
+      <link>http://localhost:1313/blog/principal-architecture-changes/</link>
       <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/principal-architecture-changes/</guid>
+      <guid>http://localhost:1313/blog/principal-architecture-changes/</guid>
       <description>Overview Like the title claims, if you&amp;rsquo;re using ASP.NET Core and expecting the Thread.CurrentPrincipal or ClaimsPrincipal.Current to be populated you&amp;rsquo;d be wrong. This is not the IPrincipal you&amp;rsquo;re looking for. In this post we&amp;rsquo;ll discuss what happened and what you need to do now. Additionally we&amp;rsquo;ll cover all the peripheral benefits as a result of this change.
 History If you have ever done any .NET Framework development, you&amp;rsquo;ve probably seen the Thread class.</description>
-      <media:content url="https://davidpine.net/img/2017/01/not-what-you-are-looking-for.png" medium="image" />
+      <media:content url="http://localhost:1313/img/2017/01/not-what-you-are-looking-for.png" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>Building a Magic Mirror</title>
-      <link>https://davidpine.net/blog/building-a-magic-mirror/</link>
+      <link>http://localhost:1313/blog/building-a-magic-mirror/</link>
       <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://davidpine.net/blog/building-a-magic-mirror/</guid>
+      <guid>http://localhost:1313/blog/building-a-magic-mirror/</guid>
       <description>Inspiration I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators&amp;hellip;some might say, &amp;ldquo;I&amp;rsquo;m standing on the shoulders of giants&amp;rdquo;. They would probably we right, and I&amp;rsquo;m okay with that. Earlier this year, I stumbled upon a tweet about someone how created a magic mirror&amp;hellip;this is the root of my inspiration.</description>
-      <media:content url="https://davidpine.net/img/2016/12/mirror.jpg" medium="image" />
+      <media:content url="http://localhost:1313/img/2016/12/mirror.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>The power of the global.json</title>
-      <link>https://davidpine.net/blog/the-global-json/</link>
+      <link>http://localhost:1313/blog/the-global-json/</link>
       <pubDate>Mon, 18 Jul 2016 22:40:31 -0500</pubDate>
       
-      <guid>https://davidpine.net/blog/the-global-json/</guid>
+      <guid>http://localhost:1313/blog/the-global-json/</guid>
       <description>Introduction As I&amp;rsquo;m sure you&amp;rsquo;re all aware by now, Monday June 27th was a special day for those of you who were anticipating the release of .NET Core and ASP.NET Core. While the &amp;ldquo;core&amp;rdquo; frameworks and runtimes are RTM, the tooling is actually still in preview. In fact, we&amp;rsquo;re currently on Tools Preview 2. I wanted to focus this post entirely on one specific enhancement to Visual Studio solutions, enter the global.</description>
-      <media:content url="https://davidpine.net/img/2016/07/global-json.png" medium="image" />
+      <media:content url="http://localhost:1313/img/2016/07/global-json.png" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     
     <item>
       <title>ASP.NET Core RC2 (Migration Guide)</title>
-      <link>https://davidpine.net/blog/migrating-to-rc2/</link>
+      <link>http://localhost:1313/blog/migrating-to-rc2/</link>
       <pubDate>Fri, 20 May 2016 22:40:31 -0500</pubDate>
       
-      <guid>https://davidpine.net/blog/migrating-to-rc2/</guid>
+      <guid>http://localhost:1313/blog/migrating-to-rc2/</guid>
       <description>Introduction On Monday, May 16th 2016 there was an amazing announcement from the .NET Blog team!
 Announcing .NET Core RC2 and .NET Core SDK Preview 1
 This post will serve as a guide that walks you through the steps as I experienced them from migrating existing ASP.NET Core RC1 applications to ASP.NET Core RC2. It is worth mentioning that I&amp;rsquo;m am targeting the .NET 4.6 framework. So, I do not cover the .</description>
-      <media:content url="https://davidpine.net/img/2016/05/migrating.jpg" medium="image" />
+      <media:content url="http://localhost:1313/img/2016/05/migrating.jpg" medium="image" />
       <dc:creator>David Pine</dc:creator>
     </item>
     

@@ -170,7 +170,7 @@ public class IssueHandler
 
 You may have noticed the `.ctor` logic is expressed as a tuple assignment. When I discovered this was possible, I questioned it - what do you think? Leave your comments on the tweet below.
 
-{{< tweet id="1169418926217973760" user="davidpine7" >}}
+{{< x id="1169418926217973760" user="davidpine7" >}}
 
 Now, back to the handling of issues. What's that look like?
 

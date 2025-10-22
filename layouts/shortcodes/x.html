@@ -1,0 +1,16 @@
+{{- $user := .Get 0 -}}
+{{- $id := .Get "id" -}}
+{{- $hideMedia := .Get "hideMedia" | default false -}}
+{{- $hideThread := .Get "hideThread" | default false -}}
+
+{{- if $id -}}
+{{/* Tweet by ID */}}
+<blockquote class="twitter-tweet"{{ if $hideMedia }} data-cards="hidden"{{ end }}{{ if $hideThread }} data-conversation="none"{{ end }}>
+  <a href="https://twitter.com/{{ $user }}/status/{{ $id }}"></a>
+</blockquote>
+{{- else -}}
+{{/* User timeline */}}
+<a class="twitter-timeline" href="https://twitter.com/{{ $user }}">Tweets by {{ $user }}</a>
+{{- end -}}
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

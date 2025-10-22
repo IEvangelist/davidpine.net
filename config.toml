@@ -2,9 +2,19 @@ baseurl = "https://davidpine.net"
 languageCode = "en-us"
 title = "David Pine"
 preserveTaxonomyNames = true
-paginate = 10
 disqusShortname = "davidpine"
 googleAnalytics = "250844399"
+
+# Ignore specific warning logs
+ignoreLogs = ['warning-goldmark-raw-html', 'shortcode-twitter-getremote']
+
+[pagination]
+    pagerSize = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
     # Sets the meta tag description, usually reserved for the main page
@@ -149,7 +159,7 @@ googleAnalytics = "250844399"
 # Insert your username and the icon will appear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
 # The social media icons will appear on the sidebar
-[social]
+[params.social]
     github          = "IEvangelist"
     papercall       = "david-pine"
     bitbucket       = ""

@@ -50,17 +50,17 @@ I was working with Stephen Toub (the patent lead for the .NET team), and we file
 
 The community is excited about this project, and I'm excited to see what you build with it. Here's what some of the community members have said on Twitter:
 
-{{< tweet user="robertmclaws" id="1510292205814095874" >}}
+{{< x user="robertmclaws" id="1510292205814095874" >}}
 
-{{< tweet user="KStrubeG" id="1503140307537440783" >}}
+{{< x user="KStrubeG" id="1503140307537440783" >}}
 
 <!--
-{{< tweet user="MrPeterLMorris" id="1509073185379127296" >}}
+{{< x user="MrPeterLMorris" id="1509073185379127296" >}}
 -->
 
-{{< tweet user="Scott_Addie" id="1507350467524841474" >}}
+{{< x user="Scott_Addie" id="1507350467524841474" >}}
 
-{{< tweet user="EdCharbeneau" id="1504161891756748800" >}}
+{{< x user="EdCharbeneau" id="1504161891756748800" >}}
 
 ### The plan
 

@@ -67,9 +67,9 @@ If you have ever spent more than a few minutes with me, you will know that I'm a
 
 I sit on the technical committee for {{< url-link "MKE DOT NET" "https://www.mkedotnet.com/" >}}, a developer conference in the Milwaukee area. Recently I was fortunate enough to get {{< url-link "Scott Hanselman" "https://www.hanselman.com/" >}} to be our keynote speaker. During his keynote (which was amazing) I shouted out several times to assist him with live coding / demonstration errors. He referred to me as his "second compiler"!
 
-{{< tweet id="792480943416156161" user="davidpine7" >}}
+{{< x id="792480943416156161" user="davidpine7" >}}
 
-{{< tweet id="792544455635132417" user="davidpine7" >}}
+{{< x id="792544455635132417" user="davidpine7" >}}
 
 ### Stack Overflow
 
@@ -79,15 +79,15 @@ Getting the accepted answer over mega-super stars like {{< url-link "Stephan Cle
 
 #### Let me compile that for you
 
-{{< tweet id="742718249725480960" user="jonskeet" >}}
+{{< x id="742718249725480960" user="jonskeet" >}}
 
-{{< tweet id="742739271107366912" user="jonskeet" >}}
+{{< x id="742739271107366912" user="jonskeet" >}}
 
 #### Let me ASP.NET 5 that for you
 
-{{< tweet id="716378423824945152" user="jonskeet" >}}
+{{< x id="716378423824945152" user="jonskeet" >}}
 
-{{< tweet id="716382973671706628" user="jonskeet" >}}
+{{< x id="716382973671706628" user="jonskeet" >}}
 
 Yes, you read that correctly. That is me helping out the legand {{< url-link "Jon Skeet" "https://stackoverflow.com/users/22656/jon-skeet" >}} (arguably the world's best software engineer)!
 

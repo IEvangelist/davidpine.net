@@ -17,7 +17,7 @@ type = "post"
 
 I am certainly not the first one to create a magic mirror, and I will not be the last either. I was inspired by those who are true Innovators...some might say, "I'm standing on the shoulders of giants". They would probably we right, and I'm okay with that. Earlier this year, I stumbled upon a tweet about someone how created a magic mirror...this is the root of my inspiration.
 
-{{< tweet id="695318303326265345" user="davidpine7" >}}
+{{< x id="695318303326265345" user="davidpine7" >}}
 
 Before continuing on, allow me to explain what a magic mirror is. A magic mirror is simply a two-way mirror with a monitor positioned behind it that projects through the mirror. The monitor displays the application. The application is running on a small computer, in most cases a **Raspberry Pi**.
 

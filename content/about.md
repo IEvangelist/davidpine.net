@@ -75,7 +75,7 @@ I then had an idea of what I wanted to do. Years later, I decided that I wanted 
 
 ## {{< i fa-twitter >}} Twitter
 
-{{< twitter davidpine7 >}}
+{{< x davidpine7 >}}
 
 ---
 

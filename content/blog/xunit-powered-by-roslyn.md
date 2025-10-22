@@ -100,7 +100,7 @@ Likewise I had an `Assert.Equal(1, values.Count);` and the analyzer suggested `A
 
 # Thank you
 
-{{< tweet id="928805436761010176" user="davidpine7" >}}
+{{< x id="928805436761010176" user="davidpine7" >}}
 
 ## Further reading
 

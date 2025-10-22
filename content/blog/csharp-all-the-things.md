@@ -169,7 +169,7 @@ foreach (var (type, files) in results.GroupBy(f => f.Type)
 
 When I first learned about this, I was so excited to tweet about it!
 
-{{< tweet id="1032709720505831425" user="davidpine7" >}}
+{{< x id="1032709720505831425" user="davidpine7" >}}
 
 ## Credit 🙏🏼
 

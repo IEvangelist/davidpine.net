@@ -54,10 +54,6 @@ The community is excited about this project, and I'm excited to see what you bui
 
 {{< x user="KStrubeG" id="1503140307537440783" >}}
 
-<!--
-{{< x user="MrPeterLMorris" id="1509073185379127296" >}}
--->
-
 {{< x user="Scott_Addie" id="1507350467524841474" >}}
 
 {{< x user="EdCharbeneau" id="1504161891756748800" >}}

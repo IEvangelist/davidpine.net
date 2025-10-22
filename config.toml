@@ -201,10 +201,10 @@ ignoreLogs = ['warning-goldmark-raw-html', 'shortcode-twitter-getremote']
   [privacy.instagram]
     disable = false
     simple = false
-  [privacy.twitter]
+  [privacy.x]
     disable = false
     enableDNT = false
-    simple = false
+    simple = true
   [privacy.vimeo]
     disable = false
     enableDNT = false

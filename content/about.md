@@ -73,12 +73,6 @@ I then had an idea of what I wanted to do. Years later, I decided that I wanted 
 
 ---
 
-## {{< i fa-twitter >}} Twitter
-
-{{< x davidpine7 >}}
-
----
-
 ## {{< i fa-stack-overflow >}} Stack Overflow
 
 [![Stack Overflow profile](https://stackoverflow.com/users/flair/2410379.png)](https://stackoverflow.com/users/2410379/david-pine)

@@ -553,11 +553,7 @@ I'm not going to paste more than 100 lines for multiple files, this blog post is
 
 ## The future is bright ☀️
 
-I'm always open to collaborating with developer community members, 🙌🏽 who are interested in helping this code live on to help others. I do, however, agree with the wise sentiment of Kelsey Hightower in the following Tweet:
-
-{{< x id="1595463365723582464" user="kelseyhightower" >}}
-
-But I'm willing to try to make it work. I encourage you to explore the code and be sure to see the sample use cases.
+I'm always open to collaborating with developer community members, 🙌🏽 who are interested in helping this code live on to help others. I encourage you to explore the code and be sure to see the sample use cases.
 
 {{< tip title="🤓 COLLABORATE" >}}
 If you're interested in helping, please reach out to me on Twitter, or open an issue on the [GitHub Actions Core .NET SDK](https://github.com/IEvangelist/dotnet-github-actions-sdk).

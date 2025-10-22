@@ -32,6 +32,31 @@
                     <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
                 </form>
             </li>
+            <li id="theme-toggle">
+                <a class="fa-desktop theme-toggle-link" href="#theme">Theme</a>
+                <div class="theme-dropdown">
+                    <ul>
+                        <li>
+                            <a href="#" data-theme="system">
+                                <span class="theme-option-icon" aria-hidden="true"></span>
+                                <span class="theme-option-label">System</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-theme="light">
+                                <span class="theme-option-icon" aria-hidden="true"></span>
+                                <span class="theme-option-label">Light</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-theme="dark">
+                                <span class="theme-option-icon" aria-hidden="true"></span>
+                                <span class="theme-option-label">Dark</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
             <li class="menu">
                 <a class="fa-bars" href="#menu">Menu</a>
             </li>

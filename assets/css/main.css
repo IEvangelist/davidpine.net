@@ -21,7 +21,7 @@
 	--accent-hover: #26a399;
 	--accent-light: rgba(46, 186, 174, 0.05);
 	--text-on-accent: #ffffff;
-	--border-color: var(--border-color);
+	--border-color: rgba(160, 160, 160, 0.3);
 	--border-light: rgba(160, 160, 160, 0.15);
 	--border-dashed: #3c3b3b45;
 	--shadow-color: rgba(0, 0, 0, 0.19);
@@ -41,33 +41,33 @@
 
 :root[data-theme='dark'] {
 	/* Dark theme colors */
-	--bg-primary: #0f0f0f;
-	--bg-secondary: #1a1a1a;
+	--bg-primary: #1a1a1a;
+	--bg-secondary: #2a2a2a;
 	--bg-tertiary: rgba(255, 255, 255, 0.08);
-	--text-primary: #c5c5c5;
-	--text-secondary: #f0f0f0;
-	--text-muted: #909090;
+	--text-primary: #d0d0d0;
+	--text-secondary: #f5f5f5;
+	--text-muted: #a0a0a0;
 	--text-disabled: #707070;
-	--accent-primary: #00d4aa;
-	--accent-hover: #00ffcc;
-	--accent-light: rgba(0, 212, 170, 0.15);
-	--text-on-accent: #0a0a0a;
-	--border-color: rgba(255, 255, 255, 0.12);
-	--border-light: rgba(255, 255, 255, 0.08);
-	--border-dashed: #f0f0f04a;
-	--shadow-color: rgba(0, 0, 0, 0.6);
-	--shadow-light: rgba(0, 0, 0, 0.4);
-	--shadow-overlay: rgba(0, 0, 0, 0.75);
-	--code-bg: rgba(255, 255, 255, 0.06);
-	--input-bg: rgba(255, 255, 255, 0.06);
-	--input-focus: rgba(0, 212, 170, 0.4);
-	--overlay-bg: rgba(26, 26, 26, 0.95);
-	--quote-symbol: #f0f0f0;
-	--gist-bg: #242424;
-	--gist-text: #8b92a0;
-	--gist-num-bg: #2f2f2f;
-	--note-bg: #2a2818;
-	--tip-bg: #18282a;
+	--accent-primary: #00e5b8;
+	--accent-hover: #00ffd5;
+	--accent-light: rgba(0, 229, 184, 0.18);
+	--text-on-accent: #000000;
+	--border-color: rgba(255, 255, 255, 0.15);
+	--border-light: rgba(255, 255, 255, 0.1);
+	--border-dashed: #f5f5f555;
+	--shadow-color: rgba(0, 0, 0, 0.7);
+	--shadow-light: rgba(0, 0, 0, 0.5);
+	--shadow-overlay: rgba(0, 0, 0, 0.8);
+	--code-bg: rgba(255, 255, 255, 0.08);
+	--input-bg: rgba(255, 255, 255, 0.08);
+	--input-focus: rgba(0, 229, 184, 0.45);
+	--overlay-bg: rgba(18, 18, 18, 0.95);
+	--quote-symbol: #f5f5f5;
+	--gist-bg: #1a1a1a;
+	--gist-text: #95a0b0;
+	--gist-num-bg: #252525;
+	--note-bg: #332d1a;
+	--tip-bg: #1a3033;
 }
 
 caption,
@@ -1804,7 +1804,7 @@ blockquote {
 
 code {
 	background: var(--code-bg);
-	border: solid 1px var(--border-color);
+	border: solid 1px var(--border-color) !important;
 	font-family: monospace;
 	font-size: 1em;
 	margin: 0 0.25em;
@@ -1816,10 +1816,14 @@ pre {
 	font-family: monospace;
 	font-size: 1em;
 	margin: 0 0 2em 0;
+	background-color: initial !important;
 }
 
-pre code {
+pre code,
+div.highlight pre code.hljs,
+#content div.highlight pre code.hljs {
 	display: block;
+	border: solid 1px var(--border-color) !important;
 	line-height: 1.75em;
 	padding: 1em 1.5em;
 	overflow-x: auto;
@@ -2890,17 +2894,17 @@ dl dd {
 }
 
 .post>.image.featured img {
-	-moz-transition: -moz-transform 0.2s ease-out;
-	-webkit-transition: -webkit-transform 0.2s ease-out;
-	-ms-transition: -ms-transform 0.2s ease-out;
-	transition: transform 0.2s ease-out;
+	-moz-transition: -moz-transform 0.2s ease-in;
+	-webkit-transition: -webkit-transform 0.2s ease-in;
+	-ms-transition: -ms-transform 0.2s ease-in;
+	transition: transform 0.2s ease-in;
 }
 
 .post>.image.featured:hover img {
-	-moz-transform: scale(1.05);
-	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	transform: scale(1.05);
+	-moz-transform: scale(1.01);
+	-webkit-transform: scale(1.01);
+	-ms-transform: scale(1.01);
+	transform: scale(1.01);
 }
 
 .post>footer {
@@ -4122,4 +4126,28 @@ a.darken:hover {
 .gist .markdown-body table {
 	--bgColor-default: var(--bg-secondary) !important;
 	--bgColor-muted: var(--bg-tertiary) !important;
+}
+
+.theme-light-img {
+	display: block;
+}
+
+.theme-dark-img {
+	display: none;
+}
+
+:root[data-theme='light'] .theme-light-img {
+	display: block;
+}
+
+:root[data-theme='light'] .theme-dark-img {
+	display: none;
+}
+
+:root[data-theme='dark'] .theme-light-img {
+	display: none;
+}
+
+:root[data-theme='dark'] .theme-dark-img {
+	display: block;
 }

@@ -108,7 +108,9 @@
         const effectiveTheme = getEffectiveTheme(theme);
         
         if (effectiveTheme === themes.DARK) {
-            document.documentElement.setAttribute(THEME_ATTR, 'dark');
+            document.documentElement.setAttribute(THEME_ATTR, themes.DARK);
+        } else if (effectiveTheme === themes.LIGHT) {
+            document.documentElement.setAttribute(THEME_ATTR, themes.LIGHT);
         } else {
             document.documentElement.removeAttribute(THEME_ATTR);
         }

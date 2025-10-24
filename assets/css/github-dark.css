@@ -1,10 +1,150 @@
-pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
-  Theme: GitHub Dark
-  Description: Dark theme as seen on github.com
-  Author: github.com
-  Maintainer: @Hirse
-  Updated: 2021-05-15
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
 
-  Outdated base version: https://github.com/primer/github-syntax-dark
-  Current colors taken from GitHub's CSS
-*/.hljs{color:#c9d1d9;background:#0d1117}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#ff7b72}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#d2a8ff}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#79c0ff}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#a5d6ff}.hljs-built_in,.hljs-symbol{color:#ffa657}.hljs-code,.hljs-comment,.hljs-formula{color:#8b949e}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#7ee787}.hljs-subst{color:#c9d1d9}.hljs-section{color:#1f6feb;font-weight:700}.hljs-bullet{color:#f2cc60}.hljs-emphasis{color:#c9d1d9;font-style:italic}.hljs-strong{color:#c9d1d9;font-weight:700}.hljs-addition{color:#aff5b4;background-color:#033a16}.hljs-deletion{color:#ffdcd7;background-color:#67060c}
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+  GitHub syntax highlighting overrides for highlight.js.
+  Default (root) colors match the current GitHub Dark palette.
+  Light mode overrides apply when :root[data-theme="light"].
+*/
+:root {
+  --hljs-foreground: #c9d1d9;
+  --hljs-color: var(--hljs-foreground);
+  --hljs-background: color-mix(in srgb, var(--bg-secondary) 77%, black);
+  --hljs-keyword: #ff7b72;
+  --hljs-entity: #d2a8ff;
+  --hljs-constant: #79c0ff;
+  --hljs-string: #a5d6ff;
+  --hljs-variable: #ffa657;
+  --hljs-comment: #7ee787;
+  --hljs-entity-tag: #7ee787;
+  --hljs-storage: #c9d1d9;
+  --hljs-heading: #1f6feb;
+  --hljs-list: #f2cc60;
+  --hljs-italic: #c9d1d9;
+  --hljs-bold: #c9d1d9;
+  --hljs-addition-color: #aff5b4;
+  --hljs-addition-background: #033a16;
+  --hljs-deletion-color: #ffdcd7;
+  --hljs-deletion-background: #67060c;
+}
+
+:root[data-theme="light"] {
+  --hljs-foreground: #24292e;
+  --hljs-color: var(--hljs-foreground);
+  --hljs-background: color-mix(in srgb, var(--bg-secondary) 92%, black);
+  --hljs-keyword: #d73a49;
+  --hljs-entity: #6f42c1;
+  --hljs-constant: #005cc5;
+  --hljs-string: #032f62;
+  --hljs-variable: #e36209;
+  --hljs-comment: #22863a;
+  --hljs-entity-tag: #22863a;
+  --hljs-storage: #24292e;
+  --hljs-heading: #005cc5;
+  --hljs-list: #735c0f;
+  --hljs-italic: #24292e;
+  --hljs-bold: #24292e;
+  --hljs-addition-color: #22863a;
+  --hljs-addition-background: #f0fff4;
+  --hljs-deletion-color: #b31d28;
+  --hljs-deletion-background: #ffeef0;
+}
+
+.hljs {
+  color: var(--hljs-foreground);
+  background: var(--hljs-background);
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  color: var(--hljs-keyword);
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  color: var(--hljs-entity);
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-variable {
+  color: var(--hljs-constant);
+}
+
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+  color: var(--hljs-string);
+}
+
+.hljs-built_in,
+.hljs-symbol {
+  color: var(--hljs-variable);
+}
+
+.hljs-code,
+.hljs-comment,
+.hljs-formula {
+  color: var(--hljs-comment);
+}
+
+.hljs-name,
+.hljs-quote,
+.hljs-selector-pseudo,
+.hljs-selector-tag {
+  color: var(--hljs-entity-tag);
+}
+
+.hljs-subst {
+  color: var(--hljs-storage);
+}
+
+.hljs-section {
+  color: var(--hljs-heading);
+  font-weight: 700;
+}
+
+.hljs-bullet {
+  color: var(--hljs-list);
+}
+
+.hljs-emphasis {
+  color: var(--hljs-italic);
+  font-style: italic;
+}
+
+.hljs-strong {
+  color: var(--hljs-bold);
+  font-weight: 700;
+}
+
+.hljs-addition {
+  color: var(--hljs-addition-color);
+  background-color: var(--hljs-addition-background);
+}
+
+.hljs-deletion {
+  color: var(--hljs-deletion-color);
+  background-color: var(--hljs-deletion-background);
+}

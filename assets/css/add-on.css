@@ -458,11 +458,15 @@ ul.pagination .button {
 
 #back-to-top {
   background-color: var(--bg-secondary);
-  bottom: 5px;
+  bottom: 1.5rem;
+  right: 1.5rem;
   color: var(--text-disabled);
   display: none;
   position: fixed;
-  right: 5px;
+}
+
+#back-to-top:hover {
+  border-bottom: initial;
 }
 
 #back-to-top.btt-fade-out {

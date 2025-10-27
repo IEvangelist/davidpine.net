@@ -1,6 +1,6 @@
 +++
 author = "David Pine"
-categories = ["Polyglot", "C#", "Aspire", "JavaScript"]
+categories = ["Polyglot", "CSharp", "Aspire", "JavaScript"]
 date = "2025-10-27"
 description = "A journey of rebranding, replatforming, dogfooding, and mild existential crises"
 featured = "aspire-dev.png"

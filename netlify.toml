@@ -1,0 +1,6 @@
+[build.environment]
+  NETLIFY_BUILD_IMAGE = "jammy"
+
+[context.production.environment]
+  HUGO_VERSION = "0.151.2"
+  HUGO_EXTENDED = "true"

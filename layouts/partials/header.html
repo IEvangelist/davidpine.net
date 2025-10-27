@@ -24,6 +24,27 @@
     {{ hugo.Generator }}
     {{ partial "favicon" . }}
 
+    <!-- Theme initialization - MUST run before CSS loads to prevent flash -->
+    <script>
+        (function() {
+            try {
+                const theme = localStorage.getItem('theme-preference') || 'system';
+                const getSystemTheme = () => {
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        return 'dark';
+                    }
+                    return 'light';
+                };
+                const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
+                if (effectiveTheme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else if (effectiveTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
     {{ with .Params.author }}
     <meta name="author" content="{{ . }}">
     {{ end }}

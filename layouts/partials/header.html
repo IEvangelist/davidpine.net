@@ -7,9 +7,41 @@
 <html>
 
 <head>
+    <!-- Critical inline styles - MUST be first to prevent any flash -->
+    <style>
+        /* Set background immediately to prevent white flash */
+        html {
+            background-color: #f4f4f4; /* Light theme default */
+        }
+        html[data-theme="dark"] {
+            background-color: #1a1a1a; /* Dark theme */
+        }
+        /* Completely hide body until theme is set - prevents all flashing */
+        html:not([data-theme]) body {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        html[data-theme] body {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition: opacity 0.05s ease-in;
+        }
+    </style>
+    
+    <!-- Fallback for no-JS: show content after a brief delay -->
+    <noscript>
+        <style>
+            html body {
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+        </style>
+    </noscript>
+    
     <!-- Critical: Theme must be set before ANY rendering to prevent flash -->
     <script>
         (function() {
+            'use strict';
             try {
                 let theme = localStorage.getItem('theme-preference');
                 
@@ -31,26 +63,18 @@
                 // Fallback to light theme if anything fails
                 document.documentElement.setAttribute('data-theme', 'light');
             }
+            
+            // Safety timeout: ensure content becomes visible after 100ms even if something goes wrong
+            setTimeout(function() {
+                if (!document.documentElement.hasAttribute('data-theme')) {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            }, 100);
         })();
     </script>
     
-    <!-- Prevent flash of unstyled content -->
+    <!-- View Transitions and additional styles -->
     <style>
-        /* Set background immediately to prevent white flash */
-        html {
-            background-color: #f4f4f4; /* Light theme default */
-        }
-        html[data-theme="dark"] {
-            background-color: #1a1a1a; /* Dark theme */
-        }
-        /* Hide body until theme is applied - prevents content flash */
-        html:not([data-theme]) body {
-            visibility: hidden;
-        }
-        html[data-theme] body {
-            visibility: visible;
-        }
-        
         /* View Transitions API support */
         @view-transition {
             navigation: auto;

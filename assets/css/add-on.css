@@ -92,6 +92,7 @@ article.post h4 {
   /* Remove opacity for dark mode readability */
 }
 
+#header h1,
 #header h2 {
   font-size: inherit;
   height: inherit;
@@ -100,11 +101,13 @@ article.post h4 {
   white-space: nowrap;
 }
 
+#header h1 a,
 #header h2 a {
   font-size: 0.7em;
 }
 
 @media screen and (max-width: 736px) {
+  #header h1,
   #header h2 {
     padding: 0 0 0 1em;
   }

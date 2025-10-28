@@ -7,6 +7,120 @@
 <html>
 
 <head>
+    <!-- Critical: Theme must be set before ANY rendering to prevent flash -->
+    <script>
+        (function() {
+            try {
+                let theme = localStorage.getItem('theme-preference');
+                
+                // If no preference stored, detect system preference
+                if (!theme) {
+                    theme = 'system';
+                }
+                
+                const getSystemTheme = () => {
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        return 'dark';
+                    }
+                    return 'light';
+                };
+                
+                const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
+                document.documentElement.setAttribute('data-theme', effectiveTheme);
+            } catch (e) {
+                // Fallback to light theme if anything fails
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+    
+    <!-- Prevent flash of unstyled content -->
+    <style>
+        /* Set background immediately to prevent white flash */
+        html {
+            background-color: #f4f4f4; /* Light theme default */
+        }
+        html[data-theme="dark"] {
+            background-color: #1a1a1a; /* Dark theme */
+        }
+        /* Hide body until theme is applied - prevents content flash */
+        html:not([data-theme]) body {
+            visibility: hidden;
+        }
+        html[data-theme] body {
+            visibility: visible;
+        }
+        
+        /* View Transitions API support */
+        @view-transition {
+            navigation: auto;
+        }
+        
+        /* Customize the transition for theme changes */
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation-duration: 0.3s;
+            animation-timing-function: ease-in-out;
+        }
+        
+        /* Smooth fade for theme transitions */
+        ::view-transition-old(root) {
+            animation-name: fade-out;
+        }
+        
+        ::view-transition-new(root) {
+            animation-name: fade-in;
+        }
+        
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+        }
+        
+        /* Page navigation transitions - smoother slide effect */
+        @media (prefers-reduced-motion: no-preference) {
+            ::view-transition-old(root) {
+                animation-name: slide-out-to-left;
+            }
+            
+            ::view-transition-new(root) {
+                animation-name: slide-in-from-right;
+            }
+            
+            @keyframes slide-out-to-left {
+                to {
+                    transform: translateX(-30px);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes slide-in-from-right {
+                from {
+                    transform: translateX(30px);
+                    opacity: 0;
+                }
+            }
+        }
+        
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            ::view-transition-old(root),
+            ::view-transition-new(root) {
+                animation-duration: 0.1s;
+            }
+        }
+    </style>
+    
+    <!-- Enable View Transitions API meta tag -->
+    <meta name="view-transition" content="same-origin">
+
     <link rel="icon" href="/img/main/favicon.png" type="image/png" />
     <link rel="shortcut icon" href="/favicon.ico" />
     {{ with $.Scratch.Get "generalTitle" }}
@@ -23,27 +137,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {{ hugo.Generator }}
     {{ partial "favicon" . }}
-
-    <!-- Theme initialization - MUST run before CSS loads to prevent flash -->
-    <script>
-        (function() {
-            try {
-                const theme = localStorage.getItem('theme-preference') || 'system';
-                const getSystemTheme = () => {
-                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                        return 'dark';
-                    }
-                    return 'light';
-                };
-                const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
-                if (effectiveTheme === 'dark') {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                } else if (effectiveTheme === 'light') {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                }
-            } catch (e) {}
-        })();
-    </script>
 
     {{ with .Params.author }}
     <meta name="author" content="{{ . }}">

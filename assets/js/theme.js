@@ -102,20 +102,30 @@
     }
 
     /**
-     * Apply theme to document
+     * Apply theme to document with View Transition support
      */
     function applyTheme(theme) {
         const effectiveTheme = getEffectiveTheme(theme);
         
-        if (effectiveTheme === themes.DARK) {
-            document.documentElement.setAttribute(THEME_ATTR, themes.DARK);
-        } else if (effectiveTheme === themes.LIGHT) {
-            document.documentElement.setAttribute(THEME_ATTR, themes.LIGHT);
-        } else {
-            document.documentElement.removeAttribute(THEME_ATTR);
-        }
+        // Function to actually apply the theme
+        const updateDOM = function() {
+            if (effectiveTheme === themes.DARK) {
+                document.documentElement.setAttribute(THEME_ATTR, themes.DARK);
+            } else if (effectiveTheme === themes.LIGHT) {
+                document.documentElement.setAttribute(THEME_ATTR, themes.LIGHT);
+            } else {
+                document.documentElement.removeAttribute(THEME_ATTR);
+            }
 
-        dispatchThemeChange(theme, effectiveTheme);
+            dispatchThemeChange(theme, effectiveTheme);
+        };
+        
+        // Use View Transitions API if supported, otherwise apply immediately
+        if (document.startViewTransition) {
+            document.startViewTransition(updateDOM);
+        } else {
+            updateDOM();
+        }
     }
 
     /**

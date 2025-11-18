@@ -22,7 +22,7 @@ For a complete playlist of on-demand episodes, check out the [On .NET Live playl
 
 ## Video {{< i fa-video-camera >}} Appearances
 
-### Introduction to Azure Key Vault and .NET Aspire
+### Introduction to Azure Key Vault and Aspire
 
 {{< youtube 1K5riRctUIg >}}
 

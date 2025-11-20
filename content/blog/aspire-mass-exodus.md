@@ -149,4 +149,4 @@ Want to be part of shaping the future of Aspire documentation? The doors are wid
 
 Together, we're not just building documentation—we're building the foundation for how developers will understand and leverage distributed applications for years to come.
 
-{{< url-link "Join us: Contributor guide for `aspire.dev`" "<https://aspire.dev/community/contributor-guide>" >}}
+{{< url-link "Join us: Contributor guide for `aspire.dev`" "https://aspire.dev/community/contributor-guide" >}}
